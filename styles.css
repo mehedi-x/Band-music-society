@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+#player {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+ul#playlistItems li {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  background: #e9ecef;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul#playlistItems li:hover {
+  background: #d6d8db;
+}
