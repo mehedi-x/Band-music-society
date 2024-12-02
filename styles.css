@@ -1,40 +1,119 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
   margin: 0;
-  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-#player {
-  background: #fff;
-  padding: 20px;
+.music-player-container {
+  width: 90%;
+  max-width: 600px;
+  background: #1a1a2e;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 
-button {
-  padding: 10px 20px;
-  border: none;
+/* Header */
+header {
+  background: #16213e;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #0f3460;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #e94560;
+}
+
+/* Player Section */
+.player {
+  padding: 20px;
+  text-align: center;
+}
+
+audio {
+  width: 100%;
+  margin: 15px 0;
   border-radius: 5px;
-  background: #007bff;
+}
+
+.controls button {
+  background: #e94560;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
-  margin: 5px;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background: #0056b3;
+.controls button:hover {
+  background: #f05968;
 }
 
-ul#playlistItems li {
-  list-style: none;
+h2 {
+  font-size: 18px;
   margin: 10px 0;
+  color: #f0f0f0;
+}
+
+/* Playlist */
+.playlist {
+  padding: 20px;
+}
+
+.playlist h3 {
+  margin: 0 0 10px 0;
+  color: #f0f0f0;
+  border-bottom: 1px solid #0f3460;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
   padding: 10px;
-  background: #e9ecef;
+  background: #0f3460;
+  margin: 5px 0;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-ul#playlistItems li:hover {
-  background: #d6d8db;
+li:hover {
+  background: #e94560;
+  color: white;
+}
+
+li.active {
+  background: #e94560;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: #16213e;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #0f3460;
+}
+
+footer p {
+  margin: 0;
+  font-size: 12px;
+  color: #ccc;
 }
