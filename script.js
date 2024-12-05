@@ -1,96 +1,39 @@
-// Songs Array
-const songs = [
-  { title: "Song 1", url: "music/song1.mp3" },
-  { title: "Song 2", url: "music/song2.mp3" },
-  { title: "Song 3", url: "music/song3.mp3" },
+// Channel data (can be fetched from an API or a database)
+const channels = [
+    { name: "BTV", logo: "btv_logo.png", streamLink: "https://link_to_btv_stream.com" },
+    { name: "Channel 1", logo: "channel1_logo.png", streamLink: "https://link_to_channel1_stream.com" },
+    { name: "Channel 2", logo: "channel2_logo.png", streamLink: "https://link_to_channel2_stream.com" },
+    { name: "Channel 3", logo: "channel3_logo.png", streamLink: "https://link_to_channel3_stream.com" },
+    // Add 1000+ channels here
 ];
 
-let currentIndex = 0;
-const audioPlayer = document.getElementById("audioPlayer");
-const playlist = document.getElementById("playlist");
-const currentSongTitle = document.getElementById("currentSongTitle");
-const progressBar = document.getElementById("progressBar");
-const searchInput = document.getElementById("searchInput");
+// Function to load channels dynamically
+function loadChannels(channelsData) {
+    const channelList = document.getElementById("channel-list");
+    channelList.innerHTML = '';  // Clear existing list
 
-// Load Song
-function loadSong(index) {
-  const song = songs[index];
-  audioPlayer.src = song.url;
-  currentSongTitle.textContent = `Now Playing: ${song.title}`;
-  highlightCurrentSong(index);
-}
+    channelsData.forEach(channel => {
+        const channelDiv = document.createElement("div");
+        channelDiv.classList.add("channel-item");
 
-// Highlight Current Song in Playlist
-function highlightCurrentSong(index) {
-  const listItems = playlist.querySelectorAll("li");
-  listItems.forEach((item, i) => {
-    item.classList.toggle("active", i === index);
-  });
-}
+        channelDiv.innerHTML = `
+            <img src="${channel.logo}" alt="${channel.name} Logo">
+            <h3>${channel.name}</h3>
+            <a href="${channel.streamLink}" target="_blank">Watch Now</a>
+        `;
 
-// Play/Pause Button
-document.getElementById("playPause").addEventListener("click", () => {
-  if (audioPlayer.paused) {
-    audioPlayer.play();
-  } else {
-    audioPlayer.pause();
-  }
-});
-
-// Next Song
-document.getElementById("nextSong").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % songs.length;
-  loadSong(currentIndex);
-  audioPlayer.play();
-});
-
-// Previous Song
-document.getElementById("prevSong").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + songs.length) % songs.length;
-  loadSong(currentIndex);
-  audioPlayer.play();
-});
-
-// Volume Control
-const volumeSlider = document.getElementById("volumeSlider");
-volumeSlider.addEventListener("input", (e) => {
-  audioPlayer.volume = e.target.value / 100;
-});
-
-// Progress Bar Update
-audioPlayer.addEventListener("timeupdate", () => {
-  const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-  progressBar.style.width = `${progress}%`;
-});
-
-// Search Songs
-searchInput.addEventListener("input", (e) => {
-  const searchTerm = e.target.value.toLowerCase();
-  document.querySelectorAll('#playlist li').forEach((item) => {
-    const isVisible = item.textContent.toLowerCase().includes(searchTerm);
-    item.style.display = isVisible ? 'block' : 'none';
-  });
-});
-
-// Dark Mode Toggle
-document.getElementById("darkModeToggle").addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-});
-
-// Load Playlist
-function loadPlaylist() {
-  songs.forEach((song, index) => {
-    const li = document.createElement("li");
-    li.textContent = song.title;
-    li.addEventListener("click", () => {
-      currentIndex = index;
-      loadSong(currentIndex);
-      audioPlayer.play();
+        channelList.appendChild(channelDiv);
     });
-    playlist.appendChild(li);
-  });
 }
 
-// Initialize Player
-loadPlaylist();
-loadSong(currentIndex);
+// Search functionality
+document.getElementById("search").addEventListener("input", function(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const filteredChannels = channels.filter(channel => 
+        channel.name.toLowerCase().includes(searchTerm)
+    );
+    loadChannels(filteredChannels);
+});
+
+// Load all channels on initial load
+loadChannels(channels);
