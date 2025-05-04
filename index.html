@@ -1,358 +1,67 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Russian to Bangla Conversation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+<details>
+  <summary>PART 1: সকালবেলা কথোপকথন - Morning Conversations</summary>
+  <div class="block">
+    <p><strong>1.</strong><br>
+    <span class="russian">Доброе утро!</span><br>
+    <span class="bangla-pronounce">দোব্রায়ে উত্রা!</span><br>
+    <span class="bangla-meaning">সুপ্রভাত!</span><br>
+    <span class="english">Good morning!</span></p>
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      background: #fff;
-    }
+    <p><strong>2.</strong><br>
+    <span class="russian">Как вы спали?</span><br>
+    <span class="bangla-pronounce">কাক ভি স্পালি?</span><br>
+    <span class="bangla-meaning">আপনি কেমন ঘুমালেন?</span><br>
+    <span class="english">How did you sleep?</span></p>
 
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
+    <p><strong>3.</strong><br>
+    <span class="russian">Я хорошо спал.</span><br>
+    <span class="bangla-pronounce">ইয়া খারাশো স্পাল।</span><br>
+    <span class="bangla-meaning">আমি ভালো ঘুমিয়েছি।</span><br>
+    <span class="english">I slept well.</span></p>
 
-    .part-title {
-      background: #2980b9;
-      color: white;
-      padding: 10px;
-      margin: 10px 0;
-      cursor: pointer;
-      border: none;
-      width: 100%;
-      font-size: 18px;
-      border-radius: 5px;
-      text-align: left;
-    }
+    <p><strong>4.</strong><br>
+    <span class="russian">Что вы будете делать сегодня?</span><br>
+    <span class="bangla-pronounce">শতো ভি বুদিতে দিলাত সিভোদিন্যা?</span><br>
+    <span class="bangla-meaning">আপনি আজ কী করবেন?</span><br>
+    <span class="english">What will you do today?</span></p>
 
-    .part-content {
-      display: none;
-      background: #ecf0f1;
-      padding: 15px;
-      border-left: 5px solid #2980b9;
-    }
+    <p><strong>5.</strong><br>
+    <span class="russian">Сегодня я иду на работу.</span><br>
+    <span class="bangla-pronounce">সিভোদিন্যা ইয়্যা ইদু না রাবোতু।</span><br>
+    <span class="bangla-meaning">আমি আজ কাজে যাচ্ছি।</span><br>
+    <span class="english">Today I’m going to work.</span></p>
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
+    <p><strong>6.</strong><br>
+    <span class="russian">Вы уже завтракали?</span><br>
+    <span class="bangla-pronounce">ভি উঝে জাভত্রাকালি?</span><br>
+    <span class="bangla-meaning">আপনি কি ইতোমধ্যে নাস্তা করেছেন?</span><br>
+    <span class="english">Have you had breakfast?</span></p>
 
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      text-align: left;
-    }
+    <p><strong>7.</strong><br>
+    <span class="russian">Да, я уже позавтракал.</span><br>
+    <span class="bangla-pronounce">দা, ইয়্যা উঝে পাজাভত্রাকাল।</span><br>
+    <span class="bangla-meaning">হ্যাঁ, আমি ইতোমধ্যে নাস্তা করেছি।</span><br>
+    <span class="english">Yes, I’ve already had breakfast.</span></p>
 
-    th {
-      background: #2980b9;
-      color: white;
-    }
+    <p><strong>8.</strong><br>
+    <span class="russian">Какой у нас сегодня план?</span><br>
+    <span class="bangla-pronounce">কাকই উ নাস সিভোদিন্যা প্লান?</span><br>
+    <span class="bangla-meaning">আজ আমাদের পরিকল্পনা কী?</span><br>
+    <span class="english">What’s our plan today?</span></p>
 
-    @media (max-width: 600px) {
-      th, td {
-        font-size: 14px;
-        padding: 8px;
-      }
+    <p><strong>9.</strong><br>
+    <span class="russian">Сегодня мы идём в магазин.</span><br>
+    <span class="bangla-pronounce">সিভোদিন্যা মি ইদём ফ্ মাগাজিন।</span><br>
+    <span class="bangla-meaning">আজ আমরা বাজারে যাচ্ছি।</span><br>
+    <span class="english">Today we’re going to the store.</span></p>
 
-      .part-title {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-<body>
+    <p><strong>10.</strong><br>
+    <span class="russian">Погода хорошая сегодня.</span><br>
+    <span class="bangla-pronounce">পাগোডা খারাশায়া সিভোদিন্যা।</span><br>
+    <span class="bangla-meaning">আজ আবহাওয়া ভালো।</span><br>
+    <span class="english">The weather is nice today.</span></p>
 
-<div class="container">
-  <h1>Russian to Bangla Daily Conversation</h1>
+    <!-- 11-30 would continue here... -->
 
-  <!-- PART 1 -->
-  <button class="part-title" onclick="toggleContent(1)">PART 1: সকালে ঘুম থেকে ওঠা</button>
-  <div class="part-content" id="part-1">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Доброе утро!</td>
-        <td>দব্‌রা উত্রা!</td>
-        <td>শুভ সকাল!</td>
-        <td>Good morning!</td>
-      </tr>
-      <tr>
-        <td>Как вы спали?</td>
-        <td>কাক ভি স্পালি?</td>
-        <td>আপনি কেমন ঘুমালেন?</td>
-        <td>How did you sleep?</td>
-      </tr>
-      <tr>
-        <td>Я только что проснулся.</td>
-        <td>ইয়া তল্কা ষ্তা প্রসনুলসা।</td>
-        <td>আমি appena ঘুম থেকে উঠেছি।</td>
-        <td>I just woke up.</td>
-      </tr>
-    </table>
   </div>
-
-  <!-- PART 2 -->
-  <button class="part-title" onclick="toggleContent(2)">PART 2: সকাল বেলা কাজকর্ম</button>
-  <div class="part-content" id="part-2">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Я чищу зубы.</td>
-        <td>ইয়া চিশ্চু зубы।</td>
-        <td>আমি দাঁত মাজছি।</td>
-        <td>I am brushing my teeth.</td>
-      </tr>
-      <tr>
-        <td>Я умываюсь.</td>
-        <td>ইয়া উমিভায়ুস।</td>
-        <td>আমি মুখ ধুচ্ছি।</td>
-        <td>I am washing my face.</td>
-      </tr>
-      <tr>
-        <td>Я принимаю душ.</td>
-        <td>ইয়া প্রিনিমায়ু দুশ।</td>
-        <td>আমি গোসল করছি।</td>
-        <td>I am taking a shower.</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 3 -->
-  <button class="part-title" onclick="toggleContent(3)">PART 3: নাশতা</button>
-  <div class="part-content" id="part-3">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Я готовлю завтрак.</td>
-        <td>ইয়া গাতোভল্যু завтрак।</td>
-        <td>আমি নাশতা বানাচ্ছি।</td>
-        <td>I am making breakfast.</td>
-      </tr>
-      <tr>
-        <td>Ты хочешь чай?</td>
-        <td>তি খচিশ чай?</td>
-        <td>তুমি চা খাবে?</td>
-        <td>Do you want tea?</td>
-      </tr>
-      <tr>
-        <td>Где хлеб?</td>
-        <td>গদে খ্লিয়েপ?</td>
-        <td>রুটি কোথায়?</td>
-        <td>Where is the bread?</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 4 -->
-  <button class="part-title" onclick="toggleContent(4)">PART 4: অফিস যাওয়া</button>
-  <div class="part-content" id="part-4">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Я иду на работу.</td>
-        <td>ইয়া ইদু না রাবোতু।</td>
-        <td>আমি অফিসে যাচ্ছি।</td>
-        <td>I am going to work.</td>
-      </tr>
-      <tr>
-        <td>Во сколько начнётся встреча?</td>
-        <td>ভা স্কল্কা নাচনৎসা ভত্রেচা?</td>
-        <td>মিটিং কখন শুরু হবে?</td>
-        <td>What time does the meeting start?</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 5 -->
-  <button class="part-title" onclick="toggleContent(5)">PART 5: অফিসে কথোপকথন</button>
-  <div class="part-content" id="part-5">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Как дела?</td>
-        <td>কাক দিলা?</td>
-        <td>কেমন আছেন?</td>
-        <td>How are you?</td>
-      </tr>
-      <tr>
-        <td>Я занят.</td>
-        <td>ইয়া যানিয়েত।</td>
-        <td>আমি ব্যস্ত।</td>
-        <td>I am busy.</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 6 -->
-  <button class="part-title" onclick="toggleContent(6)">PART 6: মধ্যাহ্নভোজ</button>
-  <div class="part-content" id="part-6">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Пойдём на обед?</td>
-        <td>পায়দম না আব্যেদ?</td>
-        <td>চলো দুপুরের খাবার খাই।</td>
-        <td>Shall we go for lunch?</td>
-      </tr>
-      <tr>
-        <td>Что на обед?</td>
-        <td>শ্‌তা না আব্যেদ?</td>
-        <td>দুপুরে কী আছে?</td>
-        <td>What’s for lunch?</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 7 -->
-  <button class="part-title" onclick="toggleContent(7)">PART 7: বিকেলে কাজের পর</button>
-  <div class="part-content" id="part-7">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Я закончил работу.</td>
-        <td>ইয়া জাকোনচিল রাবোতু।</td>
-        <td>আমি কাজ শেষ করেছি।</td>
-        <td>I’ve finished work.</td>
-      </tr>
-      <tr>
-        <td>Пойдём домой?</td>
-        <td>পায়দম দামই?</td>
-        <td>চলো বাসায় যাই?</td>
-        <td>Shall we go home?</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 8 -->
-  <button class="part-title" onclick="toggleContent(8)">PART 8: বাজার ও কেনাকাটা</button>
-  <div class="part-content" id="part-8">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Сколько это стоит?</td>
-        <td>স্কল্কা এটা স্তইত?</td>
-        <td>এটার দাম কত?</td>
-        <td>How much is this?</td>
-      </tr>
-      <tr>
-        <td>У вас есть овощи?</td>
-        <td>উ ভাস ইয়েস্ত ওভশি?</td>
-        <td>আপনার কাছে সবজি আছে?</td>
-        <td>Do you have vegetables?</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 9 -->
-  <button class="part-title" onclick="toggleContent(9)">PART 9: রাতে খাওয়া</button>
-  <div class="part-content" id="part-9">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Ужин готов?</td>
-        <td>উজিন গাতোভ?</td>
-        <td>রাতের খাবার প্রস্তুত?</td>
-        <td>Is dinner ready?</td>
-      </tr>
-      <tr>
-        <td>Приятного аппетита!</td>
-        <td>প্রিয়াতনাভা আপেতিতা!</td>
-        <td>আপনার খাওয়া শুভ হোক!</td>
-        <td>Bon appétit!</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- PART 10 -->
-  <button class="part-title" onclick="toggleContent(10)">PART 10: রাতে ঘুমানো</button>
-  <div class="part-content" id="part-10">
-    <table>
-      <tr>
-        <th>Russian</th>
-        <th>Pronunciation</th>
-        <th>বাংলা অর্থ</th>
-        <th>English</th>
-      </tr>
-      <tr>
-        <td>Спокойной ночи!</td>
-        <td>স্পাকইনাই নোচি!</td>
-        <td>শুভ রাত্রি!</td>
-        <td>Good night!</td>
-      </tr>
-      <tr>
-        <td>Я ложусь спать.</td>
-        <td>ইয়া লাঝুস স্পাত।</td>
-        <td>আমি ঘুমাতে যাচ্ছি।</td>
-        <td>I am going to sleep.</td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-<script>
-  function toggleContent(part) {
-    const content = document.getElementById('part-' + part);
-    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
-  }
-</script>
-
-</body>
-</html>
+</details>
