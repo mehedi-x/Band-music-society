@@ -1,74 +1,92 @@
-/* style.css */
+/* style.css - Russian to Bangla Conversation Theme */
+
+:root {
+  --bg-light: #fffef5;
+  --bg-section: #fff9c4;
+  --highlight: #ffe082;
+  --accent: #ffca28;
+  --text-dark: #212121;
+  --text-muted: #555;
+  --russian-color: #c62828;
+  --bangla-pronounce-color: #4e342e;
+  --bangla-meaning-color: #1b5e20;
+  --english-color: #1565c0;
+}
 
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff8e1;
-  color: #333;
-  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   padding: 20px;
+  line-height: 1.7;
 }
 
 details {
-  background-color: #fffde7;
-  border: 1px solid #ffecb3;
+  background-color: var(--bg-section);
   border-radius: 8px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
 summary {
-  cursor: pointer;
-  font-weight: bold;
-  padding: 12px 16px;
+  padding: 14px 18px;
   font-size: 1.1em;
-  background-color: #fff59d;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  background-color: var(--highlight);
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
 }
 
 summary:hover {
-  background-color: #ffeb3b;
+  background-color: var(--accent);
 }
 
 .block {
-  padding: 10px 20px;
+  padding: 15px 20px;
 }
 
 p {
-  margin: 10px 0;
-  padding: 10px;
-  background: #fff9c4;
-  border-left: 5px solid #ffcc00;
-  border-radius: 4px;
+  background-color: #fffde7;
+  margin: 15px 0;
+  padding: 12px 15px;
+  border-left: 5px solid var(--accent);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
 span {
   display: block;
-  margin: 3px 0;
+  margin-top: 4px;
+  font-size: 0.95em;
 }
 
 .russian {
+  color: var(--russian-color);
   font-weight: bold;
-  color: #d84315;
+  font-size: 1.05em;
 }
 
 .bangla-pronounce {
-  color: #3e2723;
+  color: var(--bangla-pronounce-color);
   font-style: italic;
 }
 
 .bangla-meaning {
-  color: #1b5e20;
+  color: var(--bangla-meaning-color);
 }
 
 .english {
-  color: #0277bd;
+  color: var(--english-color);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 12px;
   }
 
   summary {
@@ -77,5 +95,9 @@ span {
 
   p {
     font-size: 0.95em;
+  }
+
+  .block {
+    padding: 12px;
   }
 }
