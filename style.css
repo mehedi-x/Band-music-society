@@ -1,93 +1,81 @@
-/* theme.css */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fffdf5;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8e1;
   color: #333;
+  line-height: 1.6;
   padding: 20px;
 }
 
 details {
-  border: 1px solid #f1c40f;
+  background-color: #fffde7;
+  border: 1px solid #ffecb3;
   border-radius: 8px;
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  padding: 15px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-}
-
-details[open] {
-  background-color: #fffbe6;
-  box-shadow: 0 6px 12px rgba(241, 196, 15, 0.3);
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 summary {
-  font-weight: bold;
-  font-size: 20px;
   cursor: pointer;
-  color: #d68910;
-  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 12px 16px;
+  font-size: 1.1em;
+  background-color: #fff59d;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+summary:hover {
+  background-color: #ffeb3b;
 }
 
 .block {
-  margin-top: 10px;
+  padding: 10px 20px;
 }
 
-.block p {
-  background-color: #fffdea;
+p {
+  margin: 10px 0;
   padding: 10px;
-  border-left: 4px solid #f4d03f;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.03);
+  background: #fff9c4;
+  border-left: 5px solid #ffcc00;
+  border-radius: 4px;
+}
+
+span {
+  display: block;
+  margin: 3px 0;
 }
 
 .russian {
   font-weight: bold;
-  color: #2c3e50;
+  color: #d84315;
 }
 
 .bangla-pronounce {
+  color: #3e2723;
   font-style: italic;
-  color: #8e44ad;
 }
 
 .bangla-meaning {
-  color: #117a65;
+  color: #1b5e20;
 }
 
 .english {
-  color: #2d3436;
+  color: #0277bd;
 }
 
-@media (max-width: 768px) {
-  summary {
-    font-size: 18px;
-  }
-
-  .block p {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   body {
     padding: 10px;
   }
 
   summary {
-    font-size: 16px;
+    font-size: 1em;
   }
 
-  .block p {
-    font-size: 14px;
+  p {
+    font-size: 0.95em;
   }
 }
