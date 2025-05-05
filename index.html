@@ -20,32 +20,23 @@
         header h1 {
             font-size: 24px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #444;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #555;
+        }
         .content {
             margin: 20px;
-        }
-        .section {
-            margin-bottom: 15px;
-            padding: 10px;
-            background-color: #444;
-            border-radius: 5px;
-        }
-        .section h2 {
-            font-size: 20px;
-        }
-        .section p {
-            font-size: 16px;
-        }
-        .content div {
-            margin-bottom: 20px;
-        }
-        .content .language-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .content .language-row p {
-            width: 30%;
-            text-align: center;
         }
     </style>
 </head>
@@ -56,35 +47,105 @@
 </header>
 
 <div class="content">
-    <div class="section">
-        <h2>Part 1: Basic Phrases</h2>
-        <div class="language-row">
-            <p><strong>Russian:</strong> Привет! Как дела?</p>
-            <p><strong>Pronunciation (Bangla):</strong> প্রিভিয়েত! কাক দেলা?</p>
-            <p><strong>English:</strong> Hello! How are you?</p>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2>Part 2: Introducing Yourself</h2>
-        <div class="language-row">
-            <p><strong>Russian:</strong> Меня зовут Иван.</p>
-            <p><strong>Pronunciation (Bangla):</strong> মেনিয়া জোভুত ইভান।</p>
-            <p><strong>English:</strong> My name is Ivan.</p>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <th>Russian</th>
+            <th>Pronunciation (Bangla)</th>
+            <th>Meaning (Bangla)</th>
+            <th>English</th>
+        </tr>
 
-    <div class="section">
-        <h2>Part 3: Asking About Family</h2>
-        <div class="language-row">
-            <p><strong>Russian:</strong> У тебя есть братья или сестры?</p>
-            <p><strong>Pronunciation (Bangla):</strong> উ তিবিয়া ইয়েস্ত ব্রাতিয়া ইলা সেস্ত্রি?</p>
-            <p><strong>English:</strong> Do you have any brothers or sisters?</p>
-        </div>
-    </div>
-    
-    <!-- More sections can be added here -->
+        <!-- Part 1 -->
+        <tr>
+            <td>Привет! Как дела?</td>
+            <td>প্রিভিয়েত! কাক দেলা?</td>
+            <td>হ্যালো! কেমন আছো?</td>
+            <td>Hello! How are you?</td>
+        </tr>
 
+        <tr>
+            <td>Меня зовут Иван.</td>
+            <td>মেনিয়া জোভুত ইভান।</td>
+            <td>আমার নাম ইভান।</td>
+            <td>My name is Ivan.</td>
+        </tr>
+
+        <tr>
+            <td>У тебя есть братья или сестры?</td>
+            <td>উ তিবিয়া ইয়েস্ত ব্রাতিয়া ইলা সেস্ত্রি?</td>
+            <td>তোমার কি ভাই-বোন আছে?</td>
+            <td>Do you have any brothers or sisters?</td>
+        </tr>
+
+        <!-- Part 2 -->
+        <tr>
+            <td>Где находится автобусная остановка?</td>
+            <td>গদে নাখোদিতসিয়া আভতোবুসনায়া অসতোনোভকা?</td>
+            <td>বাস স্টপ কোথায়?</td>
+            <td>Where is the bus stop?</td>
+        </tr>
+
+        <tr>
+            <td>Как добраться до метро?</td>
+            <td>কাক দোব্রাতসিয়া দো মেট্রো?</td>
+            <td>মেট্রোতে কীভাবে যাবো?</td>
+            <td>How do I get to the metro?</td>
+        </tr>
+
+        <tr>
+            <td>Это далеко от сюда?</td>
+            <td>এটা দালেকো আট সুয়া?</td>
+            <td>এটা এখানে থেকে অনেক দূরে?</td>
+            <td>Is it far from here?</td>
+        </tr>
+
+        <!-- Part 3 -->
+        <tr>
+            <td>Можно заказать еду?</td>
+            <td>মোজনা অর্ডার কুজাতে এদু?</td>
+            <td>খাবার অর্ডার করা যাবে?</td>
+            <td>Can I order food?</td>
+        </tr>
+
+        <tr>
+            <td>Я хотел бы заказать пиццу.</td>
+            <td>ইয়া খতেল বি অর্ডার পিৎসু।</td>
+            <td>আমি পিজ্জা অর্ডার করতে চাই।</td>
+            <td>I would like to order a pizza.</td>
+        </tr>
+
+        <tr>
+            <td>Сколько стоит это?</td>
+            <td>স্কোলকো স্টোইত এতা?</td>
+            <td>এটা কত টাকার?</td>
+            <td>How much does this cost?</td>
+        </tr>
+
+        <!-- Part 4 -->
+        <tr>
+            <td>Мне нужно в больницу.</td>
+            <td>মনে নুজ্নো ভ বোলনিত্সু।</td>
+            <td>আমাকে হাসপাতালে যেতে হবে।</td>
+            <td>I need to go to the hospital.</td>
+        </tr>
+
+        <tr>
+            <td>У меня болит голова.</td>
+            <td>উ মেনিয়া বোলিত গলোভা।</td>
+            <td>আমার মাথা ব্যথা করছে।</td>
+            <td>I have a headache.</td>
+        </tr>
+
+        <tr>
+            <td>Помогите, пожалуйста!</td>
+            <td>পোমোগিতি, পোঝালুস্তা!</td>
+            <td>দয়া করে সাহায্য করুন!</td>
+            <td>Help me, please!</td>
+        </tr>
+
+        <!-- Add more parts below as needed -->
+
+    </table>
 </div>
 
 </body>
