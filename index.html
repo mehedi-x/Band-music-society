@@ -4103,62 +4103,7 @@
 
 <script>
 <script>
-    const data = [
-        { ru: "Здравствуйте", bnPron: "Zdravstvuyte", bn: "স্বাগতম", en: "Hello" },
-        { ru: "Спасибо", bnPron: "Spasibo", bn: "ধন্যবাদ", en: "Thank you" },
-        { ru: "Как дела?", bnPron: "Kak dela?", bn: "কেমন আছো?", en: "How are you?" },
-        { ru: "До свидания", bnPron: "Do svidaniya", bn: "বিদায়", en: "Goodbye" },
-        // Add more entries as needed
-    ];
-
-    const searchInput = document.getElementById("searchInput");
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    const dataBody = document.getElementById("dataBody");
-
-    searchInput.addEventListener("input", function () {
-        const query = this.value.toLowerCase();
-        suggestionsBox.innerHTML = '';
-        if (!query) {
-            suggestionsBox.style.display = 'none';
-            return;
-        }
-
-        const suggestions = data.filter(item => 
-            item.ru.toLowerCase().includes(query) || 
-            item.en.toLowerCase().includes(query) ||
-            item.bn.toLowerCase().includes(query)
-        );
-
-        if (suggestions.length) {
-            suggestionsBox.style.display = 'block';
-            suggestions.forEach(item => {
-                const div = document.createElement('div');
-                div.textContent = `${item.ru} - ${item.en}`;
-                div.onclick = () => {
-                    searchInput.value = item.ru;
-                    suggestionsBox.style.display = 'none';
-                    displayFiltered([item]);
-                };
-                suggestionsBox.appendChild(div);
-            });
-        } else {
-            suggestionsBox.style.display = 'none';
-        }
-    });
-
-    function displayFiltered(filteredData) {
-        dataBody.innerHTML = '';
-        filteredData.forEach(item => {
-            const row = `<tr>
-                <td>${item.ru}</td>
-                <td>${item.bnPron}</td>
-                <td>${item.bn}</td>
-                <td>${item.en}</td>
-            </tr>`;
-            dataBody.innerHTML += row;
-        });
-    }
-
+    
     // Initially load all data
     displayFiltered(data);
 </script>
