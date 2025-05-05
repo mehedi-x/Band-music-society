@@ -3430,60 +3430,7 @@
 </div>
 
 <script>
-    // Data for suggestions (you can update this list with more phrases in the future)
-const phrases = [
-    { russian: "Привет! Как дела?", banglaPronunciation: "প্রিভিয়েত! কাক দেলা?", banglaMeaning: "হ্যালো! কেমন আছো?", english: "Hello! How are you?" },
-    { russian: "Меня зовут Иван.", banglaPronunciation: "মেনিয়া জোভুত ইভান।", banglaMeaning: "আমার নাম ইভান।", english: "My name is Ivan." },
-    { russian: "У тебя есть братья или сестры?", banglaPronunciation: "উ তিবিয়া ইয়েস্ত ব্রাতিয়া ইলা সেস্ত্রি?", banglaMeaning: "তোমার কি ভাই-বোন আছে?", english: "Do you have any brothers or sisters?" },
-    { russian: "Где находится автобусная остановка?", banglaPronunciation: "গদে নাখোদিতসিয়া আভতোবুসনায়া অসতোনোভকা?", banglaMeaning: "বাস স্টপ কোথায়?", english: "Where is the bus stop?" },
-    { russian: "Как добраться до метро?", banglaPronunciation: "কাক দোব্রাতসিয়া দো মেট্রো?", banglaMeaning: "মেট্রোতে কীভাবে যাবো?", english: "How do I get to the metro?" },
-    { russian: "Это далеко от сюда?", banglaPronunciation: "এটা দালেকো আট সুয়া?", banglaMeaning: "এটা এখানে থেকে অনেক দূরে?", english: "Is it far from here?" }
-    // Add more phrases here as needed
-];
 
-// Function to show suggestions based on search input
-document.getElementById("searchInput").addEventListener("input", function() {
-    const searchTerm = this.value.toLowerCase();
-    const filteredPhrases = phrases.filter(phrase => 
-        phrase.russian.toLowerCase().includes(searchTerm) ||
-        phrase.banglaPronunciation.toLowerCase().includes(searchTerm) ||
-        phrase.banglaMeaning.toLowerCase().includes(searchTerm) ||
-        phrase.english.toLowerCase().includes(searchTerm)
-    );
-
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    suggestionsBox.innerHTML = ""; // Clear previous suggestions
-
-    const allTextContent = document.body.innerText.toLowerCase(); // Get all text from the body
-    const matchingText = [];
-
-    filteredPhrases.forEach(phrase => {
-        if (allTextContent.includes(phrase.russian.toLowerCase()) || 
-            allTextContent.includes(phrase.banglaPronunciation.toLowerCase()) ||
-            allTextContent.includes(phrase.banglaMeaning.toLowerCase()) ||
-            allTextContent.includes(phrase.english.toLowerCase())) {
-            
-            matchingText.push(phrase.russian);
-        }
-    });
-
-    // Show filtered suggestions
-    if (searchTerm && matchingText.length > 0) {
-        suggestionsBox.style.display = "block";
-        matchingText.forEach(suggestion => {
-            const suggestionDiv = document.createElement("div");
-            suggestionDiv.textContent = suggestion;
-            suggestionDiv.classList.add("suggestion-item");
-            suggestionDiv.addEventListener("click", () => {
-                document.getElementById("searchInput").value = suggestion;
-                suggestionsBox.style.display = "none";
-            });
-            suggestionsBox.appendChild(suggestionDiv);
-        });
-    } else {
-        suggestionsBox.style.display = "none";
-    }
-});
 
 
     // Function to filter the table based on search input
