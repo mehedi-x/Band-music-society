@@ -6,19 +6,132 @@
   <title>Russian Language Practice</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    header.top-bar {
+      background-color: #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .time-display {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .search-container {
+      margin: 20px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .suggestions {
+      background-color: #333;
+      color: white;
+      position: absolute;
+      width: 80%;
+      max-height: 200px;
+      overflow-y: auto;
+      border-radius: 4px;
+      margin-top: 5px;
+      display: none;
+      z-index: 100;
+    }
+
+    .suggestions div {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .suggestions div:hover {
+      background-color: #444;
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th, td {
+      border: 1px solid #444;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #555;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #111;
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 16px;
+      }
+      .time-display {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="top-bar">
     <div class="logo">RU Learning</div>
-    <div class="menu-container">
-      <div id="menuToggle" class="dots">⋮</div>
-      <div id="dropdownMenu" class="dropdown hidden">
-        <a href="#">Home</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-    <div id="localTime" class="time-display"></div>
+    <div id="localTime" class="time-display">--:--</div>
   </header>
 
   <div class="search-container">
@@ -27,25 +140,27 @@
   </div>
 
   <main class="content">
-    <table>
-      <thead>
-        <tr>
-          <th>Russian</th>
-          <th>Pronunciation</th>
-          <th>Bangla Meaning</th>
-          <th>English</th>
-        </tr>
-      </thead>
-      <tbody id="lessonTable">
-        <tr>
-          <td>Где ближайшая станция метро?</td>
-          <td>গদে ব্লিজাইশিয়া স্তানিত্সিয়া মেট্রো?</td>
-          <td>নিকটস্থ মেট্রো স্টেশন কোথায়?</td>
-          <td>Where is the nearest metro station?</td>
-        </tr>
-        <!-- আরও লেসন এখানে যোগ করা যাবে -->
-      </tbody>
-    </table>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Russian</th>
+            <th>Pronunciation</th>
+            <th>Bangla Meaning</th>
+            <th>English</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Где ближайшая станция метро?</td>
+            <td>গদে ব্লিজাইশিয়া স্তানিত্সিয়া মেট্রো?</td>
+            <td>নিকটস্থ মেট্রো স্টেশন কোথায়?</td>
+            <td>Where is the nearest metro station?</td>
+          </tr>
+          <!-- আরও লাইন যোগ করতে পারবেন -->
+        </tbody>
+      </table>
+    </div>
   </main>
 
   <button id="scrollTopBtn" title="Go to top">↑</button>
@@ -53,5 +168,28 @@
   <footer>
     <p>© 2025 RU Learning. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Time display updater
+    function updateTime() {
+      const now = new Date();
+      const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      };
+      document.getElementById("localTime").innerText =
+        now.toLocaleTimeString([], options);
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Scroll to top
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  </script>
 </body>
 </html>
