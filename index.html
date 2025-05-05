@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Russian Language Practice</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
   <script defer src="script.js"></script>
 </head>
 <body>
   <header class="top-bar">
     <div class="logo">RU Learning</div>
+    <div class="menu-container">
+      <div id="menuToggle" class="dots">⋮</div>
+      <div id="dropdownMenu" class="dropdown hidden">
+        <a href="#">Home</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
     <div id="localTime" class="time-display"></div>
   </header>
-
-  <nav class="nav-menu">
-    <a href="#">Home</a>
-    <a href="#">Contact Us</a>
-    <a href="#">Privacy Policy</a>
-  </nav>
 
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search Russian lessons..." />
@@ -33,11 +34,16 @@
           <th>Pronunciation</th>
           <th>Bangla Meaning</th>
           <th>English</th>
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody id="lessonTable">
-        <!-- Lesson rows will be dynamically loaded here -->
+        <tr>
+          <td>Где ближайшая станция метро?</td>
+          <td>গদে ব্লিজাইশিয়া স্তানিত্সিয়া মেট্রো?</td>
+          <td>নিকটস্থ মেট্রো স্টেশন কোথায়?</td>
+          <td>Where is the nearest metro station?</td>
+        </tr>
+        <!-- আরও লেসন এখানে যোগ করা যাবে -->
       </tbody>
     </table>
   </main>
@@ -45,7 +51,7 @@
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
   <footer>
-    <p>© 2025 RU Learning App. All rights reserved.</p>
+    <p>© 2025 RU Learning. All rights reserved.</p>
   </footer>
 </body>
 </html>
