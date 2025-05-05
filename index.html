@@ -1,701 +1,79 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
 
-          <header>
-    <h1>Russian Language Practice</h1>
-</header>
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
 
+    main {
+      padding: 20px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f1f1;
+    }
+
+    @media (max-width: 600px) {
+      header, footer {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Russian Language Practice</h1></h1>
+  </header>
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search a Russian phrase...">
     <div class="suggestions" id="suggestionsBox"></div>
 </div>
-
-<table>
-    <thead>
-        <tr>
-            <th>Russian</th>
-            <th>Bangla Pronunciation</th>
-            <th>Bangla Meaning</th>
-            <th>English Translation</th>
-        </tr>
-    </thead>
-    <tbody id="dataBody">
-        <!-- Example row -->
-        <tr>
-            <td>Здравствуйте</td>
-            <td>Zdravstvuyte</td>
-            <td>স্বাগতম</td>
-            <td>Hello</td>
-        </tr>
-    </tbody>
-</table>
-
-<script>
-    const data = [
-        { ru: "Здравствуйте", bnPron: "Zdravstvuyte", bn: "স্বাগতম", en: "Hello" },
-        { ru: "Спасибо", bnPron: "Spasibo", bn: "ধন্যবাদ", en: "Thank you" },
-        { ru: "Как дела?", bnPron: "Kak dela?", bn: "কেমন আছো?", en: "How are you?" },
-        { ru: "До свидания", bnPron: "Do svidaniya", bn: "বিদায়", en: "Goodbye" },
-        // Add more entries as needed
-    ];
-
-    const searchInput = document.getElementById("searchInput");
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    const dataBody = document.getElementById("dataBody");
-
-    searchInput.addEventListener("input", function () {
-        const query = this.value.toLowerCase();
-        suggestionsBox.innerHTML = '';
-        if (!query) {
-            suggestionsBox.style.display = 'none';
-            return;
-        }
-
-        const suggestions = data.filter(item => 
-            item.ru.toLowerCase().includes(query) || 
-            item.en.toLowerCase().includes(query) ||
-            item.bn.toLowerCase().includes(query)
-        );
-
-        if (suggestions.length) {
-            suggestionsBox.style.display = 'block';
-            suggestions.forEach(item => {
-                const div = document.createElement('div');
-                div.textContent = `${item.ru} - ${item.en}`;
-                div.onclick = () => {
-                    searchInput.value = item.ru;
-                    suggestionsBox.style.display = 'none';
-                    displayFiltered([item]);
-                };
-                suggestionsBox.appendChild(div);
-            });
-        } else {
-            suggestionsBox.style.display = 'none';
-        }
-    });
-
-    function displayFiltered(filteredData) {
-        dataBody.innerHTML = '';
-        filteredData.forEach(item => {
-            const row = `<tr>
-                <td>${item.ru}</td>
-                <td>${item.bnPron}</td>
-                <td>${item.bn}</td>
-                <td>${item.en}</td>
-            </tr>`;
-            dataBody.innerHTML += row;
-        });
-    }
-
-    // Initially load all data
-    displayFiltered(data);
-</script>
-
-</body>
-</html>
-This creates a complete dark-mode Russian learning page with a search bar, real-time suggestion box, and a responsive table. Would you like to add audio pronunciation too?
-
-
-
-
-
-
-You said:
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Russian Language Practice</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 24px;
-        }
-
-        .search-container {
-            margin: 20px;
-            text-align: center;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            width: 80%;
-            font-size: 18px;
-            border-radius: 4px;
-            border: none;
-        }
-
-        .suggestions {
-            background-color: #333;
-            color: white;
-            position: absolute;
-            width: 80%;
-            max-height: 200px;
-            overflow-y: auto;
-            border-radius: 4px;
-            margin-top: 5px;
-            display: none;
-            z-index: 100;
-        }
-
-        .suggestions div {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .suggestions div:hover {
-            background-color: #444;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #444;
-        }
-        th, td {
-            padding: 12px;
-            text-align: center;
-        }
-        th {
-            background-color: #555;
-        }
-
-        @media (max-width: 768px) {
-            th, td {
-                padding: 8px;
-            }
-            header h1 {
-                font-size: 20px;
-            }
-            table {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            th, td {
-                padding: 6px;
-            }
-            table {
-                font-size: 12px;
-            }
-            header h1 {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-
-
-এই কোডটা দিয়েছি এই কোডটার মধ্যে কোনরকম ভুল আছে?? 
-
-
-ChatGPT said:
-আপনার দেওয়া HTML ও CSS কোডটি প্রায় ঠিকঠাক আছে, তবে কিছু ছোটখাটো সমস্যা বা অপূর্ণতা আছে যেগুলি আপনি ঠিক করলে কোড আরও কার্যকর এবং পরিপূর্ণ হবে:
-
-1. <header> ট্যাগটি অপূর্ণ
-আপনার কোডে <header> ট্যাগটি খোলা আছে, কিন্তু এটি বন্ধ (</header>) করা হয়নি এবং এর ভেতরে কোনো <h1> হেডিং দেওয়া হয়নি।
-
-সঠিকভাবে লিখতে হবে:
-
-html
-Copy code
-<header>
-    <h1>Russian Language Practice</h1>
-</header>
-2. JavaScript বা Body কন্টেন্ট নেই
-আপনার পৃষ্ঠায় টেবিল বা সার্চ ইনপুট বক্সের মূল কন্টেন্ট (body elements) এবং JavaScript অংশ নেই। এর ফলে ফর্ম বা টেবিল কাজ করবে না।
-
-আপনি যদি শুধুই স্টাইলিং চেক করতে চান, তাহলে এটি সমস্যা নয়। তবে যদি কার্যকর ফিচার চান (যেমন: সার্চ, টেবিল দেখা), তাহলে JavaScript ও HTML কন্টেন্ট যুক্ত করতে হবে।
-
-3. <body> শেষ হয়নি
-আপনার কোডের শেষে </body> এবং </html> ট্যাগ নেই, ফলে HTML স্ট্রাকচার অপরিপূর্ণ।
-
-সংক্ষেপে সমাধান:
-html
-Copy code
-<header>
-    <h1>Russian Language Practice</h1>
-</header>
-</body>
-</html>
-আপনি চাইলে আমি সম্পূর্ণ কোডটা ঠিক করে, প্রয়োজনীয় JavaScriptসহ দিতে পারি। আপনি কি চান যে আমি সেটা করে দিই?
-
-You said:
-এই কোড টা কে সম্পূর্ণ করে মোবাইল ফ্রেন্ডলি এবং রেস্পন্সিপ করে দিন 
-ChatGPT said:
-নিশ্চিতভাবে! নিচে আপনার দেওয়া কোডকে সম্পূর্ণ করে দেওয়া হলো, যেখানে একটি মোবাইল-ফ্রেন্ডলি ও সম্পূর্ণ রেস্পনসিভ রাশিয়ান ভাষা প্র্যাকটিস পেজ তৈরি করা হয়েছে। এতে রয়েছে: হেডার, সার্চ ইনপুট, সাজেশন বক্স, এবং টেবিলসহ JavaScript সার্চ ফাংশন।
-
-✅ সম্পূর্ণ কোড (Mobile-Friendly & Responsive)
-html
-Copy code
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Russian Language Practice</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #333;
-      padding: 10px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-
-    .search-container {
-      margin: 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    input[type="text"] {
-      padding: 10px;
-      width: 90%;
-      max-width: 600px;
-      font-size: 18px;
-      border-radius: 4px;
-      border: none;
-      outline: none;
-    }
-
-    .suggestions {
-      background-color: #333;
-      color: white;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 600px;
-      max-height: 200px;
-      overflow-y: auto;
-      border-radius: 4px;
-      margin-top: 5px;
-      display: none;
-      z-index: 100;
-    }
-
-    .suggestions div {
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .suggestions div:hover {
-      background-color: #444;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    table, th, td {
-      border: 1px solid #444;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #555;
-    }
-
-    @media (max-width: 768px) {
-      th, td {
-        padding: 8px;
-      }
-      header h1 {
-        font-size: 20px;
-      }
-      table {
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      th, td {
-        padding: 6px;
-      }
-      table {
-        font-size: 12px;
-      }
-      header h1 {
-        font-size: 18px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Russian Language Practice</h1>
-  </header>
-
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search Russian phrase...">
-    <div class="suggestions" id="suggestionsBox"></div>
-  </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Russian</th>
-        <th>Bangla Pronunciation</th>
-        <th>Bangla Meaning</th>
-        <th>English Translation</th>
-      </tr>
-    </thead>
-    <tbody id="dataBody"></tbody>
-  </table>
-
-  <script>
-    const data = [
-      { ru: "Здравствуйте", bnPron: "Zdravstvuyte", bn: "স্বাগতম", en: "Hello" },
-      { ru: "Спасибо", bnPron: "Spasibo", bn: "ধন্যবাদ", en: "Thank you" },
-      { ru: "Как дела?", bnPron: "Kak dela?", bn: "কেমন আছো?", en: "How are you?" },
-      { ru: "До свидания", bnPron: "Do svidaniya", bn: "বিদায়", en: "Goodbye" },
-      { ru: "Извините", bnPron: "Izvinite", bn: "দুঃখিত", en: "Sorry" },
-      { ru: "Пожалуйста", bnPron: "Pozhaluysta", bn: "অনুগ্রহ করে", en: "Please" },
-    ];
-
-    const searchInput = document.getElementById("searchInput");
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    const dataBody = document.getElementById("dataBody");
-
-    function displayData(items) {
-      dataBody.innerHTML = '';
-      items.forEach(item => {
-        dataBody.innerHTML += `
-          <tr>
-            <td>${item.ru}</td>
-            <td>${item.bnPron}</td>
-            <td>${item.bn}</td>
-            <td>${item.en}</td>
-          </tr>`;
-      });
-    }
-
-    searchInput.addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      suggestionsBox.innerHTML = '';
-
-      if (!query) {
-        suggestionsBox.style.display = 'none';
-        displayData(data);
-        return;
-      }
-
-      const filtered = data.filter(item =>
-        item.ru.toLowerCase().includes(query) ||
-        item.bn.toLowerCase().includes(query) ||
-        item.en.toLowerCase().includes(query)
-      );
-
-      if (filtered.length) {
-        suggestionsBox.style.display = 'block';
-        filtered.forEach(item => {
-          const div = document.createElement("div");
-          div.textContent = `${item.ru} - ${item.en}`;
-          div.onclick = () => {
-            searchInput.value = item.ru;
-            suggestionsBox.style.display = 'none';
-            displayData([item]);
-          };
-          suggestionsBox.appendChild(div);
-        });
-      } else {
-        suggestionsBox.style.display = 'none';
-      }
-    });
-
-    window.addEventListener('click', e => {
-      if (!suggestionsBox.contains(e.target) && e.target !== searchInput) {
-        suggestionsBox.style.display = 'none';
-      }
-    });
-
-    // Initial display
-    displayData(data);
-  </script>
-
-</body>
-</html>
-ফিচারসমূহ:
-
-মোবাইল ও ডেস্কটপ উভয়ের জন্য সম্পূর্ণ রেস্পনসিভ
-
-সার্চ ইনপুটে রিয়েল টাইম সাজেশন
-
-টেবিলে তথ্য দেখা ও ফিল্টার করার সুবিধা
-
-ডার্ক মোড ডিজাইন
-
-আপনি কি এতে অডিও প্রনান্সিয়েশন ফিচারও যুক্ত করতে চান?
-
-
-
-
-
-
-You said:
-মোবাইল ও ডেস্কটপ উভয়ের জন্য সম্পূর্ণ রেস্পনসিব শুদু এই টা
-ChatGPT said:
-নিশ্চিত! আমি শুধু মোবাইল এবং ডেস্কটপ উভয়ের জন্য সম্পূর্ণ রেস্পনসিভ কোডটি দিচ্ছি, যাতে আপনার পেজ সঠিকভাবে সকল ডিভাইসে প্রদর্শিত হয়।
-
-✅ সম্পূর্ণ রেস্পনসিভ কোড (Mobile-Friendly & Desktop-Friendly)
-html
-Copy code
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Russian Language Practice</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #333;
-      padding: 10px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-
-    .search-container {
-      margin: 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    input[type="text"] {
-      padding: 10px;
-      width: 90%;
-      max-width: 600px;
-      font-size: 18px;
-      border-radius: 4px;
-      border: none;
-      outline: none;
-    }
-
-    .suggestions {
-      background-color: #333;
-      color: white;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 600px;
-      max-height: 200px;
-      overflow-y: auto;
-      border-radius: 4px;
-      margin-top: 5px;
-      display: none;
-      z-index: 100;
-    }
-
-    .suggestions div {
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .suggestions div:hover {
-      background-color: #444;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    table, th, td {
-      border: 1px solid #444;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #555;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 20px;
-      }
-      table th, table td {
-        padding: 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 18px;
-      }
-      table th, table td {
-        padding: 8px;
-      }
-      input[type="text"] {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Russian Language Practice</h1>
-  </header>
-
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search Russian phrase...">
-    <div class="suggestions" id="suggestionsBox"></div>
-  </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Russian</th>
-        <th>Bangla Pronunciation</th>
-        <th>Bangla Meaning</th>
-        <th>English Translation</th>
-      </tr>
-    </thead>
-    <tbody id="dataBody"></tbody>
-  </table>
-
-  <script>
-    const data = [
-      { ru: "Здравствуйте", bnPron: "Zdravstvuyte", bn: "স্বাগতম", en: "Hello" },
-      { ru: "Спасибо", bnPron: "Spasibo", bn: "ধন্যবাদ", en: "Thank you" },
-      { ru: "Как дела?", bnPron: "Kak dela?", bn: "কেমন আছো?", en: "How are you?" },
-      { ru: "До свидания", bnPron: "Do svidaniya", bn: "বিদায়", en: "Goodbye" },
-      { ru: "Извините", bnPron: "Izvinite", bn: "দুঃখিত", en: "Sorry" },
-      { ru: "Пожалуйста", bnPron: "Pozhaluysta", bn: "অনুগ্রহ করে", en: "Please" },
-    ];
-
-    const searchInput = document.getElementById("searchInput");
-    const suggestionsBox = document.getElementById("suggestionsBox");
-    const dataBody = document.getElementById("dataBody");
-
-    function displayData(items) {
-      dataBody.innerHTML = '';
-      items.forEach(item => {
-        dataBody.innerHTML += `
-          <tr>
-            <td>${item.ru}</td>
-            <td>${item.bnPron}</td>
-            <td>${item.bn}</td>
-            <td>${item.en}</td>
-          </tr>`;
-      });
-    }
-
-    searchInput.addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      suggestionsBox.innerHTML = '';
-
-      if (!query) {
-        suggestionsBox.style.display = 'none';
-        displayData(data);
-        return;
-      }
-
-      const filtered = data.filter(item =>
-        item.ru.toLowerCase().includes(query) ||
-        item.bn.toLowerCase().includes(query) ||
-        item.en.toLowerCase().includes(query)
-      );
-
-      if (filtered.length) {
-        suggestionsBox.style.display = 'block';
-        filtered.forEach(item => {
-          const div = document.createElement("div");
-          div.textContent = `${item.ru} - ${item.en}`;
-          div.onclick = () => {
-            searchInput.value = item.ru;
-            suggestionsBox.style.display = 'none';
-            displayData([item]);
-          };
-          suggestionsBox.appendChild(div);
-        });
-      } else {
-        suggestionsBox.style.display = 'none';
-      }
-    });
-
-    window.addEventListener('click', e => {
-      if (!suggestionsBox.contains(e.target) && e.target !== searchInput) {
-        suggestionsBox.style.display = 'none';
-      }
-    });
-
-    // Initial display
-    displayData(data);
-  </script>
-
-</body>
-</html>
-এখানে কি পরিবর্তন করা হয়েছে?
-রেস্পনসিভ ডিজাইন: বিভিন্ন ডিভাইসের জন্য @media queries ব্যবহার করা হয়েছে যাতে পেজটি মোবাইল, ট্যাবলেট এবং ডেস্কটপে সঠিকভাবে প্রদর্শিত হয়।
-
-768px পর্যন্ত: টেবিলের সেল প্যাডিং কমানো হয়েছে এবং হেডার সাইজ একটু ছোট করা হয়েছে।
-
-480px পর্যন্ত: ইনপুট ফিল্ডের width 100% করে দেওয়া হয়েছে, যাতে মোবাইল স্ক্রিনে পুরোপুরি উপযুক্ত হয়।
-
-তথ্য ফিল্টারিং: সার্চ ইনপুটের মাধ্যমে ইউজার রিয়েল টাইমে তথ্য ফিল্টার করতে পারবেন।
-
-এটি এখন মোবাইল এবং ডেস্কটপ উভয়ের জন্য উপযুক্ত এবং সঠিকভাবে কাজ করবে।
-
-
-
-
-
-
-
-
-
+  <main>
+    <div class="table-container">
+      <table>
+        <thead>
+          
             
 <!-- Table -->
 <div class="content">
