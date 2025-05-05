@@ -20,6 +20,42 @@
         header h1 {
             font-size: 24px;
         }
+
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            font-size: 18px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .suggestions {
+            background-color: #333;
+            color: white;
+            position: absolute;
+            width: 80%;
+            max-height: 200px;
+            overflow-y: auto;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: none;
+            z-index: 100;
+        }
+
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestions div:hover {
+            background-color: #444;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -35,8 +71,29 @@
         th {
             background-color: #555;
         }
-        .content {
-            margin: 20px;
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px;
+            }
+            header h1 {
+                font-size: 20px;
+            }
+            table {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            th, td {
+                padding: 6px;
+            }
+            table {
+                font-size: 12px;
+            }
+            header h1 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -46,8 +103,15 @@
     <h1>Russian Language Practice</h1>
 </header>
 
+<!-- Search bar and suggestions -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search Russian Phrase...">
+    <div class="suggestions" id="suggestionsBox"></div>
+</div>
+
+<!-- Table -->
 <div class="content">
-    <table>
+    <table id="languageTable">
         <tr>
             <th>Russian</th>
             <th>Pronunciation (Bangla)</th>
@@ -55,7 +119,6 @@
             <th>English</th>
         </tr>
 
-        <!-- Part 1 -->
         <tr>
             <td>Привет! Как дела?</td>
             <td>প্রিভিয়েত! কাক দেলা?</td>
@@ -77,76 +140,66 @@
             <td>Do you have any brothers or sisters?</td>
         </tr>
 
-        <!-- Part 2 -->
-        <tr>
-            <td>Где находится автобусная остановка?</td>
-            <td>গদে নাখোদিতসিয়া আভতোবুসনায়া অসতোনোভকা?</td>
-            <td>বাস স্টপ কোথায়?</td>
-            <td>Where is the bus stop?</td>
-        </tr>
-
-        <tr>
-            <td>Как добраться до метро?</td>
-            <td>কাক দোব্রাতসিয়া দো মেট্রো?</td>
-            <td>মেট্রোতে কীভাবে যাবো?</td>
-            <td>How do I get to the metro?</td>
-        </tr>
-
-        <tr>
-            <td>Это далеко от сюда?</td>
-            <td>এটা দালেকো আট সুয়া?</td>
-            <td>এটা এখানে থেকে অনেক দূরে?</td>
-            <td>Is it far from here?</td>
-        </tr>
-
-        <!-- Part 3 -->
-        <tr>
-            <td>Можно заказать еду?</td>
-            <td>মোজনা অর্ডার কুজাতে এদু?</td>
-            <td>খাবার অর্ডার করা যাবে?</td>
-            <td>Can I order food?</td>
-        </tr>
-
-        <tr>
-            <td>Я хотел бы заказать пиццу.</td>
-            <td>ইয়া খতেল বি অর্ডার পিৎসু।</td>
-            <td>আমি পিজ্জা অর্ডার করতে চাই।</td>
-            <td>I would like to order a pizza.</td>
-        </tr>
-
-        <tr>
-            <td>Сколько стоит это?</td>
-            <td>স্কোলকো স্টোইত এতা?</td>
-            <td>এটা কত টাকার?</td>
-            <td>How much does this cost?</td>
-        </tr>
-
-        <!-- Part 4 -->
-        <tr>
-            <td>Мне нужно в больницу.</td>
-            <td>মনে নুজ্নো ভ বোলনিত্সু।</td>
-            <td>আমাকে হাসপাতালে যেতে হবে।</td>
-            <td>I need to go to the hospital.</td>
-        </tr>
-
-        <tr>
-            <td>У меня болит голова.</td>
-            <td>উ মেনিয়া বোলিত গলোভা।</td>
-            <td>আমার মাথা ব্যথা করছে।</td>
-            <td>I have a headache.</td>
-        </tr>
-
-        <tr>
-            <td>Помогите, пожалуйста!</td>
-            <td>পোমোগিতি, পোঝালুস্তা!</td>
-            <td>দয়া করে সাহায্য করুন!</td>
-            <td>Help me, please!</td>
-        </tr>
-
-        <!-- Add more parts below as needed -->
-
+        <!-- Add more rows here -->
     </table>
 </div>
+
+<script>
+    // Data for suggestions
+    const phrases = [
+        { russian: "Привет! Как дела?", banglaPronunciation: "প্রিভিয়েত! কাক দেলা?", banglaMeaning: "হ্যালো! কেমন আছো?", english: "Hello! How are you?" },
+        { russian: "Меня зовут Иван.", banglaPronunciation: "মেনিয়া জোভুত ইভান।", banglaMeaning: "আমার নাম ইভান।", english: "My name is Ivan." },
+        { russian: "У тебя есть братья или сестры?", banglaPronunciation: "উ তিবিয়া ইয়েস্ত ব্রাতিয়া ইলা সেস্ত্রি?", banglaMeaning: "তোমার কি ভাই-বোন আছে?", english: "Do you have any brothers or sisters?" },
+        { russian: "Где находится автобусная остановка?", banglaPronunciation: "গদে নাখোদিতসিয়া আভতোবুসনায়া অসতোনোভকা?", banglaMeaning: "বাস স্টপ কোথায়?", english: "Where is the bus stop?" },
+        { russian: "Как добраться до метро?", banglaPronunciation: "কাক দোব্রাতসিয়া দো মেট্রো?", banglaMeaning: "মেট্রোতে কীভাবে যাবো?", english: "How do I get to the metro?" },
+        { russian: "Это далеко от сюда?", banglaPronunciation: "এটা দালেকো আট সুয়া?", banglaMeaning: "এটা এখানে থেকে অনেক দূরে?", english: "Is it far from here?" }
+        // Add more phrases here
+    ];
+
+    // Function to show suggestions based on search input
+    document.getElementById("searchInput").addEventListener("input", function() {
+        const searchTerm = this.value.toLowerCase();
+        const filteredPhrases = phrases.filter(phrase => 
+            phrase.russian.toLowerCase().includes(searchTerm) ||
+            phrase.banglaPronunciation.toLowerCase().includes(searchTerm) ||
+            phrase.banglaMeaning.toLowerCase().includes(searchTerm) ||
+            phrase.english.toLowerCase().includes(searchTerm)
+        );
+
+        const suggestionsBox = document.getElementById("suggestionsBox");
+        suggestionsBox.innerHTML = ""; // Clear previous suggestions
+
+        if (searchTerm && filteredPhrases.length > 0) {
+            suggestionsBox.style.display = "block";
+            filteredPhrases.forEach(phrase => {
+                const suggestionDiv = document.createElement("div");
+                suggestionDiv.textContent = phrase.russian;
+                suggestionDiv.addEventListener("click", () => {
+                    document.getElementById("searchInput").value = phrase.russian;
+                    suggestionsBox.style.display = "none";
+                    filterTable(phrase.russian); // Filter table based on the selected suggestion
+                });
+                suggestionsBox.appendChild(suggestionDiv);
+            });
+        } else {
+            suggestionsBox.style.display = "none";
+        }
+    });
+
+    // Function to filter the table based on search input
+    function filterTable(searchTerm) {
+        const rows = document.querySelectorAll("#languageTable tr");
+        rows.forEach(row => {
+            const cells = row.querySelectorAll("td");
+            const russianCell = cells[0];
+            if (russianCell && russianCell.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
