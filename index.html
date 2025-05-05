@@ -1,58 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Russian Language Practice</title>
-  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
   <script defer src="script.js"></script>
 </head>
 <body>
   <header class="top-bar">
-    <div class="site-name">Russian Practice</div>
-    <div class="clock" id="clock"></div>
+    <div class="logo">RU Learning</div>
+    <div id="localTime" class="time-display"></div>
   </header>
 
-  <nav class="nav-bar">
+  <nav class="nav-menu">
     <a href="#">Home</a>
     <a href="#">Contact Us</a>
     <a href="#">Privacy Policy</a>
   </nav>
 
   <div class="search-container">
-    <input type="text" id="search" placeholder="Search Russian phrase..." autocomplete="off" />
+    <input type="text" id="searchInput" placeholder="Search Russian lessons..." />
     <div class="suggestions" id="suggestions"></div>
   </div>
 
-  <main>
-    <table id="lessons">
+  <main class="content">
+    <table>
       <thead>
         <tr>
           <th>Russian</th>
           <th>Pronunciation</th>
-          <th>Meaning</th>
-          <th>Translation</th>
-          <th>Speak</th>
-          <th>Done</th>
-          <th>Fav</th>
+          <th>Bangla Meaning</th>
+          <th>English</th>
+          <th>Actions</th>
         </tr>
       </thead>
-      <tbody id="lesson-body">
-        <tr>
-          <td>Привет</td>
-          <td>Privet</td>
-          <td>হ্যালো</td>
-          <td>Hello</td>
-          <td><button class="speak-btn" data-text="Привет">▶️</button></td>
-          <td><input type="checkbox" class="done" /></td>
-          <td><button class="fav-btn">★</button></td>
-        </tr>
+      <tbody id="lessonTable">
+        <!-- Lesson rows will be dynamically loaded here -->
       </tbody>
     </table>
   </main>
 
   <button id="scrollTopBtn" title="Go to top">↑</button>
+
+  <footer>
+    <p>© 2025 RU Learning App. All rights reserved.</p>
+  </footer>
 </body>
 </html>
