@@ -1,58 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EuroLingua - Learn 25+ European Languages</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0; background: #f0f4f8; color: #222;
+  }
+  header {
+    background: #0066cc;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  main {
+    max-width: 600px;
+    margin: 1rem auto;
+    background: white;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  select, input[type="search"] {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type="search"] {
+    margin-bottom: 1rem;
+  }
+  .phrase-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .phrase-item {
+    border-bottom: 1px solid #ddd;
+    padding: 0.7rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .phrase-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+  .phrase-label {
+    font-weight: 600;
+  }
+  .language-text {
+    flex: 1 1 45%;
+    min-width: 140px;
+    font-size: 1rem;
+  }
+  .phonetic-text {
+    font-style: italic;
+    color: #555;
+  }
+  audio {
+    margin-top: 0.25rem;
+    max-width: 150px;
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    main {
+      margin: 0.5rem 0.5rem 1rem 0.5rem;
+      padding: 1rem;
+    }
+    .phrase-row {
+      flex-direction: column;
+    }
+    .language-text {
+      min-width: auto;
+    }
+  }
+</style>
 </head>
 <body>
-  <header class="top-bar">
-    <div class="logo">EuroLingua</div>
-    <div class="language-selector">
-      <select id="languageSelect">
-        <!-- Options will be populated by JavaScript -->
-      </select>
-    </div>
-    <div id="localTime" class="time-display">--:--</div>
-  </header>
+<header>ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার</header>
+<main>
+  <label for="country-select">দেশ সিলেক্ট করুন</label>
+  <select id="country-select" aria-label="দেশ নির্বাচন">
+    <option value="fr" selected>ফ্রান্স</option>
+    <option value="de">জার্মানি</option>
+    <option value="es">স্পেন</option>
+  </select>
 
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="🔍 লাইভ সার্চ করুন..." />
-  </div>
+  <label for="search-input">শব্দ বা বাক্য খুঁজুন</label>
+  <input
+    type="search"
+    id="search-input"
+    placeholder="বাক্য বা শব্দ লিখুন"
+    aria-label="শব্দ বা বাক্য খুঁজুন"
+  />
 
-  <div class="recent-searches" id="recentSearches"></div>
+  <ul id="phrases-list" class="phrase-list" aria-live="polite" aria-relevant="additions"></ul>
+</main>
+<script>
+  // ভাষাগুলোর ডেটা (উদাহরণ স্বরূপ ছোট ডেটাসেট)
+  const data = {
+    fr: [
+      {
+        bn: "তুমি কি করছ?",
+        en: "What are you doing?",
+        native: "Que fais-tu ?",
+        phonetic: "ক্যু ফে-টু",
+        audio: ""
+      },
+      {
+        bn: "কোথায় যাব?",
+        en: "Where will you go?",
+        native: "Où iras-tu ?",
+        phonetic: "উ ই-রা-টু",
+        audio: ""
+      },
+      {
+        bn: "হাসপাতাল কোথায়?",
+        en: "Where is the hospital?",
+        native: "Où est l'hôpital ?",
+        phonetic: "উ এ ল'অপিতাল",
+        audio: ""
+      },
+      {
+        bn: "ধন্যবাদ",
+        en: "Thank you",
+        native: "Merci",
+        phonetic: "মেরসি",
+        audio: ""
+      }
+    ],
+    de: [
+      {
+        bn: "তুমি কি করছ?",
+        en: "What are you doing?",
+        native: "Was machst du?",
+        phonetic: "বাস মাখ্স্ট দু?",
+        audio: ""
+      },
+      {
+        bn: "কোথায় যাব?",
+        en: "Where will you go?",
+        native: "Wohin gehst du?",
+        phonetic: "ভোহিন গেহস্ট দু?",
+        audio: ""
+      },
+      {
+        bn: "হাসপাতাল কোথায়?",
+        en: "Where is the hospital?",
+        native: "Wo ist das Krankenhaus?",
+        phonetic: "ভো ইস্ট দাস ক্রাঙ্কেনহাউস?",
+        audio: ""
+      },
+      {
+        bn: "ধন্যবাদ",
+        en: "Thank you",
+        native: "Danke",
+        phonetic: "ডাঙ্কে",
+        audio: ""
+      }
+    ],
+    es: [
+      {
+        bn: "তুমি কি করছ?",
+        en: "What are you doing?",
+        native: "¿Qué estás haciendo?",
+        phonetic: "কে এস্তাস আহিচেন্ডো",
+        audio: ""
+      },
+      {
+        bn: "কোথায় যাব?",
+        en: "Where will you go?",
+        native: "¿A dónde irás?",
+        phonetic: "আ দোন্দে ইরাস",
+        audio: ""
+      },
+      {
+        bn: "হাসপাতাল কোথায়?",
+        en: "Where is the hospital?",
+        native: "¿Dónde está el hospital?",
+        phonetic: "দোন্দে এস্তা এল হসপিতাল",
+        audio: ""
+      },
+      {
+        bn: "ধন্যবাদ",
+        en: "Thank you",
+        native: "Gracias",
+        phonetic: "গ্রাসিয়াস",
+        audio: ""
+      }
+    ],
+  };
 
-  <div class="features">
-    <div class="feature">🇪🇺 25+ European Languages</div>
-  </div>
+  const countrySelect = document.getElementById("country-select");
+  const searchInput = document.getElementById("search-input");
+  const phrasesList = document.getElementById("phrases-list");
 
-  <main class="content">
-    <div class="table-wrapper">
-      <table id="lessonTable">
-        <thead>
-          <tr>
-            <th id="langHeader">Language</th>
-            <th>Pronunciation</th>
-            <th>Bangla</th>
-            <th>English</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Table content will be generated by JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </main>
+  function renderPhrases(countryCode, searchTerm="") {
+    const phrases = data[countryCode] || [];
+    const filtered = phrases.filter(p =>
+      p.bn.includes(searchTerm) ||
+      p.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.native.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.phonetic.includes(searchTerm)
+    );
+    phrasesList.innerHTML = "";
+    if (filtered.length === 0) {
+      phrasesList.innerHTML = "<li>কোনো ফলাফল পাওয়া যায়নি।</li>";
+      return;
+    }
+    filtered.forEach(p => {
+      const li = document.createElement("li");
+      li.className = "phrase-item";
+      li.innerHTML = `
+        <div class="phrase-row">
+          <div class="language-text"><span class="phrase-label">বাংলা:</span> ${p.bn}</div>
+          <div class="language-text"><span class="phrase-label">নেটিভ ভাষা:</span> ${p.native}</div>
+          <div class="language-text"><span class="phrase-label">ইংরেজি:</span> ${p.en}</div>
+        </div>
+        <div class="phonetic-text">উচ্চারণ: ${p.phonetic}</div>
+      `;
+      phrasesList.appendChild(li);
+    });
+  }
 
-  <button id="scrollTopBtn" title="Go to top">↑</button>
+  // Initial render
+  renderPhrases(countrySelect.value);
 
-  <footer>
-    <p>© 2023-2024 EuroLingua. All rights reserved.</p>
-  </footer>
+  // Event listeners
+  countrySelect.addEventListener("change", () => {
+    searchInput.value = "";
+    renderPhrases(countrySelect.value);
+  });
 
-  <script src="js/languageData.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/main.js"></script>
+  searchInput.addEventListener("input", () => {
+    renderPhrases(countrySelect.value, searchInput.value.trim());
+  });
+</script>
 </body>
 </html>
+
