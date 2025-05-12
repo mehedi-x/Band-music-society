@@ -1,238 +1,375 @@
-<!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="scroll-smooth">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার</title>
+<title>SpeakEu - ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0; background: #f0f4f8; color: #222;
+    font-family: 'Noto Sans Bengali', sans-serif;
   }
-  header {
-    background: #0066cc;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+  /* Scrollbar for phrase list */
+  #phrases-list::-webkit-scrollbar {
+    width: 8px;
   }
-  main {
-    max-width: 600px;
-    margin: 1rem auto;
-    background: white;
-    padding: 1rem 1.5rem 2rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  #phrases-list::-webkit-scrollbar-thumb {
+    background-color: #3b82f6;
+    border-radius: 4px;
   }
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
-    font-size: 1rem;
-  }
-  select, input[type="search"] {
-    width: 100%;
-    padding: 0.4rem 0.6rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  input[type="search"] {
-    margin-bottom: 1rem;
-  }
-  .phrase-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .phrase-item {
-    border-bottom: 1px solid #ddd;
-    padding: 0.7rem 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .phrase-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem 1rem;
-  }
-  .phrase-label {
-    font-weight: 600;
-  }
-  .language-text {
-    flex: 1 1 45%;
-    min-width: 140px;
-    font-size: 1rem;
-  }
-  .phonetic-text {
-    font-style: italic;
-    color: #555;
-  }
-  audio {
-    margin-top: 0.25rem;
-    max-width: 150px;
-    width: 100%;
-  }
-  @media (max-width: 600px) {
-    main {
-      margin: 0.5rem 0.5rem 1rem 0.5rem;
-      padding: 1rem;
-    }
-    .phrase-row {
-      flex-direction: column;
-    }
-    .language-text {
-      min-width: auto;
-    }
+  #phrases-list::-webkit-scrollbar-track {
+    background: transparent;
   }
 </style>
 </head>
-<body>
-<header>ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার</header>
-<main>
-  <label for="country-select">দেশ সিলেক্ট করুন</label>
-  <select id="country-select" aria-label="দেশ নির্বাচন">
-    <option value="fr" selected>ফ্রান্স</option>
-    <option value="de">জার্মানি</option>
-    <option value="es">স্পেন</option>
-  </select>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 
-  <label for="search-input">শব্দ বা বাক্য খুঁজুন</label>
-  <input
-    type="search"
-    id="search-input"
-    placeholder="বাক্য বা শব্দ লিখুন"
-    aria-label="শব্দ বা বাক্য খুঁজুন"
-  />
+<header class="bg-blue-700 text-white shadow-md sticky top-0 z-30">
+  <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+    <h1 class="text-lg sm:text-2xl font-extrabold select-none">SpeakEu - ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার</h1>
+    <button id="toggle-favorites" aria-pressed="false" aria-label="ফেভারিট দেখান" class="text-yellow-400 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded">
+      <i class="fas fa-star"></i>
+    </button>
+  </div>
+</header>
 
-  <ul id="phrases-list" class="phrase-list" aria-live="polite" aria-relevant="additions"></ul>
+<main class="flex-grow max-w-5xl mx-auto w-full px-4 py-6 sm:py-10">
+
+  <form id="controls" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 items-end">
+    <div>
+      <label for="country-select" class="block text-sm font-semibold mb-1 text-slate-700">দেশ সিলেক্ট করুন</label>
+      <select id="country-select" aria-label="দেশ নির্বাচন" class="w-full rounded-md border border-slate-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base px-3 py-2">
+        <option value="fr" selected>ফ্রান্স</option>
+        <option value="de">জার্মানি</option>
+        <option value="es">স্পেন</option>
+        <option value="it">ইতালি</option>
+        <option value="pt">পর্তুগাল</option>
+        <option value="nl">নেদারল্যান্ডস</option>
+        <option value="be">বেলজিয়াম</option>
+        <option value="ch">সুইজারল্যান্ড</option>
+        <option value="at">অস্ট্রিয়া</option>
+        <option value="dk">ডেনমার্ক</option>
+        <option value="se">সুইডেন</option>
+        <option value="no">নরওয়ে</option>
+        <option value="fi">ফিনল্যান্ড</option>
+        <option value="pl">পোল্যান্ড</option>
+        <option value="cz">চেক রিপাবলিক</option>
+        <option value="hu">হাঙ্গেরি</option>
+        <option value="ro">রোমানিয়া</option>
+        <option value="bg">বুলগেরিয়া</option>
+        <option value="gr">গ্রীস</option>
+        <option value="ie">আয়ারল্যান্ড</option>
+        <option value="lu">লাক্সেমবার্গ</option>
+        <option value="is">আইসল্যান্ড</option>
+        <option value="mt">মাল্টা</option>
+        <option value="si">স্লোভেনিয়া</option>
+        <option value="hr">ক্রোয়েশিয়া</option>
+        <option value="lv">লাটভিয়া</option>
+      </select>
+    </div>
+
+    <div class="sm:col-span-2">
+      <label for="search-input" class="block text-sm font-semibold mb-1 text-slate-700">শব্দ বা বাক্য খুঁজুন</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="বাক্য বা শব্দ লিখুন"
+        aria-label="শব্দ বা বাক্য খুঁজুন"
+        class="w-full rounded-md border border-slate-300 shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base px-3 py-2"
+        autocomplete="off"
+      />
+    </div>
+  </form>
+
+  <ul id="phrases-list" aria-live="polite" aria-relevant="additions" class="space-y-4 max-h-[60vh] overflow-y-auto pr-2"></ul>
+
 </main>
+
+<footer class="bg-blue-700 text-white text-center py-3 select-none">
+  © ২০২৪ SpeakEu - ইউরোপীয় ভাষার বাসা প্র্যাকটিস সফটওয়্যার
+</footer>
+
 <script>
-  // ভাষাগুলোর ডেটা (উদাহরণ স্বরূপ ছোট ডেটাসেট)
+  // Expanded data for 26 countries with 4 phrases each (translated from original 4 phrases)
+  // Audio URLs are empty placeholders; can be replaced with real audio links later.
   const data = {
     fr: [
-      {
-        bn: "তুমি কি করছ?",
-        en: "What are you doing?",
-        native: "Que fais-tu ?",
-        phonetic: "ক্যু ফে-টু",
-        audio: ""
-      },
-      {
-        bn: "কোথায় যাব?",
-        en: "Where will you go?",
-        native: "Où iras-tu ?",
-        phonetic: "উ ই-রা-টু",
-        audio: ""
-      },
-      {
-        bn: "হাসপাতাল কোথায়?",
-        en: "Where is the hospital?",
-        native: "Où est l'hôpital ?",
-        phonetic: "উ এ ল'অপিতাল",
-        audio: ""
-      },
-      {
-        bn: "ধন্যবাদ",
-        en: "Thank you",
-        native: "Merci",
-        phonetic: "মেরসি",
-        audio: ""
-      }
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Que fais-tu ?", phonetic: "ক্যু ফে-টু", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Où iras-tu ?", phonetic: "উ ই-রা-টু", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Où est l'hôpital ?", phonetic: "উ এ ল'অপিতাল", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Merci", phonetic: "মেরসি", audio: "" }
     ],
     de: [
-      {
-        bn: "তুমি কি করছ?",
-        en: "What are you doing?",
-        native: "Was machst du?",
-        phonetic: "বাস মাখ্স্ট দু?",
-        audio: ""
-      },
-      {
-        bn: "কোথায় যাব?",
-        en: "Where will you go?",
-        native: "Wohin gehst du?",
-        phonetic: "ভোহিন গেহস্ট দু?",
-        audio: ""
-      },
-      {
-        bn: "হাসপাতাল কোথায়?",
-        en: "Where is the hospital?",
-        native: "Wo ist das Krankenhaus?",
-        phonetic: "ভো ইস্ট দাস ক্রাঙ্কেনহাউস?",
-        audio: ""
-      },
-      {
-        bn: "ধন্যবাদ",
-        en: "Thank you",
-        native: "Danke",
-        phonetic: "ডাঙ্কে",
-        audio: ""
-      }
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Was machst du?", phonetic: "বাস মাখ্স্ট দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Wohin gehst du?", phonetic: "ভোহিন গেহস্ট দু?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Wo ist das Krankenhaus?", phonetic: "ভো ইস্ট দাস ক্রাঙ্কেনহাউস?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Danke", phonetic: "ডাঙ্কে", audio: "" }
     ],
     es: [
-      {
-        bn: "তুমি কি করছ?",
-        en: "What are you doing?",
-        native: "¿Qué estás haciendo?",
-        phonetic: "কে এস্তাস আহিচেন্ডো",
-        audio: ""
-      },
-      {
-        bn: "কোথায় যাব?",
-        en: "Where will you go?",
-        native: "¿A dónde irás?",
-        phonetic: "আ দোন্দে ইরাস",
-        audio: ""
-      },
-      {
-        bn: "হাসপাতাল কোথায়?",
-        en: "Where is the hospital?",
-        native: "¿Dónde está el hospital?",
-        phonetic: "দোন্দে এস্তা এল হসপিতাল",
-        audio: ""
-      },
-      {
-        bn: "ধন্যবাদ",
-        en: "Thank you",
-        native: "Gracias",
-        phonetic: "গ্রাসিয়াস",
-        audio: ""
-      }
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "¿Qué estás haciendo?", phonetic: "কে এস্তাস আহিচেন্ডো", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "¿A dónde irás?", phonetic: "আ দোন্দে ইরাস", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "¿Dónde está el hospital?", phonetic: "দোন্দে এস্তা এল হসপিতাল", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Gracias", phonetic: "গ্রাসিয়াস", audio: "" }
+    ],
+    it: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Cosa stai facendo?", phonetic: "কোজা স্টাই ফাচেন্ডো?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Dove andrai?", phonetic: "দোভে আন্দ্রাই?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Dov'è l'ospedale?", phonetic: "দোভে ল'অস্পেদালে?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Grazie", phonetic: "গ্রাতসে", audio: "" }
+    ],
+    pt: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "O que você está fazendo?", phonetic: "ও কে ভোসে এস্তা ফাজেন্ডো?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Para onde você vai?", phonetic: "পারা ওন্ডে ভোসে ভাই?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Onde fica o hospital?", phonetic: "ওন্ডে ফিকা ও হসপিতাল?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Obrigado", phonetic: "ওব্রিগাদু", audio: "" }
+    ],
+    nl: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Wat ben je aan het doen?", phonetic: "ভাট বেন যে আন হেট ডুয়েন?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Waar ga je naartoe?", phonetic: "ভার গা যে নাতু?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Waar is het ziekenhuis?", phonetic: "ভার ইস হেট জিকেনহাউস?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Dank je", phonetic: "ডাঙ্ক যে", audio: "" }
+    ],
+    be: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Wat doe je?", phonetic: "ভাট ডু যে?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Waar ga je heen?", phonetic: "ভার গা যে হীন?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Waar is het ziekenhuis?", phonetic: "ভার ইস হেট জিকেনহাউস?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Dank u", phonetic: "ডাঙ্ক উ", audio: "" }
+    ],
+    ch: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Was machsch du?", phonetic: "বাস মাখ্স্চ দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Wohin gaasch?", phonetic: "ভোহিন গাশ?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Wo isch s Spital?", phonetic: "ভো ইশ স স্পিতাল?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Merci", phonetic: "মেরসি", audio: "" }
+    ],
+    at: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Was machst du?", phonetic: "বাস মাখ্স্ট দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Wohin gehst du?", phonetic: "ভোহিন গেহস্ট দু?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Wo ist das Krankenhaus?", phonetic: "ভো ইস্ট দাস ক্রাঙ্কেনহাউস?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Danke", phonetic: "ডাঙ্কে", audio: "" }
+    ],
+    dk: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Hvad laver du?", phonetic: "ভাদ লাভার দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Hvor skal du hen?", phonetic: "ভোর স্কাল দু হেন?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Hvor er hospitalet?", phonetic: "ভোর এর হসপিতালেত?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Tak", phonetic: "টাক", audio: "" }
+    ],
+    se: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Vad gör du?", phonetic: "ভাদ গোর দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Vart ska du gå?", phonetic: "ভার্ট স্কা দু গো?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Var är sjukhuset?", phonetic: "ভার এর শিউখুসেত?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Tack", phonetic: "টাক", audio: "" }
+    ],
+    no: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Hva gjør du?", phonetic: "ভা গোর দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Hvor skal du gå?", phonetic: "ভোর স্কাল দু গো?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Hvor er sykehuset?", phonetic: "ভোর এর সিউখুসেত?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Takk", phonetic: "টাক", audio: "" }
+    ],
+    fi: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Mitä teet?", phonetic: "মিতা তেত?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Minne aiot mennä?", phonetic: "মিন্নে আইওত মেন্না?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Missä on sairaala?", phonetic: "মিসসা অন সাইরালা?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Kiitos", phonetic: "কিতোস", audio: "" }
+    ],
+    pl: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Co robisz?", phonetic: "ত্সো রোবিশ?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Dokąd pójdziesz?", phonetic: "দোকঁ পুজ্দজেশ?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Gdzie jest szpital?", phonetic: "জ্দজে ইস্ট স্পিতাল?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Dziękuję", phonetic: "জেংকুযে", audio: "" }
+    ],
+    cz: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Co děláš?", phonetic: "ত্সো দেলাশ?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Kam půjdeš?", phonetic: "কাম পুজদেশ?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Kde je nemocnice?", phonetic: "ক্দে ই নেমোৎসনিতসে?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Děkuji", phonetic: "দেকুজি", audio: "" }
+    ],
+    hu: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Mit csinálsz?", phonetic: "মিত চিনাল্স?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Hová mész?", phonetic: "হোভা মেশ?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Hol van a kórház?", phonetic: "হোল ভান আ কোরহাজ?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Köszönöm", phonetic: "কোসোনম", audio: "" }
+    ],
+    ro: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Ce faci?", phonetic: "চে ফাচি?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Unde vei merge?", phonetic: "উন্ডে ভেই মের্জে?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Unde este spitalul?", phonetic: "উন্ডে এস্তে স্পিতালুল?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Mulțumesc", phonetic: "মুলত্সুমেস্ক", audio: "" }
+    ],
+    bg: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Какво правиш?", phonetic: "কাকভো প্রাভিশ?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Къде ще отидеш?", phonetic: "কদে শে ওতিদেশ?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Къде е болницата?", phonetic: "কদে এ বোলনিতসা?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Благодаря", phonetic: "ব্লাগাদারিয়া", audio: "" }
+    ],
+    gr: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Τι κάνεις;", phonetic: "তি কানিস?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Πού θα πας;", phonetic: "পু থা পাস?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Πού είναι το νοσοκομείο;", phonetic: "পু ইনে তো নোসোকোমি?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Ευχαριστώ", phonetic: "এফহারিস্টো", audio: "" }
+    ],
+    ie: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Cad atá tú ag déanamh?", phonetic: "ক্যাড আতা তু আগ ডেইনাভ?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Cá háit a rachaidh tú?", phonetic: "কা হাইট আ রাখি তু?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Cá bhfuil an t-ospidéal?", phonetic: "কা ভুইল আন ত-অস্পিদেল?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Go raibh maith agat", phonetic: "গো রাভ মাখ আগাত", audio: "" }
+    ],
+    lu: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Wat méchs du?", phonetic: "ভাট মেখ্স দু?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Wou gees du hin?", phonetic: "ভু গেস দু হিন?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Wou ass de Spidol?", phonetic: "ভু আস দে স্পিদল?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Merci", phonetic: "মেরসি", audio: "" }
+    ],
+    is: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Hvað ertu að gera?", phonetic: "কভাদ এরটু আ গেরা?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Hvert ætlar þú að fara?", phonetic: "হার্ট এটলার থু আ ফারা?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Hvar er spítalinn?", phonetic: "হার এর স্পিতালিন?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Takk", phonetic: "টাক", audio: "" }
+    ],
+    mt: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "X'għandek tagħmel?", phonetic: "শ'ঘান্দেক তাগমেল?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Fejn sejjer?", phonetic: "ফেইন সেজ্জের?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Fejn hu s-sptar?", phonetic: "ফেইন হু স-স্পতার?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Grazzi", phonetic: "গ্রাজ্জি", audio: "" }
+    ],
+    si: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Kaj počneš?", phonetic: "কাই পোচনেশ?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Kam boš šel?", phonetic: "কাম বোশ শেল?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Kje je bolnišnica?", phonetic: "ক্যে ই বোলনিশনিকা?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Hvala", phonetic: "হভালা", audio: "" }
+    ],
+    hr: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Što radiš?", phonetic: "শতো রাদিশ?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Kamo ideš?", phonetic: "কামো ইদেশ?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Gdje je bolnica?", phonetic: "জ্দজে ই বোলনিকা?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Hvala", phonetic: "হভালা", audio: "" }
+    ],
+    lv: [
+      { bn: "তুমি কি করছ?", en: "What are you doing?", native: "Ko tu dari?", phonetic: "কো তু দারি?", audio: "" },
+      { bn: "কোথায় যাব?", en: "Where will you go?", native: "Kur tu dosi?", phonetic: "কুর তু দোসি?", audio: "" },
+      { bn: "হাসপাতাল কোথায়?", en: "Where is the hospital?", native: "Kur ir slimnīca?", phonetic: "কুর ইর স্লিম্নীকা?", audio: "" },
+      { bn: "ধন্যবাদ", en: "Thank you", native: "Paldies", phonetic: "পালদিয়েস", audio: "" }
     ],
   };
+
+  // Favorites stored in localStorage key 'favorites'
+  let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
 
   const countrySelect = document.getElementById("country-select");
   const searchInput = document.getElementById("search-input");
   const phrasesList = document.getElementById("phrases-list");
+  const toggleFavoritesBtn = document.getElementById("toggle-favorites");
 
-  function renderPhrases(countryCode, searchTerm="") {
+  let showFavoritesOnly = false;
+
+  function createPhraseId(countryCode, phrase) {
+    // Unique ID for phrase to store favorites
+    return countryCode + '|' + phrase.bn + '|' + phrase.native;
+  }
+
+  function isFavorite(id) {
+    return favorites.includes(id);
+  }
+
+  function toggleFavorite(id) {
+    if (isFavorite(id)) {
+      favorites = favorites.filter(fav => fav !== id);
+    } else {
+      favorites.push(id);
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+
+  function renderPhrases(countryCode, searchTerm = "") {
     const phrases = data[countryCode] || [];
-    const filtered = phrases.filter(p =>
+    let filtered = phrases.filter(p =>
       p.bn.includes(searchTerm) ||
       p.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
       p.native.toLowerCase().includes(searchTerm.toLowerCase()) ||
       p.phonetic.includes(searchTerm)
     );
+
+    if (showFavoritesOnly) {
+      filtered = filtered.filter(p => isFavorite(createPhraseId(countryCode, p)));
+    }
+
     phrasesList.innerHTML = "";
+
     if (filtered.length === 0) {
-      phrasesList.innerHTML = "<li>কোনো ফলাফল পাওয়া যায়নি।</li>";
+      const noResultLi = document.createElement("li");
+      noResultLi.className = "text-center text-slate-500 py-8 select-none";
+      noResultLi.textContent = showFavoritesOnly ? "ফেভারিট তালিকা খালি।" : "কোনো ফলাফল পাওয়া যায়নি।";
+      phrasesList.appendChild(noResultLi);
       return;
     }
+
     filtered.forEach(p => {
+      const phraseId = createPhraseId(countryCode, p);
       const li = document.createElement("li");
-      li.className = "phrase-item";
-      li.innerHTML = `
-        <div class="phrase-row">
-          <div class="language-text"><span class="phrase-label">বাংলা:</span> ${p.bn}</div>
-          <div class="language-text"><span class="phrase-label">নেটিভ ভাষা:</span> ${p.native}</div>
-          <div class="language-text"><span class="phrase-label">ইংরেজি:</span> ${p.en}</div>
-        </div>
-        <div class="phonetic-text">উচ্চারণ: ${p.phonetic}</div>
-      `;
+      li.className = "bg-white rounded-lg shadow-md p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6";
+
+      // Left content: texts
+      const textWrapper = document.createElement("div");
+      textWrapper.className = "flex flex-col sm:flex-row sm:gap-6 flex-wrap flex-1 min-w-0";
+
+      const createTextBlock = (label, text, extraClasses = "") => {
+        const div = document.createElement("div");
+        div.className = `min-w-[140px] flex-1 ${extraClasses}`;
+        const spanLabel = document.createElement("span");
+        spanLabel.className = "font-semibold text-blue-700";
+        spanLabel.textContent = label + ": ";
+        const spanText = document.createElement("span");
+        spanText.className = "truncate";
+        spanText.textContent = text;
+        div.appendChild(spanLabel);
+        div.appendChild(spanText);
+        return div;
+      };
+
+      textWrapper.appendChild(createTextBlock("বাংলা", p.bn));
+      textWrapper.appendChild(createTextBlock("নেটিভ ভাষা", p.native));
+      textWrapper.appendChild(createTextBlock("ইংরেজি", p.en));
+
+      li.appendChild(textWrapper);
+
+      // Right content: phonetic, audio, favorite button
+      const rightWrapper = document.createElement("div");
+      rightWrapper.className = "flex flex-col items-end space-y-2 min-w-[140px]";
+
+      const phoneticDiv = document.createElement("div");
+      phoneticDiv.className = "italic text-slate-600 text-sm select-text";
+      phoneticDiv.textContent = "উচ্চারণ: " + p.phonetic;
+      rightWrapper.appendChild(phoneticDiv);
+
+      if (p.audio) {
+        const audioEl = document.createElement("audio");
+        audioEl.controls = true;
+        audioEl.src = p.audio;
+        audioEl.className = "w-full max-w-[150px] rounded-md shadow-sm";
+        rightWrapper.appendChild(audioEl);
+      } else {
+        // Show a placeholder image representing audio (microphone icon)
+        const imgAudio = document.createElement("img");
+        imgAudio.src = "https://placehold.co/150x40?text=Audio+Not+Available&font=roboto";
+        imgAudio.alt = "অডিও উপলব্ধ নেই - একটি মাইক্রোফোন আইকন সহ একটি প্লেসহোল্ডার ছবি";
+        imgAudio.className = "w-full max-w-[150px] rounded-md opacity-40 select-none";
+        rightWrapper.appendChild(imgAudio);
+      }
+
+      // Favorite toggle button
+      const favBtn = document.createElement("button");
+      favBtn.type = "button";
+      favBtn.setAttribute("aria-label", isFavorite(phraseId) ? "ফেভারিট থেকে সরান" : "ফেভারিটে যোগ করুন");
+      favBtn.className = "text-yellow-400 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded self-start sm:self-auto";
+      favBtn.innerHTML = isFavorite(phraseId) ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+      favBtn.addEventListener("click", () => {
+        toggleFavorite(phraseId);
+        renderPhrases(countryCode, searchTerm);
+      });
+      rightWrapper.appendChild(favBtn);
+
+      li.appendChild(rightWrapper);
+
       phrasesList.appendChild(li);
     });
   }
@@ -249,7 +386,25 @@
   searchInput.addEventListener("input", () => {
     renderPhrases(countrySelect.value, searchInput.value.trim());
   });
+
+  toggleFavoritesBtn.addEventListener("click", () => {
+    showFavoritesOnly = !showFavoritesOnly;
+    toggleFavoritesBtn.setAttribute("aria-pressed", showFavoritesOnly.toString());
+    toggleFavoritesBtn.classList.toggle("text-yellow-400");
+    toggleFavoritesBtn.classList.toggle("text-yellow-300");
+    renderPhrases(countrySelect.value, searchInput.value.trim());
+  });
+
+  // Accessibility: focus visible outline for keyboard users
+  document.body.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      document.body.classList.add('user-is-tabbing');
+    }
+  });
+  document.body.addEventListener('mousedown', () => {
+    document.body.classList.remove('user-is-tabbing');
+  });
 </script>
+
 </body>
 </html>
-
