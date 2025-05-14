@@ -1,216 +1,102 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>প্রবাসী সহায়ক - ইউরোপ ভিত্তিক</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 20px;
-    background: #f0f4f8;
-    color: #333;
-  }
-  h1 {
-    color: #2c3e50;
-    text-align: center;
-  }
-  .section {
-    background: white;
-    border-radius: 8px;
-    margin: 15px auto;
-    padding: 15px 20px;
-    max-width: 700px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  h2 {
-    border-bottom: 2px solid #2980b9;
-    padding-bottom: 6px;
-    color: #2980b9;
-    margin-top: 0;
-  }
-  ul, ol {
-    margin-left: 20px;
-  }
-  .emergency-list li {
-    margin-bottom: 8px;
-  }
-  label {
-    font-weight: 600;
-    display: block;
-    margin: 10px 0 5px;
-  }
-  select, textarea, button {
-    width: 100%;
-    padding: 8px 12px;
-    margin-bottom: 12px;
-    border-radius: 5px;
-    border: 1px solid #bbb;
-    font-size: 1em;
-    box-sizing: border-box;
-  }
-  button {
-    background: #2980b9;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #1c5980;
-  }
-  #translation-output {
-    white-space: pre-wrap;
-    background: #ecf0f1;
-    border-radius: 5px;
-    padding: 10px;
-    min-height: 60px;
-  }
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #777;
-    font-size: 0.9em;
-  }
-  @media(max-width: 720px){
-    .section {
-      margin: 15px 10px;
-      padding: 15px;
-    }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🇪🇺 প্রবাসী সহায়ক – ইউরোপের সেনজেন দেশসমূহ</title>
+  <style>
+    /* আপনার পূর্বের CSS কোড এখানে যুক্ত করুন */
+  </style>
 </head>
 <body>
 
-<h1>🇪🇺 প্রবাসী সহায়ক - ইউরোপ ভিত্তিক</h1>
+  <h1>🇪🇺 প্রবাসী সহায়ক – ইউরোপের সেনজেন দেশসমূহ</h1>
 
-<div class="section" id="info-section">
-  <h2>১. গুরুত্বপূর্ণ দেশের নির্দেশিকা</h2>
-  <select id="country-select">
-    <option value="">-- একটি দেশ নির্বাচন করুন --</option>
-    <option value="germany">জার্মানি</option>
-    <option value="france">ফ্রান্স</option>
-    <option value="spain">স্পেন</option>
-    <option value="netherlands">নেদারল্যান্ডস</option>
-    <option value="italy">ইতালি</option>
-  </select>
-  <div id="country-info" style="margin-top:10px; font-size: 0.95em; line-height: 1.4;"></div>
-</div>
+  <div class="section" id="country-select-section">
+    <h2>১. একটি দেশ নির্বাচন করুন</h2>
+    <select id="country-select">
+      <option value="">-- একটি দেশ নির্বাচন করুন --</option>
+      <option value="austria">অস্ট্রিয়া</option>
+      <option value="belgium">বেলজিয়াম</option>
+      <option value="czech">চেক প্রজাতন্ত্র</option>
+      <!-- অন্যান্য দেশসমূহের অপশন এখানে যুক্ত করুন -->
+    </select>
+    <div id="country-info" style="margin-top:10px; font-size: 0.95em; line-height: 1.4;"></div>
+  </div>
 
-<div class="section" id="emergency-section">
-  <h2>২. জরুরি ফোন নম্বর</h2>
-  <ul class="emergency-list">
-    <li><strong>জার্মানি:</strong> 112 (জরুরি), 110 (পুলিশ)</li>
-    <li><strong>ফ্রান্স:</strong> 112 (জরুরি), 17 (পুলিশ)</li>
-    <li><strong>স্পেন:</strong> 112 (জরুরি), 091 (পুলিশ)</li>
-    <li><strong>নেদারল্যান্ডস:</strong> 112 (জরুরি), 0900-8844 (পুলিশ)</li>
-    <li><strong>ইতালি:</strong> 112 (জরুরি), 113 (পুলিশ)</li>
-  </ul>
-</div>
+  <div class="section" id="emergency-section">
+    <h2>২. জরুরি ফোন নম্বর</h2>
+    <ul class="emergency-list">
+      <li><strong>জার্মানি:</strong> 112 (জরুরি), 110 (পুলিশ)</li>
+      <li><strong>ফ্রান্স:</strong> 112 (জরুরি), 17 (পুলিশ)</li>
+      <!-- অন্যান্য দেশের জরুরি নম্বর এখানে যুক্ত করুন -->
+    </ul>
+  </div>
 
-<div class="section" id="language-section">
-  <h2>৩. সাধারণ বাক্য অনুবাদ (বাংলা থেকে দেশীয় ভাষা)</h2>
-  <label for="input-text">বাংলা বাক্য লিখুন :</label>
-  <textarea id="input-text" rows="3" placeholder="যেমন: আমি হাসপাতালে যেতে চাই।"></textarea>
-  <label for="language-select">ভাষা নির্বাচন করুন :</label>
-  <select id="language-select">
-    <option value="">-- একটি ভাষা নির্বাচন করুন --</option>
-    <option value="de">জার্মানী</option>
-    <option value="fr">ফরাসি</option>
-    <option value="es">স্প্যানিশ</option>
-    <option value="nl">ডাচ</option>
-    <option value="it">ইতালিয়ান</option>
-  </select>
-  <button id="translate-btn">অনুবাদ দেখুন</button>
-  <div id="translation-output"></div>
-</div>
+  <div class="section" id="language-section">
+    <h2>৩. সাধারণ বাক্য অনুবাদ (বাংলা থেকে দেশীয় ভাষা)</h2>
+    <label for="input-text">বাংলা বাক্য লিখুন :</label>
+    <textarea id="input-text" rows="3" placeholder="যেমন: আমি হাসপাতালে যেতে চাই।"></textarea>
+    <label for="language-select">ভাষা নির্বাচন করুন :</label>
+    <select id="language-select">
+      <option value="">-- একটি ভাষা নির্বাচন করুন --</option>
+      <option value="de">জার্মানী</option>
+      <option value="fr">ফরাসি</option>
+      <!-- অন্যান্য ভাষার অপশন এখানে যুক্ত করুন -->
+    </select>
+    <button id="translate-btn">অনুবাদ দেখুন</button>
+    <div id="translation-output"></div>
+  </div>
 
-<footer>
-  © 2024 প্রবাসী সহায়ক (ডেমো) - ইউরোপ ভিত্তিক তথ্য
-</footer>
+  <footer>
+    © ২০২৫ প্রবাসী সহায়ক – ইউরোপ ভিত্তিক তথ্য
+  </footer>
 
-<script>
-  const countryInfoData = {
-    germany: \`- দীর্ঘমেয়াদী ভিসা পেতে স্থানীয় Ausländerbehörde-তে যোগাযোগ করুন।
-- স্বাস্থ্য বীমা প্রয়োজন, সাধারণত gesetzlichen Krankenversicherung।
-- কাজের জন্য অনুমতি নীতি কঠোর, নিয়মাবলী অনুসরণ আবশ্যক।
-- স্থানীয় ভাষা শেখা অত্যন্ত গুরুত্বপূর্ণ।
-\`,
-    france: \`- Aufenthaltstitel (বাসস্থানের অনুমতি) বাধ্যতামূলক।
-- স্বাস্থ্য সেবা CAF-র মাধ্যমে পাওয়া যায়।
-- কাজের জন্য অনুমতি জানুন এবং পৌরসভায় নিবন্ধন করুন।
-- স্থানীয় ভাষা শেখার কোর্স অবলম্বন করুন।
-\`,
-    spain: \`- NIE (বিদেশি পরিচয় নম্বর) প্রাপ্তি প্রাথমিক কাজ।
-- স্বাস্থ্য বীমার আওতায় আসার জন্য স্থানীয় পুলিশ স্টেশনে নিবন্ধন।
-- কর্মসংস্থান ও ভিসা বিষয়ক তথ্য ব্যাপক।
-- স্পেনীয় ভাষায় দক্ষতা অবলম্বন জরুরি।
-\`,
-    netherlands: \`- BSN নম্বর (সিভিল সার্ভিস নম্বর) নিতে পৌরসভায় যান।
-- স্বাস্থ্য বীমা বাধ্যতামূলক, Zorgverzekering।
-- কাজের অনুমতি এবং ভিসা নিয়মকানুন কঠোর নিরীক্ষণ।
-- স্থানীয় ভাষা শেখার সুযোগ নিন।
-\`,
-    italy: \`- Permesso di soggiorno (বাসস্থানের অনুমতি) আবশ্যক।
-- স্বাস্থ্য সেবা SSN মাধ্যমে পাওয়া যায়।
-- কাজের অনুমতিসহ বিভিন্ন বিধিমালা মেনে চলতে হবে।
-- ইতালিয়ান ভাষায় যোগাযোগ দক্ষতা প্রয়োজন।
-\`
-  };
+  <script>
+    const countryInfoData = {
+      austria: `অস্ট্রিয়া সম্পর্কে তথ্য...`,
+      belgium: `বেলজিয়াম সম্পর্কে তথ্য...`,
+      czech: `চেক প্রজাতন্ত্র সম্পর্কে তথ্য...`,
+      // অন্যান্য দেশসমূহের তথ্য এখানে যুক্ত করুন
+    };
 
-  document.getElementById('country-select').addEventListener('change', (e) => {
-    const selected = e.target.value;
-    const infoDiv = document.getElementById('country-info');
-    if (selected && countryInfoData[selected]) {
-      infoDiv.textContent = countryInfoData[selected];
-    } else {
-      infoDiv.textContent = '';
-    }
-  });
+    document.getElementById('country-select').addEventListener('change', (e) => {
+      const selected = e.target.value;
+      const infoDiv = document.getElementById('country-info');
+      if (selected && countryInfoData[selected]) {
+        infoDiv.textContent = countryInfoData[selected];
+      } else {
+        infoDiv.textContent = '';
+      }
+    });
 
-  // Simple phrase dictionary for demo translation (limited scope)
-  const phraseTranslations = {
-    'আমি হাসপাতালে যেতে চাই।': {
-      de: 'Ich möchte ins Krankenhaus gehen.',
-      fr: 'Je veux aller à l\'hôpital.',
-      es: 'Quiero ir al hospital.',
-      nl: 'Ik wil naar het ziekenhuis gaan.',
-      it: 'Voglio andare in ospedale.'
-    },
-    'আমি সাহায্য চাই।': {
-      de: 'Ich brauche Hilfe.',
-      fr: 'J\'ai besoin d\'aide.',
-      es: 'Necesito ayuda.',
-      nl: 'Ik heb hulp nodig.',
-      it: 'Ho bisogno di aiuto.'
-    },
-    'মুক্তিযুদ্ধ সম্পর্কে তথ্য দিন।': {
-      de: 'Geben Sie Informationen über den Unabhängigkeitskrieg.',
-      fr: 'Donnez des informations sur la guerre d\'indépendance.',
-      es: 'Proporcione información sobre la guerra de independencia.',
-      nl: 'Geef informatie over de onafhankelijkheidsoorlog.',
-      it: 'Fornire informazioni sulla guerra d\'indipendenza.'
-    }
-  };
+    const phraseTranslations = {
+      'আমি হাসপাতালে যেতে চাই।': {
+        de: 'Ich möchte ins Krankenhaus gehen.',
+        fr: 'Je veux aller à l\'hôpital.',
+        // অন্যান্য ভাষার অনুবাদ এখানে যুক্ত করুন
+      },
+      // অন্যান্য বাক্যসমূহের অনুবাদ এখানে যুক্ত করুন
+    };
 
-  document.getElementById('translate-btn').addEventListener('click', () => {
-    const inputText = document.getElementById('input-text').value.trim();
-    const lang = document.getElementById('language-select').value;
-    const outputDiv = document.getElementById('translation-output');
+    document.getElementById('translate-btn').addEventListener('click', () => {
+      const inputText = document.getElementById('input-text').value.trim();
+      const lang = document.getElementById('language-select').value;
+      const outputDiv = document.getElementById('translation-output');
 
-    if (!inputText || !lang) {
-      alert('অনুগ্রহ করে বাক্য এবং ভাষা উভয় নির্বাচন করুন।');
-      return;
-    }
+      if (!inputText || !lang) {
+        alert('অনুগ্রহ করে বাক্য এবং ভাষা উভয় নির্বাচন করুন।');
+        return;
+      }
 
-    const translations = phraseTranslations[inputText];
-    if (translations && translations[lang]) {
-      outputDiv.textContent = translations[lang];
-    } else {
-      outputDiv.textContent = 'দুঃখিত, এই বাক্যের জন্য অনুবাদ পাওয়া যায়নি।';
-    }
-  });
-</script>
+      const translations = phraseTranslations[inputText];
+      if (translations && translations[lang]) {
+        outputDiv.textContent = translations[lang];
+      } else {
+        outputDiv.textContent = 'দুঃখিত, এই বাক্যের জন্য অনুবাদ পাওয়া যায়নি।';
+      }
+    });
+  </script>
 
 </body>
 </html>
-
