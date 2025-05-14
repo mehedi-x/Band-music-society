@@ -73,11 +73,3 @@ const supportData = {
     visa: "Visit the Finnish Immigration Service website for visa application.",
     housing: "Check Oikotie.fi and Vuokraovi.com for apartments.",
     job: "Use TE Services and LinkedIn for job listings.",
-    sim: "Elisa, DNA, and Telia are top providers.",
-    banking: "Nordea and OP Financial Group are commonly used.",
-  },
-  greece: {
-    visa: "Apply via the Greek Embassy website for visa requirements.",
-    housing: "Check Spitogatos.gr and XE.gr for apartments.",
-    job: "Use Kariera.gr and LinkedIn for job listings.",
-   
