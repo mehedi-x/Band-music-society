@@ -67,3 +67,22 @@ function checkAnswer(inputId, correctAnswer, index) {
     result.style.color = "red";
   }
 }
+function speakText(text, lang) {
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // ভাষা সেটিং (lang ফাইল অনুসারে সেট করবেন)
+  const langMap = {
+    fr: 'fr-FR',
+    de: 'de-DE',
+    ru: 'ru-RU',
+    it: 'it-IT',
+    es: 'es-ES',
+    pl: 'pl-PL',
+    ro: 'ro-RO',
+    pt: 'pt-PT',
+    en: 'en-US'
+  };
+
+  utterance.lang = langMap[lang] || 'en-US';
+  speechSynthesis.speak(utterance);
+}
