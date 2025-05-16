@@ -1,44 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EuroHelp 360</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>LinguaEurope - ভাষা নির্বাচন</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🌍 EuroHelp 360</h1>
-    <p>Select a Schengen Country to Get All Support:</p>
-    
-    <select id="countrySelector" onchange="loadSupportData()">
-      <option value="">-- Select Country --</option>
-      <option value="germany">Germany</option>
-      <option value="france">France</option>
-      <option value="netherlands">Netherlands</option>
-      <option value="sweden">Sweden</option>
-      <option value="spain">Spain</option>
-      <option value="italy">Italy</option>
-      <option value="portugal">Portugal</option>
-      <option value="austria">Austria</option>
-      <option value="belgium">Belgium</option>
-      <option value="denmark">Denmark</option>
-      <option value="finland">Finland</option>
-      <option value="greece">Greece</option>
-      <option value="hungary">Hungary</option>
-      <option value="czech">Czech Republic</option>
-      <option value="slovakia">Slovakia</option>
-      <option value="slovenia">Slovenia</option>
-      <option value="estonia">Estonia</option>
-      <option value="latvia">Latvia</option>
-      <option value="lithuania">Lithuania</option>
-    </select>
-
-    <div id="supportSections">
-      <!-- সাপোর্ট সেকশনগুলো এখানে আসবে -->
-    </div>
+  <h1>🇪🇺 ইউরোপীয় ভাষা শেখা শুরু করুন</h1>
+  <div id="language-list">
+    <button onclick="selectLanguage('french')">🇫🇷 ফরাসি</button>
+    <button onclick="selectLanguage('german')">🇩🇪 জার্মান</button>
+    <button onclick="selectLanguage('spanish')">🇪🇸 স্প্যানিশ</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function selectLanguage(lang) {
+      localStorage.setItem('selectedLanguage', lang);
+      window.location.href = 'lessons.html';
+    }
+  </script>
 </body>
 </html>
