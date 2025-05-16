@@ -63,3 +63,7 @@ audio {
 .quiz p {
   margin-top: 8px;
 }
+button {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
