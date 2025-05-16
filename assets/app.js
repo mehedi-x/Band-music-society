@@ -32,6 +32,8 @@ fetch(`data/${lang}.json`)
       container.innerHTML += `
         <div class="lesson">
           <h3>${item.text} (${item.pronunciation})</h3>
+          <button onclick="speakText('${item.text}', '${lang}')">🔊 উচ্চারণ শুনুন</button>
+
           <p>বাংলা: ${item.translation_bn}</p>
           <p>English: ${item.translation_en}</p>
           <audio controls>
