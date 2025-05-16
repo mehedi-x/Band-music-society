@@ -86,3 +86,24 @@ function speakText(text, lang) {
   utterance.lang = langMap[lang] || 'en-US';
   speechSynthesis.speak(utterance);
 }
+function practiceSpeaking(expectedText) {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = 'en-US'; // আপনি চাইলে langMap থেকে সেট করতে পারেন
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.start();
+
+  recognition.onresult = (event) => {
+    const spokenText = event.results[0][0].transcript.trim().toLowerCase();
+    const expected = expectedText.trim().toLowerCase();
+
+    if (spokenText === expected) {
+      alert("✅ দারুন! আপনি সঠিকভাবে উচ্চারণ করেছেন!");
+    } else {
+      alert(`❌ মেলেনি। আপনি বললেন: "${spokenText}"\nআবার চেষ্টা করুন!`);
+    }
+  };
+
+  recognition.onerror = (event) => {
+    alert("⚠️ স্পিচ রিকগনিশনে সমস্যা হয়েছে: " + event
