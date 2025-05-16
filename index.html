@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Speak Eu - বাসা প্র্যাকটিস ও কুইজ</title>
+<title>Speak Eu - বহুভাষাভিত্তিক বাসা প্র্যাকটিস ও কুইজ (অ্যাড সহ)</title>
 <style>
+  /* Reset and base */
   * {
     box-sizing: border-box;
   }
@@ -13,61 +14,179 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f9fbfd;
     color: #222;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
   }
   header {
     background: #003366;
     color: white;
     padding: 1.2rem 2rem;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 1.8rem;
     text-align: center;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
   }
   main {
     flex-grow: 1;
-    max-width: 960px;
+    max-width: 1100px;
     margin: 1rem auto 2rem;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 2rem;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 14px;
+    box-shadow: 0 22px 50px rgba(0,0,0,0.12);
     display: flex;
     flex-direction: column;
   }
-  .profile-section {
+
+  /* Landing page */
+  #landingPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #landingPage h1 {
+    font-size: 2.8rem;
+    color: #003366;
+    font-weight: 900;
     margin-bottom: 1rem;
+  }
+  #countrySelector {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .country-card {
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 1.8rem 2rem;
+    width: 260px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: white;
+    user-select: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 140px;
+    border: 4px solid transparent;
+  }
+  .country-card:hover, .country-card:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.26);
+    border-color: #ffd700;
+    outline: none;
+  }
+  .country-senzen {
+    background: linear-gradient(135deg, #2a7aee, #0056b8);
+  }
+  .country-muktshopno {
+    background: linear-gradient(135deg, #3a9d23, #1e5e0a);
+  }
+  .country-russia {
+    background: linear-gradient(135deg, #dd3333, #b22222);
+  }
+
+  /* Country page container */
+  .country-page {
+    display: none;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  .country-page.active {
+    display: flex;
+  }
+
+  /* Ads container styling */
+  .ad-banner {
+    border: 2px dashed #aaa;
+    color: #666;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    margin: 12px 0;
+    text-align: center;
+    border-radius: 14px;
+    user-select:none;
+    background-color: #f9f9f9;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .tabs button {
+    flex: 1;
+    cursor: pointer;
+    background: #dbe5ff;
+    color: #003366;
+    border: none;
+    padding: 0.65rem 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    user-select: none;
+    transition: background-color 0.25s ease;
+  }
+  .tabs button.active {
+    background: #0052cc;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 82, 204, 0.6);
+  }
+  .tabs button:focus {
+    outline: 3px solid #ffd700;
+  }
+
+  /* Profile Section */
+  .profile-section {
     background: #e6f0ff;
-    border: 1px solid #a0c1ff;
+    border: 1.5px solid #a0c1ff;
     padding: 1rem 1.5rem;
     border-radius: 12px;
+    max-width: 420px;
+    margin-bottom: 1rem;
   }
   .profile-section h2 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.6rem 0;
     color: #00205c;
+  }
+  .profile-section label {
+    font-weight: 600;
+    color: #003366;
   }
   select, input[type="text"] {
     width: 100%;
-    max-width: 300px;
-    padding: 0.5rem 0.8rem;
+    max-width: 320px;
+    padding: 0.55rem 0.9rem;
     border: 1.5px solid #0052cc;
     border-radius: 8px;
     font-size: 1rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.85rem;
+    transition: border-color 0.3s ease;
   }
+  select:focus, input[type="text"]:focus {
+    border-color: #003a99;
+    outline: none;
+  }
+
   button.save-btn, button.edit-profile-btn, button.submit-quiz-btn, button.retry-quiz-btn {
     background: #0052cc;
     color: white;
     border: none;
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 1.6rem;
     font-weight: 700;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    max-width: 320px;
-    user-select: none;
+    max-width: 360px;
+    user-select:none;
   }
   button.save-btn:hover, button.edit-profile-btn:hover, button.submit-quiz-btn:hover, button.retry-quiz-btn:hover {
     background: #003a99;
@@ -85,12 +204,15 @@
   #quizFeedback.incorrect {
     color: red;
   }
+
+  /* Practice Table */
   .table-container {
-    margin-top: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow-x: auto;
-    max-height: 600px;
+    border: 1.5px solid #ccc;
+    border-radius: 12px;
+    overflow: auto;
+    max-height: 520px;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
   }
   table {
     width: 100%;
@@ -98,181 +220,485 @@
     min-width: 700px;
   }
   th, td {
-    padding: 0.8rem;
+    padding: 0.9rem 1.3rem;
     text-align: left;
     border-bottom: 1px solid #ddd;
     vertical-align: top;
+    font-size: 1rem;
   }
   th {
     background-color: #f2f2f2;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 10;
+    font-weight: 700;
+    user-select:none;
   }
+
+  /* Quiz Section */
   .quiz-container {
-    max-width: 700px;
-    margin: 1rem auto 0 auto;
+    max-width: 720px;
+    margin: 0 auto 2rem;
   }
   .quiz-question {
-    font-weight: 700;
-    font-size: 1.15rem;
+    font-weight: 900;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
+    line-height: 1.3;
   }
   .quiz-options {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
     margin-bottom: 1rem;
   }
   .quiz-options li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
   }
   .quiz-options label {
     display: block;
     cursor: pointer;
     background: #e7eaf6;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    user-select: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 10px;
+    user-select:none;
     transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
   }
   .quiz-options input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 12px;
   }
   .quiz-options label:hover {
     background-color: #c8d4ff;
   }
-  .user-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
+  /* User Profile Box */
   .user-profile-box {
     background: #f0f5ff;
-    border: 1px solid #a0c1ff;
+    border: 1.5px solid #a0c1ff;
     border-radius: 12px;
-    padding: 1rem 1.5rem;
+    padding: 1.1rem 1.7rem;
     margin-bottom: 1rem;
-    max-width: 360px;
+    max-width: 380px;
   }
   .user-profile-box h3 {
-    margin-top: 0; margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    margin-top: 0; margin-bottom: 0.6rem;
+    font-size: 1.3rem;
     color: #003366;
+    font-weight: 900;
   }
   .user-profile-info {
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.05rem;
   }
+
   /* Responsive */
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     main {
-      margin: 1rem;
-      padding: 1rem;
+      margin: 1rem 1rem 2rem;
+      padding: 1rem 1rem 2rem;
       max-width: 100%;
     }
     .table-container {
-      max-height: 400px;
+      max-height: 350px;
     }
+    .country-card {
+      width: 240px;
+    }
+    .quiz-container {
+      max-width: 100%;
+      padding: 0 0.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .tabs button {
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
+    }
+    .country-card {
+      width: 100%;
+      font-size: 1.15rem;
+      padding: 1.4rem 1.6rem;
+    }
+  }
+
+  /* Color themes for countries */
+
+  /* Senzen: Blue theme */
+  #senzenPage header, #senzenPage .profile-section {
+    background-color: #2563eb; /* bright blue */
+    border-color: #3b82f6;
+    color: white;
+  }
+  #senzenPage header {
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.7);
+  }
+  #senzenPage button.save-btn, 
+  #senzenPage button.edit-profile-btn, 
+  #senzenPage button.submit-quiz-btn, 
+  #senzenPage button.retry-quiz-btn {
+    background-color: #2563eb;
+  }
+  #senzenPage button.save-btn:hover,
+  #senzenPage button.edit-profile-btn:hover,
+  #senzenPage button.submit-quiz-btn:hover,
+  #senzenPage button.retry-quiz-btn:hover {
+    background-color: #1d4ed8;
+  }
+  #senzenPage .tabs button.active {
+    background-color: #1d4ed8;
+  }
+  #senzenPage .ad-banner {
+    border-color: #2563eb;
+    color: #1d4ed8;
+    background-color: #e0e7ff;
+  }
+
+  /* MuktShopno: Green theme */
+  #muktshopnoPage header, #muktshopnoPage .profile-section {
+    background-color: #16a34a; /* green */
+    border-color: #22c55e;
+    color: white;
+  }
+  #muktshopnoPage header {
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.7);
+  }
+  #muktshopnoPage button.save-btn, 
+  #muktshopnoPage button.edit-profile-btn, 
+  #muktshopnoPage button.submit-quiz-btn, 
+  #muktshopnoPage button.retry-quiz-btn {
+    background-color: #16a34a;
+  }
+  #muktshopnoPage button.save-btn:hover,
+  #muktshopnoPage button.edit-profile-btn:hover,
+  #muktshopnoPage button.submit-quiz-btn:hover,
+  #muktshopnoPage button.retry-quiz-btn:hover {
+    background-color: #15803d;
+  }
+  #muktshopnoPage .tabs button.active {
+    background-color: #15803d;
+  }
+  #muktshopnoPage .ad-banner {
+    border-color: #16a34a;
+    color: #15803d;
+    background-color: #dcfce7;
+  }
+
+  /* Russia: Red theme */
+  #russiaPage header, #russiaPage .profile-section {
+    background-color: #dc2626; /* red */
+    border-color: #ef4444;
+    color: white;
+  }
+  #russiaPage header {
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.7);
+  }
+  #russiaPage button.save-btn, 
+  #russiaPage button.edit-profile-btn, 
+  #russiaPage button.submit-quiz-btn, 
+  #russiaPage button.retry-quiz-btn {
+    background-color: #dc2626;
+  }
+  #russiaPage button.save-btn:hover,
+  #russiaPage button.edit-profile-btn:hover,
+  #russiaPage button.submit-quiz-btn:hover,
+  #russiaPage button.retry-quiz-btn:hover {
+    background-color: #b91c1c;
+  }
+  #russiaPage .tabs button.active {
+    background-color: #b91c1c;
+  }
+  #russiaPage .ad-banner {
+    border-color: #dc2626;
+    color: #b91c1c;
+    background-color: #fee2e2;
+  }
+
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
 </style>
 </head>
 <body>
-<header>Speak Eu</header>
+<header id="mainHeader">Speak Eu - বহুভাষাভিত্তিক বাসা প্র্যাকটিস ও কুইজ</header>
 <main>
-  <section id="profileSetupSection" class="profile-section" aria-label="প্রোফাইল সেটআপ">
-    <h2>আপনার প্রোফাইল তৈরি করুন</h2>
-    <input type="text" id="inputName" placeholder="আপনার নাম লিখুন" aria-label="নাম লিখুন" autocomplete="off" />
-    <button id="btnSaveProfile" class="save-btn" aria-label="প্রোফাইল সংরক্ষণ করুন">সংরক্ষণ করুন</button>
-    <div id="profileMessage" role="alert" aria-live="polite"></div>
-  </section>
 
-  <section id="profileViewSection" class="user-profile-box" aria-label="ব্যবহারকারীর প্রোফাইল" style="display:none;">
-    <h3>আপনার প্রোফাইল</h3>
-    <div class="user-profile-info"><strong>নাম:</strong> <span id="profileName"></span></div>
-    <div class="user-profile-info"><strong>ব্যবহারকারী আইডি:</strong> <span id="profileUserId"></span></div>
-    <button id="btnEditProfile" class="edit-profile-btn" aria-label="প্রোফাইল সম্পাদনা করুন">প্রোফাইল সম্পাদনা করুন</button>
-  </section>
-
-  <nav class="tabs" role="tablist" aria-label="অ্যাপ ট্যাব">
-    <button role="tab" id="tabPractice" aria-selected="true" aria-controls="panelPractice" tabindex="0" class="active">বাসা প্র্যাকটিস</button>
-    <button role="tab" id="tabQuiz" aria-selected="false" aria-controls="panelQuiz" tabindex="-1">কুইজ</button>
-  </nav>
-
-  <section id="panelPractice" class="tab-content" role="tabpanel" aria-labelledby="tabPractice" tabindex="0">
-    <h2>বাসা প্র্যাকটিস - রাশিয়ান ভাষা</h2>
-    <p>নীচের টেবিলে বাংলা ও রাশিয়ান ভাষার অপরিহার্য ও সাধারণ কথাবার্তা, উচ্চারণ ও ইংরেজি অর্থ দেখানো হয়েছে। উল্লেখ্য: ডেমো হিসেবে প্রথম ৩০টি বাক্য দেওয়া হয়েছে, সর্বমোট ২০০০ বাক্য ধারাবাহিকভাবে সংযোজন সম্ভব।</p>
-    <div class="table-container" role="region" aria-label="বাসা প্র্যাকটিস কথাবার্তার টেবিল">
-      <table>
-        <thead>
-          <tr>
-            <th>বাংলা</th>
-            <th>রাশিয়ান ভাষা</th>
-            <th>উচ্চারণ (ইংরেজি)</th>
-            <th>ইংরেজি অর্থ</th>
-          </tr>
-        </thead>
-        <tbody id="practiceTableBody">
-          <!-- Rows injected by JS -->
-        </tbody>
-      </table>
+  <!-- Landing Page: Choose Country -->
+  <section id="landingPage" aria-label="দেশ নির্বাচন পাতা">
+    <h1>দেশ নির্বাচন করুন</h1>
+    <div id="countrySelector" role="list" aria-label="দেশের তালিকা">
+      <div tabindex="0" class="country-card country-senzen" role="listitem" aria-label="সেনজেন" data-country="senzen">সেনজেন</div>
+      <div tabindex="0" class="country-card country-muktshopno" role="listitem" aria-label="মুক্ত স্বপ্ন দেশ" data-country="muktshopno">মুক্ত স্বপ্ন দেশ</div>
+      <div tabindex="0" class="country-card country-russia" role="listitem" aria-label="রাশিয়া" data-country="russia">রাশিয়া</div>
     </div>
   </section>
 
-  <section id="panelQuiz" class="tab-content" role="tabpanel" aria-labelledby="tabQuiz" tabindex="0" hidden>
-    <h2>কুইজ - রাশিয়ান ভাষা শেখার মূল্যায়ন</h2>
-    <div class="quiz-container" role="region" aria-label="কুইজ প্রশ্ন ও উত্তর নির্বাচন">
-      <p id="quizQuestion" class="quiz-question"></p>
-      <ul id="quizOptions" class="quiz-options" role="radiogroup" aria-live="polite"></ul>
-      <button id="btnSubmitQuiz" class="submit-quiz-btn" aria-label="উত্তর জমা দিন">জমা দিন</button>
-      <button id="btnRetryQuiz" class="submit-quiz-btn" style="display:none; margin-left: 12px;" aria-label="আবার চেষ্টা করুন">আবার চেষ্টা করুন</button>
-      <p id="quizFeedback" role="alert" aria-live="assertive"></p>
-      <p id="quizScore" style="font-weight:700; margin-top:10px;"></p>
-    </div>
+  <!-- Senzen Country Page -->
+  <section id="senzenPage" class="country-page" aria-label="সেনজেন ভাষার প্র্যাকটিস ও কুইজ" tabindex="0" >
+    <header>সেনজেন ভাষা শেখার অ্যাপ</header>
+
+    <nav class="tabs" role="tablist" aria-label="সেনজেন অ্যাপ ট্যাব">
+      <button role="tab" id="senzenPracticeTab" aria-selected="true" aria-controls="senzenPracticePanel" tabindex="0" class="active">বাসা প্র্যাকটিস</button>
+      <button role="tab" id="senzenQuizTab" aria-selected="false" aria-controls="senzenQuizPanel" tabindex="-1">কুইজ</button>
+    </nav>
+
+    <section class="profile-section" aria-label="সেনজেন প্রোফাইল সেটআপ" id="senzenProfileSetup">
+      <h2>আপনার প্রোফাইল তৈরি করুন</h2>
+      <input type="text" id="senzenInputName" placeholder="আপনার নাম লিখুন" aria-label="নাম লিখুন" autocomplete="off" />
+      <button id="senzenBtnSaveProfile" class="save-btn" aria-label="প্রোফাইল সংরক্ষণ করুন">সংরক্ষণ করুন</button>
+      <div id="senzenProfileMessage" role="alert" aria-live="polite"></div>
+    </section>
+    <section class="user-profile-box" aria-label="সেনজেন ব্যবহারকারীর প্রোফাইল" id="senzenProfileView" style="display:none;">
+      <h3>আপনার প্রোফাইল</h3>
+      <div class="user-profile-info"><strong>নাম:</strong> <span id="senzenProfileName"></span></div>
+      <div class="user-profile-info"><strong>ব্যবহারকারী আইডি:</strong> <span id="senzenProfileUserId"></span></div>
+      <button id="senzenBtnEditProfile" class="edit-profile-btn" aria-label="প্রোফাইল সম্পাদনা করুন">প্রোফাইল সম্পাদনা করুন</button>
+    </section>
+
+    <div class="ad-banner" id="senzenTopAd" aria-label="সেনজেন শীর্ষ বিজ্ঞাপন" tabindex="0">সেনজেন শীর্ষ বিজ্ঞাপন - আপনার বিজ্ঞাপন এখানে</div>
+
+    <section id="senzenPracticePanel" role="tabpanel" aria-labelledby="senzenPracticeTab" tabindex="0">
+      <h2>বাসা প্র্যাকটিস</h2>
+      <p>বাংলা এবং সেনজেন ভাষার গুরুত্বপূর্ণ কথাবার্তা এখানে অনুশীলন করুন।</p>
+      <div class="table-container" role="region" aria-label="সেনজেন বাসা প্র্যাকটিস কথাবার্তার টেবিল">
+        <table>
+          <thead>
+            <tr>
+              <th>বাংলা</th>
+              <th>সেনজেন ভাষা</th>
+              <th>উচ্চারণ (ইংরেজি)</th>
+              <th>ইংরেজি অর্থ</th>
+            </tr>
+          </thead>
+          <tbody id="senzenPracticeTableBody">
+            <!-- Rows inserted by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="ad-banner" id="senzenMidAd" aria-label="সেনজেন মধ্যবর্তী বিজ্ঞাপন" tabindex="0">সেনজেন মধ্যবর্তী বিজ্ঞাপন - বিজ্ঞাপন স্পেস</div>
+
+    <section id="senzenQuizPanel" role="tabpanel" aria-labelledby="senzenQuizTab" tabindex="0" hidden>
+      <h2>কুইজ</h2>
+      <div class="quiz-container" role="region" aria-label="সেনজেন কুইজ প্রশ্ন ও উত্তর নির্বাচন">
+        <p id="senzenQuizQuestion" class="quiz-question"></p>
+        <ul id="senzenQuizOptions" class="quiz-options" role="radiogroup" aria-live="polite"></ul>
+        <button id="senzenBtnSubmitQuiz" class="submit-quiz-btn" aria-label="উত্তর জমা দিন">জমা দিন</button>
+        <button id="senzenBtnRetryQuiz" class="submit-quiz-btn" style="display:none; margin-left: 12px;" aria-label="আবার চেষ্টা করুন">আবার চেষ্টা করুন</button>
+        <p id="senzenQuizFeedback" role="alert" aria-live="assertive"></p>
+        <p id="senzenQuizScore" style="font-weight:700; margin-top:10px;"></p>
+      </div>
+    </section>
+
+    <div class="ad-banner" id="senzenBottomAd" aria-label="সেনজেন তলদেশ বিজ্ঞাপন" tabindex="0">সেনজেন তলদেশ বিজ্ঞাপন - বিজ্ঞাপন স্পেস</div>
   </section>
+
+  <!-- Mukt Shopno Desh Country Page -->
+  <section id="muktshopnoPage" class="country-page" aria-label="মুক্ত স্বপ্ন দেশের ভাষার প্র্যাকটিস ও কুইজ" tabindex="0" >
+    <header>মুক্ত স্বপ্ন দেশ ভাষা শেখার অ্যাপ</header>
+
+    <nav class="tabs" role="tablist" aria-label="মুক্ত স্বপ্ন দেশ অ্যাপ ট্যাব">
+      <button role="tab" id="muktshopnoPracticeTab" aria-selected="true" aria-controls="muktshopnoPracticePanel" tabindex="0" class="active">বাসা প্র্যাকটিস</button>
+      <button role="tab" id="muktshopnoQuizTab" aria-selected="false" aria-controls="muktshopnoQuizPanel" tabindex="-1">কুইজ</button>
+    </nav>
+
+    <section class="profile-section" aria-label="মুক্ত স্বপ্ন দেশ প্রোফাইল সেটআপ" id="muktshopnoProfileSetup">
+      <h2>আপনার প্রোফাইল তৈরি করুন</h2>
+      <input type="text" id="muktshopnoInputName" placeholder="আপনার নাম লিখুন" aria-label="নাম লিখুন" autocomplete="off" />
+      <button id="muktshopnoBtnSaveProfile" class="save-btn" aria-label="প্রোফাইল সংরক্ষণ করুন">সংরক্ষণ করুন</button>
+      <div id="muktshopnoProfileMessage" role="alert" aria-live="polite"></div>
+    </section>
+    <section class="user-profile-box" aria-label="মুক্ত স্বপ্ন দেশের ব্যবহারকারীর প্রোফাইল" id="muktshopnoProfileView" style="display:none;">
+      <h3>আপনার প্রোফাইল</h3>
+      <div class="user-profile-info"><strong>নাম:</strong> <span id="muktshopnoProfileName"></span></div>
+      <div class="user-profile-info"><strong>ব্যবহারকারী আইডি:</strong> <span id="muktshopnoProfileUserId"></span></div>
+      <button id="muktshopnoBtnEditProfile" class="edit-profile-btn" aria-label="প্রোফাইল সম্পাদনা করুন">প্রোফাইল সম্পাদনা করুন</button>
+    </section>
+
+    <div class="ad-banner" id="muktshopnoTopAd" aria-label="মুক্ত স্বপ্ন দেশ শীর্ষ বিজ্ঞাপন" tabindex="0">মুক্ত স্বপ্ন দেশ শীর্ষ বিজ্ঞাপন - আপনার বিজ্ঞাপন এখানে</div>
+
+    <section id="muktshopnoPracticePanel" role="tabpanel" aria-labelledby="muktshopnoPracticeTab" tabindex="0">
+      <h2>বাসা প্র্যাকটিস</h2>
+      <p>বাংলা এবং মুক্ত স্বপ্ন দেশের ভাষার গুরুত্বপূর্ণ কথাবার্তা এখানে অনুশীলন করুন।</p>
+      <div class="table-container" role="region" aria-label="মুক্ত স্বপ্ন দেশ বাসা প্র্যাকটিস কথাবার্তার টেবিল">
+        <table>
+          <thead>
+            <tr>
+              <th>বাংলা</th>
+              <th>মুক্ত স্বপ্ন দেশের ভাষা</th>
+              <th>উচ্চারণ (ইংরেজি)</th>
+              <th>ইংরেজি অর্থ</th>
+            </tr>
+          </thead>
+          <tbody id="muktshopnoPracticeTableBody">
+            <!-- Rows inserted by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="ad-banner" id="muktshopnoMidAd" aria-label="মুক্ত স্বপ্ন দেশ মধ্যবর্তী বিজ্ঞাপন" tabindex="0">মুক্ত স্বপ্ন দেশ মধ্যবর্তী বিজ্ঞাপন - বিজ্ঞাপন স্পেস</div>
+
+    <section id="muktshopnoQuizPanel" role="tabpanel" aria-labelledby="muktshopnoQuizTab" tabindex="0" hidden>
+      <h2>কুইজ</h2>
+      <div class="quiz-container" role="region" aria-label="মুক্ত স্বপ্ন দেশ কুইজ প্রশ্ন ও উত্তর নির্বাচন">
+        <p id="muktshopnoQuizQuestion" class="quiz-question"></p>
+        <ul id="muktshopnoQuizOptions" class="quiz-options" role="radiogroup" aria-live="polite"></ul>
+        <button id="muktshopnoBtnSubmitQuiz" class="submit-quiz-btn" aria-label="উত্তর জমা দিন">জমা দিন</button>
+        <button id="muktshopnoBtnRetryQuiz" class="submit-quiz-btn" style="display:none; margin-left: 12px;" aria-label="আবার চেষ্টা করুন">আবার চেষ্টা করুন</button>
+        <p id="muktshopnoQuizFeedback" role="alert" aria-live="assertive"></p>
+        <p id="muktshopnoQuizScore" style="font-weight:700; margin-top:10px;"></p>
+      </div>
+    </section>
+
+    <div class="ad-banner" id="muktshopnoBottomAd" aria-label="মুক্ত স্বপ্ন দেশ তলদেশ বিজ্ঞাপন" tabindex="0">মুক্ত স্বপ্ন দেশ তলদেশ বিজ্ঞাপন - বিজ্ঞাপন স্পেস</div>
+  </section>
+
+  <!-- Russia Country Page -->
+  <section id="russiaPage" class="country-page" aria-label="রাশিয়া ভাষার প্র্যাকটিস ও কুইজ" tabindex="0" >
+    <header>রাশিয়া ভাষা শেখার অ্যাপ</header>
+
+    <nav class="tabs" role="tablist" aria-label="রাশিয়া অ্যাপ ট্যাব">
+      <button role="tab" id="russiaPracticeTab" aria-selected="true" aria-controls="russiaPracticePanel" tabindex="0" class="active">বাসা প্র্যাকটিস</button>
+      <button role="tab" id="russiaQuizTab" aria-selected="false" aria-controls="russiaQuizPanel" tabindex="-1">কুইজ</button>
+    </nav>
+
+    <section class="profile-section" aria-label="রাশিয়া প্রোফাইল সেটআপ" id="russiaProfileSetup">
+      <h2>আপনার প্রোফাইল তৈরি করুন</h2>
+      <input type="text" id="russiaInputName" placeholder="আপনার নাম লিখুন" aria-label="নাম লিখুন" autocomplete="off" />
+      <button id="russiaBtnSaveProfile" class="save-btn" aria-label="প্রোফাইল সংরক্ষণ করুন">সংরক্ষণ করুন</button>
+      <div id="russiaProfileMessage" role="alert" aria-live="polite"></div>
+    </section>
+    <section class="user-profile-box" aria-label="রাশিয়া ব্যবহারকারীর প্রোফাইল" id="russiaProfileView" style="display:none;">
+      <h3>আপনার প্রোফাইল</h3>
+      <div class="user-profile-info"><strong>নাম:</strong> <span id="russiaProfileName"></span></div>
+      <div class="user-profile-info"><strong>ব্যবহারকারী আইডি:</strong> <span id="russiaProfileUserId"></span></div>
+      <button id="russiaBtnEditProfile" class="edit-profile-btn" aria-label="প্রোফাইল সম্পাদনা করুন">প্রোফাইল সম্পাদনা করুন</button>
+    </section>
+
+    <div class="ad-banner" id="russiaTopAd" aria-label="রাশিয়া শীর্ষ বিজ্ঞাপন" tabindex="0">রাশিয়া শীর্ষ বিজ্ঞাপন - আপনার বিজ্ঞাপন এখানে</div>
+
+    <section id="russiaPracticePanel" role="tabpanel" aria-labelledby="russiaPracticeTab" tabindex="0">
+      <h2>বাসা প্র্যাকটিস</h2>
+      <p>বাংলা এবং রাশিয়ার গুরুত্বপূর্ণ কথাবার্তা এখানে অনুশীলন করুন।</p>
+      <div class="table-container" role="region" aria-label="রাশিয়া বাসা প্র্যাকটিস কথাবার্তার টেবিল">
+        <table>
+          <thead>
+            <tr>
+              <th>বাংলা</th>
+              <th>রাশিয়া ভাষা</th>
+              <th>উচ্চারণ (ইংরেজি)</th>
+              <th>ইংরেজি অর্থ</th>
+            </tr>
+          </thead>
+          <tbody id="russiaPracticeTableBody">
+            <!-- Rows inserted by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="ad-banner" id="russiaMidAd" aria-label="রাশিয়া মধ্যবর্তী বিজ্ঞাপন" tabindex="0">রাশিয়া মধ্যবর্তী বিজ্ঞাপন - বিজ্ঞাপন স্পেস</div>
+
+    <section id="russiaQuizPanel" role="tabpanel" aria-labelledby="russiaQuizTab" tabindex="0" hidden>
+      <h2>কুইজ</h2>
+      <div class="quiz-container" role="region" aria-label="রাশিয়া কুইজ প্রশ্ন ও উত্তর নির্বাচন">
+        <p id="russiaQuizQuestion" class="quiz-question"></p>
+        <ul id="russiaQuizOptions" class="quiz-options" role="radiogroup" aria-live="polite"></ul>
+        <button id="russiaBtnSubmitQuiz" class="submit-quiz-btn" aria-label="উত্তর জমা দিন">জমা দিন</button>
+        <button id="russiaBtnRetryQuiz" class="submit-quiz-btn" style="display:none; margin-left: 12px;" aria-label="আবার চেষ্টা করুন">আবার চেষ্টা করুন</button>
+        <p id="russiaQuizFeedback" role="alert" aria-live="assertive"></p>
+        <p id="russiaQuizScore" style="font-weight:700; margin-top:10px;"></p>
+      </div>
+    </section>
+
+    <div class="ad-banner" id="russiaBottomAd" aria-label="রাশিয়া তলদেশ বিজ্ঞাপন" tabindex="0">রাশিয়া তলদেশ বিজ্ঞাপন - বিজ্ঞাপন স্পেস</div>
+  </section>
+
 </main>
 
 <script>
 (() => {
-  // Utility - generate random user ID of length 8 alpha-numeric
+  // Helper to generate random user ID 8 char upper alphanumeric
   function generateUserId() {
     return Math.random().toString(36).substr(2,8).toUpperCase();
   }
 
-  // Data for 30 conversation phrases demo, expandable to 2000 externally
-  const practicePhrases = [
-    {bn:"কোথায় যাব?", ru:"Куда пойти?", pron:"Kuda poyti?", en:"Where to go?" },
-    {bn:"কি করে যাব?", ru:"Как добраться?", pron:"Kak dobrat'sya?", en:"How to get there?" },
-    {bn:"বাস কয়টায় ছাড়বে?", ru:"Во сколько отходит автобус?", pron:"Vo skol'ko otkhodit avtobus?", en:"What time does the bus leave?" },
-    {bn:"হাসপাতাল কোথায়?", ru:"Где больница?", pron:"Gde bol'nitsa?", en:"Where is the hospital?" },
-    {bn:"ভালো রেস্টুরেন্ট কোথায়?", ru:"Где хороший ресторан?", pron:"Gde khoroshiy restoran?", en:"Where is a good restaurant?" },
-    {bn:"মসজিদ কোথায়?", ru:"Где мечеть?", pron:"Gde mechét'?", en:"Where is the mosque?" },
-    {bn:"নামাজের সময় কখন?", ru:"Когда время намаза?", pron:"Kogda vremya namaza?", en:"What time is the prayer?" },
-    {bn:"ইফতার কোথায়?", ru:"Где ифтар?", pron:"Gde iftar?", en:"Where is the iftar?" },
-    {bn:"হালাল মাংস কোথায় পাব?", ru:"Где можно купить халяльное мясо?", pron:"Gde mozhno kupit' khalyal'noye myaso?", en:"Where can I find halal meat?" },
-    {bn:"শপিংমল কোথায়?", ru:"Где торговый центр?", pron:"Gde torgovyy tsentr?", en:"Where is the shopping mall?" },
-    {bn:"টিকেটের দাম কত?", ru:"Сколько стоит билет?", pron:"Skol'ko stoit bilet?", en:"How much is the ticket?" },
-    {bn:"বাস স্টপ কোথায়?", ru:"Где автобусная остановка?", pron:"Gde avtobusnaya ostanovka?", en:"Where is the bus stop?" },
-    {bn:"ট্যাক্সি কত দাম?", ru:"Сколько стоит такси?", pron:"Skol'ko stoit taksi?", en:"How much is the taxi?" },
-    {bn:"আমি বাংলাদেশ থেকে এসেছি।", ru:"Я из Бангладеша.", pron:"Ya iz Bangladesha.", en:"I am from Bangladesh." },
-    {bn:"আমি ইংরাজি বলতে পারি না।", ru:"Я не говорю по-английски.", pron:"Ya ne govoryu po-angliyski.", en:"I do not speak English." },
-    {bn:"আপনি কি ইংরাজি বলতে পারেন?", ru:"Вы говорите по-английски?", pron:"Vy govorite po-angliyski?", en:"Do you speak English?" },
-    {bn:"আমাকে সাহায্য করুন।", ru:"Помогите мне, пожалуйста.", pron:"Pomogite mne, pozhaluysta.", en:"Please help me." },
-    {bn:"আমি রাস্তা হারিয়েছি।", ru:"Я потерялся.", pron:"Ya poteryalsya.", en:"I am lost." },
-    {bn:"কতদূর?", ru:"Как далеко?", pron:"Kak daleko?", en:"How far?" },
-    {bn:"আপনার নাম কী?", ru:"Как вас зовут?", pron:"Kak vas zovut?", en:"What is your name?" },
-    {bn:"আমার নাম [নাম]।", ru:"Меня зовут [имя].", pron:"Menya zovut [imya].", en:"My name is [name]." },
-    {bn:"আমি ঢাকায় থাকি।", ru:"Я живу в Даках.", pron:"Ya zhivu v Dakakh.", en:"I live in Dhaka." },
-    {bn:"আমি ছাত্র/ছাত্রী।", ru:"Я студент/студентка.", pron:"Ya student/studentka.", en:"I am a student." },
-    {bn:"আমি ইউরোপে ভ্রমণ করতে চাই।", ru:"Я хочу путешествовать по Европе.", pron:"Ya khochu puteshestvovat' po Yevrope.", en:"I want to travel in Europe." },
-    {bn:"মাফ করবেন, এটা কতদূর?", ru:"Извините, как далеко это?", pron:"Izvinite, kak daleko eto?", en:"Excuse me, how far is this?" },
-    {bn:"টাকা কোথায় বদলাতে পারি?", ru:"Где можно обменять деньги?", pron:"Gde mozhno obmenyat' den'gi?", en:"Where can I exchange money?" },
-    {bn:"আপনি আমাকে সত্যি বলছেন?", ru:"Вы говорите правду?", pron:"Vy govorite pravdu?", en:"Are you telling me the truth?" },
-    {bn:"আমি মসজিদ খুঁজছি।", ru:"Я ищу мечеть.", pron:"Ya ishchu mechet'.", en:"I am looking for a mosque." },
-    {bn:"আমার বাসায় যাওয়ার রাস্তাটি দেখান।", ru:"Покажите дорогу в мой дом.", pron:"Pokazhi dorogu v moy dom.", en:"Show me the way to my home." },
-    {bn:"আমি সাহায্য চাই।", ru:"Мне нужна помощь.", pron:"Mne nuzhna pomoshch'.", en:"I need help." }
+  /* ------------ Data per country ------------ */
+
+  // Senzen sample phrases
+  const senzenPhrases = [
+    {bn:"স্বাগতম!", local:"Добро пожаловать!", pron:"Dobro pozhalovat'!", en:"Welcome!" },
+    {bn:"আপনি কেমন আছেন?", local:"Как ваши дела?", pron:"Kak vashi dela?", en:"How are you?" },
+    {bn:"আমার নাম [নাম]।", local:"Меня зовут [имя].", pron:"Menya zovut [imya].", en:"My name is [name]." },
+    // add more up to 2000+ externally
+  ];
+  const senzenQuiz = [
+    {
+      question: "‘Welcome!’ এর সেনজেন ভাষায় অনুবাদ কোনটি?",
+      options: [
+        "Добро пожаловать!",
+        "Как ваши дела?",
+        "Меня зовут [имя].",
+        "Спасибо!"
+      ],
+      answer: "Добро пожаловать!"
+    },
+    {
+      question: "‘How are you?’ এর সেনজেন ভাষায় অনুবাদ কোনটি?",
+      options: [
+        "Меня зовут [имя].",
+        "Как ваши дела?",
+        "Добро пожаловать!",
+        "До свидания!"
+      ],
+      answer: "Как ваши дела?"
+    },
+    // more questions, up to 1000+ externally
   ];
 
-  // Quiz Data: Simple 5 question quiz on phrases with answers
-  const quizItems = [
+  // Mukt Shopno sample data
+  const muktPhrases = [
+    {bn:"স্বাধীনতা আমাদের অধিকার।", local:"Свобода — наше право.", pron:"Svoboda — nashe pravo.", en:"Freedom is our right."},
+    {bn:"আমানত রক্ষা করো।", local:"Храни доверие.", pron:"Khrani doverie.", en:"Keep the trust."},
+    // add more...
+  ];
+  const muktQuiz = [
+    {
+      question: "‘স্বাধীনতা আমাদের অধিকার।’ এর ইংরেজি অর্থ কী?",
+      options: [
+        "Freedom is our right.",
+        "Keep the trust.",
+        "Love your country.",
+        "Peace for all."
+      ],
+      answer: "Freedom is our right."
+    },
+    {
+      question: "‘আমানত রক্ষা করো।’ এর মুক্ত স্বপ্ন দেশের ভাষায় অনুবাদ কোনটি?",
+      options: [
+        "Храни доверие.",
+        "Свобода — наше право.",
+        "Мир для всех.",
+        "Любовь к стране."
+      ],
+      answer: "Храни доверие."
+    }
+  ];
+
+  // Russia sample data
+  const russiaPhrases = [
+    {bn:"কোথায় যাব?", local:"Куда пойти?", pron:"Kuda poyti?", en:"Where to go?" },
+    {bn:"কি করে যাব?", local:"Как добраться?", pron:"Kak dobrat'sya?", en:"How to get there?" },
+    {bn:"বাস কয়টায় ছাড়বে?", local:"Во сколько отходит автобус?", pron:"Vo skol'ko otkhodit avtobus?", en:"What time does the bus leave?" },
+    // add more...
+  ];
+  const russiaQuiz = [
     {
       question:"‘Where is the hospital?’ এর রাশিয়ান অনুবাদ কোনটি?",
       options:[
@@ -292,152 +718,211 @@
         "Я из Китая."
       ],
       answer:"Я из Бангладеша."
-    },
-    {
-      question:"‘How much is the taxi?’ এর রাশিয়ান উচ্চারণ কী?",
-      options:[
-        "Skol'ko stoit taksi?",
-        "Kuda poyti?",
-        "Gde bol'nitsa?",
-        "Ya poteryalsya."
-      ],
-      answer:"Skol'ko stoit taksi?"
-    },
-    {
-      question:"‘Show me the way to my home.’ এর বাংলা অনুবাদ কী?",
-      options:[
-        "আসুন আমার বাড়িতে।",
-        "আমার বাসায় যাওয়ার রাস্তাটি দেখান।",
-        "আমি বাসায় যাচ্ছি।",
-        "আমার বাসা কোথায়?"
-      ],
-      answer:"আমার বাসায় যাওয়ার রাস্তাটি দেখান।"
-    },
-    {
-      question:"‘Где мечеть?’ বাক্যের ইংরেজি অর্থ কী?",
-      options:[
-        "Where is the mosque?",
-        "Where is the hospital?",
-        "Where is the restaurant?",
-        "Where is the bus?"
-      ],
-      answer:"Where is the mosque?"
     }
   ];
 
-  // DOM Elements
-  const profileSetupSection = document.getElementById("profileSetupSection");
-  const profileViewSection = document.getElementById("profileViewSection");
-  const inputName = document.getElementById("inputName");
-  const btnSaveProfile = document.getElementById("btnSaveProfile");
-  const profileMessage = document.getElementById("profileMessage");
-  const profileNameSpan = document.getElementById("profileName");
-  const profileUserIdSpan = document.getElementById("profileUserId");
-  const btnEditProfile = document.getElementById("btnEditProfile");
-
-  const tabPractice = document.getElementById("tabPractice");
-  const tabQuiz = document.getElementById("tabQuiz");
-  const panelPractice = document.getElementById("panelPractice");
-  const panelQuiz = document.getElementById("panelQuiz");
-
-  const practiceTableBody = document.getElementById("practiceTableBody");
-  const quizQuestion = document.getElementById("quizQuestion");
-  const quizOptions = document.getElementById("quizOptions");
-  const btnSubmitQuiz = document.getElementById("btnSubmitQuiz");
-  const btnRetryQuiz = document.createElement("button");
-  const quizFeedback = document.getElementById("quizFeedback");
-  const quizScore = document.getElementById("quizScore");
-
-  // State
-  let user = {
-    name: "",
-    userId: ""
+  // State objects per country
+  const state = {
+    senzen: {
+      user: {name:'', userId:''},
+      quizIndex:0,
+      score:0,
+    },
+    muktshopno: {
+      user: {name:'', userId:''},
+      quizIndex:0,
+      score:0,
+    },
+    russia: {
+      user: {name:'', userId:''},
+      quizIndex:0,
+      score:0,
+    }
   };
-  let quizCurrentIndex = 0;
-  let scores = 0;
 
-  // LocalStorage Keys
-  const LS_NAME_KEY = "speakEuUserName";
-  const LS_ID_KEY = "speakEuUserId";
+  // DOM references per country
+  const dom = {
+    senzen: {
+      page: document.getElementById("senzenPage"),
+      profileSetup: document.getElementById("senzenProfileSetup"),
+      inputName: document.getElementById("senzenInputName"),
+      btnSaveProfile: document.getElementById("senzenBtnSaveProfile"),
+      profileMessage: document.getElementById("senzenProfileMessage"),
+      profileView: document.getElementById("senzenProfileView"),
+      profileName: document.getElementById("senzenProfileName"),
+      profileUserId: document.getElementById("senzenProfileUserId"),
+      btnEditProfile: document.getElementById("senzenBtnEditProfile"),
+      practiceTab: document.getElementById("senzenPracticeTab"),
+      quizTab: document.getElementById("senzenQuizTab"),
+      practicePanel: document.getElementById("senzenPracticePanel"),
+      quizPanel: document.getElementById("senzenQuizPanel"),
+      practiceTableBody: document.getElementById("senzenPracticeTableBody"),
+      quizQuestion: document.getElementById("senzenQuizQuestion"),
+      quizOptions: document.getElementById("senzenQuizOptions"),
+      btnSubmitQuiz: document.getElementById("senzenBtnSubmitQuiz"),
+      btnRetryQuiz: document.getElementById("senzenBtnRetryQuiz"),
+      quizFeedback: document.getElementById("senzenQuizFeedback"),
+      quizScore: document.getElementById("senzenQuizScore"),
+    },
+    muktshopno: {
+      page: document.getElementById("muktshopnoPage"),
+      profileSetup: document.getElementById("muktshopnoProfileSetup"),
+      inputName: document.getElementById("muktshopnoInputName"),
+      btnSaveProfile: document.getElementById("muktshopnoBtnSaveProfile"),
+      profileMessage: document.getElementById("muktshopnoProfileMessage"),
+      profileView: document.getElementById("muktshopnoProfileView"),
+      profileName: document.getElementById("muktshopnoProfileName"),
+      profileUserId: document.getElementById("muktshopnoProfileUserId"),
+      btnEditProfile: document.getElementById("muktshopnoBtnEditProfile"),
+      practiceTab: document.getElementById("muktshopnoPracticeTab"),
+      quizTab: document.getElementById("muktshopnoQuizTab"),
+      practicePanel: document.getElementById("muktshopnoPracticePanel"),
+      quizPanel: document.getElementById("muktshopnoQuizPanel"),
+      practiceTableBody: document.getElementById("muktshopnoPracticeTableBody"),
+      quizQuestion: document.getElementById("muktshopnoQuizQuestion"),
+      quizOptions: document.getElementById("muktshopnoQuizOptions"),
+      btnSubmitQuiz: document.getElementById("muktshopnoBtnSubmitQuiz"),
+      btnRetryQuiz: document.getElementById("muktshopnoBtnRetryQuiz"),
+      quizFeedback: document.getElementById("muktshopnoQuizFeedback"),
+      quizScore: document.getElementById("muktshopnoQuizScore"),
+    },
+    russia: {
+      page: document.getElementById("russiaPage"),
+      profileSetup: document.getElementById("russiaProfileSetup"),
+      inputName: document.getElementById("russiaInputName"),
+      btnSaveProfile: document.getElementById("russiaBtnSaveProfile"),
+      profileMessage: document.getElementById("russiaProfileMessage"),
+      profileView: document.getElementById("russiaProfileView"),
+      profileName: document.getElementById("russiaProfileName"),
+      profileUserId: document.getElementById("russiaProfileUserId"),
+      btnEditProfile: document.getElementById("russiaBtnEditProfile"),
+      practiceTab: document.getElementById("russiaPracticeTab"),
+      quizTab: document.getElementById("russiaQuizTab"),
+      practicePanel: document.getElementById("russiaPracticePanel"),
+      quizPanel: document.getElementById("russiaQuizPanel"),
+      practiceTableBody: document.getElementById("russiaPracticeTableBody"),
+      quizQuestion: document.getElementById("russiaQuizQuestion"),
+      quizOptions: document.getElementById("russiaQuizOptions"),
+      btnSubmitQuiz: document.getElementById("russiaBtnSubmitQuiz"),
+      btnRetryQuiz: document.getElementById("russiaBtnRetryQuiz"),
+      quizFeedback: document.getElementById("russiaQuizFeedback"),
+      quizScore: document.getElementById("russiaQuizScore"),
+    }
+  };
 
-  // Initialization
-  function init() {
-    // Load profile from localStorage
-    const storedName = localStorage.getItem(LS_NAME_KEY);
-    const storedId = localStorage.getItem(LS_ID_KEY);
-    if(storedName && storedId) {
-      user.name = storedName;
-      user.userId = storedId;
-      showProfileView();
-      loadPracticeTable();
+  // Landing page and cards
+  const landingPage = document.getElementById("landingPage");
+  const countryCards = Array.from(document.querySelectorAll(".country-card"));
+
+  /* --- Landing page handlers --- */
+  countryCards.forEach(card => {
+    card.addEventListener("click", () => {
+      showCountryPage(card.dataset.country);
+    });
+    card.addEventListener("keydown", e => {
+      if(e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        showCountryPage(card.dataset.country);
+      }
+    });
+  });
+
+  // Show country app page, hide landing and other pages
+  function showCountryPage(country) {
+    landingPage.style.display = "none";
+
+    Object.keys(dom).forEach(c => {
+      if(c === country) {
+        dom[c].page.classList.add("active");
+        initCountryApp(c);
+      } else {
+        dom[c].page.classList.remove("active");
+      }
+    });
+    // Update main header color and text to reflect country
+    switch (country) {
+      case 'senzen':
+        document.getElementById("mainHeader").textContent = "Speak Eu - সেনজেন ভাষা শেখার অ্যাপ";
+        break;
+      case 'muktshopno':
+        document.getElementById("mainHeader").textContent = "Speak Eu - মুক্ত স্বপ্ন দেশ ভাষা শেখার অ্যাপ";
+        break;
+      case 'russia':
+        document.getElementById("mainHeader").textContent = "Speak Eu - রাশিয়া ভাষা শেখার অ্যাপ";
+        break;
+      default:
+        document.getElementById("mainHeader").textContent = "Speak Eu";
+    }
+  }
+
+  /* --- Initialization and state per country app --- */
+  function initCountryApp(country) {
+    const cDom = dom[country];
+    const cState = state[country];
+    // Load user profile from localStorage (unique key per country)
+    const nameKey = `speakEuUserName_${country}`;
+    const idKey = `speakEuUserId_${country}`;
+
+    const savedName = localStorage.getItem(nameKey);
+    const savedId = localStorage.getItem(idKey);
+
+    if(savedName && savedId) {
+      cState.user.name = savedName;
+      cState.user.userId = savedId;
+      showProfileView(country);
     } else {
-      showProfileSetup();
+      showProfileSetup(country);
     }
+    // Setup tab click handlers for this country app
+    setupCountryTabs(country);
+    // Bind Save Profile and Edit buttons for functionality (only once)
+    bindProfileButtons(country);
+    // Bind Quiz buttons
+    bindQuizButtons(country);
   }
 
-  // Show Profile Setup UI
-  function showProfileSetup() {
-    profileSetupSection.style.display = "block";
-    profileViewSection.style.display = "none";
-    clearQuiz();
-    switchTab("practice");
+  // Show profile setup form for country
+  function showProfileSetup(country) {
+    const cDom = dom[country];
+    const cState = state[country];
+    cDom.profileSetup.style.display = "block";
+    cDom.profileView.style.display = "none";
+    cDom.profileMessage.textContent = "";
+    cDom.inputName.value = cState.user.name || "";
+    clearQuizDisplay(country);
   }
 
-  // Show Profile View UI
-  function showProfileView() {
-    profileSetupSection.style.display = "none";
-    profileViewSection.style.display = "block";
-    profileNameSpan.textContent = user.name;
-    profileUserIdSpan.textContent = user.userId;
-    loadPracticeTable();
-    clearQuiz();
-    switchTab("practice");
+  // Show profile view for country
+  function showProfileView(country) {
+    const cDom = dom[country];
+    const cState = state[country];
+    cDom.profileSetup.style.display = "none";
+    cDom.profileView.style.display = "block";
+    cDom.profileName.textContent = cState.user.name;
+    cDom.profileUserId.textContent = cState.user.userId;
+    loadPracticeTable(country);
+    clearQuizDisplay(country);
   }
 
-  // Save Profile Handler
-  btnSaveProfile.onclick = () => {
-    const nameVal = inputName.value.trim();
-    if(!nameVal) {
-      profileMessage.textContent = "দয়া করে নাম দিন।";
-      profileMessage.style.color = "red";
-      return;
-    }
-    user.name = nameVal;
-    user.userId = generateUserId();
-    localStorage.setItem(LS_NAME_KEY, user.name);
-    localStorage.setItem(LS_ID_KEY, user.userId);
-    profileMessage.textContent = "প্রোফাইল সফলভাবে তৈরি হয়েছে।";
-    profileMessage.style.color = "green";
-    setTimeout(() => {
-      showProfileView();
-    }, 800);
-  };
+  // Load practice phrases table for country
+  function loadPracticeTable(country) {
+    const cDom = dom[country];
+    let phrases = [];
+    if(country === "senzen") phrases = senzenPhrases;
+    else if(country === "muktshopno") phrases = muktPhrases;
+    else if(country === "russia") phrases = russiaPhrases;
 
-  // Edit Profile Handler
-  btnEditProfile.onclick = () => {
-    inputName.value = user.name;
-    profileMessage.textContent = "";
-    showProfileSetup();
-  };
-
-  // Generate random userId
-  function generateUserId() {
-    return Math.random().toString(36).substr(2, 8).toUpperCase();
-  }
-
-  // Load practice data to table
-  function loadPracticeTable() {
-    practiceTableBody.innerHTML = "";
-    practicePhrases.forEach(({bn, ru, pron, en}) => {
+    cDom.practiceTableBody.innerHTML = "";
+    phrases.forEach(({bn, local, pron, en}) => {
       const tr = document.createElement("tr");
 
       const tdBn = document.createElement("td");
       tdBn.textContent = bn;
       tr.appendChild(tdBn);
 
-      const tdRu = document.createElement("td");
-      tdRu.textContent = ru;
-      tr.appendChild(tdRu);
+      const tdLocal = document.createElement("td");
+      tdLocal.textContent = local;
+      tr.appendChild(tdLocal);
 
       const tdPron = document.createElement("td");
       tdPron.textContent = pron;
@@ -447,126 +932,198 @@
       tdEn.textContent = en;
       tr.appendChild(tdEn);
 
-      practiceTableBody.appendChild(tr);
+      cDom.practiceTableBody.appendChild(tr);
     });
   }
 
-  // Quiz handlers and rendering
-  function startQuiz() {
-    quizCurrentIndex = 0;
-    scores = 0;
-    renderQuizQuestion();
-    quizFeedback.textContent = "";
-    quizScore.textContent = "";
-    btnSubmitQuiz.style.display = "inline-block";
-    if(btnRetryQuiz.parentNode) btnRetryQuiz.parentNode.removeChild(btnRetryQuiz);
+
+  // Bind profile buttons only once per country app
+  function bindProfileButtons(country) {
+    const cDom = dom[country];
+    const cState = state[country];
+
+    // If already bound to prevent multiple bindings
+    if(cState.profileSaveBound) return;
+    cState.profileSaveBound = true;
+
+    cDom.btnSaveProfile.onclick = () => {
+      const nameVal = cDom.inputName.value.trim();
+      if(!nameVal){
+        cDom.profileMessage.textContent = "দয়া করে নাম দিন।";
+        cDom.profileMessage.style.color = "red";
+        return;
+      }
+      cState.user.name = nameVal;
+      cState.user.userId = generateUserId();
+      // Save to localStorage per country
+      localStorage.setItem(`speakEuUserName_${country}`, cState.user.name);
+      localStorage.setItem(`speakEuUserId_${country}`, cState.user.userId);
+      cDom.profileMessage.textContent = "প্রোফাইল সফলভাবে তৈরি হয়েছে।";
+      cDom.profileMessage.style.color = "green";
+      setTimeout(() => {
+        showProfileView(country);
+      }, 700);
+    };
+
+    cDom.btnEditProfile.onclick = () => {
+      showProfileSetup(country);
+    };
   }
 
-  // Render particular quiz question
-  function renderQuizQuestion() {
-    const quizItem = quizItems[quizCurrentIndex];
-    if(!quizItem) {
-      showQuizResult();
+  // Setup tabs click handlers per country
+  function setupCountryTabs(country) {
+    const cDom = dom[country];
+    function switchTab(selectedTab) {
+      if(selectedTab === "practice"){
+        cDom.practiceTab.classList.add("active");
+        cDom.practiceTab.setAttribute("aria-selected", "true");
+        cDom.practiceTab.tabIndex = 0;
+        cDom.quizTab.classList.remove("active");
+        cDom.quizTab.setAttribute("aria-selected", "false");
+        cDom.quizTab.tabIndex = -1;
+        cDom.practicePanel.hidden = false;
+        cDom.quizPanel.hidden = true;
+        clearQuizDisplay(country);
+      } else {
+        cDom.quizTab.classList.add("active");
+        cDom.quizTab.setAttribute("aria-selected", "true");
+        cDom.quizTab.tabIndex = 0;
+        cDom.practiceTab.classList.remove("active");
+        cDom.practiceTab.setAttribute("aria-selected", "false");
+        cDom.practiceTab.tabIndex = -1;
+        cDom.quizPanel.hidden = false;
+        cDom.practicePanel.hidden = true;
+        startQuiz(country);
+      }
+    }
+    // Bind click only once
+    if(!cDom.practiceTab.listenerBound){
+      cDom.practiceTab.addEventListener("click", () => switchTab("practice"));
+      cDom.quizTab.addEventListener("click", () => switchTab("quiz"));
+      cDom.practiceTab.listenerBound = true;
+    }
+  }
+
+  // Quiz functions per country
+  function startQuiz(country) {
+    const cState = state[country];
+    cState.quizIndex = 0;
+    cState.score = 0;
+    renderQuizQuestion(country);
+    const cDom = dom[country];
+    cDom.quizFeedback.textContent = "";
+    cDom.quizScore.textContent = "";
+    cDom.btnSubmitQuiz.style.display = "inline-block";
+    cDom.btnRetryQuiz.style.display = "none";
+  }
+
+  function renderQuizQuestion(country) {
+    const cState = state[country];
+    const cDom = dom[country];
+    let quizList = [];
+    if(country === "senzen") quizList = senzenQuiz;
+    else if(country === "muktshopno") quizList = muktQuiz;
+    else if(country === "russia") quizList = russiaQuiz;
+
+    const q = quizList[cState.quizIndex];
+    if(!q){
+      showQuizResult(country);
       return;
     }
-    quizQuestion.textContent = quizItem.question;
-    quizOptions.innerHTML = "";
-    quizItem.options.forEach((option, i) => {
+
+    cDom.quizQuestion.textContent = q.question;
+    cDom.quizOptions.innerHTML = "";
+    q.options.forEach((opt,i) => {
       const li = document.createElement("li");
       const input = document.createElement("input");
       const label = document.createElement("label");
-      const optionId = "quizopt_"+i;
+      const id = `${country}QuizOption${i}`;
       input.type = "radio";
-      input.name = "quizoption";
-      input.id = optionId;
-      input.value = option;
-      label.setAttribute("for", optionId);
-      label.textContent = option;
+      input.name = `${country}QuizOption`;
+      input.id = id;
+      input.value = opt;
+      label.setAttribute("for", id);
+      label.textContent = opt;
       li.appendChild(input);
       li.appendChild(label);
-      quizOptions.appendChild(li);
+      cDom.quizOptions.appendChild(li);
     });
   }
 
-  // Show quiz result
-  function showQuizResult() {
-    quizQuestion.textContent = "আপনি কুইজ শেষ করেছেন!";
-    quizOptions.innerHTML = "";
-    quizScore.textContent = `আপনার পয়েন্ট: ${scores} / ${quizItems.length}`;
-    quizFeedback.textContent = "";
-    btnSubmitQuiz.style.display = "none";
-    // Show retry button
-    btnRetryQuiz.textContent = "আবার চেষ্টা করুন";
-    btnRetryQuiz.className = "submit-quiz-btn";
-    btnRetryQuiz.setAttribute("aria-label", "আবার চেষ্টা করুন");
-    btnRetryQuiz.onclick = () => {
-      startQuiz();
+  function showQuizResult(country) {
+    const cState = state[country];
+    const cDom = dom[country];
+    cDom.quizQuestion.textContent = "আপনি কুইজ শেষ করেছেন!";
+    cDom.quizOptions.innerHTML = "";
+    let totalQuestions = 0;
+    if(country === "senzen") totalQuestions = senzenQuiz.length;
+    else if(country === "muktshopno") totalQuestions = muktQuiz.length;
+    else if(country === "russia") totalQuestions = russiaQuiz.length;
+
+    cDom.quizScore.textContent = `আপনার পয়েন্ট: ${cState.score} / ${totalQuestions}`;
+    cDom.quizFeedback.textContent = "";
+    cDom.btnSubmitQuiz.style.display = "none";
+    cDom.btnRetryQuiz.style.display = "inline-block";
+  }
+  // Bind quiz buttons per country (only once)
+  function bindQuizButtons(country) {
+    const cDom = dom[country];
+    const cState = state[country];
+
+    if(cState.quizButtonsBound) return;
+    cState.quizButtonsBound = true;
+
+    cDom.btnSubmitQuiz.onclick = () => {
+      const selectedOption = cDom.quizOptions.querySelector(`input[name="${country}QuizOption"]:checked`);
+      if(!selectedOption){
+        cDom.quizFeedback.textContent = "অনুগ্রহ করে একটি উত্তর নির্বাচন করুন।";
+        cDom.quizFeedback.className = "incorrect";
+        return;
+      }
+      let quizList = [];
+      if(country === "senzen") quizList = senzenQuiz;
+      else if(country === "muktshopno") quizList = muktQuiz;
+      else if(country === "russia") quizList = russiaQuiz;
+
+      const currentQuestion = quizList[cState.quizIndex];
+      if(!currentQuestion) return;
+
+      if(selectedOption.value === currentQuestion.answer){
+        cState.score++;
+        cDom.quizFeedback.textContent = "সঠিক উত্তর!";
+        cDom.quizFeedback.className = "correct";
+      } else {
+        cDom.quizFeedback.textContent = `ভুল উত্তর। সঠিক উত্তর: ${currentQuestion.answer}`;
+        cDom.quizFeedback.className = "incorrect";
+      }
+
+      cState.quizIndex++;
+      cDom.btnSubmitQuiz.style.display = "none";
+
+      setTimeout(() => {
+        cDom.quizFeedback.textContent = "";
+        cDom.btnSubmitQuiz.style.display = "inline-block";
+        renderQuizQuestion(country);
+      }, 2000);
     };
-    if(!btnRetryQuiz.parentNode) {
-      document.querySelector(".quiz-container").appendChild(btnRetryQuiz);
-    }
+
+    cDom.btnRetryQuiz.onclick = () => {
+      startQuiz(country);
+    };
   }
 
-  // Submit answer handler
-  btnSubmitQuiz.onclick = () => {
-    const selectedOption = document.querySelector('input[name="quizoption"]:checked');
-    if(!selectedOption) {
-      quizFeedback.textContent = "অনুগ্রহ করে একটি উত্তর নির্বাচন করুন।";
-      quizFeedback.className = "incorrect";
-      return;
-    }
-    const quizItem = quizItems[quizCurrentIndex];
-    if(selectedOption.value === quizItem.answer) {
-      scores++;
-      quizFeedback.textContent = "সঠিক উত্তর!";
-      quizFeedback.className = "correct";
-    } else {
-      quizFeedback.textContent = `ভুল উত্তর। সঠিক উত্তর: ${quizItem.answer}`;
-      quizFeedback.className = "incorrect";
-    }
-    quizCurrentIndex++;
-    btnSubmitQuiz.style.display = "none";
-    setTimeout(() => {
-      quizFeedback.textContent = "";
-      btnSubmitQuiz.style.display = "inline-block";
-      renderQuizQuestion();
-    }, 2000);
-  };
-
-  // Tabs logic
-  function switchTab(tabName) {
-    if(tabName === "practice") {
-      tabPractice.classList.add("active");
-      tabPractice.setAttribute("aria-selected", "true");
-      tabPractice.tabIndex = 0;
-      tabQuiz.classList.remove("active");
-      tabQuiz.setAttribute("aria-selected", "false");
-      tabQuiz.tabIndex = -1;
-      panelPractice.hidden = false;
-      panelQuiz.hidden = true;
-    } else if(tabName === "quiz") {
-      tabQuiz.classList.add("active");
-      tabQuiz.setAttribute("aria-selected", "true");
-      tabQuiz.tabIndex = 0;
-      tabPractice.classList.remove("active");
-      tabPractice.setAttribute("aria-selected", "false");
-      tabPractice.tabIndex = -1;
-      panelQuiz.hidden = false;
-      panelPractice.hidden = true;
-    }
+  // Clear quiz display
+  function clearQuizDisplay(country) {
+    const cDom = dom[country];
+    cDom.quizQuestion.textContent = "";
+    cDom.quizOptions.innerHTML = "";
+    cDom.quizFeedback.textContent = "";
+    cDom.quizScore.textContent = "";
+    cDom.btnSubmitQuiz.style.display = "none";
+    cDom.btnRetryQuiz.style.display = "none";
   }
 
-  tabPractice.addEventListener("click", () => switchTab("practice"));
-  tabQuiz.addEventListener("click", () => switchTab("quiz"));
-
-  // Initialize app
-  init();
-
-  // Start quiz if profile exists
-  if(user.name && user.userId){
-    startQuiz();
-  }
-
+})()
 </script>
 </body>
 </html>
