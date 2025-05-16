@@ -1,59 +1,41 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>বাংলাদেশি প্রবাসী ও শিক্ষার্থীদের জন্য ভাষা শেখার সফটওয়্যার</title>
+<title>Interactive Media Album with Language Practice</title>
 <style>
-  /* Reset */
+  /* Modern Reset */
   * {
     box-sizing: border-box;
   }
   body {
     margin: 0;
-    font-family: 'Noto Sans Bengali', 'SolaimanLipi', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f8f6;
-    color: #222;
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #eee;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
   header {
-    background: #006a71;
-    color: #fff;
-    padding: 1.25rem 2rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-    user-select: none;
-    box-shadow: 0 3px 10px rgba(0,106,113,0.5);
-  }
-  #welcomeMsg {
-    background: #d4f1f4;
-    color: #004d52;
     padding: 1rem 2rem;
-    font-size: 1.15rem;
-    text-align: center;
-    font-weight: 600;
+    background-color: #20232a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid #61dafb;
+    user-select: none;
   }
-  #searchContainer {
-    margin: 1rem 2rem;
-  }
-  #searchInput {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #006a71;
-    border-radius: 5px;
-  }
+  /* Countries selection bar */
   #countriesContainer {
-    background: #ffffff;
-    padding: 12px 2rem;
-    border-bottom: 2px solid #006a71;
+    background: #1e1e1e;
+    padding: 10px 2rem;
+    border-bottom: 2px solid #444;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: thin;
-    scrollbar-color: #006a71 transparent;
+    scrollbar-color: #61dafb transparent;
   }
   #countriesContainer::-webkit-scrollbar {
     height: 8px;
@@ -62,13 +44,13 @@
     background: transparent;
   }
   #countriesContainer::-webkit-scrollbar-thumb {
-    background-color: #006a71;
+    background-color: #61dafb;
     border-radius: 10px;
   }
   .country-group-label {
-    color: #006a71;
+    color: #61dafb;
     font-weight: 700;
-    margin: 0 15px 0 0;
+    margin: 0 12px 0 0;
     flex: 0 0 auto;
     align-self: center;
     white-space: nowrap;
@@ -76,43 +58,620 @@
   .country-item {
     display: flex;
     align-items: center;
-    background: #cde7e9;
-    margin-right: 14px;
-    padding: 7px 12px;
+    background: #282c34;
+    margin-right: 12px;
+    padding: 6px 10px;
     border-radius: 30px;
     cursor: pointer;
     flex: 0 0 auto;
     user-select: none;
-    transition: background 0.25s ease;
-    box-shadow: 0 3px 7px rgba(0,106,113,0.4);
+    transition: background 0.3s ease;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.6);
   }
   .country-item.selected, .country-item:hover {
-    background: #006a71;
-    color: #e0f2f1;
+    background: #61dafb;
+    color: #121212;
   }
   .country-flag {
-    width: 28px;
-    height: 19px;
-    margin-right: 10px;
+    width: 26px;
+    height: 18px;
+    margin-right: 8px;
     flex-shrink: 0;
     border-radius: 3px;
     object-fit: cover;
-    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    box-shadow: 0 0 4px rgba(0,0,0,0.25);
   }
   main {
     flex: 1;
-    padding: 1.25rem 2rem 2rem 2rem;
-    max-width: 1100px;
+    padding: 1rem 2rem;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
   }
   #popularImageContainer {
     max-width: 100%;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 25px #006a71aa;
+    box-shadow: 0 0 25px #61dafb;
   }
   #popularImageContainer img {
-    width: 
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #languagePractice {
+    background: #282c34;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 15px rgba(97, 218, 251, 0.4);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  #languagePractice > div {
+    margin-bottom: 1rem;
+  }
+  #languagePractice h2 {
+    margin: 0 0 1rem 0;
+    color: #61dafb;
+    font-weight: 700;
+  }
+  #languagePractice p {
+    margin: 0.25rem 0;
+  }
+  .practice-bengali {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  .practice-english {
+    font-style: italic;
+    color: #a0a0a0;
+  }
+  .practice-pronunciation {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', 'Bangla', sans-serif;
+    color: #b0dfff;
+  }
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap: 16px;
+  }
+  .album-item {
+    background: #282c34;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .album-item:hover {
+    transform: scale(1.05);
+  }
+  .album-item img, .album-item video {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+  }
+  .album-item .label {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #61dafb;
+  }
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 1rem;
+  }
+  .modal.active {
+    display: flex;
+  }
+  .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    background: #1e1e1e;
+    box-shadow: 0 0 25px #61dafb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-content img, .modal-content video {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 12px 12px 0 0;
+  }
+  .modal-content video {
+    outline: none;
+  }
+  .modal-caption {
+    padding: 0.8rem 1rem;
+    color: #61dafb;
+    font-size: 1.1rem;
+    user-select: none;
+  }
+  .modal-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 1rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  button {
+    background: #282c34;
+    border: none;
+    color: #61dafb;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #61dafb;
+    color: #282c34;
+  }
+  button:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+  @media (max-width: 480px) {
+    .album-item img, .album-item video {
+      height: 100px;
+    }
+    #countriesContainer {
+      padding: 10px 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>Interactive Media Album with Language Practice</header>
+
+<div id="countriesContainer" aria-label="Country selector" role="list">
+  <!-- Country groups and items inserted by JS -->
+</div>
+
+<main>
+  <section id="popularImageContainer" aria-label="Popular country image">
+    <!-- Popular image displayed here -->
+  </section>
+
+  <section id="languagePractice" aria-label="Language practice section" tabindex="0">
+    <!-- Bengali, English, and pronunciation practice will be displayed here -->
+  </section>
+
+  <div class="album-grid" id="albumGrid" aria-live="polite" aria-label="Album media grid">
+    <!-- Items injected by JS -->
+  </div>
+</main>
+
+<!-- Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalCaption" aria-describedby="modalMediaContainer">
+  <div class="modal-content" tabindex="0">
+    <div id="modalMediaContainer"></div>
+    <div class="modal-caption" id="modalCaption"></div>
+    <div class="modal-controls">
+      <button id="prevBtn" aria-label="Previous media">⟨ Prev</button>
+      <button id="closeBtn" aria-label="Close modal">Close ✕</button>
+      <button id="nextBtn" aria-label="Next media">Next ⟩</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    // Data: countries grouped + sample media per country
+    const countries = {
+      'Schengen Countries': [
+        {code:'fr',name:'France',flag:'https://flagcdn.com/w40/fr.png'},
+        {code:'de',name:'Germany',flag:'https://flagcdn.com/w40/de.png'},
+        {code:'es',name:'Spain',flag:'https://flagcdn.com/w40/es.png'},
+        {code:'it',name:'Italy',flag:'https://flagcdn.com/w40/it.png'},
+        {code:'nl',name:'Netherlands',flag:'https://flagcdn.com/w40/nl.png'},
+        {code:'be',name:'Belgium',flag:'https://flagcdn.com/w40/be.png'},
+        {code:'pt',name:'Portugal',flag:'https://flagcdn.com/w40/pt.png'},
+        {code:'at',name:'Austria',flag:'https://flagcdn.com/w40/at.png'},
+        {code:'ch',name:'Switzerland',flag:'https://flagcdn.com/w40/ch.png'},
+        {code:'pl',name:'Poland',flag:'https://flagcdn.com/w40/pl.png'},
+      ],
+      'Non-Schengen European Countries': [
+        {code:'uk',name:'United Kingdom',flag:'https://flagcdn.com/w40/gb.png'},
+        {code:'ro',name:'Romania',flag:'https://flagcdn.com/w40/ro.png'},
+        {code:'bg',name:'Bulgaria',flag:'https://flagcdn.com/w40/bg.png'},
+        {code:'hr',name:'Croatia',flag:'https://flagcdn.com/w40/hr.png'},
+        {code:'cy',name:'Cyprus',flag:'https://flagcdn.com/w40/cy.png'},
+      ],
+      'Other Countries': [
+        {code:'us',name:'United States',flag:'https://flagcdn.com/w40/us.png'},
+        {code:'ca',name:'Canada',flag:'https://flagcdn.com/w40/ca.png'},
+        {code:'jp',name:'Japan',flag:'https://flagcdn.com/w40/jp.png'},
+        {code:'au',name:'Australia',flag:'https://flagcdn.com/w40/au.png'},
+        {code:'in',name:'India',flag:'https://flagcdn.com/w40/in.png'},
+      ]
+    };
+
+    // Sample media items keyed by country code
+    const sampleTexts = {
+      fr:'Eiffel Tower, Paris',
+      de:'Brandenburg Gate, Berlin',
+      es:'Park Güell, Barcelona',
+      it:'Colosseum, Rome',
+      nl:'Amsterdam Canals',
+      be:'Grand Place, Brussels',
+      pt:'Lisbon Coast',
+      at:'Vienna Opera House',
+      ch:'Matterhorn, Switzerland',
+      pl:'Wawel Castle, Krakow',
+      uk:'London Bridge',
+      ro:'Bran Castle, Romania',
+      bg:'Alexander Nevsky Cathedral',
+      hr:'Dubrovnik Old Town',
+      cy:'Kyrenia Castle',
+      us:'Statue of Liberty',
+      ca:'Niagara Falls',
+      jp:'Mount Fuji',
+      au:'Sydney Opera House',
+      in:'Taj Mahal',
+    };
+
+    const countryAlbumItems = {};
+
+    Object.keys(sampleTexts).forEach(code => {
+      const baseImageUrl = `https://via.placeholder.com/400x280/282c34/61dafb?text=${encodeURIComponent(sampleTexts[code])}`;
+      countryAlbumItems[code] = [
+        {type:'image', src: baseImageUrl + '+View+1', label: sampleTexts[code] + ' View 1'},
+        {type:'image', src: baseImageUrl + '+View+2', label: sampleTexts[code] + ' View 2'},
+        {type:'image', src: baseImageUrl + '+View+3', label: sampleTexts[code] + ' View 3'},
+        ...(code === 'fr' || code === 'de' || code === 'us' ? [
+          {type:'video', src:'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm', label: sampleTexts[code] + ' Video'}
+        ] : [])
+      ];
+    });
+
+    // Popular images for each country - larger main images for language practice
+    const popularImages = {
+      fr: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80', // Eiffel Tower
+      de: 'https://images.unsplash.com/photo-1508051123996-69f8caf4891c?auto=format&fit=crop&w=1200&q=80', // Brandenburg Gate
+      es: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80', // Park Güell
+      it: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80', // Colosseum
+      nl: 'https://images.unsplash.com/photo-1437539487828-3e286e59b1f3?auto=format&fit=crop&w=1200&q=80', // Amsterdam canals
+      be: 'https://images.unsplash.com/photo-1504405244047-229a04828d06?auto=format&fit=crop&w=1200&q=80', // Brussels Grand Place
+      pt: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', // Lisbon coast
+      at: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', // Vienna
+      ch: 'https://images.unsplash.com/photo-1502716119723-2a9802ee7218?auto=format&fit=crop&w=1200&q=80', // Matterhorn
+      pl: 'https://images.unsplash.com/photo-1506905925346-21bda4d43d2d?auto=format&fit=crop&w=1200&q=80', // Wawel Castle
+      uk: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80', // London Bridge
+      ro: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80', // Bran Castle
+      bg: 'https://images.unsplash.com/photo-1486308510493-cb47b18b59a0?auto=format&fit=crop&w=1200&q=80', // Alexander Nevsky Cathedral
+      hr: 'https://images.unsplash.com/photo-1494523631266-fc0f650d7bc8?auto=format&fit=crop&w=1200&q=80', // Dubrovnik Old Town
+      cy: 'https://images.unsplash.com/photo-1501594906690-7e838c336f75?auto=format&fit=crop&w=1200&q=80', // Kyrenia Castle
+      us: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1200&q=80', // Statue of Liberty
+      ca: 'https://images.unsplash.com/photo-1501594907352-3a48a9145b6f?auto=format&fit=crop&w=1200&q=80', // Niagara Falls
+      jp: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', // Mount Fuji (reuse Eiffel)
+      au: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1200&q=80', // Sydney Opera House (reuse Statue of Liberty)
+      in: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1200&q=80', // Taj Mahal (reuse Statue)
+    };
+
+    // Language practice sentences with Bengali + English + pronunciation (Bengali script phonetics)
+    const languagePracticeData = {
+      fr: {
+        bengali: 'ফ্রান্স বিশ্বের সবচেয়ে সুন্দর দেশগুলোর একটি।',
+        english: 'France is one of the most beautiful countries in the world.',
+        pronunciation: 'Frāns bishshoer shôbcchē sundôr dēshgulōr ēkti.'
+      },
+      de: {
+        bengali: 'জার্মানি একটি উন্নত শিল্প দেশ।',
+        english: 'Germany is an advanced industrial country.',
+        pronunciation: 'Jārmāni ēkti unnôto shilp dēsh.'
+      },
+      es: {
+        bengali: 'স্পেন তার সমৃদ্ধ সাংস্কৃতিক ঐতিহ্যের জন্য পরিচিত।',
+        english: 'Spain is known for its rich cultural heritage.',
+        pronunciation: 'Spēn tār shômriddho sānskritik oitihyēr jonno porichit.'
+      },
+      it: {
+        bengali: 'ইতালি বিশ্বের বিখ্যাত ঐতিহাসিক স্থান রয়েছে।',
+        english: 'Italy has famous historical places globally.',
+        pronunciation: 'Itāli bishshoer bikhyat oitihasik sthān royechē.'
+      },
+      nl: {
+        bengali: 'নেদারল্যান্ডস তার নৌকা চালনা সাংস্কৃতির জন্য বিখ্যাত।',
+        english: 'The Netherlands is famous for its boating culture.',
+        pronunciation: 'Nēdārllānds tār noukā chālānā sānskritir jonno bikhyat.'
+      },
+      us: {
+        bengali: 'আমেরিকা একটি শক্তিশালী উন্নত দেশ।',
+        english: 'America is a powerful developed country.',
+        pronunciation: 'Āmērīkā ēkti shôktishālī unnôto dēsh.'
+      },
+      in: {
+        bengali: 'ভারত বিভিন্ন ভাষা ও সংস্কৃতির মিলনস্থল।',
+        english: 'India is a melting pot of diverse languages and cultures.',
+        pronunciation: 'Bhārôt bibhinnô bhāṣā ō shôngskritir milonsthal.'
+      }
+    };
+
+    const countriesContainer = document.getElementById('countriesContainer');
+    const albumGrid = document.getElementById('albumGrid');
+    const modal = document.getElementById('modal');
+    const modalContent = modal.querySelector('.modal-content');
+    const modalMediaContainer = document.getElementById('modalMediaContainer');
+    const modalCaption = document.getElementById('modalCaption');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const popularImageContainer = document.getElementById('popularImageContainer');
+    const languagePractice = document.getElementById('languagePractice');
+
+    let currentIndex = -1;
+    let currentAlbum = [];
+    let selectedCountryCode = null;
+
+    // Create country group in selector
+    function createCountryGroup(label, countriesList) {
+      const fragment = document.createDocumentFragment();
+      const groupLabel = document.createElement('div');
+      groupLabel.className = 'country-group-label';
+      groupLabel.textContent = label + ':';
+      fragment.appendChild(groupLabel);
+
+      countriesList.forEach(country => {
+        const countryDiv = document.createElement('div');
+        countryDiv.className = 'country-item';
+        countryDiv.tabIndex = 0;
+        countryDiv.setAttribute('role','button');
+        countryDiv.setAttribute('aria-pressed','false');
+        countryDiv.dataset.code = country.code;
+
+        const flagImg = document.createElement('img');
+        flagImg.src = country.flag;
+        flagImg.alt = country.name + ' flag';
+        flagImg.className = 'country-flag';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = country.name;
+
+        countryDiv.appendChild(flagImg);
+        countryDiv.appendChild(nameSpan);
+
+        countryDiv.addEventListener('click', () => selectCountry(country.code, countryDiv));
+        countryDiv.addEventListener('keydown', e => {
+          if(e.key === 'Enter' || e.key === ' ') {
+            selectCountry(country.code, countryDiv);
+            e.preventDefault();
+          }
+        });
+
+        fragment.appendChild(countryDiv);
+      });
+
+      return fragment;
+    }
+
+    // Select a country to filter album and update practice area
+    function selectCountry(code, divElem) {
+      if(selectedCountryCode === code) return; // no change
+
+      selectedCountryCode = code;
+
+      // Mark selection styling
+      countriesContainer.querySelectorAll('.country-item').forEach(el => {
+        el.classList.remove('selected');
+        el.setAttribute('aria-pressed','false');
+      });
+      divElem.classList.add('selected');
+      divElem.setAttribute('aria-pressed','true');
+
+      // Update album display
+      currentAlbum = countryAlbumItems[code] || [];
+      renderAlbum();
+
+      // Update popular image
+      updatePopularImage(code);
+
+      // Update language practice section
+      updateLanguagePractice(code);
+    }
+
+    // Render album grid from currentAlbum
+    function renderAlbum() {
+      albumGrid.innerHTML = '';
+      currentAlbum.forEach((item, index) => {
+        albumGrid.appendChild(createAlbumItem(item, index));
+      });
+    }
+
+    // Create single album item card
+    function createAlbumItem(item, index) {
+      const div = document.createElement('div');
+      div.className = 'album-item';
+      div.tabIndex = 0; // keyboard focusable
+
+      if(item.type === 'image') {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.label;
+        div.appendChild(img);
+      } else if(item.type === 'video') {
+        const video = document.createElement('video');
+        video.src = item.src;
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.setAttribute('aria-label', item.label + ' thumbnail');
+        div.appendChild(video);
+      }
+      const label = document.createElement('div');
+      label.className = 'label';
+      label.textContent = item.label;
+      div.appendChild(label);
+
+      div.addEventListener('click', () => openModal(index));
+      div.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          openModal(index);
+          e.preventDefault();
+        }
+      });
+
+      return div;
+    }
+
+    // Update popular image on top
+    function updatePopularImage(code) {
+      popularImageContainer.innerHTML = '';
+      const imgUrl = popularImages[code];
+      if(!imgUrl) return;
+
+      const img = document.createElement('img');
+      img.src = imgUrl;
+      img.alt = sampleTexts[code] || 'Popular image';
+      popularImageContainer.appendChild(img);
+    }
+
+    // Update language practice content
+    function updateLanguagePractice(code) {
+      languagePractice.innerHTML = '';
+      const data = languagePracticeData[code];
+      if(!data) return;
+
+      // Bengali with punctuation
+      const bengaliSection = document.createElement('div');
+      const bengaliTitle = document.createElement('h2');
+      bengaliTitle.textContent = 'বাংলায় বাক্য (পূর্ণবিরতি সহ)';
+      const bengaliText = document.createElement('p');
+      bengaliText.className = 'practice-bengali';
+      bengaliText.textContent = data.bengali;
+      bengaliSection.appendChild(bengaliTitle);
+      bengaliSection.appendChild(bengaliText);
+
+      // English translation
+      const englishSection = document.createElement('div');
+      const englishTitle = document.createElement('h2');
+      englishTitle.textContent = 'English Translation';
+      const englishText = document.createElement('p');
+      englishText.className = 'practice-english';
+      englishText.textContent = data.english;
+      englishSection.appendChild(englishTitle);
+      englishSection.appendChild(englishText);
+
+      // Pronunciation in Bengali script
+      const pronunSection = document.createElement('div');
+      const pronunTitle = document.createElement('h2');
+      pronunTitle.textContent = 'উচ্চারণ (বাংলা লিপিতে)';
+      const pronunText = document.createElement('p');
+      pronunText.className = 'practice-pronunciation';
+      pronunText.textContent = data.pronunciation;
+      pronunSection.appendChild(pronunTitle);
+      pronunSection.appendChild(pronunText);
+
+      languagePractice.appendChild(bengaliSection);
+      languagePractice.appendChild(englishSection);
+      languagePractice.appendChild(pronunSection);
+    }
+
+    // Modal open
+    function openModal(index) {
+      currentIndex = index;
+      updateModal();
+      modal.classList.add('active');
+      modalContent.focus();
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
+
+    // Modal close
+    function closeModal() {
+      modal.classList.remove('active');
+      modalMediaContainer.innerHTML = '';
+      document.body.style.overflow = '';
+      currentIndex = -1;
+    }
+
+    // Update modal content
+    function updateModal() {
+      modalMediaContainer.innerHTML = '';
+      const item = currentAlbum[currentIndex];
+      if(!item) return;
+
+      if(item.type === 'image') {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.label;
+        modalMediaContainer.appendChild(img);
+      } else if(item.type === 'video') {
+        const video = document.createElement('video');
+        video.src = item.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        modalMediaContainer.appendChild(video);
+      }
+
+      modalCaption.textContent = item.label;
+      prevBtn.disabled = (currentIndex === 0);
+      nextBtn.disabled = (currentIndex === currentAlbum.length - 1);
+    }
+
+    function showPrev() {
+      if(currentIndex > 0) {
+        currentIndex--;
+        updateModal();
+      }
+    }
+    function showNext() {
+      if(currentIndex < currentAlbum.length -1) {
+        currentIndex++;
+        updateModal();
+      }
+    }
+
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close modal on outside click
+    modal.addEventListener('click', e => {
+      if(e.target === modal) closeModal();
+    });
+
+    // Modal keyboard nav
+    modalContent.addEventListener('keydown', e => {
+      if(e.key === 'ArrowLeft') showPrev();
+      if(e.key === 'ArrowRight') showNext();
+      if(e.key === 'Escape') closeModal();
+    });
+
+    // Init countries selector
+    Object.entries(countries).forEach(([groupLabel, groupCountries]) => {
+      countriesContainer.appendChild(createCountryGroup(groupLabel, groupCountries));
+    });
+
+    // Select first country by default
+    const firstCountryDiv = countriesContainer.querySelector('.country-item');
+    if(firstCountryDiv) firstCountryDiv.click();
+  })();
+</script>
+</body>
+</html>
+
