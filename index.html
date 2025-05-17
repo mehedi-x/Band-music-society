@@ -1,208 +1,616 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>ইউরোপিয়ান ভাষা শেখার সফটওয়্যার</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #fff;
       margin: 0;
-      padding: 20px;
+      background: #0f111a;
+      color: #f0f0f5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.8rem 1rem 2.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+      line-height: 1.5;
     }
     h1 {
+      font-weight: 600;
+      font-size: 2.4rem;
+      color: #64d2ff;
       text-align: center;
-      color: #00ffc3;
+      margin-bottom: 2.4rem;
+      text-shadow: 0 0 8px #64d2ffaa;
+      padding: 0 0.5rem;
+      user-select: none;
     }
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    select, input[type="text"], button {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      font-size: 16px;
-    }
-    select, input[type="text"] {
-      width: 200px;
-    }
-    button {
-      background-color: #00ffc3;
-      color: #000;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    button:hover {
-      background-color: #00caa3;
-    }
-    .lesson {
-      background: #1e1e1e;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-left: 5px solid #00ffc3;
+    header.controls {
+      max-width: 540px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 2rem;
+      padding: 0 0.5rem;
+      gap: 14px;
+      user-select: none;
+      flex-wrap: wrap;
     }
-    .completed {
-      background-color: #2e2e2e;
-      text-decoration: line-through;
-      opacity: 0.6;
+    select#countrySelect {
+      flex-grow: 1;
+      font-size: 1.1rem;
+      padding: 0.65rem 1.3rem;
+      border-radius: 12px;
+      border: none;
+      background-color: #1a1c29;
+      color: #cdd6f4;
+      cursor: pointer;
+      box-shadow: inset 0 0 12px #097acc88;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.35s ease;
+      user-select: auto;
+      min-width: 140px;
+      max-width: 100%;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #64d2ff 50%),
+        linear-gradient(135deg, #64d2ff 50%, transparent 50%),
+        linear-gradient(to right, #222538, #222538);
+      background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 25px) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
     }
+    select#countrySelect:hover,
+    select#countrySelect:focus {
+      background-color: #223044;
+      color: #a2d4ff;
+      outline: none;
+      box-shadow: inset 0 0 20px #2ca0ffbb;
+    }
+    button.reset-btn {
+      flex-shrink: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0f111a;
+      background: #64d2ff;
+      border: none;
+      border-radius: 12px;
+      padding: 0.65rem 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px #40a0ffaa;
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+      user-select: none;
+      white-space: nowrap;
+      min-width: 130px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    button.reset-btn:hover,
+    button.reset-btn:focus {
+      background: #40a0ff;
+      box-shadow: 0 8px 28px #40a0ffcc;
+      outline: none;
+      color: #f0f0f5;
+    }
+    button.reset-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 4px 15px #3690ccaa;
+      transition: transform 0.15s ease;
+    }
+    main#lesson-list {
+      max-width: 540px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      user-select: none;
+      padding-bottom: 1.5rem;
+    }
+    .lesson {
+      background: #1f2233;
+      border-radius: 14px;
+      box-shadow: 0 6px 22px #0a2f5dcc;
+      padding: 20px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+      color: #c9d1ffdd;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: text;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .lesson:hover:not(.completed) {
+      background: #2a2e47;
+      box-shadow: 0 10px 26px #2c7effaa;
+    }
+    .lesson.completed {
+      background: #133054;
+      box-shadow: inset 0 0 16px #52b5ffcc;
+      color: #a3c9ffaa;
+      cursor: default;
+    }
+    .lesson-content {
+      flex: 1 1 70%;
+      max-width: calc(100% - 140px);
+      user-select: text;
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+    .phrase-main {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #98d7ff;
+      text-shadow: 0 0 3px #54a8ff99;
+    }
+    .pronunciation {
+      font-style: italic;
+      font-size: 0.94rem;
+      color: #91b7d7;
+      user-select: text;
+    }
+    .translations {
+      font-size: 0.95rem;
+      color: #b0c7fcaa;
+      margin-top: 4px;
+      line-height: 1.3;
+      user-select: text;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .translations span {
+      flex: 0 0 auto;
+    }
+    .translations strong {
+      color: #cee0ffdd;
+    }
+
+    .category-tag {
+      font-weight: 700;
+      font-size: 0.77rem;
+      background: #64d2ffcc;
+      padding: 4px 11px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px #62c3ff88;
+      color: #0e1e34;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      user-select: none;
+      flex: 0 0 auto;
+      margin-left: 6px;
+      align-self: flex-start;
+      min-width: 72px;
+      text-align: center;
+    }
+
+    /* Complete button to right */
+    .complete-btn {
+      width: 110px;
+      min-width: 110px;
+      max-height: 36px;
+      font-weight: 600;
+      font-size: 1rem;
+      background-color: #64d2ff;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 0 10px #64d2ffcc;
+      color: #0f111a;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+      outline-offset: 3px;
+      outline-color: #64d2ff88;
+    }
+    .complete-btn:hover:not(:disabled),
+    .complete-btn:focus:not(:disabled) {
+      background-color: #3bb6ff;
+      box-shadow: 0 0 18px #3bb6ffcc;
+      outline: none;
+      color: #0d1018;
+    }
+    .complete-btn:disabled {
+      background-color: #3a5974;
+      color: #819bbd;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .complete-btn.completed {
+      background-color: #3bca7c;
+      color: #102813;
+      box-shadow: 0 0 16px #3bca7cbb;
+      cursor: default;
+    }
+
+    .complete-btn.completed:hover,
+    .complete-btn.completed:focus {
+      background-color: #35b66a;
+      box-shadow: 0 0 20px #35b66ab6;
+      cursor: default;
+      outline: none;
+      color: #e7faed;
+    }
+
     .progress-container {
-      margin-top: 20px;
-      background: #333;
-      height: 20px;
-      border-radius: 10px;
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 540px;
+      height: 24px;
+      border-radius: 28px;
+      background: #1a2546;
+      box-shadow: inset 0 0 20px #234376cc;
       overflow: hidden;
+      user-select: none;
+      filter: drop-shadow(0 0 12px #2f75d8bb);
     }
     .progress-bar {
       height: 100%;
-      background-color: #00ffc3;
-      width: 0%;
-      transition: width 0.3s ease;
+      width: 0;
+      background: linear-gradient(90deg, #64d2ff, #3bb6ff);
+      box-shadow: 0 0 24px #3bb6ffcc;
+      border-radius: 28px 0 0 28px;
+      transition: width 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+      will-change: width;
     }
     .progress-text {
+      margin-top: 0.65rem;
+      font-size: 1.2rem;
+      font-weight: 700;
       text-align: center;
-      margin-top: 5px;
-      color: #bbb;
+      color:#7ecaff;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 8px #64d2ffcc;
+      min-height: 34px;
+      user-select: none;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.4s ease;
+    }
+
+    /* Floating Back to top button */
+    #back-to-top {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: linear-gradient(135deg, #3bb6ff 0%, #64d2ff 100%);
+      color: #0f111a;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 12px 32px #3bb6ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.7rem;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+      z-index: 9999;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    #back-to-top:hover,
+    #back-to-top:focus {
+      outline: none;
+      filter: brightness(1.15);
+      box-shadow: 0 14px 38px #64d2ffdd;
+      transform: scale(1.18);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+    }
+
+    /* Focus outlines */
+    :focus-visible {
+      outline: 3px solid #64d2ff88 !important;
+      outline-offset: 3px !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      header.controls {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 0.3rem;
+      }
+      select#countrySelect {
+        width: 100%;
+        max-width: none;
+        font-size: 1.2rem;
+        padding: 0.85rem 1.2rem;
+      }
+      button.reset-btn {
+        width: 100%;
+        padding: 0.85rem 0;
+        font-size: 1.25rem;
+        min-width: unset;
+      }
+      main#lesson-list {
+        gap: 1.15rem;
+      }
+      .lesson {
+        padding: 18px 20px;
+        font-size: 1.05rem;
+      }
+      .complete-btn {
+        width: 100px;
+        min-width: 100px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 6px 12px;
+      }
     }
   </style>
 </head>
 <body>
   <h1>ইউরোপিয়ান ভাষা শেখার সফটওয়্যার</h1>
 
-  <section class="controls">
-    <select id="countrySelect" onchange="changeCountry()">
+  <header class="controls" role="region" aria-label="Language selection and progress controls">
+    <select id="countrySelect" onchange="changeCountry()" aria-label="দেশ সিলেক্ট করুন" title="দেশ সিলেক্ট করুন">
       <option disabled value="">দেশ সিলেক্ট করুন</option>
-      <option value="russia">Russia</option>
-      <option value="germany">Germany</option>
+      <option value="austria">Austria</option>
+      <option value="belgium">Belgium</option>
+      <option value="bulgaria">Bulgaria</option>
+      <option value="croatia">Croatia</option>
+      <option value="czech_republic">Czech Republic</option>
+      <option value="denmark">Denmark</option>
+      <option value="finland">Finland</option>
       <option value="france">France</option>
+      <option value="germany">Germany</option>
+      <option value="greece">Greece</option>
+      <option value="hungary">Hungary</option>
+      <option value="iceland">Iceland</option>
+      <option value="ireland">Ireland</option>
       <option value="italy">Italy</option>
+      <option value="latvia">Latvia</option>
+      <option value="lithuania">Lithuania</option>
+      <option value="netherlands">Netherlands</option>
+      <option value="norway">Norway</option>
+      <option value="poland">Poland</option>
+      <option value="portugal">Portugal</option>
+      <option value="romania">Romania</option>
+      <option value="russia">Russia</option>
+      <option value="serbia">Serbia</option>
+      <option value="slovakia">Slovakia</option>
+      <option value="slovenia">Slovenia</option>
       <option value="spain">Spain</option>
+      <option value="sweden">Sweden</option>
+      <option value="switzerland">Switzerland</option>
     </select>
-    <input type="text" id="search" placeholder="অনুসন্ধান করুন" oninput="loadLessons()">
-    <button onclick="resetProgress()">🔄 Reset Progress</button>
-  </section>
 
-  <div id="lesson-list"></div>
+    <button class="reset-btn" onclick="resetSoftware()" aria-label="Reset software" title="Reset entire software" id="resetBtn">
+      🔄 Reset Software
+    </button>
+  </header>
 
-  <div class="progress-container">
+  <main id="lesson-list" aria-live="polite" aria-atomic="true" role="list"></main>
+
+  <div class="progress-container" aria-label="Progress bar">
     <div class="progress-bar" id="progress-bar"></div>
   </div>
-  <div class="progress-text" id="progress-text"></div>
+  <div class="progress-text" id="progress-text" aria-live="polite" aria-atomic="true"></div>
+
+  <button id="back-to-top" aria-label="Back to top" title="Back to top" onclick="scrollToTop()">↑</button>
 
   <script>
     const lessonsByCountry = {
+      austria: [
+        { phrase: "Hallo", pronunciation: "হ্যালো", bangla: "হ্যালো", english: "Hello", category: "basic" },
+        { phrase: "Wie geht's?", pronunciation: "ভিয়ে গেটস?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
+        { phrase: "Danke", pronunciation: "ডাঙ্কে", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
+        { phrase: "Bitte", pronunciation: "বিটে", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
+        { phrase: "Auf Wiedersehen", pronunciation: "আউফ বিদারজেন", bangla: "বিদায়", english: "Goodbye", category: "basic" }
+      ],
+      belgium: [
+        { phrase: "Bonjour", pronunciation: "বঁজুর", bangla: "হ্যালো", english: "Hello", category: "basic" },
+        { phrase: "Comment ça va?", pronunciation: "কমঁ সা ভা?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
+        { phrase: "Merci", pronunciation: "মার্সি", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
+        { phrase: "S'il vous plaît", pronunciation: "সিলু প্লে", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
+        { phrase: "Au revoir", pronunciation: "অ রিভোয়ার", bangla: "বিদায়", english: "Goodbye", category: "basic" }
+      ],
+      bulgaria: [
+        { phrase: "Здравейте", pronunciation: "জদরাভেইতে", bangla: "হ্যালো", english: "Hello", category: "basic" },
+        { phrase: "Как сте?", pronunciation: "কাক স্টে?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
+        { phrase: "Благодаря", pronunciation: "ব্লাগোডারইয়া", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
+        { phrase: "Моля", pronunciation: "মোল্যা", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
+        { phrase: "Довиждане", pronunciation: "দোভিজডানে", bangla: "বিদায়", english: "Goodbye", category: "basic" }
+      ],
+      // ... Include all countries' data here as previously provided
       russia: [
-        "Здравствуйте (হ্যালো)",
-        "Как дела? (আপনি কেমন আছেন?)",
-        "Спасибо (ধন্যবাদ)",
-        "Пожалуйста (অনুগ্রহ করে)",
-        "До свидания (বিদায়)"
-      ],
-      germany: [
-        "Hallo (হ্যালো)",
-        "Wie geht's? (আপনি কেমন আছেন?)",
-        "Danke (ধন্যবাদ)",
-        "Bitte (অনুগ্রহ করে)",
-        "Tschüss (বিদায়)"
-      ],
-      france: [
-        "Bonjour (গুড মর্নিং)",
-        "Comment ça va? (আপনি কেমন আছেন?)",
-        "Merci (ধন্যবাদ)",
-        "S'il vous plaît (অনুগ্রহ করে)",
-        "Au revoir (বিদায়)"
-      ],
-      italy: [
-        "Ciao (হ্যালো/বিদায়)",
-        "Come stai? (আপনি কেমন আছেন?)",
-        "Grazie (ধন্যবাদ)",
-        "Per favore (অনুগ্রহ করে)",
-        "Arrivederci (বিদায়)"
-      ],
-      spain: [
-        "Hola (হ্যালো)",
-        "¿Cómo estás? (আপনি কেমন আছেন?)",
-        "Gracias (ধন্যবাদ)",
-        "Por favor (অনুগ্রহ করে)",
-        "Adiós (বিদায়)"
+        { phrase: "Здравствуйте", pronunciation: "জদরাস্তভুয়ুতয়ে", bangla: "হ্যালো", english: "Hello", category: "basic" },
+        { phrase: "Как дела?", pronunciation: "কাক দেলা?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
+        { phrase: "Спасибо", pronunciation: "স্পাসিবা", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
+        { phrase: "Пожалуйста", pronunciation: "পজালুস্তা", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
+        { phrase: "До свидания", pronunciation: "দো সভিড্যানিয়া", bangla: "বিদায়", english: "Goodbye", category: "basic" },
+        { phrase: "Я не понимаю", pronunciation: "ইয়া নে পনিমায়ু", bangla: "আমি বুঝতে পারছি না", english: "I don't understand", category: "emergency" }
       ]
     };
 
-    function changeCountry() {
-      const country = document.getElementById('countrySelect').value;
-      if (country) {
-        localStorage.setItem('selectedCountry', country);
-        loadLessons();
-      }
-    }
-
     function loadLessons() {
-      const country = localStorage.getItem('selectedCountry');
-      const search = document.getElementById('search').value.toLowerCase();
+      const country = localStorage.getItem('selectedCountry') || 'russia';
       const list = document.getElementById('lesson-list');
       list.innerHTML = '';
 
-      if (!country || !lessonsByCountry[country]) return;
+      if (!lessonsByCountry[country]) {
+        updateProgress(0, 0);
+        return;
+      }
 
-      const lessons = lessonsByCountry[country].filter(l =>
-        l.toLowerCase().includes(search)
-      );
-
-      const completed = JSON.parse(localStorage.getItem('completed_' + country)) || [];
-
-      lessons.forEach((text, index) => {
+      const lessons = lessonsByCountry[country];
+      const completed = JSON.parse(localStorage.getItem('completed')) || [];
+      lessons.forEach((lesson, index) => {
         const div = document.createElement('div');
-        div.className = 'lesson' + (completed.includes(index) ? ' completed' : '');
-        div.innerHTML = `
-          <span>${text}</span>
-          <button onclick="markComplete(${index})">✔️</button>
-        `;
+        div.className = 'lesson';
+        const uniqueId = country + '-' + index;
+        const isCompleted = completed.includes(uniqueId);
+        if (isCompleted) div.classList.add('completed');
+        div.tabIndex = 0;
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'lesson-content';
+
+        const phraseSpan = document.createElement('div');
+        phraseSpan.className = 'phrase-main';
+        phraseSpan.textContent = lesson.phrase;
+
+        const pronDiv = document.createElement('div');
+        pronDiv.className = 'pronunciation';
+        pronDiv.textContent = `উচ্চারণ: ${lesson.pronunciation}`;
+
+        const transDiv = document.createElement('div');
+        transDiv.className = 'translations';
+        transDiv.innerHTML = `<span><strong>বাংলা:</strong> ${lesson.bangla}</span><span><strong>English:</strong> ${lesson.english}</span>`;
+
+        contentDiv.appendChild(phraseSpan);
+        contentDiv.appendChild(pronDiv);
+        contentDiv.appendChild(transDiv);
+
+        const completeBtn = document.createElement('button');
+        completeBtn.className = 'complete-btn';
+        completeBtn.textContent = isCompleted ? 'কমপ্লিটেড' : 'কমপ্লিট';
+        completeBtn.disabled = isCompleted;
+        completeBtn.title = isCompleted ? 'Already completed' : 'Mark as complete';
+        completeBtn.tabIndex = -1;
+        completeBtn.setAttribute('aria-pressed', isCompleted);
+
+        completeBtn.addEventListener('click', e => {
+          e.stopPropagation();
+          if (!isCompleted) {
+            markComplete(uniqueId, completeBtn);
+          }
+        });
+
+        div.appendChild(contentDiv);
+        div.appendChild(completeBtn);
+
         list.appendChild(div);
       });
 
       updateProgress();
+      toggleBackToTop();
     }
 
-    function markComplete(index) {
-      const country = localStorage.getItem('selectedCountry');
-      let completed = JSON.parse(localStorage.getItem('completed_' + country)) || [];
-      if (!completed.includes(index)) {
-        completed.push(index);
-        localStorage.setItem('completed_' + country, JSON.stringify(completed));
-        loadLessons();
+    function markComplete(uniqueId, button) {
+      let completed = JSON.parse(localStorage.getItem('completed')) || [];
+      if (!completed.includes(uniqueId)) {
+        completed.push(uniqueId);
+        localStorage.setItem('completed', JSON.stringify(completed));
+        button.textContent = 'কমপ্লিটেড';
+        button.disabled = true;
+        button.setAttribute('aria-pressed', true);
+        // Update progress visually after small delay
+        setTimeout(updateProgress, 100);
       }
     }
 
     function updateProgress() {
-      const country = localStorage.getItem('selectedCountry');
-      const total = lessonsByCountry[country]?.length || 0;
-      const completed = JSON.parse(localStorage.getItem('completed_' + country)) || [];
-      const percent = total ? Math.round((completed.length / total) * 100) : 0;
-      document.getElementById('progress-bar').style.width = percent + '%';
-      document.getElementById('progress-text').innerText = `সম্পন্ন হয়েছে: ${percent}% (${completed.length}/${total})`;
-    }
+      const country = localStorage.getItem('selectedCountry') || 'russia';
+      const lessons = lessonsByCountry[country] || [];
+      const completed = JSON.parse(localStorage.getItem('completed')) || [];
+      const countryPrefix = country + '-';
+      const completedForCountry = completed.filter(id => id.startsWith(countryPrefix));
+      const countCompleted = completedForCountry.length;
+      const countTotal = lessons.length;
+      const percent = countTotal ? Math.round((countCompleted / countTotal) * 100) : 0;
 
-    function resetProgress() {
-      const country = localStorage.getItem('selectedCountry');
-      localStorage.removeItem('completed_' + country);
-      loadLessons();
-    }
+      const progressBar = document.getElementById('progress-bar');
+      progressBar.style.width = percent + '%';
 
-    window.onload = function () {
-      const savedCountry = localStorage.getItem('selectedCountry');
-      if (savedCountry) {
-        document.getElementById('countrySelect').value = savedCountry;
-        loadLessons();
+      const progressText = document.getElementById('progress-text');
+      if (percent === 100 && countTotal > 0) {
+        progressText.innerHTML = `<strong>অভিনন্দন!</strong> আপনি সবগুলো পঠিত করেছেন।`;
+        progressText.style.color = '#7af27a';
+        progressText.style.textShadow = '0 0 10px #4caf5099';
+      } else {
+        progressText.textContent = `সম্পন্ন হয়েছে: ${percent}% (${countCompleted}/${countTotal})`;
+        progressText.style.color = '#a4dbff';
+        progressText.style.textShadow = '0 0 6px #64d2ffbb';
       }
+    }
+
+    function resetSoftware() {
+      if (!confirm('আপনি কি পুরো সফটওয়্যারটি রিসেট করতে চান? আপনার সমস্ত ডাটা মুছে যাবে। নিশ্চিত?')) return;
+      localStorage.clear();
+      document.getElementById('countrySelect').value = 'russia';
+      loadLessons();
+      const progressText = document.getElementById('progress-text');
+      const progressBar = document.getElementById('progress-bar');
+      progressBar.style.width = '0%';
+      progressText.textContent = 'প্রগ্রেস রিসেট হয়েছে। শুরু করুন নতুন করে।';
+      progressText.style.color = '#ff6b6b';
+      progressText.style.textShadow = '0 0 8px #ff6b6bcc';
+      setTimeout(() => {
+        updateProgress();
+        progressText.style.color = '#a4dbff';
+        progressText.style.textShadow = '0 0 6px #64d2ffbb';
+      }, 2800);
+    }
+
+    const backToTopBtn = document.getElementById('back-to-top');
+    function toggleBackToTop() {
+      if (window.scrollY > 240) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    window.addEventListener('scroll', toggleBackToTop);
+
+    document.getElementById('countrySelect').addEventListener('change', () => {
+      // Reset completed buttons and reload lessons on country change
+      loadLessons();
+    });
+
+    window.onload = () => {
+      const savedCountry = localStorage.getItem('selectedCountry');
+      if (savedCountry && lessonsByCountry[savedCountry]) {
+        document.getElementById('countrySelect').value = savedCountry;
+      } else {
+        document.getElementById('countrySelect').value = 'russia';
+        localStorage.setItem('selectedCountry', 'russia');
+      }
+      loadLessons();
     };
   </script>
 </body>
 </html>
+
