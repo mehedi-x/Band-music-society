@@ -1,120 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Learn Home Vocabulary - Clean & Modern</title>
-<style>
-  /* Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  header {
-    background: #4caf50;
-    color: #fff;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  }
-  main {
-    flex: 1;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: block;
-    font-size: 1.1rem;
-  }
-  select {
-    width: 100%;
-    max-width: 300px;
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
-    border: 2px solid #4caf50;
-    border-radius: 4px;
-    outline-offset: 2px;
-    transition: border-color 0.3s ease;
-    cursor: pointer;
-    margin-bottom: 1.8rem;
-  }
-  select:focus {
-    border-color: #388e3c;
-  }
-  .vocab-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
-    gap: 1.5rem 2rem;
-  }
-  .card {
-    background: #fff;
-    padding: 1rem 1.25rem;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
-    cursor: default;
-  }
-  .card:hover {
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  }
-  .card h3 {
-    margin-top: 0;
-    margin-bottom: 0.8rem;
-    color: #4caf50;
-    font-size: 1.3rem;
-  }
-  .card p {
-    margin: 0.4rem 0;
-    font-size: 1rem;
-    color: #555;
-  }
-  .label {
-    font-weight: 700;
-    color: #2e7d32;
-  }
-  footer {
-    background: #e8f5e9;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #4caf50;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
-  }
-  @media (max-width: 600px) {
-    .vocab-grid {
-      grid-template-columns: 1fr;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EuroLang Learn – Schengen Edition</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f2f4f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
-      font-size: 1.5rem;
-      padding: 1rem 1rem;
+      background: #00695c;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
     }
     select {
-      max-width: 100%;
+      width: 100%;
+      max-width: 300px;
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 2px solid #00695c;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
     }
-  }
-</style>
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      color: #00897b;
+      margin: 0 0 0.5rem 0;
+    }
+    .card p {
+      margin: 0.4rem 0;
+      font-size: 1rem;
+    }
+    .label {
+      font-weight: bold;
+      color: #00796b;
+    }
+    footer {
+      background: #e0f2f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #004d40;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
+    }
+    @media (max-width: 600px) {
+      header { font-size: 1.4rem; padding: 1rem; }
+      .vocab-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <header>Learn Home Vocabulary</header>
+  <header>EuroLang Learn – Schengen Edition</header>
   <main>
-    <label for="country-select">Choose a Language/Country:</label>
-    <select id="country-select" aria-label="Choose Country Language">
-      <option value="all">All Languages</option>
+    <label for="country-select">Choose a Country Language:</label>
+    <select id="country-select">
+      <option value="all">All Schengen Countries</option>
+      <option value="Germany">German</option>
+      <option value="France">French</option>
+      <option value="Italy">Italian</option>
+      <option value="Spain">Spanish</option>
+      <option value="Netherlands">Dutch</option>
+      <option value="Poland">Polish</option>
+      <option value="Sweden">Swedish</option>
+      <option value="Denmark">Danish</option>
       <option value="Austria">Austrian German</option>
-      <option value="Belgium">Belgian German</option>
-      <option value="Bulgaria">Bulgarian</option>
-      <
+      <option value="Hungary">Hungarian</option>
+    </select>
+
+    <section class="vocab-grid" id="vocab-grid" aria-live="polite"></section>
+  </main>
+  <footer>© 2025 EuroLang Learn | Your Gateway to Europe</footer>
+
+  <script>
+    const vocabData = {
+      Germany: [
+        {native:"Haus", pron:"হাউস", meaning:"বাড়ি"},
+        {native:"Tisch", pron:"টিশ", meaning:"টেবিল"},
+        {native:"Stuhl", pron:"স্টুল", meaning:"চেয়ার"}
+      ],
+      France: [
+        {native:"Maison", pron:"মেজঁ", meaning:"বাড়ি"},
+        {native:"Chaise", pron:"শেজ", meaning:"চেয়ার"},
+        {native:"Table", pron:"তাবল", meaning:"টেবিল"}
+      ],
+      Italy: [
+        {native:"Casa", pron:"কাসা", meaning:"বাড়ি"},
+        {native:"Sedia", pron:"সেদিয়া", meaning:"চেয়ার"},
+        {native:"Tavolo", pron:"তাভোলো", meaning:"টেবিল"}
+      ],
+      Spain: [
+        {native:"Casa", pron:"কাসা", meaning:"বাড়ি"},
+        {native:"Silla", pron:"সিলিয়া", meaning:"চেয়ার"},
+        {native:"Mesa", pron:"মেসা", meaning:"টেবিল"}
+      ],
+      Netherlands: [
+        {native:"Huis", pron:"হাউস", meaning:"বাড়ি"},
+        {native:"Stoel", pron:"স্টূল", meaning:"চেয়ার"},
+        {native:"Tafel", pron:"টাফেল", meaning:"টেবিল"}
+      ],
+      Poland: [
+        {native:"Dom", pron:"ডম", meaning:"বাড়ি"},
+        {native:"Stół", pron:"স্তুল", meaning:"টেবিল"},
+        {native:"Krzesło", pron:"ক্রেশ্লো", meaning:"চেয়ার"}
+      ],
+      Sweden: [
+        {native:"Hus", pron:"হুস", meaning:"বাড়ি"},
+        {native:"Stol", pron:"স্টোল", meaning:"চেয়ার"},
+        {native:"Bord", pron:"বোর্ড", meaning:"টেবিল"}
+      ],
+      Denmark: [
+        {native:"Hus", pron:"হুস", meaning:"বাড়ি"},
+        {native:"Stol", pron:"স্টোল", meaning:"চেয়ার"},
+        {native:"Bord", pron:"বোর্ড", meaning:"টেবিল"}
+      ],
+      Austria: [
+        {native:"Haus", pron:"হাউস", meaning:"বাড়ি"},
+        {native:"Stuhl", pron:"স্টুহল", meaning:"চেয়ার"},
+        {native:"Tisch", pron:"টিশ", meaning:"টেবিল"}
+      ],
+      Hungary: [
+        {native:"Ház", pron:"হাজ", meaning:"বাড়ি"},
+        {native:"Szék", pron:"সেক", meaning:"চেয়ার"},
+        {native:"Asztal", pron:"আস্তাল", meaning:"টেবিল"}
+      ],
+      all: []
+    };
+
+    Object.keys(vocabData).forEach(country => {
+      if (country !== 'all') {
+        vocabData.all = vocabData.all.concat(
+          vocabData[country].map(word => ({...word, country}))
+        );
+      }
+    });
+
+    const select = document.getElementById('country-select');
+    const grid = document.getElementById('vocab-grid');
+
+    function createCard(word) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${word.country || select.value}</h3>
+        <p><span class="label">Native:</span> ${word.native}</p>
+        <p><span class="label">Pronunciation:</span> ${word.pron}</p>
+        <p><span class="label">Meaning:</span> ${word.meaning}</p>
+      `;
+      return card;
+    }
+
+    function renderVocab(country) {
+      grid.innerHTML = '';
+      const data = country === 'all' ? vocabData.all : vocabData[country] || [];
+      if (!data.length) {
+        grid.innerHTML = '<p>No vocabulary available.</p>';
+        return;
+      }
+      data.forEach(word => grid.appendChild(createCard(word)));
+    }
+
+    select.addEventListener('change', e => renderVocab(e.target.value));
+    window.addEventListener('DOMContentLoaded', () => renderVocab('all'));
+  </script>
+</body>
+</html>
