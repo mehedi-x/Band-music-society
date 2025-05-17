@@ -1,116 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Duolingo Style Conversation</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f4f8;
-      color: #222;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learn Home Vocabulary - Clean & Modern</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: #4caf50;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  main {
+    flex: 1;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1.1rem;
+  }
+  select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #4caf50;
+    border-radius: 4px;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 1.8rem;
+  }
+  select:focus {
+    border-color: #388e3c;
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap: 1.5rem 2rem;
+  }
+  .card {
+    background: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .card:hover {
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+  .card h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: #4caf50;
+    font-size: 1.3rem;
+  }
+  .card p {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  .label {
+    font-weight: 700;
+    color: #2e7d32;
+  }
+  footer {
+    background: #e8f5e9;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #4caf50;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  }
+  @media (max-width: 600px) {
+    .vocab-grid {
+      grid-template-columns: 1fr;
     }
-
     header {
-      background-color: #58cc02;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 1rem 1rem;
     }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px 10px;
+    select {
+      max-width: 100%;
     }
-
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 16px;
-      margin-bottom: 15px;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.01);
-    }
-
-    .native {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .bangla, .english {
-      font-size: 16px;
-      margin-top: 6px;
-    }
-
-    .bangla {
-      color: #e67e22;
-    }
-
-    .english {
-      color: #3498db;
-    }
-
-    .ad {
-      background-color: #fff3cd;
-      border: 1px solid #ffeeba;
-      color: #856404;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-      margin: 20px 0;
-      font-size: 16px;
-      font-style: italic;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
-<header>🇷🇺 Learn Russian - Duolingo Style 🇧🇩</header>
-
-<div class="container" id="content"></div>
-
-<script>
-  const Russia = [
-    { native: "Ты как?", banglaPronunciation: "তুমি কাক?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
-    { native: "Я в порядке.", banglaPronunciation: "য়া ফ পার্যাদকে.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
-    { native: "Где ресторан?", banglaPronunciation: "গদে রেস্টোরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
-    { native: "Хочу идти в больницу.", banglaPronunciation: "খাচু ইদতি ফ বোলনিতসু.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
-    { native: "Я иду домой.", banglaPronunciation: "য়া ইদু দামোয়।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
-    { native: "Как пройти?", banglaPronunciation: "কাক প্রোতি?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
-    { native: "Куда идти один день?", banglaPronunciation: "কুদা ইদতি আদিন দিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
-  ];
-
-  const container = document.getElementById('content');
-
-  Russia.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="native">🇷🇺 ${item.native}</div>
-      <div class="bangla">🔈 প্রোনান্স: ${item.banglaPronunciation}</div>
-      <div class="bangla">🇧🇩 বাংলা: ${item.banglaMeaning}</div>
-      <div class="english">🇬🇧 English: ${item.englishMeaning}</div>
-    `;
-    container.appendChild(card);
-
-    // Show ad after every 5 cards
-    if ((index + 1) % 5 === 0) {
-      const ad = document.createElement('div');
-      ad.className = 'ad';
-      ad.textContent = "📢 বিজ্ঞাপন: আমাদের অ্যাপ ব্যবহার করে আরও ১০০০+ বাক্য শিখুন!";
-      container.appendChild(ad);
-    }
-  });
-</script>
-
-</body>
-</html>
+  <header>Learn Home Vocabulary</header>
+  <main>
+    <label for="country-select">Choose a Language/Country:</label>
+    <select id="country-select" aria-label="Choose Country Language">
+      <option value="all">All Languages</option>
+      <option value="Austria">Austrian German</option>
+      <option value="Belgium">Belgian German</option>
+      <option value="Bulgaria">Bulgarian</option>
+      <
