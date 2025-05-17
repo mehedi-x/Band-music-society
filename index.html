@@ -2,31 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learn European Languages</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>🌍 Learn European Languages</header>
+
   <main>
     <label for="country-select">Choose a Country/Language:</label>
     <select id="country-select">
-      <option value="all">All Countries</option>
+      <option value="">-- Select Country --</option>
       <option value="Russia">Russia</option>
       <option value="Germany">Germany</option>
       <option value="France">France</option>
-      <!-- Add more options as needed -->
     </select>
+
     <section class="vocab-grid" id="vocab-grid" aria-live="polite"></section>
   </main>
-  <footer>© 2025 EuroLingua | Practice all European Languages & Russian</footer>
 
-  <!-- Load data files -->
-  <script src="data/russia.js"></script>
-  <script src="data/germany.js"></script>
-  <script src="data/france.js"></script>
-  <!-- Add more data scripts here -->
+  <footer>© 2025 EuroLingua | Practice all European Languages</footer>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
