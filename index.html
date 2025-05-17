@@ -79,7 +79,7 @@
 
   <section class="controls">
     <select id="countrySelect" onchange="changeCountry()">
-      <option disabled selected value="">দেশ সিলেক্ট করুন</option>
+      <option disabled value="">দেশ সিলেক্ট করুন</option>
       <option value="russia">Russia</option>
       <option value="germany">Germany</option>
       <option value="france">France</option>
@@ -138,8 +138,10 @@
 
     function changeCountry() {
       const country = document.getElementById('countrySelect').value;
-      localStorage.setItem('selectedCountry', country);
-      loadLessons();
+      if (country) {
+        localStorage.setItem('selectedCountry', country);
+        loadLessons();
+      }
     }
 
     function loadLessons() {
