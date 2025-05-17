@@ -2,98 +2,159 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>Speak EU - Comprehensive European Conversations</title>
 <style>
+    /* Reset & base */
     * {
         box-sizing: border-box;
     }
-    body {
+    html, body {
         margin: 0;
+        padding: 0;
+        height: 100%;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #6a86ff 0%, #4e6cef 100%);
-        color: #222;
-        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        user-select: none;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        transition: background-color 0.35s ease, color 0.35s ease;
+    }
+    :root {
+        /* Light theme colors */
+        --bg-color: #f5f7fa;
+        --header-bg: #23329f;
+        --header-text: #ffffff;
+        --footer-bg: #1a237e;
+        --footer-text: #e0e0e0;
+        --card-bg: #ffffff;
+        --card-shadow: rgba(35, 50, 159, 0.1);
+        --text-primary: #222222;
+        --text-secondary: #555555;
+        --accent-blue: #415bd9;
+        --accent-light-blue: #a7bbe9;
+        --accent-hover-blue: #23329f;
+        --border-color: #d3d9e8;
+        --ad-bg: linear-gradient(45deg, #dde3f7, #b3bceb);
+        --ad-border: #94a3b8;
+    }
+    @media(prefers-color-scheme: dark) {
+        :root {
+            /* Dark theme colors */
+            --bg-color: #121217;
+            --header-bg: #1a237e;
+            --header-text: #cfd8dc;
+            --footer-bg: #0b1367;
+            --footer-text: #cfd8dc;
+            --card-bg: #1e2131;
+            --card-shadow: rgba(20, 25, 50, 0.7);
+            --text-primary: #e0e0e0;
+            --text-secondary: #a3a3a3;
+            --accent-blue: #7c94f3;
+            --accent-light-blue: #536dcf;
+            --accent-hover-blue: #4a67d0;
+            --border-color: #4a4f6b;
+            --ad-bg: linear-gradient(45deg, #2b2f48, #3a3d5c);
+            --ad-border: #5a67a0;
+        }
+    }
+    /* Layout */
+    body, #app-wrapper {
         display: flex;
         flex-direction: column;
+        height: 100%;
+        min-height: 100vh;
+        max-width: 480px;
+        margin: 0 auto;
+        background-color: var(--bg-color);
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        user-select: none;
     }
     header {
-        background: #23329f;
-        color: white;
-        padding: 1rem 2rem;
-        text-align: center;
+        background-color: var(--header-bg);
+        color: var(--header-text);
+        padding: 1.1rem 1.5rem;
         font-weight: 900;
-        font-size: 2.35rem;
-        letter-spacing: 0.1em;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        font-size: 1.9rem;
+        text-align: center;
+        letter-spacing: 0.11em;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         user-select: none;
         text-transform: uppercase;
         font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        flex-shrink: 0;
     }
     main.container {
-        flex: 1;
-        max-width: 960px;
-        margin: 2rem auto 3rem auto;
-        background: #ffffffee;
-        border-radius: 14px;
-        padding: 32px 40px 48px 40px;
-        box-shadow: 0 12px 32px rgba(35, 50, 159, 0.3);
+        flex: 1 1 auto;
+        background: var(--bg-color);
+        color: var(--text-primary);
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        padding: 20px 20px 0 20px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        user-select: text;
     }
     h1.page-title {
         text-align: center;
         font-weight: 800;
-        font-size: 2.5rem;
-        margin-bottom: 0;
-        color: #1b237e;
-        letter-spacing: 0.05em;
+        font-size: 1.9rem;
+        margin: 0 0 12px 0;
+        color: var(--accent-hover-blue);
+        letter-spacing: 0.04em;
         user-select: none;
     }
     label {
-        display: block;
         font-weight: 700;
-        margin-bottom: 14px;
-        color: #1a237e;
-        font-size: 1.2rem;
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+        color: var(--accent-hover-blue);
         user-select: none;
-        letter-spacing: 0.02em;
+        display: block;
     }
     select {
         width: 100%;
-        padding: 13px 18px;
-        font-size: 1.1rem;
-        border: 3px solid #a7bbe9;
+        padding: 11px 16px;
+        font-size: 1.05rem;
+        border: 2.5px solid var(--accent-light-blue);
         border-radius: 10px;
         outline: none;
-        transition: border-color 0.35s cubic-bezier(0.25,0.8,0.25,1);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        cursor: pointer;
-        box-shadow: inset 0 0 10px #d4e0ff;
-        color: #23329f;
+        color: var(--accent-hover-blue);
         font-weight: 600;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path fill="%234153bd" d="M1 1l6 6 6-6"/></svg>') no-repeat right 15px center / 14px 8px;
+        cursor: pointer;
+        box-shadow: inset 0 0 6px var(--accent-light-blue);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        user-select: none;
     }
     select:hover {
-        border-color: #415bd9;
-        box-shadow: inset 0 0 12px #abbfff;
+        border-color: var(--accent-blue);
+        box-shadow: inset 0 0 8px var(--accent-blue);
     }
     select:focus {
-        border-color: #23329f;
-        box-shadow: 0 0 15px #23329faa;
+        border-color: var(--accent-hover-blue);
+        box-shadow: 0 0 10px var(--accent-hover-blue);
     }
     #practice-toggle {
+        margin-top: 14px;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         gap: 10px;
-        margin-top: 10px;
         user-select: none;
     }
     #practice-toggle label {
         font-weight: 600;
-        font-size: 1.1rem;
-        color: #2c387e;
+        font-size: 1.05rem;
+        color: var(--accent-hover-blue);
+        cursor: pointer;
     }
     #practice-toggle input[type=checkbox] {
         width: 20px;
@@ -101,130 +162,141 @@
         cursor: pointer;
     }
     .vocabulary-grid {
-        margin-top: 25px;
+        margin-top: 20px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 24px 22px;
-        transition: opacity 0.3s ease;
+        grid-template-columns: 1fr;
+        gap: 18px 0;
+        overflow-anchor: none;
     }
     .word-card {
-        background: #e7ebfe;
-        border-radius: 14px;
-        padding: 24px 22px 26px 22px;
-        box-shadow: 0 4px 10px rgba(33, 43, 156, 0.15);
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 18px 17px 22px 17px;
+        box-shadow: 0 8px 25px var(--card-shadow);
         text-align: left;
-        font-size: 0.96rem;
-        transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.26s ease;
+        font-size: 0.95rem;
+        transition: transform 0.23s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.23s ease;
         cursor: default;
         user-select: text;
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 7px;
+        scroll-margin-top: 70px;
     }
-    .word-card:hover, .word-card:focus {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 25px rgba(33, 43, 156, 0.3);
-        outline: none;
+    .word-card:hover,
+    .word-card:focus-visible {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 40px var(--accent-blue);
+        outline-offset: 3px;
+        outline: 2px solid var(--accent-hover-blue);
+        z-index: 10;
     }
     .native-text {
-        font-weight: 800;
-        font-size: 1.18rem;
-        color: #172b75;
+        font-weight: 900;
+        font-size: 1.15rem;
+        color: var(--accent-hover-blue);
         white-space: pre-wrap;
+        user-select: text;
     }
     .bangla-pronunciation {
         font-style: italic;
         font-weight: 700;
-        color: #4169e1;
-        font-size: 1.05rem;
+        color: var(--accent-blue);
+        font-size: 1rem;
         white-space: pre-wrap;
+        user-select: text;
     }
     .bangla-meaning {
         font-weight: 600;
-        color: #3b3b3b;
+        color: var(--text-secondary);
         font-size: 1rem;
         white-space: pre-wrap;
         line-height: 1.3;
+        user-select: text;
     }
     .practice-btn {
         margin-top: auto;
         user-select: none;
-        background-color: #23329f;
+        background-color: var(--accent-hover-blue);
         border: none;
         color: white;
         font-weight: 700;
         font-size: 0.9rem;
-        border-radius: 8px;
-        padding: 8px 14px;
+        border-radius: 10px;
+        padding: 9px 16px;
         cursor: pointer;
         align-self: flex-start;
-        box-shadow: 0 3px 10px #1a237eaa;
-        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 12px var(--accent-blue);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
         display: none;
     }
-    .practice-btn:hover, .practice-btn:focus {
-        background-color: #415bd9;
+    .practice-btn:hover,
+    .practice-btn:focus-visible {
+        background-color: var(--accent-blue);
+        box-shadow: 0 6px 22px var(--accent-hover-blue);
         outline: none;
     }
     .practice-active .practice-btn {
         display: block;
     }
     #ad-container {
-        background: linear-gradient(45deg, #f7f4f9, #e3eafb);
+        background: var(--ad-bg);
         border-radius: 14px;
-        padding: 28px 32px;
-        color: #353535;
-        box-shadow: 0 6px 18px rgba(99, 99, 99, 0.1);
-        font-size: 1.2rem;
+        padding: 26px 24px;
+        color: var(--text-primary);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        font-size: 1.1rem;
         text-align: center;
         font-weight: 700;
         letter-spacing: 0.05em;
         user-select: none;
-        margin-top: 40px;
-        border: 2px dashed #94a3b8;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 32px auto 20px auto;
+        border: 2px dashed var(--ad-border);
+        max-width: 440px;
     }
     footer {
-        background: #23329f;
-        color: white;
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
         text-align: center;
-        padding: 1.15rem 2rem;
-        font-size: 0.95rem;
+        padding: 1rem 1rem;
+        font-size: 0.9rem;
         user-select: none;
-        box-shadow: inset 0 1px 4px rgba(255,255,255,0.25);
+        box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.15);
         letter-spacing: 0.05em;
         font-weight: 600;
-        margin-top: auto;
+        flex-shrink: 0;
+        border-top: 1px solid var(--border-color);
     }
-    @media (max-width: 720px) {
-        main.container {
-            margin: 1rem 1rem 2rem 1rem;
-            padding: 28px 22px 36px 22px;
-        }
-        .vocabulary-grid {
-            grid-template-columns: 1fr;
-            gap: 20px 15px;
-        }
-        .native-text {
-            font-size: 1.12rem;
-        }
-        .bangla-pronunciation, .bangla-meaning {
-            font-size: 0.95rem;
-        }
-        .practice-btn {
-            font-size: 0.85rem;
-            padding: 7px 12px;
-        }
-        select {
-            font-size: 1rem;
-            padding: 11px 15px;
-        }
-        label {
-            font-size: 1rem;
-        }
+    /* Insert ads in grid every 5 cards */
+    .ad-inline {
+        background: var(--ad-bg);
+        border-radius: 14px;
+        padding: 18px 14px;
+        color: var(--text-primary);
+        box-shadow: 0 7px 22px rgba(0,0,0,0.1);
+        font-size: 1rem;
+        font-weight: 700;
+        user-select: none;
+        text-align: center;
+        border: 2px dashed var(--ad-border);
+        max-width: 100%;
+    }
+    /* Scrollbar for container */
+    main.container::-webkit-scrollbar {
+        width: 8px;
+    }
+    main.container::-webkit-scrollbar-thumb {
+        background-color: var(--accent-light-blue);
+        border-radius: 10px;
+    }
+    main.container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    /* Accessibility focus outline */
+    button:focus-visible, select:focus-visible {
+        outline: 3px solid var(--accent-hover-blue);
+        outline-offset: 3px;
     }
 </style>
 </head>
@@ -233,25 +305,27 @@
     Speak EU
 </header>
 
-<main class="container" role="main" aria-label="Speak EU Language Learning Conversations">
+<main class="container" role="main" aria-label="Speak EU Language Learning Conversations" tabindex="0">
     <h1 class="page-title">Comprehensive European Conversations</h1>
 
     <label for="language-select">Select a Country / Language:</label>
-    <select id="language-select" aria-label="Select language or country">
+    <select id="language-select" aria-label="Select language or country" aria-required="true" aria-describedby="help-text">
         <option value="0" selected>-- Please select a country --</option>
         <option value="russia">Russia</option>
         <option value="france">France</option>
         <option value="italy">Italy</option>
+        <option value="all">All Countries</option>
     </select>
+    <div id="help-text" class="visually-hidden">Use the dropdown to select a country to view conversation phrases.</div>
 
     <div id="ad-container" role="region" aria-label="Advertisement" aria-live="polite">
-        🌟 Welcome to Speak EU! Select a country to explore practical conversations for European expats and students. 🌟
+        🌟 Welcome to Speak EU! Select a country to start practical conversations designed for European expats and students. 🌟
         <br /><br />
         Sponsored by LearnEU - Your bridge to mastering European languages!
     </div>
 
     <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="additions" hidden>
-        <!-- Conversation cards -->
+        <!-- Conversation cards go here -->
     </div>
 
     <div id="practice-toggle" hidden>
@@ -265,6 +339,7 @@
 </footer>
 
 <script>
+    // Conversation data for Russia, France, Italy
     const russiaConversations = [
         {native:"Здравствуйте! Меня зовут Джон, я приехал учиться в университет.", banglaPronunciation:"Zdravstvuyte! Menya zovut John, ya priekhal uchitsya v universitet.", banglaMeaning:"হ্যালো! আমার নাম জন, আমি বিশ্ববিদ্যালয়ে পড়াশোনা করতে এসেছি।"},
         {native:"Где я могу снять квартиру недалеко от кампуса?", banglaPronunciation:"Gde ya mogu snyat kvartiru nedaleko ot kampusa?", banglaMeaning:"আমি ক্যাম্পাসের কাছে কোথায় ফ্ল্যাট ভাড়া নিতে পারি?"},
@@ -301,10 +376,10 @@
     ];
     const italyConversations = [
         {native:"Ciao! Mi chiamo Marco, sono venuto per studiare.", banglaPronunciation:"চিয়াও! মি কিয়ামো মার্কো, সোনো ভেনুতো পুর স্টুদিয়ারে.", banglaMeaning:"হ্যালো! আমার নাম মার্কো, আমি পড়াশোনা করতে এসেছি।"},
-        {native:"Dove posso trovare un appartamento vicino all'università?", banglaPronunciation:"দোভে পসো ত্রোভারে উন আপার্ততামেন্তো ভিচিনো আল্লুনিভেরসিতা?", banglaMeaning:"আমি বিশ্ববিদ্যালয়ের কাছে ফ্ল্যাট কোথায় পাবো?"},
+        {native:"Dove posso trovare un appartamento vicino all'università?", banglaPronunciation:"দোভে পসো ত্রোভারে উন আপার্ততামেন্তো ভিচিনো আল্লুনিভেরসাতা?", banglaMeaning:"আমি বিশ্ববিদ্যালয়ের কাছে ফ্ল্যাট কোথায় পাবো?"},
         {native:"Come richiedere un visto studentesco?", banglaPronunciation:"কোমে রিকিয়েদেরে উন ভিস্টো স্টুদেনেস্কো?", banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?"},
-        {native:"A che ora iniziano le lezioni all'università?", banglaPronunciation:"আ কে উরা ইনিইজিয়ানো লে লেজিওনি আল্লুনিভেরসিতা?", banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কতটায় শুরু হয়?"},
-        {native:"Dov’è l’ospedale più vicino?", banglaPronunciation:"দোভে ল’অস্পেদালে পিউ ভিচিনো?", banglaMeaning:"নিকটতম হাসপাতাল কোথায়?"},
+        {native:"A che ora iniziano le lezioni all'università?", banglaPronunciation:"আ কে উরা ইনিইজিয়ানো লে লেজিওনি আল্লুনিভেরসাতা?", banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কতটায় শুরু হয়?"},
+        {native:"Dov’è l’ospedale più vicino?", banglaPronunciation:"দোভে ল’অস্পেদালের পিউ ভিচিনো?", banglaMeaning:"নিকটতম হাসপাতাল কোথায়?"},
         {native:"Dove posso comprare un biglietto dell'autobus?", banglaPronunciation:"দোভে পসো কমপ্রারে উন বিগলিয়েত্তো দেনাউতোবুস?", banglaMeaning:"আমি বাসের টিকিট কোথায় কিনব?"},
         {native:"Come posso trovare un lavoro part-time?", banglaPronunciation:"কোমে পসো ত্রোভারে উন লাভোর পার্ট-টাইম?", banglaMeaning:"আমি পার্ট টাইম জব কোথায় পাবো?"},
         {native:"Quali sono gli orari dell'ufficio immigrazione?", banglaPronunciation:"ক্বালি সোনো গলি ওরারি দেল্লুফিসিও ইমিগ্রাজিওনে?", banglaMeaning:"ইমিগ্রেশন অফিসের সময় কখন?"},
@@ -316,6 +391,7 @@
         {native:"Posso ricevere assistenza in inglese?", banglaPronunciation:"পসো রিচেভেরে আসিস্টেঁজা ইন ইঙ্গলেসে?", banglaMeaning:"আমি কি ইংরেজিতে সাহায্য পেতে পারি?"},
         {native:"Grazie mille per il vostro aiuto e supporto!", banglaPronunciation:"গ্রাজিয়ে মিললে পার ইল ভোস্ত্রো আইুঠো এ সופּপোর্তো!", banglaMeaning:"সহায্য ও সমর্থনের জন্য অনেক ধন্যবাদ!"}
     ];
+
     const conversationData = {
         russia: russiaConversations,
         france: franceConversations,
@@ -328,24 +404,20 @@
     const practiceToggleContainer = document.getElementById('practice-toggle');
     const practiceCheckbox = document.getElementById('practice-mode');
 
-    // Keeps track of current practice mode state
     let practiceMode = false;
 
-    // Utility: Detect language code for speech synthesis for each country (approximate)
     const speechLangMap = {
         russia: 'ru-RU',
         france: 'fr-FR',
         italy: 'it-IT'
     };
 
-    // Clear highlight from cards
     function clearHighlight() {
         document.querySelectorAll('.word-card.highlight').forEach(card=>{
             card.classList.remove('highlight');
         });
     }
 
-    // Create a conversation card element, with practice button if enabled
     function createCard(convo, countryKey){
         const card = document.createElement('div');
         card.className = 'word-card';
@@ -371,26 +443,39 @@
         return card;
     }
 
-    // Display conversations array in grid
+    // Insert an inline ad element
+    function createInlineAd() {
+        const ad = document.createElement('div');
+        ad.className = 'ad-inline';
+        ad.setAttribute('role', 'complementary');
+        ad.setAttribute('aria-label', 'Advertisement');
+        ad.textContent = '🌐 Learn more languages and expand your European journey with LearnEU Premium! Visit learn-eu.example.com';
+        return ad;
+    }
+
+    // Display conversations array with ads every 5 items
     function displayVocabulary(conversations, countryKey){
         vocabularyGrid.innerHTML = '';
         if(!conversations.length){
             vocabularyGrid.innerHTML='<p style="text-align:center; color:#777; font-style:italic;">কোনো কনভারসেশন পাওয়া যায়নি</p>';
             return;
         }
-        conversations.forEach(convo => {
-            vocabularyGrid.appendChild(createCard(convo, countryKey));
+        conversations.forEach((convo, index) => {
+            const card = createCard(convo, countryKey);
+            vocabularyGrid.appendChild(card);
+            // Insert ad every 5 cards except after last card
+            if ((index + 1) % 5 === 0 && index !== conversations.length - 1) {
+                vocabularyGrid.appendChild(createInlineAd());
+            }
         });
     }
 
-    // Use Web Speech API to speak text in specified language
     function speakText(text, lang){
         if(!('speechSynthesis' in window)){
             alert('Sorry, your browser does not support speech synthesis.');
             return;
         }
         const synth = window.speechSynthesis;
-        // Cancel any ongoing speech
         if (synth.speaking) {
             synth.cancel();
         }
@@ -399,15 +484,16 @@
         synth.speak(utterThis);
     }
 
-    // Load conversations and adjust UI
     function loadVocabulary(){
         const selected = languageSelect.value;
         clearHighlight();
 
-        if(selected === '0'){ // no country selected
+        if(selected === '0'){ // no selection
             vocabularyGrid.hidden = true;
             adContainer.hidden = false;
             practiceToggleContainer.hidden = true;
+            practiceCheckbox.checked = false;
+            practiceMode = false;
         } else {
             adContainer.hidden = true;
             vocabularyGrid.hidden = false;
@@ -426,24 +512,38 @@
         }
     }
 
-    // Toggles practice mode to show/hide practice buttons
     function togglePracticeMode(){
         practiceMode = practiceCheckbox.checked;
-        loadVocabulary(); // reload to add/remove practice buttons
+        loadVocabulary();
     }
 
-    // On page load, set initial states, listeners
     (function init(){
-        // Insert a default option for "no selection"
-        // Already done in HTML as value="0"
-
-        // Show ad initially
         loadVocabulary();
-
         languageSelect.addEventListener('change', loadVocabulary);
         practiceCheckbox.addEventListener('change', togglePracticeMode);
     })();
+
+    // Accessibility enhancements: Keyboard focus styling fix for Firefox
+    // Using focus-visible polyfill would be recommended but omitted for simplicity here.
 </script>
+
+<!-- Accessibility helper: visually hidden class -->
+<style>
+.visually-hidden {
+    border: 0 !important;
+    clip: rect(1px,1px,1px,1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important; 
+    margin: -1px !important; 
+    overflow: hidden !important;
+    padding: 0 !important; 
+    position: absolute !important; 
+    width: 1px !important; 
+    white-space: nowrap !important;
+}
+</style>
+
 </body>
 </html>
 
