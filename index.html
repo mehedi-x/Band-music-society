@@ -1,220 +1,397 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Learn European Languages</title>
+
   <style>
+
     *, *::before, *::after { box-sizing: border-box; }
+
     body {
+
       margin: 0; padding: 0;
+
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
       background: #f5f7fa;
+
       color: #333;
+
       min-height: 100vh;
+
       display: flex;
+
       flex-direction: column;
+
     }
+
     header {
+
       background: #2e7d32;
+
       color: #fff;
+
       padding: 1.5rem 1rem;
+
       text-align: center;
+
       font-weight: 700;
+
       font-size: 2rem;
+
       letter-spacing: 1px;
+
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
     }
+
     main {
+
       flex: 1;
+
       max-width: 1000px;
+
       margin: 2rem auto;
+
       padding: 0 1rem;
+
     }
+
     label {
+
       font-weight: 600;
+
       margin-bottom: 0.5rem;
+
       display: block;
+
       font-size: 1.1rem;
+
     }
+
     select {
+
       width: 100%;
+
       max-width: 320px;
+
       padding: 0.6rem 0.75rem;
+
       font-size: 1rem;
+
       border: 2px solid #4caf50;
+
       border-radius: 6px;
+
       margin-bottom: 1.5rem;
+
     }
+
     .vocab-grid {
+
       display: grid;
+
       grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+
       gap: 1.5rem;
+
     }
+
     .card {
+
       background: #fff;
+
       padding: 1rem 1.25rem;
+
       border-radius: 10px;
+
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+
       transition: box-shadow 0.3s ease;
+
     }
+
     .card:hover {
+
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+
     }
+
     .card h3 {
+
       margin: 0 0 0.8rem;
+
       color: #2e7d32;
+
     }
+
     .card p {
+
       margin: 0.4rem 0;
+
     }
+
     .label {
+
       font-weight: 700;
+
       color: #1b5e20;
+
     }
+
     footer {
+
       background: #dcedc8;
+
       padding: 1rem;
+
       text-align: center;
+
       font-size: 0.9rem;
+
       color: #33691e;
+
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+
     }
+
     @media (max-width: 600px) {
+
       .vocab-grid { grid-template-columns: 1fr; }
+
     }
+
   </style>
+
 </head>
+
 <body>
+
   <header>🌍 Learn European Languages</header>
+
   <main>
+
     <label for="country-select">Choose a Country/Language:</label>
+
     <select id="country-select">
+
       <option value="all">All Countries</option>
+
       <option value="Russia">Russia</option>
+
       <option value="Germany">Germany</option>
+
       <option value="France">France</option>
+
       <option value="Italy">Italy</option>
+
       <option value="Spain">Spain</option>
+
       <option value="Netherlands">Netherlands</option>
+
       <option value="Belgium">Belgium</option>
+
       <option value="Sweden">Sweden</option>
+
       <option value="Norway">Norway</option>
+
       <option value="Finland">Finland</option>
+
       <option value="Denmark">Denmark</option>
+
       <option value="Austria">Austria</option>
+
       <option value="Switzerland">Switzerland</option>
+
       <option value="Poland">Poland</option>
+
       <option value="Czech Republic">Czech Republic</option>
+
       <option value="Slovakia">Slovakia</option>
+
       <option value="Hungary">Hungary</option>
+
       <option value="Slovenia">Slovenia</option>
+
       <option value="Lithuania">Lithuania</option>
+
       <option value="Latvia">Latvia</option>
+
       <option value="Estonia">Estonia</option>
+
       <option value="Luxembourg">Luxembourg</option>
+
       <option value="Liechtenstein">Liechtenstein</option>
+
       <option value="Malta">Malta</option>
+
       <option value="Greece">Greece</option>
+
       <option value="Portugal">Portugal</option>
+
       <option value="United Kingdom">United Kingdom</option>
+
       <option value="Ireland">Ireland</option>
+
       <option value="Ukraine">Ukraine</option>
+
       <option value="Turkey">Turkey</option>
+
     </select>
+
     <section class="vocab-grid" id="vocab-grid" aria-live="polite"></section>
+
   </main>
+
   <footer>© 2025 EuroLingua | Practice all European Languages & Russian</footer>
 
+
+
   <script>
+
     const vocabularyData = {
+
       Russia: [
-  { native: "дом", pron: "দম", meaning: "বাড়ি" },
-  { native: "офис", pron: "অফিস", meaning: "অফিস" },
-  { native: "больница", pron: "বালনিশ্চা", meaning: "হাসপাতাল" },
-  { native: "мечеть", pron: "মেচেত", meaning: "মসজিদ" },
-  { native: "магазин", pron: "মাগাজিন", meaning: "দোকান / বাজার" },
-  { native: "улица", pron: "উলিৎসা", meaning: "রাস্তা" },
-  { native: "парк", pron: "পার্ক", meaning: "পার্ক" },
-  { native: "автобусная остановка", pron: "অটোবুসনয়া ওস্তানোফকা", meaning: "বাস স্টপ" },
-  { native: "метро", pron: "মেত্রো", meaning: "মেট্রো / মেট্রো স্টেশন" },
-  { native: "школа", pron: "শকোলা", meaning: "স্কুল" },
-  { native: "университет", pron: "উনিভার্সিতেত", meaning: "বিশ্ববিদ্যালয়" },
-  { native: "ресторан", pron: "রেস্তোরান", meaning: "রেস্টুরেন্ট" },
-  { native: "аптека", pron: "আপ্তেকা", meaning: "ফার্মেসি / ওষুধের দোকান" },
-  { native: "полиция", pron: "পোলিৎসিয়া", meaning: "পুলিশ" },
-  { native: "такси", pron: "তাক্সি", meaning: "ট্যাক্সি" },
-  { native: "банк", pron: "ব্যাঙ্ক", meaning: "ব্যাংক" },
-  { native: "площадь", pron: "প্লোশাদ", meaning: "চত্বর" },
-  { native: "супермаркет", pron: "সুপারমার্কেত", meaning: "সুপারমার্কেট" },
-  { native: "детская площадка", pron: "দেতস্কায়া প্লোশাডকা", meaning: "বাচ্চাদের খেলার মাঠ" },
-  { native: "пешеходный переход", pron: "পিশেখোদনি পেরেখোদ", meaning: "জেব্রা ক্রসিং" }
 
         { native: "Дом", pron: "দম", meaning: "বাড়ি" },
+
         { native: "Книга", pron: "কনিগা", meaning: "বই" }
+
       ],
+
       Germany: [
+
         { native: "Haus", pron: "হাউস", meaning: "বাড়ি" },
+
         { native: "Baum", pron: "বাউম", meaning: "গাছ" }
+
       ],
+
       France: [
+
         { native: "Maison", pron: "মেজঁ", meaning: "বাড়ি" },
+
         { native: "Livre", pron: "লিভর", meaning: "বই" }
+
       ],
+
       Italy: [
+
         { native: "Casa", pron: "কাসা", meaning: "বাড়ি" },
+
         { native: "Libro", pron: "লিব্রো", meaning: "বই" }
+
       ],
+
       Spain: [
+
         { native: "Casa", pron: "কাসা", meaning: "বাড়ি" },
+
         { native: "Libro", pron: "লিব্রো", meaning: "বই" }
+
       ],
+
       Netherlands: [
+
         { native: "Huis", pron: "হাউস", meaning: "বাড়ি" },
+
         { native: "Boek", pron: "বুক", meaning: "বই" }
+
       ],
+
       // Add the same structure for all other countries
+
     };
 
+
+
     // Fill 'all' with merged data
+
     vocabularyData.all = [];
+
     Object.keys(vocabularyData).forEach(country => {
+
       if (country !== 'all') {
+
         vocabularyData[country].forEach(item => {
+
           vocabularyData.all.push({ ...item, country });
+
         });
+
       }
+
     });
 
+
+
     const select = document.getElementById('country-select');
+
     const grid = document.getElementById('vocab-grid');
 
+
+
     function createCard(item) {
+
       const div = document.createElement('div');
+
       div.className = 'card';
+
       div.innerHTML = `
+
         <h3>${item.country || select.value}</h3>
+
         <p><span class="label">Native:</span> ${item.native}</p>
+
         <p><span class="label">Pronunciation:</span> ${item.pron}</p>
+
         <p><span class="label">Bangla Meaning:</span> ${item.meaning}</p>
+
       `;
+
       return div;
+
     }
+
+
 
     function renderVocab(country) {
+
       grid.innerHTML = '';
+
       const items = vocabularyData[country] || [];
+
       if (!items.length) {
+
         grid.innerHTML = '<p>No data found for selected country.</p>';
+
         return;
+
       }
+
       items.forEach(item => {
+
         grid.appendChild(createCard(item));
+
       });
+
     }
 
+
+
     select.addEventListener('change', e => renderVocab(e.target.value));
+
     window.addEventListener('DOMContentLoaded', () => renderVocab('all'));
+
   </script>
+
 </body>
+
 </html>
