@@ -1,277 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EuroLingua - Conversations</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Speak EU - Comprehensive European Conversations</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #6a86ff 0%, #4e6cef 100%);
+        color: #222;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        background: #23329f;
+        color: white;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-weight: 900;
+        font-size: 2.35rem;
+        letter-spacing: 0.1em;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        user-select: none;
+        text-transform: uppercase;
+        font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    main.container {
+        flex: 1;
+        max-width: 960px;
+        margin: 2rem auto 3rem auto;
+        background: #ffffffee;
+        border-radius: 14px;
+        padding: 32px 40px 48px 40px;
+        box-shadow: 0 12px 32px rgba(35, 50, 159, 0.3);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    h1.page-title {
+        text-align: center;
+        font-weight: 800;
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        color: #1b237e;
+        letter-spacing: 0.05em;
+        user-select: none;
+    }
+    label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 14px;
+        color: #1a237e;
+        font-size: 1.2rem;
+        user-select: none;
+        letter-spacing: 0.02em;
+    }
+    select {
+        width: 100%;
+        padding: 13px 18px;
+        font-size: 1.1rem;
+        border: 3px solid #a7bbe9;
+        border-radius: 10px;
+        outline: none;
+        transition: border-color 0.35s cubic-bezier(0.25,0.8,0.25,1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        cursor: pointer;
+        box-shadow: inset 0 0 10px #d4e0ff;
+        color: #23329f;
+        font-weight: 600;
+    }
+    select:hover {
+        border-color: #415bd9;
+        box-shadow: inset 0 0 12px #abbfff;
+    }
+    select:focus {
+        border-color: #23329f;
+        box-shadow: 0 0 15px #23329faa;
+    }
+    #practice-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        user-select: none;
+    }
+    #practice-toggle label {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #2c387e;
+    }
+    #practice-toggle input[type=checkbox] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .vocabulary-grid {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 24px 22px;
+        transition: opacity 0.3s ease;
+    }
+    .word-card {
+        background: #e7ebfe;
+        border-radius: 14px;
+        padding: 24px 22px 26px 22px;
+        box-shadow: 0 4px 10px rgba(33, 43, 156, 0.15);
+        text-align: left;
+        font-size: 0.96rem;
+        transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.26s ease;
+        cursor: default;
+        user-select: text;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .word-card:hover, .word-card:focus {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(33, 43, 156, 0.3);
+        outline: none;
+    }
+    .native-text {
+        font-weight: 800;
+        font-size: 1.18rem;
+        color: #172b75;
+        white-space: pre-wrap;
+    }
+    .bangla-pronunciation {
+        font-style: italic;
+        font-weight: 700;
+        color: #4169e1;
+        font-size: 1.05rem;
+        white-space: pre-wrap;
+    }
+    .bangla-meaning {
+        font-weight: 600;
+        color: #3b3b3b;
+        font-size: 1rem;
+        white-space: pre-wrap;
+        line-height: 1.3;
+    }
+    .practice-btn {
+        margin-top: auto;
+        user-select: none;
+        background-color: #23329f;
+        border: none;
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        padding: 8px 14px;
+        cursor: pointer;
+        align-self: flex-start;
+        box-shadow: 0 3px 10px #1a237eaa;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
+    .practice-btn:hover, .practice-btn:focus {
+        background-color: #415bd9;
+        outline: none;
+    }
+    .practice-active .practice-btn {
+        display: block;
+    }
+    #ad-container {
+        background: linear-gradient(45deg, #f7f4f9, #e3eafb);
+        border-radius: 14px;
+        padding: 28px 32px;
+        color: #353535;
+        box-shadow: 0 6px 18px rgba(99, 99, 99, 0.1);
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        user-select: none;
+        margin-top: 40px;
+        border: 2px dashed #94a3b8;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    footer {
+        background: #23329f;
+        color: white;
+        text-align: center;
+        padding: 1.15rem 2rem;
+        font-size: 0.95rem;
+        user-select: none;
+        box-shadow: inset 0 1px 4px rgba(255,255,255,0.25);
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        margin-top: auto;
+    }
+    @media (max-width: 720px) {
+        main.container {
+            margin: 1rem 1rem 2rem 1rem;
+            padding: 28px 22px 36px 22px;
         }
-
-        .container {
-            background: white;
-            max-width: 900px;
-            width: 100%;
-            border-radius: 12px;
-            padding: 30px 40px 40px 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        h1 {
-            text-align: center;
-            font-weight: 700;
-            font-size: 2.8rem;
-            color: #222;
-            margin-bottom: 15px;
-            letter-spacing: 0.06em;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #444;
-            letter-spacing: 0.03em;
-            font-size: 1.1rem;
-        }
-
-        select {
-            width: 100%;
-            padding: 12px 15px;
-            font-size: 1rem;
-            border: 2.5px solid #90caf9;
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.3s ease;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        select:focus {
-            border-color: #42a5f5;
-            box-shadow: 0 0 8px #42a5f5aa;
-        }
-
         .vocabulary-grid {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px 18px;
+            grid-template-columns: 1fr;
+            gap: 20px 15px;
         }
-
-        .word-card {
-            background: #e3f2fd;
-            border-radius: 10px;
-            padding: 22px 20px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: default;
-        }
-
-        .word-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-
         .native-text {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: #0d47a1;
-            margin-bottom: 8px;
-            white-space: pre-wrap;
-            user-select: text;
+            font-size: 1.12rem;
         }
-
-        .bangla-pronunciation {
-            font-style: italic;
-            font-weight: 600;
-            color: #1e88e5;
-            margin-bottom: 8px;
+        .bangla-pronunciation, .bangla-meaning {
+            font-size: 0.95rem;
+        }
+        .practice-btn {
+            font-size: 0.85rem;
+            padding: 7px 12px;
+        }
+        select {
             font-size: 1rem;
-            user-select: text;
-            white-space: pre-wrap;
+            padding: 11px 15px;
         }
-
-        .bangla-meaning {
-            font-weight: 500;
-            color: #555;
+        label {
             font-size: 1rem;
-            user-select: text;
-            white-space: pre-wrap;
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            body {
-                padding: 12px 10px;
-                align-items: flex-start;
-            }
-            .container {
-                padding: 25px 20px 30px 20px;
-            }
-            .vocabulary-grid {
-                grid-template-columns: 1fr;
-                gap: 15px 12px;
-            }
-            .native-text {
-                font-size: 1.1rem;
-            }
-            .bangla-pronunciation,
-            .bangla-meaning {
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <div class="container" role="main" aria-label="EuroLingua Language Learning Application - Conversations">
-        <h1>EuroLingua</h1>
-        <label for="language-select">Select a Country / Language:</label>
-        <select id="language-select" aria-describedby="languageSelectHelp" aria-label="Select language or country">
-            <option value="all" selected>All Countries</option>
-            <option value="russia">Russia</option>
-            <option value="germany">Germany</option>
-            <option value="france">France</option>
-        </select>
-        <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="all">
-            <!-- Conversation cards will be inserted here -->
-        </div>
+<header role="banner" aria-label="Speak EU Application Header">
+    Speak EU
+</header>
+
+<main class="container" role="main" aria-label="Speak EU Language Learning Conversations">
+    <h1 class="page-title">Comprehensive European Conversations</h1>
+
+    <label for="language-select">Select a Country / Language:</label>
+    <select id="language-select" aria-label="Select language or country">
+        <option value="0" selected>-- Please select a country --</option>
+        <option value="russia">Russia</option>
+        <option value="france">France</option>
+        <option value="italy">Italy</option>
+    </select>
+
+    <div id="ad-container" role="region" aria-label="Advertisement" aria-live="polite">
+        🌟 Welcome to Speak EU! Select a country to explore practical conversations for European expats and students. 🌟
+        <br /><br />
+        Sponsored by LearnEU - Your bridge to mastering European languages!
     </div>
-    <script>
-        // Conversations data for Russia
-        const russiaConversations = [
-            {
-                native: 'Здравствуйте! Как дела?',
-                banglaPronunciation: 'Zdravstvuyte! Kak dela?',
-                banglaMeaning: 'হ্যালো! কেমন আছো?'
-            },
-            {
-                native: 'Меня зовут Анна. А тебя?',
-                banglaPronunciation: 'Menya zovut Anna. A tebya?',
-                banglaMeaning: 'আমার নাম আন্না। আর তোমার?'
-            },
-            {
-                native: 'Спасибо большое за помощь.',
-                banglaPronunciation: 'Spasibo bol’shoye za pomoshch.',
-                banglaMeaning: 'সাহায্যের জন্য অনেক ধন্যবাদ।'
-            },
-            {
-                native: 'Где находится ближайшая станция метро?',
-                banglaPronunciation: 'Gde nakhoditsya blizhayshaya stantsiya metro?',
-                banglaMeaning: 'নিকটতম মেট্রো স্টেশন কোথায়?'
-            }
-        ];
 
-        // Conversations data for Germany
-        const germanyConversations = [
-            {
-                native: 'Guten Tag! Wie geht es dir?',
-                banglaPronunciation: 'গুটেন তাক! ভি গেইট এস দির?',
-                banglaMeaning: 'হ্যালো! তুমি কেমন আছো?'
-            },
-            {
-                native: 'Ich heiße Lukas. Und du?',
-                banglaPronunciation: 'ইহ হাইসে লুকাস। উন্ড দু?',
-                banglaMeaning: 'আমার নাম লুকাস। আর তোমার?'
-            },
-            {
-                native: 'Vielen Dank für deine Hilfe.',
-                banglaPronunciation: 'ফিলেন ডান্ক ফুর দাইনেহ হিলফে।',
-                banglaMeaning: 'তোমার সাহায্যের জন্য ধন্যবাদ।'
-            },
-            {
-                native: 'Wo ist der nächste Bahnhof?',
-                banglaPronunciation: 'ভো ইস্ট দার নেইচ্‌টেস বানহফ?',
-                banglaMeaning: 'নিকটতম ট্রেন স্টেশন কোথায়?'
-            }
-        ];
+    <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="additions" hidden>
+        <!-- Conversation cards -->
+    </div>
 
-        // Conversations data for France
-        const franceConversations = [
-            {
-                native: 'Bonjour! Comment ça va?',
-                banglaPronunciation: 'বঁজুর! কোম্মঁ সা ভা?',
-                banglaMeaning: 'হ্যালো! তোমার কেমন চলছে?'
-            },
-            {
-                native: 'Je m’appelle Claire. Et toi?',
-                banglaPronunciation: 'জ্য মা-পেল ক্লের। এ তুৱা?',
-                banglaMeaning: 'আমার নাম ক্লেয়ার। আর তোমার?'
-            },
-            {
-                native: 'Merci beaucoup pour votre aide.',
-                banglaPronunciation: 'মের্সি বোকু পুর ভোত্র অ্যেড।',
-                banglaMeaning: 'তোমার সাহায্যের জন্য অনেক ধন্যবাদ।'
-            },
-            {
-                native: 'Où est la station de métro la plus proche?',
-                banglaPronunciation: 'উ এ লা স্ট্যাসিওঁ দে মেত্রো লা প্ল্যু প্রক?',
-                banglaMeaning: 'নিকটতম মেট্রো স্টেশন কোথায়?'
-            }
-        ];
+    <div id="practice-toggle" hidden>
+        <input type="checkbox" id="practice-mode" />
+        <label for="practice-mode" title="Toggle listening practice mode">Enable Practice Mode 🔊</label>
+    </div>
+</main>
 
-        // Map to access conversation by language key
-        const conversationData = {
-            russia: russiaConversations,
-            germany: germanyConversations,
-            france: franceConversations
-        };
+<footer role="contentinfo" aria-label="Speak EU Application Footer">
+    &copy; 2024 Speak EU &mdash; Language Learning for European Expats and Students.
+</footer>
 
-        const languageSelect = document.getElementById('language-select');
-        const vocabularyGrid = document.getElementById('vocabulary-grid');
+<script>
+    const russiaConversations = [
+        {native:"Здравствуйте! Меня зовут Джон, я приехал учиться в университет.", banglaPronunciation:"Zdravstvuyte! Menya zovut John, ya priekhal uchitsya v universitet.", banglaMeaning:"হ্যালো! আমার নাম জন, আমি বিশ্ববিদ্যালয়ে পড়াশোনা করতে এসেছি।"},
+        {native:"Где я могу снять квартиру недалеко от кампуса?", banglaPronunciation:"Gde ya mogu snyat kvartiru nedaleko ot kampusa?", banglaMeaning:"আমি ক্যাম্পাসের কাছে কোথায় ফ্ল্যাট ভাড়া নিতে পারি?"},
+        {native:"Как получить студенческую визу?", banglaPronunciation:"Kak poluchit studencheskuyu vizu?", banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?"},
+        {native:"Во сколько начинаются занятия в университете?", banglaPronunciation:"Vo skol'ko nachinayutsya zanyatiya v universitete?", banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কখন শুরু হয়?"},
+        {native:"Где находится ближайшая больница?", banglaPronunciation:"Gde nakhoditsya blizhayshaya bol'nitsa?", banglaMeaning:"নিকটতম হাসপাতাল কোথায়?"},
+        {native:"Где можно купить проездной билет на автобус?", banglaPronunciation:"Gde mozhno kupit proyezdnoy bilet na avtobus?", banglaMeaning:"আমি কোথায় বাসের টিকিট কিনতে পারি?"},
+        {native:"Как найти работу на неполный рабочий день?", banglaPronunciation:"Kak nayti rabotu na nepolnyy rabochiy den'?", banglaMeaning:"আমি পার্ট টাইম চাকুরি কোথায় পাবো?"},
+        {native:"В какие часы работает районный офис миграции?", banglaPronunciation:"V kakie chasy rabotayet rayonnyy ofis migratsii?", banglaMeaning:"মাইগ্রেশন অফিস কখন খোলা থাকে?"},
+        {native:"Где находится ближайшая мечеть?", banglaPronunciation:"Gde nakhoditsya blizhayshaya mechet?", banglaMeaning:"নিকটতম মসজিদ কোথায়?"},
+        {native:"Как связаться с университетской администрацией?", banglaPronunciation:"Kak svyazat'sya s universitėṫskŏy administratsiey?", banglaMeaning:"আমি বিশ্ববিদ্যালয়ের প্রশাসনের সঙ্গে কিভাবে যোগাযোগ করব?"},
+        {native:"Где можно купить продукты и хозяйственные товары?", banglaPronunciation:"Gde mozhno kupit produkty i khozyaystvennyye tovary?", banglaMeaning:"আমি কোথায় মুদি এবং দৈনন্দিন জিনিস কিনতে পারি?"},
+        {native:"Как вызвать скорую помощь в экстренной ситуации?", banglaPronunciation:"Kak vyzvat skoruyu pomoshch v ekstrennoy situatsii?", banglaMeaning:"জরুরি অবস্থায় আমি কীভাবে অ্যাম্বুলেন্স ডাকব?"},
+        {native:"Где находится отделение полиции?", banglaPronunciation:"Gde nakhoditsya otdelenie politsii?", banglaMeaning:"পুলিশ স্টেশন কোথায়?"},
+        {native:"Можно ли получить консультацию на английском языке?", banglaPronunciation:"Mozhno li poluchit konsultatsiyu na angliyskom yazyke?", banglaMeaning:"আমার কি ইংরেজি ভাষায় পরামর্শ পাওয়া যাবে?"},
+        {native:"Спасибо за помощь и поддержку!", banglaPronunciation:"Spasibo za pomoshch i podderzhku!", banglaMeaning:"সাহায্য এবং সমর্থনের জন্য ধন্যবাদ!"}
+    ];
+    const franceConversations = [
+        {native:"Bonjour! Je m'appelle Marie, je viens d'arriver pour mes études.", banglaPronunciation:"বঁজুর! জ্য মা-পেল মারি, জ্য ভিয়ন্স ধারিভে পুর মে এটুড.", banglaMeaning:"হ্যালো! আমার নাম মারি, আমি পড়াশোনা করতে নতুন আগাছি।"},
+        {native:"Où puis-je trouver un appartement proche de l'université?", banglaPronunciation:"উ পুই-জ় ত্রুভে উন আপার্তমঁ প্রক দে লুনিভার্সিতে?", banglaMeaning:"বিশ্ববিদ্যালয়ের কাছে আমি ফ্ল্যাট কোথায় পাবো?"},
+        {native:"Comment demander un visa étudiant?", banglaPronunciation:"কোম্মঁ দমানে উন ভিসা এটুদিয়ঁ?", banglaMeaning:"আমি কীভাবে স্টুডেন্ট ভিসা চাই?"},
+        {native:"À quelle heure commencent les cours?", banglaPronunciation:"আ কেল উর কমঁসে লে কুর?", banglaMeaning:"ক্লাস কখন শুরু হয়?"},
+        {native:"Où est l'hôpital le plus proche?", banglaPronunciation:"উ এ ল'অপিতাল লে প্ল্যু প্রক?", banglaMeaning:"নিকটতম হাসপাতাল কোথায়?"},
+        {native:"Comment acheter un ticket de bus?", banglaPronunciation:"কোম্মঁ আশতে উন টিকেট দে বুস?", banglaMeaning:"আমি বাসের টিকিট কোথায় কিনব?"},
+        {native:"Comment trouver un travail à temps partiel?", banglaPronunciation:"কোম্মঁ ত্রুভে উন ত্রাভাই আ তঁ পার্সিয়েল?", banglaMeaning:"আমি পার্ট টাইম চাকুরি কোথায় পেতেছি?"},
+        {native:"Quels sont les horaires du bureau d'immigration?", banglaPronunciation:"কেল সঁ লে জোরেয় দেন্য উ ব্যুরো দিমিগ্রাশি?", banglaMeaning:"ইমিগ্রেশনের অফিসের সময় কেমন?"},
+        {native:"Où se trouve la mosquée la plus proche?", banglaPronunciation:"উ সে তুরভে লা মোস্কে লা প্ল্যু প্রক?", banglaMeaning:"নিকটতম মসজিদ কোথায়?"},
+        {native:"Comment contacter l'administration universitaire?", banglaPronunciation:"কোম্মাঁ কনতেই ল্যাডমিনিস্ট্রাসিউঁ উনিভার্সিটার?", banglaMeaning:"বিশ্ববিদ্যালয়ের প্রশাসনের সাথে কিভাবে যোগাযোগ করব?"},
+        {native:"Où acheter des produits alimentaires et des articles ménagers?", banglaPronunciation:"উ আশতে দে প্রোডুই আলিমঁতের আ দে জর্তিক মেনাজে?", banglaMeaning:"আমি কোথায় মুদি ও নিত্যপ্রয়োজনীয় জিনিস কিনব?"},
+        {native:"Comment appeler les urgences en cas d'urgence?", banglaPronunciation:"কোম্মঁ আপেলে লে জুরঁগঁস আঁ কা দুরজঁস?", banglaMeaning:"জরুরি অবস্থায় কীভাবে সাহায্য চাই?"},
+        {native:"Où se trouve le commissariat de police?", banglaPronunciation:"উ সে তুরভে লে কমিসারিয়া দে পলিস?", banglaMeaning:"পুলিশ স্টেশন কোথায়?"},
+        {native:"Puis-je obtenir des services en anglais?", banglaPronunciation:"পুই-জ় অবতেনির দে সার্ভিস আংগলে?", banglaMeaning:"আমি কি ইংরেজিতে সেবা পেতে পারি?"},
+        {native:"Merci beaucoup pour votre aide et votre soutien!", banglaPronunciation:"মের্সি বোকু পুর ভোত্র অ্যাড এ ভোত্র সুতেন!", banglaMeaning:"আপনার সাহায্য এবং সমর্থনের জন্য ধন্যবাদ!"}
+    ];
+    const italyConversations = [
+        {native:"Ciao! Mi chiamo Marco, sono venuto per studiare.", banglaPronunciation:"চিয়াও! মি কিয়ামো মার্কো, সোনো ভেনুতো পুর স্টুদিয়ারে.", banglaMeaning:"হ্যালো! আমার নাম মার্কো, আমি পড়াশোনা করতে এসেছি।"},
+        {native:"Dove posso trovare un appartamento vicino all'università?", banglaPronunciation:"দোভে পসো ত্রোভারে উন আপার্ততামেন্তো ভিচিনো আল্লুনিভেরসিতা?", banglaMeaning:"আমি বিশ্ববিদ্যালয়ের কাছে ফ্ল্যাট কোথায় পাবো?"},
+        {native:"Come richiedere un visto studentesco?", banglaPronunciation:"কোমে রিকিয়েদেরে উন ভিস্টো স্টুদেনেস্কো?", banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?"},
+        {native:"A che ora iniziano le lezioni all'università?", banglaPronunciation:"আ কে উরা ইনিইজিয়ানো লে লেজিওনি আল্লুনিভেরসিতা?", banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কতটায় শুরু হয়?"},
+        {native:"Dov’è l’ospedale più vicino?", banglaPronunciation:"দোভে ল’অস্পেদালে পিউ ভিচিনো?", banglaMeaning:"নিকটতম হাসপাতাল কোথায়?"},
+        {native:"Dove posso comprare un biglietto dell'autobus?", banglaPronunciation:"দোভে পসো কমপ্রারে উন বিগলিয়েত্তো দেনাউতোবুস?", banglaMeaning:"আমি বাসের টিকিট কোথায় কিনব?"},
+        {native:"Come posso trovare un lavoro part-time?", banglaPronunciation:"কোমে পসো ত্রোভারে উন লাভোর পার্ট-টাইম?", banglaMeaning:"আমি পার্ট টাইম জব কোথায় পাবো?"},
+        {native:"Quali sono gli orari dell'ufficio immigrazione?", banglaPronunciation:"ক্বালি সোনো গলি ওরারি দেল্লুফিসিও ইমিগ্রাজিওনে?", banglaMeaning:"ইমিগ্রেশন অফিসের সময় কখন?"},
+        {native:"Dov’è la moschea più vicina?", banglaPronunciation:"দোভে লা মোস্কেয়া পিউ ভিচিনা?", banglaMeaning:"নিকটতম মসজিদ কোথায়?"},
+        {native:"Come contattare l'amministrazione universitaria?", banglaPronunciation:"কোমে কনটাতারে ল'আমমিনিস্ট্রাজিওনে উনিভেরসিটারিয়া?", banglaMeaning:"বিশ্ববিদ্যালয়ের প্রশাসনের সাথে কিভাবে যোগাযোগ করব?"},
+        {native:"Dove posso comprare prodotti alimentari e articoli per la casa?", banglaPronunciation:"দোভে পসো কমপ্রারে প্রোডত্তি আলিমেনতারি এ আর্তিকোলি পর লা কাসা?", banglaMeaning:"আমি গুদাম ও বাড়ির জিনিসপত্র কোথায় কিনব?"},
+        {native:"Come chiamare il pronto soccorso in caso di emergenza?", banglaPronunciation:"কোমে কিয়ামারে ইল প্রোন্তো সোকোরসো ইন কাসো দি এমারজেংজা?", banglaMeaning:"জরুরি অবস্থায় আমি কীভাবে অ্যাম্বুলেন্স ডাকব?"},
+        {native:"Dov’è la stazione di polizia?", banglaPronunciation:"দোভে লা স্টাজিওনে দি পোলিজিয়া?", banglaMeaning:"পুলিশ স্টেশন কোথায়?"},
+        {native:"Posso ricevere assistenza in inglese?", banglaPronunciation:"পসো রিচেভেরে আসিস্টেঁজা ইন ইঙ্গলেসে?", banglaMeaning:"আমি কি ইংরেজিতে সাহায্য পেতে পারি?"},
+        {native:"Grazie mille per il vostro aiuto e supporto!", banglaPronunciation:"গ্রাজিয়ে মিললে পার ইল ভোস্ত্রো আইুঠো এ সופּপোর্তো!", banglaMeaning:"সহায্য ও সমর্থনের জন্য অনেক ধন্যবাদ!"}
+    ];
+    const conversationData = {
+        russia: russiaConversations,
+        france: franceConversations,
+        italy: italyConversations
+    };
 
-        function createCard(convo) {
-            const card = document.createElement('div');
-            card.className = 'word-card';
-            card.tabIndex = 0;
-            card.innerHTML = `
-                <div class="native-text" title="Native Text">${convo.native}</div>
-                <div class="bangla-pronunciation" title="Bangla Pronunciation">${convo.banglaPronunciation}</div>
-                <div class="bangla-meaning" title="Bangla Meaning">${convo.banglaMeaning}</div>
-            `;
-            return card;
-        }
+    const languageSelect = document.getElementById('language-select');
+    const vocabularyGrid = document.getElementById('vocabulary-grid');
+    const adContainer = document.getElementById('ad-container');
+    const practiceToggleContainer = document.getElementById('practice-toggle');
+    const practiceCheckbox = document.getElementById('practice-mode');
 
-        function displayVocabulary(conversations) {
-            vocabularyGrid.innerHTML = '';
-            if (!conversations.length) {
-                vocabularyGrid.innerHTML = \`<p style="text-align:center; color:#777; font-style:italic;">No conversations found</p>\`;
-                return;
-            }
-            conversations.forEach(convo => {
-                vocabularyGrid.appendChild(createCard(convo));
+    // Keeps track of current practice mode state
+    let practiceMode = false;
+
+    // Utility: Detect language code for speech synthesis for each country (approximate)
+    const speechLangMap = {
+        russia: 'ru-RU',
+        france: 'fr-FR',
+        italy: 'it-IT'
+    };
+
+    // Clear highlight from cards
+    function clearHighlight() {
+        document.querySelectorAll('.word-card.highlight').forEach(card=>{
+            card.classList.remove('highlight');
+        });
+    }
+
+    // Create a conversation card element, with practice button if enabled
+    function createCard(convo, countryKey){
+        const card = document.createElement('div');
+        card.className = 'word-card';
+        card.tabIndex = 0;
+        card.innerHTML = `
+            <div class="native-text" title="Native Text">${convo.native}</div>
+            <div class="bangla-pronunciation" title="Bangla Pronunciation">${convo.banglaPronunciation}</div>
+            <div class="bangla-meaning" title="Bangla Meaning">${convo.banglaMeaning}</div>
+        `;
+        if(practiceMode){
+            const btn = document.createElement('button');
+            btn.className = 'practice-btn';
+            btn.type = 'button';
+            btn.textContent = '🔊 Practice';
+            btn.title = 'Click to hear and practice pronunciation';
+            btn.addEventListener('click', () => {
+                clearHighlight();
+                card.classList.add('highlight');
+                speakText(convo.native, speechLangMap[countryKey] || 'en-US');
             });
+            card.appendChild(btn);
         }
+        return card;
+    }
 
-        function loadVocabulary() {
-            const selected = languageSelect.value;
-            if (selected === 'all') {
-                // Combine all conversations from all languages
+    // Display conversations array in grid
+    function displayVocabulary(conversations, countryKey){
+        vocabularyGrid.innerHTML = '';
+        if(!conversations.length){
+            vocabularyGrid.innerHTML='<p style="text-align:center; color:#777; font-style:italic;">কোনো কনভারসেশন পাওয়া যায়নি</p>';
+            return;
+        }
+        conversations.forEach(convo => {
+            vocabularyGrid.appendChild(createCard(convo, countryKey));
+        });
+    }
+
+    // Use Web Speech API to speak text in specified language
+    function speakText(text, lang){
+        if(!('speechSynthesis' in window)){
+            alert('Sorry, your browser does not support speech synthesis.');
+            return;
+        }
+        const synth = window.speechSynthesis;
+        // Cancel any ongoing speech
+        if (synth.speaking) {
+            synth.cancel();
+        }
+        const utterThis = new SpeechSynthesisUtterance(text);
+        utterThis.lang = lang;
+        synth.speak(utterThis);
+    }
+
+    // Load conversations and adjust UI
+    function loadVocabulary(){
+        const selected = languageSelect.value;
+        clearHighlight();
+
+        if(selected === '0'){ // no country selected
+            vocabularyGrid.hidden = true;
+            adContainer.hidden = false;
+            practiceToggleContainer.hidden = true;
+        } else {
+            adContainer.hidden = true;
+            vocabularyGrid.hidden = false;
+            practiceToggleContainer.hidden = false;
+
+            if(selected === 'all'){
                 const allConvos = [
                     ...russiaConversations,
-                    ...germanyConversations,
-                    ...franceConversations
+                    ...franceConversations,
+                    ...italyConversations
                 ];
-                displayVocabulary(allConvos);
+                displayVocabulary(allConvos, '');
             } else {
-                displayVocabulary(conversationData[selected] || []);
+                displayVocabulary(conversationData[selected] || [], selected);
             }
         }
+    }
 
-        // Initialize with "All Countries" conversations
+    // Toggles practice mode to show/hide practice buttons
+    function togglePracticeMode(){
+        practiceMode = practiceCheckbox.checked;
+        loadVocabulary(); // reload to add/remove practice buttons
+    }
+
+    // On page load, set initial states, listeners
+    (function init(){
+        // Insert a default option for "no selection"
+        // Already done in HTML as value="0"
+
+        // Show ad initially
         loadVocabulary();
 
-        languageSelect.addEventListener('change', () => {
-            loadVocabulary();
-        });
-    </script>
+        languageSelect.addEventListener('change', loadVocabulary);
+        practiceCheckbox.addEventListener('change', togglePracticeMode);
+    })();
+</script>
 </body>
 </html>
 
