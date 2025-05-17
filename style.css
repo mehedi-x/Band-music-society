@@ -1,45 +1,38 @@
 body {
+  font-family: Arial, sans-serif;
   background: #111;
   color: #fff;
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background: #1a1a1a;
+  background: #222;
   padding: 20px;
   text-align: center;
   border-bottom: 1px solid #333;
 }
 
 .controls {
-  padding: 15px;
-  text-align: center;
-  background: #1c1c1c;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
 }
 
-.controls input, .controls select, .controls button {
-  margin: 5px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-.controls input {
-  width: 200px;
-}
-
-.controls select {
-  background: #333;
-  color: #fff;
-}
-
+.controls select,
+.controls input,
 .controls button {
-  background: #e62e00;
-  color: white;
-  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.controls select,
+.controls input {
+  flex: 1;
 }
 
 main {
@@ -47,50 +40,46 @@ main {
 }
 
 .lesson {
-  background: #1e1e1e;
+  background: #1c1c1c;
   margin-bottom: 15px;
   padding: 15px;
-  border-left: 5px solid #00cc66;
-  border-radius: 5px;
-  transition: 0.3s;
+  border-radius: 8px;
+  border-left: 4px solid #0f62fe;
 }
 
 .lesson.completed {
-  background: #003300;
-  border-left-color: #66ff99;
-  opacity: 0.85;
+  opacity: 0.6;
+  border-left-color: #2ecc71;
 }
 
-button.complete-btn {
-  background: #00cc66;
-  border: none;
-  color: white;
-  padding: 6px 12px;
+.complete-btn {
   margin-top: 10px;
+  padding: 8px 15px;
+  background: #0f62fe;
+  color: white;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button.complete-btn:hover {
-  background: #00994d;
-}
-
-p {
-  margin: 5px 0;
-}
-
 #progress-bar-container {
-  padding: 10px 20px;
+  background: #333;
+  margin: 20px;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 #progress-bar {
-  height: 8px;
-  background: #00cc66;
+  height: 100%;
+  background: #2ecc71;
   width: 0%;
-  transition: 0.5s;
+  transition: width 0.3s ease-in-out;
 }
 
 #progress-text {
-  font-size: 14px;
+  text-align: center;
   margin-top: 5px;
+  font-size: 14px;
 }
