@@ -3,17 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Russian Language Learning</title>
+  <title>European Language Learning</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Russian Language Learning</h1>
-    <p>প্রবাসীদের জন্য দৈনন্দিন কথোপকথন</p>
+    <h1>European Language Learning</h1>
+    <p>প্রবাসীদের জন্য ভাষা শেখা সফটওয়্যার</p>
   </header>
 
   <section class="controls">
-    <input type="text" id="search" placeholder="অনুসন্ধান করুন (যেকোনো ভাষায়)" oninput="loadLessons()">
+    <select id="countrySelect" onchange="changeCountry()">
+      <option disabled selected value="">দেশ সিলেক্ট করুন</option>
+      <option value="russia">Russia</option>
+      <option value="germany">Germany</option>
+      <option value="france">France</option>
+      <option value="italy">Italy</option>
+      <option value="spain">Spain</option>
+      <option value="netherlands">Netherlands</option>
+      <option value="sweden">Sweden</option>
+      <option value="norway">Norway</option>
+      <option value="denmark">Denmark</option>
+      <option value="finland">Finland</option>
+      <option value="poland">Poland</option>
+      <option value="austria">Austria</option>
+      <option value="belgium">Belgium</option>
+      <option value="switzerland">Switzerland</option>
+      <option value="portugal">Portugal</option>
+      <option value="czech">Czech Republic</option>
+      <option value="slovakia">Slovakia</option>
+      <option value="slovenia">Slovenia</option>
+      <option value="hungary">Hungary</option>
+      <option value="greece">Greece</option>
+    </select>
+    <input type="text" id="search" placeholder="অনুসন্ধান করুন" oninput="loadLessons()">
     <select id="categoryFilter" onchange="loadLessons()">
       <option value="all">সব ক্যাটাগরি</option>
       <option value="greetings">শুভেচ্ছা</option>
