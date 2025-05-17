@@ -2,259 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vocabulary Learning App - European Countries</title>
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.6/dist/css/uikit.min.css" />
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#4caf50"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Duolingo Style Conversation</title>
   <style>
     body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
       margin: 0;
-      padding-bottom: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #222;
     }
-    .container {
-      max-width: 960px;
-      width: 100%;
-      padding: 2rem 1rem 1rem;
-    }
+
     header {
+      background-color: #58cc02;
+      color: white;
+      padding: 15px;
       text-align: center;
-      margin-bottom: 1.5rem;
+      font-size: 22px;
+      font-weight: bold;
     }
-    header h1 {
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      color: #4caf50;
-      user-select: none;
-      margin-bottom: 0.75rem;
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px 10px;
     }
-    .uk-select {
-      max-width: 360px;
-      margin: 0 auto;
-      cursor: pointer;
-      background-color: #202020;
-      color: #e0e0e0;
-      border-color: #4caf50;
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 16px;
+      margin-bottom: 15px;
+      transition: transform 0.2s;
     }
-    .vocab-list {
-      margin-top: 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem 1.5rem;
+
+    .card:hover {
+      transform: scale(1.01);
     }
-    .vocab-card {
-      background: #1e1e1e;
-      border-radius: 10px;
-      padding: 1.5rem 1.75rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      user-select: none;
+
+    .native {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
     }
-    .vocab-card:hover {
-      box-shadow: 0 8px 30px rgba(76,175,80,0.85);
-      transform: translateY(-6px);
+
+    .bangla, .english {
+      font-size: 16px;
+      margin-top: 6px;
     }
-    .vocab-card h3 {
-      margin-top: 0;
-      font-weight: 700;
-      color: #81c784;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #4caf50;
-      padding-bottom: 0.3rem;
+
+    .bangla {
+      color: #e67e22;
     }
-    .vocab-card p {
-      margin: 0.35rem 0;
-      font-size: 1rem;
-      line-height: 1.4;
+
+    .english {
+      color: #3498db;
     }
-    .ad-section {
-      background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
-      color: #121212;
-      border-radius: 14px;
-      padding: 1.25rem 2rem;
-      margin: 3rem 0 1rem;
+
+    .ad {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #856404;
+      border-radius: 12px;
+      padding: 15px;
       text-align: center;
-      font-weight: 700;
-      font-size: 1.25rem;
-      box-shadow: 0 8px 24px rgba(72, 230, 94, 0.9);
-      letter-spacing: 0.06em;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      cursor: default;
-      user-select: none;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (max-width: 600px) {
-      .vocab-list {
-        grid-template-columns: 1fr;
-      }
-      header h1 {
-        font-size: 1.75rem;
-      }
-      .uk-select {
-        max-width: 100%;
-      }
-      .vocab-card {
-        padding: 1.25rem 1.5rem;
-      }
-      .vocab-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.9rem;
-      }
-      .vocab-card p {
-        font-size: 0.95rem;
-      }
-      .ad-section {
-        font-size: 1.15rem;
-        padding: 1rem 1.25rem;
-        margin: 2rem 1rem 1rem;
-      }
+      margin: 20px 0;
+      font-size: 16px;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Vocabulary Learning App</h1>
-      <label for="country-select" class="uk-text-lead uk-text-bold uk-text-success">Select a Country (or view all):</label>
-      <select id="country-select" class="uk-select" aria-label="Select Country">
-        <option value="all" selected>All Countries</option>
-        <option value="Austria">Austria</option>
-        <option value="Belgium">Belgium</option>
-        <option value="Bulgaria">Bulgaria</option>
-        <option value="Croatia">Croatia</option>
-        <option value="Cyprus">Cyprus</option>
-        <option value="Czechia">Czechia</option>
-        <option value="Denmark">Denmark</option>
-        <option value="Estonia">Estonia</option>
-        <option value="Finland">Finland</option>
-        <option value="France">France</option>
-        <option value="Germany">Germany</option>
-        <option value="Greece">Greece</option>
-        <option value="Hungary">Hungary</option>
-        <option value="Iceland">Iceland</option>
-        <option value="Ireland">Ireland</option>
-        <option value="Italy">Italy</option>
-        <option value="Latvia">Latvia</option>
-        <option value="Lithuania">Lithuania</option>
-        <option value="Luxembourg">Luxembourg</option>
-        <option value="Malta">Malta</option>
-        <option value="Netherlands">Netherlands</option>
-        <option value="Norway">Norway</option>
-        <option value="Poland">Poland</option>
-        <option value="Portugal">Portugal</option>
-        <option value="Romania">Romania</option>
-        <option value="Slovakia">Slovakia</option>
-        <option value="Slovenia">Slovenia</option>
-        <option value="Spain">Spain</option>
-        <option value="Sweden">Sweden</option>
-        <option value="Switzerland">Switzerland</option>
-        <option value="United Kingdom">United Kingdom</option>
-        <option value="Russia">Russia</option>
-      </select>
-    </header>
 
-    <section id="vocab-list" class="vocab-list" aria-live="polite" aria-label="Vocabulary List">
-      <!-- Vocabulary cards injected here -->
-    </section>
+<header>🇷🇺 Learn Russian - Duolingo Style 🇧🇩</header>
 
-    <section class="ad-section" aria-label="Advertisement Section">
-      Anonbar - Demo Advertisement
-    </section>
-  </div>
+<div class="container" id="content"></div>
 
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.6/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.6/dist/js/uikit-icons.min.js"></script>
+<script>
+  const Russia = [
+    { native: "Ты как?", banglaPronunciation: "তুমি কাক?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+    { native: "Я в порядке.", banglaPronunciation: "য়া ফ পার্যাদকে.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+    { native: "Где ресторан?", banglaPronunciation: "গদে রেস্টোরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+    { native: "Хочу идти в больницу.", banglaPronunciation: "খাচু ইদতি ফ বোলনিতসু.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+    { native: "Я иду домой.", banglaPronunciation: "য়া ইদু দামোয়।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+    { native: "Как пройти?", banglaPronunciation: "কাক প্রোতি?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+    { native: "Куда идти один день?", banglaPronunciation: "কুদা ইদতি আদিন দিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+  ];
 
-  <script>
-    const vocabularyData = {
-      Austria: [
-        {native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি"},
-        {native: "Baum", banglaPronunciation: "বাউম", banglaMeaning: "গাছ"},
-        {native: "Wasser", banglaPronunciation: "বাসার", banglaMeaning: "পানি"},
-        {native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই"},
-        {native: "Freund", banglaPronunciation: "ফ্রয়েন্ড", banglaMeaning: "বন্ধু"}
-      ],
-      Belgium: [
-        {native: "Tafel", banglaPronunciation: "টাফেল", banglaMeaning: "টেবিল"},
-        {native: "Stuhl", banglaPronunciation: "স্টূহল", banglaMeaning: "চেয়ার"},
-        {native: "Fenster", banglaPronunciation: "ফেনস্টার", banglaMeaning: "জানালা"},
-        {native: "Tür", banglaPronunciation: "টিউর", banglaMeaning: "দরজা"},
-        {native: "Apfel", banglaPronunciation: "আপফেল", banglaMeaning: "আপেল"}
-      ],
-      Russia: [
-        {native: "Дом", banglaPronunciation: "দম", banglaMeaning: "বাড়ি"},
-        {native: "Дерево", banglaPronunciation: "দেরেভো", banglaMeaning: "গাছ"},
-        {native: "Вода", banglaPronunciation: "ভোদা", banglaMeaning: "পানি"},
-        {native: "Книга", banglaPronunciation: "কনিগা", banglaMeaning: "বই"},
-        {native: "Дорога", banglaPronunciation: "দোরোগা", banglaMeaning: "রাস্তা"}
-      ]
-      // Additional countries can be added here
-    };
+  const container = document.getElementById('content');
 
-    const vocabList = document.getElementById('vocab-list');
-    const countrySelect = document.getElementById('country-select');
+  Russia.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="native">🇷🇺 ${item.native}</div>
+      <div class="bangla">🔈 প্রোনান্স: ${item.banglaPronunciation}</div>
+      <div class="bangla">🇧🇩 বাংলা: ${item.banglaMeaning}</div>
+      <div class="english">🇬🇧 English: ${item.englishMeaning}</div>
+    `;
+    container.appendChild(card);
 
-    function clearVocabList() {
-      vocabList.innerHTML = '';
+    // Show ad after every 5 cards
+    if ((index + 1) % 5 === 0) {
+      const ad = document.createElement('div');
+      ad.className = 'ad';
+      ad.textContent = "📢 বিজ্ঞাপন: আমাদের অ্যাপ ব্যবহার করে আরও ১০০০+ বাক্য শিখুন!";
+      container.appendChild(ad);
     }
+  });
+</script>
 
-    function createCard(entry) {
-      const card = document.createElement('article');
-      card.className = 'vocab-card uk-card uk-card-default uk-card-hover';
-      card.tabIndex = 0;
-      card.innerHTML = `
-        <h3>${entry.country}</h3>
-        <p><strong>Native Word:</strong> ${entry.native}</p>
-        <p><strong>Bangla Pronunciation:</strong> ${entry.banglaPronunciation}</p>
-        <p><strong>Bangla Meaning:</strong> ${entry.banglaMeaning}</p>
-      `;
-      return card;
-    }
-
-    function displayVocabulary(country) {
-      clearVocabList();
-      let dataToShow = [];
-
-      if (country === 'all') {
-        Object.entries(vocabularyData).forEach(([c, arr]) => {
-          arr.forEach(item => dataToShow.push({...item, country: c}));
-        });
-      } else if (vocabularyData[country]) {
-        vocabularyData[country].forEach(item => dataToShow.push({...item, country}));
-      } else {
-        vocabList.innerHTML = '<p class="uk-text-danger uk-text-bold">No vocabulary found for selected country.</p>';
-        return;
-      }
-
-      dataToShow.forEach(entry => {
-        const card = createCard(entry);
-        vocabList.appendChild(card);
-      });
-
-      if(dataToShow.length === 0) {
-        vocabList.innerHTML = '<p class="uk-text-danger uk-text-bold">No vocabulary found for selected country.</p>';
-      }
-    }
-
-    countrySelect.addEventListener('change', e => {
-      displayVocabulary(e.target.value);
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      displayVocabulary('all');
-    });
-  </script>
 </body>
 </html>
