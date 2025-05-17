@@ -3,112 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EuroLang Learn – Schengen Edition</title>
+  <title>EU Language Practice</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #f2f4f8;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
     header {
-      background: #00695c;
-      color: white;
-      padding: 1.5rem 1rem;
+      background: #2e7d32;
+      color: #fff;
+      padding: 1.5rem;
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     main {
       flex: 1;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 2rem 1rem;
+      max-width: 960px;
+      margin: auto;
     }
     label {
-      font-weight: 600;
-      display: block;
+      font-size: 1.1rem;
       margin-bottom: 0.5rem;
+      display: block;
+      font-weight: bold;
     }
     select {
-      width: 100%;
-      max-width: 300px;
       padding: 0.6rem;
+      border-radius: 6px;
+      border: 2px solid #2e7d32;
       font-size: 1rem;
-      border: 2px solid #00695c;
-      border-radius: 5px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 400px;
     }
     .vocab-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
     .card {
       background: #fff;
       padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     }
     .card h3 {
-      color: #00897b;
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 0.8rem;
+      color: #2e7d32;
+      font-size: 1.2rem;
     }
     .card p {
-      margin: 0.4rem 0;
+      margin: 0.3rem 0;
       font-size: 1rem;
+      color: #444;
     }
-    .label {
-      font-weight: bold;
-      color: #00796b;
-    }
+    .label { font-weight: bold; color: #1b5e20; }
     footer {
-      background: #e0f2f1;
       text-align: center;
       padding: 1rem;
+      background: #e8f5e9;
+      color: #2e7d32;
       font-size: 0.9rem;
-      color: #004d40;
-      box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
-    }
-    @media (max-width: 600px) {
-      header { font-size: 1.4rem; padding: 1rem; }
-      .vocab-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header>EuroLang Learn – Schengen Edition</header>
+  <header>European Language Practice</header>
   <main>
-    <label for="country-select">Choose a Country Language:</label>
+    <label for="country-select">Select a Country's Language:</label>
     <select id="country-select">
-      <option value="all">All Schengen Countries</option>
-      <option value="Germany">German</option>
-      <option value="France">French</option>
-      <option value="Italy">Italian</option>
-      <option value="Spain">Spanish</option>
-      <option value="Netherlands">Dutch</option>
-      <option value="Poland">Polish</option>
-      <option value="Sweden">Swedish</option>
-      <option value="Denmark">Danish</option>
-      <option value="Austria">Austrian German</option>
-      <option value="Hungary">Hungarian</option>
+      <option value="all">All Countries</option>
     </select>
-
-    <section class="vocab-grid" id="vocab-grid" aria-live="polite"></section>
+    <div class="vocab-grid" id="vocab-grid"></div>
   </main>
-  <footer>© 2025 EuroLang Learn | Your Gateway to Europe</footer>
+  <footer>© 2025 European Language App | Built for Learning</footer>
 
   <script>
-    const vocabData = {
+    const vocabularyData = {
       Germany: [
         {native:"Haus", pron:"হাউস", meaning:"বাড়ি"},
         {native:"Tisch", pron:"টিশ", meaning:"টেবিল"},
@@ -121,82 +104,97 @@
       ],
       Italy: [
         {native:"Casa", pron:"কাসা", meaning:"বাড়ি"},
-        {native:"Sedia", pron:"সেদিয়া", meaning:"চেয়ার"},
-        {native:"Tavolo", pron:"তাভোলো", meaning:"টেবিল"}
+        {native:"Sedia", pron:"সেদিয়া", meaning:"চেয়ার"},
+        {native:"Tavolo", pron:"তাভলো", meaning:"টেবিল"}
       ],
       Spain: [
         {native:"Casa", pron:"কাসা", meaning:"বাড়ি"},
-        {native:"Silla", pron:"সিলিয়া", meaning:"চেয়ার"},
+        {native:"Silla", pron:"সিয়া", meaning:"চেয়ার"},
         {native:"Mesa", pron:"মেসা", meaning:"টেবিল"}
       ],
-      Netherlands: [
-        {native:"Huis", pron:"হাউস", meaning:"বাড়ি"},
-        {native:"Stoel", pron:"স্টূল", meaning:"চেয়ার"},
-        {native:"Tafel", pron:"টাফেল", meaning:"টেবিল"}
+      Russia: [
+        {native:"Дом", pron:"দম", meaning:"বাড়ি"},
+        {native:"Стул", pron:"স্তুল", meaning:"চেয়ার"},
+        {native:"Стол", pron:"স্তল", meaning:"টেবিল"}
       ],
-      Poland: [
-        {native:"Dom", pron:"ডম", meaning:"বাড়ি"},
-        {native:"Stół", pron:"স্তুল", meaning:"টেবিল"},
-        {native:"Krzesło", pron:"ক্রেশ্লো", meaning:"চেয়ার"}
-      ],
-      Sweden: [
-        {native:"Hus", pron:"হুস", meaning:"বাড়ি"},
-        {native:"Stol", pron:"স্টোল", meaning:"চেয়ার"},
-        {native:"Bord", pron:"বোর্ড", meaning:"টেবিল"}
-      ],
-      Denmark: [
-        {native:"Hus", pron:"হুস", meaning:"বাড়ি"},
-        {native:"Stol", pron:"স্টোল", meaning:"চেয়ার"},
-        {native:"Bord", pron:"বোর্ড", meaning:"টেবিল"}
-      ],
-      Austria: [
-        {native:"Haus", pron:"হাউস", meaning:"বাড়ি"},
-        {native:"Stuhl", pron:"স্টুহল", meaning:"চেয়ার"},
-        {native:"Tisch", pron:"টিশ", meaning:"টেবিল"}
-      ],
-      Hungary: [
-        {native:"Ház", pron:"হাজ", meaning:"বাড়ি"},
-        {native:"Szék", pron:"সেক", meaning:"চেয়ার"},
-        {native:"Asztal", pron:"আস্তাল", meaning:"টেবিল"}
-      ],
-      all: []
+      Netherlands: [...], // Add similar dummy data
+      Belgium: [...],
+      Austria: [...],
+      Sweden: [...],
+      Denmark: [...],
+      Norway: [...],
+      Finland: [...],
+      Iceland: [...],
+      Poland: [...],
+      "Czech Republic": [...],
+      Hungary: [...],
+      Slovakia: [...],
+      Slovenia: [...],
+      Estonia: [...],
+      Latvia: [...],
+      Lithuania: [...],
+      Switzerland: [...],
+      Malta: [...],
+      Luxembourg: [...],
+      Liechtenstein: [...],
+      Greece: [...],
+      "United Kingdom": [...],
+      Portugal: [...],
+      Ireland: [...],
+      Romania: [...],
+      Bulgaria: [...],
+      Turkey: [...],
+      Ukraine: [...]
     };
 
-    Object.keys(vocabData).forEach(country => {
-      if (country !== 'all') {
-        vocabData.all = vocabData.all.concat(
-          vocabData[country].map(word => ({...word, country}))
-        );
+    // Create 'all' category
+    vocabularyData.all = [];
+    for (const key in vocabularyData) {
+      if (key !== 'all' && Array.isArray(vocabularyData[key])) {
+        vocabularyData.all.push(...vocabularyData[key].map(item => ({...item, country: key})));
       }
-    });
+    }
 
     const select = document.getElementById('country-select');
     const grid = document.getElementById('vocab-grid');
 
-    function createCard(word) {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <h3>${word.country || select.value}</h3>
-        <p><span class="label">Native:</span> ${word.native}</p>
-        <p><span class="label">Pronunciation:</span> ${word.pron}</p>
-        <p><span class="label">Meaning:</span> ${word.meaning}</p>
-      `;
-      return card;
-    }
+    // Populate dropdown
+    Object.keys(vocabularyData).forEach(country => {
+      if (country !== 'all') {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        select.appendChild(option);
+      }
+    });
 
     function renderVocab(country) {
       grid.innerHTML = '';
-      const data = country === 'all' ? vocabData.all : vocabData[country] || [];
-      if (!data.length) {
+      const list = vocabularyData[country] || [];
+      if (list.length === 0) {
         grid.innerHTML = '<p>No vocabulary available.</p>';
         return;
       }
-      data.forEach(word => grid.appendChild(createCard(word)));
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3>${item.country || country}</h3>
+          <p><span class="label">Native:</span> ${item.native}</p>
+          <p><span class="label">Pronunciation:</span> ${item.pron}</p>
+          <p><span class="label">Meaning:</span> ${item.meaning}</p>
+        `;
+        grid.appendChild(card);
+      });
     }
 
-    select.addEventListener('change', e => renderVocab(e.target.value));
-    window.addEventListener('DOMContentLoaded', () => renderVocab('all'));
+    select.addEventListener('change', () => {
+      renderVocab(select.value);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab('all');
+    });
   </script>
 </body>
 </html>
