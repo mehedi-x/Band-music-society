@@ -142,49 +142,6 @@
       white-space: normal;
       flex: 1 1 auto;
     }
-    /* Advertisement Sections */
-    .ad-section {
-      padding: 1rem;
-      border: 2px dashed #4caf50;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #81c784;
-      user-select: none;
-      background-color: #202720;
-      margin: 1.5rem 0;
-      font-style: italic;
-    }
-    /* Multiple ad containers for spacing */
-    .ad-top {
-      margin-top: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .ad-inline {
-      margin: 1rem 0;
-    }
-    .ad-bottom {
-      margin-top: 2rem;
-      margin-bottom: 0;
-    }
-    /* Progress Tracker Bar */
-    .progress-tracker {
-      width: 100%;
-      background-color: #2c2c2c;
-      height: 14px;
-      border-radius: 12px 12px 0 0;
-      overflow: hidden;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      z-index: 999;
-    }
-    .progress-bar {
-      width: 35%; /* Static width for visual effect */
-      height: 100%;
-      background: linear-gradient(90deg, #4caf50, #81c784);
-      transition: width 0.4s ease;
-    }
     footer {
       color: #666;
       font-size: 0.9rem;
@@ -233,12 +190,12 @@
         <option value="Russia">রাশিয়া</option>
         <option value="Austria">অস্ট্রিয়া</option>
         <option value="Belgium">বেলজিয়াম</option>
-        <option value="Bulgaria">বুলগেরিয়া</option>
-        <option value="Croatia">ক্রোয়েশিয়া</option>
+        <option value="Bulgaria">বুলগেরিয়া</option>
+        <option value="Croatia">ক্রোয়েশিয়া</option>
         <option value="Cyprus">সাইপ্রাস</option>
         <option value="Czechia">চেকিয়া</option>
         <option value="Denmark">ডেনমার্ক</option>
-        <option value="Estonia">এস্তোনিয়া</option>
+        <option value="Estonia">এস্তোনিয়া</option>
         <option value="Finland">ফিনল্যান্ড</option>
         <option value="France">ফ্রান্স</option>
         <option value="Germany">জার্মানি</option>
@@ -265,10 +222,6 @@
       </select>
     </header>
 
-    <section class="ad-section ad-top" aria-label="উপরে বিজ্ঞাপন স্পেস">
-      বিজ্ঞাপন স্পেস — এখানে বিজ্ঞাপন যুক্ত করার জন্য প্রস্তুত
-    </section>
-
     <section class="table-wrapper" id="table-wrapper" tabindex="0" aria-live="polite" aria-label="ভাষার বাক্য তালিকা">
       <!-- Table (desktop) injected here -->
     </section>
@@ -276,23 +229,11 @@
     <section class="cards-wrapper" id="cards-wrapper" aria-live="polite" aria-label="ভাষার বাক্য তালিকা মোবাইল">
       <!-- Cards (mobile) injected here -->
     </section>
-
-    <section class="ad-section ad-inline" aria-label="মাঝে বিজ্ঞাপন স্পেস">
-      বিজ্ঞাপন স্পেস — এখানে বিজ্ঞাপন যুক্ত করার জন্য প্রস্তুত
-    </section>
   </div>
-
-  <section class="ad-section ad-bottom" aria-label="নিচে বিজ্ঞাপন স্পেস">
-    বিজ্ঞাপন স্পেস — এখানে বিজ্ঞাপন যুক্ত করার জন্য প্রস্তুত
-  </section>
 
   <footer>
     © 2024 Speak Eu | সকল অধিকার সংরক্ষিত
   </footer>
-
-  <div class="progress-tracker" aria-label="প্রগ্রেস বার">
-    <div class="progress-bar"></div>
-  </div>
 
   <script>
     const data = {
@@ -323,7 +264,7 @@
         { native: "Hoe kom ik daar?", banglaPronunciation: "হু কম ইক দার?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
         { native: "Waar ga ik één dag heen?", banglaPronunciation: "ওয়ার গা ইক এঁন দাগ হিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
       ]
-      // Add remaining countries similarly as before.
+      // Add more countries following the same structure if needed.
     };
 
     const allCountries = [
