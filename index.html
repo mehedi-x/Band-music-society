@@ -5,477 +5,412 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>Speak EU - Practical European Conversations</title>
 <style>
-    /* Reset & base */
-    * {
-        box-sizing: border-box;
-    }
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        user-select: none;
-        background-color: var(--bg-color);
-        color: var(--text-primary);
-        transition: background-color 0.35s ease, color 0.35s ease;
-    }
-    :root {
-        /* Light theme colors */
-        --bg-color: #f9fafb;
-        --header-bg: #3a47d5;
-        --header-text: #f0f2ff;
-        --footer-bg: #2f3bb2;
-        --footer-text: #d6dbff;
-        --card-bg: #ffffff;
-        --card-shadow: rgba(58, 71, 213, 0.2);
-        --text-primary: #222222;
-        --text-secondary: #555555;
-        --accent-blue: #3a47d5;
-        --accent-light-blue: #a3b0f9;
-        --accent-hover-blue: #2936b4;
-        --border-color: #c6cee6;
-        --ad-bg: linear-gradient(135deg, #e5e9ff, #d2daf7);
-        --ad-border: #8b96cd;
-    }
-    @media(prefers-color-scheme: dark) {
-        :root {
-            /* Dark theme colors */
-            --bg-color: #121217;
-            --header-bg: #1f2aa8;
-            --header-text: #d0d4ff;
-            --footer-bg: #161f81;
-            --footer-text: #cad1ff;
-            --card-bg: #1c1f38;
-            --card-shadow: rgba(58, 71, 213, 0.5);
-            --text-primary: #e0e0e0;
-            --text-secondary: #a1a1a1;
-            --accent-blue: #7a85ff;
-            --accent-light-blue: #6a75db;
-            --accent-hover-blue: #5a64c7;
-            --border-color: #4f5487;
-            --ad-bg: linear-gradient(135deg, #2a2f6d, #3a3f8a);
-            --ad-border: #5a66bb;
-        }
-    }
-    /* Layout */
-    body, #app-wrapper {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        min-height: 100vh;
-        max-width: 480px;
-        margin: 0 auto;
-        background-color: var(--bg-color);
-        border-radius: 12px;
-        overflow: hidden;
-        user-select: none;
-        box-shadow:
-          0 3px 12px rgb(58 71 213 / 0.3),
-          0 18px 42px rgb(58 71 213 / 0.15);
-    }
-    header {
-        background-color: var(--header-bg);
-        color: var(--header-text);
-        padding: 1.3rem 1.8rem;
-        font-weight: 900;
-        font-size: 2.2rem;
-        text-align: center;
-        letter-spacing: 0.12em;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-        user-select: none;
-        text-transform: uppercase;
-        font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        flex-shrink: 0;
-        border-bottom: 3px solid rgba(255,255,255,0.18);
-        box-sizing: border-box;
-    }
+  /* Basic reset */
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #18191A; /* FB dark bg */
+    color: #E4E6EB;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a3b3c;
+    border-radius: 10px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Fixed header */
+  header {
+    background-color: #242526;
+    color: #E4E6EB;
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+    padding: 12px 24px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    user-select: none;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+
+  /* Fixed bottom nav */
+  nav#bottom-nav {
+    background-color: #242526;
+    color: #B0B3B8;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 56px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.25rem;
+    user-select: none;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+    z-index: 1000;
+  }
+  nav#bottom-nav button {
+    background: none;
+    border: none;
+    color: #B0B3B8;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.25s ease;
+  }
+  nav#bottom-nav button:hover,
+  nav#bottom-nav button:focus-visible {
+    color: #E4E6EB;
+    outline: none;
+  }
+
+  main.container {
+    margin: 76px 0 66px 0; /* header + nav space */
+    padding: 0 16px 0 16px;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    user-select: text;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  label, select {
+    color: #E4E6EB;
+    display: block;
+  }
+  label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.02em;
+  }
+  select {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: #3a3b3c;
+    border: 2px solid #555657;
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #E4E6EB;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: inset 0 0 6px #4a4a4a;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23E4E6EB" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  select:hover {
+    border-color: #76777a;
+    box-shadow: inset 0 0 8px #6a6b6d;
+  }
+  select:focus {
+    border-color: #3a47d5;
+    box-shadow: 0 0 10px #3a47d5a5;
+    outline: none;
+  }
+
+  #welcome-message {
+    margin-top: 48px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #B0B3B8;
+    text-align: center;
+    padding: 0 12px;
+    line-height: 1.5;
+    user-select: none;
+  }
+
+  .vocabulary-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+  }
+  .word-card {
+    background-color: #242526;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 6px 20px rgba(58, 71, 213, 0.3);
+    color: #E4E6EB;
+    font-size: 1rem;
+    user-select: text;
+  }
+  .word-card:focus-visible {
+    outline: 3px solid #3949ab;
+    outline-offset: 3px;
+  }
+  .native-text {
+    font-weight: 900;
+    font-size: 1.28rem;
+    color: #8ab4f8;
+    white-space: pre-wrap;
+  }
+  .bangla-pronunciation {
+    font-style: italic;
+    font-weight: 700;
+    color: #aecbfa;
+    font-size: 1.05rem;
+    margin-top: 6px;
+    white-space: pre-wrap;
+  }
+  .bangla-meaning {
+    font-weight: 600;
+    color: #bdc1c6;
+    font-size: 1rem;
+    margin-top: 6px;
+    white-space: pre-wrap;
+    line-height: 1.38;
+  }
+  .english-meaning {
+    font-weight: 500;
+    color: #8c8f94;
+    font-size: 0.92rem;
+    font-style: italic;
+    margin-top: 6px;
+    white-space: pre-wrap;
+    line-height: 1.3;
+  }
+
+  /* Responsive */
+  @media(min-width: 721px) {
     main.container {
-        flex: 1 1 auto;
-        background: var(--bg-color);
-        color: var(--text-primary);
-        display: flex;
-        flex-direction: column;
-        padding: 20px 26px 16px 26px;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        user-select: text;
-        gap: 18px;
-        border-radius: 0 0 12px 12px;
+      max-width: 650px;
+      margin: 76px auto 66px auto;
+      padding: 0 22px 0 22px;
     }
-    label {
-        font-weight: 700;
-        font-size: 1.18rem;
-        margin-bottom: 10px;
-        color: var(--accent-hover-blue);
-        user-select: none;
-        display: block;
-        letter-spacing: 0.01em;
-    }
-    select {
-        width: 100%;
-        padding: 14px 19px;
-        font-size: 1.12rem;
-        border: 2.5px solid var(--accent-light-blue);
-        border-radius: 14px;
-        outline: none;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--accent-hover-blue);
-        font-weight: 700;
-        appearance: none;
-        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path fill="%233a47d5" d="M1 1l6 6 6-6"/></svg>') no-repeat right 22px center / 14px 8px;
-        cursor: pointer;
-        box-shadow: inset 0 0 12px var(--accent-light-blue);
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        user-select: none;
-    }
-    select:hover {
-        border-color: var(--accent-blue);
-        box-shadow: inset 0 0 14px var(--accent-blue);
-    }
-    select:focus {
-        border-color: var(--accent-hover-blue);
-        box-shadow: 0 0 18px var(--accent-hover-blue);
+  }
+  @media(min-width: 1025px) {
+    main.container {
+      max-width: 900px;
     }
     .vocabulary-grid {
-        margin-top: 0;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+      row-gap: 28px;
     }
-    .word-card {
-        background: var(--card-bg);
-        border-radius: 16px;
-        padding: 22px 26px 25px 26px;
-        box-shadow: 0 10px 32px var(--card-shadow);
-        text-align: left;
-        font-size: 1.02rem;
-        transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
-        cursor: default;
-        user-select: text;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-        scroll-margin-top: 60px;
-    }
-    .word-card:hover,
-    .word-card:focus-visible {
-        transform: translateY(-7px);
-        box-shadow: 0 20px 56px var(--accent-blue);
-        outline-offset: 4px;
-        outline: 3px solid var(--accent-hover-blue);
-        z-index: 10;
-    }
-    .native-text {
-        font-weight: 900;
-        font-size: 1.3rem;
-        color: var(--accent-hover-blue);
-        white-space: pre-wrap;
-        user-select: text;
-    }
-    .bangla-pronunciation {
-        font-style: italic;
-        font-weight: 700;
-        color: var(--accent-blue);
-        font-size: 1.1rem;
-        white-space: pre-wrap;
-        user-select: text;
-    }
-    .bangla-meaning {
-        font-weight: 600;
-        color: var(--text-secondary);
-        font-size: 1.06rem;
-        white-space: pre-wrap;
-        line-height: 1.38;
-        user-select: text;
-    }
-    .english-meaning {
-        font-weight: 500;
-        color: #555555;
-        font-size: 0.94rem;
-        font-style: italic;
-        white-space: pre-wrap;
-        user-select: text;
-        margin-top: 6px;
-        line-height: 1.3;
-    }
-    .practice-btn {
-        margin-top: auto;
-        user-select: none;
-        background-color: var(--accent-hover-blue);
-        border: none;
-        color: white;
-        font-weight: 700;
-        font-size: 0.95rem;
-        border-radius: 16px;
-        padding: 11px 24px;
-        cursor: pointer;
-        align-self: flex-start;
-        box-shadow: 0 5px 20px var(--accent-blue);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        display: block;
-        user-select: none;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .practice-btn:hover,
-    .practice-btn:focus-visible {
-        background-color: var(--accent-blue);
-        box-shadow: 0 8px 28px var(--accent-hover-blue);
-        outline: none;
-    }
-    #welcome-message {
-        margin-top: 50px;
-        font-weight: 700;
-        font-size: 1.28rem;
-        color: var(--accent-hover-blue);
-        text-align: center;
-        user-select: none;
-        line-height: 1.48;
-        padding: 0 20px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, #e7eaff, #d6dcff);
-        box-shadow: 0 8px 24px rgba(58, 71, 213, 0.15);
-    }
-    footer {
-        background-color: var(--footer-bg);
-        color: var(--footer-text);
-        text-align: center;
-        padding: 1.3rem 1.5rem;
-        font-size: 1rem;
-        user-select: none;
-        box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.16);
-        letter-spacing: 0.065em;
-        font-weight: 700;
-        flex-shrink: 0;
-        border-top: 2px solid var(--border-color);
-        user-select: none;
-        font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    /* Responsive scaling */
-    @media (max-width: 425px) {
-        main.container {
-            padding: 18px 18px 0 18px;
-            gap: 14px;
-        }
-        .native-text {
-            font-size: 1.18rem;
-        }
-        .bangla-pronunciation {
-            font-size: 1.05rem;
-        }
-        .bangla-meaning {
-            font-size: 1rem;
-        }
-        .english-meaning {
-            font-size: 0.9rem;
-        }
-        .practice-btn {
-            padding: 9px 20px;
-            font-size: 0.9rem;
-            border-radius: 14px;
-        }
-    }
+  }
 </style>
 </head>
 <body>
 <header role="banner" aria-label="Speak EU Application Header">
-    Speak EU
+  Speak EU
 </header>
 
 <main class="container" role="main" aria-label="Speak EU Language Learning Conversations" tabindex="0">
-    <label for="language-select">Select a Country / Language:</label>
-    <select id="language-select" aria-label="Select language or country" aria-required="true" aria-describedby="help-text" autocomplete="off">
-        <option value="0" selected>-- Please select a country --</option>
-        <option value="russia">Russia</option>
-        <option value="france">France</option>
-        <option value="italy">Italy</option>
-        <option value="all">All Countries</option>
-    </select>
-    <div id="help-text" class="visually-hidden">Use the dropdown to select a country to view conversation phrases.</div>
+  <label for="language-select">Select a Country / Language:</label>
+  <select id="language-select" aria-label="Select language or country" aria-required="true" aria-describedby="help-text" autocomplete="off">
+    <option value="0" selected>-- Please select a country --</option>
+    <option value="russia">Russia</option>
+    <option value="france">France</option>
+    <option value="italy">Italy</option>
+    <option value="all">All Countries</option>
+  </select>
+  <div id="help-text" class="visually-hidden">Use the dropdown to select a country to view conversation phrases.</div>
 
-    <div id="welcome-message" role="region" aria-live="polite">
-        🌟 Welcome to Speak EU! Please select a country to explore practical conversations tailored for European expats and students. 🌟
-    </div>
+  <div id="welcome-message" role="region" aria-live="polite">
+    🌟 Welcome to Speak EU! Please select a country to explore practical conversations tailored for European expats and students. 🌟
+  </div>
 
-    <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="additions" hidden></div>
+  <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="additions" hidden></div>
 </main>
 
+<nav id="bottom-nav" role="navigation" aria-label="Main navigation">
+  <button type="button" aria-label="Home">🏠 Home</button>
+  <button type="button" aria-label="Countries">🌍 Countries</button>
+  <button type="button" aria-label="Settings">⚙️ Settings</button>
+</nav>
+
 <footer role="contentinfo" aria-label="Speak EU Application Footer">
-    &copy; 2024 Speak EU &mdash; Language Learning for European Expats and Students.
+  &copy; 2024 Speak EU &mdash; Language Learning for European Expats and Students.
 </footer>
 
 <script>
-    const russiaConversations = [
-        {
-            native:"Здравствуйте! Меня зовут Джон, я приехал учиться в университет.",
-            banglaPronunciation:"জদরাবব্যুতই! মেঞ্জা জোভু জ়ন, ইয়া প্রিয়েখাল উচিৎসা ভ ইউনিভার্সিতেত।",
-            banglaMeaning:"হ্যালো! আমার নাম জন, আমি বিশ্ববিদ্যালয়ে পড়াশোনা করতে এসেছি।",
-            englishMeaning:"Hello! My name is John, I came to study at the university."
-        },
-        {
-            native:"Где я могу снять квартиру недалеко от кампуса?",
-            banglaPronunciation:"গদে ইয়া মোগু স্ন্যাৎ কভার্তিরু নেদালেকো অট কামপুসা?",
-            banglaMeaning:"আমি ক্যাম্পাসের কাছে কোথায় ফ্ল্যাট ভাড়া নিতে পারি?",
-            englishMeaning:"Where can I rent an apartment near the campus?"
-        },
-        {
-            native:"Как получить студенческую визу?",
-            banglaPronunciation:"কাক পোলুচিত স্টুদেনচেস্কুয়ু ভিসু?",
-            banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?",
-            englishMeaning:"How to get a student visa?"
-        },
-        {
-            native:"Во сколько начинаются занятия в университете?",
-            banglaPronunciation:"ভো স্ক'লকো নাচিনাইউতস্যা জ়্যাত্য ভ ইউনিভার্সিতে?",
-            banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কখন শুরু হয়?",
-            englishMeaning:"At what time do classes start at the university?"
-        },
-        {
-            native:"Где находится ближайшая больница?",
-            banglaPronunciation:"গদে নাখোদিৎস্যা ব্লিঝায়শয়া বলনিতসা?",
-            banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
-            englishMeaning:"Where is the nearest hospital?"
-        }
-    ];
-
-    const franceConversations = [
-        {
-            native:"Bonjour! Je m'appelle Marie, je viens d'arriver pour mes études.",
-            banglaPronunciation:"বঁজুর! জ্য মা-পেল ম্যারি, জ্য ভিয়ঁ ধারিভে পুর মে এটুড।",
-            banglaMeaning:"হ্যালো! আমার নাম মারি, আমি পড়াশোনা করতে নতুন আগাছি।",
-            englishMeaning:"Hello! My name is Marie, I just arrived for my studies."
-        },
-        {
-            native:"Où puis-je trouver un appartement proche de l'université?",
-            banglaPronunciation:"উ পুই-জ় ত্রুভে উন আপার্তমান প্রক দে লুনিভার্সিতে?",
-            banglaMeaning:"বিশ্ববিদ্যালয়ের কাছে আমি ফ্ল্যাট কোথায় পাবো?",
-            englishMeaning:"Where can I find an apartment close to the university?"
-        },
-        {
-            native:"Comment demander un visa étudiant?",
-            banglaPronunciation:"কোম্মঁ দমানে উন ভিসা এটুদিয়ঁ?",
-            banglaMeaning:"আমি কীভাবে স্টুডেন্ট ভিসা চাই?",
-            englishMeaning:"How do I apply for a student visa?"
-        },
-        {
-            native:"À quelle heure commencent les cours?",
-            banglaPronunciation:"আ কেল উর কমঁসে লে কুর?",
-            banglaMeaning:"ক্লাস কখন শুরু হয়?",
-            englishMeaning:"At what time do the classes start?"
-        },
-        {
-            native:"Où est l'hôpital le plus proche?",
-            banglaPronunciation:"উ এ ল'অপিতাল লে প্লু প্রক?",
-            banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
-            englishMeaning:"Where is the nearest hospital?"
-        }
-    ];
-
-    const italyConversations = [
-        {
-            native:"Ciao! Mi chiamo Marco, sono venuto per studiare.",
-            banglaPronunciation:"চিয়াও! মি কিয়ামো মার্কো, সোনো ভেনুতো পুর স্টুদিয়ারে।",
-            banglaMeaning:"হ্যালো! আমার নাম মার্কো, আমি পড়াশোনা করতে এসেছি।",
-            englishMeaning:"Hello! My name is Marco, I came to study."
-        },
-        {
-            native:"Dove posso trovare un appartamento vicino all'università?",
-            banglaPronunciation:"দুভে পোসো ত্রোভারে উন আপার্ততামেন্তো ভিচিনো আল্লুনিভেরসিতা?",
-            banglaMeaning:"আমি বিশ্ববিদ্যালয়ের কাছে ফ্ল্যাট কোথায় পাবো?",
-            englishMeaning:"Where can I find an apartment near the university?"
-        },
-        {
-            native:"Come richiedere un visto studentesco?",
-            banglaPronunciation:"কোমে রিকিয়েদেরে উন ভিস্তো স্টুদেনেস্কো?",
-            banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?",
-            englishMeaning:"How to apply for a student visa?"
-        },
-        {
-            native:"A che ora iniziano le lezioni all'università?",
-            banglaPronunciation:"আ কে ওরা ইনিযানো লে লেজিওনি আল্লুনিভেরসিতা?",
-            banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কতটায় শুরু হয়?",
-            englishMeaning:"At what time do the classes start at the university?"
-        },
-        {
-            native:"Dov’è l’ospedale più vicino?",
-            banglaPronunciation:"দুভে ল’অস্পেদালে পিউ ভিচিনো?",
-            banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
-            englishMeaning:"Where is the nearest hospital?"
-        }
-    ];
-
-    const conversationData = {
-        russia: russiaConversations,
-        france: franceConversations,
-        italy: italyConversations
-    };
-
-    const languageSelect = document.getElementById('language-select');
-    const vocabularyGrid = document.getElementById('vocabulary-grid');
-    const welcomeMessage = document.getElementById('welcome-message');
-
-    function clearHighlight() {
-        document.querySelectorAll('.word-card.highlight').forEach(card => {
-            card.classList.remove('highlight');
-        });
+  const russiaConversations = [
+    {
+      native:"Здравствуйте! Меня зовут Джон, я приехал учиться в университет.",
+      banglaPronunciation:"জদরাবব্যুতই! মেঞ্জা জোভু জ়ন, ইয়া প্রিয়েখাল উচিৎসা ভ ইউনিভার্সিতেত।",
+      banglaMeaning:"হ্যালো! আমার নাম জন, আমি বিশ্ববিদ্যালয়ে পড়াশোনা করতে এসেছি।",
+      englishMeaning:"Hello! My name is John, I came to study at the university."
+    },
+    {
+      native:"Где я могу снять квартиру недалеко от кампуса?",
+      banglaPronunciation:"গদে ইয়া মোগু স্ন্যাৎ কভার্তিরু নেদালেকো অট কামপুসা?",
+      banglaMeaning:"আমি ক্যাম্পাসের কাছে কোথায় ফ্ল্যাট ভাড়া নিতে পারি?",
+      englishMeaning:"Where can I rent an apartment near the campus?"
+    },
+    {
+      native:"Как получить студенческую визу?",
+      banglaPronunciation:"কাক পোলুচিত স্টুদেনচেস্কুয়ু ভিসু?",
+      banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?",
+      englishMeaning:"How to get a student visa?"
+    },
+    {
+      native:"Во сколько начинаются занятия в университете?",
+      banglaPronunciation:"ভো স্ক'লকো নাচিনাইউতস্যা জ়্যাত্য ভ ইউনিভার্সিতে?",
+      banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কখন শুরু হয়?",
+      englishMeaning:"At what time do classes start at the university?"
+    },
+    {
+      native:"Где находится ближайшая больница?",
+      banglaPronunciation:"গদে নাখোদিৎস্যা ব্লিঝায়শয়া বলনিতসা?",
+      banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
+      englishMeaning:"Where is the nearest hospital?"
     }
+  ];
 
-    function createCard(convo, countryKey){
-        const card = document.createElement('div');
-        card.className = 'word-card';
-        card.tabIndex = 0;
-        card.innerHTML = `
-            <div class="native-text" title="Native Text">${convo.native}</div>
-            <div class="bangla-pronunciation" title="Bangla Pronunciation">${convo.banglaPronunciation}</div>
-            <div class="bangla-meaning" title="Bangla Meaning">${convo.banglaMeaning}</div>
-            <div class="english-meaning" title="English Meaning">${convo.englishMeaning}</div>
-        `;
-        return card;
+  const franceConversations = [
+    {
+      native:"Bonjour! Je m'appelle Marie, je viens d'arriver pour mes études.",
+      banglaPronunciation:"বঁজুর! জ্য মা-পেল ম্যারি, জ্য ভিয়ঁ ধারিভে পুর মে এটুড।",
+      banglaMeaning:"হ্যালো! আমার নাম মারি, আমি পড়াশোনা করতে নতুন আগাছি।",
+      englishMeaning:"Hello! My name is Marie, I just arrived for my studies."
+    },
+    {
+      native:"Où puis-je trouver un appartement proche de l'université?",
+      banglaPronunciation:"উ পুই-জ় ত্রুভে উন আপার্তমান প্রক দে লুনিভার্সিতে?",
+      banglaMeaning:"বিশ্ববিদ্যালয়ের কাছে আমি ফ্ল্যাট কোথায় পাবো?",
+      englishMeaning:"Where can I find an apartment close to the university?"
+    },
+    {
+      native:"Comment demander un visa étudiant?",
+      banglaPronunciation:"কোম্মঁ দমানে উন ভিসা এটুদিয়ঁ?",
+      banglaMeaning:"আমি কীভাবে স্টুডেন্ট ভিসা চাই?",
+      englishMeaning:"How do I apply for a student visa?"
+    },
+    {
+      native:"À quelle heure commencent les cours?",
+      banglaPronunciation:"আ কেল উর কমঁসে লে কুর?",
+      banglaMeaning:"ক্লাস কখন শুরু হয়?",
+      englishMeaning:"At what time do the classes start?"
+    },
+    {
+      native:"Où est l'hôpital le plus proche?",
+      banglaPronunciation:"উ এ ল'অপিতাল লে প্লু প্রক?",
+      banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
+      englishMeaning:"Where is the nearest hospital?"
     }
+  ];
 
-    function displayVocabulary(conversations, countryKey){
-        vocabularyGrid.innerHTML = '';
-        if(!conversations.length){
-            vocabularyGrid.innerHTML = '<p style="text-align:center; color:#777; font-style:italic;">কোনো কনভারসেশন পাওয়া যায়নি</p>';
-            return;
-        }
-        conversations.forEach((convo, index) => {
-            const card = createCard(convo, countryKey);
-            vocabularyGrid.appendChild(card);
-        });
+  const italyConversations = [
+    {
+      native:"Ciao! Mi chiamo Marco, sono venuto per studiare.",
+      banglaPronunciation:"চিয়াও! মি কিয়ামো মার্কো, সোনো ভেনুতো পুর স্টুদিয়ারে।",
+      banglaMeaning:"হ্যালো! আমার নাম মার্কো, আমি পড়াশোনা করতে এসেছি।",
+      englishMeaning:"Hello! My name is Marco, I came to study."
+    },
+    {
+      native:"Dove posso trovare un appartamento vicino all'università?",
+      banglaPronunciation:"দুভে পোসো ত্রোভারে উন আপার্ততামেন্তো ভিচিনো আল্লুনিভেরসিতা?",
+      banglaMeaning:"আমি বিশ্ববিদ্যালয়ের কাছে ফ্ল্যাট কোথায় পাবো?",
+      englishMeaning:"Where can I find an apartment near the university?"
+    },
+    {
+      native:"Come richiedere un visto studentesco?",
+      banglaPronunciation:"কোমে রিকিয়েদেরে উন ভিস্তো স্টুদেনেস্কো?",
+      banglaMeaning:"আমি কীভাবে ছাত্র ভিসা পাবো?",
+      englishMeaning:"How to apply for a student visa?"
+    },
+    {
+      native:"A che ora iniziano le lezioni all'università?",
+      banglaPronunciation:"আ কে ওরা ইনিযানো লে লেজিওনি আল্লুনিভেরসিতা?",
+      banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কতটায় শুরু হয়?",
+      englishMeaning:"At what time do the classes start at the university?"
+    },
+    {
+      native:"Dov’è l’ospedale più vicino?",
+      banglaPronunciation:"দুভে ল’অস্পেদালে পিউ ভিচিনো?",
+      banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
+      englishMeaning:"Where is the nearest hospital?"
     }
+  ];
 
-    function loadVocabulary(){
-        const selected = languageSelect.value;
-        clearHighlight();
+  const conversationData = {
+    russia: russiaConversations,
+    france: franceConversations,
+    italy: italyConversations
+  };
 
-        if(selected === '0'){ // no selection
-            vocabularyGrid.hidden = true;
-            welcomeMessage.style.display = 'block';
-        } else {
-            welcomeMessage.style.display = 'none';
-            vocabularyGrid.hidden = false;
+  const languageSelect = document.getElementById('language-select');
+  const vocabularyGrid = document.getElementById('vocabulary-grid');
+  const welcomeMessage = document.getElementById('welcome-message');
 
-            if(selected === 'all'){
-                const allConvos = [
-                    ...russiaConversations,
-                    ...franceConversations,
-                    ...italyConversations
-                ];
-                displayVocabulary(allConvos, '');
-            } else {
-                displayVocabulary(conversationData[selected] || [], selected);
-            }
-        }
+  function clearHighlight() {
+    document.querySelectorAll('.word-card.highlight').forEach(card => {
+      card.classList.remove('highlight');
+    });
+  }
+
+  function createCard(convo, countryKey){
+    const card = document.createElement('div');
+    card.className = 'word-card';
+    card.tabIndex = 0;
+    card.innerHTML = `
+      <div class="native-text" title="Native Text">${convo.native}</div>
+      <div class="bangla-pronunciation" title="Bangla Pronunciation">${convo.banglaPronunciation}</div>
+      <div class="bangla-meaning" title="Bangla Meaning">${convo.banglaMeaning}</div>
+      <div class="english-meaning" title="English Meaning">${convo.englishMeaning}</div>
+    `;
+    return card;
+  }
+
+  function displayVocabulary(conversations, countryKey){
+    vocabularyGrid.innerHTML = '';
+    if(!conversations.length){
+      vocabularyGrid.innerHTML = '<p style="text-align:center; color:#777; font-style:italic;">কোনো কনভারসেশন পাওয়া যায়নি</p>';
+      return;
     }
+    conversations.forEach((convo, index) => {
+      const card = createCard(convo, countryKey);
+      vocabularyGrid.appendChild(card);
+    });
+  }
 
-    (function init(){
-        loadVocabulary();
-        languageSelect.addEventListener('change', loadVocabulary);
-    })();
+  function loadVocabulary(){
+    const selected = languageSelect.value;
+    clearHighlight();
+
+    if(selected === '0'){ // no selection
+      vocabularyGrid.hidden = true;
+      welcomeMessage.style.display = 'block';
+    } else {
+      welcomeMessage.style.display = 'none';
+      vocabularyGrid.hidden = false;
+
+      if(selected === 'all'){
+        const allConvos = [
+          ...russiaConversations,
+          ...franceConversations,
+          ...italyConversations
+        ];
+        displayVocabulary(allConvos, '');
+      } else {
+        displayVocabulary(conversationData[selected] || [], selected);
+      }
+    }
+  }
+
+  (function init(){
+    loadVocabulary();
+    languageSelect.addEventListener('change', loadVocabulary);
+  })();
 </script>
 </body>
 </html>
-
