@@ -1,226 +1,36 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' lang="bn">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ইউরোপীয় ভাষা শেখার প্ল্যাটফর্ম</title>
-    <style>
-      :root {
-        --primary-color: #2563eb;
-        --secondary-color: #1e40af;
-        --text-color: #1f2937;
-        --bg-color: #f3f4f6;
-        --card-bg: #ffffff;
-      }
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Russian Language Learning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Russian Language Learning</h1>
+    <p>প্রবাসীদের জন্য দৈনন্দিন কথোপকথন</p>
+  </header>
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <section class="controls">
+    <input type="text" id="search" placeholder="অনুসন্ধান করুন (যেকোনো ভাষায়)" oninput="loadLessons()">
+    <select id="categoryFilter" onchange="loadLessons()">
+      <option value="all">সব ক্যাটাগরি</option>
+      <option value="greetings">শুভেচ্ছা</option>
+      <option value="daily">দৈনন্দিন</option>
+      <option value="shopping">বাজার</option>
+      <option value="emergency">জরুরি</option>
+    </select>
+    <button onclick="resetProgress()">🔄 Reset Progress</button>
+  </section>
 
-      body {
-        font-family: 'SolaimanLipi', Arial, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        line-height: 1.6;
-      }
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+    <p id="progress-text"></p>
+  </div>
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
+  <main id="lesson-list"></main>
 
-      .header {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 1rem 0;
-        margin-bottom: 2rem;
-      }
-
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .country-selector {
-        background-color: var(--card-bg);
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 2rem;
-      }
-
-      .search-box {
-        margin-bottom: 1rem;
-      }
-
-      .search-box input {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #e5e7eb;
-        border-radius: 4px;
-        font-size: 1rem;
-      }
-
-      select#country {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #e5e7eb;
-        border-radius: 4px;
-        font-size: 1rem;
-        background-color: white;
-      }
-
-      .article-section {
-        background-color: var(--card-bg);
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 2rem;
-      }
-
-      .article-title {
-        color: var(--primary-color);
-        font-size: 1.875rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .feature-list {
-        list-style: none;
-        margin: 1.5rem 0;
-      }
-
-      .feature-list li {
-        padding: 0.75rem 0;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .feature-list li:last-child {
-        border-bottom: none;
-      }
-
-      .feature-icon {
-        margin-right: 0.5rem;
-        color: var(--primary-color);
-      }
-
-      .cta-button {
-        display: inline-block;
-        background-color: var(--primary-color);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        margin-top: 1rem;
-        transition: background-color 0.3s ease;
-      }
-
-      .cta-button:hover {
-        background-color: var(--secondary-color);
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          padding: 1rem;
-        }
-
-        .article-title {
-          font-size: 1.5rem;
-        }
-
-        .header-content {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="header">
-      <div class="container header-content">
-        <h1>ইউরোপীয় ভাষা শেখার প্ল্যাটফর্ম</h1>
-        <nav>
-          <a href="#" class="cta-button">লগইন</a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="container">
-      <div class="country-selector">
-        <div class="search-box">
-          <input type="text" id="searchCountry" placeholder="দেশ খুঁজুন..." />
-        </div>
-        <select id="country">
-          <option value="">দেশ নির্বাচন করুন</option>
-          <option value="austria">অস্ট্রিয়া</option>
-          <option value="belgium">বেলজিয়াম</option>
-          <option value="bulgaria">বুলগেরিয়া</option>
-          <option value="croatia">ক্রোয়েশিয়া</option>
-          <option value="czech">চেক প্রজাতন্ত্র</option>
-          <option value="denmark">ডেনমার্ক</option>
-          <option value="estonia">এস্তোনিয়া</option>
-          <option value="finland">ফিনল্যান্ড</option>
-          <option value="france">ফ্রান্স</option>
-          <option value="germany">জার্মানি</option>
-          <!-- অন্যান্য দেশগুলি এখানে যোগ করুন -->
-        </select>
-      </div>
-
-      <section class="article-section">
-        <h2 class="article-title">আমাদের প্ল্যাটফর্মের বৈশিষ্ট্য</h2>
-        <p>
-          আমাদের প্ল্যাটফর্মে রয়েছে অত্যাধুনিক শিক্ষণ পদ্ধতি যা আপনাকে ইউরোপীয় ভাষা শেখার ক্ষেত্রে সহায়তা করবে।
-        </p>
-        
-        <ul class="feature-list">
-          <li>
-            <span class="feature-icon">📚</span>
-            ইন্টারেক্টিভ পাঠ: বিভিন্ন ভাষার পাঠ্যবই, অডিও এবং ভিডিওর মাধ্যমে শেখা
-          </li>
-          <li>
-            <span class="feature-icon">📝</span>
-            শব্দভাণ্ডার: নতুন শব্দ শেখার জন্য বিভিন্ন মডিউল
-          </li>
-          <li>
-            <span class="feature-icon">🎧</span>
-            শ্রবণ দক্ষতা: শব্দ শোনার মাধ্যমে শেখার সুযোগ
-          </li>
-          <li>
-            <span class="feature-icon">✍️</span>
-            বাক্য গঠন: বাক্য গঠন শেখার জন্য কার্যকরী টুল
-          </li>
-          <li>
-            <span class="feature-icon">📊</span>
-            কুইজ: শেখা বিষয়ের উপর কুইজের মাধ্যমে মূল্যায়ন
-          </li>
-        </ul>
-
-        <a href="#" class="cta-button">নিবন্ধন করুন</a>
-      </section>
-    </main>
-
-    <script>
-      document.getElementById('searchCountry').addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        const options = document.querySelectorAll('#country option');
-        
-        options.forEach(option => {
-          const text = option.text.toLowerCase();
-          option.style.display = text.includes(searchTerm) ? '' : 'none';
-        });
-      });
-
-      document.getElementById('country').addEventListener('change', function() {
-        const selectedValue = this.value;
-        if (selectedValue) {
-          // এখানে রিডাইরেক্ট লজিক যোগ করুন
-          console.log(`Selected country: ${selectedValue}`);
-        }
-      });
-    </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
