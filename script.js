@@ -1,12 +1,11 @@
-// Country persist feature
 window.onload = function () {
   const savedCountry = localStorage.getItem('selectedCountry');
   const countrySelect = document.getElementById('countrySelect');
   if (savedCountry) {
     countrySelect.value = savedCountry;
     countrySelect.disabled = true;
+    loadLessons();
   }
-  loadLessons();
 };
 
 function changeCountry() {
@@ -18,59 +17,60 @@ function changeCountry() {
   }
 }
 
-// Dummy lessons (you can later load by country too)
-const lessons = [
-  {
-    id: 1,
-    russian: "Привет, как дела?",
-    pronunciation: "প্রিভিয়েত, কাক দেলা?",
-    bangla: "হ্যালো, কেমন আছেন?",
-    english: "Hello, how are you?",
-    category: "greetings"
-  },
-  {
-    id: 2,
-    russian: "Спасибо большое!",
-    pronunciation: "স্‌পাসিবা বাল্‌শোয়ে!",
-    bangla: "খুব ধন্যবাদ!",
-    english: "Thank you very much!",
-    category: "greetings"
-  },
-  {
-    id: 3,
-    russian: "Где туалет?",
-    pronunciation: "গ্‌দে তুয়ালেত?",
-    bangla: "টয়লেট কোথায়?",
-    english: "Where is the toilet?",
-    category: "daily"
-  },
-  {
-    id: 4,
-    russian: "Сколько это стоит?",
-    pronunciation: "স্কল্‌কা এইতা স্তইত?",
-    bangla: "এটার দাম কত?",
-    english: "How much is this?",
-    category: "shopping"
-  },
-  {
-    id: 5,
-    russian: "Я не понимаю",
-    pronunciation: "ইয়া নে পনিমায়ু",
-    bangla: "আমি বুঝতে পারছি না",
-    english: "I don't understand",
-    category: "emergency"
-  }
-];
-
-const lessonList = document.getElementById('lesson-list');
+// আলাদা আলাদা দেশের lesson ডেটা
+const countryLessons = {
+  russia: [
+    {
+      id: 1, russian: "Привет", pronunciation: "প্রিভিয়েত", bangla: "হ্যালো", english: "Hello"
+    },
+    {
+      id: 2, russian: "Спасибо", pronunciation: "স্‌পাসিবা", bangla: "ধন্যবাদ", english: "Thank you"
+    }
+  ],
+  germany: [
+    {
+      id: 1, russian: "Hallo", pronunciation: "হালো", bangla: "হ্যালো", english: "Hello"
+    },
+    {
+      id: 2, russian: "Danke", pronunciation: "ডাঙ্কে", bangla: "ধন্যবাদ", english: "Thank you"
+    }
+  ],
+  france: [
+    {
+      id: 1, russian: "Bonjour", pronunciation: "বঁজুর", bangla: "সুপ্রভাত", english: "Good morning"
+    },
+    {
+      id: 2, russian: "Merci", pronunciation: "মের্সি", bangla: "ধন্যবাদ", english: "Thank you"
+    }
+  ],
+  italy: [
+    {
+      id: 1, russian: "Ciao", pronunciation: "চাও", bangla: "হ্যালো", english: "Hello"
+    },
+    {
+      id: 2, russian: "Grazie", pronunciation: "গ্রাৎসিয়ে", bangla: "ধন্যবাদ", english: "Thank you"
+    }
+  ],
+  spain: [
+    {
+      id: 1, russian: "Hola", pronunciation: "ওলা", bangla: "হ্যালো", english: "Hello"
+    },
+    {
+      id: 2, russian: "Gracias", pronunciation: "গ্রাসিয়াস", bangla: "ধন্যবাদ", english: "Thank you"
+    }
+  ]
+};
 
 function loadLessons() {
-  lessonList.innerHTML = '';
-  const completed = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+  const country = localStorage.getItem('selectedCountry');
+  const allLessons = countryLessons[country] || [];
+  const completed = JSON.parse(localStorage.getItem(`completedLessons_${country}`) || '[]');
   const search = document.getElementById('search').value.toLowerCase();
-  const category = document.getElementById('categoryFilter').value;
 
-  lessons.forEach(lesson => {
+  const lessonList = document.getElementById('lesson-list');
+  lessonList.innerHTML = '';
+
+  allLessons.forEach(lesson => {
     const matchesSearch = search === '' || (
       lesson.russian.toLowerCase().includes(search) ||
       lesson.pronunciation.toLowerCase().includes(search) ||
@@ -78,15 +78,13 @@ function loadLessons() {
       lesson.english.toLowerCase().includes(search)
     );
 
-    const matchesCategory = category === 'all' || lesson.category === category;
-
-    if (matchesSearch && matchesCategory) {
+    if (matchesSearch) {
       const div = document.createElement('div');
       div.className = 'lesson';
       if (completed.includes(lesson.id)) div.classList.add('completed');
 
       div.innerHTML = `
-        <p><strong>Russian:</strong> ${lesson.russian}</p>
+        <p><strong>Original:</strong> ${lesson.russian}</p>
         <p><strong>Pronunciation:</strong> ${lesson.pronunciation}</p>
         <p><strong>Bangla:</strong> ${lesson.bangla}</p>
         <p><strong>English:</strong> ${lesson.english}</p>
@@ -98,28 +96,27 @@ function loadLessons() {
     }
   });
 
-  updateProgressBar();
+  updateProgressBar(allLessons.length, completed.length);
 }
 
 function markComplete(id) {
-  let completed = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+  const country = localStorage.getItem('selectedCountry');
+  let completed = JSON.parse(localStorage.getItem(`completedLessons_${country}`) || '[]');
   if (!completed.includes(id)) {
     completed.push(id);
-    localStorage.setItem('completedLessons', JSON.stringify(completed));
+    localStorage.setItem(`completedLessons_${country}`, JSON.stringify(completed));
   }
   loadLessons();
 }
 
 function resetProgress() {
-  localStorage.removeItem('completedLessons');
+  const country = localStorage.getItem('selectedCountry');
+  localStorage.removeItem(`completedLessons_${country}`);
   loadLessons();
 }
 
-function updateProgressBar() {
-  const completed = JSON.parse(localStorage.getItem('completedLessons') || '[]');
-  const total = lessons.length;
-  const percent = (completed.length / total) * 100;
-
+function updateProgressBar(total, completedCount) {
+  const percent = (completedCount / total) * 100;
   document.getElementById('progress-bar').style.width = percent + '%';
-  document.getElementById('progress-text').innerText = `${completed.length} of ${total} lessons completed`;
+  document.getElementById('progress-text').innerText = `${completedCount} of ${total} lessons completed`;
 }
