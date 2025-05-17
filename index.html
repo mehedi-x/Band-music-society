@@ -3,588 +3,484 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>বাংলা উচ্চারণ, বাংলা ও ইংরেজি অর্থসহ ইউরোপীয় ভাষা শেখার সফটওয়্যার</title>
+  <title>প্রবাসী ডেইলি কনভার্সেশন</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    * {
+    /* Reset and base */
+    *, *::before, *::after {
       box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #eef2f7;
-      color: #222;
+      margin: 0; padding: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
       display: flex;
-      height: 100vh;
-      overflow: hidden;
-      user-select: none;
       flex-direction: column;
+      justify-content: space-between;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
     }
     header {
-      background: linear-gradient(135deg, #283593 0%, #3949ab 100%);
-      color: white;
-      padding: 1rem 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 900;
       text-align: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-      letter-spacing: 1.2px;
-      font-family: 'Roboto', sans-serif;
+      margin-bottom: 1.5rem;
     }
-    #container {
-      display: flex;
-      flex-grow: 1;
-      overflow: hidden;
-      min-height: 0; /* for flex children scrolling */
-    }
-    #sidebar {
-      width: 280px;
-      background: #3949ab;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      padding-top: 1rem;
-      overflow-y: auto;
-      flex-shrink: 0;
-      box-shadow: inset -3px 0 8px rgba(0,0,0,0.1);
-    }
-    #sidebar h2 {
-      font-size: 1.3rem;
-      text-align: center;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-      padding-bottom: 0.5rem;
+    header h1 {
+      margin: 0;
       font-weight: 700;
-      letter-spacing: 0.03em;
-      user-select: none;
-    }
-    .language-item {
-      padding: 12px 22px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      border-left: 5px solid transparent;
-      font-weight: 600;
-      user-select: none;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-    .language-item:hover {
-      background: rgba(255,255,255,0.25);
-    }
-    .language-item.active {
-      background: #5c6bc0;
-      border-left-color: #ffca28;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #fff;
-      text-shadow: 0 0 3px rgba(255,255,255,0.8);
-    }
-    #main-content {
-      flex-grow: 1;
-      background: white;
-      display: flex;
-      flex-direction: column;
-      padding: 20px 30px;
-      overflow-y: auto;
-      position: relative;
-      min-height: 0;
-    }
-    #language-title {
       font-size: 2rem;
-      margin-bottom: 12px;
-      color: #283593;
-      text-align: center;
-      font-weight: 900;
-      letter-spacing: 0.06em;
+      letter-spacing: 1.2px;
       user-select: none;
     }
-    #progress-container {
-      margin: 0 auto 30px;
-      width: 85%;
-      background: #ddd;
-      border-radius: 15px;
-      overflow: hidden;
-      height: 24px;
-      box-shadow: inset 0 1px 5px rgba(0,0,0,0.12);
+    label {
+      font-weight: 600;
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 0.5rem;
     }
-    #progress-bar {
-      height: 100%;
-      background: #283593;
-      width: 0%;
-      transition: width 0.5s ease;
-      border-radius: 15px;
-    }
-    #phrases-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 960px;
+    select {
       width: 100%;
-      user-select: text;
-    }
-    .phrase-item {
-      background: #f9f9f9;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      padding: 18px 25px;
-      box-shadow: 0 3px 10px rgba(40,53,147,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      max-width: 380px;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      border: 2px solid #333;
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
       font-size: 1rem;
-      line-height: 1.4;
+      transition: border-color 0.25s ease;
+      outline-offset: 2px;
     }
-    .phrase-texts {
-      max-width: 70%;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    select:focus {
+      border-color: #4caf50;
+      outline: none;
     }
-    .target-language-word {
-      font-size: 1.45rem;
-      font-weight: 900;
-      color: #3949ab;
-      user-select: text;
-      letter-spacing: 0.03em;
+    .table-wrapper {
+      margin-top: 1.5rem;
+      overflow-x: auto;
+      max-height: 320px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background-color: #181818;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
     }
-    .bangla-pronunciation {
-      font-size: 1.1rem;
-      color: #555;
-      font-style: italic;
-      user-select: text;
-      letter-spacing: 0.02em;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 320px;
     }
-    .meanings {
-      font-size: 1rem;
-      color: #444;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-      user-select: text;
-    }
-    .meaning-item {
-      background: #e8eaf6;
-      padding: 6px 14px;
-      border-radius: 10px;
+    thead th {
+      background-color: #1f8f4c;
+      color: #e9f5ec;
       font-weight: 700;
-      color: #283593;
-      user-select: text;
+      padding: 0.75rem 1rem;
+      border: 1px solid #2a2a2a;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    tbody tr {
+      border-bottom: 1px solid #333;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #1f1f1f;
+    }
+    tbody tr:hover {
+      background-color: #2e4e26;
+    }
+    td {
+      padding: 0.5rem 1rem;
+      vertical-align: middle;
+      font-size: 0.95rem;
+      border: 1px solid #2a2a2a;
       white-space: nowrap;
-      box-shadow: 0 2px 6px rgba(40,53,147,0.1);
-      letter-spacing: 0.02em;
     }
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 140px;
-      justify-content: center;
-      user-select: none;
+    /* Practice Box */
+    .practice-box {
+      margin-top: 2rem;
+      padding: 1.25rem 1rem;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.04);
     }
-    label.complete-label {
-      cursor: pointer;
+    .practice-box h2 {
+      margin-top: 0;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: #283593;
+      color: #81c784;
       user-select: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
-    input[type="checkbox"] {
-      width: 24px;
-      height: 24px;
+    .practice-instruction {
+      margin-bottom: 0.8rem;
+      font-size: 0.94rem;
+      color: #b5ddb0;
+    }
+    .practice-select {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 2px solid #333;
+      background-color: #121212;
+      color: #e0e0e0;
+      transition: border-color 0.3s ease;
+    }
+    .practice-select:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+    .practice-input {
+      width: 100%;
+      max-width: 100%;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 2px solid #333;
+      background-color: #121212;
+      color: #e0e0e0;
+      transition: border-color 0.3s ease;
+      margin-bottom: 1rem;
+      resize: vertical;
+      min-height: 50px;
+      font-family: inherit;
+    }
+    .practice-input:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+    .practice-button {
+      background-color: #4caf50;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
-      accent-color: #283593;
-      user-select: none;
+      transition: background-color 0.3s ease;
     }
-    #advertisement {
-      background: #e3f2fd;
-      border: 2px dashed #90caf9;
-      border-radius: 14px;
-      padding: 18px 25px;
-      color: #283593;
-      font-weight: 900;
+    .practice-button:hover {
+      background-color: #388e3c;
+    }
+    .practice-result {
+      margin-top: 1rem;
+      font-weight: 600;
       font-size: 1.1rem;
-      max-width: 960px;
-      margin: 20px auto;
-      box-shadow: 0 2px 15px rgba(40,53,147,0.18);
+      min-height: 1.3rem;
       user-select: none;
-      text-align: center;
-      letter-spacing: 0.04em;
     }
-    footer {
-      background: linear-gradient(135deg, #3949ab 0%, #283593 100%);
-      color: white;
-      padding: 14px 20px;
+    /* Advertisement Section */
+    .ad-section {
+      margin: 2rem 0 3rem;
+      padding: 1rem;
+      border: 2px dashed #4caf50;
+      border-radius: 8px;
+      text-align: center;
       font-size: 1.1rem;
-      text-align: center;
-      font-weight: 700;
-      flex-shrink: 0;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
+      color: #81c784;
       user-select: none;
-      letter-spacing: 0.05em;
-      font-family: 'Roboto', sans-serif;
+      background-color: #202720;
     }
-    /* Scrollbar styling */
-    #sidebar::-webkit-scrollbar,
-    #main-content::-webkit-scrollbar {
-      width: 10px;
+    /* Progress Tracker Bar */
+    .progress-tracker {
+      width: 100%;
+      background-color: #2c2c2c;
+      height: 20px;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 999;
     }
-    #sidebar::-webkit-scrollbar-track,
-    #main-content::-webkit-scrollbar-track {
-      background: transparent;
+    .progress-bar {
+      width: 35%; /* Static width for visual effect */
+      height: 100%;
+      background: linear-gradient(90deg, #4caf50, #81c784);
+      transition: width 0.4s ease;
     }
-    #sidebar::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.28);
-      border-radius: 5px;
-    }
-    #main-content::-webkit-scrollbar-thumb {
-      background: rgba(80,80,160,0.25);
-      border-radius: 7px;
-    }
-    @media (max-width: 900px) {
-      #container {
-        flex-direction: column;
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
       }
-      #sidebar {
-        width: 100%;
-        height: 140px;
-        padding: 0.7rem 10px;
-        flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
-        box-shadow: inset 0 -3px 6px rgba(0,0,0,0.1);
-      }
-      .language-item {
-        border-left: none;
-        border-bottom: 5px solid transparent;
-        padding: 12px 15px;
-        flex-shrink: 0;
-        font-size: 1.05rem;
-        line-height: 1.2;
-      }
-      .language-item.active {
-        border-left: none;
-        border-bottom-color: #ffca28;
-        font-weight: 900;
-        font-size: 1.1rem;
-      }
-      #main-content {
-        height: calc(100vh - 140px - 66px - 60px);
-        padding: 15px 15px 70px;
-        overflow-y: auto;
-      }
-      #advertisement {
+      select {
         max-width: 100%;
-        margin: 28px auto 32px;
-        border-style: solid;
-        box-shadow: 0 2px 8px rgba(40,53,147,0.1);
-        font-size: 1.05rem;
-        letter-spacing: 0.03em;
-        padding: 14px 20px;
-        border-width: 2px;
+      }
+      td, th {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.7rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>বাংলা উচ্চারণ, বাংলা ও ইংরেজি অর্থসহ ইউরোপীয় ভাষা শেখার সফটওয়্যার</header>
-  <div id="container">
-    <nav id="sidebar" aria-label="ভাষা নির্বাচক">
-      <h2>ভাষাসমূহ</h2>
-    </nav>
-    <main id="main-content">
-      <h1 id="language-title">ভাষা নির্বাচন করুন</h1>
-      <div id="progress-container" aria-label="অগ্রগতি বার">
-        <div id="progress-bar"></div>
-      </div>
-      <ul id="phrases-list" aria-live="polite" aria-relevant="additions"></ul>
-    </main>
+  <div class="container">
+    <header>
+      <h1>প্রবাসী ডেইলি কনভার্সেশন</h1>
+      <label for="country-select">দেশ নির্বাচন করুন (সব দেশ একসাথে দেখতে “সব দেশ একসাথে” বাছাই করুন):</label>
+      <select id="country-select" aria-label="দেশ নির্বাচন">
+        <option value="all" selected>সব দেশ একসাথে</option>
+        <option value="Russia">রাশিয়া</option>
+        <option value="Austria">অস্ট্রিয়া</option>
+        <option value="Belgium">বেলজিয়াম</option>
+        <option value="Bulgaria">বুলগেরিয়া</option>
+        <option value="Croatia">ক্রোয়েশিয়া</option>
+        <option value="Cyprus">সাইপ্রাস</option>
+        <option value="Czechia">চেকিয়া</option>
+        <option value="Denmark">ডেনমার্ক</option>
+        <option value="Estonia">এস্তোনিয়া</option>
+        <option value="Finland">ফিনল্যান্ড</option>
+        <option value="France">ফ্রান্স</option>
+        <option value="Germany">জার্মানি</option>
+        <option value="Greece">গ্রিস</option>
+        <option value="Hungary">হাঙ্গেরি</option>
+        <option value="Iceland">আইসল্যান্ড</option>
+        <option value="Ireland">আয়ারল্যান্ড</option>
+        <option value="Italy">ইতালি</option>
+        <option value="Latvia">লাটভিয়া</option>
+        <option value="Lithuania">লিথুয়ানিয়া</option>
+        <option value="Luxembourg">লাক্সেমবার্গ</option>
+        <option value="Malta">মাল্টা</option>
+        <option value="Netherlands">নেদারল্যান্ডস</option>
+        <option value="Norway">নরওয়ে</option>
+        <option value="Poland">পোল্যান্ড</option>
+        <option value="Portugal">পর্তুগাল</option>
+        <option value="Romania">রোমানিয়া</option>
+        <option value="Slovakia">স্লোভাকিয়া</option>
+        <option value="Slovenia">স্লোভেনিয়া</option>
+        <option value="Spain">স্পেন</option>
+        <option value="Sweden">সুইডেন</option>
+        <option value="Switzerland">সুইজারল্যান্ড</option>
+        <option value="United Kingdom">যুক্তরাজ্য</option>
+      </select>
+    </header>
+
+    <section class="table-wrapper" id="table-wrapper" tabindex="0" aria-live="polite" aria-label="ভাষার বাক্য তালিকা">
+      <!-- Vocabulary table injected here -->
+    </section>
+
+    <section class="practice-box" aria-label="অনুশীলন বাক্স">
+      <h2>অনুশীলন করুন</h2>
+      <p class="practice-instruction">নীচের বাক্য থেকে একটি নির্বাচন করুন এবং সেটার বাংলা অর্থ লিখে <strong>পরীক্ষা করুন</strong>।</p>
+      <select id="practice-select" class="practice-select" aria-label="অনুশীলনের জন্য বাক্য নির্বাচন">
+        <option value="" disabled selected>একটি বাক্য নির্বাচন করুন</option>
+      </select>
+      <textarea id="practice-input" class="practice-input" placeholder="আপনার বাংলা অনুবাদ লিখুন এখানে..." aria-label="বাংলা অনুবাদ লিখুন"></textarea>
+      <button id="check-btn" class="practice-button" aria-label="অনুবাদের উত্তর পরীক্ষা করুন">উত্তর পরীক্ষা করুন</button>
+      <div id="practice-result" class="practice-result" aria-live="polite"></div>
+    </section>
+
+    <section class="ad-section" aria-label="বিজ্ঞাপন সেকশন">
+      বিজ্ঞাপন স্পেস - ভবিষ্যতে বিজ্ঞাপন যুক্ত করা হবে
+    </section>
   </div>
-  <footer>বাংলাদেশী প্রবাসী ও শিক্ষার্থীদের জন্য উপযোগী ভাষা শেখার সফটওয়্যার | © ২০২৪</footer>
+
+  <div class="progress-tracker" aria-label="প্রগ্রেস বার">
+    <div class="progress-bar"></div>
+  </div>
 
   <script>
-    // Expanded demo with 20 phrases minimum per language
-    const languages = {
-      "Austrian German": {
-        nativeName: "Österreichisches Deutsch",
-        words: [
-          {word:"Hallo", banglaPronounce:"হালো", banglaMeaning:"হ্যালো, শুভেচ্ছা", englishMeaning:"Hello, greeting"},
-          {word:"Danke", banglaPronounce:"ডাঙ্কে", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
-          {word:"Bitte", banglaPronounce:"বিটে", banglaMeaning:"অনুগ্রহ করে / স্বাগতম", englishMeaning:"Please / You're welcome"},
-          {word:"Guten Morgen", banglaPronounce:"গুটেন মরগেন", banglaMeaning:"শুভ সকাল", englishMeaning:"Good morning"},
-          {word:"Wie geht's?", banglaPronounce:"ভি গেটস?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
-          {word:"Entschuldigung", banglaPronounce:"এন্টশূলডিগুং", banglaMeaning:"দুঃখিত", englishMeaning:"Excuse me / Sorry"},
-          {word:"Ja", banglaPronounce:"য়া", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
-          {word:"Nein", banglaPronounce:"নাইন", banglaMeaning:"না", englishMeaning:"No"},
-          {word:"Ich liebe dich", banglaPronounce:"ইখ লিবে দিখ", banglaMeaning:"আমি তোমাকে ভালোবাসি", englishMeaning:"I love you"},
-          {word:"Tschüss", banglaPronounce:"চুস", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
-          {word:"Ich verstehe nicht", banglaPronounce:"ইখ ফারশতে নিখ্ট", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
-          {word:"Hilfe", banglaPronounce:"হিল্ফে", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
-          {word:"Freund", banglaPronounce:"ফ্রয়ন্দ", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
-          {word:"Bier", banglaPronounce:"বিয়ার", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
-          {word:"Wasser", banglaPronounce:"ভাসার", banglaMeaning:"পানি", englishMeaning:"Water"},
-          {word:"Haus", banglaPronounce:"হাউস", banglaMeaning:"বাড়ি", englishMeaning:"House"},
-          {word:"Schule", banglaPronounce:"শুলে", banglaMeaning:"স্কুল", englishMeaning:"School"},
-          {word:"Straße", banglaPronounce:"স্ট্রাসে", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
-          {word:"Essen", banglaPronounce:"এসেন", banglaMeaning:"খাদ্য", englishMeaning:"Food"},
-          {word:"Trinken", banglaPronounce:"ত্রিন্কেন", banglaMeaning:"পান করা", englishMeaning:"To drink"}
-        ]
-      },
-      "Belgian Dutch": {
-        nativeName: "Vlaams",
-        words: [
-          {word:"Hallo", banglaPronounce:"হালো", banglaMeaning:"হ্যালো", englishMeaning:"Hello"},
-          {word:"Dank u", banglaPronounce:"ডাঙ্ক উ", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
-          {word:"Alsjeblieft", banglaPronounce:"আলশেব্লিফট", banglaMeaning:"অনুগ্রহ করে", englishMeaning:"Please"},
-          {word:"Goedemorgen", banglaPronounce:"খুদেমর্গেন", banglaMeaning:"শুভ সকাল", englishMeaning:"Good morning"},
-          {word:"Hoe gaat het?", banglaPronounce:"হু গাত হেত?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
-          {word:"Sorry", banglaPronounce:"সরি", banglaMeaning:"দুঃখিত", englishMeaning:"Sorry"},
-          {word:"Ja", banglaPronounce:"য়া", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
-          {word:"Nee", banglaPronounce:"নে", banglaMeaning:"না", englishMeaning:"No"},
-          {word:"Ik hou van jou", banglaPronounce:"ইক হাউ ফান যাউ", banglaMeaning:"আমি তোমায় ভালবাসি", englishMeaning:"I love you"},
-          {word:"Vaarwel", banglaPronounce:"ভারভেল", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
-          {word:"Ik begrijp het niet", banglaPronounce:"ইক বিরগেইপ হেত নিট", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
-          {word:"Help", banglaPronounce:"হেলপ", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
-          {word:"Vriend", banglaPronounce:"ভ্রিয়েন্ড", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
-          {word:"Bier", banglaPronounce:"বিয়ার", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
-          {word:"Water", banglaPronounce:"ভাটার", banglaMeaning:"পানি", englishMeaning:"Water"},
-          {word:"Huis", banglaPronounce:"হাউস", banglaMeaning:"বাড়ি", englishMeaning:"House"},
-          {word:"School", banglaPronounce:"স্কুল", banglaMeaning:"স্কুল", englishMeaning:"School"},
-          {word:"Straat", banglaPronounce:"স্ট্রাট", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
-          {word:"Eten", banglaPronounce:"এতেন", banglaMeaning:"খাবার", englishMeaning:"Food"},
-          {word:"Drinken", banglaPronounce:"দ্রিনকেন", banglaMeaning:"পান করা", englishMeaning:"To drink"}
-        ]
-      },
-      "Belgian French": {
-        nativeName: "Français (Belgique)",
-        words: [
-          {word:"Bonjour", banglaPronounce:"বঁজুর", banglaMeaning:"শুভ সকাল / শুভ দিন", englishMeaning:"Good morning / Good day"},
-          {word:"Merci", banglaPronounce:"মের্সি", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
-          {word:"S'il vous plaît", banglaPronounce:"সীল ভু প্লে", banglaMeaning:"অনুগ্রহ করে", englishMeaning:"Please"},
-          {word:"Bonsoir", banglaPronounce:"বঁসোয়ার", banglaMeaning:"শুভ সন্ধ্যা", englishMeaning:"Good evening"},
-          {word:"Comment ça va?", banglaPronounce:"কোমঁ সা ভা?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
-          {word:"Pardon", banglaPronounce:"পারডঁ", banglaMeaning:"দুঃখিত", englishMeaning:"Sorry / Excuse me"},
-          {word:"Oui", banglaPronounce:"উই", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
-          {word:"Non", banglaPronounce:"নঁ", banglaMeaning:"না", englishMeaning:"No"},
-          {word:"Je t'aime", banglaPronounce:"ঝে ত'এম", banglaMeaning:"আমি তোমাকে ভালোবাসি", englishMeaning:"I love you"},
-          {word:"Au revoir", banglaPronounce:"অ রুভোয়ার", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
-          {word:"Je ne comprends pas", banglaPronounce:"ঝে নে কোম্প্রঁ পা", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
-          {word:"Aide", banglaPronounce:"এদ", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
-          {word:"Ami", banglaPronounce:"আমি", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
-          {word:"Bière", banglaPronounce:"বিয়ের", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
-          {word:"Eau", banglaPronounce:"ও", banglaMeaning:"পানি", englishMeaning:"Water"},
-          {word:"Maison", banglaPronounce:"মেজঁ", banglaMeaning:"বাড়ি", englishMeaning:"House"},
-          {word:"École", banglaPronounce:"একল", banglaMeaning:"স্কুল", englishMeaning:"School"},
-          {word:"Rue", banglaPronounce:"রু", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
-          {word:"Nourriture", banglaPronounce:"নুরিতুর", banglaMeaning:"খাবার", englishMeaning:"Food"},
-          {word:"Boire", banglaPronounce:"বোয়্যার", banglaMeaning:"পান করা", englishMeaning:"To drink"}
-        ]
-      },
-      // Continue for many other languages like Czech, Danish, Estonian, Finnish, French, German, Greek,
-      // Hungarian, Icelandic, Italian, Latvian, Lithuanian, Luxembourgish, Maltese, Dutch, 
-      // Polish, Portuguese, Slovak, Slovene, Spanish, Swedish, Russian,
-      // Canadian English, Canadian French, Australian English
+    /* 
+      ডাটা স্ট্রাকচার:
+      প্রতিটি দেশের জন্য একটি অ্যারে থাকবে,
+      যেখানে প্রতিটি আইটেমে থাকবে:
+      - native: দেশীয় বাক্য বা শব্দ
+      - banglaPronunciation: বাংলায় উচ্চারণ
+      - banglaMeaning: বাংলায় অর্থ
+      - englishMeaning: ইংরেজি অনুবাদ (প্রদর্শনে দেখাবে)
+    */
 
-      // For brevity extending Czech only here as example (others should be similarly extended)
-      "Czech": {
-        nativeName: "Čeština",
-        words: [
-          {word:"Ahoj", banglaPronounce:"আহয়", banglaMeaning:"হ্যালো", englishMeaning:"Hello"},
-          {word:"Děkuji", banglaPronounce:"দেকুজি", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
-          {word:"Prosím", banglaPronounce:"প্রসীম", banglaMeaning:"অনুগ্রহ করে", englishMeaning:"Please"},
-          {word:"Dobré ráno", banglaPronounce:"দোবরে রানো", banglaMeaning:"শুভ সকাল", englishMeaning:"Good morning"},
-          {word:"Jak se máte?", banglaPronounce:"ইয়াক সে মাথে?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
-          {word:"Promiňte", banglaPronounce:"প্রোমিঁতে", banglaMeaning:"দুঃখিত", englishMeaning:"Sorry / Excuse me"},
-          {word:"Ano", banglaPronounce:"আনো", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
-          {word:"Ne", banglaPronounce:"নে", banglaMeaning:"না", englishMeaning:"No"},
-          {word:"Miluji tě", banglaPronounce:"মিলুজি তেয়ে", banglaMeaning:"আমি তোমাকে ভালোবাসি", englishMeaning:"I love you"},
-          {word:"Na shledanou", banglaPronounce:"না স্ক্লেদানো", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
-          {word:"Nerozumím", banglaPronounce:"নে রোজুমিম", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
-          {word:"Pomoc", banglaPronounce:"পোমোৎস", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
-          {word:"Přítel", banglaPronounce:"প্রিতেল", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
-          {word:"Pivo", banglaPronounce:"পিভো", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
-          {word:"Voda", banglaPronounce:"ভোদা", banglaMeaning:"পানি", englishMeaning:"Water"},
-          {word:"Dům", banglaPronounce:"দুম", banglaMeaning:"বাড়ি", englishMeaning:"House"},
-          {word:"Škola", banglaPronounce:"শকোলা", banglaMeaning:"স্কুল", englishMeaning:"School"},
-          {word:"Ulice", banglaPronounce:"উলিয়েসে", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
-          {word:"Jídlo", banglaPronounce:"জিদলো", banglaMeaning:"খাবার", englishMeaning:"Food"},
-          {word:"Pít", banglaPronounce:"পীত", banglaMeaning:"পান করা", englishMeaning:"To drink"}
-        ]
-      }
+    const data = {
+      Russia: [
+        { native: "Ты как?", banglaPronunciation: "তুি কাক?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Я в порядке.", banglaPronunciation: "য়া ভ পারয়াত কে.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Где ресторан?", banglaPronunciation: "গদে রেস্টোরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Хочу идти в больницу.", banglaPronunciation: "খাচু ইদতি ফ বোলোনিতসু.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Я иду домой.", banglaPronunciation: "য়া ইদু দামোয়.", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Как пройти?", banglaPronunciation: "কাক প্রোতি?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Куда идти один день?", banglaPronunciation: "কুদা ইদতি একদিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Austria: [
+        { native: "Wie geht's dir?", banglaPronunciation: "ভি গেইটস দির?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mir geht es gut.", banglaPronunciation: "মির গেইট এস গুত.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Wo ist das Restaurant?", banglaPronunciation: "ভো ইস্ট দাস রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Ich möchte ins Krankenhaus gehen.", banglaPronunciation: "ইচ মিঁখতে ইনস ক্রাংকেনহাউস গেহেন.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ich gehe nach Hause.", banglaPronunciation: "ইচ গেহে নাখ হাউসে.", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Wie komme ich dahin?", banglaPronunciation: "ভি কোম্মে ইচ দহিন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Wohin gehe ich an einem Tag?", banglaPronunciation: "ভোহিন গেহে ইচ আন আইনেম তাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Belgium: [
+        { native: "Hoe gaat het met jou?", banglaPronunciation: "হু ঘাত হেট মেট জু?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Het gaat goed.", banglaPronunciation: "হেট ঘাত গুদের.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Waar is het restaurant?", banglaPronunciation: "ওয়ার ইস হেট রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Ik wil naar het ziekenhuis gaan.", banglaPronunciation: "ইক উইল নার হেট সিজোখইউস গান.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ik ga naar huis.", banglaPronunciation: "ইক গা নার হুইস.", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hoe kom ik daar?", banglaPronunciation: "হু কম ইক দার?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Waar ga ik één dag heen?", banglaPronunciation: "ওয়ার গা ইক এঁন দাগ হীন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      // More countries can be added here with same data structure and at least 7 phrases each
     };
 
-    const sidebar = document.getElementById('sidebar');
-    const languagesList = Object.keys(languages);
-    const languageTitle = document.getElementById('language-title');
-    const phrasesList = document.getElementById('phrases-list');
-    const progressBar = document.getElementById('progress-bar');
+    // List of all countries for dropdown ordering consistency
+    const allCountries = [
+      "Russia", "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia",
+      "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Latvia",
+      "Lithuania", "Luxembourg", "Malta", "Netherlands", "Norway", "Poland", "Portugal", "Romania",
+      "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "United Kingdom"
+    ];
 
-    let progressData = JSON.parse(localStorage.getItem('languageProgress')) || {};
-    let currentLanguage = null;
+    // Sentence list for practice quiz will be populated dynamically based on current displayed data
 
-    function saveProgress() {
-      localStorage.setItem('languageProgress', JSON.stringify(progressData));
-    }
+    const countrySelect = document.getElementById('country-select');
+    const tableWrapper = document.getElementById('table-wrapper');
+    const practiceSelect = document.getElementById('practice-select');
+    const practiceInput = document.getElementById('practice-input');
+    const checkBtn = document.getElementById('check-btn');
+    const practiceResult = document.getElementById('practice-result');
 
-    function updateProgressBar() {
-      if (!currentLanguage) {
-        progressBar.style.width = '0%';
-        return;
-      }
-      const total = languages[currentLanguage].words.length;
-      const done = progressData[currentLanguage]?.length || 0;
-      const percent = Math.round((done / total) * 100);
-      progressBar.style.width = percent + '%';
-    }
+    // Displays vocabulary table for selected country or all countries
+    function displayTable(selectedCountry) {
+      tableWrapper.innerHTML = '';
+      practiceSelect.innerHTML = '<option value="" disabled selected>একটি বাক্য নির্বাচন করুন</option>';
+      practiceInput.value = '';
+      practiceResult.textContent = '';
 
-    function renderLanguages() {
-      sidebar.innerHTML = '<h2>ভাষাসমূহ</h2>';
-      languagesList.forEach(lang => {
-        const langItem = document.createElement('div');
-        langItem.textContent = lang;
-        langItem.className = 'language-item';
-        if (lang === currentLanguage) langItem.classList.add('active');
-        langItem.tabIndex = 0;
-        langItem.setAttribute('role', 'button');
-        langItem.setAttribute('aria-pressed', lang === currentLanguage);
-        langItem.addEventListener('click', () => selectLanguage(lang));
-        langItem.addEventListener('keypress', e => {
-          if(e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            selectLanguage(lang);
+      let rows = [];
+      // Compose combined dataset or single country dataset
+      if(selectedCountry === 'all') {
+        allCountries.forEach(country => {
+          if(data[country]) {
+            data[country].forEach(item => {
+              rows.push({...item, country});
+            });
           }
         });
-        sidebar.appendChild(langItem);
-      });
-    }
-
-    function selectLanguage(lang) {
-      currentLanguage = lang;
-      languageTitle.textContent = lang + ' (' + languages[lang].nativeName + ') শেখা';
-      renderPhrases();
-      updateProgressBar();
-      updateSidebar();
-    }
-
-    function updateSidebar() {
-      const langItems = sidebar.querySelectorAll('.language-item');
-      langItems.forEach(item => {
-        item.classList.toggle('active', item.textContent === currentLanguage);
-        item.setAttribute('aria-pressed', item.textContent === currentLanguage);
-      });
-    }
-
-    // Insert advertisement block HTML after every 5 items
-    function createAdBlock(index) {
-      const adDiv = document.createElement('li');
-      adDiv.className = 'phrase-item';
-      adDiv.id = 'ad-block-' + index;
-      adDiv.setAttribute('aria-label', 'বিজ্ঞাপন');
-      adDiv.setAttribute('role', 'region');
-      adDiv.style.justifyContent = 'center';
-      adDiv.style.background = '#bbdefb';
-      adDiv.style.color = '#0d47a1';
-      adDiv.style.fontWeight = '800';
-      adDiv.style.fontSize = '1.1rem';
-      adDiv.style.border = '2px dashed #0d47a1';
-      adDiv.style.borderRadius = '12px';
-      adDiv.style.padding = '20px 30px';
-      adDiv.textContent = '⚡ বিজ্ঞাপন - আপনার বিজ্ঞাপন এখানে আসবে (ফিউচার প্ল্যান) ⚡';
-      return adDiv;
-    }
-
-    function renderPhrases() {
-      phrasesList.innerHTML = '';
-      const words = languages[currentLanguage].words;
-      const learnedWords = new Set(progressData[currentLanguage] || []);
-
-      words.forEach((item, idx) => {
-        const li = document.createElement('li');
-        li.className = 'phrase-item';
-
-        // Text container
-        const phraseTexts = document.createElement('div');
-        phraseTexts.className = 'phrase-texts';
-
-        const wordText = document.createElement('div');
-        wordText.className = 'target-language-word';
-        wordText.textContent = item.word;
-
-        const pronounceText = document.createElement('div');
-        pronounceText.className = 'bangla-pronunciation';
-        pronounceText.textContent = 'বাংলা উচ্চারণ: ' + item.banglaPronounce;
-
-        const meaningsDiv = document.createElement('div');
-        meaningsDiv.className = 'meanings';
-
-        const banglaMeaning = document.createElement('span');
-        banglaMeaning.className = 'meaning-item';
-        banglaMeaning.textContent = 'বাংলা অর্থ: ' + item.banglaMeaning;
-
-        const englishMeaning = document.createElement('span');
-        englishMeaning.className = 'meaning-item';
-        englishMeaning.textContent = 'English Meaning: ' + item.englishMeaning;
-
-        meaningsDiv.appendChild(banglaMeaning);
-        meaningsDiv.appendChild(englishMeaning);
-
-        phraseTexts.appendChild(wordText);
-        phraseTexts.appendChild(pronounceText);
-        phraseTexts.appendChild(meaningsDiv);
-
-        // Checkbox container
-        const checkboxContainer = document.createElement('div');
-        checkboxContainer.className = 'checkbox-container';
-
-        const completeCheckbox = document.createElement('input');
-        completeCheckbox.type = 'checkbox';
-        completeCheckbox.id = `complete-${idx}`;
-        completeCheckbox.checked = learnedWords.has(idx);
-        completeCheckbox.setAttribute('aria-label', `পূর্ণ করেছেন: ${item.word}`);
-        completeCheckbox.addEventListener('change', () => toggleComplete(idx, completeCheckbox.checked));
-
-        const label = document.createElement('label');
-        label.setAttribute('for', `complete-${idx}`);
-        label.className = 'complete-label';
-        label.textContent = 'পূর্ণ করেছেন';
-
-        checkboxContainer.appendChild(completeCheckbox);
-        checkboxContainer.appendChild(label);
-
-        li.appendChild(phraseTexts);
-        li.appendChild(checkboxContainer);
-
-        phrasesList.appendChild(li);
-
-        // Insert ad block after every 5 items except at end
-        if ((idx + 1) % 5 === 0 && idx !== words.length -1) {
-          phrasesList.appendChild(createAdBlock(idx));
-        }
-      });
-    }
-
-    function toggleComplete(idx, checked) {
-      if (!progressData[currentLanguage]) {
-        progressData[currentLanguage] = [];
-      }
-      if (checked) {
-        if (!progressData[currentLanguage].includes(idx)) {
-          progressData[currentLanguage].push(idx);
-        }
       } else {
-        progressData[currentLanguage] = progressData[currentLanguage].filter(i => i !== idx);
+        if(data[selectedCountry]) {
+          rows = data[selectedCountry].map(item => ({...item, country: selectedCountry}));
+        }
       }
-      saveProgress();
-      updateProgressBar();
+
+      if(rows.length === 0) {
+        tableWrapper.innerHTML = '<p style="color:#f44336; font-weight:600;">নির্বাচিত দেশের ভাষার বাক্য নেই।</p>';
+        return;
+      }
+
+      // Build table
+      const table = document.createElement('table');
+      table.setAttribute('aria-describedby', 'দৈনন্দিন কথোপকথনের তালিকা');
+
+      // Header row
+      const thead = document.createElement('thead');
+      thead.innerHTML = `
+        <tr>
+          <th>দেশ</th>
+          <th>ভাষার বাক্য</th>
+          <th>বাংলা উচ্চারণ</th>
+          <th>বাংলা অর্থ</th>
+          <th>ইংরেজি অনুবাদ</th>
+        </tr>
+      `;
+      table.appendChild(thead);
+
+      // Body rows
+      const tbody = document.createElement('tbody');
+      rows.forEach((item, idx) => {
+        const tr = document.createElement('tr');
+        tr.tabIndex = 0;
+        tr.setAttribute('role', 'button');
+        tr.style.cursor = 'pointer';
+        tr.title = 'অনুশীলনের জন্য এই বাক্যটি বাছাই করুন';
+        tr.innerHTML = `
+          <td>${item.country}</td>
+          <td>${item.native}</td>
+          <td>${item.banglaPronunciation}</td>
+          <td>${item.banglaMeaning}</td>
+          <td>${item.englishMeaning}</td>
+        `;
+        // On clicking a row, select that sentence in practice box
+        tr.addEventListener('click', () => {
+          selectPracticeSentence(item.native, item.banglaMeaning);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+
+      tableWrapper.appendChild(table);
+
+      // Fill practice select dropdown
+      fillPracticeSelect(rows);
     }
 
-    renderLanguages();
+    // Fill practice select with available sentences
+    function fillPracticeSelect(sentences) {
+      practiceSelect.innerHTML = '<option value="" disabled selected>একটি বাক্য নির্বাচন করুন</option>';
+      sentences.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item.native;
+        option.textContent = `[${item.country}] ${item.native}`;
+        // Store expected Bengali meaning in data attribute for quiz check
+        option.dataset.banglaMeaning = item.banglaMeaning;
+        practiceSelect.appendChild(option);
+      });
+    }
 
+    // When user clicks a row or selects a sentence from dropdown, update practice text area with empty and reset result
+    function selectPracticeSentence(nativeSentence, banglaMeaning) {
+      // Select in practice select if exists
+      Array.from(practiceSelect.options).forEach(opt => {
+        if(opt.value === nativeSentence) {
+          practiceSelect.value = nativeSentence;
+        }
+      });
+      practiceInput.value = '';
+      practiceResult.textContent = '';
+    }
+
+    // Check user's translation input against correct Bengali meaning (simple case-insensitive match ignoring spaces)
+    function checkTranslation() {
+      const selectedOption = practiceSelect.options[practiceSelect.selectedIndex];
+      if(!selectedOption || !practiceInput.value.trim()) {
+        practiceResult.style.color = '#f44336';
+        practiceResult.textContent = 'অনুগ্রহ করে একটি বাক্য নির্বাচন করুন এবং বাংলায় অনুবাদ লিখুন।';
+        return;
+      }
+      const correctAnswer = selectedOption.dataset.banglaMeaning.trim().toLowerCase().replace(/\s+/g,' ');
+      const userAnswer = practiceInput.value.trim().toLowerCase().replace(/\s+/g,' ');
+      if(userAnswer === correctAnswer) {
+        practiceResult.style.color = '#4caf50';
+        practiceResult.textContent = 'সঠিক অনুবাদ! চমৎকার।';
+      } else {
+        practiceResult.style.color = '#ffd54f';
+        practiceResult.textContent = `ভুল অনুবাদ। সঠিক উত্তর: "${selectedOption.dataset.banglaMeaning}"`;
+      }
+    }
+
+    // Event Listeners
+    countrySelect.addEventListener('change', e => {
+      displayTable(e.target.value);
+      // Reset practice input and result
+      practiceInput.value = '';
+      practiceResult.textContent = '';
+    });
+
+    practiceSelect.addEventListener('change', e => {
+      practiceInput.value = '';
+      practiceResult.textContent = '';
+    });
+
+    checkBtn.addEventListener('click', checkTranslation);
+
+    // Initial display all countries on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      displayTable('all');
+    });
   </script>
 </body>
 </html>
