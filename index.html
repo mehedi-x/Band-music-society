@@ -2,15 +2,80 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>European Language Learning</title>
-  <link rel="stylesheet" href="style.css">
+  <title>ইউরোপিয়ান ভাষা শেখার সফটওয়্যার</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffc3;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    select, input[type="text"], button {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    select, input[type="text"] {
+      width: 200px;
+    }
+    button {
+      background-color: #00ffc3;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #00caa3;
+    }
+    .lesson {
+      background: #1e1e1e;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-left: 5px solid #00ffc3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .completed {
+      background-color: #2e2e2e;
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+    .progress-container {
+      margin-top: 20px;
+      background: #333;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: #00ffc3;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .progress-text {
+      text-align: center;
+      margin-top: 5px;
+      color: #bbb;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>European Language Learning</h1>
-    <p>প্রবাসীদের জন্য ভাষা শেখার সফটওয়্যার</p>
-  </header>
+  <h1>ইউরোপিয়ান ভাষা শেখার সফটওয়্যার</h1>
 
   <section class="controls">
     <select id="countrySelect" onchange="changeCountry()">
@@ -25,13 +90,117 @@
     <button onclick="resetProgress()">🔄 Reset Progress</button>
   </section>
 
-  <div id="progress-bar-container">
-    <div id="progress-bar"></div>
-    <p id="progress-text"></p>
+  <div id="lesson-list"></div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
   </div>
+  <div class="progress-text" id="progress-text"></div>
 
-  <main id="lesson-list"></main>
+  <script>
+    const lessonsByCountry = {
+      russia: [
+        "Здравствуйте (হ্যালো)",
+        "Как дела? (আপনি কেমন আছেন?)",
+        "Спасибо (ধন্যবাদ)",
+        "Пожалуйста (অনুগ্রহ করে)",
+        "До свидания (বিদায়)"
+      ],
+      germany: [
+        "Hallo (হ্যালো)",
+        "Wie geht's? (আপনি কেমন আছেন?)",
+        "Danke (ধন্যবাদ)",
+        "Bitte (অনুগ্রহ করে)",
+        "Tschüss (বিদায়)"
+      ],
+      france: [
+        "Bonjour (গুড মর্নিং)",
+        "Comment ça va? (আপনি কেমন আছেন?)",
+        "Merci (ধন্যবাদ)",
+        "S'il vous plaît (অনুগ্রহ করে)",
+        "Au revoir (বিদায়)"
+      ],
+      italy: [
+        "Ciao (হ্যালো/বিদায়)",
+        "Come stai? (আপনি কেমন আছেন?)",
+        "Grazie (ধন্যবাদ)",
+        "Per favore (অনুগ্রহ করে)",
+        "Arrivederci (বিদায়)"
+      ],
+      spain: [
+        "Hola (হ্যালো)",
+        "¿Cómo estás? (আপনি কেমন আছেন?)",
+        "Gracias (ধন্যবাদ)",
+        "Por favor (অনুগ্রহ করে)",
+        "Adiós (বিদায়)"
+      ]
+    };
 
-  <script src="script.js"></script>
+    function changeCountry() {
+      const country = document.getElementById('countrySelect').value;
+      localStorage.setItem('selectedCountry', country);
+      loadLessons();
+    }
+
+    function loadLessons() {
+      const country = localStorage.getItem('selectedCountry');
+      const search = document.getElementById('search').value.toLowerCase();
+      const list = document.getElementById('lesson-list');
+      list.innerHTML = '';
+
+      if (!country || !lessonsByCountry[country]) return;
+
+      const lessons = lessonsByCountry[country].filter(l =>
+        l.toLowerCase().includes(search)
+      );
+
+      const completed = JSON.parse(localStorage.getItem('completed_' + country)) || [];
+
+      lessons.forEach((text, index) => {
+        const div = document.createElement('div');
+        div.className = 'lesson' + (completed.includes(index) ? ' completed' : '');
+        div.innerHTML = `
+          <span>${text}</span>
+          <button onclick="markComplete(${index})">✔️</button>
+        `;
+        list.appendChild(div);
+      });
+
+      updateProgress();
+    }
+
+    function markComplete(index) {
+      const country = localStorage.getItem('selectedCountry');
+      let completed = JSON.parse(localStorage.getItem('completed_' + country)) || [];
+      if (!completed.includes(index)) {
+        completed.push(index);
+        localStorage.setItem('completed_' + country, JSON.stringify(completed));
+        loadLessons();
+      }
+    }
+
+    function updateProgress() {
+      const country = localStorage.getItem('selectedCountry');
+      const total = lessonsByCountry[country]?.length || 0;
+      const completed = JSON.parse(localStorage.getItem('completed_' + country)) || [];
+      const percent = total ? Math.round((completed.length / total) * 100) : 0;
+      document.getElementById('progress-bar').style.width = percent + '%';
+      document.getElementById('progress-text').innerText = `সম্পন্ন হয়েছে: ${percent}% (${completed.length}/${total})`;
+    }
+
+    function resetProgress() {
+      const country = localStorage.getItem('selectedCountry');
+      localStorage.removeItem('completed_' + country);
+      loadLessons();
+    }
+
+    window.onload = function () {
+      const savedCountry = localStorage.getItem('selectedCountry');
+      if (savedCountry) {
+        document.getElementById('countrySelect').value = savedCountry;
+        loadLessons();
+      }
+    };
+  </script>
 </body>
 </html>
