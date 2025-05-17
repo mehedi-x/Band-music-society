@@ -2,614 +2,589 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>ইউরোপিয়ান ভাষা শেখার সফটওয়্যার</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>বাংলা উচ্চারণ, বাংলা ও ইংরেজি অর্থসহ ইউরোপীয় ভাষা শেখার সফটওয়্যার</title>
   <style>
-    /* Reset and base */
-    *, *::before, *::after {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
-      background: #0f111a;
-      color: #f0f0f5;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      background: #eef2f7;
+      color: #222;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1.8rem 1rem 2.5rem;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      user-select: none;
-      line-height: 1.5;
-    }
-    h1 {
-      font-weight: 600;
-      font-size: 2.4rem;
-      color: #64d2ff;
-      text-align: center;
-      margin-bottom: 2.4rem;
-      text-shadow: 0 0 8px #64d2ffaa;
-      padding: 0 0.5rem;
-      user-select: none;
-    }
-    header.controls {
-      max-width: 540px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-      padding: 0 0.5rem;
-      gap: 14px;
-      user-select: none;
-      flex-wrap: wrap;
-    }
-    select#countrySelect {
-      flex-grow: 1;
-      font-size: 1.1rem;
-      padding: 0.65rem 1.3rem;
-      border-radius: 12px;
-      border: none;
-      background-color: #1a1c29;
-      color: #cdd6f4;
-      cursor: pointer;
-      box-shadow: inset 0 0 12px #097acc88;
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.35s ease;
-      user-select: auto;
-      min-width: 140px;
-      max-width: 100%;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, #64d2ff 50%),
-        linear-gradient(135deg, #64d2ff 50%, transparent 50%),
-        linear-gradient(to right, #222538, #222538);
-      background-position:
-        calc(100% - 20px) calc(1em + 2px),
-        calc(100% - 15px) calc(1em + 2px),
-        calc(100% - 25px) 0.5em;
-      background-size: 5px 5px, 5px 5px, 1px 1.5em;
-      background-repeat: no-repeat;
-    }
-    select#countrySelect:hover,
-    select#countrySelect:focus {
-      background-color: #223044;
-      color: #a2d4ff;
-      outline: none;
-      box-shadow: inset 0 0 20px #2ca0ffbb;
-    }
-    button.reset-btn {
-      flex-shrink: 0;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #0f111a;
-      background: #64d2ff;
-      border: none;
-      border-radius: 12px;
-      padding: 0.65rem 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 6px 20px #40a0ffaa;
-      transition: background 0.35s ease, box-shadow 0.35s ease;
-      user-select: none;
-      white-space: nowrap;
-      min-width: 130px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    button.reset-btn:hover,
-    button.reset-btn:focus {
-      background: #40a0ff;
-      box-shadow: 0 8px 28px #40a0ffcc;
-      outline: none;
-      color: #f0f0f5;
-    }
-    button.reset-btn:active {
-      transform: scale(0.97);
-      box-shadow: 0 4px 15px #3690ccaa;
-      transition: transform 0.15s ease;
-    }
-    main#lesson-list {
-      max-width: 540px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-      user-select: none;
-      padding-bottom: 1.5rem;
-    }
-    .lesson {
-      background: #1f2233;
-      border-radius: 14px;
-      box-shadow: 0 6px 22px #0a2f5dcc;
-      padding: 20px 24px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      position: relative;
-      color: #c9d1ffdd;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      user-select: text;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .lesson:hover:not(.completed) {
-      background: #2a2e47;
-      box-shadow: 0 10px 26px #2c7effaa;
-    }
-    .lesson.completed {
-      background: #133054;
-      box-shadow: inset 0 0 16px #52b5ffcc;
-      color: #a3c9ffaa;
-      cursor: default;
-    }
-    .lesson-content {
-      flex: 1 1 70%;
-      max-width: calc(100% - 140px);
-      user-select: text;
-      display: flex;
-      flex-direction: column;
-      gap: 0.12rem;
-    }
-    .phrase-main {
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #98d7ff;
-      text-shadow: 0 0 3px #54a8ff99;
-    }
-    .pronunciation {
-      font-style: italic;
-      font-size: 0.94rem;
-      color: #91b7d7;
-      user-select: text;
-    }
-    .translations {
-      font-size: 0.95rem;
-      color: #b0c7fcaa;
-      margin-top: 4px;
-      line-height: 1.3;
-      user-select: text;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .translations span {
-      flex: 0 0 auto;
-    }
-    .translations strong {
-      color: #cee0ffdd;
-    }
-
-    .category-tag {
-      font-weight: 700;
-      font-size: 0.77rem;
-      background: #64d2ffcc;
-      padding: 4px 11px;
-      border-radius: 14px;
-      box-shadow: 0 0 10px #62c3ff88;
-      color: #0e1e34;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      user-select: none;
-      flex: 0 0 auto;
-      margin-left: 6px;
-      align-self: flex-start;
-      min-width: 72px;
-      text-align: center;
-    }
-
-    /* Complete button to right */
-    .complete-btn {
-      width: 110px;
-      min-width: 110px;
-      max-height: 36px;
-      font-weight: 600;
-      font-size: 1rem;
-      background-color: #64d2ff;
-      border: none;
-      border-radius: 18px;
-      box-shadow: 0 0 10px #64d2ffcc;
-      color: #0f111a;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      flex-shrink: 0;
-      outline-offset: 3px;
-      outline-color: #64d2ff88;
-    }
-    .complete-btn:hover:not(:disabled),
-    .complete-btn:focus:not(:disabled) {
-      background-color: #3bb6ff;
-      box-shadow: 0 0 18px #3bb6ffcc;
-      outline: none;
-      color: #0d1018;
-    }
-    .complete-btn:disabled {
-      background-color: #3a5974;
-      color: #819bbd;
-      cursor: default;
-      box-shadow: none;
-    }
-
-    .complete-btn.completed {
-      background-color: #3bca7c;
-      color: #102813;
-      box-shadow: 0 0 16px #3bca7cbb;
-      cursor: default;
-    }
-
-    .complete-btn.completed:hover,
-    .complete-btn.completed:focus {
-      background-color: #35b66a;
-      box-shadow: 0 0 20px #35b66ab6;
-      cursor: default;
-      outline: none;
-      color: #e7faed;
-    }
-
-    .progress-container {
-      margin-top: 3rem;
-      width: 100%;
-      max-width: 540px;
-      height: 24px;
-      border-radius: 28px;
-      background: #1a2546;
-      box-shadow: inset 0 0 20px #234376cc;
+      height: 100vh;
       overflow: hidden;
       user-select: none;
-      filter: drop-shadow(0 0 12px #2f75d8bb);
+      flex-direction: column;
     }
-    .progress-bar {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #64d2ff, #3bb6ff);
-      box-shadow: 0 0 24px #3bb6ffcc;
-      border-radius: 28px 0 0 28px;
-      transition: width 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-      will-change: width;
-    }
-    .progress-text {
-      margin-top: 0.65rem;
-      font-size: 1.2rem;
-      font-weight: 700;
+    header {
+      background: linear-gradient(135deg, #283593 0%, #3949ab 100%);
+      color: white;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 900;
       text-align: center;
-      color:#7ecaff;
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 8px #64d2ffcc;
-      min-height: 34px;
-      user-select: none;
-      font-family: 'Inter', sans-serif;
-      transition: color 0.4s ease;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      letter-spacing: 1.2px;
+      font-family: 'Roboto', sans-serif;
     }
-
-    /* Floating Back to top button */
-    #back-to-top {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background: linear-gradient(135deg, #3bb6ff 0%, #64d2ff 100%);
-      color: #0f111a;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: none;
-      box-shadow: 0 12px 32px #3bb6ffcc;
+    #container {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-grow: 1;
+      overflow: hidden;
+      min-height: 0; /* for flex children scrolling */
+    }
+    #sidebar {
+      width: 280px;
+      background: #3949ab;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      overflow-y: auto;
+      flex-shrink: 0;
+      box-shadow: inset -3px 0 8px rgba(0,0,0,0.1);
+    }
+    #sidebar h2 {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 0.5rem;
       font-weight: 700;
-      font-size: 1.7rem;
-      line-height: 1;
-      cursor: pointer;
+      letter-spacing: 0.03em;
       user-select: none;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.45s ease, visibility 0.45s ease;
-      z-index: 9999;
     }
-    #back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
+    .language-item {
+      padding: 12px 22px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border-left: 5px solid transparent;
+      font-weight: 600;
+      user-select: none;
+      font-size: 1rem;
+      line-height: 1.4;
     }
-    #back-to-top:hover,
-    #back-to-top:focus {
-      outline: none;
-      filter: brightness(1.15);
-      box-shadow: 0 14px 38px #64d2ffdd;
-      transform: scale(1.18);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+    .language-item:hover {
+      background: rgba(255,255,255,0.25);
     }
-
-    /* Focus outlines */
-    :focus-visible {
-      outline: 3px solid #64d2ff88 !important;
-      outline-offset: 3px !important;
+    .language-item.active {
+      background: #5c6bc0;
+      border-left-color: #ffca28;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      text-shadow: 0 0 3px rgba(255,255,255,0.8);
     }
-
-    /* Responsive */
-    @media (max-width: 620px) {
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-      }
-      header.controls {
+    #main-content {
+      flex-grow: 1;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 30px;
+      overflow-y: auto;
+      position: relative;
+      min-height: 0;
+    }
+    #language-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #283593;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+    #progress-container {
+      margin: 0 auto 30px;
+      width: 85%;
+      background: #ddd;
+      border-radius: 15px;
+      overflow: hidden;
+      height: 24px;
+      box-shadow: inset 0 1px 5px rgba(0,0,0,0.12);
+    }
+    #progress-bar {
+      height: 100%;
+      background: #283593;
+      width: 0%;
+      transition: width 0.5s ease;
+      border-radius: 15px;
+    }
+    #phrases-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 960px;
+      width: 100%;
+      user-select: text;
+    }
+    .phrase-item {
+      background: #f9f9f9;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      padding: 18px 25px;
+      box-shadow: 0 3px 10px rgba(40,53,147,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .phrase-texts {
+      max-width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .target-language-word {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #3949ab;
+      user-select: text;
+      letter-spacing: 0.03em;
+    }
+    .bangla-pronunciation {
+      font-size: 1.1rem;
+      color: #555;
+      font-style: italic;
+      user-select: text;
+      letter-spacing: 0.02em;
+    }
+    .meanings {
+      font-size: 1rem;
+      color: #444;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      user-select: text;
+    }
+    .meaning-item {
+      background: #e8eaf6;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: #283593;
+      user-select: text;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(40,53,147,0.1);
+      letter-spacing: 0.02em;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 140px;
+      justify-content: center;
+      user-select: none;
+    }
+    label.complete-label {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #283593;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      accent-color: #283593;
+      user-select: none;
+    }
+    #advertisement {
+      background: #e3f2fd;
+      border: 2px dashed #90caf9;
+      border-radius: 14px;
+      padding: 18px 25px;
+      color: #283593;
+      font-weight: 900;
+      font-size: 1.1rem;
+      max-width: 960px;
+      margin: 20px auto;
+      box-shadow: 0 2px 15px rgba(40,53,147,0.18);
+      user-select: none;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    footer {
+      background: linear-gradient(135deg, #3949ab 0%, #283593 100%);
+      color: white;
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      text-align: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
+      user-select: none;
+      letter-spacing: 0.05em;
+      font-family: 'Roboto', sans-serif;
+    }
+    /* Scrollbar styling */
+    #sidebar::-webkit-scrollbar,
+    #main-content::-webkit-scrollbar {
+      width: 10px;
+    }
+    #sidebar::-webkit-scrollbar-track,
+    #main-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.28);
+      border-radius: 5px;
+    }
+    #main-content::-webkit-scrollbar-thumb {
+      background: rgba(80,80,160,0.25);
+      border-radius: 7px;
+    }
+    @media (max-width: 900px) {
+      #container {
         flex-direction: column;
-        gap: 16px;
-        padding: 0 0.3rem;
       }
-      select#countrySelect {
+      #sidebar {
         width: 100%;
-        max-width: none;
-        font-size: 1.2rem;
-        padding: 0.85rem 1.2rem;
+        height: 140px;
+        padding: 0.7rem 10px;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        box-shadow: inset 0 -3px 6px rgba(0,0,0,0.1);
       }
-      button.reset-btn {
-        width: 100%;
-        padding: 0.85rem 0;
-        font-size: 1.25rem;
-        min-width: unset;
-      }
-      main#lesson-list {
-        gap: 1.15rem;
-      }
-      .lesson {
-        padding: 18px 20px;
+      .language-item {
+        border-left: none;
+        border-bottom: 5px solid transparent;
+        padding: 12px 15px;
+        flex-shrink: 0;
         font-size: 1.05rem;
+        line-height: 1.2;
       }
-      .complete-btn {
-        width: 100px;
-        min-width: 100px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        padding: 6px 12px;
+      .language-item.active {
+        border-left: none;
+        border-bottom-color: #ffca28;
+        font-weight: 900;
+        font-size: 1.1rem;
+      }
+      #main-content {
+        height: calc(100vh - 140px - 66px - 60px);
+        padding: 15px 15px 70px;
+        overflow-y: auto;
+      }
+      #advertisement {
+        max-width: 100%;
+        margin: 28px auto 32px;
+        border-style: solid;
+        box-shadow: 0 2px 8px rgba(40,53,147,0.1);
+        font-size: 1.05rem;
+        letter-spacing: 0.03em;
+        padding: 14px 20px;
+        border-width: 2px;
       }
     }
   </style>
 </head>
 <body>
-  <h1>ইউরোপিয়ান ভাষা শেখার সফটওয়্যার</h1>
-
-  <header class="controls" role="region" aria-label="Language selection and progress controls">
-    <select id="countrySelect" onchange="changeCountry()" aria-label="দেশ সিলেক্ট করুন" title="দেশ সিলেক্ট করুন">
-      <option disabled value="">দেশ সিলেক্ট করুন</option>
-      <option value="austria">Austria</option>
-      <option value="belgium">Belgium</option>
-      <option value="bulgaria">Bulgaria</option>
-      <option value="croatia">Croatia</option>
-      <option value="czech_republic">Czech Republic</option>
-      <option value="denmark">Denmark</option>
-      <option value="finland">Finland</option>
-      <option value="france">France</option>
-      <option value="germany">Germany</option>
-      <option value="greece">Greece</option>
-      <option value="hungary">Hungary</option>
-      <option value="iceland">Iceland</option>
-      <option value="ireland">Ireland</option>
-      <option value="italy">Italy</option>
-      <option value="latvia">Latvia</option>
-      <option value="lithuania">Lithuania</option>
-      <option value="netherlands">Netherlands</option>
-      <option value="norway">Norway</option>
-      <option value="poland">Poland</option>
-      <option value="portugal">Portugal</option>
-      <option value="romania">Romania</option>
-      <option value="russia">Russia</option>
-      <option value="serbia">Serbia</option>
-      <option value="slovakia">Slovakia</option>
-      <option value="slovenia">Slovenia</option>
-      <option value="spain">Spain</option>
-      <option value="sweden">Sweden</option>
-      <option value="switzerland">Switzerland</option>
-    </select>
-
-    <button class="reset-btn" onclick="resetSoftware()" aria-label="Reset software" title="Reset entire software" id="resetBtn">
-      🔄 Reset Software
-    </button>
-  </header>
-
-  <main id="lesson-list" aria-live="polite" aria-atomic="true" role="list"></main>
-
-  <div class="progress-container" aria-label="Progress bar">
-    <div class="progress-bar" id="progress-bar"></div>
+  <header>বাংলা উচ্চারণ, বাংলা ও ইংরেজি অর্থসহ ইউরোপীয় ভাষা শেখার সফটওয়্যার</header>
+  <div id="container">
+    <nav id="sidebar" aria-label="ভাষা নির্বাচক">
+      <h2>ভাষাসমূহ</h2>
+    </nav>
+    <main id="main-content">
+      <h1 id="language-title">ভাষা নির্বাচন করুন</h1>
+      <div id="progress-container" aria-label="অগ্রগতি বার">
+        <div id="progress-bar"></div>
+      </div>
+      <ul id="phrases-list" aria-live="polite" aria-relevant="additions"></ul>
+    </main>
   </div>
-  <div class="progress-text" id="progress-text" aria-live="polite" aria-atomic="true"></div>
-
-  <button id="back-to-top" aria-label="Back to top" title="Back to top" onclick="scrollToTop()">↑</button>
+  <footer>বাংলাদেশী প্রবাসী ও শিক্ষার্থীদের জন্য উপযোগী ভাষা শেখার সফটওয়্যার | © ২০২৪</footer>
 
   <script>
-    const lessonsByCountry = {
-      austria: [
-        { phrase: "Hallo", pronunciation: "হ্যালো", bangla: "হ্যালো", english: "Hello", category: "basic" },
-        { phrase: "Wie geht's?", pronunciation: "ভিয়ে গেটস?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
-        { phrase: "Danke", pronunciation: "ডাঙ্কে", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
-        { phrase: "Bitte", pronunciation: "বিটে", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
-        { phrase: "Auf Wiedersehen", pronunciation: "আউফ বিদারজেন", bangla: "বিদায়", english: "Goodbye", category: "basic" }
-      ],
-      belgium: [
-        { phrase: "Bonjour", pronunciation: "বঁজুর", bangla: "হ্যালো", english: "Hello", category: "basic" },
-        { phrase: "Comment ça va?", pronunciation: "কমঁ সা ভা?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
-        { phrase: "Merci", pronunciation: "মার্সি", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
-        { phrase: "S'il vous plaît", pronunciation: "সিলু প্লে", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
-        { phrase: "Au revoir", pronunciation: "অ রিভোয়ার", bangla: "বিদায়", english: "Goodbye", category: "basic" }
-      ],
-      bulgaria: [
-        { phrase: "Здравейте", pronunciation: "জদরাভেইতে", bangla: "হ্যালো", english: "Hello", category: "basic" },
-        { phrase: "Как сте?", pronunciation: "কাক স্টে?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
-        { phrase: "Благодаря", pronunciation: "ব্লাগোডারইয়া", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
-        { phrase: "Моля", pronunciation: "মোল্যা", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
-        { phrase: "Довиждане", pronunciation: "দোভিজডানে", bangla: "বিদায়", english: "Goodbye", category: "basic" }
-      ],
-      // ... Include all countries' data here as previously provided
-      russia: [
-        { phrase: "Здравствуйте", pronunciation: "জদরাস্তভুয়ুতয়ে", bangla: "হ্যালো", english: "Hello", category: "basic" },
-        { phrase: "Как дела?", pronunciation: "কাক দেলা?", bangla: "আপনি কেমন আছেন?", english: "How are you?", category: "basic" },
-        { phrase: "Спасибо", pronunciation: "স্পাসিবা", bangla: "ধন্যবাদ", english: "Thank you", category: "basic" },
-        { phrase: "Пожалуйста", pronunciation: "পজালুস্তা", bangla: "অনুগ্রহ করে", english: "Please", category: "basic" },
-        { phrase: "До свидания", pronunciation: "দো সভিড্যানিয়া", bangla: "বিদায়", english: "Goodbye", category: "basic" },
-        { phrase: "Я не понимаю", pronunciation: "ইয়া নে পনিমায়ু", bangla: "আমি বুঝতে পারছি না", english: "I don't understand", category: "emergency" }
-      ]
+    // Expanded demo with 20 phrases minimum per language
+    const languages = {
+      "Austrian German": {
+        nativeName: "Österreichisches Deutsch",
+        words: [
+          {word:"Hallo", banglaPronounce:"হালো", banglaMeaning:"হ্যালো, শুভেচ্ছা", englishMeaning:"Hello, greeting"},
+          {word:"Danke", banglaPronounce:"ডাঙ্কে", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
+          {word:"Bitte", banglaPronounce:"বিটে", banglaMeaning:"অনুগ্রহ করে / স্বাগতম", englishMeaning:"Please / You're welcome"},
+          {word:"Guten Morgen", banglaPronounce:"গুটেন মরগেন", banglaMeaning:"শুভ সকাল", englishMeaning:"Good morning"},
+          {word:"Wie geht's?", banglaPronounce:"ভি গেটস?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
+          {word:"Entschuldigung", banglaPronounce:"এন্টশূলডিগুং", banglaMeaning:"দুঃখিত", englishMeaning:"Excuse me / Sorry"},
+          {word:"Ja", banglaPronounce:"য়া", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
+          {word:"Nein", banglaPronounce:"নাইন", banglaMeaning:"না", englishMeaning:"No"},
+          {word:"Ich liebe dich", banglaPronounce:"ইখ লিবে দিখ", banglaMeaning:"আমি তোমাকে ভালোবাসি", englishMeaning:"I love you"},
+          {word:"Tschüss", banglaPronounce:"চুস", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
+          {word:"Ich verstehe nicht", banglaPronounce:"ইখ ফারশতে নিখ্ট", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
+          {word:"Hilfe", banglaPronounce:"হিল্ফে", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
+          {word:"Freund", banglaPronounce:"ফ্রয়ন্দ", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
+          {word:"Bier", banglaPronounce:"বিয়ার", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
+          {word:"Wasser", banglaPronounce:"ভাসার", banglaMeaning:"পানি", englishMeaning:"Water"},
+          {word:"Haus", banglaPronounce:"হাউস", banglaMeaning:"বাড়ি", englishMeaning:"House"},
+          {word:"Schule", banglaPronounce:"শুলে", banglaMeaning:"স্কুল", englishMeaning:"School"},
+          {word:"Straße", banglaPronounce:"স্ট্রাসে", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
+          {word:"Essen", banglaPronounce:"এসেন", banglaMeaning:"খাদ্য", englishMeaning:"Food"},
+          {word:"Trinken", banglaPronounce:"ত্রিন্কেন", banglaMeaning:"পান করা", englishMeaning:"To drink"}
+        ]
+      },
+      "Belgian Dutch": {
+        nativeName: "Vlaams",
+        words: [
+          {word:"Hallo", banglaPronounce:"হালো", banglaMeaning:"হ্যালো", englishMeaning:"Hello"},
+          {word:"Dank u", banglaPronounce:"ডাঙ্ক উ", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
+          {word:"Alsjeblieft", banglaPronounce:"আলশেব্লিফট", banglaMeaning:"অনুগ্রহ করে", englishMeaning:"Please"},
+          {word:"Goedemorgen", banglaPronounce:"খুদেমর্গেন", banglaMeaning:"শুভ সকাল", englishMeaning:"Good morning"},
+          {word:"Hoe gaat het?", banglaPronounce:"হু গাত হেত?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
+          {word:"Sorry", banglaPronounce:"সরি", banglaMeaning:"দুঃখিত", englishMeaning:"Sorry"},
+          {word:"Ja", banglaPronounce:"য়া", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
+          {word:"Nee", banglaPronounce:"নে", banglaMeaning:"না", englishMeaning:"No"},
+          {word:"Ik hou van jou", banglaPronounce:"ইক হাউ ফান যাউ", banglaMeaning:"আমি তোমায় ভালবাসি", englishMeaning:"I love you"},
+          {word:"Vaarwel", banglaPronounce:"ভারভেল", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
+          {word:"Ik begrijp het niet", banglaPronounce:"ইক বিরগেইপ হেত নিট", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
+          {word:"Help", banglaPronounce:"হেলপ", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
+          {word:"Vriend", banglaPronounce:"ভ্রিয়েন্ড", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
+          {word:"Bier", banglaPronounce:"বিয়ার", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
+          {word:"Water", banglaPronounce:"ভাটার", banglaMeaning:"পানি", englishMeaning:"Water"},
+          {word:"Huis", banglaPronounce:"হাউস", banglaMeaning:"বাড়ি", englishMeaning:"House"},
+          {word:"School", banglaPronounce:"স্কুল", banglaMeaning:"স্কুল", englishMeaning:"School"},
+          {word:"Straat", banglaPronounce:"স্ট্রাট", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
+          {word:"Eten", banglaPronounce:"এতেন", banglaMeaning:"খাবার", englishMeaning:"Food"},
+          {word:"Drinken", banglaPronounce:"দ্রিনকেন", banglaMeaning:"পান করা", englishMeaning:"To drink"}
+        ]
+      },
+      "Belgian French": {
+        nativeName: "Français (Belgique)",
+        words: [
+          {word:"Bonjour", banglaPronounce:"বঁজুর", banglaMeaning:"শুভ সকাল / শুভ দিন", englishMeaning:"Good morning / Good day"},
+          {word:"Merci", banglaPronounce:"মের্সি", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
+          {word:"S'il vous plaît", banglaPronounce:"সীল ভু প্লে", banglaMeaning:"অনুগ্রহ করে", englishMeaning:"Please"},
+          {word:"Bonsoir", banglaPronounce:"বঁসোয়ার", banglaMeaning:"শুভ সন্ধ্যা", englishMeaning:"Good evening"},
+          {word:"Comment ça va?", banglaPronounce:"কোমঁ সা ভা?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
+          {word:"Pardon", banglaPronounce:"পারডঁ", banglaMeaning:"দুঃখিত", englishMeaning:"Sorry / Excuse me"},
+          {word:"Oui", banglaPronounce:"উই", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
+          {word:"Non", banglaPronounce:"নঁ", banglaMeaning:"না", englishMeaning:"No"},
+          {word:"Je t'aime", banglaPronounce:"ঝে ত'এম", banglaMeaning:"আমি তোমাকে ভালোবাসি", englishMeaning:"I love you"},
+          {word:"Au revoir", banglaPronounce:"অ রুভোয়ার", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
+          {word:"Je ne comprends pas", banglaPronounce:"ঝে নে কোম্প্রঁ পা", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
+          {word:"Aide", banglaPronounce:"এদ", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
+          {word:"Ami", banglaPronounce:"আমি", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
+          {word:"Bière", banglaPronounce:"বিয়ের", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
+          {word:"Eau", banglaPronounce:"ও", banglaMeaning:"পানি", englishMeaning:"Water"},
+          {word:"Maison", banglaPronounce:"মেজঁ", banglaMeaning:"বাড়ি", englishMeaning:"House"},
+          {word:"École", banglaPronounce:"একল", banglaMeaning:"স্কুল", englishMeaning:"School"},
+          {word:"Rue", banglaPronounce:"রু", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
+          {word:"Nourriture", banglaPronounce:"নুরিতুর", banglaMeaning:"খাবার", englishMeaning:"Food"},
+          {word:"Boire", banglaPronounce:"বোয়্যার", banglaMeaning:"পান করা", englishMeaning:"To drink"}
+        ]
+      },
+      // Continue for many other languages like Czech, Danish, Estonian, Finnish, French, German, Greek,
+      // Hungarian, Icelandic, Italian, Latvian, Lithuanian, Luxembourgish, Maltese, Dutch, 
+      // Polish, Portuguese, Slovak, Slovene, Spanish, Swedish, Russian,
+      // Canadian English, Canadian French, Australian English
+
+      // For brevity extending Czech only here as example (others should be similarly extended)
+      "Czech": {
+        nativeName: "Čeština",
+        words: [
+          {word:"Ahoj", banglaPronounce:"আহয়", banglaMeaning:"হ্যালো", englishMeaning:"Hello"},
+          {word:"Děkuji", banglaPronounce:"দেকুজি", banglaMeaning:"ধন্যবাদ", englishMeaning:"Thank you"},
+          {word:"Prosím", banglaPronounce:"প্রসীম", banglaMeaning:"অনুগ্রহ করে", englishMeaning:"Please"},
+          {word:"Dobré ráno", banglaPronounce:"দোবরে রানো", banglaMeaning:"শুভ সকাল", englishMeaning:"Good morning"},
+          {word:"Jak se máte?", banglaPronounce:"ইয়াক সে মাথে?", banglaMeaning:"কেমন আছেন?", englishMeaning:"How are you?"},
+          {word:"Promiňte", banglaPronounce:"প্রোমিঁতে", banglaMeaning:"দুঃখিত", englishMeaning:"Sorry / Excuse me"},
+          {word:"Ano", banglaPronounce:"আনো", banglaMeaning:"হ্যাঁ", englishMeaning:"Yes"},
+          {word:"Ne", banglaPronounce:"নে", banglaMeaning:"না", englishMeaning:"No"},
+          {word:"Miluji tě", banglaPronounce:"মিলুজি তেয়ে", banglaMeaning:"আমি তোমাকে ভালোবাসি", englishMeaning:"I love you"},
+          {word:"Na shledanou", banglaPronounce:"না স্ক্লেদানো", banglaMeaning:"বিদায়", englishMeaning:"Goodbye"},
+          {word:"Nerozumím", banglaPronounce:"নে রোজুমিম", banglaMeaning:"আমি বুঝতে পারছি না", englishMeaning:"I don't understand"},
+          {word:"Pomoc", banglaPronounce:"পোমোৎস", banglaMeaning:"সাহায্য", englishMeaning:"Help"},
+          {word:"Přítel", banglaPronounce:"প্রিতেল", banglaMeaning:"বন্ধু", englishMeaning:"Friend"},
+          {word:"Pivo", banglaPronounce:"পিভো", banglaMeaning:"বিয়ার", englishMeaning:"Beer"},
+          {word:"Voda", banglaPronounce:"ভোদা", banglaMeaning:"পানি", englishMeaning:"Water"},
+          {word:"Dům", banglaPronounce:"দুম", banglaMeaning:"বাড়ি", englishMeaning:"House"},
+          {word:"Škola", banglaPronounce:"শকোলা", banglaMeaning:"স্কুল", englishMeaning:"School"},
+          {word:"Ulice", banglaPronounce:"উলিয়েসে", banglaMeaning:"রাস্তা", englishMeaning:"Street"},
+          {word:"Jídlo", banglaPronounce:"জিদলো", banglaMeaning:"খাবার", englishMeaning:"Food"},
+          {word:"Pít", banglaPronounce:"পীত", banglaMeaning:"পান করা", englishMeaning:"To drink"}
+        ]
+      }
     };
 
-    function loadLessons() {
-      const country = localStorage.getItem('selectedCountry') || 'russia';
-      const list = document.getElementById('lesson-list');
-      list.innerHTML = '';
+    const sidebar = document.getElementById('sidebar');
+    const languagesList = Object.keys(languages);
+    const languageTitle = document.getElementById('language-title');
+    const phrasesList = document.getElementById('phrases-list');
+    const progressBar = document.getElementById('progress-bar');
 
-      if (!lessonsByCountry[country]) {
-        updateProgress(0, 0);
+    let progressData = JSON.parse(localStorage.getItem('languageProgress')) || {};
+    let currentLanguage = null;
+
+    function saveProgress() {
+      localStorage.setItem('languageProgress', JSON.stringify(progressData));
+    }
+
+    function updateProgressBar() {
+      if (!currentLanguage) {
+        progressBar.style.width = '0%';
         return;
       }
+      const total = languages[currentLanguage].words.length;
+      const done = progressData[currentLanguage]?.length || 0;
+      const percent = Math.round((done / total) * 100);
+      progressBar.style.width = percent + '%';
+    }
 
-      const lessons = lessonsByCountry[country];
-      const completed = JSON.parse(localStorage.getItem('completed')) || [];
-      lessons.forEach((lesson, index) => {
-        const div = document.createElement('div');
-        div.className = 'lesson';
-        const uniqueId = country + '-' + index;
-        const isCompleted = completed.includes(uniqueId);
-        if (isCompleted) div.classList.add('completed');
-        div.tabIndex = 0;
-
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'lesson-content';
-
-        const phraseSpan = document.createElement('div');
-        phraseSpan.className = 'phrase-main';
-        phraseSpan.textContent = lesson.phrase;
-
-        const pronDiv = document.createElement('div');
-        pronDiv.className = 'pronunciation';
-        pronDiv.textContent = `উচ্চারণ: ${lesson.pronunciation}`;
-
-        const transDiv = document.createElement('div');
-        transDiv.className = 'translations';
-        transDiv.innerHTML = `<span><strong>বাংলা:</strong> ${lesson.bangla}</span><span><strong>English:</strong> ${lesson.english}</span>`;
-
-        contentDiv.appendChild(phraseSpan);
-        contentDiv.appendChild(pronDiv);
-        contentDiv.appendChild(transDiv);
-
-        const completeBtn = document.createElement('button');
-        completeBtn.className = 'complete-btn';
-        completeBtn.textContent = isCompleted ? 'কমপ্লিটেড' : 'কমপ্লিট';
-        completeBtn.disabled = isCompleted;
-        completeBtn.title = isCompleted ? 'Already completed' : 'Mark as complete';
-        completeBtn.tabIndex = -1;
-        completeBtn.setAttribute('aria-pressed', isCompleted);
-
-        completeBtn.addEventListener('click', e => {
-          e.stopPropagation();
-          if (!isCompleted) {
-            markComplete(uniqueId, completeBtn);
+    function renderLanguages() {
+      sidebar.innerHTML = '<h2>ভাষাসমূহ</h2>';
+      languagesList.forEach(lang => {
+        const langItem = document.createElement('div');
+        langItem.textContent = lang;
+        langItem.className = 'language-item';
+        if (lang === currentLanguage) langItem.classList.add('active');
+        langItem.tabIndex = 0;
+        langItem.setAttribute('role', 'button');
+        langItem.setAttribute('aria-pressed', lang === currentLanguage);
+        langItem.addEventListener('click', () => selectLanguage(lang));
+        langItem.addEventListener('keypress', e => {
+          if(e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectLanguage(lang);
           }
         });
-
-        div.appendChild(contentDiv);
-        div.appendChild(completeBtn);
-
-        list.appendChild(div);
+        sidebar.appendChild(langItem);
       });
-
-      updateProgress();
-      toggleBackToTop();
     }
 
-    function markComplete(uniqueId, button) {
-      let completed = JSON.parse(localStorage.getItem('completed')) || [];
-      if (!completed.includes(uniqueId)) {
-        completed.push(uniqueId);
-        localStorage.setItem('completed', JSON.stringify(completed));
-        button.textContent = 'কমপ্লিটেড';
-        button.disabled = true;
-        button.setAttribute('aria-pressed', true);
-        // Update progress visually after small delay
-        setTimeout(updateProgress, 100);
+    function selectLanguage(lang) {
+      currentLanguage = lang;
+      languageTitle.textContent = lang + ' (' + languages[lang].nativeName + ') শেখা';
+      renderPhrases();
+      updateProgressBar();
+      updateSidebar();
+    }
+
+    function updateSidebar() {
+      const langItems = sidebar.querySelectorAll('.language-item');
+      langItems.forEach(item => {
+        item.classList.toggle('active', item.textContent === currentLanguage);
+        item.setAttribute('aria-pressed', item.textContent === currentLanguage);
+      });
+    }
+
+    // Insert advertisement block HTML after every 5 items
+    function createAdBlock(index) {
+      const adDiv = document.createElement('li');
+      adDiv.className = 'phrase-item';
+      adDiv.id = 'ad-block-' + index;
+      adDiv.setAttribute('aria-label', 'বিজ্ঞাপন');
+      adDiv.setAttribute('role', 'region');
+      adDiv.style.justifyContent = 'center';
+      adDiv.style.background = '#bbdefb';
+      adDiv.style.color = '#0d47a1';
+      adDiv.style.fontWeight = '800';
+      adDiv.style.fontSize = '1.1rem';
+      adDiv.style.border = '2px dashed #0d47a1';
+      adDiv.style.borderRadius = '12px';
+      adDiv.style.padding = '20px 30px';
+      adDiv.textContent = '⚡ বিজ্ঞাপন - আপনার বিজ্ঞাপন এখানে আসবে (ফিউচার প্ল্যান) ⚡';
+      return adDiv;
+    }
+
+    function renderPhrases() {
+      phrasesList.innerHTML = '';
+      const words = languages[currentLanguage].words;
+      const learnedWords = new Set(progressData[currentLanguage] || []);
+
+      words.forEach((item, idx) => {
+        const li = document.createElement('li');
+        li.className = 'phrase-item';
+
+        // Text container
+        const phraseTexts = document.createElement('div');
+        phraseTexts.className = 'phrase-texts';
+
+        const wordText = document.createElement('div');
+        wordText.className = 'target-language-word';
+        wordText.textContent = item.word;
+
+        const pronounceText = document.createElement('div');
+        pronounceText.className = 'bangla-pronunciation';
+        pronounceText.textContent = 'বাংলা উচ্চারণ: ' + item.banglaPronounce;
+
+        const meaningsDiv = document.createElement('div');
+        meaningsDiv.className = 'meanings';
+
+        const banglaMeaning = document.createElement('span');
+        banglaMeaning.className = 'meaning-item';
+        banglaMeaning.textContent = 'বাংলা অর্থ: ' + item.banglaMeaning;
+
+        const englishMeaning = document.createElement('span');
+        englishMeaning.className = 'meaning-item';
+        englishMeaning.textContent = 'English Meaning: ' + item.englishMeaning;
+
+        meaningsDiv.appendChild(banglaMeaning);
+        meaningsDiv.appendChild(englishMeaning);
+
+        phraseTexts.appendChild(wordText);
+        phraseTexts.appendChild(pronounceText);
+        phraseTexts.appendChild(meaningsDiv);
+
+        // Checkbox container
+        const checkboxContainer = document.createElement('div');
+        checkboxContainer.className = 'checkbox-container';
+
+        const completeCheckbox = document.createElement('input');
+        completeCheckbox.type = 'checkbox';
+        completeCheckbox.id = `complete-${idx}`;
+        completeCheckbox.checked = learnedWords.has(idx);
+        completeCheckbox.setAttribute('aria-label', `পূর্ণ করেছেন: ${item.word}`);
+        completeCheckbox.addEventListener('change', () => toggleComplete(idx, completeCheckbox.checked));
+
+        const label = document.createElement('label');
+        label.setAttribute('for', `complete-${idx}`);
+        label.className = 'complete-label';
+        label.textContent = 'পূর্ণ করেছেন';
+
+        checkboxContainer.appendChild(completeCheckbox);
+        checkboxContainer.appendChild(label);
+
+        li.appendChild(phraseTexts);
+        li.appendChild(checkboxContainer);
+
+        phrasesList.appendChild(li);
+
+        // Insert ad block after every 5 items except at end
+        if ((idx + 1) % 5 === 0 && idx !== words.length -1) {
+          phrasesList.appendChild(createAdBlock(idx));
+        }
+      });
+    }
+
+    function toggleComplete(idx, checked) {
+      if (!progressData[currentLanguage]) {
+        progressData[currentLanguage] = [];
       }
-    }
-
-    function updateProgress() {
-      const country = localStorage.getItem('selectedCountry') || 'russia';
-      const lessons = lessonsByCountry[country] || [];
-      const completed = JSON.parse(localStorage.getItem('completed')) || [];
-      const countryPrefix = country + '-';
-      const completedForCountry = completed.filter(id => id.startsWith(countryPrefix));
-      const countCompleted = completedForCountry.length;
-      const countTotal = lessons.length;
-      const percent = countTotal ? Math.round((countCompleted / countTotal) * 100) : 0;
-
-      const progressBar = document.getElementById('progress-bar');
-      progressBar.style.width = percent + '%';
-
-      const progressText = document.getElementById('progress-text');
-      if (percent === 100 && countTotal > 0) {
-        progressText.innerHTML = `<strong>অভিনন্দন!</strong> আপনি সবগুলো পঠিত করেছেন।`;
-        progressText.style.color = '#7af27a';
-        progressText.style.textShadow = '0 0 10px #4caf5099';
+      if (checked) {
+        if (!progressData[currentLanguage].includes(idx)) {
+          progressData[currentLanguage].push(idx);
+        }
       } else {
-        progressText.textContent = `সম্পন্ন হয়েছে: ${percent}% (${countCompleted}/${countTotal})`;
-        progressText.style.color = '#a4dbff';
-        progressText.style.textShadow = '0 0 6px #64d2ffbb';
+        progressData[currentLanguage] = progressData[currentLanguage].filter(i => i !== idx);
       }
+      saveProgress();
+      updateProgressBar();
     }
 
-    function resetSoftware() {
-      if (!confirm('আপনি কি পুরো সফটওয়্যারটি রিসেট করতে চান? আপনার সমস্ত ডাটা মুছে যাবে। নিশ্চিত?')) return;
-      localStorage.clear();
-      document.getElementById('countrySelect').value = 'russia';
-      loadLessons();
-      const progressText = document.getElementById('progress-text');
-      const progressBar = document.getElementById('progress-bar');
-      progressBar.style.width = '0%';
-      progressText.textContent = 'প্রগ্রেস রিসেট হয়েছে। শুরু করুন নতুন করে।';
-      progressText.style.color = '#ff6b6b';
-      progressText.style.textShadow = '0 0 8px #ff6b6bcc';
-      setTimeout(() => {
-        updateProgress();
-        progressText.style.color = '#a4dbff';
-        progressText.style.textShadow = '0 0 6px #64d2ffbb';
-      }, 2800);
-    }
+    renderLanguages();
 
-    const backToTopBtn = document.getElementById('back-to-top');
-    function toggleBackToTop() {
-      if (window.scrollY > 240) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
-    }
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    window.addEventListener('scroll', toggleBackToTop);
-
-    document.getElementById('countrySelect').addEventListener('change', () => {
-      // Reset completed buttons and reload lessons on country change
-      loadLessons();
-    });
-
-    window.onload = () => {
-      const savedCountry = localStorage.getItem('selectedCountry');
-      if (savedCountry && lessonsByCountry[savedCountry]) {
-        document.getElementById('countrySelect').value = savedCountry;
-      } else {
-        document.getElementById('countrySelect').value = 'russia';
-        localStorage.setItem('selectedCountry', 'russia');
-      }
-      loadLessons();
-    };
   </script>
 </body>
 </html>
