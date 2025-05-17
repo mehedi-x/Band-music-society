@@ -1,152 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vocabulary Learning App - European Countries</title>
-<style>
-  /* Reset and base */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .container {
-    max-width: 900px;
-    margin: 2rem auto 3rem;
-    padding: 0 1rem;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  header h1 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 1.2px;
-    user-select: none;
-  }
-  label {
-    font-weight: 600;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  select {
-    width: 100%;
-    max-width: 380px;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border: 2px solid #333;
-    border-radius: 6px;
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
-    transition: border-color 0.25s ease;
-    outline-offset: 2px;
-  }
-  select:focus {
-    border-color: #4caf50;
-    outline: none;
-  }
-  .vocab-table-wrapper {
-    margin-top: 1.5rem;
-    overflow-x: auto;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 320px;
-  }
-  thead th {
-    background-color: #1f8f4c;
-    color: #e9f5ec;
-    font-weight: 700;
-    padding: 0.75rem 1rem;
-    border: 1px solid #2a2a2a;
-    text-align: left;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-  tbody tr {
-    border-bottom: 1px solid #333;
-    transition: background-color 0.3s ease;
-  }
-  tbody tr:nth-child(odd) {
-    background-color: #1f1f1f;
-  }
-  tbody tr:hover {
-    background-color: #333633;
-  }
-  td {
-    padding: 0.5rem 1rem;
-    vertical-align: middle;
-    font-size: 0.95rem;
-    border: 1px solid #2a2a2a;
-    white-space: nowrap;
-  }
-  
-  /* Advertisement Section */
-  .ad-section {
-    margin: 2rem 0 3rem;
-    padding: 1rem;
-    border: 2px dashed #4caf50;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.1rem;
-    color: #81c784;
-    user-select: none;
-    background-color: #202720;
-  }
-  
-  /* Progress Tracker Bar */
-  .progress-tracker {
-    width: 100%;
-    background-color: #2c2c2c;
-    height: 20px;
-    border-radius: 12px 12px 0 0;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-  }
-  .progress-bar {
-    width: 35%; /* Static width for visual effect */
-    height: 100%;
-    background: linear-gradient(90deg, #4caf50, #81c784);
-    transition: width 0.4s ease;
-  }
-  
-  /* Responsive */
-  @media (max-width: 600px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocabulary Learning App - European Countries</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.6/dist/css/uikit.min.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#4caf50"/>
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 960px;
+      width: 100%;
+      padding: 2rem 1rem 1rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
     header h1 {
-      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: #4caf50;
+      user-select: none;
+      margin-bottom: 0.75rem;
     }
-    select {
-      max-width: 100%;
+    .uk-select {
+      max-width: 360px;
+      margin: 0 auto;
+      cursor: pointer;
+      background-color: #202020;
+      color: #e0e0e0;
+      border-color: #4caf50;
     }
-    td, th {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.7rem;
+    .vocab-list {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem 1.5rem;
     }
-  }
-</style>
+    .vocab-card {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
+    }
+    .vocab-card:hover {
+      box-shadow: 0 8px 30px rgba(76,175,80,0.85);
+      transform: translateY(-6px);
+    }
+    .vocab-card h3 {
+      margin-top: 0;
+      font-weight: 700;
+      color: #81c784;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #4caf50;
+      padding-bottom: 0.3rem;
+    }
+    .vocab-card p {
+      margin: 0.35rem 0;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .ad-section {
+      background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+      color: #121212;
+      border-radius: 14px;
+      padding: 1.25rem 2rem;
+      margin: 3rem 0 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 8px 24px rgba(72, 230, 94, 0.9);
+      letter-spacing: 0.06em;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      cursor: default;
+      user-select: none;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 600px) {
+      .vocab-list {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
+      .uk-select {
+        max-width: 100%;
+      }
+      .vocab-card {
+        padding: 1.25rem 1.5rem;
+      }
+      .vocab-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.9rem;
+      }
+      .vocab-card p {
+        font-size: 0.95rem;
+      }
+      .ad-section {
+        font-size: 1.15rem;
+        padding: 1rem 1.25rem;
+        margin: 2rem 1rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Vocabulary Learning App</h1>
-      <label for="country-select">Select a Country (or view all):</label>
-      <select id="country-select" aria-label="Select Country">
+      <label for="country-select" class="uk-text-lead uk-text-bold uk-text-success">Select a Country (or view all):</label>
+      <select id="country-select" class="uk-select" aria-label="Select Country">
         <option value="all" selected>All Countries</option>
         <option value="Austria">Austria</option>
         <option value="Belgium">Belgium</option>
@@ -182,337 +163,98 @@
         <option value="Russia">Russia</option>
       </select>
     </header>
-    <main class="vocab-table-wrapper" id="vocab-table-wrapper" tabindex="0" aria-live="polite" aria-label="Vocabulary Table">
-      <!-- Vocabulary Table will be injected here -->
-    </main>
+
+    <section id="vocab-list" class="vocab-list" aria-live="polite" aria-label="Vocabulary List">
+      <!-- Vocabulary cards injected here -->
+    </section>
+
     <section class="ad-section" aria-label="Advertisement Section">
-      Advertisement Space - Future Ads here
+      Anonbar - Demo Advertisement
     </section>
   </div>
 
-  <div class="progress-tracker" aria-label="Progress Tracker">
-    <div class="progress-bar"></div>
-  </div>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.6/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.6/dist/js/uikit-icons.min.js"></script>
 
-<script>
-  // Vocabulary dataset for countries
-  // Each entry includes Native word, Bangla Pronunciation, Bangla Meaning
-  // Optional: English meaning in comments for future use.
+  <script>
+    const vocabularyData = {
+      Austria: [
+        {native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি"},
+        {native: "Baum", banglaPronunciation: "বাউম", banglaMeaning: "গাছ"},
+        {native: "Wasser", banglaPronunciation: "বাসার", banglaMeaning: "পানি"},
+        {native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই"},
+        {native: "Freund", banglaPronunciation: "ফ্রয়েন্ড", banglaMeaning: "বন্ধু"}
+      ],
+      Belgium: [
+        {native: "Tafel", banglaPronunciation: "টাফেল", banglaMeaning: "টেবিল"},
+        {native: "Stuhl", banglaPronunciation: "স্টূহল", banglaMeaning: "চেয়ার"},
+        {native: "Fenster", banglaPronunciation: "ফেনস্টার", banglaMeaning: "জানালা"},
+        {native: "Tür", banglaPronunciation: "টিউর", banglaMeaning: "দরজা"},
+        {native: "Apfel", banglaPronunciation: "আপফেল", banglaMeaning: "আপেল"}
+      ],
+      Russia: [
+        {native: "Дом", banglaPronunciation: "দম", banglaMeaning: "বাড়ি"},
+        {native: "Дерево", banglaPronunciation: "দেরেভো", banglaMeaning: "গাছ"},
+        {native: "Вода", banglaPronunciation: "ভোদা", banglaMeaning: "পানি"},
+        {native: "Книга", banglaPronunciation: "কনিগা", banglaMeaning: "বই"},
+        {native: "Дорога", banglaPronunciation: "দোরোগা", banglaMeaning: "রাস্তা"}
+      ]
+      // Additional countries can be added here
+    };
 
-  const vocabularyData = {
-    Austria: [
-      { native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি" /* English: "House" */ },
-      { native: "Baum", banglaPronunciation: "বাউম", banglaMeaning: "গাছ" /* English: "Tree" */ },
-      { native: "Wasser", banglaPronunciation: "বাসার", banglaMeaning: "পানি" /* English: "Water" */ },
-      { native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই" },
-      { native: "Freund", banglaPronunciation: "ফ্রয়েন্ড", banglaMeaning: "বন্ধু" },
-      { native: "Schule", banglaPronunciation: "শুলে", banglaMeaning: "স্কুল" },
-      { native: "Straße", banglaPronunciation: "স্ত্রাসে", banglaMeaning: "রাস্তা" },
-      { native: "Tag", banglaPronunciation: "তাগ", banglaMeaning: "দিন" },
-      { native: "Nacht", banglaPronunciation: "নাখ্ট", banglaMeaning: "রাত" },
-      { native: "Auto", banglaPronunciation: "অটো", banglaMeaning: "গাড়ি" },
-      // Add more up to 100+
-    ],
-    Belgium: [
-      { native: "Tafel", banglaPronunciation: "টাফেল", banglaMeaning: "টেবিল" },
-      { native: "Stuhl", banglaPronunciation: "স্টূহল", banglaMeaning: "চেয়ার" },
-      { native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই" },
-      { native: "Fenster", banglaPronunciation: "ফেনস্টার", banglaMeaning: "জানালা" },
-      { native: "Tür", banglaPronunciation: "টিউর", banglaMeaning: "দরজা" },
-      { native: "Straße", banglaPronunciation: "স্ত্রাসে", banglaMeaning: "রাস্তা" },
-      { native: "Apfel", banglaPronunciation: "আপফেল", banglaMeaning: "আপেল" },
-      { native: "Wasser", banglaPronunciation: "বাসার", banglaMeaning: "পানি" },
-      { native: "Freund", banglaPronunciation: "ফ্রয়েন্ড", banglaMeaning: "বন্ধু" },
-      { native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি" },
-      // Add more up to 100+
-    ],
-    Russia: [
-      { native: "Дом", banglaPronunciation: "দম", banglaMeaning: "বাড়ি" /* English: "House" */ },
-      { native: "Дерево", banglaPronunciation: "দেরেভো", banglaMeaning: "গাছ" },
-      { native: "Вода", banglaPronunciation: "ভোদা", banglaMeaning: "পানি" },
-      { native: "Книга", banglaPronunciation: "কনীগা", banglaMeaning: "বই" },
-      { native: "Дорога", banglaPronunciation: "দোরোগা", banglaMeaning: "রাস্ত" },
-      { native: "Друг", banglaPronunciation: "দরুগ", banglaMeaning: "বন্ধু" },
-      { native: "Школа", banglaPronunciation: "শকোলা", banglaMeaning: "স্কুল" },
-      { native: "Стол", banglaPronunciation: "স্তল", banglaMeaning: "টেবিল" },
-      { native: "Окно", banglaPronunciation: "ওকনো", banglaMeaning: "জানালা" },
-      { native: "Машина", banglaPronunciation: "মাশিনা", banglaMeaning: "গাড়ি" },
-      // Add more up to 300+
-    ],
-    Bulgaria: [
-      { native: "Къща", banglaPronunciation: "কাস্তা", banglaMeaning: "বাড়ি" },
-      { native: "Дърво", banglaPronunciation: "দার্ভো", banglaMeaning: "গাছ" },
-      { native: "Вода", banglaPronunciation: "ভোডা", banglaMeaning: "পানি" },
-      { native: "Книга", banglaPronunciation: "কнига", banglaMeaning: "বই" },
-      { native: "Улица", banglaPronunciation: "উলিৎসা", banglaMeaning: "রাস্তা" },
-    ],
-    Croatia: [
-      { native: "Kuća", banglaPronunciation: "কুচা", banglaMeaning: "বাড়ি" },
-      { native: "Stablo", banglaPronunciation: "স্টাবলো", banglaMeaning: "গাছ" },
-      { native: "Voda", banglaPronunciation: "ভোদা", banglaMeaning: "পানি" },
-      { native: "Knjiga", banglaPronunciation: "কনিগা", banglaMeaning: "বই" },
-      { native: "Ulica", banglaPronunciation: "উলিৎসা", banglaMeaning: "রাস্তা" },
-    ],
-    Cyprus: [
-      { native: "Σπίτι", banglaPronunciation: "স্পীতি", banglaMeaning: "বাড়ি" },
-      { native: "Δέντρο", banglaPronunciation: "দেন্ত্রো", banglaMeaning: "গাছ" },
-      { native: "Νερό", banglaPronunciation: "নিরো", banglaMeaning: "পানি" },
-      { native: "Βιβλίο", banglaPronunciation: "বিবলিও", banglaMeaning: "বই" },
-      { native: "Οδός", banglaPronunciation: "ওদোস", banglaMeaning: "রাস্তা" },
-    ],
-    Czechia: [
-      { native: "Dům", banglaPronunciation: "দুম", banglaMeaning: "বাড়ি" },
-      { native: "Strom", banglaPronunciation: "স্ত্রম", banglaMeaning: "গাছ" },
-      { native: "Voda", banglaPronunciation: "ভোদা", banglaMeaning: "পানি" },
-      { native: "Kniha", banglaPronunciation: "কনিহা", banglaMeaning: "বই" },
-      { native: "Ulice", banglaPronunciation: "উলিচে", banglaMeaning: "রাস্তা" },
-    ],
-    Denmark: [
-      { native: "Hus", banglaPronunciation: "হুস", banglaMeaning: "বাড়ি" },
-      { native: "Træ", banglaPronunciation: "ত্রে", banglaMeaning: "গাছ" },
-      { native: "Vand", banglaPronunciation: "ভান্ড", banglaMeaning: "পানি" },
-      { native: "Bog", banglaPronunciation: "বগ", banglaMeaning: "বই" },
-      { native: "Gade", banglaPronunciation: "গাদে", banglaMeaning: "রাস্তা" },
-    ],
-    Estonia: [
-      { native: "Maja", banglaPronunciation: "মজা", banglaMeaning: "বাড়ি" },
-      { native: "Puu", banglaPronunciation: "পু", banglaMeaning: "গাছ" },
-      { native: "Vesi", banglaPronunciation: "ভেসি", banglaMeaning: "পানি" },
-      { native: "Raamat", banglaPronunciation: "রামাত", banglaMeaning: "বই" },
-      { native: "Tänav", banglaPronunciation: "তেনাভ", banglaMeaning: "রাস্তা" },
-    ],
-    Finland: [
-      { native: "Talo", banglaPronunciation: "তালো", banglaMeaning: "বাড়ি" },
-      { native: "Puu", banglaPronunciation: "পু", banglaMeaning: "গাছ" },
-      { native: "Vesi", banglaPronunciation: "ভেসি", banglaMeaning: "পানি" },
-      { native: "Kirja", banglaPronunciation: "কিরজা", banglaMeaning: "বই" },
-      { native: "Katu", banglaPronunciation: "কাশু", banglaMeaning: "রাস্তা" },
-    ],
-    France: [
-      { native: "Maison", banglaPronunciation: "মেইজঁ", banglaMeaning: "বাড়ি" },
-      { native: "Arbre", banglaPronunciation: "আর্ব্র", banglaMeaning: "গাছ" },
-      { native: "Eau", banglaPronunciation: "ও", banglaMeaning: "পানি" },
-      { native: "Livre", banglaPronunciation: "লিভর", banglaMeaning: "বই" },
-      { native: "Rue", banglaPronunciation: "রু", banglaMeaning: "রাস্তা" },
-    ],
-    Germany: [
-      { native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি" },
-      { native: "Baum", banglaPronunciation: "বাউম", banglaMeaning: "গাছ" },
-      { native: "Wasser", banglaPronunciation: "বাসার", banglaMeaning: "পানি" },
-      { native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই" },
-      { native: "Straße", banglaPronunciation: "স্ত্রাসে", banglaMeaning: "রাস্তা" },
-    ],
-    Greece: [
-      { native: "Σπίτι", banglaPronunciation: "স্পীতি", banglaMeaning: "বাড়ি" },
-      { native: "Δέντρο", banglaPronunciation: "দেন্ত্রো", banglaMeaning: "গাছ" },
-      { native: "Νερό", banglaPronunciation: "নিরো", banglaMeaning: "পানি" },
-      { native: "Βιβλίο", banglaPronunciation: "বিবলিও", banglaMeaning: "বই" },
-      { native: "Οδός", banglaPronunciation: "ওদোস", banglaMeaning: "রাস্তা" },
-    ],
-    Hungary: [
-      { native: "Ház", banglaPronunciation: "হাজ", banglaMeaning: "বাড়ি" },
-      { native: "Fa", banglaPronunciation: "ফা", banglaMeaning: "গাছ" },
-      { native: "Víz", banglaPronunciation: "ভিজ", banglaMeaning: "পানি" },
-      { native: "Könyv", banglaPronunciation: "কনযব", banglaMeaning: "বই" },
-      { native: "Utca", banglaPronunciation: "উৎসা", banglaMeaning: "রাস্তা" },
-    ],
-    Iceland: [
-      { native: "Hús", banglaPronunciation: "হুস", banglaMeaning: "বাড়ি" },
-      { native: "Tré", banglaPronunciation: "ত্রে", banglaMeaning: "গাছ" },
-      { native: "Vatn", banglaPronunciation: "ভাটন", banglaMeaning: "পানি" },
-      { native: "Bók", banglaPronunciation: "বক", banglaMeaning: "বই" },
-      { native: "Gata", banglaPronunciation: "গাটা", banglaMeaning: "রাস্তা" },
-    ],
-    Ireland: [
-      { native: "Teach", banglaPronunciation: "তেচ", banglaMeaning: "বাড়ি" },
-      { native: "Crann", banglaPronunciation: "করান", banglaMeaning: "গাছ" },
-      { native: "Uisce", banglaPronunciation: "ইশক", banglaMeaning: "পানি" },
-      { native: "Leabhar", banglaPronunciation: "লেভার", banglaMeaning: "বই" },
-      { native: "Bóthar", banglaPronunciation: "বোহার", banglaMeaning: "রাস্তা" },
-    ],
-    Italy: [
-      { native: "Casa", banglaPronunciation: "কাসা", banglaMeaning: "বাড়ি" },
-      { native: "Albero", banglaPronunciation: "আলবেরো", banglaMeaning: "গাছ" },
-      { native: "Acqua", banglaPronunciation: "আক্কুয়া", banglaMeaning: "পানি" },
-      { native: "Libro", banglaPronunciation: "লিব্রো", banglaMeaning: "বই" },
-      { native: "Strada", banglaPronunciation: "স্ত্রাদা", banglaMeaning: "রাস্তা" },
-    ],
-    Latvia: [
-      { native: "Māja", banglaPronunciation: "মাজা", banglaMeaning: "বাড়ি" },
-      { native: "Koks", banglaPronunciation: "কোকস", banglaMeaning: "গাছ" },
-      { native: "Ūdens", banglaPronunciation: "উডেন্স", banglaMeaning: "পানি" },
-      { native: "Grāmata", banglaPronunciation: "গ্রামাতা", banglaMeaning: "বই" },
-      { native: "Iela", banglaPronunciation: "ইয়েলা", banglaMeaning: "রাস্তা" },
-    ],
-    Lithuania: [
-      { native: "Namas", banglaPronunciation: "নামাস", banglaMeaning: "বাড়ি" },
-      { native: "Medis", banglaPronunciation: "মেদিস", banglaMeaning: "গাছ" },
-      { native: "Vanduo", banglaPronunciation: "ভান্ডুও", banglaMeaning: "পানি" },
-      { native: "Knyga", banglaPronunciation: "কনিগা", banglaMeaning: "বই" },
-      { native: "Gatvė", banglaPronunciation: "গাতভে", banglaMeaning: "রাস্তা" },
-    ],
-    Luxembourg: [
-      { native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি" },
-      { native: "Baam", banglaPronunciation: "বাম", banglaMeaning: "গাছ" },
-      { native: "Waasser", banglaPronunciation: "ভাসার", banglaMeaning: "পানি" },
-      { native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই" },
-      { native: "Strooss", banglaPronunciation: "স্ত্রওস", banglaMeaning: "রাস্তা" },
-    ],
-    Malta: [
-      { native: "Dar", banglaPronunciation: "দার", banglaMeaning: "বাড়ি" },
-      { native: "Siġra", banglaPronunciation: "সিগরা", banglaMeaning: "গাছ" },
-      { native: "Ilma", banglaPronunciation: "ইলমা", banglaMeaning: "পানি" },
-      { native: "Ktieb", banglaPronunciation: "ক্তিয়েব", banglaMeaning: "বই" },
-      { native: "Triq", banglaPronunciation: "ত্রীক", banglaMeaning: "রাস্তা" },
-    ],
-    Netherlands: [
-      { native: "Huis", banglaPronunciation: "হুইস", banglaMeaning: "বাড়ি" },
-      { native: "Boom", banglaPronunciation: "বুম", banglaMeaning: "গাছ" },
-      { native: "Water", banglaPronunciation: "ভাটার", banglaMeaning: "পানি" },
-      { native: "Boek", banglaPronunciation: "বুক", banglaMeaning: "বই" },
-      { native: "Straat", banglaPronunciation: "স্ত্রাত", banglaMeaning: "রাস্তা" },
-    ],
-    Norway: [
-      { native: "Hus", banglaPronunciation: "হুস", banglaMeaning: "বাড়ি" },
-      { native: "Tre", banglaPronunciation: "ত্রে", banglaMeaning: "গাছ" },
-      { native: "Vann", banglaPronunciation: "ভান্ন", banglaMeaning: "পানি" },
-      { native: "Bok", banglaPronunciation: "বক", banglaMeaning: "বই" },
-      { native: "Gate", banglaPronunciation: "গাতে", banglaMeaning: "রাস্তা" },
-    ],
-    Poland: [
-      { native: "Dom", banglaPronunciation: "দম", banglaMeaning: "বাড়ি" },
-      { native: "Drzewo", banglaPronunciation: "দেরেও", banglaMeaning: "গাছ" },
-      { native: "Woda", banglaPronunciation: "ভোদা", banglaMeaning: "পানি" },
-      { native: "Książka", banglaPronunciation: "ক্সিয়ৌঞ্জকা", banglaMeaning: "বই" },
-      { native: "Ulica", banglaPronunciation: "উলিৎসা", banglaMeaning: "রাস্তা" },
-    ],
-    Portugal: [
-      { native: "Casa", banglaPronunciation: "কাসা", banglaMeaning: "বাড়ি" },
-      { native: "Árvore", banglaPronunciation: "আভুরি", banglaMeaning: "গাছ" },
-      { native: "Água", banglaPronunciation: "আগুয়া", banglaMeaning: "পানি" },
-      { native: "Livro", banglaPronunciation: "লিভ্রো", banglaMeaning: "বই" },
-      { native: "Rua", banglaPronunciation: "রুয়া", banglaMeaning: "রাস্তা" },
-    ],
-    Romania: [
-      { native: "Casă", banglaPronunciation: "কাসা", banglaMeaning: "বাড়ি" },
-      { native: "Copac", banglaPronunciation: "কোপাক", banglaMeaning: "গাছ" },
-      { native: "Apă", banglaPronunciation: "অপা", banglaMeaning: "পানি" },
-      { native: "Carte", banglaPronunciation: "কারতে", banglaMeaning: "বই" },
-      { native: "Stradă", banglaPronunciation: "স্ত্রাদা", banglaMeaning: "রাস্তা" },
-    ],
-    Slovakia: [
-      { native: "Dom", banglaPronunciation: "দম", banglaMeaning: "বাড়ি" },
-      { native: "Strom", banglaPronunciation: "স্ত্রম", banglaMeaning: "গাছ" },
-      { native: "Voda", banglaPronunciation: "ভোদা", banglaMeaning: "পানি" },
-      { native: "Kniha", banglaPronunciation: "কনিহা", banglaMeaning: "বই" },
-      { native: "Ulica", banglaPronunciation: "উলিচা", banglaMeaning: "রাস্তা" },
-    ],
-    Slovenia: [
-      { native: "Hiša", banglaPronunciation: "হিশা", banglaMeaning: "বাড়ি" },
-      { native: "Drevo", banglaPronunciation: "দ্রেভো", banglaMeaning: "গাছ" },
-      { native: "Voda", banglaPronunciation: "ভোদা", banglaMeaning: "পানি" },
-      { native: "Knjiga", banglaPronunciation: "কনিগা", banglaMeaning: "বই" },
-      { native: "Ulica", banglaPronunciation: "উলিচা", banglaMeaning: "রাস্তা" },
-    ],
-    Spain: [
-      { native: "Casa", banglaPronunciation: "কাসা", banglaMeaning: "বাড়ি" },
-      { native: "Árbol", banglaPronunciation: "আরবল", banglaMeaning: "গাছ" },
-      { native: "Agua", banglaPronunciation: "আগুয়া", banglaMeaning: "পানি" },
-      { native: "Libro", banglaPronunciation: "লিব্রো", banglaMeaning: "বই" },
-      { native: "Calle", banglaPronunciation: "কায়ে", banglaMeaning: "রাস্তা" },
-    ],
-    Sweden: [
-      { native: "Hus", banglaPronunciation: "হুস", banglaMeaning: "বাড়ি" },
-      { native: "Träd", banglaPronunciation: "ত্রাড", banglaMeaning: "গাছ" },
-      { native: "Vatten", banglaPronunciation: "ভাটেন", banglaMeaning: "পানি" },
-      { native: "Bok", banglaPronunciation: "বক", banglaMeaning: "বই" },
-      { native: "Väg", banglaPronunciation: "ভেগ", banglaMeaning: "রাস্তা" },
-    ],
-    Switzerland: [
-      { native: "Haus", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি" },
-      { native: "Baum", banglaPronunciation: "বাউম", banglaMeaning: "গাছ" },
-      { native: "Wasser", banglaPronunciation: "বাসার", banglaMeaning: "পানি" },
-      { native: "Buch", banglaPronunciation: "বুখ", banglaMeaning: "বই" },
-      { native: "Straße", banglaPronunciation: "স্ত্রাসে", banglaMeaning: "রাস্তা" },
-    ],
-    "United Kingdom": [
-      { native: "House", banglaPronunciation: "হাউস", banglaMeaning: "বাড়ি" },
-      { native: "Tree", banglaPronunciation: "ট্রি", banglaMeaning: "গাছ" },
-      { native: "Water", banglaPronunciation: "ওয়াটার", banglaMeaning: "পানি" },
-      { native: "Book", banglaPronunciation: "বুক", banglaMeaning: "বই" },
-      { native: "Street", banglaPronunciation: "স্ট্রিট", banglaMeaning: "রাস্তা" },
-    ],
-  };
+    const vocabList = document.getElementById('vocab-list');
+    const countrySelect = document.getElementById('country-select');
 
-  // Function to create and display the vocabulary table for the selected country or all countries
-  function displayVocabularyTable(country) {
-    const container = document.getElementById('vocab-table-wrapper');
-    container.innerHTML = '';
-
-    // Prepare data to show:
-    let dataToShow = [];
-
-    if (country === 'all') {
-      // Combine vocabularies from all countries, prefix native word with country name in parentheses
-      for (const [c, vocabArr] of Object.entries(vocabularyData)) {
-        const vocabWithCountry = vocabArr.map(item => ({
-          native: `[${c}] ${item.native}`,
-          banglaPronunciation: item.banglaPronunciation,
-          banglaMeaning: item.banglaMeaning,
-        }));
-        dataToShow = dataToShow.concat(vocabWithCountry);
-      }
-    } else if (country in vocabularyData) {
-      dataToShow = vocabularyData[country];
-    } else {
-      container.innerHTML = '<p style="color:#f44336; font-weight:600;">No vocabulary found for selected country.</p>';
-      return;
+    function clearVocabList() {
+      vocabList.innerHTML = '';
     }
 
-    // Build table
-    const table = document.createElement('table');
-    table.setAttribute('aria-describedby', 'Vocabulary table showing native words and their Bangla translations');
-
-    // Table header
-    const thead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    const headers = ['Native Word', 'Bangla Pronunciation', 'Bangla Meaning'];
-    headers.forEach(text => {
-      const th = document.createElement('th');
-      th.textContent = text;
-      th.scope = 'col';
-      headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    // Table body
-    const tbody = document.createElement('tbody');
-    dataToShow.forEach(item => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${item.native}</td>
-        <td>${item.banglaPronunciation}</td>
-        <td>${item.banglaMeaning}</td>
+    function createCard(entry) {
+      const card = document.createElement('article');
+      card.className = 'vocab-card uk-card uk-card-default uk-card-hover';
+      card.tabIndex = 0;
+      card.innerHTML = `
+        <h3>${entry.country}</h3>
+        <p><strong>Native Word:</strong> ${entry.native}</p>
+        <p><strong>Bangla Pronunciation:</strong> ${entry.banglaPronunciation}</p>
+        <p><strong>Bangla Meaning:</strong> ${entry.banglaMeaning}</p>
       `;
-      tbody.appendChild(tr);
+      return card;
+    }
+
+    function displayVocabulary(country) {
+      clearVocabList();
+      let dataToShow = [];
+
+      if (country === 'all') {
+        Object.entries(vocabularyData).forEach(([c, arr]) => {
+          arr.forEach(item => dataToShow.push({...item, country: c}));
+        });
+      } else if (vocabularyData[country]) {
+        vocabularyData[country].forEach(item => dataToShow.push({...item, country}));
+      } else {
+        vocabList.innerHTML = '<p class="uk-text-danger uk-text-bold">No vocabulary found for selected country.</p>';
+        return;
+      }
+
+      dataToShow.forEach(entry => {
+        const card = createCard(entry);
+        vocabList.appendChild(card);
+      });
+
+      if(dataToShow.length === 0) {
+        vocabList.innerHTML = '<p class="uk-text-danger uk-text-bold">No vocabulary found for selected country.</p>';
+      }
+    }
+
+    countrySelect.addEventListener('change', e => {
+      displayVocabulary(e.target.value);
     });
-    table.appendChild(tbody);
 
-    container.appendChild(table);
-  }
-
-  // Event listener: On dropdown change, update the vocabulary table
-  document.getElementById('country-select').addEventListener('change', (e) => {
-    const selectedCountry = e.target.value;
-    displayVocabularyTable(selectedCountry);
-  });
-
-  // Initial display of all countries
-  window.addEventListener('DOMContentLoaded', () => {
-    displayVocabularyTable('all');
-  });
-</script>
+    window.addEventListener('DOMContentLoaded', () => {
+      displayVocabulary('all');
+    });
+  </script>
 </body>
 </html>
-
