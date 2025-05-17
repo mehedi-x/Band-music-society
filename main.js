@@ -1,5 +1,5 @@
-const grid = document.getElementById('vocab-grid');
 const select = document.getElementById('country-select');
+const grid = document.getElementById('vocab-grid');
 
 function createCard(item, country) {
   const div = document.createElement('div');
@@ -14,16 +14,16 @@ function createCard(item, country) {
 }
 
 function renderVocab(country) {
-  grid.innerHTML = '<p>Loading data...</p>';
+  grid.innerHTML = '<p>Loading...</p>';
   const script = document.createElement('script');
   script.src = `data/${country}.js`;
   script.onload = () => {
-    grid.innerHTML = '';
     const data = window[country];
     if (!data || !Array.isArray(data) || data.length === 0) {
       grid.innerHTML = '<p>No data found for selected country.</p>';
       return;
     }
+    grid.innerHTML = '';
     data.forEach(item => {
       grid.appendChild(createCard(item, country));
     });
@@ -34,11 +34,11 @@ function renderVocab(country) {
   document.body.appendChild(script);
 }
 
-select.addEventListener('change', e => {
-  const country = e.target.value;
-  if (country === 'all') {
-    grid.innerHTML = '<p>Please select a specific country.</p>';
-    return;
+select.addEventListener('change', () => {
+  const country = select.value;
+  if (country) {
+    renderVocab(country);
+  } else {
+    grid.innerHTML = '';
   }
-  renderVocab(country);
 });
