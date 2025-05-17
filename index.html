@@ -78,16 +78,17 @@
     header {
         background-color: var(--header-bg);
         color: var(--header-text);
-        padding: 1.1rem 1.5rem;
+        padding: 1.2rem 1.5rem;
         font-weight: 900;
-        font-size: 1.9rem;
+        font-size: 2.1rem;
         text-align: center;
-        letter-spacing: 0.11em;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        letter-spacing: 0.12em;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
         user-select: none;
         text-transform: uppercase;
         font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         flex-shrink: 0;
+        border-bottom: 2px solid rgba(255,255,255,0.15);
     }
     main.container {
         flex: 1 1 auto;
@@ -95,16 +96,17 @@
         color: var(--text-primary);
         display: flex;
         flex-direction: column;
-        padding: 16px 20px 0 20px;
+        padding: 18px 24px 16px 24px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         user-select: text;
-        gap: 10px;
+        gap: 14px;
+        border-radius: 0 0 12px 12px;
     }
     label {
         font-weight: 700;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
+        font-size: 1.15rem;
+        margin-bottom: 10px;
         color: var(--accent-hover-blue);
         user-select: none;
         display: block;
@@ -112,81 +114,62 @@
     }
     select {
         width: 100%;
-        padding: 12px 16px;
+        padding: 14px 18px;
         font-size: 1.1rem;
-        border: 2px solid var(--accent-light-blue);
-        border-radius: 12px;
+        border: 2.5px solid var(--accent-light-blue);
+        border-radius: 14px;
         outline: none;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: var(--accent-hover-blue);
-        font-weight: 600;
+        font-weight: 700;
         appearance: none;
-        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path fill="%233243f6" d="M1 1l6 6 6-6"/></svg>') no-repeat right 18px center / 14px 8px;
+        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path fill="%233243f6" d="M1 1l6 6 6-6"/></svg>') no-repeat right 20px center / 14px 8px;
         cursor: pointer;
-        box-shadow: inset 0 0 8px var(--accent-light-blue);
+        box-shadow: inset 0 0 10px var(--accent-light-blue);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         user-select: none;
     }
     select:hover {
         border-color: var(--accent-blue);
-        box-shadow: inset 0 0 11px var(--accent-blue);
+        box-shadow: inset 0 0 12px var(--accent-blue);
     }
     select:focus {
         border-color: var(--accent-hover-blue);
-        box-shadow: 0 0 13px var(--accent-hover-blue);
-    }
-    #practice-toggle {
-        align-self: flex-start;
-        margin: 6px 0 12px 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        user-select: none;
-    }
-    #practice-toggle label {
-        font-weight: 600;
-        font-size: 1.05rem;
-        color: var(--accent-hover-blue);
-        cursor: pointer;
-    }
-    #practice-toggle input[type=checkbox] {
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
+        box-shadow: 0 0 15px var(--accent-hover-blue);
     }
     .vocabulary-grid {
         margin-top: 0;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 18px;
     }
     .word-card {
         background: var(--card-bg);
-        border-radius: 14px;
-        padding: 18px 20px 21px 20px;
-        box-shadow: 0 6px 25px var(--card-shadow);
+        border-radius: 16px;
+        padding: 20px 24px 22px 24px;
+        box-shadow: 0 8px 30px var(--card-shadow);
         text-align: left;
-        font-size: 0.95rem;
-        transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
+        font-size: 1rem;
+        transition: transform 0.23s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.23s ease;
         cursor: default;
         user-select: text;
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        scroll-margin-top: 50px;
+        gap: 8px;
+        scroll-margin-top: 60px;
     }
     .word-card:hover,
     .word-card:focus-visible {
-        transform: translateY(-5px);
-        box-shadow: 0 14px 42px var(--accent-blue);
+        transform: translateY(-6px);
+        box-shadow: 0 18px 48px var(--accent-blue);
         outline-offset: 3px;
-        outline: 2px solid var(--accent-hover-blue);
+        outline: 3px solid var(--accent-hover-blue);
         z-index: 10;
     }
     .native-text {
         font-weight: 900;
-        font-size: 1.13rem;
+        font-size: 1.25rem;
         color: var(--accent-hover-blue);
         white-space: pre-wrap;
         user-select: text;
@@ -195,27 +178,27 @@
         font-style: italic;
         font-weight: 700;
         color: var(--accent-blue);
-        font-size: 1rem;
+        font-size: 1.1rem;
         white-space: pre-wrap;
         user-select: text;
     }
     .bangla-meaning {
         font-weight: 600;
         color: var(--text-secondary);
-        font-size: 1rem;
+        font-size: 1.05rem;
         white-space: pre-wrap;
-        line-height: 1.33;
+        line-height: 1.35;
         user-select: text;
     }
     .english-meaning {
         font-weight: 500;
         color: #555555;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         font-style: italic;
         white-space: pre-wrap;
         user-select: text;
-        margin-top: 4px;
-        line-height: 1.2;
+        margin-top: 6px;
+        line-height: 1.3;
     }
     .practice-btn {
         margin-top: auto;
@@ -224,61 +207,86 @@
         border: none;
         color: white;
         font-weight: 700;
-        font-size: 0.9rem;
-        border-radius: 11px;
-        padding: 9px 17px;
+        font-size: 0.95rem;
+        border-radius: 14px;
+        padding: 10px 20px;
         cursor: pointer;
         align-self: flex-start;
-        box-shadow: 0 4px 13px var(--accent-blue);
+        box-shadow: 0 5px 17px var(--accent-blue);
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        display: none;
+        display: block;
+        user-select: none;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
     .practice-btn:hover,
     .practice-btn:focus-visible {
         background-color: var(--accent-blue);
-        box-shadow: 0 6px 22px var(--accent-hover-blue);
+        box-shadow: 0 8px 26px var(--accent-hover-blue);
         outline: none;
     }
-    .practice-active .practice-btn {
-        display: block;
-    }
     #welcome-message {
-        margin-top: 40px;
+        margin-top: 50px;
         font-weight: 700;
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         color: var(--accent-hover-blue);
         text-align: center;
         user-select: none;
+        line-height: 1.4;
+        padding: 0 10px;
     }
     footer {
         background-color: var(--footer-bg);
         color: var(--footer-text);
         text-align: center;
-        padding: 1rem 1rem;
-        font-size: 0.9rem;
+        padding: 1.15rem 1.25rem;
+        font-size: 0.95rem;
         user-select: none;
-        box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.14);
-        letter-spacing: 0.05em;
-        font-weight: 600;
+        box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.18);
+        letter-spacing: 0.06em;
+        font-weight: 700;
         flex-shrink: 0;
-        border-top: 1px solid var(--border-color);
+        border-top: 1.5px solid var(--border-color);
         user-select: none;
     }
     /* Scrollbar for container */
     main.container::-webkit-scrollbar {
-        width: 8px;
+        width: 9px;
     }
     main.container::-webkit-scrollbar-thumb {
         background-color: var(--accent-light-blue);
-        border-radius: 10px;
+        border-radius: 12px;
     }
     main.container::-webkit-scrollbar-track {
         background: transparent;
     }
     /* Accessibility focus outline */
     button:focus-visible, select:focus-visible {
-        outline: 3px solid var(--accent-hover-blue);
-        outline-offset: 3px;
+        outline: 4px solid var(--accent-hover-blue);
+        outline-offset: 4px;
+    }
+    /* Responsive minor improvements */
+    @media (max-width: 425px) {
+        main.container {
+            padding: 16px 18px 0 18px;
+            gap: 10px;
+        }
+        .native-text {
+            font-size: 1.12rem;
+        }
+        .bangla-pronunciation {
+            font-size: 1rem;
+        }
+        .bangla-meaning {
+            font-size: 1rem;
+        }
+        .english-meaning {
+            font-size: 0.9rem;
+        }
+        .practice-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+        }
     }
 </style>
 </head>
@@ -303,11 +311,6 @@
     </div>
 
     <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="additions" hidden></div>
-
-    <div id="practice-toggle" hidden>
-        <input type="checkbox" id="practice-mode" />
-        <label for="practice-mode" title="Toggle listening practice mode">Enable Practice Mode 🔊</label>
-    </div>
 </main>
 
 <footer role="contentinfo" aria-label="Speak EU Application Footer">
@@ -336,7 +339,7 @@
         },
         {
             native:"Во сколько начинаются занятия в университете?",
-            banglaPronunciation:"ভো স্ক'লকো নাচিনাইউতস্যা জ়্যান্যাতিয়া ভ ইউনিভার্সিতে?",
+            banglaPronunciation:"ভো স্ক'লকো নাচিনাইউতস্যা জ়্যাত্য ভ ইউনিভার্সিতে?",
             banglaMeaning:"বিশ্ববিদ্যালয়ে ক্লাস কখন শুরু হয়?",
             englishMeaning:"At what time do classes start at the university?"
         },
@@ -345,8 +348,7 @@
             banglaPronunciation:"গদে নাখোদিৎস্যা ব্লিঝায়শয়া বলনিতসা?",
             banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
             englishMeaning:"Where is the nearest hospital?"
-        },
-        // Add more conversation items with similar structure if needed
+        }
     ];
 
     const franceConversations = [
@@ -379,8 +381,7 @@
             banglaPronunciation:"উ এ ল'অপিতাল লে প্লু প্রক?",
             banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
             englishMeaning:"Where is the nearest hospital?"
-        },
-        // Add more conversation items with similar structure if needed
+        }
     ];
 
     const italyConversations = [
@@ -413,8 +414,7 @@
             banglaPronunciation:"দুভে ল’অস্পেদালে পিউ ভিচিনো?",
             banglaMeaning:"নিকটতম হাসপাতাল কোথায়?",
             englishMeaning:"Where is the nearest hospital?"
-        },
-        // Add more conversation items with similar structure if needed
+        }
     ];
 
     const conversationData = {
@@ -426,19 +426,9 @@
     const languageSelect = document.getElementById('language-select');
     const vocabularyGrid = document.getElementById('vocabulary-grid');
     const welcomeMessage = document.getElementById('welcome-message');
-    const practiceToggleContainer = document.getElementById('practice-toggle');
-    const practiceCheckbox = document.getElementById('practice-mode');
-
-    let practiceMode = false;
-
-    const speechLangMap = {
-        russia: 'ru-RU',
-        france: 'fr-FR',
-        italy: 'it-IT'
-    };
 
     function clearHighlight() {
-        document.querySelectorAll('.word-card.highlight').forEach(card=>{
+        document.querySelectorAll('.word-card.highlight').forEach(card => {
             card.classList.remove('highlight');
         });
     }
@@ -453,58 +443,19 @@
             <div class="bangla-meaning" title="Bangla Meaning">${convo.banglaMeaning}</div>
             <div class="english-meaning" title="English Meaning">${convo.englishMeaning}</div>
         `;
-        if(practiceMode){
-            const btn = document.createElement('button');
-            btn.className = 'practice-btn';
-            btn.type = 'button';
-            btn.textContent = '🔊 Practice';
-            btn.title = 'Click to hear and practice pronunciation';
-            btn.addEventListener('click', () => {
-                clearHighlight();
-                card.classList.add('highlight');
-                speakText(convo.native, speechLangMap[countryKey] || 'en-US');
-            });
-            card.appendChild(btn);
-        }
         return card;
-    }
-
-    function createInlineAd() {
-        const ad = document.createElement('div');
-        ad.className = 'ad-inline';
-        ad.setAttribute('role', 'complementary');
-        ad.setAttribute('aria-label', 'Advertisement');
-        ad.textContent = '🌐 Learn more languages and expand your European journey with LearnEU Premium! Visit learn-eu.example.com';
-        return ad;
     }
 
     function displayVocabulary(conversations, countryKey){
         vocabularyGrid.innerHTML = '';
         if(!conversations.length){
-            vocabularyGrid.innerHTML='<p style="text-align:center; color:#777; font-style:italic;">কোনো কনভারসেশন পাওয়া যায়নি</p>';
+            vocabularyGrid.innerHTML = '<p style="text-align:center; color:#777; font-style:italic;">কোনো কনভারসেশন পাওয়া যায়নি</p>';
             return;
         }
         conversations.forEach((convo, index) => {
             const card = createCard(convo, countryKey);
             vocabularyGrid.appendChild(card);
-            if ((index + 1) % 5 === 0 && index !== conversations.length - 1) {
-                vocabularyGrid.appendChild(createInlineAd());
-            }
         });
-    }
-
-    function speakText(text, lang){
-        if(!('speechSynthesis' in window)){
-            alert('Sorry, your browser does not support speech synthesis.');
-            return;
-        }
-        const synth = window.speechSynthesis;
-        if (synth.speaking) {
-            synth.cancel();
-        }
-        const utterThis = new SpeechSynthesisUtterance(text);
-        utterThis.lang = lang;
-        synth.speak(utterThis);
     }
 
     function loadVocabulary(){
@@ -514,14 +465,9 @@
         if(selected === '0'){ // no selection
             vocabularyGrid.hidden = true;
             welcomeMessage.style.display = 'block';
-            practiceToggleContainer.hidden = true;
-            practiceCheckbox.checked = false;
-            practiceMode = false;
-            document.activeElement.blur();
         } else {
             welcomeMessage.style.display = 'none';
             vocabularyGrid.hidden = false;
-            practiceToggleContainer.hidden = false;
 
             if(selected === 'all'){
                 const allConvos = [
@@ -536,15 +482,9 @@
         }
     }
 
-    function togglePracticeMode(){
-        practiceMode = practiceCheckbox.checked;
-        loadVocabulary();
-    }
-
     (function init(){
         loadVocabulary();
         languageSelect.addEventListener('change', loadVocabulary);
-        practiceCheckbox.addEventListener('change', togglePracticeMode);
     })();
 </script>
 </body>
