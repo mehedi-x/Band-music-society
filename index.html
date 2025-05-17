@@ -3,198 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EU Language Practice</title>
+  <title>Learn European Languages</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f2f5;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
     header {
       background: #2e7d32;
       color: #fff;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
       text-align: center;
+      font-weight: 700;
       font-size: 2rem;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     main {
       flex: 1;
-      padding: 2rem 1rem;
-      max-width: 960px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
     label {
-      font-size: 1.1rem;
+      font-weight: 600;
       margin-bottom: 0.5rem;
       display: block;
-      font-weight: bold;
+      font-size: 1.1rem;
     }
     select {
-      padding: 0.6rem;
-      border-radius: 6px;
-      border: 2px solid #2e7d32;
-      font-size: 1rem;
-      margin-bottom: 2rem;
       width: 100%;
-      max-width: 400px;
+      max-width: 320px;
+      padding: 0.6rem 0.75rem;
+      font-size: 1rem;
+      border: 2px solid #4caf50;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
     }
     .vocab-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
       gap: 1.5rem;
     }
     .card {
       background: #fff;
-      padding: 1rem;
+      padding: 1rem 1.25rem;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
     }
     .card:hover {
-      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     .card h3 {
       margin: 0 0 0.8rem;
       color: #2e7d32;
-      font-size: 1.2rem;
     }
     .card p {
-      margin: 0.3rem 0;
-      font-size: 1rem;
-      color: #444;
+      margin: 0.4rem 0;
     }
-    .label { font-weight: bold; color: #1b5e20; }
+    .label {
+      font-weight: 700;
+      color: #1b5e20;
+    }
     footer {
-      text-align: center;
+      background: #dcedc8;
       padding: 1rem;
-      background: #e8f5e9;
-      color: #2e7d32;
+      text-align: center;
       font-size: 0.9rem;
+      color: #33691e;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    }
+    @media (max-width: 600px) {
+      .vocab-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header>European Language Practice</header>
+  <header>🌍 Learn European Languages</header>
   <main>
-    <label for="country-select">Select a Country's Language:</label>
+    <label for="country-select">Choose a Country/Language:</label>
     <select id="country-select">
       <option value="all">All Countries</option>
+      <option value="Russia">Russia</option>
+      <option value="Germany">Germany</option>
+      <option value="France">France</option>
+      <option value="Italy">Italy</option>
+      <option value="Spain">Spain</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Belgium">Belgium</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Norway">Norway</option>
+      <option value="Finland">Finland</option>
+      <option value="Denmark">Denmark</option>
+      <option value="Austria">Austria</option>
+      <option value="Switzerland">Switzerland</option>
+      <option value="Poland">Poland</option>
+      <option value="Czech Republic">Czech Republic</option>
+      <option value="Slovakia">Slovakia</option>
+      <option value="Hungary">Hungary</option>
+      <option value="Slovenia">Slovenia</option>
+      <option value="Lithuania">Lithuania</option>
+      <option value="Latvia">Latvia</option>
+      <option value="Estonia">Estonia</option>
+      <option value="Luxembourg">Luxembourg</option>
+      <option value="Liechtenstein">Liechtenstein</option>
+      <option value="Malta">Malta</option>
+      <option value="Greece">Greece</option>
+      <option value="Portugal">Portugal</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="Ireland">Ireland</option>
+      <option value="Ukraine">Ukraine</option>
+      <option value="Turkey">Turkey</option>
     </select>
-    <div class="vocab-grid" id="vocab-grid"></div>
+    <section class="vocab-grid" id="vocab-grid" aria-live="polite"></section>
   </main>
-  <footer>© 2025 European Language App | Built for Learning</footer>
+  <footer>© 2025 EuroLingua | Practice all European Languages & Russian</footer>
 
   <script>
     const vocabularyData = {
+      Russia: [
+        { native: "Дом", pron: "দম", meaning: "বাড়ি" },
+        { native: "Книга", pron: "কনিগা", meaning: "বই" }
+      ],
       Germany: [
-        {native:"Haus", pron:"হাউস", meaning:"বাড়ি"},
-        {native:"Tisch", pron:"টিশ", meaning:"টেবিল"},
-        {native:"Stuhl", pron:"স্টুল", meaning:"চেয়ার"}
+        { native: "Haus", pron: "হাউস", meaning: "বাড়ি" },
+        { native: "Baum", pron: "বাউম", meaning: "গাছ" }
       ],
       France: [
-        {native:"Maison", pron:"মেজঁ", meaning:"বাড়ি"},
-        {native:"Chaise", pron:"শেজ", meaning:"চেয়ার"},
-        {native:"Table", pron:"তাবল", meaning:"টেবিল"}
+        { native: "Maison", pron: "মেজঁ", meaning: "বাড়ি" },
+        { native: "Livre", pron: "লিভর", meaning: "বই" }
       ],
       Italy: [
-        {native:"Casa", pron:"কাসা", meaning:"বাড়ি"},
-        {native:"Sedia", pron:"সেদিয়া", meaning:"চেয়ার"},
-        {native:"Tavolo", pron:"তাভলো", meaning:"টেবিল"}
+        { native: "Casa", pron: "কাসা", meaning: "বাড়ি" },
+        { native: "Libro", pron: "লিব্রো", meaning: "বই" }
       ],
       Spain: [
-        {native:"Casa", pron:"কাসা", meaning:"বাড়ি"},
-        {native:"Silla", pron:"সিয়া", meaning:"চেয়ার"},
-        {native:"Mesa", pron:"মেসা", meaning:"টেবিল"}
+        { native: "Casa", pron: "কাসা", meaning: "বাড়ি" },
+        { native: "Libro", pron: "লিব্রো", meaning: "বই" }
       ],
-      Russia: [
-        {native:"Дом", pron:"দম", meaning:"বাড়ি"},
-        {native:"Стул", pron:"স্তুল", meaning:"চেয়ার"},
-        {native:"Стол", pron:"স্তল", meaning:"টেবিল"}
+      Netherlands: [
+        { native: "Huis", pron: "হাউস", meaning: "বাড়ি" },
+        { native: "Boek", pron: "বুক", meaning: "বই" }
       ],
-      Netherlands: [...], // Add similar dummy data
-      Belgium: [...],
-      Austria: [...],
-      Sweden: [...],
-      Denmark: [...],
-      Norway: [...],
-      Finland: [...],
-      Iceland: [...],
-      Poland: [...],
-      "Czech Republic": [...],
-      Hungary: [...],
-      Slovakia: [...],
-      Slovenia: [...],
-      Estonia: [...],
-      Latvia: [...],
-      Lithuania: [...],
-      Switzerland: [...],
-      Malta: [...],
-      Luxembourg: [...],
-      Liechtenstein: [...],
-      Greece: [...],
-      "United Kingdom": [...],
-      Portugal: [...],
-      Ireland: [...],
-      Romania: [...],
-      Bulgaria: [...],
-      Turkey: [...],
-      Ukraine: [...]
+      // Add the same structure for all other countries
     };
 
-    // Create 'all' category
+    // Fill 'all' with merged data
     vocabularyData.all = [];
-    for (const key in vocabularyData) {
-      if (key !== 'all' && Array.isArray(vocabularyData[key])) {
-        vocabularyData.all.push(...vocabularyData[key].map(item => ({...item, country: key})));
+    Object.keys(vocabularyData).forEach(country => {
+      if (country !== 'all') {
+        vocabularyData[country].forEach(item => {
+          vocabularyData.all.push({ ...item, country });
+        });
       }
-    }
+    });
 
     const select = document.getElementById('country-select');
     const grid = document.getElementById('vocab-grid');
 
-    // Populate dropdown
-    Object.keys(vocabularyData).forEach(country => {
-      if (country !== 'all') {
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        select.appendChild(option);
-      }
-    });
+    function createCard(item) {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `
+        <h3>${item.country || select.value}</h3>
+        <p><span class="label">Native:</span> ${item.native}</p>
+        <p><span class="label">Pronunciation:</span> ${item.pron}</p>
+        <p><span class="label">Bangla Meaning:</span> ${item.meaning}</p>
+      `;
+      return div;
+    }
 
     function renderVocab(country) {
       grid.innerHTML = '';
-      const list = vocabularyData[country] || [];
-      if (list.length === 0) {
-        grid.innerHTML = '<p>No vocabulary available.</p>';
+      const items = vocabularyData[country] || [];
+      if (!items.length) {
+        grid.innerHTML = '<p>No data found for selected country.</p>';
         return;
       }
-      list.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <h3>${item.country || country}</h3>
-          <p><span class="label">Native:</span> ${item.native}</p>
-          <p><span class="label">Pronunciation:</span> ${item.pron}</p>
-          <p><span class="label">Meaning:</span> ${item.meaning}</p>
-        `;
-        grid.appendChild(card);
+      items.forEach(item => {
+        grid.appendChild(createCard(item));
       });
     }
 
-    select.addEventListener('change', () => {
-      renderVocab(select.value);
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      renderVocab('all');
-    });
+    select.addEventListener('change', e => renderVocab(e.target.value));
+    window.addEventListener('DOMContentLoaded', () => renderVocab('all'));
   </script>
 </body>
 </html>
