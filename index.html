@@ -24,39 +24,39 @@
     :root {
         /* Light theme colors */
         --bg-color: #f9fafb;
-        --header-bg: #3243f6;
-        --header-text: #ffffff;
-        --footer-bg: #2a32b9;
-        --footer-text: #dcdefa;
+        --header-bg: #3a47d5;
+        --header-text: #f0f2ff;
+        --footer-bg: #2f3bb2;
+        --footer-text: #d6dbff;
         --card-bg: #ffffff;
-        --card-shadow: rgba(50, 67, 246, 0.15);
+        --card-shadow: rgba(58, 71, 213, 0.2);
         --text-primary: #222222;
         --text-secondary: #555555;
-        --accent-blue: #3243f6;
-        --accent-light-blue: #b7c2fc;
-        --accent-hover-blue: #1b2cfa;
-        --border-color: #d6d9ea;
-        --ad-bg: linear-gradient(115deg, #edf0ff, #d6d9ea);
-        --ad-border: #9aa6ee;
+        --accent-blue: #3a47d5;
+        --accent-light-blue: #a3b0f9;
+        --accent-hover-blue: #2936b4;
+        --border-color: #c6cee6;
+        --ad-bg: linear-gradient(135deg, #e5e9ff, #d2daf7);
+        --ad-border: #8b96cd;
     }
     @media(prefers-color-scheme: dark) {
         :root {
             /* Dark theme colors */
             --bg-color: #121217;
-            --header-bg: #1b24b8;
-            --header-text: #d6d8ff;
-            --footer-bg: #141a7e;
-            --footer-text: #d6d8ff;
-            --card-bg: #1e2131;
-            --card-shadow: rgba(50, 67, 246, 0.35);
+            --header-bg: #1f2aa8;
+            --header-text: #d0d4ff;
+            --footer-bg: #161f81;
+            --footer-text: #cad1ff;
+            --card-bg: #1c1f38;
+            --card-shadow: rgba(58, 71, 213, 0.5);
             --text-primary: #e0e0e0;
             --text-secondary: #a1a1a1;
-            --accent-blue: #778cff;
-            --accent-light-blue: #5a69db;
-            --accent-hover-blue: #4957d7;
-            --border-color: #3f4483;
-            --ad-bg: linear-gradient(115deg, #2f3577, #414886);
-            --ad-border: #5966ca;
+            --accent-blue: #7a85ff;
+            --accent-light-blue: #6a75db;
+            --accent-hover-blue: #5a64c7;
+            --border-color: #4f5487;
+            --ad-bg: linear-gradient(135deg, #2a2f6d, #3a3f8a);
+            --ad-border: #5a66bb;
         }
     }
     /* Layout */
@@ -72,23 +72,24 @@
         overflow: hidden;
         user-select: none;
         box-shadow:
-          0 3px 10px rgb(50 67 246 / 0.15),
-          0 20px 40px rgb(50 67 246 / 0.1);
+          0 3px 12px rgb(58 71 213 / 0.3),
+          0 18px 42px rgb(58 71 213 / 0.15);
     }
     header {
         background-color: var(--header-bg);
         color: var(--header-text);
-        padding: 1.2rem 1.5rem;
+        padding: 1.3rem 1.8rem;
         font-weight: 900;
-        font-size: 2.1rem;
+        font-size: 2.2rem;
         text-align: center;
         letter-spacing: 0.12em;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
         user-select: none;
         text-transform: uppercase;
         font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         flex-shrink: 0;
-        border-bottom: 2px solid rgba(255,255,255,0.15);
+        border-bottom: 3px solid rgba(255,255,255,0.18);
+        box-sizing: border-box;
     }
     main.container {
         flex: 1 1 auto;
@@ -96,26 +97,26 @@
         color: var(--text-primary);
         display: flex;
         flex-direction: column;
-        padding: 18px 24px 16px 24px;
+        padding: 20px 26px 16px 26px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         user-select: text;
-        gap: 14px;
+        gap: 18px;
         border-radius: 0 0 12px 12px;
     }
     label {
         font-weight: 700;
-        font-size: 1.15rem;
+        font-size: 1.18rem;
         margin-bottom: 10px;
         color: var(--accent-hover-blue);
         user-select: none;
         display: block;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
     }
     select {
         width: 100%;
-        padding: 14px 18px;
-        font-size: 1.1rem;
+        padding: 14px 19px;
+        font-size: 1.12rem;
         border: 2.5px solid var(--accent-light-blue);
         border-radius: 14px;
         outline: none;
@@ -123,53 +124,53 @@
         color: var(--accent-hover-blue);
         font-weight: 700;
         appearance: none;
-        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path fill="%233243f6" d="M1 1l6 6 6-6"/></svg>') no-repeat right 20px center / 14px 8px;
+        background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8"><path fill="%233a47d5" d="M1 1l6 6 6-6"/></svg>') no-repeat right 22px center / 14px 8px;
         cursor: pointer;
-        box-shadow: inset 0 0 10px var(--accent-light-blue);
+        box-shadow: inset 0 0 12px var(--accent-light-blue);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
         user-select: none;
     }
     select:hover {
         border-color: var(--accent-blue);
-        box-shadow: inset 0 0 12px var(--accent-blue);
+        box-shadow: inset 0 0 14px var(--accent-blue);
     }
     select:focus {
         border-color: var(--accent-hover-blue);
-        box-shadow: 0 0 15px var(--accent-hover-blue);
+        box-shadow: 0 0 18px var(--accent-hover-blue);
     }
     .vocabulary-grid {
         margin-top: 0;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 20px;
     }
     .word-card {
         background: var(--card-bg);
         border-radius: 16px;
-        padding: 20px 24px 22px 24px;
-        box-shadow: 0 8px 30px var(--card-shadow);
+        padding: 22px 26px 25px 26px;
+        box-shadow: 0 10px 32px var(--card-shadow);
         text-align: left;
-        font-size: 1rem;
-        transition: transform 0.23s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.23s ease;
+        font-size: 1.02rem;
+        transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
         cursor: default;
         user-select: text;
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 9px;
         scroll-margin-top: 60px;
     }
     .word-card:hover,
     .word-card:focus-visible {
-        transform: translateY(-6px);
-        box-shadow: 0 18px 48px var(--accent-blue);
-        outline-offset: 3px;
+        transform: translateY(-7px);
+        box-shadow: 0 20px 56px var(--accent-blue);
+        outline-offset: 4px;
         outline: 3px solid var(--accent-hover-blue);
         z-index: 10;
     }
     .native-text {
         font-weight: 900;
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         color: var(--accent-hover-blue);
         white-space: pre-wrap;
         user-select: text;
@@ -185,15 +186,15 @@
     .bangla-meaning {
         font-weight: 600;
         color: var(--text-secondary);
-        font-size: 1.05rem;
+        font-size: 1.06rem;
         white-space: pre-wrap;
-        line-height: 1.35;
+        line-height: 1.38;
         user-select: text;
     }
     .english-meaning {
         font-weight: 500;
         color: #555555;
-        font-size: 0.95rem;
+        font-size: 0.94rem;
         font-style: italic;
         white-space: pre-wrap;
         user-select: text;
@@ -208,11 +209,11 @@
         color: white;
         font-weight: 700;
         font-size: 0.95rem;
-        border-radius: 14px;
-        padding: 10px 20px;
+        border-radius: 16px;
+        padding: 11px 24px;
         cursor: pointer;
         align-self: flex-start;
-        box-shadow: 0 5px 17px var(--accent-blue);
+        box-shadow: 0 5px 20px var(--accent-blue);
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
         display: block;
         user-select: none;
@@ -221,60 +222,48 @@
     .practice-btn:hover,
     .practice-btn:focus-visible {
         background-color: var(--accent-blue);
-        box-shadow: 0 8px 26px var(--accent-hover-blue);
+        box-shadow: 0 8px 28px var(--accent-hover-blue);
         outline: none;
     }
     #welcome-message {
         margin-top: 50px;
         font-weight: 700;
-        font-size: 1.3rem;
+        font-size: 1.28rem;
         color: var(--accent-hover-blue);
         text-align: center;
         user-select: none;
-        line-height: 1.4;
-        padding: 0 10px;
+        line-height: 1.48;
+        padding: 0 20px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #e7eaff, #d6dcff);
+        box-shadow: 0 8px 24px rgba(58, 71, 213, 0.15);
     }
     footer {
         background-color: var(--footer-bg);
         color: var(--footer-text);
         text-align: center;
-        padding: 1.15rem 1.25rem;
-        font-size: 0.95rem;
+        padding: 1.3rem 1.5rem;
+        font-size: 1rem;
         user-select: none;
-        box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.18);
-        letter-spacing: 0.06em;
+        box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.16);
+        letter-spacing: 0.065em;
         font-weight: 700;
         flex-shrink: 0;
-        border-top: 1.5px solid var(--border-color);
+        border-top: 2px solid var(--border-color);
         user-select: none;
+        font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    /* Scrollbar for container */
-    main.container::-webkit-scrollbar {
-        width: 9px;
-    }
-    main.container::-webkit-scrollbar-thumb {
-        background-color: var(--accent-light-blue);
-        border-radius: 12px;
-    }
-    main.container::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    /* Accessibility focus outline */
-    button:focus-visible, select:focus-visible {
-        outline: 4px solid var(--accent-hover-blue);
-        outline-offset: 4px;
-    }
-    /* Responsive minor improvements */
+    /* Responsive scaling */
     @media (max-width: 425px) {
         main.container {
-            padding: 16px 18px 0 18px;
-            gap: 10px;
+            padding: 18px 18px 0 18px;
+            gap: 14px;
         }
         .native-text {
-            font-size: 1.12rem;
+            font-size: 1.18rem;
         }
         .bangla-pronunciation {
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
         .bangla-meaning {
             font-size: 1rem;
@@ -283,9 +272,9 @@
             font-size: 0.9rem;
         }
         .practice-btn {
-            padding: 8px 16px;
+            padding: 9px 20px;
             font-size: 0.9rem;
-            border-radius: 12px;
+            border-radius: 14px;
         }
     }
 </style>
