@@ -1,35 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Learn European Languages</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EuroLingua - Conversations</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 30px 40px 40px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: #222;
+            margin-bottom: 15px;
+            letter-spacing: 0.06em;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #444;
+            letter-spacing: 0.03em;
+            font-size: 1.1rem;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 2.5px solid #90caf9;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        select:focus {
+            border-color: #42a5f5;
+            box-shadow: 0 0 8px #42a5f5aa;
+        }
+
+        .vocabulary-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px 18px;
+        }
+
+        .word-card {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 22px 20px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .native-text {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #0d47a1;
+            margin-bottom: 8px;
+            white-space: pre-wrap;
+            user-select: text;
+        }
+
+        .bangla-pronunciation {
+            font-style: italic;
+            font-weight: 600;
+            color: #1e88e5;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            user-select: text;
+            white-space: pre-wrap;
+        }
+
+        .bangla-meaning {
+            font-weight: 500;
+            color: #555;
+            font-size: 1rem;
+            user-select: text;
+            white-space: pre-wrap;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px 10px;
+                align-items: flex-start;
+            }
+            .container {
+                padding: 25px 20px 30px 20px;
+            }
+            .vocabulary-grid {
+                grid-template-columns: 1fr;
+                gap: 15px 12px;
+            }
+            .native-text {
+                font-size: 1.1rem;
+            }
+            .bangla-pronunciation,
+            .bangla-meaning {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>🌍 Learn European Languages</header>
+    <div class="container" role="main" aria-label="EuroLingua Language Learning Application - Conversations">
+        <h1>EuroLingua</h1>
+        <label for="language-select">Select a Country / Language:</label>
+        <select id="language-select" aria-describedby="languageSelectHelp" aria-label="Select language or country">
+            <option value="all" selected>All Countries</option>
+            <option value="russia">Russia</option>
+            <option value="germany">Germany</option>
+            <option value="france">France</option>
+        </select>
+        <div id="vocabulary-grid" class="vocabulary-grid" aria-live="polite" aria-atomic="true" aria-relevant="all">
+            <!-- Conversation cards will be inserted here -->
+        </div>
+    </div>
+    <script>
+        // Conversations data for Russia
+        const russiaConversations = [
+            {
+                native: 'Здравствуйте! Как дела?',
+                banglaPronunciation: 'Zdravstvuyte! Kak dela?',
+                banglaMeaning: 'হ্যালো! কেমন আছো?'
+            },
+            {
+                native: 'Меня зовут Анна. А тебя?',
+                banglaPronunciation: 'Menya zovut Anna. A tebya?',
+                banglaMeaning: 'আমার নাম আন্না। আর তোমার?'
+            },
+            {
+                native: 'Спасибо большое за помощь.',
+                banglaPronunciation: 'Spasibo bol’shoye za pomoshch.',
+                banglaMeaning: 'সাহায্যের জন্য অনেক ধন্যবাদ।'
+            },
+            {
+                native: 'Где находится ближайшая станция метро?',
+                banglaPronunciation: 'Gde nakhoditsya blizhayshaya stantsiya metro?',
+                banglaMeaning: 'নিকটতম মেট্রো স্টেশন কোথায়?'
+            }
+        ];
 
-  <main>
-    <label for="country-select">Choose a Country/Language:</label>
-    <select id="country-select">
-      <option value="all">All Countries</option>
-      <option value="Russia">Russia</option>
-      <option value="Germany">Germany</option>
-      <option value="France">France</option>
-      <option value="Italy">Italy</option>
-    </select>
-    <section class="vocab-grid" id="vocab-grid" aria-live="polite"></section>
-  </main>
+        // Conversations data for Germany
+        const germanyConversations = [
+            {
+                native: 'Guten Tag! Wie geht es dir?',
+                banglaPronunciation: 'গুটেন তাক! ভি গেইট এস দির?',
+                banglaMeaning: 'হ্যালো! তুমি কেমন আছো?'
+            },
+            {
+                native: 'Ich heiße Lukas. Und du?',
+                banglaPronunciation: 'ইহ হাইসে লুকাস। উন্ড দু?',
+                banglaMeaning: 'আমার নাম লুকাস। আর তোমার?'
+            },
+            {
+                native: 'Vielen Dank für deine Hilfe.',
+                banglaPronunciation: 'ফিলেন ডান্ক ফুর দাইনেহ হিলফে।',
+                banglaMeaning: 'তোমার সাহায্যের জন্য ধন্যবাদ।'
+            },
+            {
+                native: 'Wo ist der nächste Bahnhof?',
+                banglaPronunciation: 'ভো ইস্ট দার নেইচ্‌টেস বানহফ?',
+                banglaMeaning: 'নিকটতম ট্রেন স্টেশন কোথায়?'
+            }
+        ];
 
-  <footer>© 2025 EuroLingua | Practice all European Languages</footer>
+        // Conversations data for France
+        const franceConversations = [
+            {
+                native: 'Bonjour! Comment ça va?',
+                banglaPronunciation: 'বঁজুর! কোম্মঁ সা ভা?',
+                banglaMeaning: 'হ্যালো! তোমার কেমন চলছে?'
+            },
+            {
+                native: 'Je m’appelle Claire. Et toi?',
+                banglaPronunciation: 'জ্য মা-পেল ক্লের। এ তুৱা?',
+                banglaMeaning: 'আমার নাম ক্লেয়ার। আর তোমার?'
+            },
+            {
+                native: 'Merci beaucoup pour votre aide.',
+                banglaPronunciation: 'মের্সি বোকু পুর ভোত্র অ্যেড।',
+                banglaMeaning: 'তোমার সাহায্যের জন্য অনেক ধন্যবাদ।'
+            },
+            {
+                native: 'Où est la station de métro la plus proche?',
+                banglaPronunciation: 'উ এ লা স্ট্যাসিওঁ দে মেত্রো লা প্ল্যু প্রক?',
+                banglaMeaning: 'নিকটতম মেট্রো স্টেশন কোথায়?'
+            }
+        ];
 
-  <!-- Load all country data -->
-  <script src="data/russia.js"></script>
-  <script src="data/germany.js"></script>
-  <script src="data/france.js"></script>
-  <script src="data/italy.js"></script>
+        // Map to access conversation by language key
+        const conversationData = {
+            russia: russiaConversations,
+            germany: germanyConversations,
+            france: franceConversations
+        };
 
-  <!-- Load main logic -->
-  <script src="main.js"></script>
+        const languageSelect = document.getElementById('language-select');
+        const vocabularyGrid = document.getElementById('vocabulary-grid');
+
+        function createCard(convo) {
+            const card = document.createElement('div');
+            card.className = 'word-card';
+            card.tabIndex = 0;
+            card.innerHTML = `
+                <div class="native-text" title="Native Text">${convo.native}</div>
+                <div class="bangla-pronunciation" title="Bangla Pronunciation">${convo.banglaPronunciation}</div>
+                <div class="bangla-meaning" title="Bangla Meaning">${convo.banglaMeaning}</div>
+            `;
+            return card;
+        }
+
+        function displayVocabulary(conversations) {
+            vocabularyGrid.innerHTML = '';
+            if (!conversations.length) {
+                vocabularyGrid.innerHTML = \`<p style="text-align:center; color:#777; font-style:italic;">No conversations found</p>\`;
+                return;
+            }
+            conversations.forEach(convo => {
+                vocabularyGrid.appendChild(createCard(convo));
+            });
+        }
+
+        function loadVocabulary() {
+            const selected = languageSelect.value;
+            if (selected === 'all') {
+                // Combine all conversations from all languages
+                const allConvos = [
+                    ...russiaConversations,
+                    ...germanyConversations,
+                    ...franceConversations
+                ];
+                displayVocabulary(allConvos);
+            } else {
+                displayVocabulary(conversationData[selected] || []);
+            }
+        }
+
+        // Initialize with "All Countries" conversations
+        loadVocabulary();
+
+        languageSelect.addEventListener('change', () => {
+            loadVocabulary();
+        });
+    </script>
 </body>
 </html>
+
