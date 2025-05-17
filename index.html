@@ -13,7 +13,7 @@
       margin: 0; padding: 0;
       background-color: #121212;
       color: #e0e0e0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -60,7 +60,7 @@
     .table-wrapper {
       margin-top: 1.5rem;
       overflow-x: auto;
-      max-height: 320px;
+      max-height: 420px;
       border-radius: 8px;
       border: 1px solid #333;
       background-color: #181818;
@@ -84,14 +84,9 @@
     }
     tbody tr {
       border-bottom: 1px solid #333;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
     }
     tbody tr:nth-child(odd) {
       background-color: #1f1f1f;
-    }
-    tbody tr:hover {
-      background-color: #2e4e26;
     }
     td {
       padding: 0.5rem 1rem;
@@ -99,80 +94,6 @@
       font-size: 0.95rem;
       border: 1px solid #2a2a2a;
       white-space: nowrap;
-    }
-    /* Practice Box */
-    .practice-box {
-      margin-top: 2rem;
-      padding: 1.25rem 1rem;
-      background-color: #1e1e1e;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.04);
-    }
-    .practice-box h2 {
-      margin-top: 0;
-      font-weight: 700;
-      color: #81c784;
-      user-select: none;
-    }
-    .practice-instruction {
-      margin-bottom: 0.8rem;
-      font-size: 0.94rem;
-      color: #b5ddb0;
-    }
-    .practice-select {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.5rem 0.75rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 2px solid #333;
-      background-color: #121212;
-      color: #e0e0e0;
-      transition: border-color 0.3s ease;
-    }
-    .practice-select:focus {
-      border-color: #4caf50;
-      outline: none;
-    }
-    .practice-input {
-      width: 100%;
-      max-width: 100%;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 2px solid #333;
-      background-color: #121212;
-      color: #e0e0e0;
-      transition: border-color 0.3s ease;
-      margin-bottom: 1rem;
-      resize: vertical;
-      min-height: 50px;
-      font-family: inherit;
-    }
-    .practice-input:focus {
-      border-color: #4caf50;
-      outline: none;
-    }
-    .practice-button {
-      background-color: #4caf50;
-      color: #fff;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .practice-button:hover {
-      background-color: #388e3c;
-    }
-    .practice-result {
-      margin-top: 1rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      min-height: 1.3rem;
-      user-select: none;
     }
     /* Advertisement Section */
     .ad-section {
@@ -265,17 +186,6 @@
       <!-- Vocabulary table injected here -->
     </section>
 
-    <section class="practice-box" aria-label="অনুশীলন বাক্স">
-      <h2>অনুশীলন করুন</h2>
-      <p class="practice-instruction">নীচের বাক্য থেকে একটি নির্বাচন করুন এবং সেটার বাংলা অর্থ লিখে <strong>পরীক্ষা করুন</strong>।</p>
-      <select id="practice-select" class="practice-select" aria-label="অনুশীলনের জন্য বাক্য নির্বাচন">
-        <option value="" disabled selected>একটি বাক্য নির্বাচন করুন</option>
-      </select>
-      <textarea id="practice-input" class="practice-input" placeholder="আপনার বাংলা অনুবাদ লিখুন এখানে..." aria-label="বাংলা অনুবাদ লিখুন"></textarea>
-      <button id="check-btn" class="practice-button" aria-label="অনুবাদের উত্তর পরীক্ষা করুন">উত্তর পরীক্ষা করুন</button>
-      <div id="practice-result" class="practice-result" aria-live="polite"></div>
-    </section>
-
     <section class="ad-section" aria-label="বিজ্ঞাপন সেকশন">
       বিজ্ঞাপন স্পেস - ভবিষ্যতে বিজ্ঞাপন যুক্ত করা হবে
     </section>
@@ -286,45 +196,304 @@
   </div>
 
   <script>
-    /* 
-      ডাটা স্ট্রাকচার:
-      প্রতিটি দেশের জন্য একটি অ্যারে থাকবে,
-      যেখানে প্রতিটি আইটেমে থাকবে:
-      - native: দেশীয় বাক্য বা শব্দ
-      - banglaPronunciation: বাংলায় উচ্চারণ
-      - banglaMeaning: বাংলায় অর্থ
-      - englishMeaning: ইংরেজি অনুবাদ (প্রদর্শনে দেখাবে)
+    /*
+      Data structure:
+      প্রতিটি দেশের জন্য একটি অ্যারে যেখানে প্রতিটি আইটেমে থাকবে:
+        - native: দেশীয় বাক্য বা শব্দ
+        - banglaPronunciation: বাংলায় উচ্চারণ
+        - banglaMeaning: বাংলায় অর্থ
+        - englishMeaning: ইংরেজি অনুবাদ (প্রদর্শনে দেখাবে)
     */
 
     const data = {
       Russia: [
-        { native: "Ты как?", banglaPronunciation: "তুি কাক?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
-        { native: "Я в порядке.", banglaPronunciation: "য়া ভ পারয়াত কে.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ты как?", banglaPronunciation: "তুমি কাক?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Я в порядке.", banglaPronunciation: "য়া ফ পার্যাদকে.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
         { native: "Где ресторан?", banglaPronunciation: "গদে রেস্টোরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
-        { native: "Хочу идти в больницу.", banglaPronunciation: "খাচু ইদতি ফ বোলোনিতসু.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
-        { native: "Я иду домой.", banglaPronunciation: "য়া ইদু দামোয়.", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Хочу идти в больницу.", banglaPronunciation: "খাচু ইদতি ফ বোলনিতসু.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Я иду домой.", banglaPronunciation: "য়া ইদু দামোয়।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
         { native: "Как пройти?", banglaPronunciation: "কাক প্রোতি?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
-        { native: "Куда идти один день?", banglaPronunciation: "কুদা ইদতি একদিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+        { native: "Куда идти один день?", banglaPronunciation: "কুদা ইদতি আদিন দিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
       ],
       Austria: [
-        { native: "Wie geht's dir?", banglaPronunciation: "ভি গেইটস দির?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
-        { native: "Mir geht es gut.", banglaPronunciation: "মির গেইট এস গুত.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
-        { native: "Wo ist das Restaurant?", banglaPronunciation: "ভো ইস্ট দাস রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
-        { native: "Ich möchte ins Krankenhaus gehen.", banglaPronunciation: "ইচ মিঁখতে ইনস ক্রাংকেনহাউস গেহেন.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
-        { native: "Ich gehe nach Hause.", banglaPronunciation: "ইচ গেহে নাখ হাউসে.", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
-        { native: "Wie komme ich dahin?", banglaPronunciation: "ভি কোম্মে ইচ দহিন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
-        { native: "Wohin gehe ich an einem Tag?", banglaPronunciation: "ভোহিন গেহে ইচ আন আইনেম তাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+        { native: "Wie geht's dir?", banglaPronunciation: "ভি গেইটস ডির?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mir geht es gut.", banglaPronunciation: "মির গেইট এস গুত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Wo ist das Restaurant?", banglaPronunciation: "ভো ইস্ট দাস রেস্টুরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Ich möchte ins Krankenhaus gehen.", banglaPronunciation: "ইচ মিখটে ইনস ক্রাংকেনহাউস গেহেন।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ich gehe nach Hause.", banglaPronunciation: "ইচ গেহে নাখ হাউসে।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Wie komme ich dahin?", banglaPronunciation: "ভি কোম্মে ইচ দাহিন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Wohin gehe ich an einem Tag?", banglaPronunciation: "ভোহিন গেহে ইচ আনাইনেম তাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
       ],
       Belgium: [
         { native: "Hoe gaat het met jou?", banglaPronunciation: "হু ঘাত হেট মেট জু?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
-        { native: "Het gaat goed.", banglaPronunciation: "হেট ঘাত গুদের.", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
-        { native: "Waar is het restaurant?", banglaPronunciation: "ওয়ার ইস হেট রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
-        { native: "Ik wil naar het ziekenhuis gaan.", banglaPronunciation: "ইক উইল নার হেট সিজোখইউস গান.", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
-        { native: "Ik ga naar huis.", banglaPronunciation: "ইক গা নার হুইস.", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Het gaat goed.", banglaPronunciation: "হেট ঘাত গুত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Waar is het restaurant?", banglaPronunciation: "ওয়ার ইস হেট রেস্টুরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Ik wil naar het ziekenhuis gaan.", banglaPronunciation: "ইক ویل নার হেট সিজোখইউস গান।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ik ga naar huis.", banglaPronunciation: "ইক গা নার হুইস।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
         { native: "Hoe kom ik daar?", banglaPronunciation: "হু কম ইক দার?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
-        { native: "Waar ga ik één dag heen?", banglaPronunciation: "ওয়ার গা ইক এঁন দাগ হীন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+        { native: "Waar ga ik één dag heen?", banglaPronunciation: "ওয়ার গা ইক এঁন দাগ হিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
       ],
-      // More countries can be added here with same data structure and at least 7 phrases each
+      Bulgaria: [
+        { native: "Къде е ресторантът?", banglaPronunciation: "কদে সে রেস্টোরাঁত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Как си?", banglaPronunciation: "কাক সি?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Аз съм добре.", banglaPronunciation: "আজ সোম ডোবরে।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Искам да отида в болницата.", banglaPronunciation: "ইস্কাম দা ওতিদা ফ বোলনিতসাতা।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Отивам вкъщи.", banglaPronunciation: "ওতিভাম ভকাশি।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Как да стигна?", banglaPronunciation: "কাক দা স্টিগনা?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Къде да отида за един ден?", banglaPronunciation: "কদে দা ওতিদা জা এদিন দেন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Croatia: [
+        { native: "Gdje je restoran?", banglaPronunciation: "গদ্যে ই রেস্টোরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Kako si?", banglaPronunciation: "কাকো সি?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Dobro sam.", banglaPronunciation: "দোবরো সাম।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Želim ići u bolnicu.", banglaPronunciation: "জেলিম ইচি উ বোলনিতসু।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Idem kući.", banglaPronunciation: "ইদেম কুচি।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Kako da stignem?", banglaPronunciation: "কাকো দা স্টিগনেম?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Gdje da idem jedan dan?", banglaPronunciation: "গদ্যে দা ইদেম জেদান দান?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Cyprus: [
+        { native: "Πού είναι το εστιατόριο;", banglaPronunciation: "পু ঈনে তো এসতিয়াতোরিও?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Πώς είσαι;", banglaPronunciation: "পোস ঈসে?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Είμαι καλά.", banglaPronunciation: "ইমে কলা।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Θέλω να πάω στο νοσοκομείο.", banglaPronunciation: "থেলো না পাও স্টো নোসোকোমেও।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Πηγαίνω σπίτι.", banglaPronunciation: "পিগাই্নো স্পিতি।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Πώς θα πάω;", banglaPronunciation: "পোস থা পাও?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Πού να πάω για μια μέρα;", banglaPronunciation: "পু না পাও য়া মিয়া মেরা?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Czechia: [
+        { native: "Kde je restaurace?", banglaPronunciation: "কদে ই রেস্টাউরাসে?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Jak se máš?", banglaPronunciation: "ইয়াক সে মাশ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mám se dobře.", banglaPronunciation: "মাম সে দুরব্লে।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Chci jít do nemocnice.", banglaPronunciation: "খচি ইত দো নেমোচনিসে।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Jdu domů.", banglaPronunciation: "ইদু দোমু।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Jak se dostanu?", banglaPronunciation: "ইয়াক সে দোস্তানু?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Kam jít na jeden den?", banglaPronunciation: "কম ইত না ইয়েডেন দেন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Denmark: [
+        { native: "Hvor er restauranten?", banglaPronunciation: "ভোর এর রেস্টুরানতেন?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Hvordan har du det?", banglaPronunciation: "ভোরদান হার দূ দে?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Jeg har det godt.", banglaPronunciation: "ইয়াই হার দে গোত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Jeg vil gerne til hospitalet.", banglaPronunciation: "ইয়াই ভিল เกอร์নে তিল হাসপাতালেত।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Jeg går hjem.", banglaPronunciation: "ইয়াই গর ইয়েম।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hvordan kommer jeg derhen?", banglaPronunciation: "ভোরদান কোমার ইয়াই ডেরহেন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Hvor skal jeg tage hen en dag?", banglaPronunciation: "ভোর স্কাল ইয়াই তাগে হেন এন দাঁগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Estonia: [
+        { native: "Kus on restoran?", banglaPronunciation: "কুস অন রেস্টোরান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Kuidas sul läheb?", banglaPronunciation: "কুইদাস সুল লেহেব?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mul läheb hästi.", banglaPronunciation: "মুল লেহেব হাস্তি।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ma tahan minna haiglasse.", banglaPronunciation: "মা তাহান মিননা হাইগলাসসে।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ma lähen koju.", banglaPronunciation: "মা লেহেন কোযু।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Kuidas ma lähen sinna?", banglaPronunciation: "কুইদাস মা লেহেন সিননা?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Kuhu ma lähen üheks päevaks?", banglaPronunciation: "কুহু মা লেহেন উহেক্স পেউভাকস?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Finland: [
+        { native: "Missä on ravintola?", banglaPronunciation: "মিসসা অন রাভিনতোলা?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Mitä kuuluu?", banglaPronunciation: "মিতা কুলু?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Minulla on hyvä.", banglaPronunciation: "মিনুল্লা অন হুফা।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Haluan mennä sairaalaan.", banglaPronunciation: "হালুয়ান মেন্না সাইরালান।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Menen kotiin.", banglaPronunciation: "মেনেন কোতিন।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Miten pääsen sinne?", banglaPronunciation: "মিতেন পাসেন সিননে?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Minne menen yhden päivän?", banglaPronunciation: "মিন্নে মেনেন ইউডেন পিয়িদান?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      France: [
+        { native: "Où est le restaurant?", banglaPronunciation: "উ এ লে রেস্টোরঁ?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Comment ça va?", banglaPronunciation: "কোমঁ সা বা?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Je vais bien.", banglaPronunciation: "ঝে ভয়ে বিয়ঁ।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Je veux aller à l'hôpital.", banglaPronunciation: "ঝে ভ্যু অলে আহোসপিতাল।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Je rentre à la maison.", banglaPronunciation: "ঝে রঁত্রে আ লা মেইজঁ।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Comment y aller?", banglaPronunciation: "কোমঁ ই অলে?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Où aller pour une journée?", banglaPronunciation: "উ অলে পুর ঊন জুরনে?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Germany: [
+        { native: "Wo ist das Restaurant?", banglaPronunciation: "ভো ইস্ট দাস রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Wie geht's dir?", banglaPronunciation: "ভি গেইটস দির?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mir geht es gut.", banglaPronunciation: "মির গেইট এস গুত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ich möchte ins Krankenhaus gehen.", banglaPronunciation: "ইচ মিখটে ইনস ক্রাংকেনহাউস গেহেন।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ich gehe nach Hause.", banglaPronunciation: "ইচ গেহে নাখ হাউসে।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Wie komme ich dahin?", banglaPronunciation: "ভি কোম্মে ইচ দাহিন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Wohin gehe ich an einem Tag?", banglaPronunciation: "ভোহিন গেহে ইচ আনাইনেম তাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Greece: [
+        { native: "Πού είναι το εστιατόριο;", banglaPronunciation: "পু ঈনে তো এসতিয়াতোরিও?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Πώς είσαι;", banglaPronunciation: "পোস ঈসে?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Είμαι καλά.", banglaPronunciation: "ইমে কলা।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Θέλω να πάω στο νοσοκομείο.", banglaPronunciation: "থেলো না পাও স্টো নোসোকোমেও।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Πηγαίνω σπίτι.", banglaPronunciation: "পিগাই্নো স্পিতি।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Πώς θα πάω;", banglaPronunciation: "পোস থা পাও?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Πού να πάω για μια μέρα;", banglaPronunciation: "পু না পাও য়া মিয়া মেরা?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Hungary: [
+        { native: "Hol van az étterem?", banglaPronunciation: "হল ভান আজ এত্তেরেম?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Hogy vagy?", banglaPronunciation: "হজ ভাগ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Jól vagyok.", banglaPronunciation: "যোল ভাজোক।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Kórházba akarok menni.", banglaPronunciation: "কোরহাজবা আকরোক মেননি।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Haza megyek.", banglaPronunciation: "হাজা মেগেইক।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hogyan jutok oda?", banglaPronunciation: "হজিয়ান যুতক ওদা?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Hová menjek egy napra?", banglaPronunciation: "হোভা মেনজেক এজ নাপরা?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Iceland: [
+        { native: "Hvar er veitingastaðurinn?", banglaPronunciation: "ভার এর ভাইতিংগাসতাউরিন?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Hvernig hefur þú það?", banglaPronunciation: "ভেরনিগ হেফর থু তাথ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mér líður vel.", banglaPronunciation: "মেয়ার লিদুর ভেল।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ég vil fara á spítalann.", banglaPronunciation: "এই ভিল ফারা আ স্পিতালান।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ég er að fara heim.", banglaPronunciation: "এই এর আ ফারা হেইম।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hvernig kemst ég þangað?", banglaPronunciation: "ভেরনিগ কেমস্ট এই থানগাদ?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Hvert á ég að fara einn dag?", banglaPronunciation: "ভের্ত আ এই আ ফারা অইন ডাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Ireland: [
+        { native: "Cá bhfuil an bialann?", banglaPronunciation: "কা ভুইল আন বিলান?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Conas atá tú?", banglaPronunciation: "কোনাস আতা তু?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Tá mé go maith.", banglaPronunciation: "টা মে গো ময়থ।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ba mhaith liom dul go dtí an t-ospidéal.", banglaPronunciation: "বা ভুই লিম ডল গো দ্তি অন ত স্পিদেইল।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Táim ag dul abhaile.", banglaPronunciation: "টাইম আগ ডল আভাইল।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Conas a fháilim ann?", banglaPronunciation: "কোনাস আ ফাইলিম আন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Cá háit a théim in aon lá?", banglaPronunciation: "কা হাইট আ হেইম ইন অইন লা?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Italy: [
+        { native: "Dove è il ristorante?", banglaPronunciation: "দোভে এ ইল রিস্তোরান্তে?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Come stai?", banglaPronunciation: "কোমে স্টাই?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Sto bene.", banglaPronunciation: "স্টো বেনে।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Voglio andare in ospedale.", banglaPronunciation: "ভোগ্লিও আন্দারে ইন অসপেদালে।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Sto andando a casa.", banglaPronunciation: "স্টো আন্দান্দো আ কাসা।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Come ci arrivo?", banglaPronunciation: "কোমে চি আররিভো?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Dove posso andare per un giorno?", banglaPronunciation: "দোভে পোসো আন্দারে পের উন জর্নো?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Latvia: [
+        { native: "Kur ir restorāns?", banglaPronunciation: "কুর ইর রেষ্টোরান্স?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Kā tev klājas?", banglaPronunciation: "কা তেভ ক্লায়াস?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Man klājas labi.", banglaPronunciation: "মান কলায়াস লাবি।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Es gribu doties uz slimnīcu.", banglaPronunciation: "এস গ্রিবু দোটিস উজ স্লিম্নীচু।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Es eju mājās.", banglaPronunciation: "এস ইউ মাজাস।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Kā es varu nokļūt tur?", banglaPronunciation: "কা এস ভারু নকলুত তুর?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Kur es varu doties vienai dienai?", banglaPronunciation: "কুর এস ভারু দোটিস ভিয়েনাই দেনাই?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Lithuania: [
+        { native: "Kur yra restoranas?", banglaPronunciation: "কুর ইরা রესტোরানাস?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Kaip sekasi?", banglaPronunciation: "কাশ শেকাসি?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Man sekasi gerai.", banglaPronunciation: "মান শেকাসি গেরাই।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Noriu eiti į ligoninę.", banglaPronunciation: "নরিু ঐতি ই লিগোনিনে।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Einančius namo.", banglaPronunciation: "াইনানচিউস নামো।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Kaip patekti ten?", banglaPronunciation: "কাশ পাটেকতি তেন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Kur nueiti vienai dienai?", banglaPronunciation: "কুর নুইতি ভিয়েনাই দেনাই?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Luxembourg: [
+        { native: "Wou ass de Restaurant?", banglaPronunciation: "ভু আস দে রেষ্টোরা?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Wéi geet et dir?", banglaPronunciation: "ভেই গেট এট দির?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Ech fille mech gutt.", banglaPronunciation: "এচ ফিল মেখ গুত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ech wëll an d'Klinik goen.", banglaPronunciation: "এচ ভেল আন দ ক্লিনিক গোয়েন।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ech ginn heem.", banglaPronunciation: "এচ গিন হিম।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Wéi kommen ech dohinner?", banglaPronunciation: "ভেই কোমমেন এচ দোহিন্নার?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Wou soll ech fir ee Dag goen?", banglaPronunciation: "ভু সল এচ ফীর এ দাগ গোয়েন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Malta: [
+        { native: "Fejn hu r-ristorant?", banglaPronunciation: "ফেইন হু আর-রিস্তোরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Kif inti?", banglaPronunciation: "কিফ ইন্তি?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Jiena tajjeb.", banglaPronunciation: "জিয়েনা টাইযেব।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Nixtieq immur l-isptar.", banglaPronunciation: "নিক্সতি এমনুরু ল-স্পতার।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Qed immur d-dar.", banglaPronunciation: "কেদ এমুরু দ-দার।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Kif nista' nasal?", banglaPronunciation: "কিফ নিসতানাসাল?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Fejn immur għal ġurnata?", banglaPronunciation: "ফেইন এমুরু ঘাল জুরনাতা?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Netherlands: [
+        { native: "Waar is het restaurant?", banglaPronunciation: "ওয়ার ইস হেট রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Hoe gaat het met je?", banglaPronunciation: "হু ঘাত হেট মেট জে?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Het gaat goed.", banglaPronunciation: "হেট ঘাত গুত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ik wil naar het ziekenhuis gaan.", banglaPronunciation: "ইক ভিল নার হেট জিযকানহুইস গান।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ik ga naar huis.", banglaPronunciation: "ইক গা নার হুইস।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hoe kom ik daar?", banglaPronunciation: "হু কম ইক দার?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Waar ga ik één dag heen?", banglaPronunciation: "ওয়ার গা ইক এঁন দাগ হিন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Norway: [
+        { native: "Hvor er restauranten?", banglaPronunciation: "ভোর এর রেস্টুরানতেন?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Hvordan har du det?", banglaPronunciation: "ভোরদান হার দূ দে?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Jeg har det bra.", banglaPronunciation: "ইয়াই হার দে ব্রা।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Jeg vil gå til sykehuset.", banglaPronunciation: "ইয়াই ভিল গো তিল সাইকেহুসেত।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Jeg drar hjem.", banglaPronunciation: "ইয়াই দ্রার হেম।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hvordan kommer jeg dit?", banglaPronunciation: "ভোরদান কোমের ইয়াই দিত?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Hvor skal jeg dra en dag?", banglaPronunciation: "ভোর স্কাল ইয়াই দ্রা এন দাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Poland: [
+        { native: "Gdzie jest restauracja?", banglaPronunciation: "গদয়ে জেস্ট রেস্টাউরাছা?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Jak się masz?", banglaPronunciation: "ইয়াক শিয়েং মাশ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Dobrze się czuję.", banglaPronunciation: "দুব্জে শিয়েং চুজে।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Chcę iść do szpitala.", banglaPronunciation: "খচেং ইশ্চ দো স্জপিতালা।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Idę do domu.", banglaPronunciation: "ইদেঁ দো দোমু।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Jak tam dotrzeć?", banglaPronunciation: "ইয়াক তাম দোত্রেজ?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Gdzie pójść na jeden dzień?", banglaPronunciation: "গদ্যে পুজ্শ নাগে জেদেন জিয়েং?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Portugal: [
+        { native: "Onde fica o restaurante?", banglaPronunciation: "ওন্ডে ফিকা ও রেস্টৌরান্তে?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Como estás?", banglaPronunciation: "কমু এস্তাস?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Estou bem.", banglaPronunciation: "এস্তউ বেম।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Quero ir ao hospital.", banglaPronunciation: "কেড়ু ইর আউ অসপিতাল।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Estou indo para casa.", banglaPronunciation: "এস্তউ ইন্দো পারা কাসা।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Como chego lá?", banglaPronunciation: "কমু শেগু লা?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Onde vou passar um dia?", banglaPronunciation: "ওন্ডে ভৌ পাসার উম দিয়া?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Romania: [
+        { native: "Unde este restaurantul?", banglaPronunciation: "উন্দে এস্তে রেস্টুরান্তুল?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Ce faci?", banglaPronunciation: "চে ফাচ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Sunt bine.", banglaPronunciation: "সুঁট বিয়ে।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Vreau să merg la spital.", banglaPronunciation: "ভ্রেও সে মের্গ লা স্পিতাল।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Merg acasă.", banglaPronunciation: "মের্গ আকাসা।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Cum ajung acolo?", banglaPronunciation: "কুম আজুং আকলো?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Unde să merg pentru o zi?", banglaPronunciation: "উন্দে সে মের্গ পেনত্রু ও জি?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Slovakia: [
+        { native: "Kde je reštaurácia?", banglaPronunciation: "কদে ই রেশতারাছিয়া?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Ako sa máš?", banglaPronunciation: "আকো সা মাশ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mám sa dobre.", banglaPronunciation: "মাম সা দুব্রে।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Chcem ísť do nemocnice.", banglaPronunciation: "খচেম ইস্ট দো নেমোচনিসে।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Idem domov.", banglaPronunciation: "ইদেম ডোমোভ।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Ako sa tam dostanem?", banglaPronunciation: "আকো সা তাম দস্তানেম?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Kam ísť na jeden deň?", banglaPronunciation: "কাম ইস্ট না ইয়েদেন দেন?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Slovenia: [
+        { native: "Kje je restavracija?", banglaPronunciation: "কয়ে ই রেস্টাব্রাচিয়া?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Kako si?", banglaPronunciation: "কাকো সি?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Dobro sem.", banglaPronunciation: "দোব্রো সেম।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Rad bi šel v bolnišnico.", banglaPronunciation: "রাদ বি শেল ভ বোলনিশনিও।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Grem domov.", banglaPronunciation: "গ্রেম ডোমোভ।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Kako pridem tja?", banglaPronunciation: "কাকো প্রিদেম তজা?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Kam naj grem en dan?", banglaPronunciation: "কাম নায় গ্রেম এন দান?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Spain: [
+        { native: "¿Dónde está el restaurante?", banglaPronunciation: "দোন্ডে এসতা এল রেস্টুরান্তে?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "¿Cómo estás?", banglaPronunciation: "কোমো এসতাস?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Estoy bien.", banglaPronunciation: "এস্তয় বিয়েন।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Quiero ir al hospital.", banglaPronunciation: "কিয়েরো ইর আল অসপিতাল।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Voy a casa.", banglaPronunciation: "ভয় আ কাসা।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "¿Cómo llego?", banglaPronunciation: "কোমো ইয়েগো?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "¿Dónde puedo ir un día?", banglaPronunciation: "দোন্ডে পুএদো ইর উন দিয়া?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Sweden: [
+        { native: "Var är restaurangen?", banglaPronunciation: "ভার এর রেস্তারাংগেন?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Hur mår du?", banglaPronunciation: "হুর মার দূ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Jag mår bra.", banglaPronunciation: "ইয়াগ মার ব্রা।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Jag vill gå till sjukhuset.", banglaPronunciation: "ইয়াগ ভিল গো তিল শুখুসেত।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Jag går hem.", banglaPronunciation: "ইয়াগ গর হেম।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Hur kommer jag dit?", banglaPronunciation: "হুর কোমের ইয়াগ দিত?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Var ska jag gå en dag?", banglaPronunciation: "ভার স্কা ইয়াগ গো এন দাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      Switzerland: [
+        { native: "Wo ist das Restaurant?", banglaPronunciation: "ভো ইস্ট দাস রেস্টুরান্ত?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "Wie geht's dir?", banglaPronunciation: "ভি গেইটস দির?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "Mir geht es gut.", banglaPronunciation: "মির গেইট এস গুত।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "Ich möchte ins Krankenhaus gehen.", banglaPronunciation: "ইচ মিখটে ইনস ক্রাংকেনহাউস গেহেন।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "Ich gehe nach Hause.", banglaPronunciation: "ইচ গেহে নাখ হাউসে।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "Wie komme ich dahin?", banglaPronunciation: "ভি কোম্মে ইচ দাহিন?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Wohin gehe ich an einem Tag?", banglaPronunciation: "ভোহিন গেহে ইচ আনাইনেম তাগ?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
+      "United Kingdom": [
+        { native: "Where is the restaurant?", banglaPronunciation: "হোয়ার ইজ দ্য রেস্টুরেন্ট?", banglaMeaning: "রেস্টুরেন্ট কোথায়?", englishMeaning: "Where is the restaurant?" },
+        { native: "How are you?", banglaPronunciation: "হাউ আর ইউ?", banglaMeaning: "তুমি কেমন আছো?", englishMeaning: "How are you?" },
+        { native: "I am fine.", banglaPronunciation: "আই অ্যাম ফাইন।", banglaMeaning: "আমি ভালো আছি।", englishMeaning: "I am fine." },
+        { native: "I want to go to the hospital.", banglaPronunciation: "আই ওয়ান্ট টু গো টু দ্য হসপিটাল।", banglaMeaning: "হাসপাতালে যেতে চাই।", englishMeaning: "I want to go to the hospital." },
+        { native: "I am going home.", banglaPronunciation: "আই অ্যাম গোয়িং হোম।", banglaMeaning: "আমি বাসায় যাচ্ছি।", englishMeaning: "I am going home." },
+        { native: "How do I get there?", banglaPronunciation: "হাউ ডু আই গেট দ্যার?", banglaMeaning: "কিভাবে যাব?", englishMeaning: "How do I get there?" },
+        { native: "Where to go for one day?", banglaPronunciation: "হোয়ার টু গো ফর ওয়ান ডে?", banglaMeaning: "একদিন কোথায় যাব?", englishMeaning: "Where to go for one day?" }
+      ],
     };
 
     // List of all countries for dropdown ordering consistency
@@ -335,21 +504,12 @@
       "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "United Kingdom"
     ];
 
-    // Sentence list for practice quiz will be populated dynamically based on current displayed data
-
     const countrySelect = document.getElementById('country-select');
     const tableWrapper = document.getElementById('table-wrapper');
-    const practiceSelect = document.getElementById('practice-select');
-    const practiceInput = document.getElementById('practice-input');
-    const checkBtn = document.getElementById('check-btn');
-    const practiceResult = document.getElementById('practice-result');
 
-    // Displays vocabulary table for selected country or all countries
+    // Display vocabulary table for selected country or all countries
     function displayTable(selectedCountry) {
       tableWrapper.innerHTML = '';
-      practiceSelect.innerHTML = '<option value="" disabled selected>একটি বাক্য নির্বাচন করুন</option>';
-      practiceInput.value = '';
-      practiceResult.textContent = '';
 
       let rows = [];
       // Compose combined dataset or single country dataset
@@ -391,12 +551,8 @@
 
       // Body rows
       const tbody = document.createElement('tbody');
-      rows.forEach((item, idx) => {
+      rows.forEach(item => {
         const tr = document.createElement('tr');
-        tr.tabIndex = 0;
-        tr.setAttribute('role', 'button');
-        tr.style.cursor = 'pointer';
-        tr.title = 'অনুশীলনের জন্য এই বাক্যটি বাছাই করুন';
         tr.innerHTML = `
           <td>${item.country}</td>
           <td>${item.native}</td>
@@ -404,78 +560,16 @@
           <td>${item.banglaMeaning}</td>
           <td>${item.englishMeaning}</td>
         `;
-        // On clicking a row, select that sentence in practice box
-        tr.addEventListener('click', () => {
-          selectPracticeSentence(item.native, item.banglaMeaning);
-        });
         tbody.appendChild(tr);
       });
       table.appendChild(tbody);
 
       tableWrapper.appendChild(table);
-
-      // Fill practice select dropdown
-      fillPracticeSelect(rows);
     }
 
-    // Fill practice select with available sentences
-    function fillPracticeSelect(sentences) {
-      practiceSelect.innerHTML = '<option value="" disabled selected>একটি বাক্য নির্বাচন করুন</option>';
-      sentences.forEach(item => {
-        const option = document.createElement('option');
-        option.value = item.native;
-        option.textContent = `[${item.country}] ${item.native}`;
-        // Store expected Bengali meaning in data attribute for quiz check
-        option.dataset.banglaMeaning = item.banglaMeaning;
-        practiceSelect.appendChild(option);
-      });
-    }
-
-    // When user clicks a row or selects a sentence from dropdown, update practice text area with empty and reset result
-    function selectPracticeSentence(nativeSentence, banglaMeaning) {
-      // Select in practice select if exists
-      Array.from(practiceSelect.options).forEach(opt => {
-        if(opt.value === nativeSentence) {
-          practiceSelect.value = nativeSentence;
-        }
-      });
-      practiceInput.value = '';
-      practiceResult.textContent = '';
-    }
-
-    // Check user's translation input against correct Bengali meaning (simple case-insensitive match ignoring spaces)
-    function checkTranslation() {
-      const selectedOption = practiceSelect.options[practiceSelect.selectedIndex];
-      if(!selectedOption || !practiceInput.value.trim()) {
-        practiceResult.style.color = '#f44336';
-        practiceResult.textContent = 'অনুগ্রহ করে একটি বাক্য নির্বাচন করুন এবং বাংলায় অনুবাদ লিখুন।';
-        return;
-      }
-      const correctAnswer = selectedOption.dataset.banglaMeaning.trim().toLowerCase().replace(/\s+/g,' ');
-      const userAnswer = practiceInput.value.trim().toLowerCase().replace(/\s+/g,' ');
-      if(userAnswer === correctAnswer) {
-        practiceResult.style.color = '#4caf50';
-        practiceResult.textContent = 'সঠিক অনুবাদ! চমৎকার।';
-      } else {
-        practiceResult.style.color = '#ffd54f';
-        practiceResult.textContent = `ভুল অনুবাদ। সঠিক উত্তর: "${selectedOption.dataset.banglaMeaning}"`;
-      }
-    }
-
-    // Event Listeners
     countrySelect.addEventListener('change', e => {
       displayTable(e.target.value);
-      // Reset practice input and result
-      practiceInput.value = '';
-      practiceResult.textContent = '';
     });
-
-    practiceSelect.addEventListener('change', e => {
-      practiceInput.value = '';
-      practiceResult.textContent = '';
-    });
-
-    checkBtn.addEventListener('click', checkTranslation);
 
     // Initial display all countries on page load
     window.addEventListener('DOMContentLoaded', () => {
