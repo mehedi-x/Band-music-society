@@ -1,3 +1,24 @@
+// Country persist feature
+window.onload = function () {
+  const savedCountry = localStorage.getItem('selectedCountry');
+  const countrySelect = document.getElementById('countrySelect');
+  if (savedCountry) {
+    countrySelect.value = savedCountry;
+    countrySelect.disabled = true;
+  }
+  loadLessons();
+};
+
+function changeCountry() {
+  const selected = document.getElementById('countrySelect').value;
+  if (selected) {
+    localStorage.setItem('selectedCountry', selected);
+    document.getElementById('countrySelect').disabled = true;
+    loadLessons();
+  }
+}
+
+// Dummy lessons (you can later load by country too)
 const lessons = [
   {
     id: 1,
@@ -49,8 +70,6 @@ function loadLessons() {
   const search = document.getElementById('search').value.toLowerCase();
   const category = document.getElementById('categoryFilter').value;
 
-  let visibleCount = 0;
-
   lessons.forEach(lesson => {
     const matchesSearch = search === '' || (
       lesson.russian.toLowerCase().includes(search) ||
@@ -62,7 +81,6 @@ function loadLessons() {
     const matchesCategory = category === 'all' || lesson.category === category;
 
     if (matchesSearch && matchesCategory) {
-      visibleCount++;
       const div = document.createElement('div');
       div.className = 'lesson';
       if (completed.includes(lesson.id)) div.classList.add('completed');
@@ -105,5 +123,3 @@ function updateProgressBar() {
   document.getElementById('progress-bar').style.width = percent + '%';
   document.getElementById('progress-text').innerText = `${completed.length} of ${total} lessons completed`;
 }
-
-loadLessons();
