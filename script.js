@@ -525,7 +525,7 @@ const vocabulary = {
   { ru: 'Где я могу снять деньги?', bn: 'গ্দে ইয়া মগু স্নিয়াত দেনজি?', bnMeaning: 'আমি কোথায় টাকা তুলতে পারি?', en: 'Where can I withdraw money?' },
   { ru: 'Можно ли сделать скидку?', bn: 'মোজনো লি সদেলাত স্কিদকু?', bnMeaning: 'ছাড় পাওয়া যাবে?', en: 'Can I get a discount?' },
   { ru: 'У вас есть меню на английском?', bn: 'উ ভাস এস্ত মেনু না আঙ্গলিসকম?', bnMeaning: 'আপনার কাছে ইংরেজি মেনু আছে?', en: 'Do you have a menu in English?' },
-  { ru: 'Где находится туалет?', bn: 'গ্দে নাখোদিতসা তুয়ালেত?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the restroom?' }
+  { ru: 'Где находится туалет?', bn: 'গ্দে নাখোদিতসা তুয়ালেত?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the restroom?' },
 { ru: 'Я хочу открыть банковский счет', bn: 'ইয়া খাচু আতকৃৎ ব্যাংকভস্কি শচ্যত', bnMeaning: 'আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই', en: 'I want to open a bank account' },
 { ru: 'Какой у вас номер телефона?', bn: 'কাকই উ ভাস নোমের তেলেফোনা?', bnMeaning: 'আপনার ফোন নাম্বার কী?', en: 'What is your phone number?' },
 { ru: 'Я не понимаю', bn: 'ইয়া নে পনিমায়ু', bnMeaning: 'আমি বুঝতে পারছি না', en: 'I don’t understand' },
@@ -566,8 +566,6 @@ const vocabulary = {
 { ru: 'Что мне делать?', bn: 'শতো ম্নে দিলাত?', bnMeaning: 'আমার কী করা উচিত?', en: 'What should I do?' },
 { ru: 'У вас есть свободные места?', bn: 'উ ভাস এস্ত সভাবদনিয়ে মেস্তা?', bnMeaning: 'আপনারা কি ফাঁকা সিট পান?', en: 'Do you have available seats?' },
 { ru: 'Где можно поесть?', bn: 'গ্দে মোজনো পায়েস্ট?', bnMeaning: 'খাওয়ার জায়গা কোথায়?', en: 'Where can I eat?' },
-  
-  // আমার উপরে ডাটা লোড করুন...  
   ],
   german: [
     { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
