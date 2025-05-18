@@ -1,71 +1,71 @@
+// DOM Elements
 const languageSelect = document.getElementById('language-select');
 const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
 
+// Sample vocabulary (আপনার বাস্তব ডেটা এখানে থাকবে)
 const vocabulary = {
   russian: [
-    {
-      russian: 'Здравствуйте',
-      bangla: 'জ্দ্রাভস্তুইতে',
-      meaning: 'হ্যালো',
-      english: 'Hello'
-    },
-    {
-      russian: 'Как дела?',
-      bangla: 'কাক দেলা?',
-      meaning: 'আপনি কেমন আছেন?',
-      english: 'How are you?'
-    }
-    // Add more
+    { ru: 'Привет', bn: 'প্রিভিয়েত', en: 'Hello' },
+    { ru: 'Спасибо', bn: 'স্পাসিবো', en: 'Thank you' },
   ],
-  german: [
-    {
-      german: 'Hallo',
-      bangla: 'হালো',
-      meaning: 'হ্যালো',
-      english: 'Hello'
-    },
-    {
-      german: 'Wie geht es dir?',
-      bangla: 'ভি গেট এস দিয়া?',
-      meaning: 'তুমি কেমন আছো?',
-      english: 'How are you?'
-    }
-    // Add more
+  spanish: [
+    { ru: 'Hola', bn: 'ওলা', en: 'Hello' },
+    { ru: 'Gracias', bn: 'গ্রাসিয়াস', en: 'Thank you' },
+  ],
+  french: [
+    { ru: 'Bonjour', bn: 'বঁজুর', en: 'Hello' },
+    { ru: 'Merci', bn: 'মেরসি', en: 'Thank you' },
   ]
 };
 
-function renderVocabulary(language) {
+// Render vocabulary function
+function renderVocabulary(lang) {
+  const data = vocabulary[lang] || [];
   conversationArea.innerHTML = '';
-  const entries = vocabulary[language] || [];
-  entries.forEach(item => {
-    const block = document.createElement('div');
-    block.className = 'conversation-block';
-    if (document.body.classList.contains('dark-mode')) {
-      block.classList.add('dark-mode');
-    }
 
-    const langText = Object.keys(item)[0]; // 'russian' or 'german'
-    block.innerHTML = `
-      <p><strong>${langText.toUpperCase()}:</strong> ${item[langText]}</p>
-      <p><strong>Bangla Pronunciation:</strong> ${item.bangla}</p>
-      <p><strong>Bangla Meaning:</strong> ${item.meaning}</p>
-      <p><strong>English Translation:</strong> ${item.english}</p>
+  data.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('conversation-item');
+    div.innerHTML = `
+      <p><strong>${item.ru}</strong></p>
+      <p>📢 ${item.bn}</p>
+      <p>🔤 ${item.en}</p>
     `;
-    conversationArea.appendChild(block);
+    conversationArea.appendChild(div);
   });
 }
 
+// --- Initial Setup with localStorage support ---
+
+// Load selected language from localStorage or set default
+const savedLang = localStorage.getItem('selectedLanguage');
+if (savedLang && vocabulary[savedLang]) {
+  languageSelect.value = savedLang;
+  renderVocabulary(savedLang);
+} else {
+  const defaultLang = languageSelect.value;
+  localStorage.setItem('selectedLanguage', defaultLang);
+  renderVocabulary(defaultLang);
+}
+
+// Save language on change
 languageSelect.addEventListener('change', () => {
-  renderVocabulary(languageSelect.value);
+  const selected = languageSelect.value;
+  localStorage.setItem('selectedLanguage', selected);
+  renderVocabulary(selected);
 });
+
+// --- Dark/Light Mode toggle with memory ---
+const isDark = localStorage.getItem('darkMode') === 'true';
+if (isDark) {
+  document.body.classList.add('dark-mode');
+  modeToggle.textContent = '☀️';
+}
 
 modeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  const blocks = document.querySelectorAll('.conversation-block');
-  blocks.forEach(block => block.classList.toggle('dark-mode'));
-  modeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  const isNowDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isNowDark);
+  modeToggle.textContent = isNowDark ? '☀️' : '🌙';
 });
-
-// Initial render
-renderVocabulary(languageSelect.value);
