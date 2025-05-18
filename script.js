@@ -201,7 +201,26 @@ const vocabulary = {
 { ru: 'Я хочу поговорить с арендодателем', bn: 'ইয়া খাচু পাগাভারিত স আরেন্দাদাতেলিয়েম', bnMeaning: 'আমি বাড়িওয়ালার সাথে কথা বলতে চাই', en: 'I want to speak with the landlord' },
 { ru: 'Спасибо за помощь', bn: 'স্পাসিবো জা পামশচ', bnMeaning: 'সাহায্যের জন্য ধন্যবাদ', en: 'Thank you for the help' },
 { ru: 'Где платить за аренду?', bn: 'গ্দে প্লাতিত জা আরেন্দু?', bnMeaning: 'ভাড়া কোথায় দিতে হয়?', en: 'Where do I pay the rent?' },
-
+{ ru: 'Где паспортный контроль?', bn: 'গ্দে পাস্পারতনি কন্ত্রোল?', bnMeaning: 'পাসপোর্ট কন্ট্রোল কোথায়?', en: 'Where is passport control?' },
+{ ru: 'Вот мой паспорт', bn: 'ভত মই পাস্পারত', bnMeaning: 'এই নিন আমার পাসপোর্ট', en: 'Here is my passport' },
+{ ru: 'У меня виза', bn: 'উ মেনিয়া ভিজা', bnMeaning: 'আমার ভিসা আছে', en: 'I have a visa' },
+{ ru: 'Я турист', bn: 'ইয়া তুরিস্ট', bnMeaning: 'আমি একজন পর্যটক', en: 'I am a tourist' },
+{ ru: 'Я студент', bn: 'ইয়া স্তুদিয়েন্ট', bnMeaning: 'আমি একজন ছাত্র', en: 'I am a student' },
+{ ru: 'Вот мое приглашение', bn: 'ভত মায়ো প্রিগ্লাশেনিয়ে', bnMeaning: 'এই নিন আমার ইনভাইটেশন লেটার', en: 'Here is my invitation' },
+{ ru: 'Сколько дней вы останетесь?', bn: 'স্কলকো দিনেই ভি আসতানিতেস?', bnMeaning: 'আপনি কয়দিন থাকবেন?', en: 'How many days will you stay?' },
+{ ru: 'Где получить багаж?', bn: 'গ্দে পলুচিত বাগাজ?', bnMeaning: 'লাগেজ কোথা থেকে নিতে হয়?', en: 'Where do I collect baggage?' },
+{ ru: 'Мой багаж потерян', bn: 'মই বাগাজ পাতেরিয়ান', bnMeaning: 'আমার লাগেজ হারিয়ে গেছে', en: 'My luggage is lost' },
+{ ru: 'Это моя сумка', bn: 'এতা মায়া সুমকা', bnMeaning: 'এটা আমার ব্যাগ', en: 'This is my bag' },
+{ ru: 'Где выход?', bn: 'গ্দে ভিতখাদ?', bnMeaning: 'বাহিরে যাওয়ার রাস্তা কোথায়?', en: 'Where is the exit?' },
+{ ru: 'Мне нужна помощь', bn: 'মনে নুঝনা পামশচ', bnMeaning: 'আমার সাহায্য প্রয়োজন', en: 'I need help' },
+{ ru: 'Я не говорю по-русски', bn: 'ইয়া নে গাভার্যু পারুস্কি', bnMeaning: 'আমি রুশ ভাষা জানি না', en: 'I don’t speak Russian' },
+{ ru: 'Говорите по-английски?', bn: 'গাভারিতে পা-আংগ্লিস্কি?', bnMeaning: 'আপনি কি ইংরেজি বলতে পারেন?', en: 'Do you speak English?' },
+{ ru: 'Где находится туалет?', bn: 'গ্দে নাখোডিতসা তুয়ালিয়েত?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the toilet?' },
+{ ru: 'У меня пересадка', bn: 'উ মেনিয়া পিরিসাদকা', bnMeaning: 'আমার ট্রানজিট আছে', en: 'I have a layover' },
+{ ru: 'Где зал ожидания?', bn: 'গ্দে জল আঝিদানিয়া?', bnMeaning: 'ওয়েটিং এরিয়া কোথায়?', en: 'Where is the waiting area?' },
+{ ru: 'У меня билет', bn: 'উ মেনিয়া বিলিয়েত', bnMeaning: 'আমার টিকিট আছে', en: 'I have a ticket' },
+{ ru: 'Когда мой рейс?', bn: 'কগদা মই রেইস?', bnMeaning: 'আমার ফ্লাইট কখন?', en: 'When is my flight?' },
+{ ru: 'Я опоздал на рейс', bn: 'ইয়া আপাজদাল না রেইস', bnMeaning: 'আমি ফ্লাইট মিস করেছি', en: 'I missed my flight' },
 
 
 
