@@ -3,19 +3,15 @@ const languageSelect = document.getElementById('language-select');
 const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
 
-// Sample vocabulary (আপনার বাস্তব ডেটা এখানে থাকবে)
+// Sample vocabulary
 const vocabulary = {
   russian: [
     { ru: 'Привет', bn: 'প্রিভিয়েত', en: 'Hello' },
     { ru: 'Спасибо', bn: 'স্পাসিবো', en: 'Thank you' },
   ],
-  spanish: [
-    { ru: 'Hola', bn: 'ওলা', en: 'Hello' },
-    { ru: 'Gracias', bn: 'গ্রাসিয়াস', en: 'Thank you' },
-  ],
-  french: [
-    { ru: 'Bonjour', bn: 'বঁজুর', en: 'Hello' },
-    { ru: 'Merci', bn: 'মেরসি', en: 'Thank you' },
+  german: [
+    { ru: 'Hallo', bn: 'হালো', en: 'Hello' },
+    { ru: 'Danke', bn: 'ডাঙ্কে', en: 'Thank you' },
   ]
 };
 
@@ -36,9 +32,7 @@ function renderVocabulary(lang) {
   });
 }
 
-// --- Initial Setup with localStorage support ---
-
-// Load selected language from localStorage or set default
+// Initial Setup with localStorage support
 const savedLang = localStorage.getItem('selectedLanguage');
 if (savedLang && vocabulary[savedLang]) {
   languageSelect.value = savedLang;
@@ -56,7 +50,7 @@ languageSelect.addEventListener('change', () => {
   renderVocabulary(selected);
 });
 
-// --- Dark/Light Mode toggle with memory ---
+// Dark/Light Mode toggle with memory
 const isDark = localStorage.getItem('darkMode') === 'true';
 if (isDark) {
   document.body.classList.add('dark-mode');
