@@ -18,7 +18,7 @@ const vocabulary = {
 { ru: 'Можно фотографировать?', bn: 'মোজনো ফোতোগ্রাফিরোভাত?', bnMeaning: 'আমি কি ছবি তুলতে পারি?', en: 'Can I take a photo?' },
 { ru: 'У вас есть Wi-Fi?', bn: 'উ ভাস ইইস্ত Wi-Fi?', bnMeaning: 'আপনার কি Wi-Fi আছে?', en: 'Do you have Wi-Fi?' },
 { ru: 'Счёт, пожалуйста', bn: 'শচёт, পাঝালুস্তা', bnMeaning: 'বিল দিন অনুগ্রহ করে', en: 'The bill, please' },
-{ ru: 'Где метро?', bn: 'গ্দে মেত্রো?', bnMeaning: 'মেট্রো কোথায়?', en: 'Where is the metro?' }
+{ ru: 'Где метро?', bn: 'গ্দে মেত্রো?', bnMeaning: 'মেট্রো কোথায়?', en: 'Where is the metro?' },
 
     { ru: 'Привет', bn: 'প্রিভিয়েত', bnMeaning: 'হ্যালো', en: 'Hello' },
     { ru: 'Спасибо', bn: 'স্পাসিবো', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
