@@ -1,4 +1,4 @@
-# 🗣️ Speak EU –/
+# 🗣️ Speak EU
 
 **Speak EU** is a powerful, user-friendly language learning platform designed for those who want to **learn and practice languages from all over Europe** — including Schengen countries, non-Schengen countries, and Russia. Whether you're a student, a migrant, or a traveler, this tool is crafted to help you communicate effectively in real-life situations.
 
@@ -27,6 +27,4 @@
 2. Choose your desired language from the dropdown.
 3. Start reading and practicing phrases.
 4. Use pronunciation, Bangla meaning, and English to reinforce memory.
-
-## 📁 File Structure
 
