@@ -8,7 +8,8 @@ const vocabulary = {
     { ru: 'Спасибо', bn: 'স্পাসিবো', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
     { ru: 'Как дела?', bn: 'কাক দেলা?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
     { ru: 'Здравствуйте', bn: 'জদরাভস্তভুইত্যে', bnMeaning: 'শুভ দিন', en: 'Hello (formal)' },
-    { ru: 'Пожалуйста', bn: 'পাঝালুস্তা', bnMeaning: 'দয়া করে / স্বাগতম', en: "Please / You're welcome" }
+    { ru: 'Пожалуйста', bn: 'পাঝালুস্তা', bnMeaning: 'দয়া করে / স্বাগতম', en: "Please / You're welcome" },
+    { ru: 'Извините', bn: 'ইজভিনিতিয়ে', bnMeaning: 'মাফ করবেন', en: 'Excuse me / Sorry' },
   ],
   german: [
     { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
@@ -25,10 +26,10 @@ function renderVocabulary(lang) {
     const div = document.createElement('div');
     div.classList.add('conversation-item');
     div.innerHTML = `
-      <p><strong>RU:</strong> ${item.ru}</p>
-      <p><strong>📢 উচ্চারণ:</strong> ${item.bn}</p>
-      <p><strong>🇧🇩 বাংলা অর্থ:</strong> ${item.bnMeaning ? item.bnMeaning : '—'}</p>
-      <p><strong>🔤 English:</strong> ${item.en}</p>
+      <p><strong>🇷🇺 ${item.ru}</strong></p>
+      <p>🔊 উচ্চারণ: ${item.bn}</p>
+      <p>📝 বাংলা অর্থ: ${item.bnMeaning}</p>
+      <p>🔤 English: ${item.en}</p>
     `;
     conversationArea.appendChild(div);
   });
@@ -52,7 +53,7 @@ languageSelect.addEventListener('change', () => {
   renderVocabulary(selected);
 });
 
-// Theme memory
+// Dark mode memory
 const isDark = localStorage.getItem('darkMode') === 'true';
 if (isDark) {
   document.body.classList.add('dark-mode');
