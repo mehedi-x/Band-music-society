@@ -7,58 +7,78 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #f2f3f7;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
-  padding-bottom: 60px; /* Footer space */
+  transition: all 0.3s ease;
+  padding-bottom: 70px; /* for footer space */
 }
 
+/* Header */
 header {
-  background: #6200ee;
+  background: linear-gradient(to right, #6200ee, #3700b3);
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 #language-select {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
+  border-radius: 6px;
   border: none;
-  border-radius: 4px;
-  margin: 0 1rem;
+  margin-left: 1rem;
 }
 
 #mode-toggle {
   background: none;
   border: none;
+  font-size: 1.4rem;
   color: white;
-  font-size: 1.2rem;
   cursor: pointer;
 }
 
-main#conversation-area {
-  padding: 1rem;
-  max-height: 70vh;
+/* Conversation Area */
+#conversation-area {
+  padding: 2rem;
+  max-height: 75vh;
   overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .conversation-item {
-  background: #ffffff;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
+.conversation-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.conversation-item p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.conversation-item p:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Footer */
 footer {
   position: fixed;
   bottom: 0;
@@ -66,21 +86,31 @@ footer {
   background: #6200ee;
   color: white;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  z-index: 10;
 }
 
-/* Dark mode */
+/* Dark Mode */
 body.dark-mode {
   background-color: #121212;
-  color: #f4f4f4;
+  color: #e1e1e1;
 }
 
-body.dark-mode header,
-body.dark-mode footer {
-  background: #1e1e1e;
+body.dark-mode header {
+  background: linear-gradient(to right, #1f1f1f, #2a2a2a);
+}
+
+body.dark-mode #language-select {
+  background: #333;
+  color: white;
 }
 
 body.dark-mode .conversation-item {
-  background: #2a2a2a;
-  color: #fff;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
 }
