@@ -566,12 +566,9 @@ const vocabulary = {
 { ru: 'Что мне делать?', bn: 'শতো ম্নে দিলাত?', bnMeaning: 'আমার কী করা উচিত?', en: 'What should I do?' },
 { ru: 'У вас есть свободные места?', bn: 'উ ভাস এস্ত সভাবদনিয়ে মেস্তা?', bnMeaning: 'আপনারা কি ফাঁকা সিট পান?', en: 'Do you have available seats?' },
 { ru: 'Где можно поесть?', bn: 'গ্দে মোজনো পায়েস্ট?', bnMeaning: 'খাওয়ার জায়গা কোথায়?', en: 'Where can I eat?' },
-
-
-
   
   // আমার উপরে ডাটা লোড করুন...  
-  ]
+  ],
   german: [
     { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
     { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
