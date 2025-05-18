@@ -1,0 +1,80 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #111;
+  --text-light: #333;
+  --text-dark: #f1f1f1;
+  --primary: #0077cc;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#language-select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+#mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 1rem;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+.conversation-block {
+  background: rgba(0, 119, 204, 0.1);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.conversation-block.dark-mode {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.conversation-block p {
+  margin: 0.3rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+  position: sticky;
+  bottom: 0;
+}
