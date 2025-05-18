@@ -1,21 +1,20 @@
-// DOM Elements
 const languageSelect = document.getElementById('language-select');
 const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
 
-// Sample vocabulary
 const vocabulary = {
   russian: [
     { ru: 'Привет', bn: 'প্রিভিয়েত', en: 'Hello' },
     { ru: 'Спасибо', bn: 'স্পাসিবো', en: 'Thank you' },
+    { ru: 'Как дела?', bn: 'কাক দেলা?', en: 'How are you?' },
   ],
   german: [
     { ru: 'Hallo', bn: 'হালো', en: 'Hello' },
     { ru: 'Danke', bn: 'ডাঙ্কে', en: 'Thank you' },
+    { ru: 'Wie geht\'s?', bn: 'ভি গেটস?', en: 'How are you?' },
   ]
 };
 
-// Render vocabulary function
 function renderVocabulary(lang) {
   const data = vocabulary[lang] || [];
   conversationArea.innerHTML = '';
@@ -24,7 +23,7 @@ function renderVocabulary(lang) {
     const div = document.createElement('div');
     div.classList.add('conversation-item');
     div.innerHTML = `
-      <p><strong>${item.ru}</strong></p>
+      <p>${item.ru}</p>
       <p>📢 ${item.bn}</p>
       <p>🔤 ${item.en}</p>
     `;
@@ -32,7 +31,7 @@ function renderVocabulary(lang) {
   });
 }
 
-// Initial Setup with localStorage support
+// Load saved language
 const savedLang = localStorage.getItem('selectedLanguage');
 if (savedLang && vocabulary[savedLang]) {
   languageSelect.value = savedLang;
@@ -43,14 +42,14 @@ if (savedLang && vocabulary[savedLang]) {
   renderVocabulary(defaultLang);
 }
 
-// Save language on change
+// Save on change
 languageSelect.addEventListener('change', () => {
   const selected = languageSelect.value;
   localStorage.setItem('selectedLanguage', selected);
   renderVocabulary(selected);
 });
 
-// Dark/Light Mode toggle with memory
+// Theme memory
 const isDark = localStorage.getItem('darkMode') === 'true';
 if (isDark) {
   document.body.classList.add('dark-mode');
@@ -59,7 +58,7 @@ if (isDark) {
 
 modeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  const isNowDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('darkMode', isNowDark);
-  modeToggle.textContent = isNowDark ? '☀️' : '🌙';
+  const isDarkNow = document.body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDarkNow);
+  modeToggle.textContent = isDarkNow ? '☀️' : '🌙';
 });
