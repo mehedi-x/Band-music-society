@@ -571,7 +571,7 @@ const vocabulary = {
 
   
   // আমার উপরে ডাটা লোড করুন...  
-  ],
+  ]
   german: [
     { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
     { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
