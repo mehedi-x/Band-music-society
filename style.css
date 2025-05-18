@@ -1,83 +1,67 @@
-/* Header Styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #111;
+  color: #f9f9f9;
+}
+
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background: var(--header-bg, #111);
-  color: var(--header-color, #fff);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: #222;
+  color: white;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 100;
 }
 
 .app-title {
-  font-size: 1.8rem;
-  font-weight: bold;
   margin: 0;
+  font-size: 1.8rem;
 }
 
-.language-dropdown {
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+#language-select {
   padding: 6px 10px;
   font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: #222;
-  color: #fff;
-}
-
-.language-dropdown option {
-  background-color: #222;
-  color: #fff;
-}
-
-.mode-btn {
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  margin-left: 10px;
-  cursor: pointer;
-  color: inherit;
-  transition: transform 0.2s ease;
-}
-
-.mode-btn:hover {
-  transform: scale(1.1);
-}
-
-.dark-mode .language-dropdown {
-  background-color: #333;
-  border-color: #555;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-  margin: 0;
-  padding: 20px;
-}
-
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 
 #mode-toggle {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: white;
   cursor: pointer;
-  float: right;
-  font-size: 24px;
+}
+
+main {
+  padding: 20px;
 }
 
 .conversation-item {
-  background: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .dark-mode .conversation-item {
-  background: #1e1e1e;
-  color: #fff;
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
 }
