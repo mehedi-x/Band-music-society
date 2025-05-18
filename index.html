@@ -8,15 +8,18 @@
 </head>
 <body>
 
-  <div>
-    <select id="language-select">
-      <option value="russian">Russian</option>
-      <option value="german">German</option>
-    </select>
-    <span id="mode-toggle">🌙</span>
-  </div>
+  <header class="app-header">
+    <h1 class="app-title">Speak EU</h1>
+    <div class="header-right">
+      <select id="language-select">
+        <option value="russian">Russian</option>
+        <option value="german">German</option>
+      </select>
+      <button id="mode-toggle">🌙</button>
+    </div>
+  </header>
 
-  <div id="conversation-area"></div>
+  <main id="conversation-area"></main>
 
   <script src="script.js"></script>
 </body>
