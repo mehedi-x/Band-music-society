@@ -1,3 +1,56 @@
+/* Header Styling */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--header-bg, #111);
+  color: var(--header-color, #fff);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.language-dropdown {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #222;
+  color: #fff;
+}
+
+.language-dropdown option {
+  background-color: #222;
+  color: #fff;
+}
+
+.mode-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  margin-left: 10px;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.mode-btn:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode .language-dropdown {
+  background-color: #333;
+  border-color: #555;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f1f1f1;
