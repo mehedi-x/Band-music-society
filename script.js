@@ -601,7 +601,7 @@ const vocabulary = {
     { ru: 'Hej', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
     { ru: 'Tack', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
     { ru: 'Hur mår du?', bn: 'হুর মোর দু?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
-  ]
+  ],
   norwegian: [
   { ru: 'Hei', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
   { ru: 'Takk', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
