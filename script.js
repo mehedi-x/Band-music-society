@@ -631,7 +631,37 @@ hungarian: [
   { ru: 'Helló', bn: 'হেল্লো', bnMeaning: 'হ্যালো', en: 'Hello' },
   { ru: 'Köszönöm', bn: 'কোসোনোম', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
   { ru: 'Hogy vagy?', bn: 'হগ্য ভগ্য?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
-]
+],
+slovak: [
+  { ru: 'Ahoj', bn: 'আহয়', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Ďakujem', bn: 'দ্যাকুয়েম', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Ako sa máš?', bn: 'আকো সা মাস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+slovenian: [
+  { ru: 'Živjo', bn: 'জিভ্যো', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Hvala', bn: 'হভালা', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Kako si?', bn: 'কাকো সি?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+croatian: [
+  { ru: 'Bok', bn: 'বক', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Hvala', bn: 'হভালা', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Kako si?', bn: 'কাকো সি?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+estonian: [
+  { ru: 'Tere', bn: 'তেরে', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Aitäh', bn: 'আইতাহ', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Kuidas läheb?', bn: 'কুইদাস লাহেব?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+latvian: [
+  { ru: 'Sveiki', bn: 'স্ভেইকি', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Paldies', bn: 'পালদিয়েস', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Kā jums klājas?', bn: 'কা ইউমস ক্লায়াস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+lithuanian: [
+  { ru: 'Labas', bn: 'লাবাস', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Ačiū', bn: 'আচু', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Kaip sekasi?', bn: 'কাইপ সেকাসি?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
 
 };
 
