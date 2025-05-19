@@ -672,6 +672,11 @@ maltesian: [
   { ru: 'Grazzi', bn: 'গ্রাজজি', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
   { ru: 'Kif inti?', bn: 'কিফ ইনতি?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
 ],
+  austrian: [
+  { ru: 'Servus', bn: 'সার্ভুস', bnMeaning: 'হ্যালো / বিদায় (অস্ট্রিয়ান স্টাইল)', en: 'Hello / Bye' },
+  { ru: 'Danke scheen', bn: 'ডাঙ্কে শেন', bnMeaning: 'ধন্যবাদ (শোভনভাবে)', en: 'Thank you very much' },
+  { ru: 'Wie geht’s da?', bn: 'ভি গেটস দা?', bnMeaning: 'আপনি কেমন আছেন? (স্থানীয়)', en: 'How are you?' },
+],
 icelandic: [
   { ru: 'Halló', bn: 'হাল্লো', bnMeaning: 'হ্যালো', en: 'Hello' },
   { ru: 'Takk', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
