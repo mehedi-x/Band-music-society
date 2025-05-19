@@ -3,147 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Speak_EU</title>
+  <title>Speak_Eu</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Reset and base styles */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9fb;
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .app-header {
-      background: linear-gradient(90deg, #3a8dff, #0059b3);
-      color: white;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      flex-wrap: nowrap;
-    }
-    .app-title {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      margin: 0;
-      user-select: none;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-      white-space: nowrap;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: nowrap;
-    }
-    #language-select {
-      font-size: 1rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      background-color: white;
-      color: #333;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
-      min-width: 180px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    #language-select:hover,
-    #language-select:focus {
-      outline: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transform: translateY(-2px);
-    }
-    #mode-toggle {
-      background: #0059b3;
-      border: none;
-      border-radius: 50%;
-      color: white;
-      font-size: 1.4rem;
-      padding: 0.5rem 0.6rem;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      user-select: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-    }
-    #mode-toggle:hover,
-    #mode-toggle:focus {
-      background-color: #004080;
-      outline: none;
-      transform: scale(1.1);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-    }
-
-    /* MOBILE RESPONSIVE STYLES */
+    /* Mobile-friendly header styles */
     @media (max-width: 600px) {
-       .app-header {
-         flex-wrap: wrap;
-         padding: 1rem;
-       }
-       .app-title {
-         font-size: 1.5rem;
-         flex-basis: 100%;
-         text-align: center;
-         margin-bottom: 0.6rem;
-       }
-       .header-right {
-         justify-content: center;
-         gap: 0.75rem;
-         flex-basis: 100%;
-       }
-       #language-select {
-         min-width: 100%;
-         max-width: 100%;
-         font-size: 1rem;
-         padding: 0.5rem;
-         box-shadow: none;
-         border-radius: 8px;
-       }
-       #mode-toggle {
-         width: 38px;
-         height: 38px;
-         flex-shrink: 0;
-       }
-    }
-
-    @media (max-width: 360px){
-      #language-select {
-        font-size: 0.9rem;
-        padding: 0.4rem;
+      .app-header {
+        flex-wrap: wrap;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        text-align: center;
       }
       .app-title {
-        font-size: 1.25rem;
+        flex-basis: 100%;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
       }
-    }
-    
-    /* Visually hidden for accessibility */
-    .visually-hidden { 
-      position: absolute !important; 
-      height: 1px; width: 1px; 
-      overflow: hidden;
-      clip: rect(1px, 1px, 1px, 1px);
-      white-space: nowrap;
+      .header-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+      #language-select {
+        min-width: 80%;
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 6px;
+      }
+      #mode-toggle {
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header class="app-header" role="banner">
+  <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
-      <label for="language-select" class="visually-hidden">Select Language</label>
-      <select id="language-select" aria-label="Select language">
-        <option value="" disabled selected>🌍 Choose a language</option>
-
+      <select id="language-select">
         <!-- Already added -->
         <option value="russian">🇷🇺 Russian</option>
         <option value="german">🇩🇪 German</option>
@@ -171,11 +77,11 @@
         <option value="icelandic">🇮🇸 Icelandic</option>
         <option value="maltesian">🇲🇹 Maltese</option>
         <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Switzerland</option>
+        <option value="swiss">🇨🇭 Switzerland </option>
         <option value="liechtenstein">🇱🇮 Liechtenstein</option>
         <option value="luxembourgish">🇱🇺 Luxembourgish</option>
       </select>
-      <button id="mode-toggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">🌓</button>
+      <button id="mode-toggle">🌓</button>
     </div>
   </header>
 
