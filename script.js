@@ -570,9 +570,71 @@ const vocabulary = {
   german: [
     { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
     { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
-    { ru: 'Wie geht\'s?', bn: 'ভি গেটস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
+    { ru: "Wie geht's?", bn: 'ভি গেটস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+  ],
+  italian: [
+    { ru: 'Ciao', bn: 'চাও', bnMeaning: 'হ্যালো', en: 'Hello' },
+    { ru: 'Grazie', bn: 'গ্রাতসিয়ে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+    { ru: 'Come stai?', bn: 'কোমে স্তাই?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+  ],
+  french: [
+    { ru: 'Bonjour', bn: 'বঁজুর', bnMeaning: 'শুভ সকাল', en: 'Good morning' },
+    { ru: 'Merci', bn: 'মেরসি', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+    { ru: 'Comment ça va?', bn: 'কোমঁ সা ভা?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+  ],
+  spanish: [
+    { ru: 'Hola', bn: 'ওলা', bnMeaning: 'হ্যালো', en: 'Hello' },
+    { ru: 'Gracias', bn: 'গ্রাসিয়াস', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+    { ru: '¿Cómo estás?', bn: 'কোমো এসতাস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+  ],
+  portuguese: [
+    { ru: 'Olá', bn: 'ওলা', bnMeaning: 'হ্যালো', en: 'Hello' },
+    { ru: 'Obrigado', bn: 'ওব্রিগাদো', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+    { ru: 'Como vai?', bn: 'কোমু ভাই?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+  ],
+  dutch: [
+    { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
+    { ru: 'Dank je', bn: 'ডাংক ইয়ে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+    { ru: 'Hoe gaat het?', bn: 'হু হাত হেট?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+  ],
+  swedish: [
+    { ru: 'Hej', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
+    { ru: 'Tack', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+    { ru: 'Hur mår du?', bn: 'হুর মোর দু?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
   ]
+  norwegian: [
+  { ru: 'Hei', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Takk', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Hvordan har du det?', bn: 'হুভোরদান হার দু দে?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+finnish: [
+  { ru: 'Hei', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Kiitos', bn: 'কিতোস', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Mitä kuuluu?', bn: 'মিতা কুলু?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+danish: [
+  { ru: 'Hej', bn: 'হাই', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Tak', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Hvordan går det?', bn: 'হুভোরদান গর দে?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+polish: [
+  { ru: 'Cześć', bn: 'চেশচ', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Dziękuję', bn: 'জিঙ্কুয়ে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Jak się masz?', bn: 'ইয়াক শিয়ে মাশ?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+czech: [
+  { ru: 'Ahoj', bn: 'আহয়', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Děkuji', bn: 'দ্যেকুই', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Jak se máš?', bn: 'ইয়াক সে মাস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+hungarian: [
+  { ru: 'Helló', bn: 'হেল্লো', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Köszönöm', bn: 'কোসোনোম', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Hogy vagy?', bn: 'হগ্য ভগ্য?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+]
+
 };
+
 
 function renderVocabulary(lang) {
   const data = vocabulary[lang] || [];
