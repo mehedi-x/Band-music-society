@@ -662,6 +662,31 @@ lithuanian: [
   { ru: 'Ačiū', bn: 'আচু', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
   { ru: 'Kaip sekasi?', bn: 'কাইপ সেকাসি?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
 ],
+swiss: [
+  { ru: 'Grüezi', bn: 'গ্র্যুয়েতসি', bnMeaning: 'হ্যালো (সুইস জার্মান)', en: 'Hello' },
+  { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Wie gahts?', bn: 'ভি গ্যাটস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+maltesian: [
+  { ru: 'Bongu', bn: 'বোনগু', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Grazzi', bn: 'গ্রাজজি', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Kif inti?', bn: 'কিফ ইনতি?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+icelandic: [
+  { ru: 'Halló', bn: 'হাল্লো', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Takk', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Hvernig hefur þú það?', bn: 'কভের্নিগ হেভুর থু থাথ?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+liechtenstein: [
+  { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Wie geht es Ihnen?', bn: 'ভি গেট এস ইইনেন?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
+luxembourgish: [
+  { ru: 'Moien', bn: 'মইয়েন', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Merci', bn: 'মেরসি', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Wéi geet et Iech?', bn: 'ভেই গেট এট ইইচ?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
 
 };
 
