@@ -781,8 +781,29 @@ const vocabulary = {
 { ru: 'Wie hoch ist die Gebühr?', bn: 'ভি হোহ ইস্ট দি গেবুর?', bnMeaning: 'ফি কত?', en: 'How much is the fee?' },
 { ru: 'Ich möchte telefonieren', bn: 'ইশ মোইখটে টেলিফোনিরেন', bnMeaning: 'আমি ফোন করতে চাই', en: 'I want to make a phone call' },
 { ru: 'Haben Sie eine Telefonnummer?', bn: 'হাবেন জি আইনে টেলিফোননুম্মার?', bnMeaning: 'আপনার কি ফোন নম্বর আছে?', en: 'Do you have a phone number?' },
-{ ru: 'Können Sie das bitte aufschreiben?', bn: 'ক্যোনেন জি দাস বিটে আউফশ্রাইবেন?', bnMeaning: 'আপনি কি অনুগ্রহ করে এটা লিখে দিতে পারেন?', en: 'Could you please write it down?' }  
-    
+{ ru: 'Können Sie das bitte aufschreiben?', bn: 'ক্যোনেন জি দাস বিটে আউফশ্রাইবেন?', bnMeaning: 'আপনি কি অনুগ্রহ করে এটা লিখে দিতে পারেন?', en: 'Could you please write it down?' },  
+  // German 201–220
+{ ru: 'Ich brauche eine Bestätigung', bn: 'ইশ ব্রাউখে আইনে বেস্টেটিগুং', bnMeaning: 'আমার একটি প্রমাণপত্র দরকার', en: 'I need a confirmation' },
+{ ru: 'Können Sie mir das per E-Mail schicken?', bn: 'ক্যোনেন জি মিয়ার দাস প্যার ই-মেইল শিকেন?', bnMeaning: 'আপনি কি আমাকে এটি ইমেইলে পাঠাতে পারেন?', en: 'Can you send it to me via email?' },
+{ ru: 'Ich brauche einen Termin beim Arzt', bn: 'ইশ ব্রাউখে আইনেন টারমিন বায়ম আরৎস্ট', bnMeaning: 'আমার ডাক্তারের সাথে অ্যাপয়েন্টমেন্ট দরকার', en: 'I need a doctor’s appointment' },
+{ ru: 'Ich muss zum Arbeitsamt', bn: 'ইশ মুস জুম আরবাইট্সআম্ট', bnMeaning: 'আমাকে কর্মসংস্থান অফিসে যেতে হবে', en: 'I have to go to the employment office' },
+{ ru: 'Ich bekomme Sozialhilfe', bn: 'ইশ বেকোমে সোৎসিয়ালহিলফে', bnMeaning: 'আমি সামাজিক সহায়তা পাচ্ছি', en: 'I receive social assistance' },
+{ ru: 'Ich brauche Unterstützung für die Miete', bn: 'ইশ ব্রাউখে উন্টারস্ট্যুতসুং ফিউর দি মিটে', bnMeaning: 'আমার ভাড়ার জন্য সাহায্য দরকার', en: 'I need support for the rent' },
+{ ru: 'Wo ist das Jobcenter?', bn: 'ভো ইস্ট দাস জবসেন্টার?', bnMeaning: 'জব সেন্টার কোথায়?', en: 'Where is the job center?' },
+{ ru: 'Wie melde ich mich an?', bn: 'ভি মেলডে ইশ মিশ আন?', bnMeaning: 'আমি কিভাবে রেজিস্টার করব?', en: 'How do I register?' },
+{ ru: 'Welche Unterlagen brauche ich?', bn: 'ভেল্খে উন্টারলাগেন ব্রাউখে ইশ?', bnMeaning: 'আমার কী ডকুমেন্ট দরকার?', en: 'What documents do I need?' },
+{ ru: 'Ich brauche eine Übersetzung', bn: 'ইশ ব্রাউখে আইনে উবেরজেটসুং', bnMeaning: 'আমার একটি অনুবাদ দরকার', en: 'I need a translation' },
+{ ru: 'Ich spreche nur wenig Deutsch', bn: 'ইশ শপ্রেখে নুর ভেনিগ ডয়চ', bnMeaning: 'আমি সামান্য জার্মান বলি', en: 'I speak only a little German' },
+{ ru: 'Können Sie langsamer sprechen?', bn: 'ক্যোনেন জি লাংজামার শপ্রেখেন?', bnMeaning: 'আপনি কি ধীরে বলতে পারেন?', en: 'Can you speak more slowly?' },
+{ ru: 'Könnten Sie mir bitte helfen?', bn: 'ক্যোন্টেন জি মিয়ার বিটে হেলফেন?', bnMeaning: 'আপনি কি আমাকে সাহায্য করতে পারেন?', en: 'Could you please help me?' },
+{ ru: 'Ich verstehe das Formular nicht', bn: 'ইশ ফারস্টেহে দাস ফর্মুলার নিশ্ট', bnMeaning: 'আমি ফর্মটি বুঝতে পারছি না', en: 'I don’t understand the form' },
+{ ru: 'Wo kann ich das abgeben?', bn: 'ভো কান ইশ দাস আবগেবেন?', bnMeaning: 'আমি এটা কোথায় জমা দিতে পারি?', en: 'Where can I submit this?' },
+{ ru: 'Ich habe meine Unterlagen vergessen', bn: 'ইশ হাবে মাইনে উন্টারলাগেন ফারগেসেন', bnMeaning: 'আমি আমার ডকুমেন্ট ভুলে গেছি', en: 'I forgot my documents' },
+{ ru: 'Kann ich das später bringen?', bn: 'কান ইশ দাস স্পেটার ব্রিঙ্গেন?', bnMeaning: 'আমি এটা পরে আনতে পারি কি?', en: 'Can I bring it later?' },
+{ ru: 'Ich habe einen Termin um drei Uhr', bn: 'ইশ হাবে আইনেন টারমিন উম দ্রাই উয়ার', bnMeaning: 'আমার তিনটায় অ্যাপয়েন্টমেন্ট আছে', en: 'I have an appointment at 3 o’clock' },
+{ ru: 'Bitte setzen Sie sich', bn: 'বিটে সেটসেন জি জিশ', bnMeaning: 'দয়া করে বসুন', en: 'Please have a seat' },
+{ ru: 'Das Gespräch ist vertraulich', bn: 'দাস গেশপ্রেখ ইস্ট ফারট্রাউলিশ', bnMeaning: 'এই কথোপকথন গোপনীয়', en: 'This conversation is confidential' }
+  
     // জার্মানি ভাষা এখানে এড করুন।
   
   
