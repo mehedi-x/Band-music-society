@@ -587,7 +587,7 @@ const vocabulary = {
   { ru: 'Wo ist das Krankenhaus?', bn: 'ভো ইস্ট দাস ক্রাঙ্কেনহাউস?', bnMeaning: 'হাসপাতাল কোথায়?', en: 'Where is the hospital?' },
   { ru: 'Ich bin Student', bn: 'ইশ বিন স্টুডেন্ট', bnMeaning: 'আমি একজন ছাত্র', en: 'I am a student' },
   { ru: 'Ich habe Hunger', bn: 'ইশ হাবে হুংগার', bnMeaning: 'আমার খিদে পেয়েছে', en: 'I am hungry' },
-  { ru: 'Ich habe Durst', bn: 'ইশ হাবে ডুর্স্ট', bnMeaning: 'আমার পিপাসা পেয়েছে', en: 'I am thirsty' }
+  { ru: 'Ich habe Durst', bn: 'ইশ হাবে ডুর্স্ট', bnMeaning: 'আমার পিপাসা পেয়েছে', en: 'I am thirsty' },
   { ru: 'Hallo', bn: 'হালো', bnMeaning: 'হ্যালো', en: 'Hello' },
   { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
   { ru: "Wie geht's?", bn: 'ভি গেটস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
