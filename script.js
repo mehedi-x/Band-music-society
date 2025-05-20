@@ -4,6 +4,27 @@ const modeToggle = document.getElementById('mode-toggle');
 
 const vocabulary = {
   russian: [
+    // Russian Basic Phrases (1–20)
+{ ru: 'Привет', bn: 'প্রিভিয়েত', bnMeaning: 'হ্যালো', en: 'Hello' },
+{ ru: 'Здравствуйте', bn: 'জদরাভস্তভুইত্যে', bnMeaning: 'শুভ দিন', en: 'Hello (formal)' },
+{ ru: 'Как дела?', bn: 'কাক দেলা?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
+{ ru: 'Хорошо', bn: 'খোরোশো', bnMeaning: 'ভালো', en: 'Good' },
+{ ru: 'Плохо', bn: 'পলোখা', bnMeaning: 'খারাপ', en: 'Bad' },
+{ ru: 'Спасибо', bn: 'স্পাসিবো', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+{ ru: 'Пожалуйста', bn: 'পাঝালুস্তা', bnMeaning: 'দয়া করে / স্বাগতম', en: "Please / You're welcome" },
+{ ru: 'До свидания', bn: 'দসভিডানিয়া', bnMeaning: 'বিদায়', en: 'Goodbye' },
+{ ru: 'Извините', bn: 'ইজভিনিতিয়ে', bnMeaning: 'মাফ করবেন', en: 'Excuse me / Sorry' },
+{ ru: 'Я не понимаю', bn: 'ইয়া নে পনিমায়ু', bnMeaning: 'আমি বুঝতে পারছি না', en: "I don't understand" },
+{ ru: 'Где туалет?', bn: 'গদে তুয়ালিয়েত?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the toilet?' },
+{ ru: 'Сколько это стоит?', bn: 'স্কলকো এইতা স্তোইত?', bnMeaning: 'এটার দাম কত?', en: 'How much does it cost?' },
+{ ru: 'Вы говорите по-английски?', bn: 'ভ্যি গাভারিতি পা-আংলিস্কি?', bnMeaning: 'আপনি কি ইংরেজি বলতে পারেন?', en: 'Do you speak English?' },
+{ ru: 'Говорите медленно, пожалуйста', bn: 'গাভারিতি মেদলেন্না, পাঝালুস্তা', bnMeaning: 'দয়া করে ধীরে বলুন', en: 'Please speak slowly' },
+{ ru: 'Как вас зовут?', bn: 'কাক ভাস জাভুত?', bnMeaning: 'আপনার নাম কী?', en: 'What is your name?' },
+{ ru: 'Меня зовут...', bn: 'মেন্যা জাভুত...', bnMeaning: 'আমার নাম...', en: 'My name is...' },
+{ ru: 'Очень приятно', bn: 'ওচিন প্রিয়াত্না', bnMeaning: 'আপনার সঙ্গে পরিচিত হয়ে ভালো লাগলো', en: 'Nice to meet you' },
+{ ru: 'Где находится метро?', bn: 'গদে নাখোডিতসা মেট্রো?', bnMeaning: 'মেট্রো কোথায়?', en: 'Where is the metro?' },
+{ ru: 'Помогите!', bn: 'পোমাগিতে!', bnMeaning: 'সাহায্য করুন!', en: 'Help!' },
+{ ru: 'Я потерялся', bn: 'ইয়া পতেরিয়ালসা', bnMeaning: 'আমি পথ হারিয়েছি (পুরুষ)', en: 'I am lost (male)' },
     { ru: 'Что это?', bn: 'শতো এইতা?', bnMeaning: 'এটা কী?', en: 'What is this?' },
 { ru: 'Я хочу есть', bn: 'ইয়া খাচু ইইস্ত', bnMeaning: 'আমি খেতে চাই', en: 'I want to eat' },
 { ru: 'Где я?', bn: 'গ্দে ইয়া?', bnMeaning: 'আমি কোথায়?', en: 'Where am I?' },
