@@ -802,8 +802,29 @@ const vocabulary = {
 { ru: 'Kann ich das später bringen?', bn: 'কান ইশ দাস স্পেটার ব্রিঙ্গেন?', bnMeaning: 'আমি এটা পরে আনতে পারি কি?', en: 'Can I bring it later?' },
 { ru: 'Ich habe einen Termin um drei Uhr', bn: 'ইশ হাবে আইনেন টারমিন উম দ্রাই উয়ার', bnMeaning: 'আমার তিনটায় অ্যাপয়েন্টমেন্ট আছে', en: 'I have an appointment at 3 o’clock' },
 { ru: 'Bitte setzen Sie sich', bn: 'বিটে সেটসেন জি জিশ', bnMeaning: 'দয়া করে বসুন', en: 'Please have a seat' },
-{ ru: 'Das Gespräch ist vertraulich', bn: 'দাস গেশপ্রেখ ইস্ট ফারট্রাউলিশ', bnMeaning: 'এই কথোপকথন গোপনীয়', en: 'This conversation is confidential' }
-  
+{ ru: 'Das Gespräch ist vertraulich', bn: 'দাস গেশপ্রেখ ইস্ট ফারট্রাউলিশ', bnMeaning: 'এই কথোপকথন গোপনীয়', en: 'This conversation is confidential' },
+  // German 221–240
+{ ru: 'Ich bin neu in Deutschland', bn: 'ইশ বিন নয় ইন ডয়চল্যান্ড', bnMeaning: 'আমি জার্মানিতে নতুন', en: 'I am new in Germany' },
+{ ru: 'Ich möchte mich anmelden', bn: 'ইশ মোইখটে মিশ আনমেলডেন', bnMeaning: 'আমি নিবন্ধন করতে চাই', en: 'I want to register' },
+{ ru: 'Wo ist die Ausländerbehörde?', bn: 'ভো ইস্ট দি আউসলেন্ডারবেহর্দে?', bnMeaning: 'বিদেশি অফিস কোথায়?', en: 'Where is the foreigners office?' },
+{ ru: 'Ich habe keine Unterkunft', bn: 'ইশ হাবে কাইনে উন্টারকুনফট', bnMeaning: 'আমার থাকার জায়গা নেই', en: 'I don’t have accommodation' },
+{ ru: 'Ich wohne bei Freunden', bn: 'ইশ ভোনে বাই ফ্রয়ন্ডেন', bnMeaning: 'আমি বন্ধুদের বাসায় থাকি', en: 'I live with friends' },
+{ ru: 'Ich suche eine Unterkunft', bn: 'ইশ জুখে আইনে উন্টারকুনফট', bnMeaning: 'আমি থাকার জায়গা খুঁজছি', en: 'I’m looking for accommodation' },
+{ ru: 'Ich brauche Hilfe bei der Wohnungssuche', bn: 'ইশ ব্রাউখে হিলফে বাই ডেয়ার ভোনুংসজুখে', bnMeaning: 'বাসা খুঁজতে আমার সাহায্য দরকার', en: 'I need help finding a flat' },
+{ ru: 'Ich habe Kinder im Schulalter', bn: 'ইশ হাবে কিন্ডার ইম শুলআলটার', bnMeaning: 'আমার স্কুলে পড়ুয়া সন্তান আছে', en: 'I have school-aged children' },
+{ ru: 'Ich suche eine Schule für mein Kind', bn: 'ইশ জুখে আইনে শুলে ফিউর মাইন কিন্ড', bnMeaning: 'আমি আমার সন্তানের জন্য একটি স্কুল খুঁজছি', en: 'I’m looking for a school for my child' },
+{ ru: 'Wann beginnt der Unterricht?', bn: 'ভান বেগিন্ট ডেয়ার উন্টাররিশ্ট?', bnMeaning: 'ক্লাস কখন শুরু হয়?', en: 'When does the class start?' },
+{ ru: 'Wie lange dauert der Kurs?', bn: 'ভি লাঙ্গে দাউয়ার্ট ডেয়ার কুর্স?', bnMeaning: 'কোর্সটি কতদিন চলবে?', en: 'How long does the course last?' },
+{ ru: 'Ist das kostenlos?', bn: 'ইস্ট দাস কোস্টেনলোস?', bnMeaning: 'এটা কি ফ্রি?', en: 'Is it free?' },
+{ ru: 'Muss ich mich anmelden?', bn: 'মুস ইশ মিশ আনমেলডেন?', bnMeaning: 'আমাকে কি নিবন্ধন করতে হবে?', en: 'Do I have to register?' },
+{ ru: 'Was muss ich mitbringen?', bn: 'ভাস মুস ইশ মিটব্রিঙ্গেন?', bnMeaning: 'আমার কী সঙ্গে আনতে হবে?', en: 'What do I have to bring?' },
+{ ru: 'Gibt es eine Kinderbetreuung?', bn: 'গিপ্ট এস আইনে কিন্ডারবেট্রয়ুং?', bnMeaning: 'শিশুদের দেখাশোনা করার সুবিধা আছে?', en: 'Is there childcare available?' },
+{ ru: 'Ich möchte arbeiten gehen', bn: 'ইশ মোইখটে আরবাইটেন গেহেন', bnMeaning: 'আমি কাজে যেতে চাই', en: 'I want to go to work' },
+{ ru: 'Meine Frau braucht Unterstützung', bn: 'মাইনে ফ্রাউ ব্রাউখট উন্টারস্ট্যুতসুং', bnMeaning: 'আমার স্ত্রীর সাহায্য দরকার', en: 'My wife needs support' },
+{ ru: 'Mein Mann ist krank', bn: 'মাইন মান ইস্ট ক্রাঙ্ক', bnMeaning: 'আমার স্বামী অসুস্থ', en: 'My husband is sick' },
+{ ru: 'Ich brauche einen Termin bei der Schule', bn: 'ইশ ব্রাউখে আইনেন টারমিন বাই ডেয়ার শুলে', bnMeaning: 'আমার স্কুলে অ্যাপয়েন্টমেন্ট দরকার', en: 'I need an appointment at the school' },
+{ ru: 'Vielen Dank für Ihre Hilfe', bn: 'ফিলেন ডাঙ্ক ফিউর ইরে হিলফে', bnMeaning: 'আপনার সাহায্যের জন্য অনেক ধন্যবাদ', en: 'Thank you very much for your help' },
+
     // জার্মানি ভাষা এখানে এড করুন।
   
   
