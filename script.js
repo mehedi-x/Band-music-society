@@ -1491,12 +1491,53 @@ const vocabulary = {
 { ru: 'Ricorda di respirare', bn: 'রিকোরদা দি রেসপিরারে', bnMeaning: 'শ্বাস নিতে মনে রেখো', en: 'Remember to breathe' },
 { ru: 'Il tuo sorriso illumina', bn: 'ইল তুয়ো সোরিসো ইলুমিনা', bnMeaning: 'তোমার হাসি আলো ছড়ায়', en: 'Your smile lights up' },    
 ],
- 
   
-  french: [
-    { ru: 'Bonjour', bn: 'বঁজুর', bnMeaning: 'শুভ সকাল', en: 'Good morning' },
-    { ru: 'Merci', bn: 'মেরসি', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
-    { ru: 'Comment ça va?', bn: 'কোমঁ সা ভা?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+// ইতালি শেষ  
+  
+
+french: [
+  { ru: 'Bonjour', bn: 'বঁঝুর', bnMeaning: 'সুপ্রভাত / হ্যালো', en: 'Good morning / Hello' },
+  { ru: 'Bonsoir', bn: 'বঁস্বার', bnMeaning: 'শুভ সন্ধ্যা', en: 'Good evening' },
+  { ru: 'Salut', bn: 'সাল্যু', bnMeaning: 'হাই (অফিশিয়াল নয়)', en: 'Hi (informal)' },
+  { ru: 'Comment ça va ?', bn: 'কোমঁ সা ভা?', bnMeaning: 'তুমি কেমন আছো?', en: 'How are you?' },
+  { ru: 'Ça va bien, merci', bn: 'সা ভা বিয়াঁ, মেরসি', bnMeaning: 'আমি ভালো আছি, ধন্যবাদ', en: 'I’m fine, thank you' },
+  { ru: 'Et toi ?', bn: 'এ তুয়া?', bnMeaning: 'আর তুমি?', en: 'And you?' },
+  { ru: 'Merci beaucoup', bn: 'মেরসি বোকু', bnMeaning: 'অসাধারণ ধন্যবাদ', en: 'Thank you very much' },
+  { ru: 'De rien', bn: 'দ্য রিয়াঁ', bnMeaning: 'স্বাগতম / কিছু না', en: 'You’re welcome' },
+  { ru: 'S’il vous plaît', bn: 'সিল ভু প্লে', bnMeaning: 'দয়া করে (ফর্মাল)', en: 'Please (formal)' },
+  { ru: 'Excusez-moi', bn: 'এক্সকিউজে-মোয়া', bnMeaning: 'মাফ করবেন', en: 'Excuse me' },
+  { ru: 'Je ne comprends pas', bn: 'ঝ্য ন কঁপ্রঁ পা', bnMeaning: 'আমি বুঝতে পারছি না', en: 'I don’t understand' },
+  { ru: 'Parlez-vous anglais ?', bn: 'পারলে ভু অঁগলে?', bnMeaning: 'আপনি কি ইংরেজি বলেন?', en: 'Do you speak English?' },
+  { ru: 'Je parle un peu français', bn: 'ঝ্য পার্ল উঁ প্যু ফঁহসে', bnMeaning: 'আমি একটু ফ্রেঞ্চ বলতে পারি', en: 'I speak a little French' },
+  { ru: 'Où est la gare ?', bn: 'উ এ লা গার?', bnMeaning: 'স্টেশন কোথায়?', en: 'Where is the train station?' },
+  { ru: 'Combien ça coûte ?', bn: 'কঁবিয়াঁ সা কুৎ?', bnMeaning: 'এটার দাম কত?', en: 'How much does it cost?' },
+  { ru: 'Je voudrais de l’eau', bn: 'ঝ্য ভুদ্রে দ্যলো', bnMeaning: 'আমি পানি চাই', en: 'I would like some water' },
+  { ru: 'Aidez-moi, s’il vous plaît', bn: 'এদে-মোয়া, সিল ভু প্লে', bnMeaning: 'দয়া করে আমাকে সাহায্য করুন', en: 'Please help me' },
+  { ru: 'Je suis perdu', bn: 'ঝ্য সুই পেরদ্যু', bnMeaning: 'আমি পথ হারিয়েছি', en: 'I’m lost' },
+  { ru: 'Je suis étudiant', bn: 'ঝ্য সুই জেতুদিয়াঁ', bnMeaning: 'আমি একজন ছাত্র', en: 'I am a student' },
+  { ru: 'Pouvez-vous répéter ?', bn: 'পুভে-ভু রেপেতে?', bnMeaning: 'আপনি কি আবার বলবেন?', en: 'Can you repeat?' },
+  { ru: 'Où sont les toilettes ?', bn: 'উ সোঁ লে ত্বালেত?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the restroom?' },
+  { ru: 'Je suis fatigué', bn: 'ঝ্য সুই ফাতিগে', bnMeaning: 'আমি ক্লান্ত', en: 'I’m tired' },
+  { ru: 'J’ai faim', bn: 'ঝে ফাঁ', bnMeaning: 'আমি ক্ষুধার্ত', en: 'I’m hungry' },
+  { ru: 'J’ai soif', bn: 'ঝে সোয়াফ', bnMeaning: 'আমি পিপাসিত', en: 'I’m thirsty' },
+  { ru: 'Quel est votre nom ?', bn: 'কেল এ ভোত্র নঁ?', bnMeaning: 'আপনার নাম কী?', en: 'What is your name?' },
+  { ru: 'Je m’appelle...', bn: 'ঝ্য মাপেল...', bnMeaning: 'আমার নাম হলো...', en: 'My name is...' },
+  { ru: 'D’où venez-vous ?', bn: 'দু ভেনে ভু?', bnMeaning: 'আপনি কোথা থেকে এসেছেন?', en: 'Where are you from?' },
+  { ru: 'Je viens du Bangladesh', bn: 'ঝ্য ভিয়াঁ দ্যু বাংলাদেশ', bnMeaning: 'আমি বাংলাদেশ থেকে এসেছি', en: 'I am from Bangladesh' },
+  { ru: 'Quel âge avez-vous ?', bn: 'কেল আজ আভে ভু?', bnMeaning: 'আপনার বয়স কত?', en: 'How old are you?' },
+  { ru: 'J’ai 25 ans', bn: 'ঝে ভাঁ-সাঁ-কাঁ', bnMeaning: 'আমার বয়স ২৫ বছর', en: 'I am 25 years old' },
+  { ru: 'Je ne parle pas bien français', bn: 'ঝ্য ন পার্ল পা বিঁ ফঁহসে', bnMeaning: 'আমি ভালো ফ্রেঞ্চ বলতে পারি না', en: 'I don’t speak French well' },
+  { ru: 'Parlez lentement, s’il vous plaît', bn: 'পারলে লন্তমঁ, সিল ভু প্লে', bnMeaning: 'দয়া করে ধীরে বলুন', en: 'Please speak slowly' },
+  { ru: 'Où est l’hôpital ?', bn: 'উ এ ল’ওপিতাল?', bnMeaning: 'হাসপাতাল কোথায়?', en: 'Where is the hospital?' },
+  { ru: 'Appelez une ambulance', bn: 'আপলে উন আম্বুলঁস', bnMeaning: 'একটা অ্যাম্বুলেন্স ডাকুন', en: 'Call an ambulance' },
+  { ru: 'C’est une urgence', bn: 'সে তুন ইউর্জঁস', bnMeaning: 'এটা জরুরি', en: 'It’s an emergency' },
+  { ru: 'Je suis allergique à...', bn: 'ঝ্য সুই আলের্জিক আ...', bnMeaning: 'আমি ...-এর প্রতি অ্যালার্জিক', en: 'I am allergic to...' },
+  { ru: 'Je n’ai pas de passeport', bn: 'ঝ্য নে পা দ্যু পাসপোর', bnMeaning: 'আমার পাসপোর্ট নেই', en: 'I don’t have a passport' },
+  { ru: 'J’ai besoin d’un docteur', bn: 'ঝে বুজোয়াঁ দ্যু দক্ত্যর', bnMeaning: 'আমার একজন ডাক্তার দরকার', en: 'I need a doctor' },
+  { ru: 'C’est trop cher', bn: 'সে ত্রো শের', bnMeaning: 'এটা অনেক দামী', en: 'It’s too expensive' },
+  { ru: 'Pouvez-vous baisser le prix ?', bn: 'পুভে-ভু বেসে লে প্রি?', bnMeaning: 'আপনি কি দাম কমাতে পারেন?', en: 'Can you lower the price?' },
+  { ru: 'Je voudrais acheter ceci', bn: 'ঝ্য ভুদ্রে আশেতে সসি', bnMeaning: 'আমি এটা কিনতে চাই', en: 'I would like to buy this' },
+// ফ্রান্স কোথায়
   ],
   spanish: [
     { ru: 'Hola', bn: 'ওলা', bnMeaning: 'হ্যালো', en: 'Hello' },
