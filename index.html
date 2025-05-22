@@ -3,293 +3,263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Speak EU - Professional Web App</title>
+  <title>Speak EU - Language Selection</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-    /* Reset and base styles */
-    *, *::before, *::after {
+    /* Base Reset and Styling */
+    * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: #f9fafb;
-      color: #222;
-      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       user-select: none;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      padding: 1rem 1rem 2rem 1rem;
+      color: #1e2a47;
     }
 
-    /* Header styles - small and minimal with title left and toggle right */
-    header.app-header {
-      background: #007bff;
-      color: white;
-      padding: 0.4rem 1rem;
+    /* Header */
+    header {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 100;
+      padding: 0.3rem 0.6rem;
+      background: #007bff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgb(0 123 255 / 0.4);
+      color: white;
       user-select: none;
-      transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
-      height: 40px;
+      height: 44px;
     }
-
+    .icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.25s ease;
+      flex-shrink: 0;
+    }
+    .icon:hover {
+      color: #d0e2ff;
+    }
     .app-title {
       font-weight: 700;
-      letter-spacing: 0.05em;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+      flex-grow: 1;
       user-select: none;
-      margin: 0;
-      white-space: nowrap;
+      letter-spacing: 0.04em;
     }
 
-    .header-right {
+    /* Main Content */
+    main {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem 2rem 1.5rem;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.06);
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      box-sizing: border-box;
     }
 
-    /* Language select - styled for web */
-    #language-select {
-      font-size: 0.9rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 5px;
-      border: 1px solid #0056b3;
-      cursor: pointer;
+    label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #004085;
+    }
+
+    select {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      border: 2px solid #004085;
       background-color: #e6f0ff;
       color: #004085;
       font-weight: 600;
-      min-width: 140px;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
       appearance: none;
       background-image:
-        linear-gradient(45deg, transparent 50%, #0056b3 50%),
-        linear-gradient(135deg, #0056b3 50%, transparent 50%),
+        linear-gradient(45deg, transparent 50%, #004085 50%),
+        linear-gradient(135deg, #004085 50%, transparent 50%),
         linear-gradient(to right, #e6f0ff, #e6f0ff);
       background-position:
-        calc(100% - 20px) calc(1.1em),
-        calc(100% - 15px) calc(1.1em),
+        calc(100% - 20px) 1.3em,
+        calc(100% - 15px) 1.3em,
         100% 0;
-      background-size: 6px 6px, 6px 6px, 1px 1.2em;
+      background-size: 7px 7px, 7px 7px, 1px 1.5em;
       background-repeat: no-repeat;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      user-select: none;
     }
-    #language-select:hover,
-    #language-select:focus {
-      background-color: #cbe0ff;
-      border-color: #004085;
+    select:hover,
+    select:focus {
+      background-color: #c4dbff;
+      border-color: #002a66;
       outline: none;
     }
 
-    /* Mode toggle */
-    #mode-toggle {
-      background: #004085;
-      border: none;
-      border-radius: 50%;
-      color: white;
-      font-size: 1.2rem;
-      padding: 0.25rem 0.5rem;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.2s ease;
-      min-width: 34px;
-      min-height: 34px;
-      user-select: none;
-    }
-    #mode-toggle:hover {
-      background-color: #002e66;
-    }
-
-    /* Main content area */
-    main#conversation-area {
-      flex-grow: 1;
-      padding: 2rem 2rem;
-      background: white;
-      max-width: 960px;
-      margin: 1.5rem auto 2rem auto;
+    /* Advertisement */
+    .advertisement {
+      background-color: #dbe9ff;
       border-radius: 10px;
-      box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.05);
-      color: #333;
-      font-size: 1rem;
-      line-height: 1.5;
-      user-select: text;
-      min-height: 60vh;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    main#conversation-area p.placeholder {
+      padding: 1rem;
+      color: #004085;
       font-style: italic;
-      color: #777;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
       user-select: none;
-      margin: 0;
-      font-size: 1.15rem;
-      max-width: 75%;
-      line-height: 1.6;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      header.app-header {
-        justify-content: space-between;
-      }
-      #language-select {
-        min-width: 120px;
-      }
-      main#conversation-area {
-        margin: 1rem 1rem 2rem 1rem;
-        padding: 1rem 1.25rem;
-        min-height: 50vh;
-        max-width: 100%;
-      }
-      main#conversation-area p.placeholder {
-        max-width: 100%;
-        font-size: 1rem;
-        padding: 0 0.5rem;
-      }
+    /* Button */
+    button {
+      background-color: #004085;
+      color: white;
+      padding: 0.65rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.25s ease;
     }
-
-    /* Dark mode */
-    body[data-theme='dark'] {
-      background: #121212;
-      color: #ccc;
-    }
-    body[data-theme='dark'] main#conversation-area {
-      background: #1e1e1e;
-      color: #ddd;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    }
-    body[data-theme='dark'] header.app-header {
-      background: #00254a;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-      color: #bbb;
-    }
-    body[data-theme='dark'] #language-select {
-      background-color: #003366;
-      color: #a8c0ff;
-      border-color: #0055a2;
-      box-shadow: none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, #0055a2 50%),
-        linear-gradient(135deg, #0055a2 50%, transparent 50%),
-        linear-gradient(to right, #003366, #003366);
-    }
-    body[data-theme='dark'] #language-select:hover,
-    body[data-theme='dark'] #language-select:focus {
-      background-color: #004799;
-      border-color: #3399ff;
-      color: #d0e3ff;
+    button:hover,
+    button:focus {
+      background-color: #002a5c;
       outline: none;
     }
-    body[data-theme='dark'] #mode-toggle {
-      background-color: #003366;
-      box-shadow: 0 2px 6px rgba(51, 153, 255, 0.7);
-      color: #aecbff;
-    }
-    body[data-theme='dark'] #mode-toggle:hover {
-      background-color: #00204c;
-      box-shadow: 0 0 12px rgba(51, 153, 255, 0.9);
-    }
 
+    /* Responsive */
+    @media (max-width: 480px) {
+      header {
+        height: 40px;
+        padding: 0.25rem 0.5rem;
+      }
+      .app-title {
+        font-size: 1rem;
+      }
+      main {
+        padding: 1rem 1rem 1.75rem 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <header class="app-header" role="banner" aria-label="Site header with title, language selector and mode toggle">
-    <h1 class="app-title" aria-label="Site title">Speak EU</h1>
-    <div class="header-right">
-      <select aria-label="Select language" id="language-select" title="Select a language to begin">
-        <option value="russian">🇷🇺 Russian</option>
-        <option value="german">🇩🇪 German</option>
-        <option value="italian">🇮🇹 Italian</option>
-        <option value="french">🇫🇷 French</option>
-        <option value="spanish">🇪🇸 Spanish</option>
-        <option value="portuguese">🇵🇹 Portuguese</option>
-        <option value="dutch">🇳🇱 Dutch</option>
-        <option value="swedish">🇸🇪 Swedish</option>
-        <option value="norwegian">🇳🇴 Norwegian</option>
-        <option value="finnish">🇫🇮 Finnish</option>
-        <option value="danish">🇩🇰 Danish</option>
-        <option value="greek">🇬🇷 Greek</option>
-        <option value="polish">🇵🇱 Polish</option>
-        <option value="czech">🇨🇿 Czech</option>
-        <option value="hungarian">🇭🇺 Hungarian</option>
-        <option value="slovak">🇸🇰 Slovak</option>
-        <option value="slovenian">🇸🇮 Slovenian</option>
-        <option value="estonian">🇪🇪 Estonian</option>
-        <option value="latvian">🇱🇻 Latvian</option>
-        <option value="lithuanian">🇱🇹 Lithuanian</option>
-        <option value="croatian">🇭🇷 Croatian</option>
-        <option value="icelandic">🇮🇸 Icelandic</option>
-        <option value="maltesian">🇲🇹 Maltese</option>
-        <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Switzerland</option>
-        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-        <option value="luxembourgish">🇱🇺 Luxembourgish</option>
-      </select>
-      <button id="mode-toggle" aria-pressed="false" aria-label="Toggle light or dark mode" title="Toggle light/dark mode">🌓</button>
-    </div>
+  <header>
+    <span class="icon" id="home-icon" title="Home">&#8962;</span>
+    <span class="app-title">Speak EU</span>
+    <span class="icon" id="mode-toggle" title="Toggle Dark Mode">🌙</span>
   </header>
 
-  <main id="conversation-area" role="main" tabindex="0" aria-live="polite" aria-label="Conversation area">
-    <p class="placeholder">Please select a language to start your conversation...</p>
+  <main>
+    <label for="language-select">Select your language / দেশ নির্বাচন করুন</label>
+    <select id="language-select" aria-label="Select language">
+      <option value="russian">🇷🇺 Russian</option>
+      <option value="german">🇩🇪 German</option>
+      <option value="italian">🇮🇹 Italian</option>
+      <option value="french">🇫🇷 French</option>
+      <option value="spanish">🇪🇸 Spanish</option>
+      <option value="portuguese">🇵🇹 Portuguese</option>
+      <option value="dutch">🇳🇱 Dutch</option>
+      <option value="swedish">🇸🇪 Swedish</option>
+      <option value="norwegian">🇳🇴 Norwegian</option>
+      <option value="finnish">🇫🇮 Finnish</option>
+      <option value="danish">🇩🇰 Danish</option>
+      <option value="greek">🇬🇷 Greek</option>
+      <option value="polish">🇵🇱 Polish</option>
+      <option value="czech">🇨🇿 Czech</option>
+      <option value="hungarian">🇭🇺 Hungarian</option>
+      <option value="slovak">🇸🇰 Slovak</option>
+      <option value="slovenian">🇸🇮 Slovenian</option>
+      <option value="estonian">🇪🇪 Estonian</option>
+      <option value="latvian">🇱🇻 Latvian</option>
+      <option value="lithuanian">🇱🇹 Lithuanian</option>
+      <option value="croatian">🇭🇷 Croatian</option>
+      <option value="icelandic">🇮🇸 Icelandic</option>
+      <option value="maltesian">🇲🇹 Maltese</option>
+      <option value="austrian">🇦🇹 Austrian German</option>
+      <option value="swiss">🇨🇭 Switzerland</option>
+      <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+      <option value="luxembourgish">🇱🇺 Luxembourgish</option>
+    </select>
+
+    <button id="continue-btn" type="button">Continue</button>
+
+    <div class="advertisement" aria-label="Advertisement">
+      আপনার বিজ্ঞাপন এখানে প্রদর্শিত হবে।
+    </div>
   </main>
 
-  <script src="script.js"></script>
   <script>
-    // Automatically set theme based on user preference
-    (function(){
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      if(prefersDarkScheme.matches) {
-        document.body.dataset.theme = 'dark';
-        document.getElementById('mode-toggle').setAttribute('aria-pressed', 'true');
-      }
-    })();
-
+    // Elements
     const languageSelect = document.getElementById('language-select');
-    const appHeader = document.querySelector('.app-header');
-    const conversationArea = document.getElementById('conversation-area');
+    const continueBtn = document.getElementById('continue-btn');
+    const homeIcon = document.getElementById('home-icon');
     const modeToggle = document.getElementById('mode-toggle');
 
-    languageSelect.addEventListener('change', () => {
-      // Hide header with smooth transition
-      appHeader.style.transition = 'opacity 0.3s ease, height 0.3s ease, padding 0.3s ease';
-      appHeader.style.opacity = '0';
-      appHeader.style.height = '0';
-      appHeader.style.padding = '0';
-      appHeader.style.overflow = 'hidden';
-      setTimeout(() => {
-        appHeader.style.display = 'none';
-      }, 300);
+    // Load and apply saved language
+    const savedLang = localStorage.getItem('selectedLanguage');
+    if (savedLang) {
+      const option = Array.from(languageSelect.options).find(opt => opt.value === savedLang);
+      if (option) option.selected = true;
+    }
 
-      // Show selected language text in conversation area
-      const langText = languageSelect.options[languageSelect.selectedIndex].text;
-      conversationArea.innerHTML = `<p>You've selected: <strong>${langText}</strong></p><p>Let's get started!</p>`;
+    // Dark mode initial based on system preference or stored preference
+    function applyInitialTheme() {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.dataset.theme = 'dark';
+        modeToggle.textContent = '☀️';
+      } else {
+        document.body.removeAttribute('data-theme');
+        modeToggle.textContent = '🌙';
+      }
+    }
+    applyInitialTheme();
+
+    // Continue Button: Save language and go to app page
+    continueBtn.addEventListener('click', () => {
+      if (!languageSelect.value) {
+        alert('Please select a language before continuing.');
+        return;
+      }
+      localStorage.setItem('selectedLanguage', languageSelect.value);
+      window.location.href = 'app.html';
     });
 
+    // Home icon click reloads this page (index)
+    homeIcon.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    // Dark mode toggle functionality with storage
     modeToggle.addEventListener('click', () => {
       if (document.body.dataset.theme === 'dark') {
         document.body.removeAttribute('data-theme');
-        modeToggle.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'light');
+        modeToggle.textContent = '🌙';
       } else {
         document.body.dataset.theme = 'dark';
-        modeToggle.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'dark');
+        modeToggle.textContent = '☀️';
       }
     });
   </script>
+
 </body>
 </html>
 
