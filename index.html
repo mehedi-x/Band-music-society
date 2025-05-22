@@ -2,263 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-  <title>Speak EU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speak_Eu</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --primary-color: #0059b3;
-      --secondary-color: #003c82;
-      --hover-color: #002a58;
-      --text-color: white;
-      --background-color: #f0f0f0;
-      --menu-background: #004a99;
-      --menu-hover: #003675;
-    }
-
-    body {
-      background-color: var(--background-color);
-      color: #000;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
+    /* Make header smaller and professional */
     .app-header {
       padding: 0.6rem 1rem;
-      background: var(--primary-color);
-      color: var(--text-color);
+      background: #0059b3;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
-      position: relative;
-      user-select: none;
-      z-index: 2000;
     }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
     .app-title {
       font-size: 1.3rem;
       font-weight: 600;
       margin: 0;
       user-select: none;
     }
-
-    #menu-button {
-      background: var(--secondary-color);
-      border: none;
-      border-radius: 50%;
-      color: var(--text-color);
-      font-size: 1.5rem;
-      padding: 0.25rem 0.5rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #menu-button:hover,
-    #menu-button:focus {
-      background-color: var(--hover-color);
-      outline: none;
-    }
-
-    #mode-toggle {
-      background: var(--secondary-color);
-      border: none;
-      border-radius: 50%;
-      color: var(--text-color);
-      font-size: 1.2rem;
-      padding: 0.25rem 0.4rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #mode-toggle:hover,
-    #mode-toggle:focus {
-      background-color: var(--hover-color);
-      outline: none;
-    }
-
-    /* Dropdown Menu Container */
-    .dropdown-menu {
-      position: absolute;
-      top: 56px;
-      left: 1rem;
-      background: var(--menu-background);
-      color: var(--text-color);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      border-radius: 6px;
-      width: 260px;
-      max-height: 70vh;
-      overflow-y: auto;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 1000;
-      user-select: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 0.5rem 0;
-    }
-
-    .dropdown-menu.show {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    .dropdown-menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      flex-grow: 1;
-      overflow-y: auto;
-    }
-
-    .dropdown-menu li {
-      padding: 0.6rem 1rem;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    .dropdown-menu li:hover,
-    .dropdown-menu li:focus {
-      background-color: var(--menu-hover);
-      outline: none;
-    }
-
-    /* Language select inside menu */
     #language-select {
-      margin: 0 1rem 1rem 1rem;
-      width: calc(100% - 2rem);
-      font-size: 1rem;
-      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.5rem;
       border-radius: 5px;
       border: none;
       cursor: pointer;
-      user-select: none;
-      background-color: white;
-      color: black;
-      appearance: none;
-      font-weight: 600;
+      min-width: 140px;
     }
-    #language-select:focus {
-      outline: 2px solid var(--hover-color);
+    #mode-toggle {
+      background: #003c82;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.25rem 0.4rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
     }
-
-    /* Additional Menu Header */
-    .dropdown-menu h2 {
-      margin: 0 1rem 0.4rem 1rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-      padding-bottom: 0.25rem;
+    #mode-toggle:hover {
+      background-color: #002a58;
     }
 
-    /* Additional Links Section */
-    .dropdown-menu .menu-links {
-      border-top: 1px solid rgba(255,255,255,0.3);
-      margin-top: 0.5rem;
-      padding-top: 0.5rem;
-    }
-
-    /* Responsive */
+    /* Mobile friendly */
     @media (max-width: 600px) {
       .app-header {
         flex-direction: column;
         align-items: stretch;
         padding: 0.5rem 1rem;
       }
-      .header-left {
-        justify-content: flex-start;
-        width: 100%;
-        gap: 1rem;
-        margin-bottom: 0.4rem;
-      }
       .app-title {
         font-size: 1.1rem;
-        text-align: left;
-        flex-grow: 1;
-        user-select: none;
+        text-align: center;
+        margin-bottom: 0.4rem;
+      }
+      .header-right {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+      }
+      #language-select {
+        width: 100%;
+        max-width: none;
       }
       #mode-toggle {
         margin-left: 0;
-        align-self: flex-end;
-        margin-bottom: 0.5rem;
-      }
-      .dropdown-menu {
-        width: calc(100vw - 2rem);
-        left: 1rem;
-        right: 1rem;
-        top: 48px;
-        max-height: 60vh;
-        border-radius: 8px;
       }
     }
-
-    /* Dark mode styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #eee;
-    }
-
-    body.dark-mode .app-header {
-      background-color: #003366;
-      color: #fff;
-    }
-
-    body.dark-mode #mode-toggle,
-    body.dark-mode #menu-button {
-      background-color: #00497a;
-      color: #eee;
-    }
-
-    body.dark-mode #mode-toggle:hover,
-    body.dark-mode #menu-button:hover,
-    body.dark-mode .dropdown-menu li:hover {
-      background-color: #002a45;
-    }
-
-    body.dark-mode #language-select {
-      background-color: #1d1d1d;
-      color: #eee;
-      border: 1px solid #444;
-      font-weight: 600;
-    }
-
   </style>
 </head>
 <body>
 
-  <header class="app-header" aria-label="Application header">
-    <div class="header-left">
-      <button id="menu-button" aria-haspopup="true" aria-expanded="false" aria-label="Open menu">☰</button>
-      <h1 class="app-title">Speak EU</h1>
-    </div>
-
-    <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">🌓</button>
-
-    <nav class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
-      <h2>Languages</h2>
-      <select id="language-select" aria-label="Select Language">
+  <header class="app-header">
+    <h1 class="app-title">Speak EU</h1>
+    <div class="header-right">
+      <select id="language-select">
+        <!-- Already added -->
         <option value="russian">🇷🇺 Russian</option>
         <option value="german">🇩🇪 German</option>
         <option value="italian">🇮🇹 Italian</option>
         <option value="french">🇫🇷 French</option>
         <option value="spanish">🇪🇸 Spanish</option>
+        <!-- Schengen Countries Not Yet Added -->
         <option value="portuguese">🇵🇹 Portuguese</option>
         <option value="dutch">🇳🇱 Dutch</option>
         <option value="swedish">🇸🇪 Swedish</option>
@@ -278,107 +105,33 @@
         <option value="icelandic">🇮🇸 Icelandic</option>
         <option value="maltesian">🇲🇹 Maltese</option>
         <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Switzerland</option>
+        <option value="swiss">🇨🇭 Switzerland </option>
         <option value="liechtenstein">🇱🇮 Liechtenstein</option>
         <option value="luxembourgish">🇱🇺 Luxembourgish</option>
       </select>
-
-      <div class="menu-links">
-        <ul>
-          <li tabindex="0" role="menuitem" id="menu-settings">⚙️ Settings</li>
-          <li tabindex="0" role="menuitem" id="menu-profile">👤 Profile</li>
-          <li tabindex="0" role="menuitem" id="menu-help">❓ Help</li>
-          <li tabindex="0" role="menuitem" id="menu-about">ℹ️ About</li>
-          <li tabindex="0" role="menuitem" id="menu-logout">🚪 Logout</li>
-        </ul>
-      </div>
-    </nav>
+      <button id="mode-toggle">🌓</button>
+    </div>
   </header>
 
-  <main id="conversation-area" tabindex="0">
-    <!-- Conversation content here -->
-  </main>
+  <main id="conversation-area"></main>
 
   <script src="script.js"></script>
   <script>
+    // Hide header when a language is selected
     const languageSelect = document.getElementById('language-select');
     const header = document.querySelector('.app-header');
-    const modeToggle = document.getElementById('mode-toggle');
-    const menuButton = document.getElementById('menu-button');
-    const dropdownMenu = document.getElementById('dropdown-menu');
 
-    // Hide header when a language is selected
     languageSelect.addEventListener('change', () => {
+      // Hide header smoothly
       header.style.opacity = '0';
       header.style.height = '0';
       header.style.padding = '0';
       header.style.overflow = 'hidden';
+      // Optional: actually set display:none after transition for accessibility
       setTimeout(() => {
         header.style.display = 'none';
       }, 300);
     });
-
-    // Toggle dark/light mode
-    modeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        modeToggle.textContent = '🌞'; // sun icon
-      } else {
-        modeToggle.textContent = '🌓'; // moon icon
-      }
-    });
-
-    // Toggle menu open/close
-    menuButton.addEventListener('click', () => {
-      const isOpen = dropdownMenu.classList.toggle('show');
-      menuButton.setAttribute('aria-expanded', isOpen);
-      dropdownMenu.setAttribute('aria-hidden', !isOpen);
-      if (isOpen) {
-        languageSelect.focus();
-      }
-    });
-
-    // Close menu when clicking outside or navigating away
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !menuButton.contains(e.target)) {
-        dropdownMenu.classList.remove('show');
-        menuButton.setAttribute('aria-expanded', false);
-        dropdownMenu.setAttribute('aria-hidden', true);
-      }
-    });
-
-    // Keyboard navigation for menu links
-    const menuLinks = dropdownMenu.querySelectorAll('li');
-    dropdownMenu.addEventListener('keydown', (e) => {
-      const focusableItems = Array.from(menuLinks);
-      let index = focusableItems.indexOf(document.activeElement);
-
-      if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        index = (index <= 0) ? focusableItems.length - 1 : index - 1;
-        focusableItems[index].focus();
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        index = (index === focusableItems.length - 1) ? 0 : index + 1;
-        focusableItems[index].focus();
-      } else if (e.key === 'Escape') {
-        dropdownMenu.classList.remove('show');
-        menuButton.setAttribute('aria-expanded', false);
-        dropdownMenu.setAttribute('aria-hidden', true);
-        menuButton.focus();
-      } else if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        document.activeElement.click();
-      }
-    });
-
-    // Example functions for menu items
-    document.getElementById('menu-settings').addEventListener('click', () => alert('Settings clicked'));
-    document.getElementById('menu-profile').addEventListener('click', () => alert('Profile clicked'));
-    document.getElementById('menu-help').addEventListener('click', () => alert('Help clicked'));
-    document.getElementById('menu-about').addEventListener('click', () => alert('About clicked'));
-    document.getElementById('menu-logout').addEventListener('click', () => alert('Logout clicked'));
-
   </script>
 </body>
 </html>
