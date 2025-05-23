@@ -3335,13 +3335,62 @@ dutch:[
   { ru: 'Ik ben trots op je', bn: 'ইক বেন ত্রোৎস অপ য়ে', bnMeaning: 'আমি তোমার ওপর গর্বিত', en: 'I am proud of you' },
   
   // Duth stop..
-
-
 ],
-  swedish: [
-    { ru: 'Hej', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
-    { ru: 'Tack', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
-    { ru: 'Hur mår du?', bn: 'হুর মোর দু?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+swedish: [
+{ ru: 'Hej', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
+{ ru: 'God morgon', bn: 'গোড মোরগোন', bnMeaning: 'সুপ্রভাত', en: 'Good morning' },
+{ ru: 'God kväll', bn: 'গোড কভেল্ল', bnMeaning: 'শুভ সন্ধ্যা', en: 'Good evening' },
+{ ru: 'God natt', bn: 'গোড নাট', bnMeaning: 'শুভ রাত্রি', en: 'Good night' },
+{ ru: 'Hur mår du?', bn: 'হুর মোর ডু?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
+{ ru: 'Jag mår bra', bn: 'ইয়াগ মোর ব্রা', bnMeaning: 'আমি ভালো আছি', en: 'I’m fine' },
+{ ru: 'Tack', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+{ ru: 'Varsågod', bn: 'ভারশোগুদ', bnMeaning: 'স্বাগতম / আপনি স্বাগত', en: 'You’re welcome' },
+{ ru: 'Förlåt', bn: 'ফোরলোট', bnMeaning: 'মাফ করবেন', en: 'Sorry / Excuse me' },
+{ ru: 'Ja', bn: 'ইয়া', bnMeaning: 'হ্যাঁ', en: 'Yes' },
+{ ru: 'Nej', bn: 'নেই', bnMeaning: 'না', en: 'No' },
+{ ru: 'Jag förstår inte', bn: 'ইয়াগ ফোরস্তোর ইনতে', bnMeaning: 'আমি বুঝি না', en: 'I don’t understand' },
+{ ru: 'Kan du prata långsamt?', bn: 'কান ডু প্রাতা লংসামত?', bnMeaning: 'আপনি কি ধীরে বলবেন?', en: 'Can you speak slowly?' },
+{ ru: 'Vad heter du?', bn: 'ভাদ হেতের ডু?', bnMeaning: 'তোমার নাম কী?', en: 'What’s your name?' },
+{ ru: 'Jag heter...', bn: 'ইয়াগ হেতের...', bnMeaning: 'আমার নাম...', en: 'My name is...' },
+{ ru: 'Trevligt att träffas', bn: 'ত্রেভলিগত আত ত্রেফাস', bnMeaning: 'আপনার সঙ্গে দেখা হয়ে ভালো লাগলো', en: 'Nice to meet you' },
+{ ru: 'Jag kommer från Bangladesh', bn: 'ইয়াগ কোমের ফ্রন বাংলাদেশ', bnMeaning: 'আমি বাংলাদেশ থেকে এসেছি', en: 'I am from Bangladesh' },
+{ ru: 'Hur gammal är du?', bn: 'হুর গাম্মাল অ্যার ডু?', bnMeaning: 'তোমার বয়স কত?', en: 'How old are you?' },
+{ ru: 'Jag är tjugo år', bn: 'ইয়াগ অ্যার শুগু অর', bnMeaning: 'আমার বয়স বিশ বছর', en: 'I am 20 years old' },
+{ ru: 'Var är toaletten?', bn: 'ভার অ্যার টুয়ালেত্তেন?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the toilet?' },
+{ ru: 'Hur mycket kostar det?', bn: 'হুর মিউকে কস্তার দে?', bnMeaning: 'এটার দাম কত?', en: 'How much does it cost?' },
+{ ru: 'Jag vill ha vatten', bn: 'ইয়াগ ভিল হা ভাত্তেন', bnMeaning: 'আমি পানি চাই', en: 'I want water' },
+{ ru: 'Kan jag få menyn?', bn: 'কান ইয়াগ ফো মেনিন?', bnMeaning: 'আমি কি মেনু পেতে পারি?', en: 'Can I get the menu?' },
+{ ru: 'Jag är hungrig', bn: 'ইয়াগ অ্যার হুংরিগ', bnMeaning: 'আমি ক্ষুধার্ত', en: 'I am hungry' },
+{ ru: 'Jag är trött', bn: 'ইয়াগ অ্যার ত্রত', bnMeaning: 'আমি ক্লান্ত', en: 'I am tired' },
+{ ru: 'Jag är sjuk', bn: 'ইয়াগ অ্যার শুক', bnMeaning: 'আমি অসুস্থ', en: 'I am sick' },
+{ ru: 'Ring en ambulans!', bn: 'রিং য়েন আম্বুলান্স!', bnMeaning: 'অ্যাম্বুলেন্স ডাকো!', en: 'Call an ambulance!' },
+{ ru: 'Hjälp!', bn: 'ইয়েল্প!', bnMeaning: 'সাহায্য করুন!', en: 'Help!' },
+{ ru: 'Jag är vilse', bn: 'ইয়াগ অ্যার ভিলসে', bnMeaning: 'আমি পথ হারিয়েছি', en: 'I am lost' },
+{ ru: 'Jag behöver hjälp', bn: 'ইয়াগ বেহেভের ইয়েল্প', bnMeaning: 'আমার সাহায্য দরকার', en: 'I need help' },
+{ ru: 'Ingen fara', bn: 'ইঙ্গেন ফারা', bnMeaning: 'চিন্তার কিছু নেই', en: 'No problem / It’s okay' },
+{ ru: 'Jag bor i Sverige', bn: 'ইয়াগ বোর ই স্বেরিয়ে', bnMeaning: 'আমি সুইডেনে থাকি', en: 'I live in Sweden' },
+{ ru: 'Jag studerar svenska', bn: 'ইয়াগ স্টুডেরার স্বেন্স্কা', bnMeaning: 'আমি সুইডিশ ভাষা শিখছি', en: 'I am studying Swedish' },
+{ ru: 'Jag jobbar som...', bn: 'ইয়াগ যোব্বার সোম...', bnMeaning: 'আমি পেশায়...', en: 'I work as...' },
+{ ru: 'Vad jobbar du med?', bn: 'ভাদ যোব্বার ডু মেড?', bnMeaning: 'তুমি কী কাজ করো?', en: 'What do you work with?' },
+{ ru: 'Jag är student', bn: 'ইয়াগ অ্যার স্টুডেন্ট', bnMeaning: 'আমি ছাত্র/ছাত্রী', en: 'I am a student' },
+{ ru: 'Vi ses snart!', bn: 'ভি সেস স্নার্ট!', bnMeaning: 'শিগগিরই দেখা হবে!', en: 'See you soon!' },
+{ ru: 'Ha en bra dag!', bn: 'হা য়েন ব্রা দাগ!', bnMeaning: 'আপনার দিন ভালো কাটুক!', en: 'Have a nice day!' },
+{ ru: 'Välkommen!', bn: 'ভ্যালকমেন!', bnMeaning: 'স্বাগতম!', en: 'Welcome!' },
+{ ru: 'Hej då!', bn: 'হেই দো!', bnMeaning: 'বিদায়!', en: 'Goodbye!' },
+{ ru: 'Vad är klockan?', bn: 'ভাদ অ্যার ক্লক্কান?', bnMeaning: 'কয়টা বাজে?', en: 'What time is it?' },
+{ ru: 'Jag förstår', bn: 'ইয়াগ ফোরস্তোর', bnMeaning: 'আমি বুঝি', en: 'I understand' },
+{ ru: 'Kan du upprepa?', bn: 'কান ডু উপ্পরেপা?', bnMeaning: 'আপনি কি আবার বলতে পারেন?', en: 'Can you repeat?' },
+{ ru: 'Skriv det, tack', bn: 'স্ক্রিভ দে তাক', bnMeaning: 'অনুগ্রহ করে এটা লিখুন', en: 'Write it, please' },
+{ ru: 'Talar du engelska?', bn: 'তালার ডু ইংলেস্কা?', bnMeaning: 'আপনি কি ইংরেজি বলেন?', en: 'Do you speak English?' },
+{ ru: 'Lite grann', bn: 'লিটে গ্রান্ন', bnMeaning: 'একটু একটু', en: 'A little' },
+{ ru: 'Jag talar lite svenska', bn: 'ইয়াগ তালার লিটে স্বেন্স্কা', bnMeaning: 'আমি সামান্য সুইডিশ বলি', en: 'I speak a little Swedish' },
+{ ru: 'Snälla', bn: 'স্নেল্লা', bnMeaning: 'অনুগ্রহ করে', en: 'Please' }
+
+
+    
+  
+// Swedish শেষ   
+  
   ],
   norwegian: [
   { ru: 'Hei', bn: 'হেই', bnMeaning: 'হ্যালো', en: 'Hello' },
