@@ -5110,8 +5110,6 @@ greek: [
 polish: [
 
 
-*-*
-
 // polish শেষ 
 ],
 czech: [
