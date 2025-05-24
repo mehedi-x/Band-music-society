@@ -4535,6 +4535,11 @@ danish: [
   { ru: 'Tak', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
   { ru: 'Hvordan går det?', bn: 'হুভোরদান গর দে?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
 ],
+greek: [
+  { ru: 'Hej', bn: 'হাই', bnMeaning: 'হ্যালো', en: 'Hello' },
+  { ru: 'Tak', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+  { ru: 'Hvordan går det?', bn: 'হুভোরদান গর দে?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+],
 polish: [
   { ru: 'Cześć', bn: 'চেশচ', bnMeaning: 'হ্যালো', en: 'Hello' },
   { ru: 'Dziękuję', bn: 'জিঙ্কুয়ে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
