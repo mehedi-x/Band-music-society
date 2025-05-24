@@ -5931,7 +5931,7 @@ function renderVocabulary(lang) {
     const div = document.createElement('div');
     div.classList.add('conversation-item');
     div.innerHTML = `
-      <p><strong>🇷🇺 ${item.ru}</strong></p>
+      <p><strong>🇧🇩🇵🇸 ${item.ru}</strong></p>
       <p>🔊 উচ্চারণ: ${item.bn}</p>
       <p>📝 বাংলা অর্থ: ${item.bnMeaning}</p>
       <p>🔤 English: ${item.en}</p>
