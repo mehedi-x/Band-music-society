@@ -5108,8 +5108,115 @@ greek: [
 //  greek শেষ 
 ],
 polish: [
+{ ru: 'Cześć! Jak masz na imię?', 
+  bn: 'চেশ্চ! ইয়াক মাশ না ইমিয়ে?', 
+  bnMeaning: 'হাই! তোমার নাম কী?', 
+  en: 'Hi! What’s your name?' },
+
+{ ru: 'Mam na imię Adam. A ty?', 
+  bn: 'মাম না ইমিয়ে আদাম। আ তি?', 
+  bnMeaning: 'আমার নাম আদাম। আর তোমার?', 
+  en: 'My name is Adam. And yours?' },
+
+{ ru: 'Jestem Anna. Miło mi cię poznać!', 
+  bn: 'ইয়েস্টেম আন্না। মিও মি চে পোজনাচ!', 
+  bnMeaning: 'আমি আন্না। তোমার সঙ্গে পরিচিত হয়ে ভালো লাগলো!', 
+  en: 'I’m Anna. Nice to meet you!' },
+
+{ ru: 'Skąd jesteś?', 
+  bn: 'স্কন্ড ইয়েস্টেশ?', 
+  bnMeaning: 'তুমি কোথা থেকে এসেছ?', 
+  en: 'Where are you from?' },
+
+{ ru: 'Jestem z Bangladeszu. A ty?', 
+  bn: 'ইয়েস্টেম জ্‌ ব্যাংলাদেশু। আ তি?', 
+  bnMeaning: 'আমি বাংলাদেশ থেকে। আর তুমি?', 
+  en: 'I’m from Bangladesh. And you?' },
+
+{ ru: 'Jestem z Polski.', 
+  bn: 'ইয়েস্টেম জ্‌ পোলস্কি।', 
+  bnMeaning: 'আমি পোল্যান্ড থেকে।', 
+  en: 'I’m from Poland.' },
+
+{ ru: 'Czy mówisz po polsku?', 
+  bn: 'চি মুভিশ পো পোলস্কু?', 
+  bnMeaning: 'তুমি কি পোলিশ বলতে পারো?', 
+  en: 'Do you speak Polish?' },
+
+{ ru: 'Tylko trochę.', 
+  bn: 'তিলকো ত্রোখে।', 
+  bnMeaning: 'শুধু একটু।', 
+  en: 'Just a little.' },
+
+{ ru: 'Nie ma problemu, możemy mówić po angielsku.', 
+  bn: 'নিয়ে মা প্রোব্লেমু, মোজেমে মুভিচ পো আংগিয়েলস্কু।', 
+  bnMeaning: 'কোন সমস্যা নেই, আমরা ইংরেজিতে কথা বলতে পারি।', 
+  en: 'No problem, we can speak in English.' },
+
+{ ru: 'Świetnie! Dziękuję!', 
+  bn: 'শ্ভিয়েতনিয়ে! জেংকুয়ে!', 
+  bnMeaning: 'দারুণ! ধন্যবাদ!', 
+  en: 'Great! Thank you!' },
+{ ru: 'Dzień dobry! Czy mogę zarezerwować pokój?', bn: 'জেইন ডোবরি! চি মোগে জারেজারভোভাচ পোকুই?', bnMeaning: 'শুভ সকাল! আমি কি একটি রুম বুক করতে পারি?', en: 'Good morning! Can I book a room?' },
+{ ru: 'Tak, oczywiście. Na ile nocy?', bn: 'তাক, ওচিভিশ্চে। না ইলে নোচি?', bnMeaning: 'হ্যাঁ, নিশ্চয়ই। কত রাতের জন্য?', en: 'Yes, of course. For how many nights?' },
+{ ru: 'Na trzy noce, proszę.', bn: 'না চ্শি নোচে, প্রোশে।', bnMeaning: 'তিন রাতের জন্য, অনুগ্রহ করে।', en: 'For three nights, please.' },
+{ ru: 'Czy chce pan pokój jednoosobowy czy dwuosobowy?', bn: 'চি খ্চে পান পোকুই ইয়েদনওসোবোভি চি দুভওসোবোভি?', bnMeaning: 'আপনি সিঙ্গেল না ডাবল রুম চান?', en: 'Would you like a single or double room?' },
+{ ru: 'Pokój dwuosobowy, proszę.', bn: 'পোকুই দুভওসোবোভি, প্রোশে।', bnMeaning: 'একটি ডাবল রুম, অনুগ্রহ করে।', en: 'A double room, please.' },
+{ ru: 'Czy śniadanie jest w cenie?', bn: 'চি শ্নিয়াদানিয়ে ইয়েস্ট ফ্‌ চেনিয়ে?', bnMeaning: 'নাশতা কি মূল্যে অন্তর্ভুক্ত?', en: 'Is breakfast included in the price?' },
+{ ru: 'Tak, śniadanie jest wliczone.', bn: 'তাক, শ্নিয়াদানিয়ে ইয়েস্ট ব্লিচোনে।', bnMeaning: 'হ্যাঁ, নাশতা অন্তর্ভুক্ত।', en: 'Yes, breakfast is included.' },
+{ ru: 'Czy mogę płacić kartą?', bn: 'চি মোগে পুওচিচ কার্তোঁ?', bnMeaning: 'আমি কি কার্ডে পরিশোধ করতে পারি?', en: 'Can I pay by card?' },
+{ ru: 'Oczywiście, akceptujemy karty.', bn: 'ওচিভিশ্চে, আকচেপ্তুয়েমি কার্তি।', bnMeaning: 'অবশ্যই, আমরা কার্ড গ্রহণ করি।', en: 'Of course, we accept cards.' },
+{ ru: 'Proszę bardzo. Miłego pobytu!', bn: 'প্রোশে বার্দজো। মিয়েউগো পোবিতু!', bnMeaning: 'আপনাকে স্বাগতম। আপনার থাকার সময়টা শুভ হোক!', en: 'You’re welcome. Enjoy your stay!' },
+{ ru: 'Dzień dobry! Czy ma pan menu?', bn: 'জেইন ডোবরি! চি মা পান মেন্যু?', bnMeaning: 'শুভ সকাল! আপনার কি মেনু আছে?', en: 'Good morning! Do you have a menu?' },
+{ ru: 'Oczywiście, proszę.', bn: 'ওচিভিশ্চে, প্রোশে।', bnMeaning: 'অবশ্যই, নিন।', en: 'Of course, here you go.' },
+{ ru: 'Co pan poleca?', bn: 'চো পান পোলেৎসা?', bnMeaning: 'আপনি কী পরামর্শ দেন?', en: 'What do you recommend?' },
+{ ru: 'Danie dnia to pierogi.', bn: 'দানিয়ে দ্নিয়া তো পিয়েরোগি।', bnMeaning: 'আজকের বিশেষ আইটেম পিয়েরোগি।', en: 'The dish of the day is pierogi.' },
+{ ru: 'Poproszę pierogi i wodę.', bn: 'পোপ্রোশে পিয়েরোগি ই ভোদের।', bnMeaning: 'আমি পিয়েরোগি আর পানি চাই।', en: 'I’d like pierogi and water, please.' },
+{ ru: 'Czy coś jeszcze?', bn: 'চি চোশ ইয়েসচে?', bnMeaning: 'আর কিছু?', en: 'Anything else?' },
+{ ru: 'Nie, to wszystko. Dziękuję.', bn: 'নিয়ে, তো ফ্শিস্কো। জেংকুয়ে।', bnMeaning: 'না, এটাই সব। ধন্যবাদ।', en: 'No, that’s all. Thank you.' },
+{ ru: 'Smacznego!', bn: 'সমাচনেগো!', bnMeaning: 'আপনার খাবার উপভোগ করুন!', en: 'Enjoy your meal!' },
+{ ru: 'Rachunek, proszę.', bn: 'রাখুনেক, প্রোশে।', bnMeaning: 'বিল দিন অনুগ্রহ করে।', en: 'The bill, please.' },
+{ ru: 'Płaci pan gotówką czy kartą?', bn: 'পুওচি পান গোতুফঁকোঁ চি কার্তোঁ?', bnMeaning: 'আপনি কি নগদ না কার্ডে পরিশোধ করবেন?', en: 'Will you pay by cash or card?' },
+{ ru: 'Dzień dobry! Chciałbym umówić się na wizytę.', bn: 'জেইন ডোবরি! খ্চিয়াওবিম উমুভিচ শে না ভিজিতে।', bnMeaning: 'শুভ সকাল! আমি একজন ডাক্তারের সাথে দেখা করতে চাই।', en: 'Good morning! I’d like to make an appointment.' },
+{ ru: 'Jaki jest powód wizyty?', bn: 'ইয়াকি ইয়েস্ট পোভুদ ভিজিতি?', bnMeaning: 'আপনার দেখা করার কারণ কী?', en: 'What’s the reason for your visit?' },
+{ ru: 'Mam gorączkę i kaszel.', bn: 'মাম গোরোঁচকে ই কাশেল।', bnMeaning: 'আমার জ্বর ও কাশি আছে।', en: 'I have a fever and cough.' },
+{ ru: 'Od kiedy ma pan objawy?', bn: 'ওদ কিয়েদি মা পান ওবইয়াভি?', bnMeaning: 'এই উপসর্গগুলো কবে থেকে?', en: 'Since when have you had symptoms?' },
+{ ru: 'Od trzech dni.', bn: 'ওদ চ্শেখ দ্নি।', bnMeaning: 'তিন দিন ধরে।', en: 'For three days.' },
+{ ru: 'Czy przyjmuje pan jakieś leki?', bn: 'চি প্শিইমুয়ে পান ইয়াকিয়েশ লেকি?', bnMeaning: 'আপনি কি কোনো ওষুধ খাচ্ছেন?', en: 'Are you taking any medications?' },
+{ ru: 'Nie, nie przyjmuję żadnych.', bn: 'নিয়ে, নিয়ে প্শিইমুয়ে ঝাদ্নিখ।', bnMeaning: 'না, কিছুই না।', en: 'No, I’m not.' },
+{ ru: 'Proszę zdjąć koszulę.', bn: 'প্রোশে জ্দিওঁচ কোশুলে।', bnMeaning: 'দয়া করে শার্ট খুলুন।', en: 'Please take off your shirt.' },
+{ ru: 'Oddychaj głęboko.', bn: 'ওদ্দিখাই গুএম্বোকো।', bnMeaning: 'গভীর শ্বাস নিন।', en: 'Breathe deeply.' },
+{ ru: 'Ma pan infekcję. Przepiszę antybiotyk.', bn: 'মা পান ইনফেকচিয়ে। প্শেপিশে আন্ত্রিবিওতিক।', bnMeaning: 'আপনার সংক্রমণ হয়েছে। আমি অ্যান্টিবায়োটিক দিচ্ছি।', en: 'You have an infection. I’ll prescribe antibiotics.' },
+{ ru: 'Przepraszam, gdzie jest dworzec?', bn: 'প্শেপ্রাশাম, গজে ইয়েস্ট দ্বোর্জেত্স?', bnMeaning: 'মাফ করবেন, ট্রেন স্টেশন কোথায়?', en: 'Excuse me, where is the train station?' },
+{ ru: 'Prosto, a potem w lewo.', bn: 'প্রস্তো, আ পোতেম ফ্‌ লেভো।', bnMeaning: 'সোজা যান, তারপর বামে ঘুরুন।', en: 'Go straight, then turn left.' },
+{ ru: 'Jak długo to potrwa?', bn: 'ইয়াক দ্বুওগো তো পোত্রভা?', bnMeaning: 'এতে কতক্ষণ লাগবে?', en: 'How long will it take?' },
+{ ru: 'Około dziesięciu minut.', bn: 'ওকোয়ো জেশেনচু মিনুত।', bnMeaning: 'প্রায় দশ মিনিট।', en: 'Around ten minutes.' },
+{ ru: 'Czy to daleko?', bn: 'চি তো দালেকো?', bnMeaning: 'এটা কি দূরে?', en: 'Is it far?' },
+{ ru: 'Nie, to blisko.', bn: 'নিয়ে, তো ব্লিস্কো।', bnMeaning: 'না, এটা কাছাকাছি।', en: 'No, it’s nearby.' },
+{ ru: 'Czy jest tu przystanek autobusowy?', bn: 'চি ইয়েস্ট তু প্শিস্তানেক আউতোবুসোভি?', bnMeaning: 'এখানে কি বাস স্টপ আছে?', en: 'Is there a bus stop nearby?' },
+{ ru: 'Tak, jest za rogiem.', bn: 'তাক, ইয়েস্ট জা রোগিয়েম।', bnMeaning: 'হ্যাঁ, কোণার পাশে।', en: 'Yes, around the corner.' },
+{ ru: 'Dziękuję za pomoc.', bn: 'জেংকুয়ে যা পোমোচ।', bnMeaning: 'সাহায্যের জন্য ধন্যবাদ।', en: 'Thank you for your help.' },
+{ ru: 'Nie ma za co.', bn: 'নিয়ে মা যা চো।', bnMeaning: 'এতে কিছু না।', en: 'You’re welcome.' },
+{ ru: 'Ile kosztuje ten chleb?', bn: 'ইলে কোশতুয়ে তেন খ্‌লেব?', bnMeaning: 'এই রুটির দাম কত?', en: 'How much is this bread?' },
+{ ru: 'Trzy złote.', bn: 'চ্শি জ্‌উওতে।', bnMeaning: 'তিন জ্লোতি।', en: 'Three złoty.' },
+{ ru: 'Czy mogę zapłacić kartą?', bn: 'চি মোগে জাপোয়াচিচ কার্তোঁ?', bnMeaning: 'আমি কি কার্ডে দিতে পারি?', en: 'Can I pay by card?' },
+{ ru: 'Przykro mi, tylko gotówka.', bn: 'প্শিক্রো মি, তিলকো গোতুফঁকা।', bnMeaning: 'দুঃখিত, শুধু নগদ।', en: 'Sorry, cash only.' },
+{ ru: 'Poproszę pół kilo jabłek.', bn: 'পোপ্রোশে পুউ কিলো ইয়াব্‌উওক।', bnMeaning: 'আমি আধা কেজি আপেল চাই।', en: 'Half a kilo of apples, please.' },
+{ ru: 'Chce pan coś jeszcze?', bn: 'খ্চে পান চোশ ইয়েসচে?', bnMeaning: 'আপনি কি আরও কিছু চান?', en: 'Would you like anything else?' },
+{ ru: 'Nie, to wszystko.', bn: 'নিয়ে, তো ফ্শিস্কো।', bnMeaning: 'না, এটাই সব।', en: 'No, that’s all.' },
+{ ru: 'Proszę paragon.', bn: 'প্রোশে পারাগোন।', bnMeaning: 'রসিদ দিন অনুগ্রহ করে।', en: 'The receipt, please.' },
+{ ru: 'Oczywiście, proszę.', bn: 'ওচিভিশ্চে, প্রোশে।', bnMeaning: 'অবশ্যই, নিন।', en: 'Of course, here you go.' },
+{ ru: 'Do widzenia!', bn: 'ডো বিদজেনিয়া!', bnMeaning: 'বিদায়!', en: 'Goodbye!' },
 
 
+
+
+
+
+
+
+
+  
 // polish শেষ 
 ],
 czech: [
