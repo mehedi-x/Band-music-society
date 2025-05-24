@@ -6109,15 +6109,27 @@ hungarian: [
 { ru: 'Szeretnék fényképet készíteni.', bn: 'সেরেতনেক ফেন্যকেপেত কেসিতেনি।', bnMeaning: 'আমি একটা ছবি তুলতে চাই।', en: 'I’d like to take a photo.' },
 { ru: 'Készítene rólam egy képet?', bn: 'কেসিতেনে রোলাম এজ কেপেত?', bnMeaning: 'আমার একটা ছবি তুলবেন?', en: 'Could you take a photo of me?' },
 { ru: 'Nagyon élvezem az utazást.', bn: 'নজোন এলভেজেম আজ উতাজাশ্‌ত।', bnMeaning: 'আমি ভ্রমণটা খুব উপভোগ করছি।', en: 'I am really enjoying the trip.' },
+{ ru: 'Ez az első alkalom, hogy itt vagyok.', bn: 'এজ আজ এলশো আলকালোম হোয ইত্ত ভাইগোক।', bnMeaning: 'এটাই আমার প্রথমবার এখানে আসা।', en: 'This is my first time here.' },
+{ ru: 'Már voltam itt korábban.', bn: 'মার ভোলতাম ইত্ত কোরাব্বান।', bnMeaning: 'আমি এর আগে এখানে এসেছিলাম।', en: 'I’ve been here before.' },
+{ ru: 'Szeretném újra meglátogatni.', bn: 'সেরেতনেম উয়িরা মেগলাতোগাতনি।', bnMeaning: 'আমি আবার আসতে চাই।', en: 'I want to visit again.' },
+{ ru: 'Ez egy híres hely.', bn: 'এজ এজ হীরেশ হেই।', bnMeaning: 'এটা একটা বিখ্যাত স্থান।', en: 'This is a famous place.' },
+{ ru: 'Szeretem a helyi ételeket.', bn: 'সেরেতেম আ হেইই এতেলেকেত।', bnMeaning: 'আমি স্থানীয় খাবার পছন্দ করি।', en: 'I like local food.' },
+{ ru: 'Hol lehet ajándékot venni?', bn: 'হল লেহেত আয়ানদেকোত ভেননি?', bnMeaning: 'উপহার কোথা থেকে কিনতে পারি?', en: 'Where can I buy gifts?' },
+{ ru: 'Ez tökéletes emlék.', bn: 'এজ তোকেলেতেশ এম্লেক।', bnMeaning: 'এটা নিখুঁত একটি স্মারক।', en: 'This is a perfect souvenir.' },
+{ ru: 'Mikor indul a következő busz?', bn: 'মিকোর ইন্দুল আ কোভেতকেজো বুস্‌?', bnMeaning: 'পরবর্তী বাস কখন ছাড়বে?', en: 'When does the next bus leave?' },
+{ ru: 'Szeretnék egy taxit hívni.', bn: 'সেরেতনেক এজ তাকসিত হিভনি।', bnMeaning: 'আমি একটি ট্যাক্সি ডাকতে চাই।', en: 'I’d like to call a taxi.' },
+{ ru: 'Tudna ajánlani egy jó szállodát?', bn: 'তুদনা আয়ানলানি এজ ইয়ো সালোদাত?', bnMeaning: 'আপনি কি ভালো একটা হোটেল সুপারিশ করতে পারেন?', en: 'Can you recommend a good hotel?' },
 
-
-
-
-
-
-
-
-
+{ ru: 'Hol lehet jó éttermet találni?', bn: 'হল লেহেত ইয়ো এততেরমেত তালালনি?', bnMeaning: 'ভালো রেস্টুরেন্ট কোথায় পাওয়া যায়?', en: 'Where can I find a good restaurant?' },
+{ ru: 'Van szabad asztaluk?', bn: 'ভান সাবাদ আস্তালুক?', bnMeaning: 'আপনাদের কাছে ফাঁকা টেবিল আছে?', en: 'Do you have a free table?' },
+{ ru: 'Asztalt szeretnék foglalni.', bn: 'আস্তালত সেরেতনেক ফোগলালনি।', bnMeaning: 'আমি একটি টেবিল রিজার্ভ করতে চাই।', en: 'I’d like to reserve a table.' },
+{ ru: 'Melyik az ön specialitása?', bn: 'মেলইক আজ অন স্পেশিয়ালিতাশা?', bnMeaning: 'আপনাদের বিশেষ খাবার কী?', en: 'What’s your specialty?' },
+{ ru: 'Nagyon ízlett!', bn: 'নজোন ইজলেত্‌ত!', bnMeaning: 'খুব সুস্বাদু ছিল!', en: 'It was very tasty!' },
+{ ru: 'A számlát kérem.', bn: 'আ সামলাত কেরেম।', bnMeaning: 'বিল দিন অনুগ্রহ করে।', en: 'The bill, please.' },
+{ ru: 'Fizetni szeretnék.', bn: 'ফিজেতনি সেরেতনেক।', bnMeaning: 'আমি পরিশোধ করতে চাই।', en: 'I’d like to pay.' },
+{ ru: 'Készpénzzel vagy kártyával fizet?', bn: 'কেসপেন্জেল ভাজ কার্ত্যাভাল ফিজেত?', bnMeaning: 'আপনি নগদ না কার্ডে পরিশোধ করবেন?', en: 'Will you pay by cash or card?' },
+{ ru: 'Minden rendben volt, köszönöm!', bn: 'মিনদেন রেন্দবেন ভোলত, কোসোনোম!', bnMeaning: 'সব ঠিকঠাক ছিল, ধন্যবাদ!', en: 'Everything was fine, thank you!' },
+{ ru: 'Jó utat kívánok!', bn: 'ইয়ো উতাত কিভানোক!', bnMeaning: 'শুভ যাত্রা!', en: 'Have a nice trip!' },
 
 // Hungarian শেষ 
 ],
