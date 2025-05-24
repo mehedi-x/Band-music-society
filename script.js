@@ -4840,9 +4840,57 @@ danish: [
   //Danish শেষ 
   ],
 greek: [
-  { ru: 'Hej', bn: 'হাই', bnMeaning: 'হ্যালো', en: 'Hello' },
-  { ru: 'Tak', bn: 'তাক', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
-  { ru: 'Hvordan går det?', bn: 'হুভোরদান গর দে?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+{ ru: 'Γεια σου', bn: 'ইয়া সু', bnMeaning: 'হ্যালো (তোমাকে)', en: 'Hello (to you)' },
+{ ru: 'Καλημέρα', bn: 'কালিমেরা', bnMeaning: 'সুপ্রভাত', en: 'Good morning' },
+{ ru: 'Καλησπέρα', bn: 'কালিসপেরা', bnMeaning: 'শুভ সন্ধ্যা', en: 'Good evening' },
+{ ru: 'Καληνύχτα', bn: 'কালিনিখতা', bnMeaning: 'শুভরাত্রি', en: 'Good night' },
+{ ru: 'Αντίο', bn: 'আন্দিও', bnMeaning: 'বিদায়', en: 'Goodbye' },
+{ ru: 'Ευχαριστώ', bn: 'এফহারিস্তো', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
+{ ru: 'Παρακαλώ', bn: 'পারাকালো', bnMeaning: 'আপনাকে স্বাগতম / দয়া করে', en: 'You’re welcome / Please' },
+{ ru: 'Συγγνώμη', bn: 'সিঙ্নোমি', bnMeaning: 'দুঃখিত / মাফ করবেন', en: 'Sorry / Excuse me' },
+{ ru: 'Ναι', bn: 'নে', bnMeaning: 'হ্যাঁ', en: 'Yes' },
+{ ru: 'Όχι', bn: 'ওহি', bnMeaning: 'না', en: 'No' },
+
+{ ru: 'Τι κάνεις;', bn: 'তি কানি?', bnMeaning: 'তুমি কেমন আছো?', en: 'How are you?' },
+{ ru: 'Καλά, ευχαριστώ', bn: 'কালা, এফহারিস্তো', bnMeaning: 'ভালো আছি, ধন্যবাদ', en: 'I’m fine, thank you' },
+{ ru: 'Πώς σε λένε;', bn: 'পোস সে লেনে?', bnMeaning: 'তোমার নাম কী?', en: 'What’s your name?' },
+{ ru: 'Με λένε…', bn: 'মে লেনে…', bnMeaning: 'আমার নাম…', en: 'My name is…' },
+{ ru: 'Χάρηκα', bn: 'খারিকা', bnMeaning: 'আপনার সঙ্গে দেখা করে ভালো লাগলো', en: 'Nice to meet you' },
+{ ru: 'Πού είναι η τουαλέτα;', bn: 'পু ইনে ই তুয়ালেতা?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the toilet?' },
+{ ru: 'Μπορώ να έχω…;', bn: 'বোরো না এহো…?', bnMeaning: 'আমি কি পেতে পারি…?', en: 'Can I have…?' },
+{ ru: 'Πόσο κοστίζει;', bn: 'পোসো কস্তিজি?', bnMeaning: 'এটার দাম কত?', en: 'How much does it cost?' },
+{ ru: 'Δεν καταλαβαίνω', bn: 'দেন কাতালাভেনো', bnMeaning: 'আমি বুঝতে পারছি না', en: 'I don’t understand' },
+{ ru: 'Μιλάτε αγγλικά;', bn: 'মিলাতে আঙ্গলিকা?', bnMeaning: 'আপনি কি ইংরেজি বলেন?', en: 'Do you speak English?' },
+
+{ ru: 'Νερό', bn: 'নেরো', bnMeaning: 'পানি', en: 'Water' },
+{ ru: 'Φαγητό', bn: 'ফাঘিতো', bnMeaning: 'খাবার', en: 'Food' },
+{ ru: 'Καφέ', bn: 'কাফে', bnMeaning: 'কফি', en: 'Coffee' },
+{ ru: 'Τσάι', bn: 'চাই', bnMeaning: 'চা', en: 'Tea' },
+{ ru: 'Ψωμί', bn: 'প্সোমি', bnMeaning: 'রুটি', en: 'Bread' },
+{ ru: 'Γάλα', bn: 'গালা', bnMeaning: 'দুধ', en: 'Milk' },
+{ ru: 'Κρέας', bn: 'ক্রেয়াস', bnMeaning: 'মাংস', en: 'Meat' },
+{ ru: 'Λαχανικά', bn: 'লাখানিকা', bnMeaning: 'সবজি', en: 'Vegetables' },
+{ ru: 'Φρούτα', bn: 'ফ্রুতা', bnMeaning: 'ফল', en: 'Fruits' },
+{ ru: 'Πείνα', bn: 'পিনা', bnMeaning: 'ক্ষুধা', en: 'Hunger' },
+
+{ ru: 'Δίψα', bn: 'দিপসা', bnMeaning: 'পিপাসা', en: 'Thirst' },
+{ ru: 'Κουρασμένος', bn: 'কুরাসমেনোস', bnMeaning: 'ক্লান্ত', en: 'Tired' },
+{ ru: 'Χαρούμενος', bn: 'হারুমেনোস', bnMeaning: 'খুশি', en: 'Happy' },
+{ ru: 'Λυπημένος', bn: 'লিপিমেনোস', bnMeaning: 'দুঃখিত', en: 'Sad' },
+{ ru: 'Ασθενής', bn: 'আসথেনিস', bnMeaning: 'অসুস্থ', en: 'Sick' },
+{ ru: 'Νοσοκομείο', bn: 'নোসোকোমিও', bnMeaning: 'হাসপাতাল', en: 'Hospital' },
+{ ru: 'Αστυνομία', bn: 'আসতিনোমিয়া', bnMeaning: 'পুলিশ', en: 'Police' },
+{ ru: 'Βοήθεια!', bn: 'ভইথিয়া!', bnMeaning: 'সাহায্য!', en: 'Help!' },
+{ ru: 'Κίνδυνος', bn: 'কিনদিনোস', bnMeaning: 'বিপদ', en: 'Danger' },
+{ ru: 'Πού είναι…;', bn: 'পু ইনে…?', bnMeaning: '… কোথায়?', en: 'Where is…?' },
+
+
+
+
+
+  
+
+//  greek শেষ 
 ],
 polish: [
   { ru: 'Cześć', bn: 'চেশচ', bnMeaning: 'হ্যালো', en: 'Hello' },
