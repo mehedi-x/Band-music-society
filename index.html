@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Speak EU</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* CSS Variables for colors */
     :root {
       --primary-color: #0059b3;
       --secondary-color: #003c82;
@@ -36,6 +34,7 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
     }
     .app-logo {
       font-size: 1.5rem;
@@ -48,7 +47,6 @@
       gap: 0.6rem;
       position: relative;
     }
-    /* Menu button */
     #menu-button {
       font-size: 1.3rem;
       background: var(--secondary-color);
@@ -62,7 +60,6 @@
     #menu-button:hover {
       background-color: var(--hover-color);
     }
-    /* Language select dropdown - hidden by default */
     #language-select {
       position: absolute;
       top: 110%;
@@ -83,7 +80,6 @@
       background: #222;
       color: #ddd;
     }
-    /* Dark mode toggle */
     #mode-toggle {
       background: var(--secondary-color);
       border: none;
@@ -98,7 +94,7 @@
       background-color: var(--hover-color);
     }
 
-    /* Main content area */
+    /* Main content */
     main#conversation-area {
       max-width: 900px;
       margin: 2rem auto 3rem auto;
@@ -107,7 +103,16 @@
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+      transition: opacity 0.3s ease;
     }
+    main.hidden {
+      opacity: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
     .motivational-text {
       font-size: 2rem;
       font-weight: 700;
@@ -120,7 +125,6 @@
       color: #70a9ff;
     }
 
-    /* Advertisement area */
     .advertisement {
       background: #e0e7ff;
       border-radius: 12px;
@@ -142,7 +146,27 @@
       box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
     }
 
-    /* Responsive adjustments */
+    /* Home button */
+    #home-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: var(--primary-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 200;
+      transition: background-color 0.2s ease;
+    }
+    #home-button:hover {
+      background-color: var(--hover-color);
+    }
+
     @media (max-width: 600px) {
       main#conversation-area {
         margin: 1.5rem 1rem 2rem 1rem;
@@ -200,6 +224,8 @@
   </div>
 </header>
 
+<button id="home-button" aria-label="Return to homepage">🏠 Home</button>
+
 <main id="conversation-area" role="main">
   <div class="motivational-text" aria-live="polite">
     Unlock New Horizons with Every Language You Speak! 🚀🌍
@@ -214,6 +240,11 @@
   const languageSelect = document.getElementById('language-select');
   const modeToggle = document.getElementById('mode-toggle');
   const body = document.body;
+  const conversationArea = document.getElementById('conversation-area');
+  const header = document.querySelector('.app-header');
+  const homeButton = document.getElementById('home-button');
+
+  let selectedLanguage = null;
 
   // Toggle language select visibility on menu button click
   menuButton.addEventListener('click', () => {
@@ -236,19 +267,45 @@
     }
   });
 
-  // Hide header after language is selected
+  // When language is selected
   languageSelect.addEventListener('change', () => {
-    const header = document.querySelector('.app-header');
+    selectedLanguage = languageSelect.value;
+    console.log("Selected language:", selectedLanguage);
+    // Hide header and main content smoothly
     header.style.opacity = '0';
     header.style.height = '0';
     header.style.padding = '0';
     header.style.overflow = 'hidden';
-    setTimeout(() => {
-      header.style.display = 'none';
-    }, 300);
-    // Also hide language select menu after selection
+
+    conversationArea.classList.add('hidden');
+
+    // Hide language select dropdown and update menu button
     languageSelect.style.display = 'none';
     menuButton.setAttribute('aria-expanded', 'false');
+
+    // Show Home button
+    homeButton.style.display = 'block';
+  });
+
+  // Home button click: show homepage again and allow language change
+  homeButton.addEventListener('click', () => {
+    // Show header with smooth transition
+    header.style.display = 'flex';
+    setTimeout(() => {
+      header.style.opacity = '1';
+      header.style.height = '';
+      header.style.padding = '';
+      header.style.overflow = '';
+    }, 10);
+
+    // Show main content area
+    conversationArea.classList.remove('hidden');
+
+    // Hide Home button
+    homeButton.style.display = 'none';
+
+    // Reset selected language to allow re-selection if needed
+    languageSelect.value = "";
   });
 
   // Dark mode toggle logic
@@ -265,3 +322,4 @@
 
 </body>
 </html>
+
