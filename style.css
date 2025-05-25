@@ -1,14 +1,27 @@
+:root {
+  --background-color: #f0f0f0;
+  --text-color: #222;
+  --header-background: #222;
+  --header-text-color: white;
+  --conversation-background: #fff;
+  --conversation-text-color: #222;
+  --dark-background: #111;
+  --dark-text-color: #f9f9f9;
+  --dark-conversation-background: #222;
+  --dark-conversation-border: #444;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f0f0;
-  color: #222;
+  background-color: var(--background-color);
+  color: var(--text-color);
   transition: background 0.3s, color 0.3s;
 }
 
 .dark-mode {
-  background-color: #111;
-  color: #f9f9f9;
+  background-color: var(--dark-background);
+  color: var(--dark-text-color);
 }
 
 .app-header {
@@ -16,8 +29,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background-color: #222;
-  color: white;
+  background-color: var(--header-background);
+  color: var(--header-text-color);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -44,8 +57,13 @@ body {
   font-size: 1.4rem;
   background: none;
   border: none;
-  color: white;
+  color: var(--header-text-color);
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+#mode-toggle:hover {
+  color: #ccc; /* Lighten on hover */
 }
 
 main {
@@ -55,13 +73,15 @@ main {
 .conversation-item {
   padding: 12px;
   margin-bottom: 12px;
-  background-color: #fff;
+  background-color: var(--conversation-background);
+  color: var(--conversation-text-color);
   border-radius: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
 }
 
 .dark-mode .conversation-item {
-  background-color: #222;
+  background-color: var(--dark-conversation-background);
   color: #eee;
-  border: 1px solid #444;
+  border: 1px solid var(--dark-conversation-border);
 }
