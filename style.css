@@ -34,12 +34,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  transform: translateY(0);  /* Initially visible */
-  transition: transform 0.3s ease-in-out;  /* Smooth transition */
-}
-
-.app-header.hide {
-  transform: translateY(-100%);  /* Hide when scrolling down */
 }
 
 .app-title {
