@@ -8,7 +8,7 @@
   <style>
     /* Slimmer header without rounded corners */
     .app-header {
-      padding: 0.3rem 0.8rem;  /* thinner padding */
+      padding: 0.3rem 0.8rem;  
       background: #0059b3;
       color: white;
       display: flex;
@@ -16,7 +16,7 @@
       align-items: center;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
       position: relative;
-      border-radius: 0 !important;
+      border-radius: 0;
       transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease, background-color 0.3s ease, color 0.3s ease;
       font-weight: 500;
       font-family: Arial, sans-serif;
@@ -32,7 +32,7 @@
     }
     #language-select {
       font-size: 0.85rem;
-      padding: 0.25rem 1.5rem 0.25rem 0.5rem; /* extra right padding for arrow */
+      padding: 0.25rem 1.5rem 0.25rem 0.5rem; 
       border-radius: 0;
       border: none;
       cursor: pointer;
@@ -43,10 +43,7 @@
       font-family: inherit;
       box-shadow: none;
       outline: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       appearance: none;
-      position: relative;
       background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 0.4rem center;
@@ -256,8 +253,7 @@
     .sr-only {
       border: 0 !important;
       clip: rect(1px, 1px, 1px, 1px) !important;
-      -webkit-clip-path: inset(50%) !important;
-              clip-path: inset(50%) !important;
+      clip-path: inset(50%) !important;
       height: 1px !important;
       margin: -1px !important;
       overflow: hidden !important;
@@ -273,7 +269,6 @@
   <header class="app-header" role="banner" aria-label="Application Header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
-      <!-- Removed visible label "Choose language" for cleaner UI, kept for screen readers -->
       <label for="language-select" class="sr-only">Choose language</label>
       <select id="language-select" aria-label="Select language" name="language-select">
         <option value="russian">🇷🇺 Russian</option>
@@ -425,4 +420,3 @@
   </script>
 </body>
 </html>
-
