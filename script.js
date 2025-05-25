@@ -7694,18 +7694,144 @@ lithuanian: [
 { ru: 'Rašyk man!', bn: 'রাশিক মান!', bnMeaning: 'আমাকে লিখো!', en: 'Write to me!' },
 { ru: 'Paskambink man vėliau.', bn: 'পাসকম্বিন্ক মান ভেলেউ।', bnMeaning: 'পরে আমাকে ফোন করো।', en: 'Call me later.' }
 
-
-
-
-
-
-
 // lithuanian শেষ 
 ],
 swiss: [
-  { ru: 'Grüezi', bn: 'গ্র্যুয়েতসি', bnMeaning: 'হ্যালো (সুইস জার্মান)', en: 'Hello' },
-  { ru: 'Danke', bn: 'ডাঙ্কে', bnMeaning: 'ধন্যবাদ', en: 'Thank you' },
-  { ru: 'Wie gahts?', bn: 'ভি গ্যাটস?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' }
+{ ru: 'Grüezi!', bn: 'গ্রুয়েটসি!', bnMeaning: 'হ্যালো (সুইস জার্মান)!', en: 'Hello!' },
+{ ru: 'Guete Morge!', bn: 'গুয়েটে মর্গে!', bnMeaning: 'সুপ্রভাত!', en: 'Good morning!' },
+{ ru: 'Guete Daag!', bn: 'গুয়েটে দাগ!', bnMeaning: 'শুভ দিন!', en: 'Good day!' },
+{ ru: 'Guete Abig!', bn: 'গুয়েটে আবিগ!', bnMeaning: 'শুভ সন্ধ্যা!', en: 'Good evening!' },
+{ ru: 'Guet Nacht!', bn: 'গুয়েত নাখ্ট!', bnMeaning: 'শুভ রাত্রি!', en: 'Good night!' },
+{ ru: 'Wie goht’s?', bn: 'ভি গোটস?', bnMeaning: 'তুমি কেমন আছো?', en: 'How are you?' },
+{ ru: 'Guet, danke.', bn: 'গুয়েত, ডাঙ্কে।', bnMeaning: 'ভালো আছি, ধন্যবাদ।', en: 'Good, thanks.' },
+{ ru: 'Was isch dis Name?', bn: 'ভাস ইশ ডিস নামে?', bnMeaning: 'তোমার নাম কী?', en: 'What’s your name?' },
+{ ru: 'Ich bi ...', bn: 'ইখ বি ...', bnMeaning: 'আমি হলাম ...', en: 'I am ...' },
+{ ru: 'Freut mi, di z’lärne!', bn: 'ফ্রয়ট মি, দি স লারনে!', bnMeaning: 'তোমার সাথে পরিচয়ে ভালো লাগলো।', en: 'Nice to meet you.' },
+
+{ ru: 'Wo chunsch du här?', bn: 'ভো খুন্শ দু হ্যার?', bnMeaning: 'তুমি কোথা থেকে এসেছো?', en: 'Where are you from?' },
+{ ru: 'Ich chume vo Bangladesch.', bn: 'ইখ খুমে ফো বাংলাদেশ।', bnMeaning: 'আমি বাংলাদেশ থেকে এসেছি।', en: 'I am from Bangladesh.' },
+{ ru: 'Redsch du Englisch?', bn: 'রেডশ দু ইংলিশ?', bnMeaning: 'তুমি কি ইংরেজি বলতে পারো?', en: 'Do you speak English?' },
+{ ru: 'Ich cha nöd guet Dütsch.', bn: 'ইখ খা ন্যদ গুয়েত ডিউচ।', bnMeaning: 'আমি ভালো জার্মান বলতে পারি না।', en: 'I don’t speak good German.' },
+{ ru: 'Chasch bitte langsam rede?', bn: 'খাশ বিটে লাঙ্সাম রেডে?', bnMeaning: 'অনুগ্রহ করে ধীরে বলো।', en: 'Can you speak slowly, please?' },
+{ ru: 'Bitte wiederhole das.', bn: 'বিটে বিদারহোলে দাস।', bnMeaning: 'অনুগ্রহ করে আবার বলো।', en: 'Please repeat that.' },
+{ ru: 'Ich versteh das nöd.', bn: 'ইখ ফারস্টে দাস ন্যদ।', bnMeaning: 'আমি এটা বুঝতে পারছি না।', en: 'I don’t understand.' },
+{ ru: 'Was meinsch?', bn: 'ভাস মাইনশ?', bnMeaning: 'তুমি কী বোঝাতে চাচ্ছো?', en: 'What do you mean?' },
+{ ru: 'Wo isch d’Toilette?', bn: 'ভো ইশ টি টোয়ালেট্টে?', bnMeaning: 'টয়লেট কোথায়?', en: 'Where is the toilet?' },
+{ ru: 'Was koscht das?', bn: 'ভাস কোশট দাস?', bnMeaning: 'এটার দাম কত?', en: 'How much does it cost?' },
+
+{ ru: 'Ich han Hunger.', bn: 'ইখ হান হুংগার।', bnMeaning: 'আমি ক্ষুধার্ত।', en: 'I am hungry.' },
+{ ru: 'Ich han Durscht.', bn: 'ইখ হান দূরস্ট।', bnMeaning: 'আমি পিপাসার্ত।', en: 'I am thirsty.' },
+{ ru: 'Ich möcht Wasser.', bn: 'ইখ মোখট ভাসার।', bnMeaning: 'আমি পানি চাই।', en: 'I want water.' },
+{ ru: 'En Kafi, bitte.', bn: 'এন কাফি, বিটে।', bnMeaning: 'এক কাপ কফি দিন, অনুগ্রহ করে।', en: 'A coffee, please.' },
+{ ru: 'Ich möcht öppis esse.', bn: 'ইখ মোখট ওপ্পিস এসে।', bnMeaning: 'আমি কিছু খেতে চাই।', en: 'I want to eat something.' },
+{ ru: 'Es het guet gschmacket.', bn: 'এস হেট গুয়েত গশমাকেট।', bnMeaning: 'খাবারটা সুস্বাদু ছিল।', en: 'It tasted good.' },
+{ ru: 'Merci vielmal!', bn: 'মার্সি ফিলমাল!', bnMeaning: 'অনেক ধন্যবাদ!', en: 'Thanks a lot!' },
+{ ru: 'Bitte schön!', bn: 'বিটে শ্যোন!', bnMeaning: 'আপনাকে স্বাগতম!', en: 'You’re welcome!' },
+{ ru: 'Entschuldigung!', bn: 'এন্টশুলদিগুং!', bnMeaning: 'মাফ করবেন!', en: 'Excuse me / Sorry!' },
+{ ru: 'Ich weiss nöd.', bn: 'ইখ ভাইস ন্যদ।', bnMeaning: 'আমি জানি না।', en: 'I don’t know.' },
+
+{ ru: 'Ich bi müed.', bn: 'ইখ বি মুইড।', bnMeaning: 'আমি ক্লান্ত।', en: 'I am tired.' },
+{ ru: 'Ich bi zfriede.', bn: 'ইখ বি জ়ফ্রিদে।', bnMeaning: 'আমি সন্তুষ্ট।', en: 'I am satisfied.' },
+{ ru: 'Hesch Zyt?', bn: 'হেশ জ়িট?', bnMeaning: 'তোমার কি সময় আছে?', en: 'Do you have time?' },
+{ ru: 'Was machsch du gärn?', bn: 'ভাস মাখশ দু গ্যারণ?', bnMeaning: 'তুমি কী করতে ভালোবাসো?', en: 'What do you like to do?' },
+{ ru: 'Ich lose gärn Musig.', bn: 'ইখ লোসে গ্যারণ মুজিগ।', bnMeaning: 'আমি গান শুনতে ভালোবাসি।', en: 'I like listening to music.' },
+{ ru: 'Ich bi froh.', bn: 'ইখ বি ফ্রো।', bnMeaning: 'আমি খুশি।', en: 'I am happy.' },
+{ ru: 'Mach’s guet!', bn: 'মাখস গুয়েত!', bnMeaning: 'ভালো থেকো!', en: 'Take care!' },
+{ ru: 'Adieu!', bn: 'আদিউ!', bnMeaning: 'বিদায়!', en: 'Goodbye!' },
+{ ru: 'Wotsch mitcho?', bn: 'ভোচ মিটখো?', bnMeaning: 'তুমি কি সাথে আসবে?', en: 'Do you want to come along?' },
+{ ru: 'Ich bi z Spat.', bn: 'ইখ বি স পাত।', bnMeaning: 'আমি দেরি করে ফেলেছি।', en: 'I’m late.' },
+{ ru: 'Ich cha nöd cho.', bn: 'ইখ খা ন্যদ খো।', bnMeaning: 'আমি আসতে পারব না।', en: 'I can’t come.' },
+{ ru: 'Gits Problem?', bn: 'গিটস প্রোব্লেম?', bnMeaning: 'কোন সমস্যা আছে?', en: 'Is there a problem?' },
+{ ru: 'Ich ha kei Ahnig.', bn: 'ইখ হা কাই আহনিগ।', bnMeaning: 'আমার কোনো ধারণা নেই।', en: 'I have no idea.' },
+{ ru: 'Was söll ich mache?', bn: 'ভাস সোল ইখ মাখে?', bnMeaning: 'আমি কী করব?', en: 'What should I do?' },
+{ ru: 'Das isch e gueti Idee.', bn: 'দাস ইশ এ গুয়েতি ইদে।', bnMeaning: 'এটা ভালো ধারণা।', en: 'That’s a good idea.' },
+{ ru: 'Wägem was?', bn: 'ভ্যেগেম ভাস?', bnMeaning: 'কিসের কারণে?', en: 'Because of what?' },
+{ ru: 'I versteh di.', bn: 'ই ফারস্টে দি।', bnMeaning: 'আমি তোমাকে বুঝতে পারছি।', en: 'I understand you.' },
+{ ru: 'I ha Hunger und Durscht.', bn: 'ই হা হুংগার উন্ড দূরস্ট।', bnMeaning: 'আমি ক্ষুধার্ত এবং তৃষ্ণার্ত।', en: 'I’m hungry and thirsty.' },
+
+{ ru: 'Was wotsch zum z Nacht?', bn: 'ভাস ভোচ সুম স্ নাখ্ট?', bnMeaning: 'তুমি রাতের খাবারে কী খেতে চাও?', en: 'What do you want for dinner?' },
+{ ru: 'S het fein gschmacket.', bn: 'এস হেট ফাইন গশমাকেট।', bnMeaning: 'খাবারটা দারুণ ছিল।', en: 'The food was delicious.' },
+{ ru: 'Ich gang i d Schule.', bn: 'ইখ গাং ই ডি শুলে।', bnMeaning: 'আমি স্কুলে যাই।', en: 'I go to school.' },
+{ ru: 'Ich lerne Dütsch.', bn: 'ইখ লারনে ডিউচ।', bnMeaning: 'আমি জার্মান শিখছি।', en: 'I am learning German.' },
+{ ru: 'Was hesch du gärn?', bn: 'ভাস হেশ দু গ্যারণ?', bnMeaning: 'তুমি কী পছন্দ করো?', en: 'What do you like?' },
+{ ru: 'Mini Lieblingsfarb isch blau.', bn: 'মিনি লিবলিংগসফার্ব ইশ ব্লাউ।', bnMeaning: 'আমার প্রিয় রঙ নীল।', en: 'My favorite color is blue.' },
+{ ru: 'I ha kei Zyt.', bn: 'ই হা কাই জ়িট।', bnMeaning: 'আমার সময় নেই।', en: 'I have no time.' },
+{ ru: 'I bi müed worde.', bn: 'ই বি মুইড ভর্ডে।', bnMeaning: 'আমি ক্লান্ত হয়ে গেছি।', en: 'I have become tired.' },
+{ ru: 'Lueg da!', bn: 'লুয়েগ দা!', bnMeaning: 'এটা দেখো!', en: 'Look here!' },
+{ ru: 'Mach öppis!', bn: 'মাখ ওপ্পিস!', bnMeaning: 'কিছু করো!', en: 'Do something!' },
+
+{ ru: 'Was git’s Neues?', bn: 'ভাস গিটস নোয়েস?', bnMeaning: 'নতুন কী খবর?', en: 'What’s new?' },
+{ ru: 'Alles klar.', bn: 'আলেস ক্লার।', bnMeaning: 'সব ঠিক আছে।', en: 'All good.' },
+{ ru: 'Ich ha fertig.', bn: 'ইখ হা ফারটিগ।', bnMeaning: 'আমি শেষ করেছি।', en: 'I’m done.' },
+{ ru: 'Hesch es Problem?', bn: 'হেশ এস প্রোব্লেম?', bnMeaning: 'তোমার কি সমস্যা হয়েছে?', en: 'Do you have a problem?' },
+{ ru: 'Nüt speziell.', bn: 'ন্যট স্পেচিয়েল।', bnMeaning: 'বিশেষ কিছু না।', en: 'Nothing special.' },
+{ ru: 'Wägem dir.', bn: 'ভ্যেগেম দির।', bnMeaning: 'তোমার জন্য।', en: 'Because of you.' },
+{ ru: 'I luege dä Film.', bn: 'ই লুয়েগে ডে ফিল্ম।', bnMeaning: 'আমি সিনেমা দেখছি।', en: 'I’m watching the movie.' },
+{ ru: 'S isch luschtig.', bn: 'এস ইশ লুশটিগ।', bnMeaning: 'এটা মজার।', en: 'It’s funny.' },
+{ ru: 'I bi zfriede mit allem.', bn: 'ই বি জ়ফ্রিদে মিট আলেম।', bnMeaning: 'আমি সবকিছুতে সন্তুষ্ট।', en: 'I’m happy with everything.' },
+{ ru: 'Merci fürs Hälfe.', bn: 'মার্সি ফিউরস হ্যালফে।', bnMeaning: 'সহযোগিতার জন্য ধন্যবাদ।', en: 'Thanks for your help.' },
+{ ru: 'Was mached mir hüt?', bn: 'ভাস মাখেদ মির হুট?', bnMeaning: 'আজ আমরা কী করব?', en: 'What are we doing today?' },
+{ ru: 'Wänn gönd mir go laufe?', bn: 'ভ্যান গেন্ড মির গো লাউফে?', bnMeaning: 'আমরা কখন হাঁটতে যাব?', en: 'When are we going for a walk?' },
+{ ru: 'Ich ha kei Luscht.', bn: 'ইখ হা কাই লুশ্ট।', bnMeaning: 'আমার ইচ্ছা নেই।', en: 'I don’t feel like it.' },
+{ ru: 'S’isch z kalt use.', bn: 'এস ইশ স্ কাল্ট উসে।', bnMeaning: 'বাইরে খুব ঠান্ডা।', en: 'It’s cold outside.' },
+{ ru: 'S’isch schön Wätter.', bn: 'এস ইশ শ্যোন ভেটার।', bnMeaning: 'আবহাওয়া সুন্দর।', en: 'The weather is nice.' },
+{ ru: 'Ich ha en Regeschirm.', bn: 'ইখ হা এন রেগেশির্ম।', bnMeaning: 'আমার ছাতা আছে।', en: 'I have an umbrella.' },
+{ ru: 'Wo gömer go ässe?', bn: 'ভো গোমের গো এসে?', bnMeaning: 'আমরা কোথায় খেতে যাব?', en: 'Where shall we go eat?' },
+{ ru: 'Ich ha öppis z Haus gmacht.', bn: 'ইখ হা ওপ্পিস স হাউস গেমাখ্ট।', bnMeaning: 'আমি বাসায় কিছু রান্না করেছি।', en: 'I cooked something at home.' },
+{ ru: 'Lueg das isch schön!', bn: 'লুয়েগ দাস ইশ শ্যোন!', bnMeaning: 'দেখো, এটা সুন্দর!', en: 'Look, this is beautiful!' },
+{ ru: 'S isch guet glunge.', bn: 'এস ইশ গুয়েত গলুংগে।', bnMeaning: 'এটা দারুণ হয়েছে।', en: 'It turned out great.' },
+
+{ ru: 'Mach öppis anderes.', bn: 'মাখ ওপ্পিস আন্ডেরেস।', bnMeaning: 'কিছু অন্য কিছু করো।', en: 'Do something else.' },
+{ ru: 'Ich weiss nöd, was tue.', bn: 'ইখ ভাইস ন্যদ, ভাস তুয়ে।', bnMeaning: 'আমি জানি না, কী করব।', en: 'I don’t know what to do.' },
+{ ru: 'Lueg e Film mit mir.', bn: 'লুয়েগ এ ফিল্ম মিট মির।', bnMeaning: 'আমার সঙ্গে একটি সিনেমা দেখো।', en: 'Watch a movie with me.' },
+{ ru: 'Wänn isch s Znacht?', bn: 'ভ্যান ইশ স্ নাখ্ট?', bnMeaning: 'রাতের খাবার কখন?', en: 'When is dinner?' },
+{ ru: 'Bisch fertig?', bn: 'বিশ ফারটিগ?', bnMeaning: 'তুমি কি শেষ করেছ?', en: 'Are you done?' },
+{ ru: 'Ich mues no schaffe.', bn: 'ইখ মুইস নো শাফে।', bnMeaning: 'আমাকে এখনও কাজ করতে হবে।', en: 'I still have to work.' },
+{ ru: 'Gömmer eis ga zieh?', bn: 'গোমের আইস গা জি?', bnMeaning: 'চলো কিছু পান করি?', en: 'Shall we go have a drink?' },
+{ ru: 'Ich ha kei Geld.', bn: 'ইখ হা কাই গেল্ড।', bnMeaning: 'আমার কাছে টাকা নেই।', en: 'I have no money.' },
+{ ru: 'Das git’s doch nöd!', bn: 'দাস গিটস দখ ন্যদ!', bnMeaning: 'এটা বিশ্বাসই করা যায় না!', en: 'That can’t be true!' },
+{ ru: 'Du bisch lustig!', bn: 'দু বিশ লুশটিগ!', bnMeaning: 'তুমি মজার!', en: 'You are funny!' },
+
+{ ru: 'Mues ich das mache?', bn: 'মুইস ইখ দাস মাখে?', bnMeaning: 'আমাকে কি এটা করতে হবে?', en: 'Do I have to do this?' },
+{ ru: 'Es isch würkli wichtig.', bn: 'এস ইশ ভুরকলি ভিখটিগ।', bnMeaning: 'এটা সত্যিই গুরুত্বপূর্ণ।', en: 'It’s really important.' },
+{ ru: 'Vergiss das nöd.', bn: 'ফারগিস দাস ন্যদ।', bnMeaning: 'এটা ভুলে যেও না।', en: 'Don’t forget it.' },
+{ ru: 'Ich tue min Bescht.', bn: 'ইখ তুয়ে মিন বেস্ট।', bnMeaning: 'আমি আমার সর্বোচ্চটা চেষ্টা করছি।', en: 'I’m doing my best.' },
+{ ru: 'Mach s guet und pass uf!', bn: 'মাখ স গুয়েত উন্ড পাস উফ!', bnMeaning: 'ভালো থেকো এবং সাবধানে থাকো!', en: 'Take care and stay safe!' },
+{ ru: 'Ich bi stolz uf di.', bn: 'ইখ বি শটলৎস উফ দি।', bnMeaning: 'আমি তোমার উপর গর্বিত।', en: 'I’m proud of you.' },
+{ ru: 'Denk dra!', bn: 'দেন্ক দ্রা!', bnMeaning: 'মনে রেখো!', en: 'Remember that!' },
+{ ru: 'Morn isch en neue Tag.', bn: 'মর্ন ইশ এন নয়ি টাগ।', bnMeaning: 'আগামীকাল একটি নতুন দিন।', en: 'Tomorrow is a new day.' },
+{ ru: 'Du bisch mis Glück!', bn: 'দু বিশ মিস গ্লিক!', bnMeaning: 'তুমি আমার সৌভাগ্য!', en: 'You are my luck!' },
+{ ru: 'Ich gseh di morn!', bn: 'ইখ গসে দি মর্ন!', bnMeaning: 'আমি তোমাকে আগামীকাল দেখব!', en: 'I’ll see you tomorrow!' },
+{ ru: 'Willsch öppis spiele?', bn: 'ভিলশ ওপ্পিস শপিলে?', bnMeaning: 'তুমি কি কিছু খেলতে চাও?', en: 'Do you want to play something?' },
+{ ru: 'Ich ha e Idee.', bn: 'ইখ হা এ ইদে।', bnMeaning: 'আমার একটা আইডিয়া আছে।', en: 'I have an idea.' },
+{ ru: 'Das wär super!', bn: 'দাস ভের সুপার!', bnMeaning: 'এটা দারুণ হবে!', en: 'That would be great!' },
+{ ru: 'Wänn treffe mir üs?', bn: 'ভেন ত্রেফে মির উস?', bnMeaning: 'আমরা কখন দেখা করব?', en: 'When will we meet?' },
+{ ru: 'Ich chume z spaat.', bn: 'ইখ খুমে স্ পাৎ।', bnMeaning: 'আমি দেরি করে আসব।', en: 'I’ll come late.' },
+{ ru: 'Mach dir kei Sorge.', bn: 'মাখ দির কাই জর্গে।', bnMeaning: 'চিন্তা করো না।', en: 'Don’t worry.' },
+{ ru: 'Es chunnt scho guet.', bn: 'এস খুন্ট শো গুয়েত।', bnMeaning: 'সব ঠিক হয়ে যাবে।', en: 'It’ll be alright.' },
+{ ru: 'Ich glaub a dich.', bn: 'ইখ গ্লাউব আ দিখ।', bnMeaning: 'আমি তোমাতে বিশ্বাস করি।', en: 'I believe in you.' },
+{ ru: 'Du schaffsch das!', bn: 'দু শাফশ দাস!', bnMeaning: 'তুমি পারবে!', en: 'You can do it!' },
+{ ru: 'Hesch öppis ghört?', bn: 'হেশ ওপ্পিস ঘ্যোর্ট?', bnMeaning: 'তুমি কি কিছু শুনেছো?', en: 'Did you hear something?' },
+
+{ ru: 'Das isch e Überraschig.', bn: 'দাস ইশ এ ঊবের্রাশিগ।', bnMeaning: 'এটা একটা চমক।', en: 'That’s a surprise.' },
+{ ru: 'Ich liebe Musig.', bn: 'ইখ লিবে মুজিগ।', bnMeaning: 'আমি সঙ্গীত ভালোবাসি।', en: 'I love music.' },
+{ ru: 'Ich tanze gärn.', bn: 'ইখ তান্সে গ্যারণ।', bnMeaning: 'আমি নাচতে ভালোবাসি।', en: 'I like dancing.' },
+{ ru: 'Mini Lieblingsfarbe isch rot.', bn: 'মিনি লিবলিংগসফারবে ইশ রোট।', bnMeaning: 'আমার প্রিয় রঙ লাল।', en: 'My favorite color is red.' },
+{ ru: 'Was isch dini Lieblingsfilm?', bn: 'ভাস ইশ দিনি লিবলিংগসফিল্ম?', bnMeaning: 'তোমার প্রিয় সিনেমা কোনটি?', en: 'What’s your favorite movie?' },
+{ ru: 'Ich lueg gärn Komödie.', bn: 'ইখ লুয়েগ গ্যারণ কোমোডিয়ে।', bnMeaning: 'আমি কমেডি দেখতে ভালোবাসি।', en: 'I like watching comedy.' },
+{ ru: 'Ich ha Angscht.', bn: 'ইখ হা আঙশ্ট।', bnMeaning: 'আমি ভয় পেয়েছি।', en: 'I am scared.' },
+{ ru: 'Das isch z dunkel.', bn: 'দাস ইশ স্ ডুংকেল।', bnMeaning: 'এখানে অন্ধকার।', en: 'It’s dark here.' },
+{ ru: 'Mach s Liecht a.', bn: 'মাখ স লিয়াখ্ট আ।', bnMeaning: 'লাইট জ্বালাও।', en: 'Turn on the light.' },
+{ ru: 'Mach s Liecht us.', bn: 'মাখ স লিয়াখ্ট উস।', bnMeaning: 'লাইট বন্ধ করো।', en: 'Turn off the light.' },
+
+
+
+  
+  
+
+
+
+// swiss: শেষ  জার্মান. 
 ],
 maltesian: [
   { ru: 'Bongu', bn: 'বোনগু', bnMeaning: 'হ্যালো', en: 'Hello' },
