@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>speak_Eu</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Speak EU - European Language Practice</title>
   <style>
-    /* Make header smaller and professional */
+    /* Reset some default styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Header styles */
     .app-header {
       padding: 0.6rem 1rem;
       background: #0059b3;
@@ -15,35 +22,59 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+      transition: all 0.3s ease;
+      height: 60px;
+      box-sizing: border-box;
     }
+    
     .app-title {
       font-size: 1.3rem;
       font-weight: 600;
       margin: 0;
       user-select: none;
     }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    
     #language-select {
       font-size: 0.9rem;
       padding: 0.3rem 0.5rem;
-      border-radius: 8px; /* Changed to rounded rectangle */
+      border-radius: 8px;
       border: none;
       cursor: pointer;
       min-width: 140px;
+      background-color: white;
+      color: #333;
     }
+    
     #mode-toggle {
       background: #003c82;
       border: none;
-      border-radius: 8px; /* Changed to rounded rectangle */
+      border-radius: 8px;
       color: white;
       font-size: 1.2rem;
-      padding: 0.3rem 0.6rem; /* Adjusted padding for better touch */
+      padding: 0.3rem 0.6rem;
       margin-left: 0.5rem;
       cursor: pointer;
       transition: background-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    
     #mode-toggle:hover {
       background-color: #002a58;
+    }
+
+    /* Main content area */
+    #conversation-area {
+      padding: 1rem;
+      min-height: calc(100vh - 60px);
+      box-sizing: border-box;
+      transition: margin-top 0.3s ease;
     }
 
     /* Mobile friendly */
@@ -52,24 +83,43 @@
         flex-direction: column;
         align-items: stretch;
         padding: 0.5rem 1rem;
+        height: auto;
       }
+      
       .app-title {
         font-size: 1.1rem;
         text-align: center;
         margin-bottom: 0.4rem;
       }
+      
       .header-right {
-        display: flex;
-        justify-content: center;
+        flex-direction: column;
         gap: 0.4rem;
       }
+      
       #language-select {
         width: 100%;
         max-width: none;
       }
+      
       #mode-toggle {
         margin-left: 0;
+        width: 100%;
       }
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    
+    body.dark-mode .app-header {
+      background: #003366;
+    }
+    
+    body.dark-mode #mode-toggle {
+      background: #002244;
     }
   </style>
 </head>
@@ -79,20 +129,18 @@
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
       <select id="language-select">
-        <!-- Already added -->
-        <option value="russian">🇷🇺 Russian</option>
+        <option value="" disabled selected>Select a language</option>
         <option value="german">🇩🇪 German</option>
-        <option value="italian">🇮🇹 Italian</option>
         <option value="french">🇫🇷 French</option>
+        <option value="italian">🇮🇹 Italian</option>
         <option value="spanish">🇪🇸 Spanish</option>
-        <!-- Schengen Countries Not Yet Added -->
         <option value="portuguese">🇵🇹 Portuguese</option>
         <option value="dutch">🇳🇱 Dutch</option>
         <option value="swedish">🇸🇪 Swedish</option>
         <option value="norwegian">🇳🇴 Norwegian</option>
         <option value="finnish">🇫🇮 Finnish</option>
         <option value="danish">🇩🇰 Danish</option>
-        <option value="greek">🇬🇷 Greek</option>
+        <option value="icelandic">🇮🇸 Icelandic</option>
         <option value="polish">🇵🇱 Polish</option>
         <option value="czech">🇨🇿 Czech</option>
         <option value="hungarian">🇭🇺 Hungarian</option>
@@ -101,37 +149,72 @@
         <option value="estonian">🇪🇪 Estonian</option>
         <option value="latvian">🇱🇻 Latvian</option>
         <option value="lithuanian">🇱🇹 Lithuanian</option>
+        <option value="greek">🇬🇷 Greek</option>
         <option value="croatian">🇭🇷 Croatian</option>
-        <option value="icelandic">🇮🇸 Icelandic</option>
-        <option value="maltesian">🇲🇹 Maltese</option>
+        <option value="maltese">🇲🇹 Maltese</option>
+        <option value="russian">🇷🇺 Russian</option>
         <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Switzerland </option>
-        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+        <option value="swiss">🇨🇭 Swiss German</option>
         <option value="luxembourgish">🇱🇺 Luxembourgish</option>
       </select>
-      <button id="mode-toggle">☀️</button>
+      <button id="mode-toggle" aria-label="Toggle dark mode">☀️</button>
     </div>
   </header>
 
   <main id="conversation-area"></main>
 
-  <script src="script.js"></script>
   <script>
-    // Hide header when a language is selected
+    // Dark mode toggle functionality
+    const modeToggle = document.getElementById('mode-toggle');
+    const body = document.body;
+    
+    function toggleDarkMode() {
+      body.classList.toggle('dark-mode');
+      const isDarkMode = body.classList.contains('dark-mode');
+      modeToggle.textContent = isDarkMode ? '🌙' : '☀️';
+      localStorage.setItem('darkMode', isDarkMode);
+    }
+    
+    modeToggle.addEventListener('click', toggleDarkMode);
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      modeToggle.textContent = '🌙';
+    }
+
+    // Language selection functionality
     const languageSelect = document.getElementById('language-select');
     const header = document.querySelector('.app-header');
-
-    languageSelect.addEventListener('change', () => {
-      // Hide header smoothly
-      header.style.opacity = '0';
-      header.style.height = '0';
-      header.style.padding = '0';
-      header.style.overflow = 'hidden';
-      // Optional: actually set display:none after transition for accessibility
-      setTimeout(() => {
-        header.style.display = 'none';
-      }, 300);
-    });
+    const conversationArea = document.getElementById('conversation-area');
+    
+    function handleLanguageChange() {
+      if (languageSelect.value) {
+        header.style.opacity = '0';
+        header.style.height = '0';
+        header.style.padding = '0';
+        header.style.margin = '0';
+        header.style.overflow = 'hidden';
+        
+        conversationArea.style.marginTop = '0';
+        
+        setTimeout(() => {
+          header.style.display = 'none';
+          // Here you would typically load the selected language content
+          // conversationArea.innerHTML = `Loading ${languageSelect.options[languageSelect.selectedIndex].text}...`;
+        }, 300);
+      }
+    }
+    
+    languageSelect.addEventListener('change', handleLanguageChange);
+    
+    // Initialize the app
+    function init() {
+      // Any initialization code can go here
+    }
+    
+    // Run initialization when DOM is loaded
+    document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
