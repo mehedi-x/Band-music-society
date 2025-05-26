@@ -3,167 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Speak EU - Language Learning</title>
+  <title>speak_Eu</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Reset and base styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: all 0.3s ease;
-    }
-
-    /* Slim header styles */
+    /* Make header smaller and professional */
     .app-header {
-      padding: 0.4rem 1rem;
+      padding: 0.6rem 1rem;
       background: #0059b3;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      height: 50px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
     }
-    
     .app-title {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: 600;
       margin: 0;
       user-select: none;
     }
-    
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    /* Language select */
     #language-select {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       padding: 0.3rem 0.5rem;
-      border-radius: 6px;
+      border-radius: 8px; /* Changed to rounded rectangle */
       border: none;
       cursor: pointer;
       min-width: 140px;
-      background-color: white;
-      color: #333;
-      height: 32px;
     }
-    
-    /* Dark mode toggle */
     #mode-toggle {
       background: #003c82;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px; /* Changed to rounded rectangle */
       color: white;
-      font-size: 1rem;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 1.2rem;
+      padding: 0.3rem 0.6rem; /* Adjusted padding for better touch */
+      margin-left: 0.5rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background-color 0.2s ease;
     }
-    
     #mode-toggle:hover {
-      background: #002a58;
-    }
-    
-    /* Hamburger menu button */
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.3rem;
-      cursor: pointer;
-      padding: 0.3rem;
-    }
-    
-    /* Main content area */
-    #conversation-area {
-      padding: 1rem;
-      margin-top: 50px;
-      min-height: calc(100vh - 50px);
-    }
-    
-    /* Mobile menu styles */
-    .mobile-menu {
-      position: fixed;
-      top: 50px;
-      right: -250px;
-      width: 250px;
-      height: calc(100vh - 50px);
-      background: #f5f5f5;
-      transition: right 0.3s ease;
-      z-index: 90;
-      padding: 1rem;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    }
-    
-    .mobile-menu.active {
-      right: 0;
-    }
-    
-    /* Dark mode styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
-    
-    body.dark-mode .app-header {
-      background: #003366;
-    }
-    
-    body.dark-mode #mode-toggle {
-      background: #002244;
-    }
-    
-    body.dark-mode .mobile-menu {
-      background: #1e1e1e;
-      color: #e0e0e0;
+      background-color: #002a58;
     }
 
-    /* Mobile responsive styles */
-    @media (max-width: 768px) {
+    /* Mobile friendly */
+    @media (max-width: 600px) {
       .app-header {
-        padding: 0.3rem 0.8rem;
-        height: 45px;
-      }
-      
-      .app-title {
-        font-size: 1rem;
-      }
-      
-      .menu-btn {
-        display: block;
-      }
-      
-      .header-right {
-        display: none;
-      }
-      
-      .mobile-menu .header-right {
-        display: flex;
         flex-direction: column;
-        gap: 0.8rem;
-        padding: 1rem 0;
+        align-items: stretch;
+        padding: 0.5rem 1rem;
       }
-      
+      .app-title {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 0.4rem;
+      }
+      .header-right {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+      }
       #language-select {
         width: 100%;
+        max-width: none;
+      }
+      #mode-toggle {
+        margin-left: 0;
       }
     }
   </style>
@@ -172,17 +77,15 @@
 
   <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
-    
-    <button class="menu-btn" id="menu-toggle">☰</button>
-    
     <div class="header-right">
       <select id="language-select">
-        <option value="" disabled selected>Select language</option>
+        <!-- Already added -->
         <option value="russian">🇷🇺 Russian</option>
         <option value="german">🇩🇪 German</option>
         <option value="italian">🇮🇹 Italian</option>
         <option value="french">🇫🇷 French</option>
         <option value="spanish">🇪🇸 Spanish</option>
+        <!-- Schengen Countries Not Yet Added -->
         <option value="portuguese">🇵🇹 Portuguese</option>
         <option value="dutch">🇳🇱 Dutch</option>
         <option value="swedish">🇸🇪 Swedish</option>
@@ -200,99 +103,34 @@
         <option value="lithuanian">🇱🇹 Lithuanian</option>
         <option value="croatian">🇭🇷 Croatian</option>
         <option value="icelandic">🇮🇸 Icelandic</option>
-        <option value="maltese">🇲🇹 Maltese</option>
+        <option value="maltesian">🇲🇹 Maltese</option>
         <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Swiss German</option>
+        <option value="swiss">🇨🇭 Switzerland </option>
+        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
         <option value="luxembourgish">🇱🇺 Luxembourgish</option>
       </select>
-      <button id="mode-toggle" aria-label="Toggle dark mode">☀️</button>
+      <button id="mode-toggle">☀️</button>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu">
-    <div class="header-right">
-      <select id="mobile-language-select">
-        <option value="" disabled selected>Select language</option>
-        <option value="russian">🇷🇺 Russian</option>
-        <option value="german">🇩🇪 German</option>
-        <option value="italian">🇮🇹 Italian</option>
-        <!-- Other language options -->
-      </select>
-      <button id="mobile-mode-toggle" aria-label="Toggle dark mode">☀️</button>
-    </div>
-  </div>
-
   <main id="conversation-area"></main>
 
+  <script src="script.js"></script>
   <script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.mobile-menu') && !e.target.closest('.menu-btn')) {
-        mobileMenu.classList.remove('active');
-      }
-    });
-
-    // Dark mode toggle
-    const modeToggle = document.getElementById('mode-toggle');
-    const mobileModeToggle = document.getElementById('mobile-mode-toggle');
-    
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      const isDarkMode = document.body.classList.contains('dark-mode');
-      const icon = isDarkMode ? '🌙' : '☀️';
-      modeToggle.textContent = icon;
-      mobileModeToggle.textContent = icon;
-      localStorage.setItem('darkMode', isDarkMode);
-    }
-    
-    modeToggle.addEventListener('click', toggleDarkMode);
-    mobileModeToggle.addEventListener('click', toggleDarkMode);
-
-    // Check for saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'true') {
-      document.body.classList.add('dark-mode');
-      modeToggle.textContent = '🌙';
-      mobileModeToggle.textContent = '🌙';
-    }
-
-    // Language selection
+    // Hide header when a language is selected
     const languageSelect = document.getElementById('language-select');
-    const mobileLanguageSelect = document.getElementById('mobile-language-select');
     const header = document.querySelector('.app-header');
-    
-    function handleLanguageChange() {
-      if (this.value) {
-        header.style.opacity = '0';
-        header.style.height = '0';
-        header.style.padding = '0';
-        header.style.overflow = 'hidden';
-        mobileMenu.classList.remove('active');
-        
-        setTimeout(() => {
-          header.style.display = 'none';
-          document.getElementById('conversation-area').style.marginTop = '0';
-        }, 300);
-      }
-    }
-    
-    languageSelect.addEventListener('change', handleLanguageChange);
-    mobileLanguageSelect.addEventListener('change', handleLanguageChange);
-    
-    // Sync language selects
-    languageSelect.addEventListener('change', function() {
-      mobileLanguageSelect.value = this.value;
-    });
-    
-    mobileLanguageSelect.addEventListener('change', function() {
-      languageSelect.value = this.value;
+
+    languageSelect.addEventListener('change', () => {
+      // Hide header smoothly
+      header.style.opacity = '0';
+      header.style.height = '0';
+      header.style.padding = '0';
+      header.style.overflow = 'hidden';
+      // Optional: actually set display:none after transition for accessibility
+      setTimeout(() => {
+        header.style.display = 'none';
+      }, 300);
     });
   </script>
 </body>
