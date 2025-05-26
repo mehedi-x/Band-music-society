@@ -4,42 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>speak_Eu</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* CSS Variables for colors */
-    :root {
-      --primary-color: #0059b3;
-      --secondary-color: #003c82;
-      --hover-color: #002a58;
-      --text-color: white;
-      --menu-bg: #004a99;
-      --menu-hover-bg: #003c7a;
-      --menu-shadow: rgba(0, 0, 0, 0.15);
-    }
-
     /* Make header smaller and professional */
     .app-header {
       padding: 0.6rem 1rem;
-      background: var(--primary-color);
-      color: var(--text-color);
+      background: #0059b3;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
-      position: relative;
-      z-index: 1000;
     }
     .app-title {
       font-size: 1.3rem;
       font-weight: 600;
       margin: 0;
       user-select: none;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      position: relative;
     }
     #language-select {
       font-size: 0.9rem;
@@ -48,88 +30,22 @@
       border: none;
       cursor: pointer;
       min-width: 140px;
-      background: white;
-      color: #333;
-      transition: box-shadow 0.2s ease;
-    }
-    #language-select:focus {
-      outline: none;
-      box-shadow: 0 0 5px var(--hover-color);
     }
     #mode-toggle {
-      background: var(--secondary-color);
+      background: #003c82;
       border: none;
       border-radius: 8px; /* Changed to rounded rectangle */
-      color: var(--text-color);
+      color: white;
       font-size: 1.2rem;
       padding: 0.3rem 0.6rem; /* Adjusted padding for better touch */
+      margin-left: 0.5rem;
       cursor: pointer;
       transition: background-color 0.2s ease;
     }
     #mode-toggle:hover {
-      background-color: var(--hover-color);
+      background-color: #002a58;
     }
-    /* Hamburger Menu Button */
-    #menu-button {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 4px;
-      padding: 6px;
-      margin-left: 0.5rem;
-      border-radius: 6px;
-      transition: background-color 0.2s ease;
-    }
-    #menu-button:hover {
-      background-color: var(--hover-color);
-    }
-    #menu-button:focus {
-      outline: none;
-      box-shadow: 0 0 5px var(--hover-color);
-    }
-    /* Hamburger bars */
-    .bar {
-      width: 22px;
-      height: 3px;
-      background-color: var(--text-color);
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    /* Menu container */
-    #menu {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background: var(--menu-bg);
-      border-radius: 8px;
-      box-shadow: 0 4px 12px var(--menu-shadow);
-      min-width: 180px;
-      color: var(--text-color);
-      padding: 0.5rem 0;
-      display: none;
-      flex-direction: column;
-      z-index: 1100;
-      user-select: none;
-    }
-    #menu.show {
-      display: flex;
-    }
-    #menu a {
-      padding: 0.55rem 1rem;
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 600;
-      transition: background-color 0.2s ease;
-      cursor: pointer;
-    }
-    #menu a:hover,
-    #menu a:focus {
-      background-color: var(--menu-hover-bg);
-      outline: none;
-    }
+
     /* Mobile friendly */
     @media (max-width: 600px) {
       .app-header {
@@ -143,6 +59,7 @@
         margin-bottom: 0.4rem;
       }
       .header-right {
+        display: flex;
         justify-content: center;
         gap: 0.4rem;
       }
@@ -153,30 +70,22 @@
       #mode-toggle {
         margin-left: 0;
       }
-      #menu-button {
-        margin-left: 0;
-      }
-      #menu {
-        top: 100%;
-        right: 0;
-        left: 0;
-        border-radius: 0 0 8px 8px;
-        min-width: auto;
-      }
     }
   </style>
 </head>
 <body>
 
-  <header class="app-header" role="banner">
+  <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
-      <select id="language-select" aria-label="Select Language">
+      <select id="language-select">
+        <!-- Already added -->
         <option value="russian">🇷🇺 Russian</option>
         <option value="german">🇩🇪 German</option>
         <option value="italian">🇮🇹 Italian</option>
         <option value="french">🇫🇷 French</option>
         <option value="spanish">🇪🇸 Spanish</option>
+        <!-- Schengen Countries Not Yet Added -->
         <option value="portuguese">🇵🇹 Portuguese</option>
         <option value="dutch">🇳🇱 Dutch</option>
         <option value="swedish">🇸🇪 Swedish</option>
@@ -196,27 +105,17 @@
         <option value="icelandic">🇮🇸 Icelandic</option>
         <option value="maltesian">🇲🇹 Maltese</option>
         <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Switzerland</option>
+        <option value="swiss">🇨🇭 Switzerland </option>
         <option value="liechtenstein">🇱🇮 Liechtenstein</option>
         <option value="luxembourgish">🇱🇺 Luxembourgish</option>
       </select>
-      <button id="mode-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
-      <button id="menu-button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <nav id="menu" role="navigation" aria-label="Main menu">
-        <a href="#home" tabindex="0">🏠 Home</a>
-        <a href="#about" tabindex="0">ℹ️ About</a>
-        <a href="#settings" tabindex="0">⚙️ Settings</a>
-        <a href="#contact" tabindex="0">✉️ Contact</a>
-      </nav>
+      <button id="mode-toggle">☀️</button>
     </div>
   </header>
 
   <main id="conversation-area"></main>
 
+  <script src="script.js"></script>
   <script>
     // Hide header when a language is selected
     const languageSelect = document.getElementById('language-select');
@@ -233,42 +132,6 @@
         header.style.display = 'none';
       }, 300);
     });
-
-    // Menu toggle functionality
-    const menuButton = document.getElementById('menu-button');
-    const menu = document.getElementById('menu');
-
-    menuButton.addEventListener('click', () => {
-      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-      if (isExpanded) {
-        menu.classList.remove('show');
-        menuButton.setAttribute('aria-expanded', 'false');
-      } else {
-        menu.classList.add('show');
-        menuButton.setAttribute('aria-expanded', 'true');
-        // Focus first menu item for accessibility
-        const firstMenuItem = menu.querySelector('a');
-        if (firstMenuItem) firstMenuItem.focus();
-      }
-    });
-
-    // Close menu if clicked outside
-    document.addEventListener('click', (event) => {
-      if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
-        menu.classList.remove('show');
-        menuButton.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Close menu on Escape key
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && menu.classList.contains('show')) {
-        menu.classList.remove('show');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.focus();
-      }
-    });
   </script>
 </body>
 </html>
-
