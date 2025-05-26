@@ -8248,18 +8248,48 @@ maltesian: [
 { ru: 'Huwa vjaġġ sabiħ', bn: 'হুয়া ভ্যাজ্জ সাবিহ', bnMeaning: 'এটা এক সুন্দর যাত্রা', en: 'It’s a beautiful journey' },
 { ru: 'Qed nimxi pass pass', bn: 'কেদ নিমশি পাস পাস', bnMeaning: 'আমি ধীরে ধীরে এগোচ্ছি', en: 'I’m taking it step by step' },
 { ru: 'Għandi fiduċja fija nnifsi', bn: 'আন্দি ফিদুচা ফিয়া ইননিফসি', bnMeaning: 'আমি নিজের উপর বিশ্বাস রাখি', en: 'I believe in myself' },
-  
+{ ru: 'Qed nieħu pass 'il quddiem', bn: 'কেদ নিয়েহু পাস ইল কুদিয়েম', bnMeaning: 'আমি এগিয়ে যাচ্ছি', en: 'I’m moving forward' },
+{ ru: 'Dan hu l-bidu ta’ xi ħaġa sabiħa', bn: 'দান হু ল-বিদু তা শি হাজা সাবিহা', bnMeaning: 'এটা একটি সুন্দর কিছুর শুরু', en: 'This is the beginning of something beautiful' },
+{ ru: 'Il-futur hu f’idejna', bn: 'ইল-ফুতুর হু ফ-ইদেইনা', bnMeaning: 'ভবিষ্যৎ আমাদের হাতে', en: 'The future is in our hands' },
+{ ru: 'Nista’ nagħmel differenza', bn: 'নিস্তা নাগমেল ডিফফেরেন্‌জা', bnMeaning: 'আমি পরিবর্তন আনতে পারি', en: 'I can make a difference' },
+{ ru: 'Ninsab motivat ħafna', bn: 'নিনসাব মোটিভাত হাফনা', bnMeaning: 'আমি খুব অনুপ্রাণিত', en: 'I am highly motivated' },
+{ ru: 'Il-ħajja hi rigal', bn: 'ইল-হাইয়া হি রিগাল', bnMeaning: 'জীবন একটি উপহার', en: 'Life is a gift' },
+{ ru: 'Ngħix kull mument', bn: 'নঘিশ কুল মুমেন্ট', bnMeaning: 'প্রতিটি মুহূর্ত উপভোগ করি', en: 'I live every moment' },
+{ ru: 'Niċċelebra s-suċċessi żgħar', bn: 'নিচচেলেবরা স-সুচেস্সি জঘার', bnMeaning: 'ছোট সাফল্যও উদযাপন করি', en: 'I celebrate small successes' },
+{ ru: 'Qed nipprova kull jum', bn: 'কেদ নিপ্রোভা কুল ইয়ুম', bnMeaning: 'আমি প্রতিদিন চেষ্টা করছি', en: 'I’m trying every day' },
+{ ru: 'Nixtieq inkun aħjar', bn: 'নিশতিয়েক ইনকুন আহইয়ার', bnMeaning: 'আমি আরও ভালো হতে চাই', en: 'I want to be better' },
 
+{ ru: 'Il-kalma ġġib ċarezza', bn: 'ইল-কালমা জজিব চারেৎসা', bnMeaning: 'শান্তি স্পষ্টতা আনে', en: 'Calm brings clarity' },
+{ ru: 'Qed nieħu gost', bn: 'কেদ নিয়েহু গস্ট', bnMeaning: 'আমি উপভোগ করছি', en: 'I am enjoying it' },
+{ ru: 'Jiena kontent', bn: 'ইয়েনা কনটেন্ট', bnMeaning: 'আমি সন্তুষ্ট', en: 'I am content' },
+{ ru: 'Dan hu mument ta’ gratitudni', bn: 'দান হু মুমেন্ট তা গ্রাতিতুদনি', bnMeaning: 'এটা কৃতজ্ঞতার মুহূর্ত', en: 'This is a moment of gratitude' },
+{ ru: 'Qed nitgħallem minnu', bn: 'কেদ নিতঘাল্লেম মিননু', bnMeaning: 'আমি এর থেকে শিখছি', en: 'I’m learning from it' },
+{ ru: 'Kull esperjenza tgħallimni', bn: 'কুল এস্পেরিয়েন্সা তঘাল্লিমনি', bnMeaning: 'প্রতিটি অভিজ্ঞতা আমাকে শিক্ষা দেয়', en: 'Every experience teaches me' },
+{ ru: 'Qed nikber kuljum', bn: 'কেদ নিকবের কুলইউম', bnMeaning: 'আমি প্রতিদিন উন্নতি করছি', en: 'I am growing every day' },
+{ ru: 'Nagħti l-aħjar tiegħi', bn: 'নাগতি ল-আহইয়ার তেয়ি', bnMeaning: 'আমি আমার সর্বোচ্চটা দিই', en: 'I give my best' },
+{ ru: 'Inħossni fil-paċi', bn: 'ইনহস্সনি ফিল-পাচি', bnMeaning: 'আমি শান্তিতে আছি', en: 'I feel at peace' },
+{ ru: 'L-imħabba tibda minnek', bn: 'ল-ইমহাব্বা টিবদা মিন্নেক', bnMeaning: 'ভালোবাসা শুরু হয় নিজেকে থেকে', en: 'Love begins with yourself' },
+{ ru: 'Id-dawl dejjem jasal', bn: 'ইদ-দাউল দেইইম ইয়াসাল', bnMeaning: 'আলো সবসময় আসে', en: 'The light always comes' },
+{ ru: 'Ninsab grat għal dak li għandi', bn: 'নিনসাব গ্রাত গাল দাক লি আন্দি', bnMeaning: 'আমি যা আছে তার জন্য কৃতজ্ঞ', en: 'I’m grateful for what I have' },
+{ ru: 'Il-fidi timxi miegħi', bn: 'ইল-ফিদি তিমশি মিয়েই', bnMeaning: 'বিশ্বাস সবসময় আমার সাথে', en: 'Faith walks with me' },
+{ ru: 'It-tama qatt ma tmut', bn: 'ইত-তামা কাত্ত মা তমুত', bnMeaning: 'আশা কখনো মরে না', en: 'Hope never dies' },
+{ ru: 'Qed ngħix bl-imħabba', bn: 'কেদ নঘিশ ব্ল-ইমহাব্বা', bnMeaning: 'আমি ভালোবাসার সাথে বেঁচে আছি', en: 'I live with love' },
+{ ru: 'Il-paċi tibda ġewwa fik', bn: 'ইল-পাচি টিবদা জেউয়া ফিক', bnMeaning: 'শান্তি তোমার ভেতর থেকেই শুরু হয়', en: 'Peace begins within you' },
+{ ru: 'Nixtieq inwassal pożittività', bn: 'নিশতিয়েক ইনওয়াসসাল পজিত্তিভিতা', bnMeaning: 'আমি ইতিবাচকতা ছড়িয়ে দিতে চাই', en: 'I want to spread positivity' },
+{ ru: 'Nagħti kelma tajba lil xi ħadd', bn: 'নাগতি কেলমা তাইয়েবা লিল শি হাদ্দ', bnMeaning: 'আমি কারো জন্য ভালো কথা বলি', en: 'I give kind words to someone' },
+{ ru: 'Il-kliem għandu qawwa', bn: 'ইল-ক্লিয়েম আন্দু কাওয়া', bnMeaning: 'কথায় শক্তি থাকে', en: 'Words have power' },
+{ ru: 'L-għażla hija tagħna', bn: 'ল-ঘাজলা হিজা তা’না', bnMeaning: 'পছন্দ আমাদের হাতে', en: 'The choice is ours' },
 
-
-
-
-  
-
-
-
-  
-
+{ ru: 'Kuljum hu opportunità', bn: 'কুলইউম হু অপ্পরতুনিতা', bnMeaning: 'প্রতিদিন একটি সুযোগ', en: 'Every day is an opportunity' },
+{ ru: 'Il-bidu jista’ jkun diffiċli', bn: 'ইল-বিদু ইস্তা ইউন দিফিচলি', bnMeaning: 'শুরুটা কঠিন হতে পারে', en: 'The beginning might be hard' },
+{ ru: 'Iżda l-ħin jgħin', bn: 'ইজদা ল-হিন ইঘিন', bnMeaning: 'কিন্তু সময় সাহায্য করে', en: 'But time helps' },
+{ ru: 'Qatt tħalli t-tama', bn: 'কাত্ত থাল্লি ইত-তামা', bnMeaning: 'আশা কখনো ছাড়বে না', en: 'Never give up hope' },
+{ ru: 'Kul mument jgħodd', bn: 'কুল মুমেন্ট ইঘদ্দ', bnMeaning: 'প্রত্যেক মুহূর্তের মূল্য আছে', en: 'Every moment counts' },
+{ ru: 'Il-ferħ jinsab f’ħwejjeġ żgħar', bn: 'ইল-ফেহ ইনসাব ফ-হুএইয়েজ জঘার', bnMeaning: 'আনন্দ ছোট জিনিসে থাকে', en: 'Joy is found in small things' },
+{ ru: 'Inti biżżejjed', bn: 'ইন্তি বিজেইয়েদ', bnMeaning: 'তুমি যথেষ্ট', en: 'You are enough' },
+{ ru: 'Inħobb lili nnifsi', bn: 'ইনহব্ব লিলি ইননিফসি', bnMeaning: 'আমি নিজেকে ভালোবাসি', en: 'I love myself' },
+{ ru: 'Qed ngħix fil-preżent', bn: 'কেদ নঘিশ ফিল-প্রেজেন্ট', bnMeaning: 'আমি বর্তমান মুহূর্তে বাঁচছি', en: 'I am living in the present' },
+{ ru: 'Nagħlaq dan il-kapitlu b’paċi', bn: 'নাগলাক দান ইল-কাপিতলু ব-পাচি', bnMeaning: 'আমি শান্তি নিয়ে এই অধ্যায় শেষ করছি', en: 'I close this chapter in peace' },
 
 // maltesian শেষ 
 ],
