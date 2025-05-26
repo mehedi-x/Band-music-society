@@ -1,10 +1,6 @@
-const languageSelect = document.getElementById('language-select');
-const conversationArea = document.getElementById('conversation-area');
-const modeToggle = document.getElementById('mode-toggle');
-
 const vocabulary = {
-  russian: [
-    // Russian Basic Phrases (1–20)
+russian: [
+ // Russian Basic Phrases (1–20)
 { ru: 'Привет', bn: 'প্রিভিয়েত', bnMeaning: 'হ্যালো', en: 'Hello' },
 { ru: 'Здравствуйте', bn: 'জদরাভস্তভুইত্যে', bnMeaning: 'শুভ দিন', en: 'Hello (formal)' },
 { ru: 'Как дела?', bn: 'কাক দেলা?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
@@ -25,7 +21,7 @@ const vocabulary = {
 { ru: 'Где находится метро?', bn: 'গদে নাখোডিতসা মেট্রো?', bnMeaning: 'মেট্রো কোথায়?', en: 'Where is the metro?' },
 { ru: 'Помогите!', bn: 'পোমাগিতে!', bnMeaning: 'সাহায্য করুন!', en: 'Help!' },
 { ru: 'Я потерялся', bn: 'ইয়া পতেরিয়ালসা', bnMeaning: 'আমি পথ হারিয়েছি (পুরুষ)', en: 'I am lost (male)' },
-    { ru: 'Что это?', bn: 'শতো এইতা?', bnMeaning: 'এটা কী?', en: 'What is this?' },
+{ ru: 'Что это?', bn: 'শতো এইতা?', bnMeaning: 'এটা কী?', en: 'What is this?' },
 { ru: 'Я хочу есть', bn: 'ইয়া খাচু ইইস্ত', bnMeaning: 'আমি খেতে চাই', en: 'I want to eat' },
 { ru: 'Где я?', bn: 'গ্দে ইয়া?', bnMeaning: 'আমি কোথায়?', en: 'Where am I?' },
 { ru: 'Как вас зовут?', bn: 'কাক ভাস জাভুত?', bnMeaning: 'আপনার নাম কী?', en: 'What’s your name?' },
