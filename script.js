@@ -1,3 +1,6 @@
+const languageSelect = document.getElementById('language-select');
+const conversationArea = document.getElementById('conversation-area');
+const modeToggle = document.getElementById('mode-toggle');
 const vocabulary = {
 russian: [
  // Russian Basic Phrases (1–20)
