@@ -7985,7 +7985,6 @@ swiss: [
 { ru: 'Ich bi bi dir.', bn: 'ইখ বি বি দির।', bnMeaning: 'আমি তোমার সঙ্গে আছি।', en: 'I’m with you.' },
 { ru: 'Wämmer zämme zrugg go?', bn: 'ভ্যামার জাম্মে জ্রুক গো?', bnMeaning: 'আমরা একসাথে কি ফিরে যাব?', en: 'Shall we go back together?' },
 { ru: 'Ich glaub s wird spaat.', bn: 'ইখ গ্লাউব এস ভির্ড স্পাৎ।', bnMeaning: 'আমার মনে হয় দেরি হয়ে যাবে।', en: 'I think it’ll get late.' },
-{ ru: 'Lueg wie schön d’Sunne untergat.', bn: 'লুয়েগ ভি শ্যোন d'Sুনে ঊন্টারগাট।', bnMeaning: 'দেখো কী সুন্দর সূর্যাস্ত হচ্ছে।', en: 'Look how beautiful the sunset is.' },
 { ru: 'Ich liebe d Natur.', bn: 'ইখ লিবে ডি নাটুর।', bnMeaning: 'আমি প্রকৃতিকে ভালোবাসি।', en: 'I love nature.' },
 { ru: 'S isch ruhig do.', bn: 'এস ইশ রুইগ দো।', bnMeaning: 'এখানে শান্ত পরিবেশ।', en: 'It’s peaceful here.' },
 { ru: 'Ich fühl mi frei.', bn: 'ইখ ফুয়েল মি ফ্রাই।', bnMeaning: 'আমি নিজেকে মুক্ত অনুভব করছি।', en: 'I feel free.' },
