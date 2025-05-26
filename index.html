@@ -5,109 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Speak EU - European Language Practice</title>
   <style>
-    /* Reset some default styles */
-    body {
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
     }
 
-    /* Header styles */
+    /* Slim header styles */
     .app-header {
-      padding: 0.6rem 1rem;
+      padding: 0.5rem 1rem;
       background: #0059b3;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      height: 60px;
-      box-sizing: border-box;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 50px;
+      position: relative;
+      z-index: 100;
     }
     
     .app-title {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 600;
       margin: 0;
       user-select: none;
     }
     
-    .header-right {
+    .header-controls {
       display: flex;
       align-items: center;
+      gap: 0.5rem;
     }
     
+    /* Menu button for mobile */
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 0.3rem;
+    }
+    
+    /* Language select */
     #language-select {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       padding: 0.3rem 0.5rem;
-      border-radius: 8px;
+      border-radius: 6px;
       border: none;
       cursor: pointer;
-      min-width: 140px;
+      min-width: 130px;
       background-color: white;
       color: #333;
+      height: 30px;
     }
     
+    /* Dark mode toggle */
     #mode-toggle {
       background: #003c82;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       color: white;
-      font-size: 1.2rem;
-      padding: 0.3rem 0.6rem;
-      margin-left: 0.5rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      font-size: 1rem;
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
     
     #mode-toggle:hover {
-      background-color: #002a58;
+      background: #002a58;
     }
-
+    
     /* Main content area */
     #conversation-area {
       padding: 1rem;
-      min-height: calc(100vh - 60px);
-      box-sizing: border-box;
-      transition: margin-top 0.3s ease;
+      min-height: calc(100vh - 50px);
     }
-
-    /* Mobile friendly */
-    @media (max-width: 600px) {
-      .app-header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0.5rem 1rem;
-        height: auto;
-      }
-      
-      .app-title {
-        font-size: 1.1rem;
-        text-align: center;
-        margin-bottom: 0.4rem;
-      }
-      
-      .header-right {
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-      
-      #language-select {
-        width: 100%;
-        max-width: none;
-      }
-      
-      #mode-toggle {
-        margin-left: 0;
-        width: 100%;
-      }
+    
+    /* Mobile menu styles */
+    .mobile-menu {
+      position: fixed;
+      top: 50px;
+      right: -250px;
+      width: 250px;
+      height: calc(100vh - 50px);
+      background: #f5f5f5;
+      transition: right 0.3s ease;
+      z-index: 90;
+      padding: 1rem;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     }
-
+    
+    .mobile-menu.active {
+      right: 0;
+    }
+    
     /* Dark mode styles */
     body.dark-mode {
       background-color: #121212;
@@ -121,15 +125,64 @@
     body.dark-mode #mode-toggle {
       background: #002244;
     }
+    
+    body.dark-mode .mobile-menu {
+      background: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .app-header {
+        padding: 0.3rem 0.8rem;
+        height: 45px;
+      }
+      
+      .app-title {
+        font-size: 1rem;
+      }
+      
+      .menu-btn {
+        display: block;
+      }
+      
+      .header-controls {
+        display: none;
+      }
+      
+      .header-controls.mobile-visible {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 45px;
+        right: 0;
+        background: #f5f5f5;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      
+      body.dark-mode .header-controls.mobile-visible {
+        background: #1e1e1e;
+      }
+      
+      #language-select {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
-    <div class="header-right">
+    
+    <button class="menu-btn" id="menu-toggle">☰</button>
+    
+    <div class="header-controls" id="header-controls">
       <select id="language-select">
-        <option value="" disabled selected>Select a language</option>
+        <option value="" disabled selected>Select language</option>
         <option value="german">🇩🇪 German</option>
         <option value="french">🇫🇷 French</option>
         <option value="italian">🇮🇹 Italian</option>
@@ -140,22 +193,6 @@
         <option value="norwegian">🇳🇴 Norwegian</option>
         <option value="finnish">🇫🇮 Finnish</option>
         <option value="danish">🇩🇰 Danish</option>
-        <option value="icelandic">🇮🇸 Icelandic</option>
-        <option value="polish">🇵🇱 Polish</option>
-        <option value="czech">🇨🇿 Czech</option>
-        <option value="hungarian">🇭🇺 Hungarian</option>
-        <option value="slovak">🇸🇰 Slovak</option>
-        <option value="slovenian">🇸🇮 Slovenian</option>
-        <option value="estonian">🇪🇪 Estonian</option>
-        <option value="latvian">🇱🇻 Latvian</option>
-        <option value="lithuanian">🇱🇹 Lithuanian</option>
-        <option value="greek">🇬🇷 Greek</option>
-        <option value="croatian">🇭🇷 Croatian</option>
-        <option value="maltese">🇲🇹 Maltese</option>
-        <option value="russian">🇷🇺 Russian</option>
-        <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Swiss German</option>
-        <option value="luxembourgish">🇱🇺 Luxembourgish</option>
       </select>
       <button id="mode-toggle" aria-label="Toggle dark mode">☀️</button>
     </div>
@@ -164,13 +201,27 @@
   <main id="conversation-area"></main>
 
   <script>
-    // Dark mode toggle functionality
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerControls = document.getElementById('header-controls');
+    
+    menuToggle.addEventListener('click', () => {
+      headerControls.classList.toggle('mobile-visible');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.header-controls') && !e.target.closest('.menu-btn')) {
+        headerControls.classList.remove('mobile-visible');
+      }
+    });
+
+    // Dark mode toggle
     const modeToggle = document.getElementById('mode-toggle');
-    const body = document.body;
     
     function toggleDarkMode() {
-      body.classList.toggle('dark-mode');
-      const isDarkMode = body.classList.contains('dark-mode');
+      document.body.classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
       modeToggle.textContent = isDarkMode ? '🌙' : '☀️';
       localStorage.setItem('darkMode', isDarkMode);
     }
@@ -179,42 +230,22 @@
 
     // Check for saved dark mode preference
     if (localStorage.getItem('darkMode') === 'true') {
-      body.classList.add('dark-mode');
+      document.body.classList.add('dark-mode');
       modeToggle.textContent = '🌙';
     }
 
-    // Language selection functionality
+    // Language selection
     const languageSelect = document.getElementById('language-select');
     const header = document.querySelector('.app-header');
-    const conversationArea = document.getElementById('conversation-area');
     
-    function handleLanguageChange() {
-      if (languageSelect.value) {
-        header.style.opacity = '0';
-        header.style.height = '0';
-        header.style.padding = '0';
-        header.style.margin = '0';
-        header.style.overflow = 'hidden';
-        
-        conversationArea.style.marginTop = '0';
-        
+    languageSelect.addEventListener('change', function() {
+      if (this.value) {
+        header.style.transform = 'translateY(-100%)';
         setTimeout(() => {
           header.style.display = 'none';
-          // Here you would typically load the selected language content
-          // conversationArea.innerHTML = `Loading ${languageSelect.options[languageSelect.selectedIndex].text}...`;
         }, 300);
       }
-    }
-    
-    languageSelect.addEventListener('change', handleLanguageChange);
-    
-    // Initialize the app
-    function init() {
-      // Any initialization code can go here
-    }
-    
-    // Run initialization when DOM is loaded
-    document.addEventListener('DOMContentLoaded', init);
+    });
   </script>
 </body>
 </html>
