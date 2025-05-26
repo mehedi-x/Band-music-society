@@ -8290,10 +8290,9 @@ maltesian: [
 { ru: 'Inħobb lili nnifsi', bn: 'ইনহব্ব লিলি ইননিফসি', bnMeaning: 'আমি নিজেকে ভালোবাসি', en: 'I love myself' },
 { ru: 'Qed ngħix fil-preżent', bn: 'কেদ নঘিশ ফিল-প্রেজেন্ট', bnMeaning: 'আমি বর্তমান মুহূর্তে বাঁচছি', en: 'I am living in the present' },
 { ru: 'Nagħlaq dan il-kapitlu b’paċi', bn: 'নাগলাক দান ইল-কাপিতলু ব-পাচি', bnMeaning: 'আমি শান্তি নিয়ে এই অধ্যায় শেষ করছি', en: 'I close this chapter in peace' },
-
 // maltesian শেষ 
 ],
-  austrian: [
+austrian:[
 { ru: 'Servus!', bn: 'জার্ভুস', bnMeaning: 'হ্যালো / বিদায় (অস্ট্রিয়ান)', en: 'Hello / Goodbye' },
 { ru: 'Grüß Gott!', bn: 'গ্রুস্য গট', bnMeaning: 'আল্লাহ তোমাকে আশীর্বাদ করুন (হ্যালো)', en: 'May God greet you' },
 { ru: 'Wie geht’s da?', bn: 'ভি গেট্‌স দা?', bnMeaning: 'আপনি কেমন আছেন?', en: 'How are you?' },
@@ -8304,7 +8303,6 @@ maltesian: [
 { ru: 'Was machst du?', bn: 'ভাস মাখস্ট ডু?', bnMeaning: 'তুমি কী কর?', en: 'What do you do?' },
 { ru: 'I bin Student.', bn: 'ই বিন স্টুডেন্ট', bnMeaning: 'আমি ছাত্র', en: 'I am a student' },
 { ru: 'I arbeit in an Büro.', bn: 'ই আরবাইট ইন আনা বিউরো', bnMeaning: 'আমি অফিসে কাজ করি', en: 'I work in an office' },
-
 { ru: 'Was is des?', bn: 'ভাস ইস্‌ ডেস?', bnMeaning: 'এটা কী?', en: 'What is this?' },
 { ru: 'Könnt ma bitte zahln?', bn: 'কিউন্ট মা বিট্টে জালন?', bnMeaning: 'আমি কি বিল দিতে পারি?', en: 'Can I pay please?' },
 { ru: 'Des is guat.', bn: 'ডেস ইস্‌ গুয়াত', bnMeaning: 'এটা ভালো', en: 'That’s good' },
@@ -8315,7 +8313,6 @@ maltesian: [
 { ru: 'Pfiat di!', bn: 'পফিয়াট দি', bnMeaning: 'বিদায় / ভালো থেকো', en: 'Bye / Take care' },
 { ru: 'Gute Nacht!', bn: 'গুটে নাখট', bnMeaning: 'শুভ রাত্রি', en: 'Good night' },
 { ru: 'Schönen Tag noch!', bn: 'শোনেন টাগ নোখ', bnMeaning: 'ভালো দিন কাটুক', en: 'Have a nice day' },
-
 { ru: 'Bittschön!', bn: 'বিটশ্যোন', bnMeaning: 'আপনার স্বাগতম', en: 'You’re welcome' },
 { ru: 'Dankeschön!', bn: 'ডাঙ্কে শ্যোন', bnMeaning: 'ধন্যবাদ', en: 'Thank you very much' },
 { ru: 'Entschuldigung', bn: 'এন্টশুল্ডিগুং', bnMeaning: 'মাফ করবেন', en: 'Excuse me / Sorry' },
@@ -8346,7 +8343,6 @@ maltesian: [
 { ru: 'Des mocht ma ned.', bn: 'ডেস মোখ্ট মা নেত', bnMeaning: 'আমরা এটা করি না', en: 'We don’t do that' },
 { ru: 'I glab da ned.', bn: 'ই গ্লাউব দা নেত', bnMeaning: 'আমি এটা বিশ্বাস করি না', en: 'I don’t believe that' },
 { ru: 'Kumm eina!', bn: 'কুম এয়না!', bnMeaning: 'এদিকে এসো!', en: 'Come here!' },
-
 { ru: 'Wo samma do?', bn: 'ভো সামা ডো?', bnMeaning: 'আমরা এখানে কোথায়?', en: 'Where are we here?' },
 { ru: 'Is ma wurscht.', bn: 'ইস মা উর্শ্ট', bnMeaning: 'আমার জন্য কিছু আসে যায় না', en: 'I don’t care' },
 { ru: 'Passt scho wia’s is.', bn: 'পাস্ট শো ভিয়াস ইস', bnMeaning: 'যেভাবে আছে ঠিকই আছে', en: 'It’s fine as it is' },
@@ -8357,7 +8353,6 @@ maltesian: [
 { ru: 'Zruck zum Anfang.', bn: 'জ্রুক সুম আনফাং', bnMeaning: 'শুরুতে ফিরে যাও', en: 'Back to the beginning' },
 { ru: 'Geh ma auf’n Markt.', bn: 'গেহ মা আউফন মার্ক্ট', bnMeaning: 'চলো মার্কেটে যাই', en: 'Let’s go to the market' },
 { ru: 'Hob ko Zeit.', bn: 'হব কো চাইট', bnMeaning: 'আমার সময় নেই', en: 'I have no time' },
-
 { ru: 'Is des dei Ernst?', bn: 'ইস ডেস দাই আর্নস্ট?', bnMeaning: 'তুমি কি সিরিয়াস?', en: 'Are you serious?' },
 { ru: 'Du schaffst des!', bn: 'ডু শাফস্ট ডেস!', bnMeaning: 'তুমি এটা পারবে!', en: 'You can do it!' },
 { ru: 'Hoit di zam!', bn: 'হইট দি জ্যাম', bnMeaning: 'নিজেকে সামলাও', en: 'Pull yourself together' },
@@ -8379,7 +8374,6 @@ maltesian: [
 { ru: 'Du bist a echter Freund.', bn: 'ডু বিস্ট আ এক্টার ফ্রয়ন্ড', bnMeaning: 'তুমি একজন সত্যিকারের বন্ধু', en: 'You’re a true friend' },
 { ru: 'I hob di liab.', bn: 'ই হব দি লিয়াব', bnMeaning: 'আমি তোমাকে ভালোবাসি', en: 'I love you (informal)' },
 { ru: 'Hört si guat o.', bn: 'হার্ট সি গুয়াত ও', bnMeaning: 'ভালো শোনাচ্ছে', en: 'Sounds good' },
-
 { ru: 'Des war a Wahnsinn!', bn: 'ডেস ভার আ ভানজিন', bnMeaning: 'এটা ছিল অসাধারণ!', en: 'That was amazing!' },
 { ru: 'Bleib gsund!', bn: 'ব্লাইব গসুন্ড', bnMeaning: 'সুস্থ থাকো!', en: 'Stay healthy!' },
 { ru: 'Ois Liebe!', bn: 'অইস লিয়েবে', bnMeaning: 'ভালোবাসা রইল', en: 'Lots of love!' },
@@ -8390,7 +8384,6 @@ maltesian: [
 { ru: 'I freu mi scho drauf.', bn: 'ই ফ্রয় মি শো ড্রাউফ', bnMeaning: 'আমি এটা নিয়ে আগ্রহী', en: 'I’m looking forward to it' },
 { ru: 'Host du an Tipp für mi?', bn: 'হস্ট ডু আন টিপ ফুয়া মি?', bnMeaning: 'তোমার কি আমার জন্য কোনো পরামর্শ আছে?', en: 'Do you have a tip for me?' },
 { ru: 'Jo, i probier’s!', bn: 'ইয়া, ই প্রোবিয়র্স', bnMeaning: 'হ্যাঁ, আমি এটা ট্রাই করব', en: 'Yes, I’ll try it' },
-
 { ru: 'Na, heit ned mehr.', bn: 'না, হাইট নেত মেয়ার', bnMeaning: 'না, আজ আর নয়', en: 'No, not anymore today' },
 { ru: 'Du bist narrisch!', bn: 'ডু বিস্ট নারিশ!', bnMeaning: 'তুমি পাগল!', en: 'You’re crazy!' },
 { ru: 'Mia seng a guade Truppn.', bn: 'মিয়া সেং আ গুয়াদে ত্রুপ্পন', bnMeaning: 'আমরা একটা দারুণ দল', en: 'We’re a great team' },
@@ -8411,7 +8404,6 @@ maltesian: [
 { ru: 'Heit moch ma a Ruhigen.', bn: 'হাইট মোখ মা আ রুহিগেন', bnMeaning: 'আজ একটু শান্তভাবে থাকি', en: 'Let’s keep it calm today' },
 { ru: 'Wos gibt’s zum Essen?', bn: 'ভস গিব্টস সুম এসেন?', bnMeaning: 'খাবারে কী আছে?', en: 'What’s for food?' },
 { ru: 'Des is a Schmankerl.', bn: 'ডেস ইস আ শমান্কার্ল', bnMeaning: 'এটা একটা দারুণ খাবার', en: 'That’s a delicious dish' },
-
 { ru: 'Host an Gusto drauf?', bn: 'হস্ট আন গুস্টো ড্রাউফ?', bnMeaning: 'তোমার কি খেতে ইচ্ছা করছে?', en: 'Do you feel like eating?' },
 { ru: 'Wos trink ma?', bn: 'ভস ট্রিঙ্ক মা?', bnMeaning: 'আমরা কী খাব (পান করব)?', en: 'What shall we drink?' },
 { ru: 'Prost!', bn: 'প্রোস্ট!', bnMeaning: 'চিয়ার্স!', en: 'Cheers!' },
@@ -8432,7 +8424,6 @@ maltesian: [
 { ru: 'Host’s verstanden?', bn: 'হস্ট্‌স ফেয়ারশ্টানডেন?', bnMeaning: 'তুমি কি বুঝেছো?', en: 'Did you understand?' },
 { ru: 'Passt, red ma spåter.', bn: 'পাস্ট, রেড মা শ্পেটার', bnMeaning: 'ঠিক আছে, পরে কথা বলব', en: 'Alright, talk later' },
 { ru: 'Samma no im Geschäft?', bn: 'সামা নো ইম গিশেফট?', bnMeaning: 'আমরা কি এখনও আলোচনা করছি?', en: 'Are we still on the deal?' },
-
 { ru: 'Des is ned mei Stil.', bn: 'ডেস ইস নেত মাই স্তিল', bnMeaning: 'এটা আমার স্টাইল না', en: 'That’s not my style' },
 { ru: 'Zruck mit da Ehrlichkeit.', bn: 'জ্রুক মিট ডা এয়ারলিশকাইট', bnMeaning: 'সত্যের পথে ফিরে যাও', en: 'Back with honesty' },
 { ru: 'I moch des für mi.', bn: 'ই মোখ ডেস ফুয়া মি', bnMeaning: 'আমি এটা আমার জন্য করি', en: 'I do this for myself' },
@@ -8453,7 +8444,6 @@ maltesian: [
 { ru: 'Ka Ahnung, ehrlich.', bn: 'কা আনুঙ, এয়ারলিশ', bnMeaning: 'সত্যি বলতে কোনো ধারণা নেই', en: 'Honestly, no idea' },
 { ru: 'Guat gmacht!', bn: 'গুয়াট গেমাখট!', bnMeaning: 'ভালো করেছো!', en: 'Well done!' },
 { ru: 'Auf geht’s!', bn: 'আউফ গেটস!', bnMeaning: 'চলো শুরু করি!', en: 'Let’s get going!' },
-
 { ru: 'Da Tag is no jung.', bn: 'ডা টাগ ইস নো ইয়ুং', bnMeaning: 'দিনটা এখনো তরুণ', en: 'The day is still young' },
 { ru: 'Weniger reden, mehr tun.', bn: 'ভেনিগা রেডেন, মেয়ার তুন', bnMeaning: 'কম কথা, বেশি কাজ', en: 'Talk less, do more' },
 { ru: 'I sog nur die Wahrheit.', bn: 'ই জগ নুর দি ভারহাইট', bnMeaning: 'আমি শুধু সত্য বলছি', en: 'I’m just telling the truth' },
@@ -8474,7 +8464,6 @@ maltesian: [
 { ru: 'Na guat, pack ma’s.', bn: 'না গুয়াট, প্যাক মাস', bnMeaning: 'ঠিক আছে, চলো শুরু করি', en: 'Alright, let’s get started' },
 { ru: 'Samma ehrlich?', bn: 'সামা এয়ারলিশ?', bnMeaning: 'আমরা কি খোলামেলা?', en: 'Are we being honest?' },
 { ru: 'I glaub, des geht.', bn: 'ই গ্লাউব, ডেস গেট', bnMeaning: 'আমার মনে হয়, এটা হবে', en: 'I think it will work' },
-
 { ru: 'Da war was.', bn: 'ডা ভার ভাস', bnMeaning: 'কিছু একটা ঘটেছিল', en: 'There was something' },
 { ru: 'Red ned umanad.', bn: 'রেড নেত উমানাদ', bnMeaning: 'ঘুরিয়ে ফিরিয়ে কথা বলো না', en: 'Don’t beat around the bush' },
 { ru: 'Des is a Hetz.', bn: 'ডেস ইস আ হেট্‌স', bnMeaning: 'এটা মজার', en: 'That’s fun' },
@@ -8485,11 +8474,6 @@ maltesian: [
 { ru: 'Scho wieda ka Glick.', bn: 'শো উইডা কা গ্লিক', bnMeaning: 'আবারো কোনো ভাগ্য নেই', en: 'No luck again' },
 { ru: 'Wos host glernt?', bn: 'ভস হস্ট গ্লার্ন্ট?', bnMeaning: 'তুমি কী শিখেছো?', en: 'What did you learn?' },
 { ru: 'Du bisd zum Gernhaben.', bn: 'ডু বিস্ট ৎসুম গার্নহাবেন', bnMeaning: 'তোমাকে ভালোবাসা যায়', en: 'You’re lovable' },
-
-
-
-
-
     
  //  austrian শেষ 
   ],
