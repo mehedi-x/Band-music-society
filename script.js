@@ -7981,7 +7981,27 @@ swiss: [
 { ru: 'Es isch sicher da.', bn: 'এস ইশ সিখের দা।', bnMeaning: 'এখানে নিরাপদ।', en: 'It’s safe here.' },
 { ru: 'Du bisch nöd allei.', bn: 'দু বিশ ন্যদ আলাই।', bnMeaning: 'তুমি একা নও।', en: 'You’re not alone.' },
 { ru: 'Ich bi bi dir.', bn: 'ইখ বি বি দির।', bnMeaning: 'আমি তোমার সঙ্গে আছি।', en: 'I’m with you.' },
+{ ru: 'Wämmer zämme zrugg go?', bn: 'ভ্যামার জাম্মে জ্রুক গো?', bnMeaning: 'আমরা একসাথে কি ফিরে যাব?', en: 'Shall we go back together?' },
+{ ru: 'Ich glaub s wird spaat.', bn: 'ইখ গ্লাউব এস ভির্ড স্পাৎ।', bnMeaning: 'আমার মনে হয় দেরি হয়ে যাবে।', en: 'I think it’ll get late.' },
+{ ru: 'Lueg wie schön d’Sunne untergat.', bn: 'লুয়েগ ভি শ্যোন d'Sুনে ঊন্টারগাট।', bnMeaning: 'দেখো কী সুন্দর সূর্যাস্ত হচ্ছে।', en: 'Look how beautiful the sunset is.' },
+{ ru: 'Ich liebe d Natur.', bn: 'ইখ লিবে ডি নাটুর।', bnMeaning: 'আমি প্রকৃতিকে ভালোবাসি।', en: 'I love nature.' },
+{ ru: 'S isch ruhig do.', bn: 'এস ইশ রুইগ দো।', bnMeaning: 'এখানে শান্ত পরিবেশ।', en: 'It’s peaceful here.' },
+{ ru: 'Ich fühl mi frei.', bn: 'ইখ ফুয়েল মি ফ্রাই।', bnMeaning: 'আমি নিজেকে মুক্ত অনুভব করছি।', en: 'I feel free.' },
+{ ru: 'Lueg dä Sternenhimmel!', bn: 'লুয়েগ দে ষ্টারনেনহিমেল!', bnMeaning: 'আকাশের তারাগুলো দেখো!', en: 'Look at the starry sky!' },
+{ ru: 'Ich cha’s nöd glaube.', bn: 'ইখ খাস ন্যদ গ্লাউবে।', bnMeaning: 'আমি এটা বিশ্বাস করতে পারছি না।', en: 'I can’t believe it.' },
+{ ru: 'Es isch wie im Märli.', bn: 'এস ইশ ভি ইম ম্যারলি।', bnMeaning: 'এটা রূপকথার মতো।', en: 'It’s like a fairy tale.' },
+{ ru: 'Danke für dä Tag!', bn: 'ডাঙ্কে ফুয়র দে টাগ!', bnMeaning: 'আজকের দিনের জন্য ধন্যবাদ!', en: 'Thank you for the day!' },
 
+{ ru: 'Ich vergiss das nie.', bn: 'ইখ ফারগিস দাস নি।', bnMeaning: 'আমি এটা কখনো ভুলব না।', en: 'I’ll never forget this.' },
+{ ru: 'Mach’s guet und heb Sorg!', bn: 'মাখস গুয়েত উন্ড হেব জর্গ!', bnMeaning: 'ভালো থেকো আর নিজের খেয়াল রেখো!', en: 'Take care and look after yourself!' },
+{ ru: 'Bis gly!', bn: 'বিস গ্লাই!', bnMeaning: 'দেখা হবে শিগগির!', en: 'See you soon!' },
+{ ru: 'Ich schätz di sehr.', bn: 'ইখ শ্যাটস দি জেয়ার।', bnMeaning: 'আমি তোমাকে অনেক সম্মান করি।', en: 'I appreciate you very much.' },
+{ ru: 'Du bisch öppis Bsunders.', bn: 'দু বিশ ওপ্পিস ব্জুন্ডারস।', bnMeaning: 'তুমি একজন বিশেষ মানুষ।', en: 'You are someone special.' },
+{ ru: 'Mir hend vil zäme glacht.', bn: 'মির হেন্ড ফিল জাম্মে গ্লাখট।', bnMeaning: 'আমরা একসাথে অনেক হেসেছি।', en: 'We laughed a lot together.' },
+{ ru: 'Ich hoff, mir gseh üs bald wieder.', bn: 'ইখ হফ, মির গসে উস বাল্ড বিদার।', bnMeaning: 'আশা করি আমরা আবার দেখা করব।', en: 'I hope we’ll see each other again soon.' },
+{ ru: 'Vergiss mi nöd.', bn: 'ফারগিস মি ন্যদ।', bnMeaning: 'আমাকে ভুলে যেও না।', en: 'Don’t forget me.' },
+{ ru: 'Ich wünsch der alles Gueti.', bn: 'ইখ ভুংশ দের আলেস গুয়েতি।', bnMeaning: 'আমি তোমার জন্য সব ভালো কামনা করি।', en: 'I wish you all the best.' },
+{ ru: 'Uf Wiederluege!', bn: 'ঊফ ভিডারলুয়েগে!', bnMeaning: 'আবার দেখা হবে!', en: 'Goodbye!' },
   
 
   
