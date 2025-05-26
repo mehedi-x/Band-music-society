@@ -7960,6 +7960,8 @@ swiss: [
 { ru: 'S Wasser isch so klar.', bn: 'এস ভাসার ইশ সো ক্লার।', bnMeaning: 'পানিটা খুব স্বচ্ছ।', en: 'The water is so clear.' },
 { ru: 'Ich ha gärn Natur.', bn: 'ইখ হা গ্যারণ নাটুর।', bnMeaning: 'আমি প্রকৃতি ভালোবাসি।', en: 'I love nature.' },
 { ru: 'D Luft isch frisch.', bn: 'ডি লুফট ইশ ফ্রিশ।', bnMeaning: 'বাতাসটা সতেজ।', en: 'The air is fresh.' },
+
+  
 { ru: 'Wo gönd mir morn?', bn: 'ভো গেন্ড মির মর্ন?', bnMeaning: 'আমরা আগামীকাল কোথায় যাব?', en: 'Where are we going tomorrow?' },
 { ru: 'Mir gönd id Bärg.', bn: 'মির গেন্ড ইড ব্যার্গ।', bnMeaning: 'আমরা পাহাড়ে যাচ্ছি।', en: 'We are going to the mountains.' },
 { ru: 'Was mues ich mitnäh?', bn: 'ভাস মুইস ইখ মিটনেহ?', bnMeaning: 'আমাকে কী আনতে হবে?', en: 'What should I bring?' },
@@ -8003,15 +8005,6 @@ swiss: [
 { ru: 'Ich wünsch der alles Gueti.', bn: 'ইখ ভুংশ দের আলেস গুয়েতি।', bnMeaning: 'আমি তোমার জন্য সব ভালো কামনা করি।', en: 'I wish you all the best.' },
 { ru: 'Uf Wiederluege!', bn: 'ঊফ ভিডারলুয়েগে!', bnMeaning: 'আবার দেখা হবে!', en: 'Goodbye!' },
   
-
-  
-
-
-  
-  
-
-
-
 // swiss: শেষ  জার্মান. 
 ],
 maltesian: [
