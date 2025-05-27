@@ -1,23 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Speak EU - Language Learner</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .app-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .header-top h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .header-bottom {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    #theme-toggle {
+      font-size: 20px;
+      cursor: pointer;
+      background: none;
+      color: white;
+      border: none;
+    }
+
+    .menu {
+      position: relative;
+    }
+
+    .menu-button {
+      background: none;
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .menu-items {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: #2c2c2c;
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 99;
+    }
+
+    .menu:hover .menu-items {
+      display: block;
+    }
+
+    .menu-items a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .menu-items a:hover {
+      background-color: #444;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .fallback-message {
+      font-size: 18px;
+      color: #aaa;
+    }
+
+    /* Light mode */
+    body.light {
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    body.light header {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    body.light .menu-items {
+      background-color: #ddd;
+    }
+
+    body.light .menu-items a {
+      color: #000;
+    }
+  </style>
 </head>
 <body>
   <div class="app-container">
     <header>
-      <h1>Speak EU</h1>
-      <div class="controls">
+      <div class="header-top">
+        <h1>Speak EU</h1>
+      </div>
+      <div class="header-bottom">
         <select id="language-selector">
           <option value="">Select Language</option>
-          <option value="french">French</option>
-          <option value="german">German</option>
-          <option value="russian">Russian</option>
+          <option value="albania">🇦🇱 Albania</option>
+          <option value="andorra">🇦🇩 Andorra</option>
+          <option value="austrian">🇦🇹 Austria</option>
+          <option value="belarus">🇧🇾 Belarus</option>
+          <option value="belgium">🇧🇪 Belgium</option>
+          <option value="bosnia">🇧🇦 Bosnia</option>
+          <option value="croatia">🇭🇷 Croatia</option>
+          <option value="czech">🇨🇿 Czech Republic</option>
+          <option value="danish">🇩🇰 Denmark</option>
+          <option value="dutch">🇳🇱 Netherlands</option>
+          <option value="estonia">🇪🇪 Estonia</option>
+          <option value="finnish">🇫🇮 Finland</option>
+          <option value="french">🇫🇷 France</option>
+          <option value="german">🇩🇪 Germany</option>
+          <option value="greek">🇬🇷 Greece</option>
+          <option value="hungarian">🇭🇺 Hungary</option>
+          <option value="iceland">🇮🇸 Iceland</option>
+          <option value="irish">🇮🇪 Ireland</option>
+          <option value="italian">🇮🇹 Italy</option>
+          <option value="kosovo">🇽🇰 Kosovo</option>
+          <option value="latvian">🇱🇻 Latvia</option>
+          <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+          <option value="lithuanian">🇱🇹 Lithuania</option>
+          <option value="luxembourg">🇱🇺 Luxembourg</option>
+          <option value="maltese">🇲🇹 Malta</option>
+          <option value="moldova">🇲🇩 Moldova</option>
+          <option value="monaco">🇲🇨 Monaco</option>
+          <option value="north_macedonia">🇲🇰 North Macedonia</option>
+          <option value="norwegian">🇳🇴 Norway</option>
+          <option value="polish">🇵🇱 Poland</option>
+          <option value="portuguese">🇵🇹 Portugal</option>
+          <option value="russian">🇷🇺 Russia</option>
+          <option value="san_marino">🇸🇲 San Marino</option>
+          <option value="serbia">🇷🇸 Serbia</option>
+          <option value="slovak">🇸🇰 Slovakia</option>
+          <option value="slovenia">🇸🇮 Slovenia</option>
+          <option value="spanish">🇪🇸 Spain</option>
+          <option value="swedish">🇸🇪 Sweden</option>
+          <option value="switzerland">🇨🇭 Switzerland</option>
+          <option value="turkey">🇹🇷 Turkey</option>
+          <option value="ukraine">🇺🇦 Ukraine</option>
+          <option value="vatican">🇻🇦 Vatican</option>
         </select>
-        <button id="theme-toggle">Toggle Mode</button>
+
+        <button id="theme-toggle" title="Toggle Mode">🌓</button>
+
+        <div class="menu">
+          <button class="menu-button">☰</button>
+          <div class="menu-items">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -26,9 +190,15 @@
     </main>
   </div>
 
-  <script src="languages/french.js"></script>
-  <script src="languages/german.js"></script>
-  <script src="languages/russian.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.body.classList.toggle("light");
+    });
+
+    document.getElementById("language-selector").addEventListener("change", function () {
+      const selected = this.options[this.selectedIndex].text;
+      document.getElementById("conversation-area").innerHTML = `<h2>You selected: ${selected}</h2>`;
+    });
+  </script>
 </body>
 </html>
