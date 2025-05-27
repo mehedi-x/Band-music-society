@@ -8248,6 +8248,7 @@ maltesian: [
 { ru: 'Huwa vjaġġ sabiħ', bn: 'হুয়া ভ্যাজ্জ সাবিহ', bnMeaning: 'এটা এক সুন্দর যাত্রা', en: 'It’s a beautiful journey' },
 { ru: 'Qed nimxi pass pass', bn: 'কেদ নিমশি পাস পাস', bnMeaning: 'আমি ধীরে ধীরে এগোচ্ছি', en: 'I’m taking it step by step' },
 { ru: 'Għandi fiduċja fija nnifsi', bn: 'আন্দি ফিদুচা ফিয়া ইননিফসি', bnMeaning: 'আমি নিজের উপর বিশ্বাস রাখি', en: 'I believe in myself' },
+{ ru: 'Qed nieħu pass 'il quddiem', bn: 'কেদ নিয়েহু পাস ইল কুদিয়েম', bnMeaning: 'আমি এগিয়ে যাচ্ছি', en: 'I’m moving forward' },
 { ru: 'Dan hu l-bidu ta’ xi ħaġa sabiħa', bn: 'দান হু ল-বিদু তা শি হাজা সাবিহা', bnMeaning: 'এটা একটি সুন্দর কিছুর শুরু', en: 'This is the beginning of something beautiful' },
 { ru: 'Il-futur hu f’idejna', bn: 'ইল-ফুতুর হু ফ-ইদেইনা', bnMeaning: 'ভবিষ্যৎ আমাদের হাতে', en: 'The future is in our hands' },
 { ru: 'Nista’ nagħmel differenza', bn: 'নিস্তা নাগমেল ডিফফেরেন্‌জা', bnMeaning: 'আমি পরিবর্তন আনতে পারি', en: 'I can make a difference' },
@@ -8472,8 +8473,7 @@ austrian:[
 { ru: 'No amoi!', bn: 'নো আময়!', bnMeaning: 'আরো একবার!', en: 'One more time!' },
 { ru: 'Scho wieda ka Glick.', bn: 'শো উইডা কা গ্লিক', bnMeaning: 'আবারো কোনো ভাগ্য নেই', en: 'No luck again' },
 { ru: 'Wos host glernt?', bn: 'ভস হস্ট গ্লার্ন্ট?', bnMeaning: 'তুমি কী শিখেছো?', en: 'What did you learn?' },
-
-  { ru: 'Du bisd zum Gernhaben.', bn: 'ডু বিস্ট ৎসুম গার্নহাবেন', bnMeaning: 'তোমাকে ভালোবাসা যায়', en: 'You’re lovable' },
+{ ru: 'Du bisd zum Gernhaben.', bn: 'ডু বিস্ট ৎসুম গার্নহাবেন', bnMeaning: 'তোমাকে ভালোবাসা যায়', en: 'You’re lovable' },
     
  //  austrian শেষ 
   ],
