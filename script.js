@@ -8472,7 +8472,8 @@ austrian:[
 { ru: 'No amoi!', bn: 'নো আময়!', bnMeaning: 'আরো একবার!', en: 'One more time!' },
 { ru: 'Scho wieda ka Glick.', bn: 'শো উইডা কা গ্লিক', bnMeaning: 'আবারো কোনো ভাগ্য নেই', en: 'No luck again' },
 { ru: 'Wos host glernt?', bn: 'ভস হস্ট গ্লার্ন্ট?', bnMeaning: 'তুমি কী শিখেছো?', en: 'What did you learn?' },
-{ ru: 'Du bisd zum Gernhaben.', bn: 'ডু বিস্ট ৎসুম গার্নহাবেন', bnMeaning: 'তোমাকে ভালোবাসা যায়', en: 'You’re lovable' },
+
+  { ru: 'Du bisd zum Gernhaben.', bn: 'ডু বিস্ট ৎসুম গার্নহাবেন', bnMeaning: 'তোমাকে ভালোবাসা যায়', en: 'You’re lovable' },
     
  //  austrian শেষ 
   ],
