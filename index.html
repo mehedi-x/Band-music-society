@@ -1,137 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>speak_Eu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speak EU - Language Learner</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Make header smaller and professional */
-    .app-header {
-      padding: 0.6rem 1rem;
-      background: #0059b3;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
-    }
-    .app-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0;
-      user-select: none;
-    }
-    #language-select {
-      font-size: 0.9rem;
-      padding: 0.3rem 0.5rem;
-      border-radius: 8px; /* Changed to rounded rectangle */
-      border: none;
-      cursor: pointer;
-      min-width: 140px;
-    }
-    #mode-toggle {
-      background: #003c82;
-      border: none;
-      border-radius: 8px; /* Changed to rounded rectangle */
-      color: white;
-      font-size: 1.2rem;
-      padding: 0.3rem 0.6rem; /* Adjusted padding for better touch */
-      margin-left: 0.5rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-    #mode-toggle:hover {
-      background-color: #002a58;
-    }
-
-    /* Mobile friendly */
-    @media (max-width: 600px) {
-      .app-header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 0.5rem 1rem;
-      }
-      .app-title {
-        font-size: 1.1rem;
-        text-align: center;
-        margin-bottom: 0.4rem;
-      }
-      .header-right {
-        display: flex;
-        justify-content: center;
-        gap: 0.4rem;
-      }
-      #language-select {
-        width: 100%;
-        max-width: none;
-      }
-      #mode-toggle {
-        margin-left: 0;
-      }
-    }
-  </style>
 </head>
 <body>
+  <div class="app-container">
+    <header>
+      <h1>Speak EU</h1>
+      <div class="controls">
+        <select id="language-selector">
+          <option value="">Select Language</option>
+          <option value="french">French</option>
+          <option value="german">German</option>
+          <option value="russian">Russian</option>
+        </select>
+        <button id="theme-toggle">Toggle Mode</button>
+      </div>
+    </header>
 
-  <header class="app-header">
-    <h1 class="app-title">Speak EU</h1>
-    <div class="header-right">
-      <select id="language-select">
-        <!-- Already added -->
-        <option value="russian">🇷🇺 Russian</option>
-        <option value="german">🇩🇪 German</option>
-        <option value="italian">🇮🇹 Italian</option>
-        <option value="french">🇫🇷 French</option>
-        <option value="spanish">🇪🇸 Spanish</option>
-        <!-- Schengen Countries Not Yet Added -->
-        <option value="portuguese">🇵🇹 Portuguese</option>
-        <option value="dutch">🇳🇱 Dutch</option>
-        <option value="swedish">🇸🇪 Swedish</option>
-        <option value="norwegian">🇳🇴 Norwegian</option>
-        <option value="finnish">🇫🇮 Finnish</option>
-        <option value="danish">🇩🇰 Danish</option>
-        <option value="greek">🇬🇷 Greek</option>
-        <option value="polish">🇵🇱 Polish</option>
-        <option value="czech">🇨🇿 Czech</option>
-        <option value="hungarian">🇭🇺 Hungarian</option>
-        <option value="slovak">🇸🇰 Slovak</option>
-        <option value="slovenian">🇸🇮 Slovenian</option>
-        <option value="estonian">🇪🇪 Estonian</option>
-        <option value="latvian">🇱🇻 Latvian</option>
-        <option value="lithuanian">🇱🇹 Lithuanian</option>
-        <option value="croatian">🇭🇷 Croatian</option>
-        <option value="icelandic">🇮🇸 Icelandic</option>
-        <option value="maltesian">🇲🇹 Maltese</option>
-        <option value="austrian">🇦🇹 Austrian German</option>
-        <option value="swiss">🇨🇭 Switzerland </option>
-        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-        <option value="luxembourgish">🇱🇺 Luxembourgish</option>
-      </select>
-      <button id="mode-toggle">☀️</button>
-    </div>
-  </header>
+    <main id="conversation-area">
+      <p class="fallback-message">Please select a language to start learning.</p>
+    </main>
+  </div>
 
-  <main id="conversation-area"></main>
-
+  <script src="languages/french.js"></script>
+  <script src="languages/german.js"></script>
+  <script src="languages/russian.js"></script>
   <script src="script.js"></script>
-  <script>
-    // Hide header when a language is selected
-    const languageSelect = document.getElementById('language-select');
-    const header = document.querySelector('.app-header');
-
-    languageSelect.addEventListener('change', () => {
-      // Hide header smoothly
-      header.style.opacity = '0';
-      header.style.height = '0';
-      header.style.padding = '0';
-      header.style.overflow = 'hidden';
-      // Optional: actually set display:none after transition for accessibility
-      setTimeout(() => {
-        header.style.display = 'none';
-      }, 300);
-    });
-  </script>
 </body>
 </html>
