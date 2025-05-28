@@ -1,3 +1,4 @@
+/* মূল বডি */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -6,17 +7,19 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* ডার্ক মোড */
 .dark-mode {
   background-color: #121212;
   color: #f9f9f9;
 }
 
+/* হেডার */
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 12px 20px;
+  padding: 6px 14px;
   background-color: #0059b3;
   color: white;
   position: sticky;
@@ -25,35 +28,39 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* অ্যাপ টাইটেল */
 .app-title {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
+/* হেডার ডানপাশ */
 .header-right {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
+/* ভাষা নির্বাচন */
 #language-select {
-  padding: 8px 12px;
-  font-size: 1rem;
+  padding: 5px 10px;
+  font-size: 0.95rem;
   border-radius: 8px;
   border: none;
-  min-width: 150px;
+  min-width: 130px;
   cursor: pointer;
 }
 
+/* ডার্ক/লাইট মোড টগল বাটন */
 #mode-toggle {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   background: #003c82;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,12 +73,14 @@ body {
   background-color: #002a58;
 }
 
+/* মেইন কনটেন্ট এরিয়া */
 main {
   padding: 20px;
   max-width: 800px;
   margin: auto;
 }
 
+/* কনভারসেশন আইটেম */
 .conversation-item {
   padding: 16px;
   margin-bottom: 16px;
@@ -85,12 +94,14 @@ main {
   transform: scale(1.01);
 }
 
+/* ডার্ক মোডে কনভারসেশন */
 .dark-mode .conversation-item {
   background-color: #1e1e1e;
   color: #eee;
   border: 1px solid #444;
 }
 
+/* মোবাইল রেসপন্সিভ */
 @media (max-width: 600px) {
   .app-header {
     flex-direction: column;
@@ -113,6 +124,7 @@ main {
   }
 }
 
+/* টেক্সট স্টাইলিং */
 em {
   font-style: normal;
   color: #666;
