@@ -1666,5 +1666,185 @@
     "bn": "আরিভেদেরচি!",
     "bnMeaning": "আবার দেখা হবে!",
     "en": "Goodbye!"
+  },
+  {
+    "it": "Posso aiutarti con qualcosa?",
+    "bn": "পসসো আয়ুতার্তি কন কুয়ালকোসা?",
+    "bnMeaning": "আমি কি তোমাকে কিছু সাহায্য করতে পারি?",
+    "en": "Can I help you with something?"
+  },
+  {
+    "it": "Hai bisogno di informazioni?",
+    "bn": "আই বিজোন্নো দি ইনফোর্মাজিওনি?",
+    "bnMeaning": "তোমার কি কোনো তথ্য দরকার?",
+    "en": "Do you need information?"
+  },
+  {
+    "it": "Dove sei diretto?",
+    "bn": "দোভে সেই দিরেত্তো?",
+    "bnMeaning": "তুমি কোথায় যাচ্ছো?",
+    "en": "Where are you headed?"
+  },
+  {
+    "it": "Che tipo di aiuto cerchi?",
+    "bn": "কে তিপো দি আয়ুতো চেরকি?",
+    "bnMeaning": "তুমি কেমন ধরনের সাহায্য খুঁজছো?",
+    "en": "What kind of help are you looking for?"
+  },
+  {
+    "it": "Parli lentamente, per favore.",
+    "bn": "পারলি লেন্তামেন্তে, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে ধীরে কথা বলুন।",
+    "en": "Please speak slowly."
+  },
+  {
+    "it": "Non ho capito.",
+    "bn": "নন ও কাপিতো।",
+    "bnMeaning": "আমি বুঝিনি।",
+    "en": "I didn't understand."
+  },
+  {
+    "it": "Puoi ripetere, per favore?",
+    "bn": "পুয়ো রিপেতেরে, পের ফাভোরে?",
+    "bnMeaning": "আপনি কি অনুগ্রহ করে আবার বলতে পারেন?",
+    "en": "Can you repeat, please?"
+  },
+  {
+    "it": "Scrivilo per me.",
+    "bn": "স্ক্রিভিলো পের মে।",
+    "bnMeaning": "আমার জন্য এটা লিখে দাও।",
+    "en": "Write it down for me."
+  },
+  {
+    "it": "Come si pronuncia questa parola?",
+    "bn": "কোমে সি প্রোনুনচিয়া কুয়েস্তা পারোলা?",
+    "bnMeaning": "এই শব্দটি কীভাবে উচ্চারণ করা হয়?",
+    "en": "How do you pronounce this word?"
+  },
+  {
+    "it": "Mi dispiace, non parlo bene italiano.",
+    "bn": "মি দিস্পিয়াচে, নন পারলো বেনে ইতালিয়ানো।",
+    "bnMeaning": "দুঃখিত, আমি ভালো ইতালিয়ান বলতে পারি না।",
+    "en": "Sorry, I don't speak Italian well."
+  },
+  {
+    "it": "Capisco un po' l'italiano.",
+    "bn": "কাপিস্কো উন পো ল'ইতালিয়ানো।",
+    "bnMeaning": "আমি একটু ইতালিয়ান বুঝি।",
+    "en": "I understand a little Italian."
+  },
+  {
+    "it": "Per favore, parli più lentamente.",
+    "bn": "পের ফাভোরে, পারলি পিউ লেন্তামেন্তে।",
+    "bnMeaning": "দয়া করে একটু ধীরে বলুন।",
+    "en": "Please speak a bit more slowly."
+  },
+  {
+    "it": "Che significa questa parola?",
+    "bn": "কে সিনিফিকা কুয়েস্তা পারোলা?",
+    "bnMeaning": "এই শব্দের মানে কী?",
+    "en": "What does this word mean?"
+  },
+  {
+    "it": "Sto imparando l'italiano.",
+    "bn": "স্তো ইমপারান্দো ল'ইতালিয়ানো।",
+    "bnMeaning": "আমি ইতালিয়ান শিখছি।",
+    "en": "I am learning Italian."
+  },
+  {
+    "it": "Parla un'altra lingua?",
+    "bn": "পারলা উন'আলত্রা লিঙ্গুয়া?",
+    "bnMeaning": "আপনি কি অন্য কোনো ভাষা জানেন?",
+    "en": "Do you speak another language?"
+  },
+  {
+    "it": "Può scriverlo, per favore?",
+    "bn": "পুয়ো স্ক্রিভেরলো, পের ফাভোরে?",
+    "bnMeaning": "দয়া করে আপনি এটা লিখে দিতে পারেন?",
+    "en": "Can you write it down, please?"
+  },
+  {
+    "it": "Cosa significa questo?",
+    "bn": "কোজা সিনিফিকা কুয়েস্তো?",
+    "bnMeaning": "এটার মানে কী?",
+    "en": "What does this mean?"
+  },
+  {
+    "it": "Mi piace imparare nuove lingue.",
+    "bn": "মি পিয়াচে ইমপারারে নুওভে লিঙ্গুয়ে।",
+    "bnMeaning": "নতুন ভাষা শিখতে আমার ভালো লাগে।",
+    "en": "I enjoy learning new languages."
+  },
+  {
+    "it": "Qual è la tua lingua madre?",
+    "bn": "কুয়াল এ লা তুয়া লিঙ্গুয়া মাদ্রে?",
+    "bnMeaning": "তোমার মাতৃভাষা কী?",
+    "en": "What is your mother tongue?"
+  },
+  {
+    "it": "Parli molto bene italiano.",
+    "bn": "পারলি মোলতো বেনে ইতালিয়ানো।",
+    "bnMeaning": "তুমি খুব ভালো ইতালিয়ান বলো।",
+    "en": "You speak Italian very well."
+  },
+  {
+    "it": "Posso avere un bicchiere d'acqua?",
+    "bn": "পসসো আভেরে উন বিক্কিয়েরে দাক্কুয়া?",
+    "bnMeaning": "আমি কি এক গ্লাস পানি পেতে পারি?",
+    "en": "Can I have a glass of water?"
+  },
+  {
+    "it": "C'è un bagno qui vicino?",
+    "bn": "চে উন বাঞ্জো কুই ভিচিনো?",
+    "bnMeaning": "এখানে কাছাকাছি কোনো টয়লেট আছে?",
+    "en": "Is there a bathroom nearby?"
+  },
+  {
+    "it": "Mi sento male.",
+    "bn": "মি সেনতো মালে।",
+    "bnMeaning": "আমার খারাপ লাগছে।",
+    "en": "I feel sick."
+  },
+  {
+    "it": "Ho fame.",
+    "bn": "ও ফামে।",
+    "bnMeaning": "আমি ক্ষুধার্ত।",
+    "en": "I am hungry."
+  },
+  {
+    "it": "Ho sete.",
+    "bn": "ও সেতে।",
+    "bnMeaning": "আমার তৃষ্ণা পেয়েছে।",
+    "en": "I am thirsty."
+  },
+  {
+    "it": "Dove si trova l'ospedale?",
+    "bn": "দোভে সি ত্রোভা ল'অস্পেদালে?",
+    "bnMeaning": "হাসপাতাল কোথায়?",
+    "en": "Where is the hospital?"
+  },
+  {
+    "it": "Chiamate un'ambulanza!",
+    "bn": "কিয়ামাতে উন'আম্বুলানজা!",
+    "bnMeaning": "একটি অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "C'è un medico qui?",
+    "bn": "চে উন মেডিকো কুই?",
+    "bnMeaning": "এখানে কি কোনো ডাক্তার আছেন?",
+    "en": "Is there a doctor here?"
+  },
+  {
+    "it": "Mi sono perso.",
+    "bn": "মি সোโน পার্সো।",
+    "bnMeaning": "আমি পথ হারিয়ে ফেলেছি।",
+    "en": "I am lost."
+  },
+  {
+    "it": "Può aiutarmi a trovare la strada?",
+    "bn": "পুয়ো আয়ুতারমি আ ত্রোভারে লা স্ত্রাদা?",
+    "bnMeaning": "আপনি কি আমাকে রাস্তা খুঁজে পেতে সাহায্য করতে পারেন?",
+    "en": "Can you help me find the way?"
   }
-]
+  ]
