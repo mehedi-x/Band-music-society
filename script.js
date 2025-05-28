@@ -10,15 +10,25 @@ const langCodeMap = {
   italian: 'it'
 };
 
-// Language restore on page load
+// ✅ পেজ লোড হলে লোকালস্টোরেজ থেকে ভাষা ও থিম লোড
 window.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('selectedLanguage');
   if (savedLang) {
     languageSelect.value = savedLang;
     loadLanguage(savedLang);
   }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    modeToggle.textContent = '🌙';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeToggle.textContent = '☀️';
+  }
 });
 
+// ✅ ভাষা সিলেক্ট করলে সেটিংস স্মৃতি থাকে
 languageSelect.addEventListener('change', () => {
   const lang = languageSelect.value;
   if (!lang) return;
@@ -26,6 +36,7 @@ languageSelect.addEventListener('change', () => {
   loadLanguage(lang);
 });
 
+// ✅ ভাষা JSON লোড করে UI রেন্ডার
 function loadLanguage(lang) {
   fetch(`languages/${lang}.json`)
     .then(res => res.json())
@@ -35,6 +46,7 @@ function loadLanguage(lang) {
     });
 }
 
+// ✅ কথাবার্তা রেন্ডার
 function renderVocabulary(list, langKey) {
   conversationArea.innerHTML = '';
   list.forEach(item => {
@@ -50,7 +62,9 @@ function renderVocabulary(list, langKey) {
   });
 }
 
+// ✅ থিম টগল ও লোকালস্টোরেজে সংরক্ষণ
 modeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  modeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+  const isDark = document.body.classList.toggle('dark-mode');
+  modeToggle.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
