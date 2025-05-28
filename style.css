@@ -12,6 +12,30 @@ body {
   background-color: #121212;
   color: #f9f9f9;
 }
+#side-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 100%;
+  background: #ffffff;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+
+#side-menu.active {
+  display: block;
+}
+
+.dark-mode #side-menu {
+  background: #1e1e1e;
+  color: #eee;
+  border-left: 1px solid #444;
+}
 
 /* 🧱 হেডার */
 .app-header {
