@@ -298,7 +298,269 @@
     "bn": "এ লুনেদি।",
     "bnMeaning": "আজ সোমবার।",
     "en": "It’s Monday."
+  },
+  {
+    "it": "È martedì.",
+    "bn": "এ মার্তেদি।",
+    "bnMeaning": "আজ মঙ্গলবার।",
+    "en": "It’s Tuesday."
+  },
+  {
+    "it": "È mercoledì.",
+    "bn": "এ মেরকোলেদি।",
+    "bnMeaning": "আজ বুধবার।",
+    "en": "It’s Wednesday."
+  },
+  {
+    "it": "È giovedì.",
+    "bn": "এ জোভেদি।",
+    "bnMeaning": "আজ বৃহস্পতিবার।",
+    "en": "It’s Thursday."
+  },
+  {
+    "it": "È venerdì.",
+    "bn": "এ ভেনেরদি।",
+    "bnMeaning": "আজ শুক্রবার।",
+    "en": "It’s Friday."
+  },
+  {
+    "it": "È sabato.",
+    "bn": "এ সাবাতো।",
+    "bnMeaning": "আজ শনিবার।",
+    "en": "It’s Saturday."
+  },
+  {
+    "it": "È domenica.",
+    "bn": "এ দোমেনিকা।",
+    "bnMeaning": "আজ রবিবার।",
+    "en": "It’s Sunday."
+  },
+  {
+    "it": "Che mese è?",
+    "bn": "কে মেসে এ?",
+    "bnMeaning": "এটা কোন মাস?",
+    "en": "What month is it?"
+  },
+  {
+    "it": "È gennaio.",
+    "bn": "এ জেন্নাইও।",
+    "bnMeaning": "এটা জানুয়ারি মাস।",
+    "en": "It’s January."
+  },
+  {
+    "it": "È febbraio.",
+    "bn": "এ ফেব্রাইও।",
+    "bnMeaning": "এটা ফেব্রুয়ারি মাস।",
+    "en": "It’s February."
+  },
+  {
+    "it": "È marzo.",
+    "bn": "এ মার্‌ৎসো।",
+    "bnMeaning": "এটা মার্চ মাস।",
+    "en": "It’s March."
+  },
+  {
+    "it": "È aprile.",
+    "bn": "এ আপ্রিলে।",
+    "bnMeaning": "এটা এপ্রিল মাস।",
+    "en": "It’s April."
+  },
+  {
+    "it": "È maggio.",
+    "bn": "এ মাজ্জো।",
+    "bnMeaning": "এটা মে মাস।",
+    "en": "It’s May."
+  },
+  {
+    "it": "È giugno.",
+    "bn": "এ জুন্ও।",
+    "bnMeaning": "এটা জুন মাস।",
+    "en": "It’s June."
+  },
+  {
+    "it": "È luglio.",
+    "bn": "এ লুল্লিও।",
+    "bnMeaning": "এটা জুলাই মাস।",
+    "en": "It’s July."
+  },
+  {
+    "it": "È agosto.",
+    "bn": "এ আগোস্তো।",
+    "bnMeaning": "এটা আগস্ট মাস।",
+    "en": "It’s August."
+  },
+  {
+    "it": "È settembre.",
+    "bn": "এ সেতেম্ব্রে।",
+    "bnMeaning": "এটা সেপ্টেম্বর মাস।",
+    "en": "It’s September."
+  },
+  {
+    "it": "È ottobre.",
+    "bn": "এ অত্তোব্রে।",
+    "bnMeaning": "এটা অক্টোবর মাস।",
+    "en": "It’s October."
+  },
+  {
+    "it": "È novembre.",
+    "bn": "এ নোভেম্ব্রে।",
+    "bnMeaning": "এটা নভেম্বর মাস।",
+    "en": "It’s November."
+  },
+  {
+    "it": "È dicembre.",
+    "bn": "এ দিচেম্ব্রে।",
+    "bnMeaning": "এটা ডিসেম্বর মাস।",
+    "en": "It’s December."
+  },
+  {
+    "it": "Che tempo fa oggi?",
+    "bn": "কে তেম্পো ফা অজ্জি?",
+    "bnMeaning": "আজ আবহাওয়া কেমন?",
+    "en": "How’s the weather today?"
+  },
+  {
+    "it": "Fa caldo.",
+    "bn": "ফা কালদো।",
+    "bnMeaning": "গরম পড়ছে।",
+    "en": "It’s hot."
+  },
+  {
+    "it": "Fa freddo.",
+    "bn": "ফা ফ্রেদ্দো।",
+    "bnMeaning": "ঠান্ডা পড়ছে।",
+    "en": "It’s cold."
+  },
+  {
+    "it": "Piove.",
+    "bn": "পিওভে।",
+    "bnMeaning": "বৃষ্টি হচ্ছে।",
+    "en": "It’s raining."
+  },
+  {
+    "it": "Nevica.",
+    "bn": "নেভিকা।",
+    "bnMeaning": "তুষারপাত হচ্ছে।",
+    "en": "It’s snowing."
+  },
+  {
+    "it": "È nuvoloso.",
+    "bn": "এ নুভোলোসো।",
+    "bnMeaning": "আকাশ মেঘাচ্ছন্ন।",
+    "en": "It’s cloudy."
+  },
+  {
+    "it": "C'è il sole.",
+    "bn": "চে ইল সোলে।",
+    "bnMeaning": "সূর্য উঠেছে।",
+    "en": "It’s sunny."
+  },
+  {
+    "it": "C'è vento.",
+    "bn": "চে ভেন্তো।",
+    "bnMeaning": "হাওয়া চলছে।",
+    "en": "It’s windy."
+  },
+  {
+    "it": "Andiamo al mercato.",
+    "bn": "আন্দিয়ামো আল মেরকাতো।",
+    "bnMeaning": "চলো বাজারে যাই।",
+    "en": "Let’s go to the market."
+  },
+  {
+    "it": "Voglio comprare frutta.",
+    "bn": "ভোইলো কোম্প্রারে ফ্রুত্তা।",
+    "bnMeaning": "আমি ফল কিনতে চাই।",
+    "en": "I want to buy fruit."
+  },
+  {
+    "it": "Mi serve del pane.",
+    "bn": "মি সেরভে দেল পানে।",
+    "bnMeaning": "আমার কিছু রুটি প্রয়োজন।",
+    "en": "I need some bread."
+  },
+  {
+    "it": "Quanto costa al chilo?",
+    "bn": "কুয়ান্তো কোস্তা আল কিলো?",
+    "bnMeaning": "এক কিলোর দাম কত?",
+    "en": "How much per kilo?"
+  },
+  {
+    "it": "È troppo caro.",
+    "bn": "এ ত্রোপ্পো কারো।",
+    "bnMeaning": "এটা অনেক দামি।",
+    "en": "It’s too expensive."
+  },
+  {
+    "it": "Ha qualcosa di più economico?",
+    "bn": "আ কুয়ালকোসা দি পিউ একোনোমিকো?",
+    "bnMeaning": "আরও সস্তা কিছু আছে?",
+    "en": "Do you have something cheaper?"
+  },
+  {
+    "it": "Vorrei un caffè.",
+    "bn": "ভোরেই উন কাফ্‌ফে।",
+    "bnMeaning": "আমি এক কাপ কফি চাই।",
+    "en": "I’d like a coffee."
+  },
+  {
+    "it": "Un cappuccino, per favore.",
+    "bn": "উন কাপুচিনো, পের ফাভোরে।",
+    "bnMeaning": "এক কাপুচিনো, দয়া করে।",
+    "en": "One cappuccino, please."
+  },
+  {
+    "it": "Il conto, per favore.",
+    "bn": "ইল কন্তো, পের ফাভোরে।",
+    "bnMeaning": "বিল দিন, অনুগ্রহ করে।",
+    "en": "The bill, please."
+  },
+  {
+    "it": "Posso pagare con la carta?",
+    "bn": "পোসসো পাগারে কোন লা কার্তা?",
+    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
+    "en": "Can I pay with card?"
+  },
+  {
+    "it": "Solo contanti.",
+    "bn": "সোলো কনতান্তি।",
+    "bnMeaning": "শুধু নগদ।",
+    "en": "Cash only."
+  },
+  {
+    "it": "Dove si trova la farmacia?",
+    "bn": "দোভে সি ত্রোভা লা ফার্মাসিয়া?",
+    "bnMeaning": "ফার্মেসি কোথায়?",
+    "en": "Where is the pharmacy?"
+  },
+  {
+    "it": "Cerco una medicina per la tosse.",
+    "bn": "চেরকো উনা মেডিচিনা পের লা তোসে।",
+    "bnMeaning": "আমি কাশির ওষুধ খুঁজছি।",
+    "en": "I’m looking for cough medicine."
+  },
+  {
+    "it": "È urgente.",
+    "bn": "এ উর্জেন্তে।",
+    "bnMeaning": "এটা জরুরি।",
+    "en": "It’s urgent."
+  },
+  {
+    "it": "Vado al lavoro.",
+    "bn": "ভাদো আল লাভোরো।",
+    "bnMeaning": "আমি কাজে যাচ্ছি।",
+    "en": "I’m going to work."
+  },
+  {
+    "it": "Sono in pausa pranzo.",
+    "bn": "সোনো ইন পাউজা প্রাঞ্জো।",
+    "bnMeaning": "আমি লাঞ্চ বিরতিতে আছি।",
+    "en": "I’m on a lunch break."
+  },
+  {
+    "it": "Torno tra poco.",
+    "bn": "তোর্নো ত্রা পোকো।",
+    "bnMeaning": "আমি একটু পরেই ফিরে আসবো।",
+    "en": "I’ll be back soon."
   }
-
-  
 ]
