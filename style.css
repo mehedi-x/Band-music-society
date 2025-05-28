@@ -1,4 +1,4 @@
-/* মূল বডি */
+/* 🌐 বডি */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -7,13 +7,13 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* ডার্ক মোড */
+/* 🌑 ডার্ক মোড */
 .dark-mode {
   background-color: #121212;
   color: #f9f9f9;
 }
 
-/* হেডার */
+/* 🧱 হেডার */
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,7 @@ body {
   margin-top: 6px;
 }
 
-/* ভাষা নির্বাচন */
+/* 🌐 ভাষা নির্বাচন */
 #language-select {
   padding: 5px 10px;
   font-size: 0.95rem;
@@ -51,7 +51,7 @@ body {
   cursor: pointer;
 }
 
-/* ডার্ক/লাইট মোড টগল বাটন */
+/* 🌗 ডার্ক/লাইট মোড টগল */
 #mode-toggle {
   font-size: 1.2rem;
   background: #003c82;
@@ -71,14 +71,14 @@ body {
   background-color: #002a58;
 }
 
-/* মেইন */
+/* 📄 মূল কনটেন্ট */
 main {
   padding: 20px;
   max-width: 800px;
   margin: auto;
 }
 
-/* কনভারসেশন আইটেম */
+/* 💬 কনভারসেশন */
 .conversation-item {
   padding: 14px;
   margin-bottom: 16px;
@@ -104,25 +104,36 @@ main {
   word-break: break-word;
 }
 
+/* ✍️ ভাষা রেন্ডারিং */
 .conversation-item strong {
   color: #007bff;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
+/* ✅ লাইট মোড টেক্সট */
 .conversation-item span {
   font-weight: 500;
   font-size: 1rem;
-  color: #ccc;
+  color: #333;
 }
 
 .conversation-item em {
   font-style: normal;
-  color: #9aa;
   font-size: 1rem;
+  color: #666;
 }
 
-/* মোবাইল */
+/* 🌙 ডার্ক মোড টেক্সট */
+.dark-mode .conversation-item span {
+  color: #ccc;
+}
+
+.dark-mode .conversation-item em {
+  color: #aaa;
+}
+
+/* 📱 মোবাইল রেসপন্সিভ */
 @media (max-width: 600px) {
   .app-header {
     flex-direction: column;
