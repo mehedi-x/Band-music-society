@@ -1120,5 +1120,269 @@
     "bn": "স্তো মোলতো মালে।",
     "bnMeaning": "আমি খুব অসুস্থ।",
     "en": "I’m very sick."
+  },
+  {
+    "it": "Hai l'assicurazione sanitaria?",
+    "bn": "আই লা‌সিকুরাসিওনে সানিতারিয়া?",
+    "bnMeaning": "তোমার কি স্বাস্থ্য বীমা আছে?",
+    "en": "Do you have health insurance?"
+  },
+  {
+    "it": "Dove si trova l'ospedale più vicino?",
+    "bn": "দোভে সি ত্রোভা ল’ওস্পেদালে পিউ ভিচিনো?",
+    "bnMeaning": "সর্বনিকট হাসপাতাল কোথায়?",
+    "en": "Where is the nearest hospital?"
+  },
+  {
+    "it": "Hai bisogno di una ricetta?",
+    "bn": "আই বিজোন্নো দি উনা রিচেত্তা?",
+    "bnMeaning": "তোমার কি প্রেসক্রিপশন লাগবে?",
+    "en": "Do you need a prescription?"
+  },
+  {
+    "it": "Posso prenotare una visita?",
+    "bn": "পোস্সো প্রেনোতার উনা ভিজিতা?",
+    "bnMeaning": "আমি কি একটি অ্যাপয়েন্টমেন্ট বুক করতে পারি?",
+    "en": "Can I book a visit?"
+  },
+  {
+    "it": "Che sintomi hai?",
+    "bn": "কে সিন্তোমি আই?",
+    "bnMeaning": "তোমার কী লক্ষণ রয়েছে?",
+    "en": "What symptoms do you have?"
+  },
+  {
+    "it": "Ho tosse e raffreddore.",
+    "bn": "ও তোস্সে এ রাফ্রেদোরে।",
+    "bnMeaning": "আমার কাশি এবং সর্দি আছে।",
+    "en": "I have a cough and cold."
+  },
+  {
+    "it": "Hai dolori?",
+    "bn": "আই দোলোরি?",
+    "bnMeaning": "তোমার কি ব্যথা করছে?",
+    "en": "Do you feel pain?"
+  },
+  {
+    "it": "Mi fa male la schiena.",
+    "bn": "মি ফা মালে লা স্কিয়েনা।",
+    "bnMeaning": "আমার পিঠে ব্যথা করছে।",
+    "en": "My back hurts."
+  },
+  {
+    "it": "Mi fa male la gamba.",
+    "bn": "মি ফা মালে লা গাম্বা।",
+    "bnMeaning": "আমার পায়ে ব্যথা করছে।",
+    "en": "My leg hurts."
+  },
+  {
+    "it": "Devo prendere medicine?",
+    "bn": "দেভো প্রেন্দেরে মেডিচিনে?",
+    "bnMeaning": "আমার কি ওষুধ খেতে হবে?",
+    "en": "Do I need to take medicine?"
+  },
+  {
+    "it": "Prendi questa pillola ogni 8 ore.",
+    "bn": "প্রেন্দি কুয়েস্তা পিলোলা ওগনি ওত্তো ওরে।",
+    "bnMeaning": "এই ট্যাবলেটটি প্রতি ৮ ঘণ্টা পরপর খাও।",
+    "en": "Take this pill every 8 hours."
+  },
+  {
+    "it": "C'è una farmacia aperta?",
+    "bn": "চে উনা ফার্মাসিয়া আপের্তা?",
+    "bnMeaning": "কোনো ফার্মেসি কি খোলা আছে?",
+    "en": "Is there an open pharmacy?"
+  },
+  {
+    "it": "Hai bisogno di un certificato medico?",
+    "bn": "আই বিজোন্নো দি উন চের্তিফিকাতো মেডিকো?",
+    "bnMeaning": "তোমার কি ডাক্তারি সনদ দরকার?",
+    "en": "Do you need a medical certificate?"
+  },
+  {
+    "it": "Dove posso fare un test COVID?",
+    "bn": "দোভে পোস্সো ফারে উন টেস্ট কোভিড?",
+    "bnMeaning": "আমি কোথায় কোভিড টেস্ট করাতে পারি?",
+    "en": "Where can I take a COVID test?"
+  },
+  {
+    "it": "Mi sento meglio ora.",
+    "bn": "মি সেন্তো মেলিওরে ওরা।",
+    "bnMeaning": "আমি এখন ভালো অনুভব করছি।",
+    "en": "I feel better now."
+  },
+  {
+    "it": "Devo restare a casa.",
+    "bn": "দেভো রেস্তারে আ কাজা।",
+    "bnMeaning": "আমাকে বাসায় থাকতে হবে।",
+    "en": "I have to stay home."
+  },
+  {
+    "it": "Posso uscire domani?",
+    "bn": "পোস্সো উসসিরে দোমানি?",
+    "bnMeaning": "আমি কি আগামীকাল বাইরে যেতে পারি?",
+    "en": "Can I go out tomorrow?"
+  },
+  {
+    "it": "Hai la febbre alta?",
+    "bn": "আই লা ফেব্রে আলতা?",
+    "bnMeaning": "তোমার কি উচ্চ জ্বর আছে?",
+    "en": "Do you have a high fever?"
+  },
+  {
+    "it": "Bevi molta acqua.",
+    "bn": "বেভি মোলতা আক্কুয়া।",
+    "bnMeaning": "অনেক পানি পান করো।",
+    "en": "Drink plenty of water."
+  },
+  {
+    "it": "Riposa e stai a letto.",
+    "bn": "রিপোসা এ স্তাই আ লেত্তো।",
+    "bnMeaning": "বিশ্রাম নাও এবং বিছানায় থাকো।",
+    "en": "Rest and stay in bed."
+  },
+  {
+    "it": "Mangia cibo leggero.",
+    "bn": "মানজিয়া চিবো লেজ্জেরো।",
+    "bnMeaning": "হালকা খাবার খাও।",
+    "en": "Eat light food."
+  },
+  {
+    "it": "Prendi questa medicina prima dei pasti.",
+    "bn": "প্রেন্দি কুয়েস্তা মেডিচিনা প্রিমা দেই পাস্তি।",
+    "bnMeaning": "এই ওষুধ খাবারের আগে খাও।",
+    "en": "Take this medicine before meals."
+  },
+  {
+    "it": "Hai fatto il vaccino?",
+    "bn": "আই ফাত্তো ইল ভাচ্চিনো?",
+    "bnMeaning": "তুমি কি টিকা নিয়েছো?",
+    "en": "Have you taken the vaccine?"
+  },
+  {
+    "it": "Sì, ho fatto tutte le dosi.",
+    "bn": "সি, ও ফাত্তো তুত্তে লে দোসি।",
+    "bnMeaning": "হ্যাঁ, আমি সবগুলো ডোজ নিয়েছি।",
+    "en": "Yes, I took all doses."
+  },
+  {
+    "it": "Hai una mascherina?",
+    "bn": "আই উনা মাসকেরিনা?",
+    "bnMeaning": "তোমার কি মাস্ক আছে?",
+    "en": "Do you have a mask?"
+  },
+  {
+    "it": "Indossa la mascherina, per favore.",
+    "bn": "ইন্দোস্সা লা মাসকেরিনা, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে মাস্ক পরো।",
+    "en": "Please wear the mask."
+  },
+  {
+    "it": "Mantieni la distanza.",
+    "bn": "মানতিয়েনি লা দিস্তান্‌ৎসা।",
+    "bnMeaning": "দূরত্ব বজায় রাখো।",
+    "en": "Keep the distance."
+  },
+  {
+    "it": "Lavati spesso le mani.",
+    "bn": "লাভাতি স্পেসো লে মানি।",
+    "bnMeaning": "হাত বারবার ধুয়ে নাও।",
+    "en": "Wash your hands often."
+  },
+  {
+    "it": "Usa il gel disinfettante.",
+    "bn": "উসা ইল জেল দিজিনফেত্তান্তে।",
+    "bnMeaning": "স্যানিটাইজার ব্যবহার করো।",
+    "en": "Use hand sanitizer."
+  },
+  {
+    "it": "Rimani a casa se stai male.",
+    "bn": "রিমানি আ কাজা সে স্তাই মালে।",
+    "bnMeaning": "অসুস্থ হলে বাসায় থাকো।",
+    "en": "Stay home if you feel sick."
+  },
+  {
+    "it": "Contatta il medico.",
+    "bn": "কন্তাত্তা ইল মেডিকো।",
+    "bnMeaning": "ডাক্তারের সাথে যোগাযোগ করো।",
+    "en": "Contact the doctor."
+  },
+  {
+    "it": "Prenota online.",
+    "bn": "প্রেনোতা অনলাইনে।",
+    "bnMeaning": "অনলাইনে বুক করো।",
+    "en": "Book online."
+  },
+  {
+    "it": "Controlla la temperatura.",
+    "bn": "কোন্ত্রোল্লা লা তেম্পেরাতুরা।",
+    "bnMeaning": "তাপমাত্রা পরীক্ষা করো।",
+    "en": "Check the temperature."
+  },
+  {
+    "it": "Hai mal di stomaco?",
+    "bn": "আই মাল দি স্তোমাকো?",
+    "bnMeaning": "তোমার কি পেটে ব্যথা করছে?",
+    "en": "Do you have a stomach ache?"
+  },
+  {
+    "it": "Non mangiare cibo piccante.",
+    "bn": "নন মানজিয়ারে চিবো পিককান্তে।",
+    "bnMeaning": "মসলাযুক্ত খাবার খেয়ো না।",
+    "en": "Don’t eat spicy food."
+  },
+  {
+    "it": "Bevi tè caldo.",
+    "bn": "বেভি তে কালদো।",
+    "bnMeaning": "গরম চা পান করো।",
+    "en": "Drink hot tea."
+  },
+  {
+    "it": "Riprenditi presto!",
+    "bn": "রিপ্রেন্দিতি প্রেস্তো!",
+    "bnMeaning": "তাড়াতাড়ি সুস্থ হয়ে ওঠো!",
+    "en": "Get well soon!"
+  },
+  {
+    "it": "Fai attenzione alla salute.",
+    "bn": "ফাই আত্তেনৎসিওনে আল্লা সালুতে।",
+    "bnMeaning": "স্বাস্থ্যের দিকে খেয়াল রাখো।",
+    "en": "Take care of your health."
+  },
+  {
+    "it": "Spero che tu stia meglio.",
+    "bn": "স্পেরো কে তু স্তিয়া মেলিও।",
+    "bnMeaning": "আশা করি তুমি ভালো আছো।",
+    "en": "I hope you are better."
+  },
+  {
+    "it": "Ti auguro una pronta guarigione.",
+    "bn": "তি আওগুরো উনা প্রোন্তা গুয়ারিজিওনে।",
+    "bnMeaning": "আমি তোমার দ্রুত আরোগ্য কামনা করছি।",
+    "en": "I wish you a speedy recovery."
+  },
+  {
+    "it": "Hai preso l'influenza?",
+    "bn": "আই প্রেসো ল’ইনফ্লুয়েন্‌ৎসা?",
+    "bnMeaning": "তুমি কি ইনফ্লুয়েঞ্জায় আক্রান্ত?",
+    "en": "Did you catch the flu?"
+  },
+  {
+    "it": "Hai bisogno di riposo.",
+    "bn": "আই বিজোন্নো দি রিপোসো।",
+    "bnMeaning": "তোমার বিশ্রামের দরকার।",
+    "en": "You need rest."
+  },
+  {
+    "it": "Non uscire oggi.",
+    "bn": "নন উসসিরে অজ্জি।",
+    "bnMeaning": "আজ বাইরে যেও না।",
+    "en": "Don’t go out today."
+  },
+  {
+    "it": "Chiama il 118 in caso di emergenza.",
+    "bn": "কিয়ামা ইল উন উন অত্তো ইন কাজো দি এমেরজেন্‌ৎসা।",
+    "bnMeaning": "জরুরি পরিস্থিতিতে ১১৮ নম্বরে কল করো।",
+    "en": "Call 118 in case of emergency."
   }
 ]
