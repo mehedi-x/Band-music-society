@@ -125,3 +125,11 @@ modeToggle.addEventListener('click', () => {
   modeToggle.textContent = isDark ? '🌙' : '☀️';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
+
+//মেনু 
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+
+menuToggle.addEventListener('click', () => {
+  sideMenu.classList.toggle('active');
+});
