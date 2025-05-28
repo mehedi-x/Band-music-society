@@ -12,6 +12,8 @@ body {
   background-color: #121212;
   color: #f9f9f9;
 }
+
+/* 🧾 সাইড মেনু */
 #side-menu {
   display: none;
   position: fixed;
@@ -22,19 +24,28 @@ body {
   background: #ffffff;
   border-left: 1px solid #ccc;
   padding: 20px;
-  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
   z-index: 200;
   transition: all 0.3s ease;
 }
-
 #side-menu.active {
   display: block;
 }
-
 .dark-mode #side-menu {
   background: #1e1e1e;
   color: #eee;
   border-left: 1px solid #444;
+}
+
+/* ✖ ক্লোজ বাটন (সাইড মেনুর ভিতরে) */
+#close-menu {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 /* 🧱 হেডার */
@@ -75,7 +86,7 @@ body {
   cursor: pointer;
 }
 
-/* 🌗 মোড টগল বাটন */
+/* 🌗 মোড ও মেনু টগল */
 #mode-toggle,
 #menu-toggle {
   font-size: 1.2rem;
@@ -97,7 +108,7 @@ body {
   background-color: #002a58;
 }
 
-/* 📄 মূল কনটেন্ট */
+/* 📄 মেইন কনটেন্ট */
 main {
   padding: 20px;
   max-width: 800px;
@@ -136,24 +147,22 @@ main {
   font-weight: 600;
 }
 
-/* 🌞 লাইট মোডের টেক্সট */
+/* 🌞 লাইট মোডে span/em টেক্সট */
 .conversation-item span {
   font-weight: 500;
   font-size: 1rem;
   color: #222;
 }
-
 .conversation-item em {
   font-style: normal;
   font-size: 1rem;
   color: #555;
 }
 
-/* 🌙 ডার্ক মোড টেক্সট */
+/* 🌙 ডার্ক মোডে span/em টেক্সট */
 .dark-mode .conversation-item span {
   color: #ccc;
 }
-
 .dark-mode .conversation-item em {
   color: #aaa;
 }
@@ -184,30 +193,4 @@ main {
   .conversation-item {
     font-size: 0.95rem;
   }
-}
-
-/* 🧾 মেনু ড্রয়ার (ভবিষ্যতে কাজ করবে JS দিয়ে) */
-#side-menu {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 220px;
-  height: 100%;
-  background: #ffffff;
-  border-left: 1px solid #ccc;
-  padding: 20px;
-  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
-  z-index: 200;
-  transition: all 0.3s ease;
-}
-
-.dark-mode #side-menu {
-  background: #1e1e1e;
-  color: #eee;
-  border-left: 1px solid #444;
-}
-
-#side-menu.active {
-  display: block;
 }
