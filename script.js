@@ -10,7 +10,7 @@ const langCodeMap = {
   italian: 'it'
 };
 
-// Load language from localStorage if available
+// Language restore on page load
 window.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('selectedLanguage');
   if (savedLang) {
@@ -30,8 +30,8 @@ function loadLanguage(lang) {
   fetch(`languages/${lang}.json`)
     .then(res => res.json())
     .then(data => renderVocabulary(data, langCodeMap[lang]))
-    .catch(err => {
-      conversationArea.innerHTML = `<p style="color:red">Error loading language data: ${err}</p>`;
+    .catch(error => {
+      conversationArea.innerHTML = `<p style="color:red;">Error loading data: ${error}</p>`;
     });
 }
 
