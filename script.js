@@ -78,7 +78,7 @@ function loadLanguage(lang) {
   if (!data || !Array.isArray(data) || data.length === 0) {
     const msg = document.createElement('p');
     msg.className = 'fallback-message';
-    msg.textContent = 'No data available for this language.';
+    msg.textContent = 'এই ভাষার জন্য কোনো ডেটা পাওয়া যায়নি।';
     conversationArea.appendChild(msg);
     return;
   }
@@ -86,9 +86,10 @@ function loadLanguage(lang) {
   data.forEach(item => {
     const entry = document.createElement('div');
     entry.innerHTML = `
-      <p><strong>${item.en}</strong></p>
-      <p>বাংলা: ${item.bnMeaning}</p>
-      <p>উচ্চারণ: ${item.bn}</p>
+      <p><strong>${lang.replace(/_/g, ' ').toUpperCase()}</strong></p>
+      <p>বাংলা উচ্চারণ: ${item.bn}</p>
+      <p>বাংলা অর্থ: ${item.bnMeaning}</p>
+      <p>ইংরেজি অর্থ: ${item.en}</p>
       <hr>
     `;
     conversationArea.appendChild(entry);
