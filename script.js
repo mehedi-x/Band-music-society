@@ -127,9 +127,9 @@ modeToggle.addEventListener('click', () => {
 });
 
 //মেনু 
-const menuToggle = document.getElementById('menu-toggle');
-const sideMenu = document.getElementById('side-menu');
-
-menuToggle.addEventListener('click', () => {
-  sideMenu.classList.toggle('active');
-});
+const closeMenu = document.getElementById('close-menu');
+if (closeMenu) {
+  closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+  });
+}
