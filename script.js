@@ -95,14 +95,25 @@ function loadLanguage(lang) {
 // ✅ কথাবার্তা রেন্ডার
 function renderVocabulary(list, langKey) {
   conversationArea.innerHTML = '';
+
+  if (!Array.isArray(list) || list.length === 0) {
+    conversationArea.innerHTML = '<p>No data found for this language.</p>';
+    return;
+  }
+
   list.forEach(item => {
+    const localLang = item[langKey] || '—';
+    const bn = item.bn || '—';
+    const bnMeaning = item.bnMeaning || '—';
+    const en = item.en || '—';
+
     const div = document.createElement('div');
     div.className = 'conversation-item';
     div.innerHTML = `
-      <strong>${item.en}</strong><br>
-      <em>${item.bnMeaning}</em><br>
-      <div>${item.bn}</div>
-      <span>${item[langKey]}</span>
+      <div>🗣️ <strong>${localLang}</strong></div>
+      <div>📝 <span>${bn}</span></div>
+      <div>📘 <em>${bnMeaning}</em></div>
+      <div>🔤 <span>${en}</span></div>
     `;
     conversationArea.appendChild(div);
   });
