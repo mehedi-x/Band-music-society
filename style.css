@@ -28,14 +28,12 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* অ্যাপ টাইটেল */
 .app-title {
   margin: 0;
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-/* হেডার ডানপাশ */
 .header-right {
   display: flex;
   align-items: center;
@@ -73,7 +71,7 @@ body {
   background-color: #002a58;
 }
 
-/* মেইন কনটেন্ট এরিয়া */
+/* মেইন */
 main {
   padding: 20px;
   max-width: 800px;
@@ -84,11 +82,17 @@ main {
 .conversation-item {
   padding: 14px;
   margin-bottom: 16px;
-  background-color: #1e1e1e;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  color: #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #222;
   font-size: 1rem;
+}
+
+.dark-mode .conversation-item {
+  background-color: #1e1e1e;
+  color: #eee;
+  border: 1px solid #444;
 }
 
 .conversation-item div {
@@ -96,81 +100,51 @@ main {
   align-items: center;
   gap: 6px;
   margin-bottom: 6px;
-  line-height: 1.4;
+  line-height: 1.5;
   word-break: break-word;
 }
 
 .conversation-item strong {
-  color: #61aaff;
+  color: #007bff;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.conversation-item span,
-.conversation-item em {
-  font-size: 1rem;
-  color: #ccc;
-}
-
 .conversation-item span {
   font-weight: 500;
+  font-size: 1rem;
+  color: #ccc;
 }
 
 .conversation-item em {
   font-style: normal;
   color: #9aa;
+  font-size: 1rem;
 }
 
-@media (max-width: 600px) {
-  .conversation-item {
-    font-size: 0.95rem;
-  }
-}
-
-/* ডার্ক মোডে কনভারসেশন */
-.dark-mode .conversation-item {
-  background-color: #1e1e1e;
-  color: #eee;
-  border: 1px solid #444;
-}
-
-/* মোবাইল রেসপন্সিভ */
+/* মোবাইল */
 @media (max-width: 600px) {
   .app-header {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .header-right {
     width: 100%;
     justify-content: space-between;
     margin-top: 10px;
   }
+
   #language-select {
     flex: 1;
     width: 100%;
   }
+
   #mode-toggle {
     margin-left: auto;
   }
+
   .conversation-item {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
-}
-
-/* টেক্সট স্টাইলিং */
-em {
-  font-style: normal;
-  color: #666;
-}
-
-strong {
-  font-size: 1.1rem;
-  color: #0059b3;
-}
-
-span {
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: block;
-  margin-top: 5px;
 }
