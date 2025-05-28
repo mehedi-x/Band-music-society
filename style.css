@@ -41,7 +41,7 @@ body {
   margin-top: 6px;
 }
 
-/* 🌐 ভাষা নির্বাচন */
+/* ভাষা নির্বাচন */
 #language-select {
   padding: 5px 10px;
   font-size: 0.95rem;
@@ -51,8 +51,9 @@ body {
   cursor: pointer;
 }
 
-/* 🌗 ডার্ক/লাইট মোড টগল */
-#mode-toggle {
+/* 🌗 মোড টগল বাটন */
+#mode-toggle,
+#menu-toggle {
   font-size: 1.2rem;
   background: #003c82;
   border: none;
@@ -67,7 +68,8 @@ body {
   transition: background-color 0.3s;
 }
 
-#mode-toggle:hover {
+#mode-toggle:hover,
+#menu-toggle:hover {
   background-color: #002a58;
 }
 
@@ -104,24 +106,23 @@ main {
   word-break: break-word;
 }
 
-/* ✍️ ভাষা রেন্ডারিং */
 .conversation-item strong {
   color: #007bff;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-/* ✅ লাইট মোড টেক্সট */
+/* 🌞 লাইট মোডের টেক্সট */
 .conversation-item span {
   font-weight: 500;
   font-size: 1rem;
-  color: #333;
+  color: #222;
 }
 
 .conversation-item em {
   font-style: normal;
   font-size: 1rem;
-  color: #666;
+  color: #555;
 }
 
 /* 🌙 ডার্ক মোড টেক্সট */
@@ -151,11 +152,38 @@ main {
     width: 100%;
   }
 
-  #mode-toggle {
+  #mode-toggle,
+  #menu-toggle {
     margin-left: auto;
   }
 
   .conversation-item {
     font-size: 0.95rem;
   }
+}
+
+/* 🧾 মেনু ড্রয়ার (ভবিষ্যতে কাজ করবে JS দিয়ে) */
+#side-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 100%;
+  background: #ffffff;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+
+.dark-mode #side-menu {
+  background: #1e1e1e;
+  color: #eee;
+  border-left: 1px solid #444;
+}
+
+#side-menu.active {
+  display: block;
 }
