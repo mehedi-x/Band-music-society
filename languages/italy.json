@@ -1384,5 +1384,287 @@
     "bn": "কিয়ামা ইল উন উন অত্তো ইন কাজো দি এমেরজেন্‌ৎসা।",
     "bnMeaning": "জরুরি পরিস্থিতিতে ১১৮ নম্বরে কল করো।",
     "en": "Call 118 in case of emergency."
+  },
+  {
+    "it": "Hai un appuntamento oggi?",
+    "bn": "আই উন আপ্পুন্তামেন্তো অজ্জি?",
+    "bnMeaning": "তোমার কি আজ কোনো অ্যাপয়েন্টমেন্ট আছে?",
+    "en": "Do you have an appointment today?"
+  },
+  {
+    "it": "A che ora inizia?",
+    "bn": "আ কে ওরা ইনিচিয়া?",
+    "bnMeaning": "ক’টায় শুরু হবে?",
+    "en": "What time does it start?"
+  },
+  {
+    "it": "Quanto durerà?",
+    "bn": "কোয়ানতো দুরেরা?",
+    "bnMeaning": "এটা কতক্ষণ চলবে?",
+    "en": "How long will it last?"
+  },
+  {
+    "it": "Devo confermare l'appuntamento?",
+    "bn": "দেভো কনফেরমারে ল’আপ্পুন্তামেন্তো?",
+    "bnMeaning": "আমার কি অ্যাপয়েন্টমেন্ট কনফার্ম করতে হবে?",
+    "en": "Do I need to confirm the appointment?"
+  },
+  {
+    "it": "Hai bisogno di aiuto per il modulo?",
+    "bn": "আই বিজোন্নো দি আয়ুতো পের ইল মদুলো?",
+    "bnMeaning": "তোমার কি ফর্ম পূরণের জন্য সাহায্য দরকার?",
+    "en": "Do you need help with the form?"
+  },
+  {
+    "it": "Dove devo firmare?",
+    "bn": "দোভে দেভো ফিরমারে?",
+    "bnMeaning": "আমি কোথায় সাইন করবো?",
+    "en": "Where should I sign?"
+  },
+  {
+    "it": "Porta i documenti con te.",
+    "bn": "পোর্তা ই দকুমেন্তি কন তে।",
+    "bnMeaning": "তোমার সাথে কাগজপত্র নিয়ে এসো।",
+    "en": "Bring the documents with you."
+  },
+  {
+    "it": "Hai una copia del contratto?",
+    "bn": "আই উনা কপিয়া দেল কন্ত্রাত্তো?",
+    "bnMeaning": "তোমার কি চুক্তির কপি আছে?",
+    "en": "Do you have a copy of the contract?"
+  },
+  {
+    "it": "Devo pagare ora?",
+    "bn": "দেভো পাগারে ওরা?",
+    "bnMeaning": "আমাকে কি এখন টাকা দিতে হবে?",
+    "en": "Do I have to pay now?"
+  },
+  {
+    "it": "Posso pagare con la carta?",
+    "bn": "পোসসো পাগারে কন লা কার্তা?",
+    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
+    "en": "Can I pay with card?"
+  },
+  {
+    "it": "C'è una tassa?",
+    "bn": "চে উনা তাস্সা?",
+    "bnMeaning": "কোনো ফি আছে কি?",
+    "en": "Is there a fee?"
+  },
+  {
+    "it": "Dove si trova l'ufficio?",
+    "bn": "দোভে সি ত্রোভা ল’উফফিচিও?",
+    "bnMeaning": "অফিস কোথায় অবস্থিত?",
+    "en": "Where is the office located?"
+  },
+  {
+    "it": "L'ufficio è al secondo piano.",
+    "bn": "ল’উফফিচিও এ আল সেকোন্দো পিয়ানো।",
+    "bnMeaning": "অফিসটি দ্বিতীয় তলায়।",
+    "en": "The office is on the second floor."
+  },
+  {
+    "it": "C'è un ascensore?",
+    "bn": "চে উন আশেন্সোরে?",
+    "bnMeaning": "এখানে কি লিফট আছে?",
+    "en": "Is there an elevator?"
+  },
+  {
+    "it": "Devo prendere le scale.",
+    "bn": "দেভো প্রেন্দেরে লে স্কালে।",
+    "bnMeaning": "আমাকে সিঁড়ি ব্যবহার করতে হবে।",
+    "en": "I have to take the stairs."
+  },
+  {
+    "it": "C'è una lunga fila.",
+    "bn": "চে উনা লুঙ্গা ফিলা।",
+    "bnMeaning": "একটি দীর্ঘ লাইন আছে।",
+    "en": "There is a long queue."
+  },
+  {
+    "it": "Aspetta qui, per favore.",
+    "bn": "আস্পেত্তা কুই, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে এখানে অপেক্ষা করুন।",
+    "en": "Please wait here."
+  },
+  {
+    "it": "È il tuo turno.",
+    "bn": "এ ইল তুও তুর্নো।",
+    "bnMeaning": "এখন তোমার পালা।",
+    "en": "It's your turn."
+  },
+  {
+    "it": "Mostra il tuo documento d'identità.",
+    "bn": "মোস্ত্রা ইল তুও দকুমেন্তো দি ইদেনতিতা।",
+    "bnMeaning": "তোমার পরিচয়পত্র দেখাও।",
+    "en": "Show your ID."
+  },
+  {
+    "it": "Tutto è in regola.",
+    "bn": "তুত্তো এ ইন রেগোলা।",
+    "bnMeaning": "সবকিছু ঠিকঠাক আছে।",
+    "en": "Everything is in order."
+  },
+  {
+    "it": "Manca un documento.",
+    "bn": "মানকা উন দকুমেন্তো।",
+    "bnMeaning": "একটি কাগজপত্র কম আছে।",
+    "en": "A document is missing."
+  },
+  {
+    "it": "Torna domani con i documenti.",
+    "bn": "তোরনা দোমানি কন ই দকুমেন্তি।",
+    "bnMeaning": "আগামীকাল কাগজপত্র নিয়ে আবার আসুন।",
+    "en": "Come back tomorrow with the documents."
+  },
+  {
+    "it": "Ti contatteremo presto.",
+    "bn": "তি কন্তাত্তেরেমো প্রেস্তো।",
+    "bnMeaning": "আমরা তোমার সাথে শীঘ্রই যোগাযোগ করবো।",
+    "en": "We will contact you soon."
+  },
+  {
+    "it": "Grazie per la pazienza.",
+    "bn": "গ্রাচিয়ে পের লা পাচেন্‌ৎসা।",
+    "bnMeaning": "ধৈর্য রাখার জন্য ধন্যবাদ।",
+    "en": "Thanks for your patience."
+  },
+  {
+    "it": "Hai bisogno di una traduzione?",
+    "bn": "আই বিজোন্নো দি উনা ত্রাদুউৎসিওনে?",
+    "bnMeaning": "তোমার কি অনুবাদ দরকার?",
+    "en": "Do you need a translation?"
+  },
+  {
+    "it": "Parli inglese?",
+    "bn": "পারলি ইংলেজে?",
+    "bnMeaning": "তুমি কি ইংরেজি জানো?",
+    "en": "Do you speak English?"
+  },
+  {
+    "it": "Preferisco parlare in italiano.",
+    "bn": "প্রেফেরিস্কো পারলার ইন ইতালিয়ানো।",
+    "bnMeaning": "আমি ইতালিয়ান ভাষায় কথা বলতে পছন্দ করি।",
+    "en": "I prefer to speak in Italian."
+  },
+  {
+    "it": "C'è un interprete disponibile?",
+    "bn": "চে উন ইন্টারপ্রেতে ডিসপোনিবিলে?",
+    "bnMeaning": "কোনো দোভাষী কি আছে?",
+    "en": "Is there an interpreter available?"
+  },
+  {
+    "it": "Compila questo modulo.",
+    "bn": "কোমপিলা কুয়েস্তো মদুলো।",
+    "bnMeaning": "এই ফর্মটি পূরণ করুন।",
+    "en": "Fill out this form."
+  },
+  {
+    "it": "Firma in fondo alla pagina.",
+    "bn": "ফির্মা ইন ফোন্দো আল্লা পাজিনা।",
+    "bnMeaning": "পৃষ্ঠার নিচে স্বাক্ষর করুন।",
+    "en": "Sign at the bottom of the page."
+  },
+  {
+    "it": "Hai una penna?",
+    "bn": "আই উনা পেন্না?",
+    "bnMeaning": "তোমার কি কলম আছে?",
+    "en": "Do you have a pen?"
+  },
+  {
+    "it": "Ti serve una fotocopia?",
+    "bn": "তি সেরভে উনা ফোতোকোপিয়া?",
+    "bnMeaning": "তোমার কি ফটোকপির দরকার?",
+    "en": "Do you need a photocopy?"
+  },
+  {
+    "it": "Vai allo sportello numero 5.",
+    "bn": "ভাই আল্লো স্পোর্তেল্লো নুমেরো চিঙ্কুয়ে।",
+    "bnMeaning": "৫ নম্বর কাউন্টারে যান।",
+    "en": "Go to counter number 5."
+  },
+  {
+    "it": "Ci vuole tempo.",
+    "bn": "চি ভুয়োলি তেম্পো।",
+    "bnMeaning": "এতে সময় লাগবে।",
+    "en": "It takes time."
+  },
+  {
+    "it": "Attendi il tuo turno.",
+    "bn": "আত্তেন্দি ইল তুও তুর্নো।",
+    "bnMeaning": "তোমার পালা অপেক্ষা করো।",
+    "en": "Wait your turn."
+  },
+  {
+    "it": "Hai già prenotato?",
+    "bn": "আই জা প্রেনোতাতো?",
+    "bnMeaning": "তুমি কি আগে থেকেই বুক করেছো?",
+    "en": "Have you already booked?"
+  },
+  {
+    "it": "C'è un problema con il sistema.",
+    "bn": "চে উন প্রোব্লেমা কন ইল সিসতেমা।",
+    "bnMeaning": "সিস্টেমে কিছু সমস্যা হচ্ছে।",
+    "en": "There is a problem with the system."
+  },
+  {
+    "it": "Tornerà tra poco.",
+    "bn": "তোর্নেরা ত্রা পোকে।",
+    "bnMeaning": "সে শীঘ্রই ফিরে আসবে।",
+    "en": "He/She will be back soon."
+  },
+  {
+    "it": "Puoi sederti lì.",
+    "bn": "পুয়ো সেদেরতি লি।",
+    "bnMeaning": "তুমি সেখানে বসতে পারো।",
+    "en": "You can sit there."
+  },
+  {
+    "it": "Aspettiamo insieme.",
+    "bn": "আস্পেত্তিয়ামো ইনসিএমে।",
+    "bnMeaning": "চলো একসাথে অপেক্ষা করি।",
+    "en": "Let's wait together."
+  },
+  {
+    "it": "Tutto sarà risolto.",
+    "bn": "তুত্তো সারা রিসোলতো।",
+    "bnMeaning": "সব কিছু সমাধান হয়ে যাবে।",
+    "en": "Everything will be resolved."
+  },
+  {
+    "it": "Grazie per la collaborazione.",
+    "bn": "গ্রাচিয়ে পের লা কোল্লাবোরাচিওনে।",
+    "bnMeaning": "সহযোগিতার জন্য ধন্যবাদ।",
+    "en": "Thanks for your cooperation."
+  },
+  {
+    "it": "Ci vediamo domani.",
+    "bn": "চি ভেদিয়ামো দোমানি।",
+    "bnMeaning": "আগামীকাল দেখা হবে।",
+    "en": "See you tomorrow."
+  },
+  {
+    "it": "Buona fortuna!",
+    "bn": "বুয়োনা ফোর্তুনা!",
+    "bnMeaning": "শুভকামনা রইলো!",
+    "en": "Good luck!"
+  },
+  {
+    "it": "Auguri!",
+    "bn": "আউগুরি!",
+    "bnMeaning": "অভিনন্দন!",
+    "en": "Congratulations!"
+  },
+  {
+    "it": "Benvenuto!",
+    "bn": "বেনভেনুতো!",
+    "bnMeaning": "স্বাগতম!",
+    "en": "Welcome!"
+  },
+  {
+    "it": "Arrivederci!",
+    "bn": "আরিভেদেরচি!",
+    "bnMeaning": "আবার দেখা হবে!",
+    "en": "Goodbye!"
   }
 ]
