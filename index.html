@@ -3,110 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Speak EU</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>speak_Eu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make header smaller and professional */
+    .app-header {
+      padding: 0.6rem 1rem;
+      background: #0059b3;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease;
+    }
+    .app-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      user-select: none;
+    }
+    #language-select {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 8px; /* Changed to rounded rectangle */
+      border: none;
+      cursor: pointer;
+      min-width: 140px;
+    }
+    #mode-toggle {
+      background: #003c82;
+      border: none;
+      border-radius: 8px; /* Changed to rounded rectangle */
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.3rem 0.6rem; /* Adjusted padding for better touch */
+      margin-left: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    #mode-toggle:hover {
+      background-color: #002a58;
+    }
+
+    /* Mobile friendly */
+    @media (max-width: 600px) {
+      .app-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 1rem;
+      }
+      .app-title {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 0.4rem;
+      }
+      .header-right {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+      }
+      #language-select {
+        width: 100%;
+        max-width: none;
+      }
+      #mode-toggle {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="app-container">
-    <header>
-      <h1>Speak EU</h1>
-      <div class="controls">
-        <select id="language-selector">
-          <option value="">Select Language</option>
-          <option value="albania">🇦🇱 Albania</option>
-          <option value="andorra">🇦🇩 Andorra</option>
-          <option value="austrian">🇦🇹 Austria</option>
-          <option value="belarus">🇧🇾 Belarus</option>
-          <option value="belgium">🇧🇪 Belgium</option>
-          <option value="bosnia">🇧🇦 Bosnia</option>
-          <option value="croatia">🇭🇷 Croatia</option>
-          <option value="czech">🇨🇿 Czech</option>
-          <option value="danish">🇩🇰 Denmark</option>
-          <option value="dutch">🇳🇱 Netherlands</option>
-          <option value="estonia">🇪🇪 Estonia</option>
-          <option value="finnish">🇫🇮 Finland</option>
-          <option value="french">🇫🇷 France</option>
-          <option value="german">🇩🇪 Germany</option>
-          <option value="greek">🇬🇷 Greece</option>
-          <option value="hungarian">🇭🇺 Hungary</option>
-          <option value="iceland">🇮🇸 Iceland</option>
-          <option value="irish">🇮🇪 Ireland</option>
-          <option value="italian">🇮🇹 Italy</option>
-          <option value="kosovo">🇽🇰 Kosovo</option>
-          <option value="latvian">🇱🇻 Latvia</option>
-          <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-          <option value="lithuanian">🇱🇹 Lithuania</option>
-          <option value="luxembourg">🇱🇺 Luxembourg</option>
-          <option value="maltese">🇲🇹 Malta</option>
-          <option value="moldova">🇲🇩 Moldova</option>
-          <option value="monaco">🇲🇨 Monaco</option>
-          <option value="north_macedonia">🇲🇰 North Macedonia</option>
-          <option value="norwegian">🇳🇴 Norway</option>
-          <option value="polish">🇵🇱 Poland</option>
-          <option value="portuguese">🇵🇹 Portugal</option>
-          <option value="russian">🇷🇺 Russia</option>
-          <option value="san_marino">🇸🇲 San Marino</option>
-          <option value="serbia">🇷🇸 Serbia</option>
-          <option value="slovak">🇸🇰 Slovakia</option>
-          <option value="slovenia">🇸🇮 Slovenia</option>
-          <option value="spanish">🇪🇸 Spain</option>
-          <option value="swedish">🇸🇪 Sweden</option>
-          <option value="switzerland">🇨🇭 Switzerland</option>
-          <option value="turkey">🇹🇷 Turkey</option>
-          <option value="ukraine">🇺🇦 Ukraine</option>
-          <option value="vatican">🇻🇦 Vatican</option>
-        </select>
-        <button id="theme-toggle">Dark Mode</button>
-      </div>
-    </header>
 
-    <main id="conversation-area">
-      <p class="fallback-message">Please select a language to start learning.</p>
-    </main>
-  </div>
+  <header class="app-header">
+    <h1 class="app-title">Speak EU</h1>
+    <div class="header-right">
+      <select id="language-select">
+        <!-- Already added -->
+        <option value="russian">🇷🇺 Russian</option>
+        <option value="german">🇩🇪 German</option>
+        <option value="italian">🇮🇹 Italian</option>
+        <option value="french">🇫🇷 French</option>
+        <option value="spanish">🇪🇸 Spanish</option>
+        <!-- Schengen Countries Not Yet Added -->
+        <option value="portuguese">🇵🇹 Portuguese</option>
+        <option value="dutch">🇳🇱 Dutch</option>
+        <option value="swedish">🇸🇪 Swedish</option>
+        <option value="norwegian">🇳🇴 Norwegian</option>
+        <option value="finnish">🇫🇮 Finnish</option>
+        <option value="danish">🇩🇰 Danish</option>
+        <option value="greek">🇬🇷 Greek</option>
+        <option value="polish">🇵🇱 Polish</option>
+        <option value="czech">🇨🇿 Czech</option>
+        <option value="hungarian">🇭🇺 Hungarian</option>
+        <option value="slovak">🇸🇰 Slovak</option>
+        <option value="slovenian">🇸🇮 Slovenian</option>
+        <option value="estonian">🇪🇪 Estonian</option>
+        <option value="latvian">🇱🇻 Latvian</option>
+        <option value="lithuanian">🇱🇹 Lithuanian</option>
+        <option value="croatian">🇭🇷 Croatian</option>
+        <option value="icelandic">🇮🇸 Icelandic</option>
+        <option value="maltesian">🇲🇹 Maltese</option>
+        <option value="austrian">🇦🇹 Austrian German</option>
+        <option value="swiss">🇨🇭 Switzerland </option>
+        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+        <option value="luxembourgish">🇱🇺 Luxembourgish</option>
+      </select>
+      <button id="mode-toggle">☀️</button>
+    </div>
+  </header>
 
-<script src="languages/albania.js"></script>
-<script src="languages/andorra.js"></script>
-<script src="languages/austrian.js"></script>
-<script src="languages/belarus.js"></script>
-<script src="languages/belgium.js"></script>
-<script src="languages/bosnia.js"></script>
-<script src="languages/croatia.js"></script>
-<script src="languages/czech.js"></script>
-<script src="languages/danish.js"></script>
-<script src="languages/dutch.js"></script>
-<script src="languages/estonia.js"></script>
-<script src="languages/finnish.js"></script>
-<script src="languages/french.js"></script>
-<script src="languages/german.js"></script>
-<script src="languages/greek.js"></script>
-<script src="languages/hungarian.js"></script>
-<script src="languages/iceland.js"></script>
-<script src="languages/irish.js"></script>
-<script src="languages/italian.js"></script>
-<script src="languages/kosovo.js"></script>
-<script src="languages/latvian.js"></script>
-<script src="languages/liechtenstein.js"></script>
-<script src="languages/lithuanian.js"></script>
-<script src="languages/luxembourg.js"></script>
-<script src="languages/maltese.js"></script>
-<script src="languages/moldova.js"></script>
-<script src="languages/monaco.js"></script>
-<script src="languages/north_macedonia.js"></script>
-<script src="languages/norwegian.js"></script>
-<script src="languages/polish.js"></script>
-<script src="languages/portuguese.js"></script>
-<script src="languages/russian.js"></script>
-<script src="languages/san_marino.js"></script>
-<script src="languages/serbia.js"></script>
-<script src="languages/slovak.js"></script>
-<script src="languages/slovenia.js"></script>
-<script src="languages/spanish.js"></script>
-<script src="languages/swedish.js"></script>
-<script src="languages/switzerland.js"></script>
-<script src="languages/turkey.js"></script>
-<script src="languages/ukraine.js"></script>
-<script src="languages/vatican.js"></script>
+  <main id="conversation-area"></main>
+
   <script src="script.js"></script>
+  <script>
+    // Hide header when a language is selected
+    const languageSelect = document.getElementById('language-select');
+    const header = document.querySelector('.app-header');
+
+    languageSelect.addEventListener('change', () => {
+      // Hide header smoothly
+      header.style.opacity = '0';
+      header.style.height = '0';
+      header.style.padding = '0';
+      header.style.overflow = 'hidden';
+      // Optional: actually set display:none after transition for accessibility
+      setTimeout(() => {
+        header.style.display = 'none';
+      }, 300);
+    });
+  </script>
 </body>
 </html>
