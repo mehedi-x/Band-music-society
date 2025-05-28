@@ -31,15 +31,26 @@
     const conversationArea = document.getElementById('conversation-area');
     const modeToggle = document.getElementById('mode-toggle');
 
+    const langCodeMap = {
+      russian: 'ru',
+      german: 'de',
+      french: 'fr',
+      spanish: 'es',
+      italian: 'it'
+    };
+
     languageSelect.addEventListener('change', () => {
       const lang = languageSelect.value;
       if (!lang) return;
       fetch(`languages/${lang}.json`)
         .then(res => res.json())
-        .then(data => renderVocabulary(data, lang));
+        .then(data => renderVocabulary(data, langCodeMap[lang]))
+        .catch(error => {
+          conversationArea.innerHTML = `<p style="color:red;">Error loading data: ${error}</p>`;
+        });
     });
 
-    function renderVocabulary(list, lang) {
+    function renderVocabulary(list, langKey) {
       conversationArea.innerHTML = '';
       list.forEach(item => {
         const div = document.createElement('div');
@@ -47,7 +58,7 @@
         div.innerHTML = `
           <strong>${item.en}</strong><br>
           <em>${item.bnMeaning}</em><br>
-          <span>${item[lang]}</span>
+          <span>${item[langKey]}</span>
         `;
         conversationArea.appendChild(div);
       });
