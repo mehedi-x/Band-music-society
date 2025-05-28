@@ -1,14 +1,304 @@
 [
   {
-    "it": "Buongiorno, come sta?",
-    "bn": "বুয়োনজোর্নো, কোমে স্তা?",
-    "bnMeaning": "সুপ্রভাত, আপনি কেমন আছেন?",
-    "en": "Good morning, how are you?"
+    "it": "Buongiorno!",
+    "bn": "বুয়োনজোর্নো!",
+    "bnMeaning": "সুপ্রভাত!",
+    "en": "Good morning!"
   },
   {
-    "it": "Mi chiamo Rahim.",
-    "bn": "মি কিয়ামো রহিম।",
-    "bnMeaning": "আমার নাম রহিম।",
-    "en": "My name is Rahim."
-  }
+    "it": "Come ti chiami?",
+    "bn": "কোমে তি কিয়ামি?",
+    "bnMeaning": "তোমার নাম কী?",
+    "en": "What is your name?"
+  },
+  {
+    "it": "Mi chiamo Ahmed.",
+    "bn": "মি কিয়ামো আহমেদ।",
+    "bnMeaning": "আমার নাম আহমেদ।",
+    "en": "My name is Ahmed."
+  },
+  {
+    "it": "Come stai?",
+    "bn": "কোমে স্তাই?",
+    "bnMeaning": "তুমি কেমন আছো?",
+    "en": "How are you?"
+  },
+  {
+    "it": "Sto bene, grazie.",
+    "bn": "স্তো বেনে, গ্রাৎজিয়ে।",
+    "bnMeaning": "আমি ভালো আছি, ধন্যবাদ।",
+    "en": "I’m fine, thank you."
+  },
+  {
+    "it": "Piacere di conoscerti.",
+    "bn": "পিয়াচেরে দি কনোশের্তি।",
+    "bnMeaning": "তোমার সঙ্গে পরিচয় হয়ে ভালো লাগলো।",
+    "en": "Nice to meet you."
+  },
+  {
+    "it": "Di dove sei?",
+    "bn": "দি দোভে সেই?",
+    "bnMeaning": "তুমি কোথা থেকে?",
+    "en": "Where are you from?"
+  },
+  {
+    "it": "Sono del Bangladesh.",
+    "bn": "সোনো দেল বাংলাদেশ।",
+    "bnMeaning": "আমি বাংলাদেশ থেকে এসেছি।",
+    "en": "I’m from Bangladesh."
+  },
+  {
+    "it": "Parli italiano?",
+    "bn": "পারলি ইতালিয়ানো?",
+    "bnMeaning": "তুমি কি ইতালিয়ান ভাষা বলো?",
+    "en": "Do you speak Italian?"
+  },
+  {
+    "it": "Un po', sto imparando.",
+    "bn": "উন পো, স্তো ইম্পারান্দো।",
+    "bnMeaning": "একটু, আমি শিখছি।",
+    "en": "A little, I’m learning."
+  },
+  {
+    "it": "Quanti anni hai?",
+    "bn": "কুয়ান্তি আন্নি আয়?",
+    "bnMeaning": "তোমার বয়স কত?",
+    "en": "How old are you?"
+  },
+  {
+    "it": "Ho venticinque anni.",
+    "bn": "ও ভেন্তিচিনকুয়ে আন্নি।",
+    "bnMeaning": "আমার বয়স পঁচিশ বছর।",
+    "en": "I am twenty-five years old."
+  },
+  {
+    "it": "Che lavoro fai?",
+    "bn": "কে লাভোরো ফাই?",
+    "bnMeaning": "তুমি কী কাজ করো?",
+    "en": "What do you do?"
+  },
+  {
+    "it": "Lavoro in un ristorante.",
+    "bn": "লাভোরো ইন উন রিস্তোরান্তে।",
+    "bnMeaning": "আমি একটি রেস্টুরেন্টে কাজ করি।",
+    "en": "I work in a restaurant."
+  },
+  {
+    "it": "Hai fratelli o sorelle?",
+    "bn": "আই ফ্রাতেল্লি ও সোরেল্লে?",
+    "bnMeaning": "তোমার কি ভাইবোন আছে?",
+    "en": "Do you have brothers or sisters?"
+  },
+  {
+    "it": "Sì, ho due fratelli.",
+    "bn": "সি, ও দুয়ে ফ্রাতেল্লি।",
+    "bnMeaning": "হ্যাঁ, আমার দুই ভাই আছে।",
+    "en": "Yes, I have two brothers."
+  },
+  {
+    "it": "Dove abiti?",
+    "bn": "দোভে আবিতি?",
+    "bnMeaning": "তুমি কোথায় থাকো?",
+    "en": "Where do you live?"
+  },
+  {
+    "it": "Abito a Roma.",
+    "bn": "আবিতো আ রোমা।",
+    "bnMeaning": "আমি রোমে থাকি।",
+    "en": "I live in Rome."
+  },
+  {
+    "it": "Ti piace l’Italia?",
+    "bn": "তি পিয়াচে ল ইতালিয়া?",
+    "bnMeaning": "তোমার কি ইতালি ভালো লাগে?",
+    "en": "Do you like Italy?"
+  },
+  {
+    "it": "Sì, mi piace molto.",
+    "bn": "সি, মি পিয়াচে মোলতো।",
+    "bnMeaning": "হ্যাঁ, আমার খুব ভালো লাগে।",
+    "en": "Yes, I like it a lot."
+  },
+  {
+    "it": "Che ore sono?",
+    "bn": "কে ওরে সোন্নো?",
+    "bnMeaning": "কয়টা বাজে?",
+    "en": "What time is it?"
+  },
+  {
+    "it": "Sono le tre.",
+    "bn": "সোনো লে ত্রে।",
+    "bnMeaning": "তিনটা বাজে।",
+    "en": "It’s three o’clock."
+  },
+  {
+    "it": "Può aiutarmi?",
+    "bn": "পুয়ো আয়ুতারমি?",
+    "bnMeaning": "আপনি কি আমাকে সাহায্য করতে পারেন?",
+    "en": "Can you help me?"
+  },
+  {
+    "it": "Dove si trova la stazione?",
+    "bn": "দোভে সি ত্রোভা লা স্তাজিওনে?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the station?"
+  },
+  {
+    "it": "Quanto costa questo?",
+    "bn": "কুয়ান্তো কোস্তা কুয়েস্তো?",
+    "bnMeaning": "এটার দাম কত?",
+    "en": "How much does this cost?"
+  },
+  {
+    "it": "Parli inglese?",
+    "bn": "পারলি ইংলেজে?",
+    "bnMeaning": "আপনি কি ইংরেজি বলেন?",
+    "en": "Do you speak English?"
+  },
+  {
+    "it": "Non capisco.",
+    "bn": "নোন কাপনিসকো।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don’t understand."
+  },
+  {
+    "it": "Scrivilo, per favore.",
+    "bn": "স্ক্রিভিলো, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে এটা লিখে দিন।",
+    "en": "Please write it down."
+  },
+  {
+    "it": "Aspetta un momento.",
+    "bn": "আসপেত্তা উন মোমেন্তো।",
+    "bnMeaning": "একটু অপেক্ষা করুন।",
+    "en": "Wait a moment."
+  },
+  {
+    "it": "Cosa significa?",
+    "bn": "কোজা সিগনিফিকা?",
+    "bnMeaning": "এর মানে কী?",
+    "en": "What does it mean?"
+  },
+  {
+    "it": "Buona fortuna!",
+    "bn": "বুয়োনা ফোর্তুনা!",
+    "bnMeaning": "শুভ কামনা!",
+    "en": "Good luck!"
+  },
+  {
+    "it": "Ci vediamo domani.",
+    "bn": "চি ভেদিয়ামো দোমানি।",
+    "bnMeaning": "আগামীকাল দেখা হবে।",
+    "en": "See you tomorrow."
+  },
+  {
+    "it": "Scusa, dove è il bagno?",
+    "bn": "স্কুসা, দোভে এ ইল বান্যো?",
+    "bnMeaning": "মাফ করবেন, টয়লেট কোথায়?",
+    "en": "Excuse me, where is the bathroom?"
+  },
+  {
+    "it": "Ho fame.",
+    "bn": "ও ফামে।",
+    "bnMeaning": "আমার খিদে পেয়েছে।",
+    "en": "I’m hungry."
+  },
+  {
+    "it": "Ho sete.",
+    "bn": "ও সে-তে।",
+    "bnMeaning": "আমার পিপাসা পেয়েছে।",
+    "en": "I’m thirsty."
+  },
+  {
+    "it": "Sono stanco.",
+    "bn": "সোনো স্তাঙ্কো।",
+    "bnMeaning": "আমি ক্লান্ত।",
+    "en": "I am tired."
+  },
+  {
+    "it": "Andiamo!",
+    "bn": "আন্দিয়ামো!",
+    "bnMeaning": "চলো যাই!",
+    "en": "Let’s go!"
+  },
+  {
+    "it": "È molto lontano?",
+    "bn": "এ মোলতো লোনতানো?",
+    "bnMeaning": "এটা কি অনেক দূরে?",
+    "en": "Is it very far?"
+  },
+  {
+    "it": "È vicino.",
+    "bn": "এ ভিচিনো।",
+    "bnMeaning": "এটা কাছে।",
+    "en": "It’s nearby."
+  },
+  {
+    "it": "Per favore, parli più lentamente.",
+    "bn": "পের ফাভোরে, পারলি পিউ লেনতামেন্তে।",
+    "bnMeaning": "দয়া করে একটু ধীরে বলুন।",
+    "en": "Please speak more slowly."
+  },
+  {
+    "it": "Non lo so.",
+    "bn": "নন লো সো।",
+    "bnMeaning": "আমি জানি না।",
+    "en": "I don’t know."
+  },
+  {
+    "it": "Va bene.",
+    "bn": "ভা বেনে।",
+    "bnMeaning": "ঠিক আছে।",
+    "en": "Alright."
+  },
+  {
+    "it": "Mi dispiace.",
+    "bn": "মি ডিসপিয়াচে।",
+    "bnMeaning": "আমি দুঃখিত।",
+    "en": "I’m sorry."
+  },
+  {
+    "it": "È un'emergenza!",
+    "bn": "এ উন এমেরজেন্‌জা!",
+    "bnMeaning": "এটা জরুরি অবস্থা!",
+    "en": "It’s an emergency!"
+  },
+  {
+    "it": "Chiami un'ambulanza!",
+    "bn": "কিয়ামি উন অ্যাম্বুলাঞ্জা!",
+    "bnMeaning": "একটি অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "C'è un problema.",
+    "bn": "চে উন প্রোব্লেমা।",
+    "bnMeaning": "একটা সমস্যা হয়েছে।",
+    "en": "There’s a problem."
+  },
+  {
+    "it": "Sono malato.",
+    "bn": "সোনো মালাতো।",
+    "bnMeaning": "আমি অসুস্থ।",
+    "en": "I am sick."
+  },
+  {
+    "it": "Dove posso comprare un biglietto?",
+    "bn": "দোভে পোসো কম্প্রারে উন বিল্লিয়েত্তো?",
+    "bnMeaning": "আমি কোথায় টিকিট কিনতে পারি?",
+    "en": "Where can I buy a ticket?"
+  },
+  {
+    "it": "Che giorno è oggi?",
+    "bn": "কে জর্নো এ অজ্জি?",
+    "bnMeaning": "আজ কী দিন?",
+    "en": "What day is it today?"
+  },
+  {
+    "it": "È lunedì.",
+    "bn": "এ লুনেদি।",
+    "bnMeaning": "আজ সোমবার।",
+    "en": "It’s Monday."
+  },
+
+  
 ]
