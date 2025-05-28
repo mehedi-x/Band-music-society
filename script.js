@@ -127,8 +127,19 @@ modeToggle.addEventListener('click', () => {
 });
 
 //মেনু 
+// ☰ মেনু টগল
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+
+if (menuToggle && sideMenu) {
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('active');
+  });
+}
+
+// ✖ ক্লোজ বাটন টগল
 const closeMenu = document.getElementById('close-menu');
-if (closeMenu) {
+if (closeMenu && sideMenu) {
   closeMenu.addEventListener('click', () => {
     sideMenu.classList.remove('active');
   });
