@@ -1,0 +1,62 @@
+[
+  {
+    "italian": "Buongiorno, come sta?",
+    "pronunciation_bn": "বুয়োনজোর্নো, কোমে স্তা?",
+    "meaning_bn": "সুপ্রভাত, আপনি কেমন আছেন?",
+    "meaning_en": "Good morning, how are you?"
+  },
+  {
+    "italian": "Mi chiamo Rahim.",
+    "pronunciation_bn": "মি কিয়ামো রহিম।",
+    "meaning_bn": "আমার নাম রহিম।",
+    "meaning_en": "My name is Rahim."
+  },
+  {
+    "italian": "Dove posso trovare un supermercato?",
+    "pronunciation_bn": "দোভে পোস্সো ত্রোভারে উন সুপেরমারকাতো?",
+    "meaning_bn": "আমি কোথায় একটি সুপারমার্কেট খুঁজে পেতে পারি?",
+    "meaning_en": "Where can I find a supermarket?"
+  },
+  {
+    "italian": "Lavoro in una fabbrica.",
+    "pronunciation_bn": "লাভোরো ইন উনা ফাব্রিকা।",
+    "meaning_bn": "আমি একটি ফ্যাক্টরিতে কাজ করি।",
+    "meaning_en": "I work in a factory."
+  },
+  {
+    "italian": "Oggi devo andare dal dottore.",
+    "pronunciation_bn": "অজ্জি দেভো আন্দারে দাল দোত্তোরে।",
+    "meaning_bn": "আজ আমাকে ডাক্তারের কাছে যেতে হবে।",
+    "meaning_en": "Today I have to go to the doctor."
+  },
+  {
+    "italian": "Quanto costa questo?",
+    "pronunciation_bn": "কোয়ান্তো কোস্তা কুয়েস্তো?",
+    "meaning_bn": "এটার দাম কত?",
+    "meaning_en": "How much does this cost?"
+  },
+  {
+    "italian": "Mi serve un permesso di soggiorno.",
+    "pronunciation_bn": "মি সেরভে উন পেরমেস্সো দি সোজ্জোর্নো।",
+    "meaning_bn": "আমার একটি থাকার অনুমতির প্রয়োজন।",
+    "meaning_en": "I need a residence permit."
+  },
+  {
+    "italian": "Ho bisogno di un medico.",
+    "pronunciation_bn": "ও বিজোন্নো দি উন মেডিকো।",
+    "meaning_bn": "আমার একজন চিকিৎসকের দরকার।",
+    "meaning_en": "I need a doctor."
+  },
+  {
+    "italian": "Può aiutarmi, per favore?",
+    "pronunciation_bn": "পুয়ো আয়ুতারমি, পের ফাভোরে?",
+    "meaning_bn": "আপনি কি দয়া করে আমাকে সাহায্য করতে পারেন?",
+    "meaning_en": "Can you help me, please?"
+  },
+  {
+    "italian": "Sto cercando una casa in affitto.",
+    "pronunciation_bn": "স্তো চেরকান্দো উনা কাজা ইন আফফিত্তো।",
+    "meaning_bn": "আমি ভাড়ার জন্য একটি বাসা খুঁজছি।",
+    "meaning_en": "I am looking for a house for rent."
+  }
+]
