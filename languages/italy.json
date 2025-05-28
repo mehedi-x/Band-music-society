@@ -562,5 +562,287 @@
     "bn": "তোর্নো ত্রা পোকো।",
     "bnMeaning": "আমি একটু পরেই ফিরে আসবো।",
     "en": "I’ll be back soon."
+  },
+  {
+    "it": "Dove lavori?",
+    "bn": "দোভে লাভোরি?",
+    "bnMeaning": "তুমি কোথায় কাজ করো?",
+    "en": "Where do you work?"
+  },
+  {
+    "it": "Lavoro in una fabbrica.",
+    "bn": "লাভোরো ইন উনা ফাব্রিকা।",
+    "bnMeaning": "আমি একটি ফ্যাক্টরিতে কাজ করি।",
+    "en": "I work in a factory."
+  },
+  {
+    "it": "A che ora inizi a lavorare?",
+    "bn": "আ কে ওরা ইনিচি আ লাভোরারে?",
+    "bnMeaning": "তুমি কখন কাজ শুরু করো?",
+    "en": "What time do you start working?"
+  },
+  {
+    "it": "Inizio alle otto.",
+    "bn": "ইনিজিও আল্লে ওত্তো।",
+    "bnMeaning": "আমি আটটায় শুরু করি।",
+    "en": "I start at eight."
+  },
+  {
+    "it": "Fai turni?",
+    "bn": "ফাই তুরনি?",
+    "bnMeaning": "তুমি কি শিফটে কাজ করো?",
+    "en": "Do you work in shifts?"
+  },
+  {
+    "it": "Sì, faccio i turni.",
+    "bn": "সি, ফাচ্চো ই তুরনি।",
+    "bnMeaning": "হ্যাঁ, আমি শিফটে কাজ করি।",
+    "en": "Yes, I work in shifts."
+  },
+  {
+    "it": "Quante ore lavori al giorno?",
+    "bn": "কুয়ান্তে ওরে লাভোরি আল জোর্নো?",
+    "bnMeaning": "তুমি দিনে কত ঘণ্টা কাজ করো?",
+    "en": "How many hours do you work per day?"
+  },
+  {
+    "it": "Lavoro otto ore.",
+    "bn": "লাভোরো ওত্তো ওরে।",
+    "bnMeaning": "আমি আট ঘণ্টা কাজ করি।",
+    "en": "I work eight hours."
+  },
+  {
+    "it": "Hai il permesso di soggiorno?",
+    "bn": "আই ইল পেরমেস্সো দি সোজ্জোর্নো?",
+    "bnMeaning": "তোমার কি থাকার অনুমতি আছে?",
+    "en": "Do you have a residence permit?"
+  },
+  {
+    "it": "Sì, ce l'ho.",
+    "bn": "সি, চে লো।",
+    "bnMeaning": "হ্যাঁ, আমার আছে।",
+    "en": "Yes, I have it."
+  },
+  {
+    "it": "Devo rinnovare il permesso.",
+    "bn": "দেভো রিনোভারে ইল পেরমেস্সো।",
+    "bnMeaning": "আমাকে পারমিট নবায়ন করতে হবে।",
+    "en": "I have to renew the permit."
+  },
+  {
+    "it": "Hai il contratto?",
+    "bn": "আই ইল কন্ত্রাত্তো?",
+    "bnMeaning": "তোমার কি কনট্রাক্ট আছে?",
+    "en": "Do you have a contract?"
+  },
+  {
+    "it": "Lavoro con contratto a tempo determinato.",
+    "bn": "লাভোরো কন কন্ত্রাত্তো আ তেম্পো দেতেরমিনাতো।",
+    "bnMeaning": "আমি নির্দিষ্ট মেয়াদের কনট্রাক্টে কাজ করি।",
+    "en": "I work on a fixed-term contract."
+  },
+  {
+    "it": "Che tipo di lavoro fai?",
+    "bn": "কে তিপো দি লাভোরো ফাই?",
+    "bnMeaning": "তুমি কী ধরনের কাজ করো?",
+    "en": "What kind of work do you do?"
+  },
+  {
+    "it": "Sono operaio.",
+    "bn": "সোনো অপেরাইও।",
+    "bnMeaning": "আমি শ্রমিক।",
+    "en": "I am a worker."
+  },
+  {
+    "it": "Dove vai oggi?",
+    "bn": "দোভে ভাই অজ্জি?",
+    "bnMeaning": "তুমি আজ কোথায় যাচ্ছো?",
+    "en": "Where are you going today?"
+  },
+  {
+    "it": "Vado in ufficio.",
+    "bn": "ভাদো ইন উফিচিও।",
+    "bnMeaning": "আমি অফিসে যাচ্ছি।",
+    "en": "I’m going to the office."
+  },
+  {
+    "it": "Hai una pausa ora?",
+    "bn": "আই উনা পাউজা ওরা?",
+    "bnMeaning": "তোমার এখন বিরতি আছে?",
+    "en": "Do you have a break now?"
+  },
+  {
+    "it": "Sì, ho 30 minuti di pausa.",
+    "bn": "সি, ও ত্রেন্তা মিনিটি দি পাউজা।",
+    "bnMeaning": "হ্যাঁ, আমার ৩০ মিনিট বিরতি আছে।",
+    "en": "Yes, I have a 30-minute break."
+  },
+  {
+    "it": "Quando finisci di lavorare?",
+    "bn": "কুয়ানদো ফিনিসচি দি লাভোরারে?",
+    "bnMeaning": "তুমি কখন কাজ শেষ করো?",
+    "en": "When do you finish work?"
+  },
+  {
+    "it": "Finisco alle cinque.",
+    "bn": "ফিনিসকো আল্লে চিনকুয়ে।",
+    "bnMeaning": "আমি পাঁচটায় কাজ শেষ করি।",
+    "en": "I finish at five."
+  },
+  {
+    "it": "Hai il giorno libero domani?",
+    "bn": "আই ইল জোর্নো লিবেরো দোমানি?",
+    "bnMeaning": "তোমার কি আগামীকাল ছুটি?",
+    "en": "Do you have a day off tomorrow?"
+  },
+  {
+    "it": "Sì, domani non lavoro.",
+    "bn": "সি, দোমানি নন লাভোরো।",
+    "bnMeaning": "হ্যাঁ, আমি আগামীকাল কাজ করবো না।",
+    "en": "Yes, I’m not working tomorrow."
+  },
+  {
+    "it": "Dove vai in vacanza?",
+    "bn": "দোভে ভাই ইন ভাকান্‌জা?",
+    "bnMeaning": "তুমি ছুটিতে কোথায় যাচ্ছো?",
+    "en": "Where are you going on vacation?"
+  },
+  {
+    "it": "Vado al mare.",
+    "bn": "ভাদো আল মারে।",
+    "bnMeaning": "আমি সমুদ্র সৈকতে যাচ্ছি।",
+    "en": "I’m going to the sea."
+  },
+  {
+    "it": "Buona vacanza!",
+    "bn": "বুয়োনা ভাকান্‌জা!",
+    "bnMeaning": "ছুটি উপভোগ করো!",
+    "en": "Have a nice vacation!"
+  },
+  {
+    "it": "Devo andare al comune.",
+    "bn": "দেভো আন্দারে আল কোমুনে।",
+    "bnMeaning": "আমাকে মিউনিসিপাল অফিসে যেতে হবে।",
+    "en": "I have to go to the town hall."
+  },
+  {
+    "it": "Voglio cambiare indirizzo.",
+    "bn": "ভোল্লিও কামবিয়ার ইন্দিরিৎসো।",
+    "bnMeaning": "আমি ঠিকানা পরিবর্তন করতে চাই।",
+    "en": "I want to change my address."
+  },
+  {
+    "it": "Hai un appuntamento?",
+    "bn": "আই উন আপুন্তামেন্তো?",
+    "bnMeaning": "তোমার কি অ্যাপয়েন্টমেন্ট আছে?",
+    "en": "Do you have an appointment?"
+  },
+  {
+    "it": "Sì, alle dieci.",
+    "bn": "সি, আল্লে দিয়েচি।",
+    "bnMeaning": "হ্যাঁ, দশটায়।",
+    "en": "Yes, at ten."
+  },
+  {
+    "it": "Porta i documenti.",
+    "bn": "পোর্তা ই দকুমেন্তি।",
+    "bnMeaning": "নথিপত্র নিয়ে যাও।",
+    "en": "Bring the documents."
+  },
+  {
+    "it": "Serve una fotocopia.",
+    "bn": "সেরভে উনা ফোতোকোপিয়া।",
+    "bnMeaning": "একটি ফটোকপি দরকার।",
+    "en": "A photocopy is needed."
+  },
+  {
+    "it": "Vai allo sportello numero 3.",
+    "bn": "ভাই আল্লো স্পোর্তেল্লো নুমেরো ত্রে।",
+    "bnMeaning": "তোমাকে কাউন্টার নম্বর ৩-এ যেতে হবে।",
+    "en": "Go to counter number 3."
+  },
+  {
+    "it": "Aspetta il tuo turno.",
+    "bn": "আসপেত্তা ইল তুও তুর্নো।",
+    "bnMeaning": "তোমার পালা অপেক্ষা করো।",
+    "en": "Wait for your turn."
+  },
+  {
+    "it": "Firma qui.",
+    "bn": "ফির্‌মা কুই।",
+    "bnMeaning": "এখানে সাইন করো।",
+    "en": "Sign here."
+  },
+  {
+    "it": "Hai bisogno di assistenza?",
+    "bn": "আই বিজোন্নো দি আসিসতেন্‌ৎসা?",
+    "bnMeaning": "তোমার কি সাহায্য দরকার?",
+    "en": "Do you need assistance?"
+  },
+  {
+    "it": "Tutto è a posto.",
+    "bn": "তুত্তো এ আ পোস্তো।",
+    "bnMeaning": "সব কিছু ঠিক আছে।",
+    "en": "Everything is fine."
+  },
+  {
+    "it": "Grazie mille!",
+    "bn": "গ্রাৎজিয়ে মিল্লে!",
+    "bnMeaning": "হাজারো ধন্যবাদ!",
+    "en": "Thanks a lot!"
+  },
+  {
+    "it": "Prego.",
+    "bn": "প্রেগো।",
+    "bnMeaning": "স্বাগতম।",
+    "en": "You’re welcome."
+  },
+  {
+    "it": "Arrivederci!",
+    "bn": "আরিভেদেরচি!",
+    "bnMeaning": "বিদায়!",
+    "en": "Goodbye!"
+  },
+  {
+    "it": "Ci sentiamo presto.",
+    "bn": "চি সেনতিয়ামো প্রেস্তো।",
+    "bnMeaning": "শীঘ্রই কথা হবে।",
+    "en": "We’ll talk soon."
+  },
+  {
+    "it": "A domani!",
+    "bn": "আ দোমানি!",
+    "bnMeaning": "আগামীকাল দেখা হবে!",
+    "en": "See you tomorrow!"
+  },
+  {
+    "it": "Buona giornata!",
+    "bn": "বুয়োনা জোর্নাতা!",
+    "bnMeaning": "শুভ দিন!",
+    "en": "Have a good day!"
+  },
+  {
+    "it": "Buona serata!",
+    "bn": "বুয়োনা সেরাতা!",
+    "bnMeaning": "শুভ সন্ধ্যা!",
+    "en": "Have a good evening!"
+  },
+  {
+    "it": "Buonanotte!",
+    "bn": "বুয়োনানোত্তে!",
+    "bnMeaning": "শুভ রাত্রি!",
+    "en": "Good night!"
+  },
+  {
+    "it": "A dopo!",
+    "bn": "আ দোপো!",
+    "bnMeaning": "পরে দেখা হবে!",
+    "en": "See you later!"
+  },
+  {
+    "it": "Stammi bene!",
+    "bn": "স্তাম্মি বেনে!",
+    "bnMeaning": "ভালো থেকো!",
+    "en": "Take care!"
   }
 ]
