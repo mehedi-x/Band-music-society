@@ -3,11 +3,57 @@ const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
 
 const langCodeMap = {
-  russian: 'ru',
-  german: 'de',
-  french: 'fr',
-  spanish: 'es',
-  italian: 'it'
+  austria: 'de',
+  belgium: 'nl',
+  czech: 'cs',
+  denmark: 'da',
+  estonia: 'et',
+  finland: 'fi',
+  france: 'fr',
+  germany: 'de',
+  greece: 'el',
+  hungary: 'hu',
+  iceland: 'is',
+  italy: 'it',
+  latvia: 'lv',
+  liechtenstein: 'de',
+  lithuania: 'lt',
+  luxembourg: 'lb',
+  malta: 'mt',
+  netherlands: 'nl',
+  norway: 'no',
+  poland: 'pl',
+  portugal: 'pt',
+  slovakia: 'sk',
+  slovenia: 'sl',
+  spain: 'es',
+  sweden: 'sv',
+  switzerland: 'de',
+
+  russian: 'ru', // Russian language
+
+  albania: 'sq',
+  andorra: 'ca',
+  armenia: 'hy',
+  azerbaijan: 'az',
+  bosnia: 'bs',
+  bulgaria: 'bg',
+  croatia: 'hr',
+  cyprus: 'el',
+  georgia: 'ka',
+  ireland: 'en',
+  kosovo: 'sq',
+  moldova: 'ro',
+  monaco: 'fr',
+  montenegro: 'sr',
+  northmacedonia: 'mk',
+  romania: 'ro',
+  sanmarino: 'it',
+  serbia: 'sr',
+  turkey: 'tr',
+  ukraine: 'uk',
+  unitedkingdom: 'en',
+  vatican: 'la'
 };
 
 // ✅ পেজ লোড হলে লোকালস্টোরেজ থেকে ভাষা ও থিম লোড
