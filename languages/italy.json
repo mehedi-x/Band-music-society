@@ -844,5 +844,281 @@
     "bn": "স্তাম্মি বেনে!",
     "bnMeaning": "ভালো থেকো!",
     "en": "Take care!"
+  },
+  {
+    "it": "Hai fratelli o sorelle?",
+    "bn": "আই ফ্রাতেল্লি ও সোরেল্লে?",
+    "bnMeaning": "তোমার ভাই বা বোন আছে?",
+    "en": "Do you have brothers or sisters?"
+  },
+  {
+    "it": "Ho due fratelli.",
+    "bn": "ও দুয়ে ফ্রাতেল্লি।",
+    "bnMeaning": "আমার দুই ভাই আছে।",
+    "en": "I have two brothers."
+  },
+  {
+    "it": "Ho una sorella.",
+    "bn": "ও উনা সোরেল্লা।",
+    "bnMeaning": "আমার এক বোন আছে।",
+    "en": "I have one sister."
+  },
+  {
+    "it": "Hai figli?",
+    "bn": "আই ফিল্লি?",
+    "bnMeaning": "তোমার কি সন্তান আছে?",
+    "en": "Do you have children?"
+  },
+  {
+    "it": "Sì, ho un figlio.",
+    "bn": "সি, ও উন ফিল্লিও।",
+    "bnMeaning": "হ্যাঁ, আমার এক ছেলে আছে।",
+    "en": "Yes, I have a son."
+  },
+  {
+    "it": "Ho due figlie.",
+    "bn": "ও দুয়ে ফিল্লিয়ে।",
+    "bnMeaning": "আমার দুই মেয়ে আছে।",
+    "en": "I have two daughters."
+  },
+  {
+    "it": "Come si chiama tuo padre?",
+    "bn": "কোমে সি কিয়ামা তুও পাদ্রে?",
+    "bnMeaning": "তোমার বাবার নাম কী?",
+    "en": "What’s your father’s name?"
+  },
+  {
+    "it": "Si chiama Karim.",
+    "bn": "সি কিয়ামা কারিম।",
+    "bnMeaning": "তার নাম কারিম।",
+    "en": "His name is Karim."
+  },
+  {
+    "it": "E tua madre?",
+    "bn": "এ তুয়া মাদ্রে?",
+    "bnMeaning": "আর তোমার মা?",
+    "en": "And your mother?"
+  },
+  {
+    "it": "Mia madre si chiama Runa.",
+    "bn": "মিয়া মাদ্রে সি কিয়ামা রুনা।",
+    "bnMeaning": "আমার মায়ের নাম রুনা।",
+    "en": "My mother’s name is Runa."
+  },
+  {
+    "it": "Hai un animale domestico?",
+    "bn": "আই উন আনিমালে দোমেস্তিকো?",
+    "bnMeaning": "তোমার কি কোনো পোষা প্রাণী আছে?",
+    "en": "Do you have a pet?"
+  },
+  {
+    "it": "Ho un gatto.",
+    "bn": "ও উন গাত্তো।",
+    "bnMeaning": "আমার একটি বিড়াল আছে।",
+    "en": "I have a cat."
+  },
+  {
+    "it": "Ho un cane.",
+    "bn": "ও উন কানে।",
+    "bnMeaning": "আমার একটি কুকুর আছে।",
+    "en": "I have a dog."
+  },
+  {
+    "it": "Quanti anni hai?",
+    "bn": "কুয়ান্তি আন্নি আই?",
+    "bnMeaning": "তোমার বয়স কত?",
+    "en": "How old are you?"
+  },
+  {
+    "it": "Ho venticinque anni.",
+    "bn": "ও ভেন্তিচিনকুয়ে আন্নি।",
+    "bnMeaning": "আমার বয়স পঁচিশ বছর।",
+    "en": "I am twenty-five years old."
+  },
+  {
+    "it": "Quando sei nato?",
+    "bn": "কুয়ান্দো সাই নাতো?",
+    "bnMeaning": "তুমি কখন জন্মগ্রহণ করেছো?",
+    "en": "When were you born?"
+  },
+  {
+    "it": "Sono nato nel 1990.",
+    "bn": "সোনো নাতো নেল উন মিলেনোভেচেন্তো নভান্নতা।",
+    "bnMeaning": "আমি ১৯৯০ সালে জন্মগ্রহণ করেছি।",
+    "en": "I was born in 1990."
+  },
+  {
+    "it": "Dove sei nato?",
+    "bn": "দোভে সাই নাতো?",
+    "bnMeaning": "তুমি কোথায় জন্মগ্রহণ করেছো?",
+    "en": "Where were you born?"
+  },
+  {
+    "it": "Sono nato a Dhaka.",
+    "bn": "সোনো নাতো আ ঢাকা।",
+    "bnMeaning": "আমি ঢাকায় জন্মগ্রহণ করেছি।",
+    "en": "I was born in Dhaka."
+  },
+  {
+    "it": "Parli italiano?",
+    "bn": "পারলি ইতালিয়ানো?",
+    "bnMeaning": "তুমি কি ইতালিয়ান ভাষা বলতে পারো?",
+    "en": "Do you speak Italian?"
+  },
+  {
+    "it": "Parlo un po’ di italiano.",
+    "bn": "পারলো উন পো দি ইতালিয়ানো।",
+    "bnMeaning": "আমি অল্প ইতালিয়ান বলতে পারি।",
+    "en": "I speak a little Italian."
+  },
+  {
+    "it": "Sto imparando.",
+    "bn": "স্তো ইমপারান্দো।",
+    "bnMeaning": "আমি শিখছি।",
+    "en": "I am learning."
+  },
+  {
+    "it": "Mi puoi insegnare?",
+    "bn": "মি পুই ইনসেনিয়ারি?",
+    "bnMeaning": "তুমি কি আমাকে শিখাতে পারো?",
+    "en": "Can you teach me?"
+  },
+  {
+    "it": "Certo!",
+    "bn": "চের্তো!",
+    "bnMeaning": "অবশ্যই!",
+    "en": "Of course!"
+  },
+  {
+    "it": "Ripeti per favore.",
+    "bn": "রিপেতি পের ফাভোরে।",
+    "bnMeaning": "দয়া করে আবার বলো।",
+    "en": "Please repeat."
+  },
+  {
+    "it": "Parla lentamente.",
+    "bn": "পারলা লেন্তামেন্তে।",
+    "bnMeaning": "আস্তে আস্তে বলো।",
+    "en": "Speak slowly."
+  },
+  {
+    "it": "Non capisco.",
+    "bn": "নন কাপনিস্কো।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don’t understand."
+  },
+  {
+    "it": "Puoi scriverlo?",
+    "bn": "পুই স্ক্রিভেরলো?",
+    "bnMeaning": "তুমি কি এটা লিখতে পারো?",
+    "en": "Can you write it down?"
+  },
+  {
+    "it": "Che significa questo?",
+    "bn": "কে সিনিফিকা কুয়েস্তো?",
+    "bnMeaning": "এর মানে কী?",
+    "en": "What does this mean?"
+  },
+  {
+    "it": "Mi dispiace.",
+    "bn": "মি ডিসপিয়াচে।",
+    "bnMeaning": "আমি দুঃখিত।",
+    "en": "I’m sorry."
+  },
+  {
+    "it": "Non è colpa mia.",
+    "bn": "নন এ কোলপা মিয়া।",
+    "bnMeaning": "এটা আমার দোষ নয়।",
+    "en": "It’s not my fault."
+  },
+  {
+    "it": "Va bene.",
+    "bn": "ভা বেনে।",
+    "bnMeaning": "ঠিক আছে।",
+    "en": "Okay."
+  },
+  {
+    "it": "Non c'è problema.",
+    "bn": "নন চে প্রোব্লেমা।",
+    "bnMeaning": "সমস্যা নেই।",
+    "en": "No problem."
+  },
+  {
+    "it": "È urgente.",
+    "bn": "এ উর্জেন্তে।",
+    "bnMeaning": "এটা জরুরি।",
+    "en": "It’s urgent."
+  },
+  {
+    "it": "C'è una farmacia qui vicino?",
+    "bn": "চে উনা ফার্মাসিয়া কুই ভিচিনো?",
+    "bnMeaning": "এখানে কাছে কোনো ফার্মেসি আছে?",
+    "en": "Is there a pharmacy nearby?"
+  },
+  {
+    "it": "Ho mal di testa.",
+    "bn": "ও মাল দি তেস্তা।",
+    "bnMeaning": "আমার মাথা ব্যথা করছে।",
+    "en": "I have a headache."
+  },
+  {
+    "it": "Ho la febbre.",
+    "bn": "ও লা ফেব্রে।",
+    "bnMeaning": "আমার জ্বর এসেছে।",
+    "en": "I have a fever."
+  },
+  {
+    "it": "Mi sento debole.",
+    "bn": "মি সেন্তো দেবোলে।",
+    "bnMeaning": "আমি দুর্বল বোধ করছি।",
+    "en": "I feel weak."
+  },
+  {
+    "it": "Hai un termometro?",
+    "bn": "আই উন তেরমোমেত্রো?",
+    "bnMeaning": "তোমার কি থার্মোমিটার আছে?",
+    "en": "Do you have a thermometer?"
+  },
+  {
+    "it": "Devo vedere un medico.",
+    "bn": "দেভো ভেদেরে উন মেডিকো।",
+    "bnMeaning": "আমাকে একজন ডাক্তারের কাছে যেতে হবে।",
+    "en": "I have to see a doctor."
+  },
+  {
+    "it": "Chiamate un'ambulanza!",
+    "bn": "কিয়ামাতে উন আম্বুলান্‌ৎসা!",
+    "bnMeaning": "একটি অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "Portami all'ospedale.",
+    "bn": "পোর্তামি অল্ল’ওস্পেদালে।",
+    "bnMeaning": "আমাকে হাসপাতালে নিয়ে চলো।",
+    "en": "Take me to the hospital."
+  },
+  {
+    "it": "Ho bisogno di aiuto subito.",
+    "bn": "ও বিজোন্নো দি আয়ুতো সুবিতো।",
+    "bnMeaning": "আমার এখনই সাহায্য দরকার।",
+    "en": "I need help immediately."
+  },
+  {
+    "it": "Mi gira la testa.",
+    "bn": "মি জিরা লা তেস্তা।",
+    "bnMeaning": "আমার মাথা ঘুরছে।",
+    "en": "I feel dizzy."
+  },
+  {
+    "it": "Sono allergico.",
+    "bn": "সোনো অল্লেরজিকো।",
+    "bnMeaning": "আমি অ্যালার্জিতে আক্রান্ত।",
+    "en": "I’m allergic."
+  },
+  {
+    "it": "Sto molto male.",
+    "bn": "স্তো মোলতো মালে।",
+    "bnMeaning": "আমি খুব অসুস্থ।",
+    "en": "I’m very sick."
   }
 ]
