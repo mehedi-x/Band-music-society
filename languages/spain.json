@@ -1,1 +1,62 @@
-
+[
+  {
+    "es": "Hola, ¿cómo estás?",
+    "bn": "ওলা, কোমো এস্তাস?",
+    "bnMeaning": "হ্যালো, আপনি কেমন আছেন?",
+    "en": "Hello, how are you?"
+  },
+  {
+    "es": "Me llamo Rahim.",
+    "bn": "মে ইয়ামো রহিম।",
+    "bnMeaning": "আমার নাম রহিম।",
+    "en": "My name is Rahim."
+  },
+  {
+    "es": "¿Dónde está el supermercado?",
+    "bn": "দোন্দে এস্তা এল সুপেরমেরকাদো?",
+    "bnMeaning": "সুপারমার্কেট কোথায়?",
+    "en": "Where is the supermarket?"
+  },
+  {
+    "es": "Trabajo en una fábrica.",
+    "bn": "ত্রাবাহো এন উনা ফাব্রিকা।",
+    "bnMeaning": "আমি একটি ফ্যাক্টরিতে কাজ করি।",
+    "en": "I work in a factory."
+  },
+  {
+    "es": "Necesito ir al médico.",
+    "bn": "নেসেসিতো ইর আল মেডিকো।",
+    "bnMeaning": "আমার ডাক্তারের কাছে যেতে হবে।",
+    "en": "I need to go to the doctor."
+  },
+  {
+    "es": "¿Cuánto cuesta esto?",
+    "bn": "কুয়ানতো কুয়েস্তা এস্তো?",
+    "bnMeaning": "এটার দাম কত?",
+    "en": "How much does this cost?"
+  },
+  {
+    "es": "Busco una casa para alquilar.",
+    "bn": "বুস্কো উনা কাসা পারা আলকিলার।",
+    "bnMeaning": "আমি ভাড়ার জন্য একটি বাসা খুঁজছি।",
+    "en": "I am looking for a house to rent."
+  },
+  {
+    "es": "¿Puede ayudarme, por favor?",
+    "bn": "পুয়েদে আয়ুদারমে, পর ফাভোর?",
+    "bnMeaning": "আপনি কি দয়া করে আমাকে সাহায্য করতে পারেন?",
+    "en": "Can you help me, please?"
+  },
+  {
+    "es": "Estoy aprendiendo español.",
+    "bn": "এস্তোই আপ্রেন্দিয়েনদো এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ ভাষা শিখছি।",
+    "en": "I am learning Spanish."
+  },
+  {
+    "es": "No entiendo.",
+    "bn": "নো এনতিয়েন্দো।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don’t understand."
+  }
+]
