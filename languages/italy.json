@@ -1846,5 +1846,125 @@
     "bn": "পুয়ো আয়ুতারমি আ ত্রোভারে লা স্ত্রাদা?",
     "bnMeaning": "আপনি কি আমাকে রাস্তা খুঁজে পেতে সাহায্য করতে পারেন?",
     "en": "Can you help me find the way?"
+  },
+  {
+    "it": "Dove si trova la stazione?",
+    "bn": "দোভে সি ত্রোভা লা স্তাচিওনে?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the station?"
+  },
+  {
+    "it": "Vorrei comprare un biglietto.",
+    "bn": "ভোরেই কোম্প্রারে উন বিলিয়েত্তো।",
+    "bnMeaning": "আমি একটি টিকিট কিনতে চাই।",
+    "en": "I would like to buy a ticket."
+  },
+  {
+    "it": "A che ora parte il treno?",
+    "bn": "আ কে ওরা পারতে ইল ত্রেনো?",
+    "bnMeaning": "ট্রেন কখন ছাড়বে?",
+    "en": "What time does the train leave?"
+  },
+  {
+    "it": "Quanto costa un biglietto?",
+    "bn": "কুয়ান্তো কোস্তা উন বিলিয়েত্তো?",
+    "bnMeaning": "একটি টিকিটের দাম কত?",
+    "en": "How much is a ticket?"
+  },
+  {
+    "it": "Dove devo scendere?",
+    "bn": "দোভে দেভো স্কেন্দেরে?",
+    "bnMeaning": "আমাকে কোথায় নামতে হবে?",
+    "en": "Where do I need to get off?"
+  },
+  {
+    "it": "Questo treno va a Roma?",
+    "bn": "কুয়েস্তো ত্রেনো ভা আ রোমা?",
+    "bnMeaning": "এই ট্রেনটি কি রোমে যায়?",
+    "en": "Does this train go to Rome?"
+  },
+  {
+    "it": "C'è un autobus per il centro?",
+    "bn": "চে উন আউতোবুস পের ইল চেন্ত্রো?",
+    "bnMeaning": "শহরের কেন্দ্রের জন্য কি কোনো বাস আছে?",
+    "en": "Is there a bus to the city center?"
+  },
+  {
+    "it": "Quanto tempo ci vuole per arrivare?",
+    "bn": "কুয়ান্তো তেম্পো চি ভুয়োল পের আরিভারে?",
+    "bnMeaning": "পৌঁছাতে কত সময় লাগবে?",
+    "en": "How long does it take to arrive?"
+  },
+  {
+    "it": "Dove posso comprare un biglietto?",
+    "bn": "দোভে পসসো কোম্প্রারে উন বিলিয়েত্তো?",
+    "bnMeaning": "আমি কোথায় একটি টিকিট কিনতে পারি?",
+    "en": "Where can I buy a ticket?"
+  },
+  {
+    "it": "Mi può indicare la strada?",
+    "bn": "মি পুয়ো ইন্ডিকারে লা স্ত্রাদা?",
+    "bnMeaning": "আপনি কি আমাকে রাস্তা দেখাতে পারেন?",
+    "en": "Can you show me the way?"
+  },
+  {
+    "it": "Voglio andare all'aeroporto.",
+    "bn": "ভোলিও আন্দারে আল্ল'আএরোপোর্তো।",
+    "bnMeaning": "আমি এয়ারপোর্টে যেতে চাই।",
+    "en": "I want to go to the airport."
+  },
+  {
+    "it": "Può chiamare un taxi per me?",
+    "bn": "পুয়ো কিয়ামারে উন টাক্সি পের মে?",
+    "bnMeaning": "আপনি কি আমার জন্য একটি ট্যাক্সি ডাকতে পারেন?",
+    "en": "Can you call a taxi for me?"
+  },
+  {
+    "it": "Quanto dista da qui?",
+    "bn": "কুয়ান্তো ডিস্তা দা কুই?",
+    "bnMeaning": "এটি এখান থেকে কত দূরে?",
+    "en": "How far is it from here?"
+  },
+  {
+    "it": "Vorrei noleggiare una macchina.",
+    "bn": "ভোরেই নোলেজ্জারে উনা মাক্কিনা।",
+    "bnMeaning": "আমি একটি গাড়ি ভাড়া নিতে চাই।",
+    "en": "I would like to rent a car."
+  },
+  {
+    "it": "Dove posso prendere un taxi?",
+    "bn": "দোভে পসসো প্রেনদেরে উন টাক্সি?",
+    "bnMeaning": "আমি কোথায় ট্যাক্সি পেতে পারি?",
+    "en": "Where can I get a taxi?"
+  },
+  {
+    "it": "A che ora chiude il museo?",
+    "bn": "আ কে ওরা কিউদে ইল মুজেও?",
+    "bnMeaning": "মিউজিয়াম কখন বন্ধ হয়?",
+    "en": "What time does the museum close?"
+  },
+  {
+    "it": "Quanto costa il biglietto d'ingresso?",
+    "bn": "কুয়ান্তো কোস্তা ইল বিলিয়েত্তো দিনগ্রেস্সো?",
+    "bnMeaning": "প্রবেশের টিকিটের দাম কত?",
+    "en": "How much is the entrance ticket?"
+  },
+  {
+    "it": "Ci sono sconti per studenti?",
+    "bn": "চি সোনো স্কোন্তি পের স্টুদেন্তি?",
+    "bnMeaning": "ছাত্রদের জন্য কি ছাড় আছে?",
+    "en": "Are there discounts for students?"
+  },
+  {
+    "it": "È aperto oggi?",
+    "bn": "এ আপেরতো অজ্জি?",
+    "bnMeaning": "আজ কি খোলা আছে?",
+    "en": "Is it open today?"
+  },
+  {
+    "it": "Grazie per il suo aiuto.",
+    "bn": "গ্রাতসি পের ইল সুয়ো আয়ুতো।",
+    "bnMeaning": "আপনার সাহায্যের জন্য ধন্যবাদ।",
+    "en": "Thank you for your help."
   }
-  ]
+]
