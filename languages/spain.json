@@ -598,6 +598,308 @@
     "bn": "এস্তোই এসপেরান্দো মি তুর্নো।",
     "bnMeaning": "আমি আমার সিরিয়ালের জন্য অপেক্ষা করছি।",
     "en": "I am waiting for my turn."
+  },
+  {
+    "es": "¿Dónde puedo comprar una tarjeta SIM?",
+    "bn": "দোন্দে পুয়েদো কোম্প্রার উনা তারহেতা সিম?",
+    "bnMeaning": "আমি কোথায় একটি সিম কার্ড কিনতে পারি?",
+    "en": "Where can I buy a SIM card?"
+  },
+  {
+    "es": "Necesito conexión a internet.",
+    "bn": "নেসেসিতো কনেক্সিওন আ ইন্টারনেত।",
+    "bnMeaning": "আমার ইন্টারনেট সংযোগ দরকার।",
+    "en": "I need internet connection."
+  },
+  {
+    "es": "Mi teléfono no funciona.",
+    "bn": "মি তেলেফোনো নো ফুংসিওনা।",
+    "bnMeaning": "আমার ফোন কাজ করছে না।",
+    "en": "My phone is not working."
+  },
+  {
+    "es": "¿Hay Wi-Fi gratis aquí?",
+    "bn": "আই ওয়াইফাই গ্রাতিস আকি?",
+    "bnMeaning": "এখানে কি ফ্রি ওয়াই-ফাই আছে?",
+    "en": "Is there free Wi-Fi here?"
+  },
+  {
+    "es": "La señal es muy débil.",
+    "bn": "লা সেন্যাল এস মুই দেবিল।",
+    "bnMeaning": "সংকেত খুব দুর্বল।",
+    "en": "The signal is very weak."
+  },
+  {
+    "es": "¿Puedo usar tu teléfono?",
+    "bn": "পুয়েদো উসার তু তেলেফোনো?",
+    "bnMeaning": "আমি কি তোমার ফোন ব্যবহার করতে পারি?",
+    "en": "Can I use your phone?"
+  },
+  {
+    "es": "¿Tienes cargador para este modelo?",
+    "bn": "তিয়েনেস কারগাদোর পারা এস্তে মদেলো?",
+    "bnMeaning": "এই মডেলের জন্য আপনার চার্জার আছে কি?",
+    "en": "Do you have a charger for this model?"
+  },
+  {
+    "es": "La batería está baja.",
+    "bn": "লা বাতেরিয়া এস্তা বাহা।",
+    "bnMeaning": "ব্যাটারির চার্জ কম।",
+    "en": "The battery is low."
+  },
+  {
+    "es": "No tengo datos móviles.",
+    "bn": "নো তেনগো দাতোস মোবিলেস।",
+    "bnMeaning": "আমার মোবাইল ডেটা নেই।",
+    "en": "I don't have mobile data."
+  },
+  {
+    "es": "¿Dónde está el centro de servicio?",
+    "bn": "দোন্দে এস্তা এল সেন্ত্রো দে সেরভিসিও?",
+    "bnMeaning": "সার্ভিস সেন্টার কোথায়?",
+    "en": "Where is the service center?"
+  },
+  {
+    "es": "¿Dónde está la estación de tren?",
+    "bn": "দোন্দে এস্তা লা এস্তাসিওন দে ত্রেন?",
+    "bnMeaning": "ট্রেন স্টেশন কোথায়?",
+    "en": "Where is the train station?"
+  },
+  {
+    "es": "Necesito un billete para Madrid.",
+    "bn": "নেসেসিতো উন বিলিয়েতে পারা মাদ্রিদ।",
+    "bnMeaning": "আমার মাদ্রিদের জন্য একটি টিকিট দরকার।",
+    "en": "I need a ticket to Madrid."
+  },
+  {
+    "es": "¿A qué hora sale el autobús?",
+    "bn": "আ কে ওরা সালে এল আউতোবুস?",
+    "bnMeaning": "বাস কখন ছাড়ে?",
+    "en": "What time does the bus leave?"
+  },
+  {
+    "es": "¿Cuánto cuesta el billete?",
+    "bn": "কুয়ান্তো কুয়েস্তা এল বিলিয়েতে?",
+    "bnMeaning": "টিকিটের দাম কত?",
+    "en": "How much is the ticket?"
+  },
+  {
+    "es": "Quiero reservar un asiento.",
+    "bn": "কিয়েরো রেসেরভার উন আসিয়েনতো।",
+    "bnMeaning": "আমি একটি আসন রিজার্ভ করতে চাই।",
+    "en": "I want to reserve a seat."
+  },
+  {
+    "es": "¿Hay descuento para estudiantes?",
+    "bn": "আই দেসকুয়েনতো পারা এস্তুদিয়ান্তেস?",
+    "bnMeaning": "ছাত্রদের জন্য কি ছাড় আছে?",
+    "en": "Is there a discount for students?"
+  },
+  {
+    "es": "¿Cuánto tiempo tarda el viaje?",
+    "bn": "কুয়ান্তো তিয়েমপো তার্দা এল বিআহে?",
+    "bnMeaning": "ভ্রমণে কত সময় লাগে?",
+    "en": "How long is the trip?"
+  },
+  {
+    "es": "¿Dónde está la parada de autobús?",
+    "bn": "দোন্দে এস্তা লা পারাদা দে আউতোবুস?",
+    "bnMeaning": "বাস স্টপ কোথায়?",
+    "en": "Where is the bus stop?"
+  },
+  {
+    "es": "¿Este tren va a Barcelona?",
+    "bn": "এস্তে ত্রেন বা আ বার্সেলোনা?",
+    "bnMeaning": "এই ট্রেন কি বার্সেলোনা যায়?",
+    "en": "Does this train go to Barcelona?"
+  },
+  {
+    "es": "Estoy esperando el autobús.",
+    "bn": "এস্তোই এসপেরান্দো এল আউতোবুস।",
+    "bnMeaning": "আমি বাসের জন্য অপেক্ষা করছি।",
+    "en": "I am waiting for the bus."
+  },
+  {
+    "es": "¿Dónde puedo alquilar un coche?",
+    "bn": "দোন্দে পুয়েদো আলকিলার উন কোচে?",
+    "bnMeaning": "আমি কোথায় একটি গাড়ি ভাড়া নিতে পারি?",
+    "en": "Where can I rent a car?"
+  },
+  {
+    "es": "Necesito una licencia de conducir.",
+    "bn": "নেসেসিতো উনা লিসেনসিয়া দে কন্দুসির।",
+    "bnMeaning": "আমার একটি ড্রাইভিং লাইসেন্স দরকার।",
+    "en": "I need a driving license."
+  },
+  {
+    "es": "¿Dónde está la gasolinera más cercana?",
+    "bn": "দোন্দে এস্তা লা গাসোলিনেরা মাস সেরকানা?",
+    "bnMeaning": "নিকটতম পেট্রোল পাম্প কোথায়?",
+    "en": "Where is the nearest gas station?"
+  },
+  {
+    "es": "Mi coche se ha averiado.",
+    "bn": "মি কোচে সে আ আভেরিয়াদো।",
+    "bnMeaning": "আমার গাড়ি নষ্ট হয়ে গেছে।",
+    "en": "My car has broken down."
+  },
+  {
+    "es": "¿Puede llamar a una grúa?",
+    "bn": "পুয়েদে জামার আ উনা গ্রুয়া?",
+    "bnMeaning": "আপনি কি টো ট্রাক ডাকতে পারেন?",
+    "en": "Can you call a tow truck?"
+  },
+  {
+    "es": "¿Dónde puedo aparcar el coche?",
+    "bn": "দোন্দে পুয়েদো আপারকার এল কোচে?",
+    "bnMeaning": "আমি কোথায় গাড়ি পার্ক করতে পারি?",
+    "en": "Where can I park the car?"
+  },
+  {
+    "es": "¿Hay un mapa de la ciudad?",
+    "bn": "আই উন মাপা দে লা সিয়ুদাদ?",
+    "bnMeaning": "আপনার কি শহরের একটি মানচিত্র আছে?",
+    "en": "Do you have a map of the city?"
+  },
+  {
+    "es": "Estoy perdido.",
+    "bn": "এস্তোই পেরদিদো।",
+    "bnMeaning": "আমি পথ হারিয়ে ফেলেছি।",
+    "en": "I am lost."
+  },
+  {
+    "es": "¿Cómo llego al aeropuerto?",
+    "bn": "কোমো য়েগো আল আএরোপুয়ের্তো?",
+    "bnMeaning": "আমি বিমানবন্দরে কীভাবে যাব?",
+    "en": "How do I get to the airport?"
+  },
+  {
+    "es": "Mi vuelo está retrasado.",
+    "bn": "মি ভুয়েলো এস্তা রেত্রাসাদো।",
+    "bnMeaning": "আমার ফ্লাইট বিলম্বিত হয়েছে।",
+    "en": "My flight is delayed."
+  },
+  {
+    "es": "Mi equipaje se ha perdido.",
+    "bn": "মি একিপাহে সে আ পেরদিদো।",
+    "bnMeaning": "আমার লাগেজ হারিয়ে গেছে।",
+    "en": "My luggage is lost."
+  },
+  {
+    "es": "¿Dónde reclamo mi equipaje?",
+    "bn": "দোন্দে রেকলামো মি একিপাহে?",
+    "bnMeaning": "আমি আমার লাগেজ কোথায় দাবি করব?",
+    "en": "Where do I claim my luggage?"
+  },
+  {
+    "es": "¿Cuánto equipaje puedo llevar?",
+    "bn": "কুয়ান্তো একিপাহে পুয়েদো লেভার?",
+    "bnMeaning": "আমি কত লাগেজ নিতে পারি?",
+    "en": "How much luggage can I carry?"
+  },
+  {
+    "es": "He perdido mi pasaporte.",
+    "bn": "এ পেরদিদো মি পাসাপোর্তে।",
+    "bnMeaning": "আমি আমার পাসপোর্ট হারিয়েছি।",
+    "en": "I have lost my passport."
+  },
+  {
+    "es": "Necesito ayuda urgente.",
+    "bn": "নেসেসিতো আউদা উরহেন্তে।",
+    "bnMeaning": "আমার জরুরি সাহায্য দরকার।",
+    "en": "I need urgent help."
+  },
+  {
+    "es": "¿Dónde está la embajada?",
+    "bn": "দোন্দে এস্তা লা এমবাসাদা?",
+    "bnMeaning": "এম্ব্যাসি কোথায়?",
+    "en": "Where is the embassy?"
+  },
+  {
+    "es": "Necesito un intérprete.",
+    "bn": "নেসেসিতো উন ইন্তেরপ্রেতে।",
+    "bnMeaning": "আমার একজন দোভাষীর দরকার।",
+    "en": "I need an interpreter."
+  },
+  {
+    "es": "¿Puede ayudarme con esto?",
+    "bn": "পুয়েদে আউদারমে কন এস্তো?",
+    "bnMeaning": "আপনি কি এতে আমাকে সাহায্য করতে পারেন?",
+    "en": "Can you help me with this?"
+  },
+  {
+    "es": "Estoy enfermo.",
+    "bn": "এস্তোই এনফেরমো।",
+    "bnMeaning": "আমি অসুস্থ।",
+    "en": "I am sick."
+  },
+  {
+    "es": "¿Dónde está el hospital más cercano?",
+    "bn": "দোন্দে এস্তা এল হোসপিতাল মাস সেরকানো?",
+    "bnMeaning": "নিকটতম হাসপাতাল কোথায়?",
+    "en": "Where is the nearest hospital?"
+  },
+  {
+    "es": "Necesito una receta médica.",
+    "bn": "নেসেসিতো উনা রেসেতা মেডিকা।",
+    "bnMeaning": "আমার একটি চিকিৎসকের প্রেসক্রিপশন দরকার।",
+    "en": "I need a medical prescription."
+  },
+  {
+    "es": "¿Dónde está la farmacia más cercana?",
+    "bn": "দোন্দে এস্তা লা ফার্মাসিয়া মাস সেরকানা?",
+    "bnMeaning": "নিকটতম ফার্মেসি কোথায়?",
+    "en": "Where is the nearest pharmacy?"
+  },
+  {
+    "es": "Estoy buscando medicinas para el dolor.",
+    "bn": "এস্তোই বুস্কান্দো মেডিসিনাস পারা এল দোলোর।",
+    "bnMeaning": "আমি ব্যথার ওষুধ খুঁজছি।",
+    "en": "I am looking for medicine for pain."
+  },
+  {
+    "es": "¿Tiene algo para la fiebre?",
+    "bn": "তিয়েনে আলগো পারা লা ফিয়েব্রে?",
+    "bnMeaning": "আপনার কি জ্বরের জন্য কিছু আছে?",
+    "en": "Do you have something for fever?"
+  },
+  {
+    "es": "Estoy alérgico a la penicilina.",
+    "bn": "এস্তোই আলেরহিকো আ লা পেনিসিলিনা।",
+    "bnMeaning": "আমি পেনিসিলিনে অ্যালার্জিক।",
+    "en": "I am allergic to penicillin."
+  },
+  {
+    "es": "Necesito ver a un médico.",
+    "bn": "নেসেসিতো বের আ উন মেডিকো।",
+    "bnMeaning": "আমার একজন ডাক্তারের সঙ্গে দেখা করা দরকার।",
+    "en": "I need to see a doctor."
+  },
+  {
+    "es": "¿Dónde está la clínica?",
+    "bn": "দোন্দে এস্তা লা ক্লিনিকা?",
+    "bnMeaning": "ক্লিনিক কোথায়?",
+    "en": "Where is the clinic?"
+  },
+  {
+    "es": "Estoy tomando estos medicamentos.",
+    "bn": "এস্তোই তোমান্দো এস্তোস মেডিকামেন্তোস।",
+    "bnMeaning": "আমি এই ওষুধগুলো খাচ্ছি।",
+    "en": "I am taking these medications."
+  },
+  {
+    "es": "¿Hay algún especialista disponible?",
+    "bn": "আই আলগুন এসপেসিয়ালিস্তা ডিসপোনিব্লে?",
+    "bnMeaning": "কোনো বিশেষজ্ঞ কি উপলব্ধ?",
+    "en": "Is there any specialist available?"
+  },
+  {
+    "es": "Me siento muy débil.",
+    "bn": "মে সিয়েনতো মুই দেবিল।",
+    "bnMeaning": "আমি খুব দুর্বল অনুভব করছি।",
+    "en": "I feel very weak."
   }
   ]
-  
+
+
+
