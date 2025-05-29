@@ -1966,5 +1966,305 @@
     "bn": "গ্রাতসি পের ইল সুয়ো আয়ুতো।",
     "bnMeaning": "আপনার সাহায্যের জন্য ধন্যবাদ।",
     "en": "Thank you for your help."
+  },
+  {
+    "it": "Dove posso mangiare qualcosa?",
+    "bn": "দোভে পসসো মাঞ্জারে কুয়ালকোসা?",
+    "bnMeaning": "আমি কোথায় কিছু খেতে পারি?",
+    "en": "Where can I eat something?"
+  },
+  {
+    "it": "C'è un buon ristorante qui vicino?",
+    "bn": "চে উন বুয়োন রিস্তোরান্তে কুই ভিচিনো?",
+    "bnMeaning": "এখানে কি ভালো কোনো রেস্টুরেন্ট আছে?",
+    "en": "Is there a good restaurant nearby?"
+  },
+  {
+    "it": "Mi può consigliare un piatto tipico?",
+    "bn": "মি পুয়ো কনসিলিয়ার উন পিয়াত্তো তিপিকো?",
+    "bnMeaning": "আপনি কি আমাকে একটি জনপ্রিয় খাবার সাজেস্ট করবেন?",
+    "en": "Can you recommend a typical dish?"
+  },
+  {
+    "it": "Vorrei una pizza margherita.",
+    "bn": "ভোরেই উনা পিত্সা মার্ঘেরিতা।",
+    "bnMeaning": "আমি একটি মার্ঘেরিতা পিত্জা চাই।",
+    "en": "I would like a margherita pizza."
+  },
+  {
+    "it": "Il conto, per favore.",
+    "bn": "ইল কন্তো, পের ফাভোরে।",
+    "bnMeaning": "বিলটা দিন, দয়া করে।",
+    "en": "The bill, please."
+  },
+  {
+    "it": "Questo è delizioso!",
+    "bn": "কুয়েস্তো এ দেলিৎসিওজো!",
+    "bnMeaning": "এটা দারুণ সুস্বাদু!",
+    "en": "This is delicious!"
+  },
+  {
+    "it": "Sono vegetariano.",
+    "bn": "সোনো ভেজেতারিয়ানো।",
+    "bnMeaning": "আমি নিরামিষাশী।",
+    "en": "I am vegetarian."
+  },
+  {
+    "it": "Ha qualcosa senza carne?",
+    "bn": "আ কুয়ালকোসা সেন্ৎসা কারনে?",
+    "bnMeaning": "আপনার কি মাংস ছাড়া কিছু আছে?",
+    "en": "Do you have something without meat?"
+  },
+  {
+    "it": "Vorrei solo un'insalata.",
+    "bn": "ভোরেই সলো উন'ইনসালাতা।",
+    "bnMeaning": "আমি শুধু একটি সালাদ চাই।",
+    "en": "I would like only a salad."
+  },
+  {
+    "it": "Posso avere dell'acqua naturale?",
+    "bn": "পসসো আভেরে দিল্ল'আক্কুয়া নাতুরালে?",
+    "bnMeaning": "আমি কি কিছু সাধারণ পানি পেতে পারি?",
+    "en": "Can I have some still water?"
+  },
+  {
+    "it": "Avete piatti senza glutine?",
+    "bn": "আভেতে পিয়াত্তি সেন্ৎসা গ্লুতিনে?",
+    "bnMeaning": "আপনাদের কি গ্লুটেনমুক্ত খাবার আছে?",
+    "en": "Do you have gluten-free dishes?"
+  },
+  {
+    "it": "Vorrei prenotare un tavolo per due.",
+    "bn": "ভোরেই প্রেনোতার উন তাভোলো পের দুয়ে।",
+    "bnMeaning": "আমি দুজনের জন্য একটি টেবিল রিজার্ভ করতে চাই।",
+    "en": "I would like to reserve a table for two."
+  },
+  {
+    "it": "Qual è la specialità della casa?",
+    "bn": "কুয়াল এ লা স্পেচালিতা দেল্লা কাজা?",
+    "bnMeaning": "এই রেস্টুরেন্টের বিশেষ খাবার কী?",
+    "en": "What is the house specialty?"
+  },
+  {
+    "it": "Il cibo è troppo piccante.",
+    "bn": "ইল চিবো এ ত্রোপ্পো পিক্কান্তে।",
+    "bnMeaning": "খাবারটা অনেক ঝাল।",
+    "en": "The food is too spicy."
+  },
+  {
+    "it": "Vorrei qualcosa di dolce.",
+    "bn": "ভোরেই কুয়ালকোসা দি দোলচে।",
+    "bnMeaning": "আমি কিছু মিষ্টি খেতে চাই।",
+    "en": "I would like something sweet."
+  },
+  {
+    "it": "Può portare il menu, per favore?",
+    "bn": "পুয়ো পোর্তার ইল মেনু, পের ফাভোরে?",
+    "bnMeaning": "দয়া করে মেনুটা আনবেন?",
+    "en": "Can you bring the menu, please?"
+  },
+  {
+    "it": "C'è un'opzione vegana?",
+    "bn": "চে উন'অপ্সিওনে ভেগানা?",
+    "bnMeaning": "ভেগান খাবারের কোনো বিকল্প আছে কি?",
+    "en": "Is there a vegan option?"
+  },
+  {
+    "it": "Non mangio pesce.",
+    "bn": "নন মাঞ্জো পেশে।",
+    "bnMeaning": "আমি মাছ খাই না।",
+    "en": "I don’t eat fish."
+  },
+  {
+    "it": "Questo è troppo salato.",
+    "bn": "কুয়েস্তো এ ত্রোপ্পো সালাতো।",
+    "bnMeaning": "এটা অনেক বেশি লবণযুক্ত।",
+    "en": "This is too salty."
+  },
+  {
+    "it": "Tutto era perfetto, grazie!",
+    "bn": "তুত্তো এরা পারফেত্তো, গ্রাতসি!",
+    "bnMeaning": "সবকিছু নিখুঁত ছিল, ধন্যবাদ!",
+    "en": "Everything was perfect, thank you!"
+  },
+  {
+    "it": "Può farmi lo scontrino?",
+    "bn": "পুয়ো ফার্মি লো স্কোনত্রিনো?",
+    "bnMeaning": "আপনি কি আমাকে রশিদ দিতে পারেন?",
+    "en": "Can you give me the receipt?"
+  },
+  {
+    "it": "Accettate carte di credito?",
+    "bn": "আচ্চেত্তাতে কার্তে দি ক্রেদিতো?",
+    "bnMeaning": "আপনারা কি ক্রেডিট কার্ড গ্রহণ করেন?",
+    "en": "Do you accept credit cards?"
+  },
+  {
+    "it": "Dove posso cambiare dei soldi?",
+    "bn": "দোভে পসসো কামবিয়ারে দেই সোলদি?",
+    "bnMeaning": "আমি কোথায় টাকা পরিবর্তন করতে পারি?",
+    "en": "Where can I exchange money?"
+  },
+  {
+    "it": "C'è un bancomat vicino?",
+    "bn": "চে উন বানকোমাত ভিচিনো?",
+    "bnMeaning": "কাছাকাছি কি কোনো এটিএম আছে?",
+    "en": "Is there an ATM nearby?"
+  },
+  {
+    "it": "Qual è il tasso di cambio?",
+    "bn": "কুয়াল এ ইল তাস্সো দি কামবিও?",
+    "bnMeaning": "বিনিময় হার কত?",
+    "en": "What is the exchange rate?"
+  },
+  {
+    "it": "Vorrei cambiare dei contanti.",
+    "bn": "ভোরেই কামবিয়ারে দেই কন্তান্তি।",
+    "bnMeaning": "আমি কিছু নগদ অর্থ পরিবর্তন করতে চাই।",
+    "en": "I would like to exchange some cash."
+  },
+  {
+    "it": "Accettate euro?",
+    "bn": "আচ্চেত্তাতে ইউরো?",
+    "bnMeaning": "আপনারা কি ইউরো গ্রহণ করেন?",
+    "en": "Do you accept euros?"
+  },
+  {
+    "it": "Quanto posso prelevare al bancomat?",
+    "bn": "কুয়ান্তো পসসো প্রেলেভারে আল বানকোমাত?",
+    "bnMeaning": "আমি এটিএম থেকে কত টাকা তুলতে পারি?",
+    "en": "How much can I withdraw from the ATM?"
+  },
+  {
+    "it": "Ho bisogno di una ricevuta.",
+    "bn": "ও বিজোন্নো দি উনা রিচেভুতা।",
+    "bnMeaning": "আমার একটি রশিদ দরকার।",
+    "en": "I need a receipt."
+  },
+  {
+    "it": "C'è una tassa extra?",
+    "bn": "চে উনা তাস্সা এক্সত্রা?",
+    "bnMeaning": "কি কোনো অতিরিক্ত ট্যাক্স আছে?",
+    "en": "Is there an extra charge?"
+  },
+  {
+    "it": "Vorrei aprire un conto bancario.",
+    "bn": "ভোরেই আপ্রিরে উন কন্তো বাঙ্কারিও।",
+    "bnMeaning": "আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
+    "en": "I would like to open a bank account."
+  },
+  {
+    "it": "Quali documenti servono?",
+    "bn": "কুয়ালি দোকুমেন্তি সের্ভোনো?",
+    "bnMeaning": "কোন কোন ডকুমেন্ট লাগবে?",
+    "en": "What documents are required?"
+  },
+  {
+    "it": "C'è una filiale vicina?",
+    "bn": "চে উনা ফিলিয়ালে ভিচিনা?",
+    "bnMeaning": "কাছাকাছি কি কোনো শাখা আছে?",
+    "en": "Is there a nearby branch?"
+  },
+  {
+    "it": "Mi serve una carta di debito.",
+    "bn": "মি সেরভে উনা কার্তা দি দেবিতো।",
+    "bnMeaning": "আমার একটি ডেবিট কার্ড দরকার।",
+    "en": "I need a debit card."
+  },
+  {
+    "it": "Qual è il limite giornaliero?",
+    "bn": "কুয়াল এ ইল লিমিতে জর্নালিয়েরো?",
+    "bnMeaning": "প্রতিদিনের উত্তোলনের সীমা কত?",
+    "en": "What is the daily withdrawal limit?"
+  },
+  {
+    "it": "Come posso accedere al mio conto online?",
+    "bn": "কোমে পসসো আচ্চেদেরে আল মিও কন্তো অনলাইন?",
+    "bnMeaning": "আমি কীভাবে আমার অনলাইন অ্যাকাউন্টে প্রবেশ করব?",
+    "en": "How can I access my online account?"
+  },
+  {
+    "it": "Ho dimenticato la password.",
+    "bn": "ও দিমেন্তিকাতো লা পাস্সওয়ার্দ।",
+    "bnMeaning": "আমি পাসওয়ার্ড ভুলে গেছি।",
+    "en": "I forgot the password."
+  },
+  {
+    "it": "Posso ricevere notifiche sul telefono?",
+    "bn": "পসসো রিচেভেরে নোতিফিকে সুল তেলেফোনো?",
+    "bnMeaning": "আমি কি ফোনে নোটিফিকেশন পেতে পারি?",
+    "en": "Can I receive notifications on my phone?"
+  },
+  {
+    "it": "C'è una tassa mensile?",
+    "bn": "চে উনা তাস্সা মেনসিলে?",
+    "bnMeaning": "মাসিক কোনো ফি আছে কি?",
+    "en": "Is there a monthly fee?"
+  },
+  {
+    "it": "Come posso chiudere il conto?",
+    "bn": "কোমে পসসো কিউদেরে ইল কন্তো?",
+    "bnMeaning": "আমি কীভাবে অ্যাকাউন্ট বন্ধ করতে পারি?",
+    "en": "How can I close the account?"
+  },
+  {
+    "it": "Vorrei inviare dei soldi all'estero.",
+    "bn": "ভোরেই ইনভিয়ার দেই সোলদি আল্ল'এস্তেরো।",
+    "bnMeaning": "আমি বিদেশে টাকা পাঠাতে চাই।",
+    "en": "I would like to send money abroad."
+  },
+  {
+    "it": "Quanto costa il trasferimento?",
+    "bn": "কুয়ান্তো কোস্তা ইল ত্রাসফেরিমেন্তো?",
+    "bnMeaning": "টাকা পাঠাতে কত খরচ হয়?",
+    "en": "How much does the transfer cost?"
+  },
+  {
+    "it": "Quanto tempo ci vuole?",
+    "bn": "কুয়ান্তো তেম্পো চি ভুয়োলেছে?",
+    "bnMeaning": "কত সময় লাগবে?",
+    "en": "How long does it take?"
+  },
+  {
+    "it": "Ho bisogno del codice IBAN.",
+    "bn": "ও বিজোন্নো দেল কোদিচে আইবান।",
+    "bnMeaning": "আমার IBAN কোড দরকার।",
+    "en": "I need the IBAN code."
+  },
+  {
+    "it": "Posso ricevere un bonifico?",
+    "bn": "পসসো রিচেভেরে উন বোনিফিকো?",
+    "bnMeaning": "আমি কি একটি ব্যাংক ট্রান্সফার পেতে পারি?",
+    "en": "Can I receive a bank transfer?"
+  },
+  {
+    "it": "C'è un limite per inviare denaro?",
+    "bn": "চে উন লিমিতে পের ইনভিয়ার দেনারো?",
+    "bnMeaning": "টাকা পাঠানোর কোনো সীমা আছে কি?",
+    "en": "Is there a limit to send money?"
+  },
+  {
+    "it": "Dove posso trovare uno sportello Western Union?",
+    "bn": "দোভে পসসো ত্রোভারে উনো স্পর্তেল্লো ওয়েস্টার্ন ইউনিয়ন?",
+    "bnMeaning": "আমি কোথায় Western Union এর কাউন্টার পেতে পারি?",
+    "en": "Where can I find a Western Union counter?"
+  },
+  {
+    "it": "Il mio trasferimento è stato confermato?",
+    "bn": "ইল মিও ত্রাসফেরিমেন্তো এ স্তাতো কনফের্মাতো?",
+    "bnMeaning": "আমার ট্রান্সফার কি কনফার্ম হয়েছে?",
+    "en": "Has my transfer been confirmed?"
+  },
+  {
+    "it": "Ho ricevuto il denaro, grazie.",
+    "bn": "ও রিচেভুতো ইল দেনারো, গ্রাতসি।",
+    "bnMeaning": "আমি টাকা পেয়েছি, ধন্যবাদ।",
+    "en": "I have received the money, thank you."
+  },
+  {
+    "it": "Vorrei inviare un pacco in Bangladesh.",
+    "bn": "ভোরেই ইনভিয়ার উন পাক্কো ইন বাংলাদেশ।",
+    "bnMeaning": "আমি বাংলাদেশে একটি পার্সেল পাঠাতে চাই।",
+    "en": "I would like to send a package to Bangladesh."
   }
 ]
