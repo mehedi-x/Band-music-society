@@ -58,5 +58,546 @@
     "bn": "নো এনতিয়েন্দো।",
     "bnMeaning": "আমি বুঝতে পারছি না।",
     "en": "I don’t understand."
+  },
+  {
+    "es": "¿Habla inglés?",
+    "bn": "আব্লা ইংলেস?",
+    "bnMeaning": "আপনি কি ইংরেজি বলতে পারেন?",
+    "en": "Do you speak English?"
+  },
+  {
+    "es": "Estoy perdido.",
+    "bn": "এস্তোই পেরদিদো।",
+    "bnMeaning": "আমি পথ হারিয়েছি।",
+    "en": "I am lost."
+  },
+  {
+    "es": "¿Dónde está el baño?",
+    "bn": "দোন্দে এস্তা এল বাঞো?",
+    "bnMeaning": "বাথরুম কোথায়?",
+    "en": "Where is the bathroom?"
+  },
+  {
+    "es": "Necesito ayuda.",
+    "bn": "নেসেসিতো আয়ুদা।",
+    "bnMeaning": "আমার সাহায্য দরকার।",
+    "en": "I need help."
+  },
+  {
+    "es": "Estoy enfermo.",
+    "bn": "এস্তোই এনফেরমো।",
+    "bnMeaning": "আমি অসুস্থ।",
+    "en": "I am sick."
+  },
+  {
+    "es": "Tengo fiebre.",
+    "bn": "তেনগো ফিয়েব্রে।",
+    "bnMeaning": "আমার জ্বর হয়েছে।",
+    "en": "I have a fever."
+  },
+  {
+    "es": "¿Qué hora es?",
+    "bn": "কে ওরা এস?",
+    "bnMeaning": "এখন কত সময়?",
+    "en": "What time is it?"
+  },
+  {
+    "es": "Hoy es un buen día.",
+    "bn": "ওই এস উন বুয়েন দিয়া।",
+    "bnMeaning": "আজ একটি সুন্দর দিন।",
+    "en": "Today is a good day."
+  },
+  {
+    "es": "Estoy buscando trabajo.",
+    "bn": "এস্তোই বুস্কান্দো ত্রাবাহো।",
+    "bnMeaning": "আমি কাজ খুঁজছি।",
+    "en": "I am looking for a job."
+  },
+  {
+    "es": "Estoy cansado.",
+    "bn": "এস্তোই কানসাদো।",
+    "bnMeaning": "আমি ক্লান্ত।",
+    "en": "I am tired."
+  },
+  {
+    "es": "Estoy aprendiendo poco a poco.",
+    "bn": "এস্তোই আপ্রেন্দিয়েনদো পোকো আ পোকো।",
+    "bnMeaning": "আমি ধীরে ধীরে শিখছি।",
+    "en": "I am learning little by little."
+  },
+  {
+    "es": "¿Puede repetir, por favor?",
+    "bn": "পুয়েদে রেপেতির, পর ফাভোর?",
+    "bnMeaning": "আপনি কি দয়া করে আবার বলতে পারেন?",
+    "en": "Can you repeat, please?"
+  },
+  {
+    "es": "No hablo mucho español.",
+    "bn": "নো আব্লো মুচো এস্পানিওল।",
+    "bnMeaning": "আমি খুব বেশি স্প্যানিশ বলতে পারি না।",
+    "en": "I don’t speak much Spanish."
+  },
+  {
+    "es": "¿Cómo se dice esto en español?",
+    "bn": "কোমো সে দিসে এস্তো এন এস্পানিওল?",
+    "bnMeaning": "এটি স্প্যানিশে কীভাবে বলা হয়?",
+    "en": "How do you say this in Spanish?"
+  },
+  {
+    "es": "Estoy aquí por trabajo.",
+    "bn": "এস্তোই আকি পোর ত্রাবাহো।",
+    "bnMeaning": "আমি এখানে কাজের জন্য এসেছি।",
+    "en": "I am here for work."
+  },
+  {
+    "es": "Vivo cerca de aquí.",
+    "bn": "ভিভো সেরকা দে আকি।",
+    "bnMeaning": "আমি এখান থেকে কাছাকাছি থাকি।",
+    "en": "I live near here."
+  },
+  {
+    "es": "¿Tienes familia aquí?",
+    "bn": "তিয়েনেস ফামিলিয়া আকি?",
+    "bnMeaning": "তোমার কি এখানে পরিবার আছে?",
+    "en": "Do you have family here?"
+  },
+  {
+    "es": "Tengo dos hijos.",
+    "bn": "তেনগো দোস ইহোস।",
+    "bnMeaning": "আমার দুটি সন্তান আছে।",
+    "en": "I have two children."
+  },
+  {
+    "es": "Mi esposa está en casa.",
+    "bn": "মি এসপোসা এস্তা এন কাসা।",
+    "bnMeaning": "আমার স্ত্রী বাসায় আছেন।",
+    "en": "My wife is at home."
+  },
+  {
+    "es": "Hace mucho calor hoy.",
+    "bn": "আসে মুচো কালোর ওই।",
+    "bnMeaning": "আজ অনেক গরম পড়েছে।",
+    "en": "It’s very hot today."
+  },
+  {
+    "es": "Hace frío esta mañana.",
+    "bn": "আসে ফ্রিও এস্তা মানিয়ানা।",
+    "bnMeaning": "আজ সকালে ঠান্ডা ছিল।",
+    "en": "It was cold this morning."
+  },
+  {
+    "es": "Voy al trabajo en autobús.",
+    "bn": "ভয় আল ত্রাবাহো এন আউতোবুস।",
+    "bnMeaning": "আমি বাসে করে কাজে যাই।",
+    "en": "I go to work by bus."
+  },
+  {
+    "es": "¿Dónde está la parada del autobús?",
+    "bn": "দোন্দে এস্তা লা পারাদা দেল আউতোবুস?",
+    "bnMeaning": "বাসস্টপ কোথায়?",
+    "en": "Where is the bus stop?"
+  },
+  {
+    "es": "Llevo una chaqueta porque hace frío.",
+    "bn": "জেবো উনা চাকেতা পোরকে আসে ফ্রিও।",
+    "bnMeaning": "আমি ঠান্ডার জন্য জ্যাকেট পরেছি।",
+    "en": "I am wearing a jacket because it's cold."
+  },
+  {
+    "es": "¿A qué hora empieza el trabajo?",
+    "bn": "আ কে ওরা এমপিয়েসা এল ত্রাবাহো?",
+    "bnMeaning": "কাজ কখন শুরু হয়?",
+    "en": "What time does work start?"
+  },
+  {
+    "es": "Termino a las cinco.",
+    "bn": "তেরমিনো আ লাস সিনকো।",
+    "bnMeaning": "আমি পাঁচটায় শেষ করি।",
+    "en": "I finish at five."
+  },
+  {
+    "es": "Estoy estudiando español por la noche.",
+    "bn": "এস্তোই এস্তুদিয়ান্দো এস্পানিওল পোর লা নোচে।",
+    "bnMeaning": "আমি রাতে স্প্যানিশ পড়ি।",
+    "en": "I study Spanish at night."
+  },
+  {
+    "es": "¿Dónde puedo comprar una tarjeta SIM?",
+    "bn": "দোন্দে পুয়েদো কম্প্রার উনা তারহেতা সিম?",
+    "bnMeaning": "আমি কোথায় একটি সিম কার্ড কিনতে পারি?",
+    "en": "Where can I buy a SIM card?"
+  },
+  {
+    "es": "Necesito una recarga para mi móvil.",
+    "bn": "নেসেসিতো উনা রেকারগা পারা মি মোভিল।",
+    "bnMeaning": "আমার মোবাইলের জন্য রিচার্জ দরকার।",
+    "en": "I need a recharge for my phone."
+  },
+  {
+    "es": "Mi número es...",
+    "bn": "মি নুমেরো এস...",
+    "bnMeaning": "আমার নাম্বার হলো...",
+    "en": "My number is..."
+  },
+  {
+    "es": "¿Dónde está el hospital más cercano?",
+    "bn": "দোন্দে এস্তা এল হস্পিতাল মাস সেরকানো?",
+    "bnMeaning": "নিকটতম হাসপাতাল কোথায়?",
+    "en": "Where is the nearest hospital?"
+  },
+  {
+    "es": "Necesito una cita con el doctor.",
+    "bn": "নেসেসিতো উনা সিতা কন এল দকতোর।",
+    "bnMeaning": "আমার ডাক্তারের সাথে একটি অ্যাপয়েন্টমেন্ট দরকার।",
+    "en": "I need an appointment with the doctor."
+  },
+  {
+    "es": "Estoy buscando una farmacia.",
+    "bn": "এস্তোই বুস্কান্দো উনা ফার্মাসিয়া।",
+    "bnMeaning": "আমি একটি ফার্মেসি খুঁজছি।",
+    "en": "I am looking for a pharmacy."
+  },
+  {
+    "es": "¿Dónde puedo comprar medicina?",
+    "bn": "দোন্দে পুয়েদো কম্প্রার মেডিসিনা?",
+    "bnMeaning": "আমি কোথায় ওষুধ কিনতে পারি?",
+    "en": "Where can I buy medicine?"
+  },
+  {
+    "es": "Tengo una receta médica.",
+    "bn": "তেনগো উনা রেসেতা মেডিকা।",
+    "bnMeaning": "আমার একটি প্রেসক্রিপশন আছে।",
+    "en": "I have a medical prescription."
+  },
+  {
+    "es": "Mi hijo está enfermo.",
+    "bn": "মি ইহো এস্তা এনফেরমো।",
+    "bnMeaning": "আমার ছেলে অসুস্থ।",
+    "en": "My son is sick."
+  },
+  {
+    "es": "Mi hija necesita medicina.",
+    "bn": "মি ইহা নেসেসিতা মেডিসিনা।",
+    "bnMeaning": "আমার মেয়ের ওষুধ দরকার।",
+    "en": "My daughter needs medicine."
+  },
+  {
+    "es": "Tengo dolor de cabeza.",
+    "bn": "তেনগো দোলোর দে কাবেসা।",
+    "bnMeaning": "আমার মাথাব্যথা হচ্ছে।",
+    "en": "I have a headache."
+  },
+  {
+    "es": "Estoy muy ocupado hoy.",
+    "bn": "এস্তোই মুই ওকুপাদো ওই।",
+    "bnMeaning": "আমি আজ অনেক ব্যস্ত।",
+    "en": "I am very busy today."
+  },
+  {
+    "es": "Gracias por su ayuda.",
+    "bn": "গ্রাসিয়াস পোর সু আয়ুদা।",
+    "bnMeaning": "আপনার সাহায্যের জন্য ধন্যবাদ।",
+    "en": "Thank you for your help."
+  },
+  {
+    "es": "¿Dónde está el supermercado?",
+    "bn": "দোন্দে এস্তা এল সুপেরমেরকাদো?",
+    "bnMeaning": "সুপারমার্কেট কোথায়?",
+    "en": "Where is the supermarket?"
+  },
+  {
+    "es": "Quiero comprar arroz y aceite.",
+    "bn": "কিয়েরো কম্প্রার অরোস ই আসেইতে।",
+    "bnMeaning": "আমি চাল ও তেল কিনতে চাই।",
+    "en": "I want to buy rice and oil."
+  },
+  {
+    "es": "¿Cuánto cuesta esto?",
+    "bn": "কুয়ান্তো কুয়েস্তা এস্তো?",
+    "bnMeaning": "এটার দাম কত?",
+    "en": "How much does this cost?"
+  },
+  {
+    "es": "¿Aceptan tarjeta de crédito?",
+    "bn": "আসেপ্তান তারহেতা দে ক্রেদিতো?",
+    "bnMeaning": "আপনারা কি ক্রেডিট কার্ড গ্রহণ করেন?",
+    "en": "Do you accept credit card?"
+  },
+  {
+    "es": "Pago en efectivo.",
+    "bn": "পাগো এন এফেকতিভো।",
+    "bnMeaning": "আমি নগদে পরিশোধ করছি।",
+    "en": "I am paying in cash."
+  },
+  {
+    "es": "¿Tiene bolsas?",
+    "bn": "তিয়েনে বোলসাস?",
+    "bnMeaning": "আপনার কি ব্যাগ আছে?",
+    "en": "Do you have bags?"
+  },
+  {
+    "es": "Eso es muy caro.",
+    "bn": "এসো এস মুই কারো।",
+    "bnMeaning": "এটা অনেক দামি।",
+    "en": "That is very expensive."
+  },
+  {
+    "es": "Busco algo más barato.",
+    "bn": "বুস্কো আলগো মাস বারাতো।",
+    "bnMeaning": "আমি আরও সস্তা কিছু খুঁজছি।",
+    "en": "I’m looking for something cheaper."
+  },
+  {
+    "es": "¿Dónde puedo encontrar pan?",
+    "bn": "দোন্দে পুয়েদো এনকোনত্রার পান?",
+    "bnMeaning": "আমি কোথায় রুটি খুঁজে পেতে পারি?",
+    "en": "Where can I find bread?"
+  },
+  {
+    "es": "Gracias, eso es todo.",
+    "bn": "গ্রাসিয়াস, এসো এস তোদো।",
+    "bnMeaning": "ধন্যবাদ, এই ছিল সব।",
+    "en": "Thank you, that's all."
+  },
+  {
+    "es": "¿Dónde está el baño?",
+    "bn": "দোন্দে এস্তা এল বাঞো?",
+    "bnMeaning": "টয়লেট কোথায়?",
+    "en": "Where is the bathroom?"
+  },
+  {
+    "es": "Necesito agua potable.",
+    "bn": "নেসেসিতো আগুয়া পোতাবলে।",
+    "bnMeaning": "আমার পানযোগ্য পানি দরকার।",
+    "en": "I need drinking water."
+  },
+  {
+    "es": "Estoy cansado después del trabajo.",
+    "bn": "এস্তোই কানসাদো দেসপুয়েস দেল ত্রাবাহো।",
+    "bnMeaning": "কাজের পর আমি ক্লান্ত।",
+    "en": "I am tired after work."
+  },
+  {
+    "es": "Hoy es mi día libre.",
+    "bn": "ওই এস মি দিয়া লিব্রে।",
+    "bnMeaning": "আজ আমার ছুটির দিন।",
+    "en": "Today is my day off."
+  },
+  {
+    "es": "Voy al parque con mis amigos.",
+    "bn": "ভয় আল পারকে কন মিস আমিগোস।",
+    "bnMeaning": "আমি আমার বন্ধুদের সঙ্গে পার্কে যাচ্ছি।",
+    "en": "I’m going to the park with my friends."
+  },
+  {
+    "es": "Estoy buscando una iglesia.",
+    "bn": "এস্তোই বুস্কান্দো উনা ইগ্লেসিয়া।",
+    "bnMeaning": "আমি একটি গির্জা খুঁজছি।",
+    "en": "I’m looking for a church."
+  },
+  {
+    "es": "¿Cuándo es el próximo autobús?",
+    "bn": "কুয়ান্দো এস এল প্রোক্সিমো আউতোবুস?",
+    "bnMeaning": "পরবর্তী বাস কখন?",
+    "en": "When is the next bus?"
+  },
+  {
+    "es": "No entiendo muy bien.",
+    "bn": "নো এনতিয়েন্দো মুই বিয়েন।",
+    "bnMeaning": "আমি খুব ভালোভাবে বুঝতে পারি না।",
+    "en": "I don’t understand very well."
+  },
+  {
+    "es": "¿Habla inglés?",
+    "bn": "আব্লা ইংলেস?",
+    "bnMeaning": "আপনি কি ইংরেজি বলেন?",
+    "en": "Do you speak English?"
+  },
+  {
+    "es": "Un momento, por favor.",
+    "bn": "উন মোমেন্তো, পর ফাভোর।",
+    "bnMeaning": "এক মিনিট, অনুগ্রহ করে।",
+    "en": "One moment, please."
+  },
+  {
+    "es": "Estoy aprendiendo español.",
+    "bn": "এস্তোই আপ্রেন্দিয়েনদো এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ শিখছি।",
+    "en": "I am learning Spanish."
+  },
+  {
+    "es": "¿Puedes repetir, por favor?",
+    "bn": "পুয়েদেস রেপেতির, পর ফাভোর?",
+    "bnMeaning": "আপনি কি অনুগ্রহ করে আবার বলবেন?",
+    "en": "Can you repeat, please?"
+  },
+  {
+    "es": "Habla más despacio, por favor.",
+    "bn": "আব্লা মাস দেস্পাসিও, পর ফাভোর।",
+    "bnMeaning": "অনুগ্রহ করে ধীরে বলুন।",
+    "en": "Please speak more slowly."
+  },
+  {
+    "es": "No hablo mucho español.",
+    "bn": "নো আব্লো মুচো এস্পানিওল।",
+    "bnMeaning": "আমি খুব বেশি স্প্যানিশ বলি না।",
+    "en": "I don't speak much Spanish."
+  },
+  {
+    "es": "¿Dónde está la estación de tren?",
+    "bn": "দোন্দে এস্তা লা এস্তাসিওন দে ত্রেন?",
+    "bnMeaning": "ট্রেন স্টেশন কোথায়?",
+    "en": "Where is the train station?"
+  },
+  {
+    "es": "Necesito un billete a Madrid.",
+    "bn": "নেসেসিতো উন বিল্লেতে আ মাদ্রিদ।",
+    "bnMeaning": "আমার মাদ্রিদের একটি টিকিট দরকার।",
+    "en": "I need a ticket to Madrid."
+  },
+  {
+    "es": "¿Cuánto tiempo tarda el tren?",
+    "bn": "কুয়ান্তো তিয়েম্পো তারদা এল ত্রেন?",
+    "bnMeaning": "ট্রেন কত সময় নেয়?",
+    "en": "How long does the train take?"
+  },
+  {
+    "es": "Voy a visitar a mi familia.",
+    "bn": "ভয় আ ভিসিতার আ মি ফামিলিয়া।",
+    "bnMeaning": "আমি আমার পরিবারের সাথে দেখা করতে যাচ্ছি।",
+    "en": "I am going to visit my family."
+  },
+  {
+    "es": "Estoy de vacaciones.",
+    "bn": "এস্তোই দে ভাকাসিওনেস।",
+    "bnMeaning": "আমি ছুটিতে আছি।",
+    "en": "I am on vacation."
+  },
+  {
+    "es": "¿Dónde puedo conseguir información?",
+    "bn": "দোন্দে পুয়েদো কনসিগুির ইনফর্মাসিওন?",
+    "bnMeaning": "আমি তথ্য কোথায় পেতে পারি?",
+    "en": "Where can I get information?"
+  },
+  {
+    "es": "¿Dónde puedo encontrar trabajo?",
+    "bn": "দোন্দে পুয়েদো এনকোনত্রার ত্রাবাখো?",
+    "bnMeaning": "আমি কোথায় কাজ খুঁজে পেতে পারি?",
+    "en": "Where can I find a job?"
+  },
+  {
+    "es": "Estoy buscando trabajo en construcción.",
+    "bn": "এস্তোই বুস্কান্দো ত্রাবাখো এন কন্সত্রুকসিওন।",
+    "bnMeaning": "আমি নির্মাণ খাতে কাজ খুঁজছি।",
+    "en": "I am looking for work in construction."
+  },
+  {
+    "es": "Tengo experiencia como cocinero.",
+    "bn": "তেনগো এক্সপেরিয়েন্সিয়া কোমো কোকিনেরো।",
+    "bnMeaning": "আমার রাঁধুনির কাজের অভিজ্ঞতা আছে।",
+    "en": "I have experience as a cook."
+  },
+  {
+    "es": "¿Cuáles son los requisitos?",
+    "bn": "কুয়ালেস সোন লোস রেকুইসিতোস?",
+    "bnMeaning": "শর্তগুলো কী কী?",
+    "en": "What are the requirements?"
+  },
+  {
+    "es": "Necesito una carta de recomendación.",
+    "bn": "নেসেসিতো উনা কার্তা দে রেকোমেন্দাসিওন।",
+    "bnMeaning": "আমার একটি সুপারিশপত্র দরকার।",
+    "en": "I need a letter of recommendation."
+  },
+  {
+    "es": "¿Cuánto pagan por hora?",
+    "bn": "কুয়ান্তো পাগান পোর অরা?",
+    "bnMeaning": "ঘণ্টা প্রতি বেতন কত?",
+    "en": "How much do they pay per hour?"
+  },
+  {
+    "es": "¿Dónde está la oficina de empleo?",
+    "bn": "দোন্দে এস্তা লা অফিসিনা দে এমপ্লেও?",
+    "bnMeaning": "কর্মসংস্থানের অফিস কোথায়?",
+    "en": "Where is the employment office?"
+  },
+  {
+    "es": "Estoy disponible para trabajar.",
+    "bn": "এস্তোই দিসপোনিবলে পারা ত্রাবাখার।",
+    "bnMeaning": "আমি কাজ করার জন্য প্রস্তুত।",
+    "en": "I am available to work."
+  },
+  {
+    "es": "Necesito ayuda para hacer el currículum.",
+    "bn": "নেসেসিতো আয়ুদা পারা আসের এল কুরিকুলুম।",
+    "bnMeaning": "আমার সিভি তৈরিতে সাহায্য দরকার।",
+    "en": "I need help writing the resume."
+  },
+  {
+    "es": "Gracias por la oportunidad.",
+    "bn": "গ্রাসিয়াস পোর লা অপরতুনিদাদ।",
+    "bnMeaning": "সুযোগের জন্য ধন্যবাদ।",
+    "en": "Thank you for the opportunity."
+  },
+  {
+    "es": "Tengo una cita con el doctor.",
+    "bn": "তেনগো উনা সিতা কন এল দোক্তোর।",
+    "bnMeaning": "আমার ডাক্তারের সঙ্গে একটি অ্যাপয়েন্টমেন্ট আছে।",
+    "en": "I have an appointment with the doctor."
+  },
+  {
+    "es": "Me duele la cabeza.",
+    "bn": "মে দুয়েলে লা কাবেসা।",
+    "bnMeaning": "আমার মাথাব্যথা হচ্ছে।",
+    "en": "I have a headache."
+  },
+  {
+    "es": "¿Tiene medicina para la fiebre?",
+    "bn": "তিয়েনে মেডিসিনা পারা লা ফিয়েব্রে?",
+    "bnMeaning": "আপনার কি জ্বরের ওষুধ আছে?",
+    "en": "Do you have medicine for fever?"
+  },
+  {
+    "es": "Necesito una receta.",
+    "bn": "নেসেসিতো উনা রেসেতা।",
+    "bnMeaning": "আমার একটি প্রেসক্রিপশন দরকার।",
+    "en": "I need a prescription."
+  },
+  {
+    "es": "Estoy enfermo.",
+    "bn": "এস্তোই এনফেরমো।",
+    "bnMeaning": "আমি অসুস্থ।",
+    "en": "I am sick."
+  },
+  {
+    "es": "¿Dónde está la farmacia más cercana?",
+    "bn": "দোন্দে এস্তা লা ফারমাসিয়া মাস সেরকানা?",
+    "bnMeaning": "নিকটতম ফার্মেসি কোথায়?",
+    "en": "Where is the nearest pharmacy?"
+  },
+  {
+    "es": "No puedo dormir bien.",
+    "bn": "নো পুয়েদো দোরমির বিয়েন।",
+    "bnMeaning": "আমি ভালোভাবে ঘুমাতে পারি না।",
+    "en": "I can't sleep well."
+  },
+  {
+    "es": "Tengo tos y fiebre.",
+    "bn": "তেনগো তোস ই ফিয়েব্রে।",
+    "bnMeaning": "আমার কাশি ও জ্বর আছে।",
+    "en": "I have a cough and fever."
+  },
+  {
+    "es": "¿Puede ayudarme a llenar este formulario?",
+    "bn": "পুয়েদে আয়ুদারমে আ ইয়েনার এস্তে ফোরমুলারিও?",
+    "bnMeaning": "আপনি কি আমাকে এই ফর্ম পূরণ করতে সাহায্য করতে পারেন?",
+    "en": "Can you help me fill out this form?"
+  },
+  {
+    "es": "Estoy esperando mi turno.",
+    "bn": "এস্তোই এসপেরান্দো মি তুর্নো।",
+    "bnMeaning": "আমি আমার সিরিয়ালের জন্য অপেক্ষা করছি।",
+    "en": "I am waiting for my turn."
   }
-]
+  ]
+  
