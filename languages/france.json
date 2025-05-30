@@ -1,45 +1,15 @@
 [
   {
-    "fr": "Bonjour",
-    "bn": "বঁজুর",
-    "bnMeaning": "সুপ্রভাত / হ্যালো",
-    "en": "Hello / Good morning"
+    "fr": "Bonjour, comment allez-vous?",
+    "bn": "বঁজুর, কোমঁ আলে-ভু?",
+    "bnMeaning": "হ্যালো, আপনি কেমন আছেন?",
+    "en": "Hello, how are you?"
   },
   {
-    "fr": "Comment ça va?",
-    "bn": "কোমঁ সা ভা?",
-    "bnMeaning": "কেমন আছেন?",
-    "en": "How are you?"
-  },
-  {
-    "fr": "Merci",
-    "bn": "মেরসি",
-    "bnMeaning": "ধন্যবাদ",
-    "en": "Thank you"
-  },
-  {
-    "fr": "S'il vous plaît",
-    "bn": "সিল ভু প্লে",
-    "bnMeaning": "অনুগ্রহ করে",
-    "en": "Please"
-  },
-  {
-    "fr": "Excusez-moi",
-    "bn": "এক্সকিউজে-মোয়া",
-    "bnMeaning": "ক্ষমা করবেন",
-    "en": "Excuse me / Sorry"
-  },
-  {
-    "fr": "Où sont les toilettes?",
-    "bn": "উ সঁ লে তুয়ালেত?",
-    "bnMeaning": "টয়লেট কোথায়?",
-    "en": "Where are the toilets?"
-  },
-  {
-    "fr": "Je ne parle pas français",
-    "bn": "ঝে নে পার্লে পা ফ্রঁসেই",
-    "bnMeaning": "আমি ফরাসি বলতে পারি না",
-    "en": "I don't speak French"
+    "fr": "Je m'appelle...",
+    "bn": "ঝে মাপেল...",
+    "bnMeaning": "আমার নাম...",
+    "en": "My name is..."
   },
   {
     "fr": "Pouvez-vous m'aider?",
@@ -48,100 +18,16 @@
     "en": "Can you help me?"
   },
   {
-    "fr": "Combien ça coûte?",
-    "bn": "কঁবিয়ঁ সা কূত?",
-    "bnMeaning": "এটা কত দাম?",
-    "en": "How much does it cost?"
+    "fr": "Où sont les toilettes?",
+    "bn": "উ সঁ লে তুয়ালেত?",
+    "bnMeaning": "টয়লেট কোথায়?",
+    "en": "Where are the toilets?"
   },
   {
-    "fr": "Je voudrais de l'eau",
-    "bn": "ঝে ভুদ্রে দে ল’ও",
-    "bnMeaning": "আমি পানি চাই",
-    "en": "I would like some water"
-  },
-  {
-    "fr": "Je suis perdu",
-    "bn": "ঝে সুই পেরদু",
-    "bnMeaning": "আমি পথ হারিয়েছি (পুরুষ)",
-    "en": "I am lost"
-  },
-  {
-    "fr": "Je suis perdue",
-    "bn": "ঝে সুই পেরদু",
-    "bnMeaning": "আমি পথ হারিয়েছি (মহিলা)",
-    "en": "I am lost"
-  },
-  {
-    "fr": "Où est la station de métro la plus proche?",
-    "bn": "উ এ লা স্টাসিঁ দে মেত্রো লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
-    "en": "Where is the nearest metro station?"
-  },
-  {
-    "fr": "Je voudrais un billet pour Paris",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত পুর প্যারি",
-    "bnMeaning": "আমি প্যারিসের জন্য একটি টিকিট চাই",
-    "en": "I would like a ticket to Paris"
-  },
-  {
-    "fr": "À quelle heure part le train suivant?",
-    "bn": "আ কেল ঔর পার লে ট্রাঁ স্যুভাঁ?",
-    "bnMeaning": "পরবর্তী ট্রেন কখন ছাড়ে?",
-    "en": "What time does the next train leave?"
-  },
-  {
-    "fr": "Je suis étudiant",
-    "bn": "ঝে সুই এতুদিয়ঁ",
-    "bnMeaning": "আমি ছাত্র (পুরুষ)",
-    "en": "I am a student"
-  },
-  {
-    "fr": "Je suis étudiante",
-    "bn": "ঝে সুই এতুদিয়ঁত",
-    "bnMeaning": "আমি ছাত্রী (মহিলা)",
-    "en": "I am a student"
-  },
-  {
-    "fr": "Où puis-je trouver un médecin?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ মেদসঁ?",
-    "bnMeaning": "আমি কোথায় ডাক্তার পাব?",
-    "en": "Where can I find a doctor?"
-  },
-  {
-    "fr": "Appelez une ambulance, s'il vous plaît!",
-    "bn": "আপেলে ঔঁ আম্বুলাঁস, সিল ভু প্লে!",
-    "bnMeaning": "অ্যাম্বুলেন্স ডাকুন, অনুগ্রহ করে!",
-    "en": "Call an ambulance, please!"
-  },
-  {
-    "fr": "Je voudrais réserver une chambre",
-    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ শঁব্র",
-    "bnMeaning": "আমি একটি রুম বুক করতে চাই",
-    "en": "I would like to book a room"
-  },
-  {
-    "fr": "Comment vous appelez-vous?",
-    "bn": "কোমঁ ভু আপেলে-ভু?",
-    "bnMeaning": "আপনার নাম কী?",
-    "en": "What is your name?"
-  },
-  {
-    "fr": "Je m'appelle...",
-    "bn": "ঝে মাপেল...",
-    "bnMeaning": "আমার নাম ...",
-    "en": "My name is..."
-  },
-  {
-    "fr": "D'où venez-vous?",
-    "bn": "দু ভেনে-ভু?",
-    "bnMeaning": "আপনি কোথা থেকে এসেছেন?",
-    "en": "Where are you from?"
-  },
-  {
-    "fr": "Je viens du Bangladesh.",
-    "bn": "ঝে ভিয়ঁ দ্যু বানগলাদেশ।",
-    "bnMeaning": "আমি বাংলাদেশ থেকে এসেছি।",
-    "en": "I come from Bangladesh."
+    "fr": "Je ne parle pas français.",
+    "bn": "ঝে নে পার্লে পা ফ্রঁসেই।",
+    "bnMeaning": "আমি ফরাসি বলতে পারি না।",
+    "en": "I don't speak French."
   },
   {
     "fr": "Parlez-vous anglais?",
@@ -150,22 +36,10 @@
     "en": "Do you speak English?"
   },
   {
-    "fr": "Je ne parle pas bien français.",
-    "bn": "ঝে নে পার্লে পা বিয়ঁ ফ্রঁসেই।",
-    "bnMeaning": "আমি ফরাসি ভালো বলতে পারি না।",
-    "en": "I don't speak French well."
-  },
-  {
-    "fr": "Pouvez-vous répéter, s'il vous plaît?",
-    "bn": "পুভে-ভু রেপেতে, সিল ভু প্লে?",
-    "bnMeaning": "অনুগ্রহ করে আবার বলবেন?",
-    "en": "Can you repeat, please?"
-  },
-  {
-    "fr": "Où est la gare?",
-    "bn": "উ এ লা গার?",
-    "bnMeaning": "রেলস্টেশন কোথায়?",
-    "en": "Where is the train station?"
+    "fr": "Combien ça coûte?",
+    "bn": "কঁবিয়ঁ সা কূত?",
+    "bnMeaning": "এটা কত দাম?",
+    "en": "How much does it cost?"
   },
   {
     "fr": "Je voudrais un billet pour Paris.",
@@ -178,18 +52,6 @@
     "bn": "আ কেল ঔর পার লে ট্রাঁ?",
     "bnMeaning": "ট্রেন কখন ছাড়ে?",
     "en": "What time does the train leave?"
-  },
-  {
-    "fr": "Où puis-je acheter un ticket de métro?",
-    "bn": "উ পুই-ঝে আশতে ঔঁ টিকে দ্য মেত্রো?",
-    "bnMeaning": "আমি কোথায় মেট্রো টিকিট কিনতে পারি?",
-    "en": "Where can I buy a metro ticket?"
-  },
-  {
-    "fr": "Combien ça coûte?",
-    "bn": "কঁবিয়ঁ সা কূত?",
-    "bnMeaning": "এটা কত দাম?",
-    "en": "How much does it cost?"
   },
   {
     "fr": "Je cherche un hôtel.",
@@ -210,314 +72,50 @@
     "en": "I would like to book a room."
   },
   {
-    "fr": "Où est la pharmacie la plus proche?",
-    "bn": "উ এ লা ফারমাসি লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ফার্মেসি কোথায়?",
-    "en": "Where is the nearest pharmacy?"
-  },
-  {
-    "fr": "J'ai besoin d'un médecin.",
-    "bn": "ঝে বেসোইঁ দঁ মেদসঁ।",
-    "bnMeaning": "আমার একজন ডাক্তার দরকার।",
-    "en": "I need a doctor."
-  },
-  {
-    "fr": "Appelez une ambulance, s'il vous plaît!",
-    "bn": "আপেলে ঔঁ আম্বুলাঁস, সিল ভু প্লে!",
-    "bnMeaning": "অ্যাম্বুলেন্স ডাকুন, অনুগ্রহ করে!",
-    "en": "Call an ambulance, please!"
-  },
-  {
-    "fr": "Je suis allergique aux noix.",
-    "bn": "ঝে সুই আলেরজিক্ ও নোয়া।",
-    "bnMeaning": "আমার বাদামের এলার্জি আছে।",
-    "en": "I am allergic to nuts."
-  },
-  {
-    "fr": "Je ne mange pas de viande.",
-    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
-    "bnMeaning": "আমি মাংস খাই না।",
-    "en": "I don't eat meat."
-  },
-  {
-    "fr": "Où est la station de bus?",
-    "bn": "উ এ লা স্টাসিঁ দ্য বাস?",
-    "bnMeaning": "বাস স্টপ কোথায়?",
-    "en": "Where is the bus stop?"
-  },
-  {
-    "fr": "Je voudrais un taxi, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি, সিল ভু প্লে।",
-    "bnMeaning": "আমি একটি ট্যাক্সি চাই, অনুগ্রহ করে।",
-    "en": "I would like a taxi, please."
-  },
-  {
-    "fr": "Où puis-je trouver un distributeur automatique?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ দিস্ত্রিবুতের অতোমাতিক?",
-    "bnMeaning": "আমি কোথায় এটিএম পাব?",
-    "en": "Where can I find an ATM?"
-  },
-  {
-    "fr": "Je voudrais changer de l'argent.",
-    "bn": "ঝে ভুদ্রে শঁজে দ্য লার্জঁ।",
-    "bnMeaning": "আমি টাকা বদলাতে চাই।",
-    "en": "I would like to exchange money."
-  },
-  {
-    "fr": "Quelle est la spécialité locale?",
-    "bn": "কেল এ লা স্পেসিয়ালিতে লোকাল?",
-    "bnMeaning": "এখানের বিশেষ খাবার কী?",
-    "en": "What is the local specialty?"
-  },
-  {
-    "fr": "Je suis étudiant(e) à l'université.",
-    "bn": "ঝে সুই এতুদিয়ঁ(ত) আ লুনিভেরসিতে।",
-    "bnMeaning": "আমি বিশ্ববিদ্যালয়ের ছাত্র/ছাত্রী।",
-    "en": "I am a university student."
-  },
-  {
-    "fr": "Pouvez-vous parler plus lentement?",
-    "bn": "পুভে-ভু পারলে প্লু লঁতমান?",
-    "bnMeaning": "আপনি কি একটু ধীরে বলতে পারেন?",
-    "en": "Can you speak more slowly?"
-  },
-  {
-    "fr": "Je ne comprends pas.",
-    "bn": "ঝে নে কমপ্রঁ পা।",
-    "bnMeaning": "আমি বুঝতে পারছি না।",
-    "en": "I don't understand."
-  },
-  {
-    "fr": "Merci beaucoup pour votre aide.",
-    "bn": "মেরসি বোকু পুর ভোত্র এদ।",
-    "bnMeaning": "আপনার সাহায্যের জন্য অনেক ধন্যবাদ।",
-    "en": "Thank you very much for your help."
-  },
-  {
-    "fr": "À quelle heure ferme le magasin?",
-    "bn": "আ কেল ঔর ফের্ম লে মাগাজিন?",
-    "bnMeaning": "দোকান কখন বন্ধ হয়?",
-    "en": "What time does the store close?"
-  },
-  {
-    "fr": "Où puis-je acheter des médicaments?",
-    "bn": "উ পুই-ঝে আশতে দে মেডিসমঁ?",
-    "bnMeaning": "আমি কোথায় ওষুধ কিনতে পারি?",
-    "en": "Where can I buy medicine?"
-  },
-  {
-    "fr": "Je voudrais une table pour deux personnes.",
-    "bn": "ঝে ভুদ্রে ঔঁ তাবল পুর দ্যু পেরসঁ।",
-    "bnMeaning": "আমি দুইজনের জন্য একটি টেবিল চাই।",
-    "en": "I would like a table for two."
-  },
-  {
-    "fr": "Le menu, s'il vous plaît.",
-    "bn": "লে মেনু, সিল ভু প্লে।",
-    "bnMeaning": "মেনু, অনুগ্রহ করে।",
-    "en": "The menu, please."
-  },
-  {
-    "fr": "Où est la plage la plus proche?",
-    "bn": "উ এ লা প্লাজ লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের সমুদ্র সৈকত কোথায়?",
-    "en": "Where is the nearest beach?"
-  },
-  {
-    "fr": "Je voudrais louer une voiture.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভোইতুর।",
-    "bnMeaning": "আমি একটি গাড়ি ভাড়া নিতে চাই।",
-    "en": "I would like to rent a car."
-  },
-  {
-    "fr": "Où est le bureau de poste?",
-    "bn": "উ এ লে বুরো দ্য পোস্ত?",
-    "bnMeaning": "ডাকঘর কোথায়?",
-    "en": "Where is the post office?"
-  },
-  {
-    "fr": "Je cherche un médecin parlant anglais.",
-    "bn": "ঝে শেরশ ঔঁ মেদসঁ পারলঁ আংগলে।",
-    "bnMeaning": "আমি এমন একজন ডাক্তার খুঁজছি যিনি ইংরেজি বলতে পারেন।",
-    "en": "I am looking for a doctor who speaks English."
-  },
-  {
-    "fr": "Pouvez-vous m'appeler un taxi?",
-    "bn": "পুভে-ভু মাপেলে ঔঁ তাক্সি?",
-    "bnMeaning": "আপনি কি আমাকে একটি ট্যাক্সি ডাকতে পারেন?",
-    "en": "Can you call me a taxi?"
-  },
-  {
-    "fr": "Je suis allergique au gluten.",
-    "bn": "ঝে সুই আলেরজিক্ ও গ্লুটঁ।",
-    "bnMeaning": "আমার গ্লুটেনের এলার্জি আছে।",
-    "en": "I am allergic to gluten."
-  },
-  {
-    "fr": "Où puis-je trouver un supermarché?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সুপেরমারশে?",
-    "bnMeaning": "আমি কোথায় সুপারমার্কেট পাব?",
-    "en": "Where can I find a supermarket?"
-  },
-  {
-    "fr": "Je voudrais un café, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ কাফে, সিল ভু প্লে।",
-    "bnMeaning": "আমি একটি কফি চাই, অনুগ্রহ করে।",
-    "en": "I would like a coffee, please."
-  },
-  {
-    "fr": "Où est la station de taxi?",
-    "bn": "উ এ লা স্টাসিঁ দ্য তাক্সি?",
-    "bnMeaning": "ট্যাক্সি স্ট্যান্ড কোথায়?",
-    "en": "Where is the taxi stand?"
-  },
-  {
-    "fr": "Je voudrais un plan de la ville.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল।",
-    "bnMeaning": "আমি শহরের একটি মানচিত্র চাই।",
-    "en": "I would like a city map."
-  },
-  {
-    "fr": "Pouvez-vous m'aider avec mes bagages?",
-    "bn": "পুভে-ভু মেদে আভেক মেস বাগাজ?",
-    "bnMeaning": "আপনি কি আমার লাগেজে সাহায্য করতে পারেন?",
-    "en": "Can you help me with my luggage?"
-  },
-  {
-    "fr": "Je suis ici pour étudier.",
-    "bn": "ঝে সুই ইসি পুর এতুদিয়ে।",
-    "bnMeaning": "আমি এখানে পড়াশোনা করতে এসেছি।",
-    "en": "I am here to study."
-  },
-  {
-    "fr": "Où est la gare la plus proche?",
-    "bn": "উ এ লা গার লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের রেলস্টেশন কোথায়?",
-    "en": "Where is the nearest train station?"
-  },
-  {
-    "fr": "Je voudrais un billet aller simple.",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত আলে সঁপ্ল?",
-    "bnMeaning": "আমি একমুখী টিকিট চাই।",
-    "en": "I would like a one-way ticket."
-  },
-  {
-    "fr": "Je voudrais un billet aller-retour.",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত আলে-রেতুর?",
-    "bnMeaning": "আমি যাত্রা-ফিরার টিকিট চাই।",
-    "en": "I would like a round-trip ticket."
-  },
-  {
-    "fr": "À quelle heure part le bus?",
-    "bn": "আ কেল ঔর পার লে বাস?",
-    "bnMeaning": "বাস কখন ছাড়ে?",
-    "en": "What time does the bus leave?"
-  },
-  {
-    "fr": "Où puis-je acheter un ticket de bus?",
-    "bn": "উ পুই-ঝে আশতে ঔঁ টিকে দে বাস?",
-    "bnMeaning": "আমি কোথায় বাসের টিকিট কিনতে পারি?",
-    "en": "Where can I buy a bus ticket?"
-  },
-  {
-    "fr": "Le prochain arrêt est où?",
-    "bn": "লে প্রোকঁ আরে এ উ?",
-    "bnMeaning": "পরবর্তী স্টপ কোথায়?",
-    "en": "Where is the next stop?"
-  },
-  {
-    "fr": "Je voudrais un taxi, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি, সিল ভু প্লে।",
-    "bnMeaning": "আমি একটি ট্যাক্সি চাই, অনুগ্রহ করে।",
-    "en": "I would like a taxi, please."
-  },
-  {
-    "fr": "Pouvez-vous m'appeler un taxi?",
-    "bn": "পুভে-ভু মাপেলে ঔঁ তাক্সি?",
-    "bnMeaning": "আপনি কি আমাকে একটি ট্যাক্সি ডাকতে পারেন?",
-    "en": "Can you call me a taxi?"
-  },
-  {
-    "fr": "Où est la station de métro?",
-    "bn": "উ এ লা স্টাসিঁ দে মেত্রো?",
-    "bnMeaning": "মেট্রো স্টেশন কোথায়?",
-    "en": "Where is the metro station?"
-  },
-  {
-    "fr": "Je ne comprends pas.",
-    "bn": "ঝে নে কমপ্রঁ পা।",
-    "bnMeaning": "আমি বুঝতে পারছি না।",
-    "en": "I don't understand."
-  },
-  {
-    "fr": "Parlez-vous anglais?",
-    "bn": "পারলে-ভু আংগলে?",
-    "bnMeaning": "আপনি কি ইংরেজি বলতে পারেন?",
-    "en": "Do you speak English?"
-  },
-  {
-    "fr": "Pouvez-vous parler plus lentement?",
-    "bn": "পুভে-ভু পারলে প্লু লঁতমান?",
-    "bnMeaning": "আপনি কি একটু ধীরে বলতে পারেন?",
-    "en": "Can you speak more slowly?"
-  },
-  {
-    "fr": "Je suis étudiant(e).",
-    "bn": "ঝে সুই এতুদিয়ঁ(ত)।",
-    "bnMeaning": "আমি ছাত্র/ছাত্রী।",
-    "en": "I am a student."
-  },
-  {
-    "fr": "Je travaille ici.",
-    "bn": "ঝে ত্রাভাই ইসি।",
-    "bnMeaning": "আমি এখানে কাজ করি।",
-    "en": "I work here."
-  },
-  {
-    "fr": "Où est l'hôpital le plus proche?",
-    "bn": "উ এ ল'অপিতাল লে প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের হাসপাতাল কোথায়?",
-    "en": "Where is the nearest hospital?"
-  },
-  {
-    "fr": "J'ai besoin d'un médecin.",
-    "bn": "ঝে বেসোইঁ দঁ মেদসঁ।",
-    "bnMeaning": "আমার একজন ডাক্তার দরকার।",
-    "en": "I need a doctor."
-  },
-  {
-    "fr": "Appelez une ambulance, s'il vous plaît!",
-    "bn": "আপেলে ঔঁ আম্বুলাঁস, সিল ভু প্লে!",
-    "bnMeaning": "অ্যাম্বুলেন্স ডাকুন, অনুগ্রহ করে!",
-    "en": "Call an ambulance, please!"
-  },
-  {
-    "fr": "Je suis allergique aux noix.",
-    "bn": "ঝে সুই আলেরজিক্ ও নোয়া।",
-    "bnMeaning": "আমার বাদামের এলার্জি আছে।",
-    "en": "I am allergic to nuts."
-  },
-  {
-    "fr": "Je ne mange pas de viande.",
-    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
-    "bnMeaning": "আমি মাংস খাই না।",
-    "en": "I don't eat meat."
-  },
-  {
     "fr": "Où est la pharmacie?",
     "bn": "উ এ লা ফারমাসি?",
     "bnMeaning": "ফার্মেসি কোথায়?",
     "en": "Where is the pharmacy?"
   },
   {
-    "fr": "Je voudrais acheter des médicaments.",
-    "bn": "ঝে ভুদ্রে আশতে দে মেডিসমঁ।",
-    "bnMeaning": "আমি ওষুধ কিনতে চাই।",
-    "en": "I would like to buy medicine."
+    "fr": "J'ai besoin d'un médecin.",
+    "bn": "ঝে বেসোইঁ দঁ মেদসঁ।",
+    "bnMeaning": "আমার একজন ডাক্তার দরকার।",
+    "en": "I need a doctor."
   },
   {
-    "fr": "Où est la poste?",
-    "bn": "উ এ লা পোস্ত?",
+    "fr": "Appelez une ambulance, s'il vous plaît!",
+    "bn": "আপেলে ঔঁ আম্বুলাঁস, সিল ভু প্লে!",
+    "bnMeaning": "অ্যাম্বুলেন্স ডাকুন, অনুগ্রহ করে!",
+    "en": "Call an ambulance, please!"
+  },
+  {
+    "fr": "Je suis allergique aux noix.",
+    "bn": "ঝে সুই আলেরজিক ও নোয়া।",
+    "bnMeaning": "আমার বাদামের এলার্জি আছে।",
+    "en": "I am allergic to nuts."
+  },
+  {
+    "fr": "Je ne mange pas de viande.",
+    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
+    "bnMeaning": "আমি মাংস খাই না।",
+    "en": "I don't eat meat."
+  },
+  {
+    "fr": "Où est la gare?",
+    "bn": "উ এ লা গার?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the train station?"
+  },
+  {
+    "fr": "Je voudrais un taxi, s'il vous plaît.",
+    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি, সিল ভু প্লে।",
+    "bnMeaning": "আমি একটি ট্যাক্সি চাই, অনুগ্রহ করে।",
+    "en": "I would like a taxi, please."
+  },
+  {
+    "fr": "Où est le bureau de poste?",
+    "bn": "উ এ লে বুরো দ্য পোস্ত?",
     "bnMeaning": "ডাকঘর কোথায়?",
     "en": "Where is the post office?"
   },
@@ -528,130 +126,28 @@
     "en": "I would like to send a parcel."
   },
   {
-    "fr": "Où puis-je trouver un supermarché?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সুপেরমারশে?",
-    "bnMeaning": "আমি কোথায় সুপারমার্কেট পাব?",
-    "en": "Where can I find a supermarket?"
+    "fr": "Où est le marché?",
+    "bn": "উ এ লে মার্শে?",
+    "bnMeaning": "বাজার কোথায়?",
+    "en": "Where is the market?"
   },
   {
-    "fr": "Je voudrais louer un appartement.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ আপার্তেমঁ।",
-    "bnMeaning": "আমি একটি অ্যাপার্টমেন্ট ভাড়া নিতে চাই।",
-    "en": "I would like to rent an apartment."
+    "fr": "Je voudrais acheter des fruits et légumes.",
+    "bn": "ঝে ভুদ্রে আশতে দে ফ্রুই এ লেগুম।",
+    "bnMeaning": "আমি ফল এবং সবজি কিনতে চাই।",
+    "en": "I would like to buy fruits and vegetables."
   },
   {
-    "fr": "Combien coûte le loyer?",
-    "bn": "কঁবিয়ঁ কূত লে লোয়ে?",
-    "bnMeaning": "ভাড়ার দাম কত?",
-    "en": "How much is the rent?"
-  },
-  {
-    "fr": "Y a-t-il une connexion Wi-Fi?",
-    "bn": "ই ইয়-ত-ইল ঔঁ কোনেক্সিওঁ ওয়াই-ফাই?",
-    "bnMeaning": "ওয়াই-ফাই সংযোগ আছে কি?",
-    "en": "Is there a Wi-Fi connection?"
-  },
-  {
-    "fr": "Je voudrais un contrat de location.",
-    "bn": "ঝে ভুদ্রে ঔঁ কঁত্রা দ্য লোকাসিওঁ।",
-    "bnMeaning": "আমি ভাড়ার চুক্তিপত্র চাই।",
-    "en": "I would like a rental contract."
-  },
-  {
-    "fr": "Où est la banque la plus proche?",
-    "bn": "উ এ লা ব্যাংক লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ব্যাংক কোথায়?",
-    "en": "Where is the nearest bank?"
-  },
-  {
-    "fr": "Je voudrais ouvrir un compte bancaire.",
-    "bn": "ঝে ভুদ্রে উভির ঔঁ কঁপ্তে ব্যাংকের।",
-    "bnMeaning": "আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
-    "en": "I would like to open a bank account."
-  },
-  {
-    "fr": "Quels documents sont nécessaires?",
-    "bn": "কেল দকুমঁ সঁ নেসেসের?",
-    "bnMeaning": "কোন কোন কাগজপত্র প্রয়োজন?",
-    "en": "What documents are needed?"
-  },
-  {
-    "fr": "Puis-je payer par carte?",
-    "bn": "পুই-ঝে পায়ে পার কার্ত?",
-    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
-    "en": "Can I pay by card?"
-  },
-  {
-    "fr": "Où est le distributeur automatique?",
-    "bn": "উ এ লে দিস্ত্রিবুতের অতোমাতিক?",
-    "bnMeaning": "এটিএম কোথায়?",
-    "en": "Where is the ATM?"
-  },
-  {
-    "fr": "Je voudrais changer de l'argent.",
-    "bn": "ঝে ভুদ্রে শঁজে দ্য লার্জঁ।",
-    "bnMeaning": "আমি টাকা বদলাতে চাই।",
-    "en": "I would like to exchange money."
-  },
-  {
-    "fr": "Où est le centre-ville?",
-    "bn": "উ এ লে সঁত্র-ভিল?",
-    "bnMeaning": "শহরের কেন্দ্র কোথায়?",
-    "en": "Where is the city center?"
-  },
-  {
-    "fr": "Je voudrais un plan de la ville.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল।",
-    "bnMeaning": "আমি শহরের একটি মানচিত্র চাই।",
-    "en": "I would like a city map."
-  },
-  {
-    "fr": "Où puis-je trouver un médecin?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ মেদসঁ?",
-    "bnMeaning": "আমি কোথায় ডাক্তার পাব?",
-    "en": "Where can I find a doctor?"
-  },
-  {
-    "fr": "Je suis allergique aux médicaments.",
-    "bn": "ঝে সুই আলেরজিক্ ও মেডিসমঁ।",
-    "bnMeaning": "আমার ওষুধে এলার্জি আছে।",
-    "en": "I am allergic to medicines."
-  },
-  {
-    "fr": "Je ne me sens pas bien.",
-    "bn": "ঝে নে মঁ সঁ পা বিয়ঁ।",
-    "bnMeaning": "আমি ভালো বোধ করছি না।",
-    "en": "I don't feel well."
-  },
-  {
-    "fr": "Pouvez-vous appeler un taxi pour moi?",
-    "bn": "পুভে-ভু আপেলে ঔঁ তাক্সি পুর ময়া?",
-    "bnMeaning": "আপনি কি আমার জন্য একটি ট্যাক্সি ডাকতে পারেন?",
-    "en": "Can you call a taxi for me?"
-  },
-  {
-    "fr": "Je voudrais réserver une table pour deux personnes.",
-    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ তাবল পুর দ্যু পেরসঁ।",
-    "bnMeaning": "আমি দুইজনের জন্য একটি টেবিল বুক করতে চাই।",
-    "en": "I would like to reserve a table for two."
-  },
-  {
-    "fr": "Le menu, s'il vous plaît.",
-    "bn": "লে মেনু, সিল ভু প্লে।",
-    "bnMeaning": "মেনু, অনুগ্রহ করে।",
-    "en": "The menu, please."
+    "fr": "Pouvez-vous me recommander un bon restaurant?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ রেস্তোরাঁ?",
+    "bnMeaning": "আপনি কি আমাকে একটি ভালো রেস্টুরেন্ট সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good restaurant?"
   },
   {
     "fr": "Je suis végétarien(ne).",
     "bn": "ঝে সুই ভেজেতারিয়ঁ(ন)।",
     "bnMeaning": "আমি নিরামিষভোজী।",
     "en": "I am a vegetarian."
-  },
-  {
-    "fr": "Je ne mange pas de viande.",
-    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
-    "bnMeaning": "আমি মাংস খাই না।",
-    "en": "I don't eat meat."
   },
   {
     "fr": "L'addition, s'il vous plaît.",
@@ -672,142 +168,10 @@
     "en": "I would like to rent a bicycle."
   },
   {
-    "fr": "Où est le bureau de poste?",
-    "bn": "উ এ লে বুরো দ্য পোস্ত?",
-    "bnMeaning": "ডাকঘর কোথায়?",
-    "en": "Where is the post office?"
-  },
-  {
-    "fr": "Je suis ici pour étudier.",
-    "bn": "ঝে সুই ইসি পুর এতুদিয়ে।",
-    "bnMeaning": "আমি এখানে পড়াশোনা করতে এসেছি।",
-    "en": "I am here to study."
-  },
-  {
-    "fr": "Où puis-je trouver un supermarché ouvert 24h?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সুপেরমারশে উভের ভঁ-ভঁ-আ?",
-    "bnMeaning": "আমি কোথায় ২৪ ঘণ্টা খোলা সুপারমার্কেট পাব?",
-    "en": "Where can I find a supermarket open 24 hours?"
-  },
-  {
-    "fr": "Quels sont les horaires d'ouverture du magasin?",
-    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু মাগাজিন?",
-    "bnMeaning": "দোকানের খোলার সময় কী?",
-    "en": "What are the store opening hours?"
-  },
-  {
-    "fr": "Je voudrais un plan de métro.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য মেত্রো।",
-    "bnMeaning": "আমি মেট্রোর মানচিত্র চাই।",
-    "en": "I would like a metro map."
-  },
-  {
-    "fr": "Combien coûte un ticket de métro?",
-    "bn": "কঁবিয়ঁ কূত ঔঁ টিকে দ্য মেত্রো?",
-    "bnMeaning": "মেট্রো টিকিটের দাম কত?",
-    "en": "How much is a metro ticket?"
-  },
-  {
-    "fr": "Où est la station de taxi la plus proche?",
-    "bn": "উ এ লা স্টাসিঁ দ্য তাক্সি লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ট্যাক্সি স্ট্যান্ড কোথায়?",
-    "en": "Where is the nearest taxi stand?"
-  },
-  {
-    "fr": "Je voudrais louer une voiture pour une journée.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভোইতুর পুর ঔঁ জুরনে।",
-    "bnMeaning": "আমি এক দিনের জন্য গাড়ি ভাড়া নিতে চাই।",
-    "en": "I would like to rent a car for one day."
-  },
-  {
-    "fr": "Y a-t-il un parking près d'ici?",
-    "bn": "ই ইয়-ত-ইল ঔঁ পারকিং প্রে দিসি?",
-    "bnMeaning": "এখানে কাছাকাছি পার্কিং আছে কি?",
-    "en": "Is there parking nearby?"
-  },
-  {
-    "fr": "Où est la pharmacie la plus proche?",
-    "bn": "উ এ লা ফারমাসি লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ফার্মেসি কোথায়?",
-    "en": "Where is the nearest pharmacy?"
-  },
-  {
-    "fr": "Je voudrais acheter des médicaments pour le rhume.",
-    "bn": "ঝে ভুদ্রে আশতে দে মেডিসমঁ পুর লে রুম।",
-    "bnMeaning": "আমি সর্দির জন্য ওষুধ কিনতে চাই।",
-    "en": "I would like to buy medicine for a cold."
-  },
-  {
-    "fr": "Avez-vous un médecin qui parle anglais?",
-    "bn": "আভে-ভু ঔঁ মেদসঁ কি পারল আংগলে?",
-    "bnMeaning": "আপনার কাছে কি ইংরেজি বলতে পারা ডাক্তার আছে?",
-    "en": "Do you have a doctor who speaks English?"
-  },
-  {
-    "fr": "Je suis allergique à la pénicilline.",
-    "bn": "ঝে সুই আলেরজিক আ লা পেনিসিলিন।",
-    "bnMeaning": "আমার পেনিসিলিনের এলার্জি আছে।",
-    "en": "I am allergic to penicillin."
-  },
-  {
-    "fr": "Où est la clinique la plus proche?",
-    "bn": "উ এ লা ক্লিনিক লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ক্লিনিক কোথায়?",
-    "en": "Where is the nearest clinic?"
-  },
-  {
-    "fr": "Je ne me sens pas bien.",
-    "bn": "ঝে নে মঁ সঁ পা বিয়ঁ।",
-    "bnMeaning": "আমি ভালো বোধ করছি না।",
-    "en": "I don't feel well."
-  },
-  {
-    "fr": "Pouvez-vous appeler une ambulance?",
-    "bn": "পুভে-ভু আপেলে ঔঁ আম্বুলাঁস?",
-    "bnMeaning": "আপনি কি অ্যাম্বুলেন্স ডাকতে পারেন?",
-    "en": "Can you call an ambulance?"
-  },
-  {
-    "fr": "Je voudrais une consultation.",
-    "bn": "ঝে ভুদ্রে ঔঁ কঁসালতাসিওঁ।",
-    "bnMeaning": "আমি একটি পরামর্শ চাই।",
-    "en": "I would like a consultation."
-  },
-  {
-    "fr": "Où est la poste la plus proche?",
-    "bn": "উ এ লা পোস্ত লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ডাকঘর কোথায়?",
-    "en": "Where is the nearest post office?"
-  },
-  {
-    "fr": "Je voudrais envoyer un colis.",
-    "bn": "ঝে ভুদ্রে আঁভয়ে ঔঁ কোলি।",
-    "bnMeaning": "আমি একটি পার্সেল পাঠাতে চাই।",
-    "en": "I would like to send a parcel."
-  },
-  {
-    "fr": "Quels sont les tarifs pour l'envoi international?",
-    "bn": "কেল সঁ লে তারিফ পুর লঁভয়া আন্তেরনাসিওনাল?",
-    "bnMeaning": "আন্তর্জাতিক পাঠানোর জন্য কত খরচ?",
-    "en": "What are the rates for international shipping?"
-  },
-  {
-    "fr": "Où puis-je trouver un bureau de poste?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ বুরো দ্য পোস্ত?",
-    "bnMeaning": "আমি কোথায় ডাকঘর পাব?",
-    "en": "Where can I find a post office?"
-  },
-  {
-    "fr": "Je voudrais acheter un timbre.",
-    "bn": "ঝে ভুদ্রে আশতে ঔঁ তঁব্র।",
-    "bnMeaning": "আমি একটি ডাকটিকিট কিনতে চাই।",
-    "en": "I would like to buy a stamp."
-  },
-  {
-    "fr": "Où est la bibliothèque la plus proche?",
-    "bn": "উ এ লা বিবলিওতেক লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের লাইব্রেরি কোথায়?",
-    "en": "Where is the nearest library?"
+    "fr": "Où est la bibliothèque?",
+    "bn": "উ এ লা বিবলিওতেক?",
+    "bnMeaning": "লাইব্রেরি কোথায়?",
+    "en": "Where is the library?"
   },
   {
     "fr": "Puis-je emprunter un livre?",
@@ -936,22 +300,16 @@
     "en": "Can you help me fill out this form?"
   },
   {
-    "fr": "Où est la station de taxis?",
-    "bn": "উ এ লা স্টাসিঁ দ্য তাক্সি?",
-    "bnMeaning": "ট্যাক্সি স্ট্যান্ড কোথায়?",
-    "en": "Where is the taxi stand?"
+    "fr": "Je voudrais un taxi pour aller à l'aéroport.",
+    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি পুর আলে আ লায়েরোপোর্স।",
+    "bnMeaning": "আমি বিমানবন্দরে যাওয়ার জন্য একটি ট্যাক্সি চাই।",
+    "en": "I would like a taxi to go to the airport."
   },
   {
-    "fr": "Je voudrais un ticket pour l'aéroport.",
-    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লায়েরোপোর্স।",
-    "bnMeaning": "আমি বিমানবন্দরের জন্য একটি টিকিট চাই।",
-    "en": "I would like a ticket to the airport."
-  },
-  {
-    "fr": "À quelle heure part l'avion?",
-    "bn": "আ কেল ঔর পার ল্যাভিয়ঁ?",
-    "bnMeaning": "বিমান কখন ছাড়ে?",
-    "en": "What time does the plane leave?"
+    "fr": "À quelle heure décolle le vol?",
+    "bn": "আ কেল ঔর দেকল লে ভোল?",
+    "bnMeaning": "বিমান কখন উড়ে?",
+    "en": "What time does the flight take off?"
   },
   {
     "fr": "Où puis-je récupérer mes bagages?",
@@ -960,50 +318,14 @@
     "en": "Where can I collect my luggage?"
   },
   {
-    "fr": "Je voudrais un taxi pour l'aéroport.",
-    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি পুর লায়েরোপোর্স।",
-    "bnMeaning": "আমি বিমানবন্দরে যাওয়ার জন্য একটি ট্যাক্সি চাই।",
-    "en": "I would like a taxi to the airport."
+    "fr": "Je voudrais acheter un billet pour Lyon.",
+    "bn": "ঝে ভুদ্রে আশতে ঔঁ বিলেত পুর লিয়ঁ।",
+    "bnMeaning": "আমি লিওনের জন্য একটি টিকিট কিনতে চাই।",
+    "en": "I would like to buy a ticket to Lyon."
   },
   {
-    "fr": "Où est le bureau d'information?",
-    "bn": "উ এ লে বুরো দিনফরমাসিওঁ?",
-    "bnMeaning": "তথ্য কেন্দ্র কোথায়?",
-    "en": "Where is the information desk?"
-  },
-  {
-    "fr": "Je cherche un hôtel pas cher.",
-    "bn": "ঝে শেরশ ঔঁ অতেল পা শের।",
-    "bnMeaning": "আমি সস্তা একটি হোটেল খুঁজছি।",
-    "en": "I am looking for a cheap hotel."
-  },
-  {
-    "fr": "Y a-t-il un marché près d'ici?",
-    "bn": "ই ইয়-ত-ইল ঔঁ মার্শে প্রে দিসি?",
-    "bnMeaning": "এখানে কাছাকাছি বাজার আছে কি?",
-    "en": "Is there a market nearby?"
-  },
-  {
-    "fr": "Je voudrais un plan de la ville.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল।",
-    "bnMeaning": "আমি শহরের একটি মানচিত্র চাই।",
-    "en": "I would like a city map."
-  },
-  {
-    "fr": "Pouvez-vous me montrer sur la carte?",
-    "bn": "পুভে-ভু মঁ মনত্রে সুর লা কার্ত?",
-    "bnMeaning": "আপনি কি আমাকে মানচিত্রে দেখাতে পারেন?",
-    "en": "Can you show me on the map?"
-  },
-  {
-    "fr": "Je voudrais acheter un souvenir.",
-    "bn": "ঝে ভুদ্রে আশতে ঔঁ সুভেনির।",
-    "bnMeaning": "আমি একটি স্মৃতি চিহ্ন কিনতে চাই।",
-    "en": "I would like to buy a souvenir."
-  },
-  {
-    "fr": "Quels sont les horaires du musée?",
-    "bn": "কেল সঁ লে জোরেয়ার দ্যু মিউজে?",
+    "fr": "Quels sont les horaires d'ouverture du musée?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু মিউজে?",
     "bnMeaning": "মিউজিয়ামের খোলার সময় কী?",
     "en": "What are the museum opening hours?"
   },
@@ -1036,576 +358,6 @@
     "bn": "ঝে ভুদ্রে ঔঁ কাফে, সিল ভু প্লে।",
     "bnMeaning": "আমি একটি কফি চাই, অনুগ্রহ করে।",
     "en": "I would like a coffee, please."
-  },
-  {
-    "fr": "Je voudrais réserver une chambre pour trois nuits.",
-    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ শঁব্র পুর ত্রো নুই।",
-    "bnMeaning": "আমি তিন রাতের জন্য একটি রুম বুক করতে চাই।",
-    "en": "I would like to book a room for three nights."
-  },
-  {
-    "fr": "Y a-t-il un restaurant végétarien près d'ici?",
-    "bn": "ই ইয়-ত-ইল ঔঁ রেস্তোরাঁ ভেজেতারিয়ঁ প্রে দিসি?",
-    "bnMeaning": "এখানে কাছাকাছি কি কোনো নিরামিষ রেস্টুরেন্ট আছে?",
-    "en": "Is there a vegetarian restaurant nearby?"
-  },
-  {
-    "fr": "Pouvez-vous me recommander un bon restaurant?",
-    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ রেস্তোরাঁ?",
-    "bnMeaning": "আপনি কি আমাকে একটি ভালো রেস্টুরেন্ট সুপারিশ করতে পারেন?",
-    "en": "Can you recommend a good restaurant?"
-  },
-  {
-    "fr": "Je suis allergique au gluten.",
-    "bn": "ঝে সুই আলেরজিক ও গ্লুটঁ।",
-    "bnMeaning": "আমার গ্লুটেনের এলার্জি আছে।",
-    "en": "I am allergic to gluten."
-  },
-  {
-    "fr": "Où puis-je acheter des billets pour le spectacle?",
-    "bn": "উ পুই-ঝে আশতে দে বিলেত পুর লে স্পেকতাকল?",
-    "bnMeaning": "আমি কোথায় শোয়ের টিকিট কিনতে পারি?",
-    "en": "Where can I buy tickets for the show?"
-  },
-  {
-    "fr": "À quelle heure commence le spectacle?",
-    "bn": "আ কেল ঔর কোমঁস লে স্পেকতাকল?",
-    "bnMeaning": "শো কখন শুরু হয়?",
-    "en": "What time does the show start?"
-  },
-  {
-    "fr": "Je voudrais un guide touristique.",
-    "bn": "ঝে ভুদ্রে ঔঁ গিদ তুরিস্তিক।",
-    "bnMeaning": "আমি একটি ট্যুর গাইড চাই।",
-    "en": "I would like a tour guide."
-  },
-  {
-    "fr": "Où est le bureau de tourisme?",
-    "bn": "উ এ লে বুরো দ্য তুরিসম?",
-    "bnMeaning": "পর্যটন অফিস কোথায়?",
-    "en": "Where is the tourist office?"
-  },
-  {
-    "fr": "Je voudrais acheter une carte SIM.",
-    "bn": "ঝে ভুদ্রে আশতে ঔঁ কার্ত সিম।",
-    "bnMeaning": "আমি একটি সিম কার্ড কিনতে চাই।",
-    "en": "I would like to buy a SIM card."
-  },
-  {
-    "fr": "Quel est le numéro d'urgence?",
-    "bn": "কেল এ লে নমেরো দুর্গঁস?",
-    "bnMeaning": "জরুরি নম্বর কী?",
-    "en": "What is the emergency number?"
-  },
-  {
-    "fr": "Je suis perdu, pouvez-vous m'aider?",
-    "bn": "ঝে সুই পেরদু, পুভে-ভু মেদে?",
-    "bnMeaning": "আমি হারিয়ে গেছি, আপনি কি আমাকে সাহায্য করতে পারেন?",
-    "en": "I am lost, can you help me?"
-  },
-  {
-    "fr": "Où est la station de taxi?",
-    "bn": "উ এ লা স্টাসিঁ দ্য তাক্সি?",
-    "bnMeaning": "ট্যাক্সি স্ট্যান্ড কোথায়?",
-    "en": "Where is the taxi stand?"
-  },
-  {
-    "fr": "Je voudrais louer un vélo.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভেলো।",
-    "bnMeaning": "আমি একটি সাইকেল ভাড়া নিতে চাই।",
-    "en": "I would like to rent a bicycle."
-  },
-  {
-    "fr": "Combien coûte la location?",
-    "bn": "কঁবিয়ঁ কূত লা লোকাসিওঁ?",
-    "bnMeaning": "ভাড়ার দাম কত?",
-    "en": "How much is the rental?"
-  },
-  {
-    "fr": "Où puis-je trouver un distributeur automatique?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ দিস্ত্রিবুতের অতোমাতিক?",
-    "bnMeaning": "আমি কোথায় এটিএম পাব?",
-    "en": "Where can I find an ATM?"
-  },
-  {
-    "fr": "Je voudrais changer de l'argent.",
-    "bn": "ঝে ভুদ্রে শঁজে দ্য লার্জঁ।",
-    "bnMeaning": "আমি টাকা বদলাতে চাই।",
-    "en": "I would like to exchange money."
-  },
-  {
-    "fr": "Où est la gare routière?",
-    "bn": "উ এ লা গার রুতিয়ে?",
-    "bnMeaning": "বাস টার্মিনাল কোথায়?",
-    "en": "Where is the bus station?"
-  },
-  {
-    "fr": "Je voudrais un ticket pour Lyon.",
-    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লিয়ঁ।",
-    "bnMeaning": "আমি লিওনের জন্য একটি টিকিট চাই।",
-    "en": "I would like a ticket to Lyon."
-  },
-  {
-    "fr": "À quelle heure part le prochain train?",
-    "bn": "আ কেল ঔর পার লে প্রোকঁ ট্রাঁ?",
-    "bnMeaning": "পরবর্তী ট্রেন কখন ছাড়ে?",
-    "en": "What time does the next train leave?"
-  },
-  {
-    "fr": "Je voudrais réserver une visite guidée.",
-    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ ভিজিত গিদে।",
-    "bnMeaning": "আমি একটি গাইডেড ট্যুর বুক করতে চাই।",
-    "en": "I would like to book a guided tour."
-  },
-  {
-    "fr": "Où est la plage la plus proche?",
-    "bn": "উ এ লা প্লাজ লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের সমুদ্র সৈকত কোথায়?",
-    "en": "Where is the nearest beach?"
-  },
-  {
-    "fr": "Je voudrais acheter des billets pour le musée.",
-    "bn": "ঝে ভুদ্রে আশতে দে বিলেত পুর লে মিউজে।",
-    "bnMeaning": "আমি মিউজিয়ামের জন্য টিকিট কিনতে চাই।",
-    "en": "I would like to buy tickets for the museum."
-  },
-  {
-    "fr": "Quels sont les horaires du musée?",
-    "bn": "কেল সঁ লে জোরেয়ার দ্যু মিউজে?",
-    "bnMeaning": "মিউজিয়ামের খোলার সময় কী?",
-    "en": "What are the museum opening hours?"
-  },
-  {
-    "fr": "Je voudrais un plan de la ville.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল।",
-    "bnMeaning": "আমি শহরের একটি মানচিত্র চাই।",
-    "en": "I would like a city map."
-  },
-  {
-    "fr": "Pouvez-vous m'aider à remplir ce formulaire?",
-    "bn": "পুভে-ভু মেদে আ রঁপ্লির সে ফর্মুলেরে?",
-    "bnMeaning": "আপনি কি আমাকে এই ফরম পূরণ করতে সাহায্য করবেন?",
-    "en": "Can you help me fill out this form?"
-  },
-  {
-    "fr": "Je voudrais ouvrir un compte bancaire.",
-    "bn": "ঝে ভুদ্রে উভির ঔঁ কঁপ্তে ব্যাংকের।",
-    "bnMeaning": "আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
-    "en": "I would like to open a bank account."
-  },
-  {
-    "fr": "Quels documents sont nécessaires?",
-    "bn": "কেল দকুমঁ সঁ নেসেসের?",
-    "bnMeaning": "কোন কোন কাগজপত্র প্রয়োজন?",
-    "en": "What documents are needed?"
-  },
-  {
-    "fr": "Puis-je payer par carte?",
-    "bn": "পুই-ঝে পায়ে পার কার্ত?",
-    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
-    "en": "Can I pay by card?"
-  },
-  {
-    "fr": "Où est la bibliothèque?",
-    "bn": "উ এ লা বিবলিওতেক?",
-    "bnMeaning": "লাইব্রেরি কোথায়?",
-    "en": "Where is the library?"
-  },
-  {
-    "fr": "Puis-je emprunter un livre?",
-    "bn": "পুই-ঝে আম্পরঁতে ঔঁ লিভর?",
-    "bnMeaning": "আমি কি একটি বই ধার নিতে পারি?",
-    "en": "Can I borrow a book?"
-  },
-  {
-    "fr": "Combien de temps puis-je garder le livre?",
-    "bn": "কঁবিয়ঁ দ্য তঁ পুই-ঝে গার্দে লে লিভর?",
-    "bnMeaning": "আমি কতদিন বইটি রাখতে পারি?",
-    "en": "How long can I keep the book?"
-  },
-  {
-    "fr": "Où puis-je trouver un médecin anglophone?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ মেদসঁ আংগলফোঁ?",
-    "bnMeaning": "আমি কোথায় ইংরেজি ভাষী ডাক্তার পাব?",
-    "en": "Where can I find an English-speaking doctor?"
-  },
-  {
-    "fr": "Je suis ici pour un stage.",
-    "bn": "ঝে সুই ইসি পুর ঔঁ স্টাজ।",
-    "bnMeaning": "আমি এখানে ইন্টার্নশিপ করার জন্য এসেছি।",
-    "en": "I am here for an internship."
-  },
-  {
-    "fr": "Pouvez-vous m'aider avec ma demande de visa?",
-    "bn": "পুভে-ভু মেদে আভেক মা দেমঁদ দ্য ভিসা?",
-    "bnMeaning": "আপনি কি আমার ভিসার আবেদন নিয়ে সাহায্য করতে পারেন?",
-    "en": "Can you help me with my visa application?"
-  },
-  {
-    "fr": "Où est la préfecture?",
-    "bn": "উ এ লা প্রেফেকতুর?",
-    "bnMeaning": "প্রিফেকচার অফিস কোথায়?",
-    "en": "Where is the prefecture?"
-  },
-  {
-    "fr": "Je voudrais prendre rendez-vous pour un passeport.",
-    "bn": "ঝে ভুদ্রে প্রঁদ্রে রঁদেজ-ভু পুর ঔঁ পাসপোর।",
-    "bnMeaning": "আমি পাসপোর্টের জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
-    "en": "I would like to make an appointment for a passport."
-  },
-  {
-    "fr": "Quels sont les documents nécessaires pour le renouvellement?",
-    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর লে রেনুভেলমঁ?",
-    "bnMeaning": "নবায়নের জন্য কোন কোন কাগজপত্র দরকার?",
-    "en": "What documents are needed for the renewal?"
-  },
-  {
-    "fr": "Où est le centre de vaccination?",
-    "bn": "উ এ লে সঁত্র দ্য ভাকসিনাসিওঁ?",
-    "bnMeaning": "টিকা কেন্দ্র কোথায়?",
-    "en": "Where is the vaccination center?"
-  },
-  {
-    "fr": "Je voudrais prendre un rendez-vous pour une consultation.",
-    "bn": "ঝে ভুদ্রে প্রঁদ্রে ঔঁ রঁদেজ-ভু পুর ঔঁ কঁসালতাসিওঁ।",
-    "bnMeaning": "আমি পরামর্শের জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
-    "en": "I would like to make an appointment for a consultation."
-  },
-  {
-    "fr": "Où puis-je trouver une pharmacie de garde?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ ফারমাসি দ্য গার্দে?",
-    "bnMeaning": "আমি কোথায় জরুরি ফার্মেসি পাব?",
-    "en": "Where can I find an emergency pharmacy?"
-  },
-  {
-    "fr": "Je voudrais signaler un vol.",
-    "bn": "ঝে ভুদ্রে সিগনালে ঔঁ ভোল।",
-    "bnMeaning": "আমি একটি চুরি রিপোর্ট করতে চাই।",
-    "en": "I would like to report a theft."
-  },
-  {
-    "fr": "Où est le commissariat de police?",
-    "bn": "উ এ লে কোমিসারিয়াঁ দ্য পুলিশ?",
-    "bnMeaning": "পুলিশ স্টেশন কোথায়?",
-    "en": "Where is the police station?"
-  },
-  {
-    "fr": "Pouvez-vous m'aider à remplir ce formulaire?",
-    "bn": "পুভে-ভু মেদে আ রঁপ্লির সে ফর্মুলেরে?",
-    "bnMeaning": "আপনি কি আমাকে এই ফরম পূরণ করতে সাহায্য করবেন?",
-    "en": "Can you help me fill out this form?"
-  },
-  {
-    "fr": "Je voudrais un certificat de résidence.",
-    "bn": "ঝে ভুদ্রে ঔঁ সেরতিফিকা দ্য রেসিদঁস।",
-    "bnMeaning": "আমি একটি বাসস্থান সনদ চাই।",
-    "en": "I would like a residence certificate."
-  },
-  {
-    "fr": "Où est le bureau de poste le plus proche?",
-    "bn": "উ এ লে বুরো দ্য পোস্ত লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ডাকঘর কোথায়?",
-    "en": "Where is the nearest post office?"
-  },
-  {
-    "fr": "Je voudrais envoyer un colis recommandé.",
-    "bn": "ঝে ভুদ্রে আঁভয়ে ঔঁ কোলি রেকমঁদে।",
-    "bnMeaning": "আমি একটি রেজিস্টার্ড পার্সেল পাঠাতে চাই।",
-    "en": "I would like to send a registered parcel."
-  },
-  {
-    "fr": "Quels sont les tarifs pour l'envoi international?",
-    "bn": "কেল সঁ লে তারিফ পুর লঁভয়া আন্তেরনাসিওনাল?",
-    "bnMeaning": "আন্তর্জাতিক পাঠানোর জন্য কত খরচ?",
-    "en": "What are the rates for international shipping?"
-  },
-  {
-    "fr": "Où puis-je trouver un bureau de change?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ বুরো দ্য শঁজ?",
-    "bnMeaning": "আমি কোথায় মুদ্রা বিনিময় অফিস পাব?",
-    "en": "Where can I find a currency exchange office?"
-  },
-  {
-    "fr": "Je voudrais ouvrir un compte bancaire.",
-    "bn": "ঝে ভুদ্রে উভির ঔঁ কঁপ্তে ব্যাংকের।",
-    "bnMeaning": "আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
-    "en": "I would like to open a bank account."
-  },
-  {
-    "fr": "Puis-je payer par carte?",
-    "bn": "পুই-ঝে পায়ে পার কার্ত?",
-    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
-    "en": "Can I pay by card?"
-  },
-  {
-    "fr": "Où est la bibliothèque?",
-    "bn": "উ এ লা বিবলিওতেক?",
-    "bnMeaning": "লাইব্রেরি কোথায়?",
-    "en": "Where is the library?"
-  },
-  {
-    "fr": "Puis-je emprunter un livre?",
-    "bn": "পুই-ঝে আম্পরঁতে ঔঁ লিভর?",
-    "bnMeaning": "আমি কি একটি বই ধার নিতে পারি?",
-    "en": "Can I borrow a book?"
-  },
-  {
-    "fr": "Combien de temps puis-je garder le livre?",
-    "bn": "কঁবিয়ঁ দ্য তঁ পুই-ঝে গার্দে লে লিভর?",
-    "bnMeaning": "আমি কতদিন বইটি রাখতে পারি?",
-    "en": "How long can I keep the book?"
-  },
-  {
-    "fr": "Où est la mairie?",
-    "bn": "উ এ লা মেরে?",
-    "bnMeaning": "মিউনিসিপ্যালিটি অফিস কোথায়?",
-    "en": "Where is the town hall?"
-  },
-  {
-    "fr": "Je voudrais m'inscrire à la mairie.",
-    "bn": "ঝে ভুদ্রে মঁসক্রিরে আ লা মেরে।",
-    "bnMeaning": "আমি মিউনিসিপ্যালিটি অফিসে নিবন্ধন করতে চাই।",
-    "en": "I would like to register at the town hall."
-  },
-  {
-    "fr": "Quels documents sont nécessaires pour l'inscription?",
-    "bn": "কেল দকুমঁ সঁ নেসেসের পুর লঁস্ক্রিপসিওঁ?",
-    "bnMeaning": "নিবন্ধনের জন্য কী কী কাগজপত্র দরকার?",
-    "en": "What documents are needed for registration?"
-  },
-  {
-    "fr": "Bonjour, comment puis-je vous aider?",
-    "bn": "বঁজুর, কোমঁ পুই-ঝে ভু জেদে?",
-    "bnMeaning": "নমস্কার, আমি কিভাবে আপনাকে সাহায্য করতে পারি?",
-    "en": "Hello, how can I help you?"
-  },
-  {
-    "fr": "Où est la station de métro la plus proche?",
-    "bn": "উ এ লা স্টাসিঁ দ্য মেত্রো লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
-    "en": "Where is the nearest metro station?"
-  },
-  {
-    "fr": "Je voudrais un billet pour Paris, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত পুর প্যারি, সিল ভু প্লে।",
-    "bnMeaning": "আমি প্যারিসের জন্য একটি টিকিট চাই, অনুগ্রহ করে।",
-    "en": "I would like a ticket to Paris, please."
-  },
-  {
-    "fr": "À quelle heure part le train?",
-    "bn": "আ কেল ঔর পার লে ট্রাঁ?",
-    "bnMeaning": "ট্রেন কখন ছাড়ে?",
-    "en": "What time does the train leave?"
-  },
-  {
-    "fr": "Où puis-je acheter un ticket de bus?",
-    "bn": "উ পুই-ঝে আশতে ঔঁ টিকে দে বাস?",
-    "bnMeaning": "আমি কোথায় বাসের টিকিট কিনতে পারি?",
-    "en": "Where can I buy a bus ticket?"
-  },
-  {
-    "fr": "Je voudrais réserver une chambre d'hôtel.",
-    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ শঁব্র দ'অতেল।",
-    "bnMeaning": "আমি একটি হোটেলের রুম বুক করতে চাই।",
-    "en": "I would like to book a hotel room."
-  },
-  {
-    "fr": "Pouvez-vous m'appeler un taxi, s'il vous plaît?",
-    "bn": "পুভে-ভু মাপেলে ঔঁ তাক্সি, সিল ভু প্লে?",
-    "bnMeaning": "আপনি কি আমাকে একটি ট্যাক্সি ডাকতে পারেন, অনুগ্রহ করে?",
-    "en": "Can you call me a taxi, please?"
-  },
-  {
-    "fr": "Où est la pharmacie la plus proche?",
-    "bn": "উ এ লা ফারমাসি লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের ফার্মেসি কোথায়?",
-    "en": "Where is the nearest pharmacy?"
-  },
-  {
-    "fr": "Je suis allergique aux noix.",
-    "bn": "ঝে সুই আলেরজিক ও নোয়া।",
-    "bnMeaning": "আমার বাদামের এলার্জি আছে।",
-    "en": "I am allergic to nuts."
-  },
-  {
-    "fr": "Je ne comprends pas, pouvez-vous répéter?",
-    "bn": "ঝে নে কমপ্রঁ পা, পুভে-ভু রেপেতে?",
-    "bnMeaning": "আমি বুঝতে পারছি না, আপনি কি আবার বলবেন?",
-    "en": "I don't understand, can you repeat?"
-  },
-  {
-    "fr": "Merci beaucoup pour votre aide.",
-    "bn": "মেরসি বোকু পুর ভোত্র এদ।",
-    "bnMeaning": "আপনার সাহায্যের জন্য অনেক ধন্যবাদ।",
-    "en": "Thank you very much for your help."
-  },
-  {
-    "fr": "Excusez-moi, où sont les toilettes?",
-    "bn": "এক্সকিউজে-মোয়া, উ সঁ লে তুয়ালেত?",
-    "bnMeaning": "ক্ষমা করবেন, টয়লেট কোথায়?",
-    "en": "Excuse me, where are the toilets?"
-  },
-  {
-    "fr": "Je voudrais un café, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ কাফে, সিল ভু প্লে।",
-    "bnMeaning": "আমি একটি কফি চাই, অনুগ্রহ করে।",
-    "en": "I would like a coffee, please."
-  },
-  {
-    "fr": "Où est le bureau de poste?",
-    "bn": "উ এ লে বুরো দ্য পোস্ত?",
-    "bnMeaning": "ডাকঘর কোথায়?",
-    "en": "Where is the post office?"
-  },
-  {
-    "fr": "Je voudrais envoyer un colis.",
-    "bn": "ঝে ভুদ্রে আঁভয়ে ঔঁ কোলি।",
-    "bnMeaning": "আমি একটি পার্সেল পাঠাতে চাই।",
-    "en": "I would like to send a parcel."
-  },
-  {
-    "fr": "Pouvez-vous m'aider à remplir ce formulaire?",
-    "bn": "পুভে-ভু মেদে আ রঁপ্লির সে ফর্মুলেরে?",
-    "bnMeaning": "আপনি কি আমাকে এই ফরম পূরণ করতে সাহায্য করবেন?",
-    "en": "Can you help me fill out this form?"
-  },
-  {
-    "fr": "Je voudrais ouvrir un compte bancaire.",
-    "bn": "ঝে ভুদ্রে উভির ঔঁ কঁপ্তে ব্যাংকের।",
-    "bnMeaning": "আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
-    "en": "I would like to open a bank account."
-  },
-  {
-    "fr": "Quels documents sont nécessaires?",
-    "bn": "কেল দকুমঁ সঁ নেসেসের?",
-    "bnMeaning": "কোন কোন কাগজপত্র প্রয়োজন?",
-    "en": "What documents are needed?"
-  },
-  {
-    "fr": "Puis-je payer par carte?",
-    "bn": "পুই-ঝে পায়ে পার কার্ত?",
-    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
-    "en": "Can I pay by card?"
-  },
-  {
-    "fr": "Je voudrais un plan de la ville.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল।",
-    "bnMeaning": "আমি শহরের একটি মানচিত্র চাই।",
-    "en": "I would like a city map."
-  },
-  {
-    "fr": "Je voudrais un taxi pour l'aéroport, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি পুর লায়েরোপোর্স, সিল ভু প্লে।",
-    "bnMeaning": "আমি বিমানবন্দরে যাওয়ার জন্য একটি ট্যাক্সি চাই, অনুগ্রহ করে।",
-    "en": "I would like a taxi to the airport, please."
-  },
-  {
-    "fr": "Où puis-je récupérer mes bagages?",
-    "bn": "উ পুই-ঝে রেকুপেরে মেস বাগাজ?",
-    "bnMeaning": "আমি কোথায় আমার লাগেজ নিতে পারি?",
-    "en": "Where can I collect my luggage?"
-  },
-  {
-    "fr": "À quelle heure décolle l'avion?",
-    "bn": "আ কেল ঔর দেকল ল্যাভিয়ঁ?",
-    "bnMeaning": "বিমান কখন উড়ে?",
-    "en": "What time does the plane take off?"
-  },
-  {
-    "fr": "Où est le bureau d'information?",
-    "bn": "উ এ লে বুরো দিনফরমাসিওঁ?",
-    "bnMeaning": "তথ্য কেন্দ্র কোথায়?",
-    "en": "Where is the information desk?"
-  },
-  {
-    "fr": "Je voudrais acheter un billet pour Lyon.",
-    "bn": "ঝে ভুদ্রে আশতে ঔঁ বিলেত পুর লিয়ঁ।",
-    "bnMeaning": "আমি লিওনের জন্য একটি টিকিট কিনতে চাই।",
-    "en": "I would like to buy a ticket to Lyon."
-  },
-  {
-    "fr": "Puis-je avoir un reçu?",
-    "bn": "পুই-ঝে আভো ঔঁ রেসু?",
-    "bnMeaning": "আমি কি রসিদ পেতে পারি?",
-    "en": "Can I have a receipt?"
-  },
-  {
-    "fr": "Où est la station de taxis?",
-    "bn": "উ এ লা স্টাসিঁ দে তাক্সি?",
-    "bnMeaning": "ট্যাক্সি স্ট্যান্ড কোথায়?",
-    "en": "Where is the taxi stand?"
-  },
-  {
-    "fr": "Je voudrais louer une voiture pour une semaine.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভোইতুর পুর ঔঁ সেমেন।",
-    "bnMeaning": "আমি এক সপ্তাহের জন্য গাড়ি ভাড়া নিতে চাই।",
-    "en": "I would like to rent a car for one week."
-  },
-  {
-    "fr": "Y a-t-il un parking près d'ici?",
-    "bn": "ই ইয়-ত-ইল ঔঁ পারকিং প্রে দিসি?",
-    "bnMeaning": "এখানে কাছাকাছি পার্কিং আছে কি?",
-    "en": "Is there parking nearby?"
-  },
-  {
-    "fr": "Où puis-je trouver un bon restaurant?",
-    "bn": "উ পুই-ঝে ত্রুভে ঔঁ বঁ রেস্তোরাঁ?",
-    "bnMeaning": "আমি কোথায় একটি ভালো রেস্টুরেন্ট পাব?",
-    "en": "Where can I find a good restaurant?"
-  },
-  {
-    "fr": "Je suis végétarien(ne).",
-    "bn": "ঝে সুই ভেজেতারিয়ঁ(ন)।",
-    "bnMeaning": "আমি নিরামিষভোজী।",
-    "en": "I am a vegetarian."
-  },
-  {
-    "fr": "Je ne mange pas de viande.",
-    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
-    "bnMeaning": "আমি মাংস খাই না।",
-    "en": "I don't eat meat."
-  },
-  {
-    "fr": "L'addition, s'il vous plaît.",
-    "bn": "লাদিশঁ, সিল ভু প্লে।",
-    "bnMeaning": "বিল, অনুগ্রহ করে।",
-    "en": "The bill, please."
-  },
-  {
-    "fr": "Où est la plage?",
-    "bn": "উ এ লা প্লাজ?",
-    "bnMeaning": "সমুদ্র সৈকত কোথায়?",
-    "en": "Where is the beach?"
-  },
-  {
-    "fr": "Je voudrais louer un vélo.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভেলো।",
-    "bnMeaning": "আমি একটি সাইকেল ভাড়া নিতে চাই।",
-    "en": "I would like to rent a bicycle."
-  },
-  {
-    "fr": "Quels sont les horaires d'ouverture du musée?",
-    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু মিউজে?",
-    "bnMeaning": "মিউজিয়ামের খোলার সময় কী?",
-    "en": "What are the museum opening hours?"
-  },
-  {
-    "fr": "Je voudrais visiter le musée.",
-    "bn": "ঝে ভুদ্রে ভিজিতে লে মিউজে।",
-    "bnMeaning": "আমি মিউজিয়াম দেখতে চাই।",
-    "en": "I would like to visit the museum."
-  },
-  {
-    "fr": "Où est le marché?",
-    "bn": "উ এ লে মার্শে?",
-    "bnMeaning": "বাজার কোথায়?",
-    "en": "Where is the market?"
-  },
-  {
-    "fr": "Je voudrais acheter des fruits et légumes.",
-    "bn": "ঝে ভুদ্রে আশতে দে ফ্রুই এ লেগুম।",
-    "bnMeaning": "আমি ফল এবং সবজি কিনতে চাই।",
-    "en": "I would like to buy fruits and vegetables."
   },
   {
     "fr": "Pouvez-vous me recommander un bon hôtel?",
@@ -1660,6 +412,66 @@
     "bn": "ঝে ভুদ্রে ঔঁ কাফে, সিল ভু প্লে।",
     "bnMeaning": "আমি একটি কফি চাই, অনুগ্রহ করে।",
     "en": "I would like a coffee, please."
+  },
+  {
+    "fr": "Où est le marché?",
+    "bn": "উ এ লে মার্শে?",
+    "bnMeaning": "বাজার কোথায়?",
+    "en": "Where is the market?"
+  },
+  {
+    "fr": "Je voudrais acheter des fruits et légumes.",
+    "bn": "ঝে ভুদ্রে আশতে দে ফ্রুই এ লেগুম।",
+    "bnMeaning": "আমি ফল এবং সবজি কিনতে চাই।",
+    "en": "I would like to buy fruits and vegetables."
+  },
+  {
+    "fr": "Pouvez-vous me recommander un bon restaurant?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ রেস্তোরাঁ?",
+    "bnMeaning": "আপনি কি আমাকে একটি ভালো রেস্টুরেন্ট সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good restaurant?"
+  },
+  {
+    "fr": "Je suis végétarien(ne).",
+    "bn": "ঝে সুই ভেজেতারিয়ঁ(ন)।",
+    "bnMeaning": "আমি নিরামিষভোজী।",
+    "en": "I am a vegetarian."
+  },
+  {
+    "fr": "Je ne mange pas de viande.",
+    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
+    "bnMeaning": "আমি মাংস খাই না।",
+    "en": "I don't eat meat."
+  },
+  {
+    "fr": "L'addition, s'il vous plaît.",
+    "bn": "লাদিশঁ, সিল ভু প্লে।",
+    "bnMeaning": "বিল, অনুগ্রহ করে।",
+    "en": "The bill, please."
+  },
+  {
+    "fr": "Où est la plage?",
+    "bn": "উ এ লা প্লাজ?",
+    "bnMeaning": "সমুদ্র সৈকত কোথায়?",
+    "en": "Where is the beach?"
+  },
+  {
+    "fr": "Je voudrais louer un vélo.",
+    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভেলো।",
+    "bnMeaning": "আমি একটি সাইকেল ভাড়া নিতে চাই।",
+    "en": "I would like to rent a bicycle."
+  },
+  {
+    "fr": "Où est le bureau de poste?",
+    "bn": "উ এ লে বুরো দ্য পোস্ত?",
+    "bnMeaning": "ডাকঘর কোথায়?",
+    "en": "Where is the post office?"
+  },
+  {
+    "fr": "Je suis ici pour étudier.",
+    "bn": "ঝে সুই ইসি পুর এতুদিয়ে।",
+    "bnMeaning": "আমি এখানে পড়াশোনা করতে এসেছি।",
+    "en": "I am here to study."
   },
   {
     "fr": "Je voudrais un rendez-vous chez le médecin.",
@@ -1721,137 +533,102 @@
     "bnMeaning": "মিউজিয়ামের খোলার সময় কী?",
     "en": "What are the museum opening hours?"
   },
+[
   {
-    "fr": "Je voudrais visiter le musée.",
-    "bn": "ঝে ভুদ্রে ভিজিতে লে মিউজে।",
-    "bnMeaning": "আমি মিউজিয়াম দেখতে চাই।",
-    "en": "I would like to visit the museum."
+    "fr": "Je voudrais visiter la cathédrale.",
+    "bn": "ঝে ভুদ্রে ভিজিতে লা কাথেদ্রাল।",
+    "bnMeaning": "আমি ক্যাথেড্রাল দেখতে চাই।",
+    "en": "I would like to visit the cathedral."
   },
   {
-    "fr": "Où est la station de bus?",
-    "bn": "উ এ লা স্টাসিঁ দ্য বাস?",
-    "bnMeaning": "বাস স্টপ কোথায়?",
-    "en": "Where is the bus stop?"
+    "fr": "Où est le musée d'art moderne?",
+    "bn": "উ এ লে মিউজে দ'আর মোদের্ন?",
+    "bnMeaning": "আধুনিক শিল্পের মিউজিয়াম কোথায়?",
+    "en": "Where is the modern art museum?"
   },
   {
-    "fr": "Je voudrais un ticket de bus.",
-    "bn": "ঝে ভুদ্রে ঔঁ টিকে দ্য বাস।",
-    "bnMeaning": "আমি একটি বাস টিকিট চাই।",
-    "en": "I would like a bus ticket."
+    "fr": "Je cherche un bon restaurant près d'ici.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ প্রে দিসি।",
+    "bnMeaning": "আমি এখানে কাছাকাছি একটি ভালো রেস্টুরেন্ট খুঁজছি।",
+    "en": "I am looking for a good restaurant nearby."
   },
   {
-    "fr": "À quelle heure ferme le magasin?",
-    "bn": "আ কেল ঔর ফের্ম লে মাগাজিন?",
-    "bnMeaning": "দোকান কখন বন্ধ হয়?",
-    "en": "What time does the store close?"
+    "fr": "Pouvez-vous me recommander un plat local?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ প্লা লোকাল?",
+    "bnMeaning": "আপনি কি আমাকে একটি স্থানীয় খাবার সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a local dish?"
   },
   {
-    "fr": "Je voudrais un café, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে ঔঁ কাফে, সিল ভু প্লে।",
-    "bnMeaning": "আমি একটি কফি চাই, অনুগ্রহ করে।",
-    "en": "I would like a coffee, please."
+    "fr": "Je suis allergique aux fruits de mer.",
+    "bn": "ঝে সুই আলেরজিক ও ফ্রুই দ্য মের।",
+    "bnMeaning": "আমার সামুদ্রিক খাবারের এলার্জি আছে।",
+    "en": "I am allergic to seafood."
   },
   {
-    "fr": "Où est le marché?",
-    "bn": "উ এ লে মার্শে?",
-    "bnMeaning": "বাজার কোথায়?",
-    "en": "Where is the market?"
+    "fr": "Je ne mange pas de gluten.",
+    "bn": "ঝে নে মানজ পা দ্য গ্লুটঁ।",
+    "bnMeaning": "আমি গ্লুটেন খাই না।",
+    "en": "I don't eat gluten."
   },
   {
-    "fr": "Je voudrais acheter des fruits et légumes.",
-    "bn": "ঝে ভুদ্রে আশতে দে ফ্রুই এ লেগুম।",
-    "bnMeaning": "আমি ফল এবং সবজি কিনতে চাই।",
-    "en": "I would like to buy fruits and vegetables."
+    "fr": "Où puis-je acheter du pain frais?",
+    "bn": "উ পুই-ঝে আশতে দু পাঁ ফ্রে?",
+    "bnMeaning": "আমি কোথায় তাজা রুটি কিনতে পারি?",
+    "en": "Where can I buy fresh bread?"
   },
   {
-    "fr": "Pouvez-vous me recommander un bon hôtel?",
-    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ অতেল?",
-    "bnMeaning": "আপনি কি আমাকে একটি ভালো হোটেল সুপারিশ করতে পারেন?",
-    "en": "Can you recommend a good hotel?"
+    "fr": "Je voudrais une table pour deux personnes.",
+    "bn": "ঝে ভুদ্রে ঔঁ তাবল পুর দ্যু পেরসঁ।",
+    "bnMeaning": "আমি দুইজনের জন্য একটি টেবিল চাই।",
+    "en": "I would like a table for two."
   },
   {
-    "fr": "Je voudrais un lit simple.",
-    "bn": "ঝে ভুদ্রে ঔঁ লি সঁপ্ল।",
-    "bnMeaning": "আমি একটি একক বিছানা চাই।",
-    "en": "I would like a single bed."
+    "fr": "Le menu, s'il vous plaît.",
+    "bn": "লে মেনু, সিল ভু প্লে।",
+    "bnMeaning": "মেনু, অনুগ্রহ করে।",
+    "en": "The menu, please."
   },
   {
-    "fr": "Je voudrais un lit double.",
-    "bn": "ঝে ভুদ্রে ঔঁ লি দুবল।",
-    "bnMeaning": "আমি একটি ডাবল বিছানা চাই।",
-    "en": "I would like a double bed."
+    "fr": "L'addition, s'il vous plaît.",
+    "bn": "লাদিশঁ, সিল ভু প্লে।",
+    "bnMeaning": "বিল, অনুগ্রহ করে।",
+    "en": "The bill, please."
   },
   {
-    "fr": "Y a-t-il un ascenseur?",
-    "bn": "ই ইয়-ত-ইল ঔঁ আসঁসেউর?",
-    "bnMeaning": "এখানে কি লিফট আছে?",
-    "en": "Is there an elevator?"
+    "fr": "Où est la gare la plus proche?",
+    "bn": "উ এ লা গার লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের রেলস্টেশন কোথায়?",
+    "en": "Where is the nearest train station?"
   },
   {
-    "fr": "Je voudrais le petit déjeuner, s'il vous plaît.",
-    "bn": "ঝে ভুদ্রে লে পঁতি দেজ্যুনে, সিল ভু প্লে।",
-    "bnMeaning": "আমি নাস্তা চাই, অনুগ্রহ করে।",
-    "en": "I would like breakfast, please."
+    "fr": "Je voudrais un billet aller simple.",
+    "bn": "ঝে ভুদ্রে ঔঁ বিলেত আলে সঁপ্ল।",
+    "bnMeaning": "আমি একমুখী টিকিট চাই।",
+    "en": "I would like a one-way ticket."
   },
   {
-    "fr": "Je voudrais une carte SIM pour mon téléphone.",
-    "bn": "ঝে ভুদ্রে ঔঁ কার্ত সিম পুর মঁ তেলেফোন।",
-    "bnMeaning": "আমি আমার ফোনের জন্য একটি সিম কার্ড চাই।",
-    "en": "I would like a SIM card for my phone."
+    "fr": "Je voudrais un billet aller-retour.",
+    "bn": "ঝে ভুদ্রে ঔঁ বিলেত আলে-রেতুর।",
+    "bnMeaning": "আমি যাত্রা-ফিরার টিকিট চাই।",
+    "en": "I would like a round-trip ticket."
   },
   {
-    "fr": "Comment puis-je activer l'internet?",
-    "bn": "কোমঁ পুই-ঝে আক্টিভে লঁতেরনে?",
-    "bnMeaning": "আমি কীভাবে ইন্টারনেট চালু করব?",
-    "en": "How do I activate the internet?"
+    "fr": "À quelle heure part le bus?",
+    "bn": "আ কেল ঔর পার লে বাস?",
+    "bnMeaning": "বাস কখন ছাড়ে?",
+    "en": "What time does the bus leave?"
   },
   {
-    "fr": "Où puis-je acheter une carte de transport?",
-    "bn": "উ পুই-ঝে আশতে ঔঁ কার্ত দ্য ত্রান্সপোর্ত?",
-    "bnMeaning": "আমি কোথায় ট্রান্সপোর্ট কার্ড কিনতে পারি?",
-    "en": "Where can I buy a transport card?"
+    "fr": "Où puis-je acheter un ticket de bus?",
+    "bn": "উ পুই-ঝে আশতে ঔঁ টিকে দে বাস?",
+    "bnMeaning": "আমি কোথায় বাসের টিকিট কিনতে পারি?",
+    "en": "Where can I buy a bus ticket?"
   },
   {
-    "fr": "Je voudrais un abonnement mensuel.",
-    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ মঁসুয়েল।",
-    "bnMeaning": "আমি একটি মাসিক সাবস্ক্রিপশন চাই।",
-    "en": "I would like a monthly subscription."
-  },
-  {
-    "fr": "Où est la station de métro la plus proche?",
-    "bn": "উ এ লা স্টাসিঁ দ্য মেত্রো লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
-    "en": "Where is the nearest metro station?"
-  },
-  {
-    "fr": "Combien coûte un ticket de métro?",
-    "bn": "কঁবিয়ঁ কূত ঔঁ টিকে দ্য মেত্রো?",
-    "bnMeaning": "মেট্রো টিকিটের দাম কত?",
-    "en": "How much is a metro ticket?"
-  },
-  {
-    "fr": "Je voudrais un plan du métro.",
-    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য মেত্রো।",
-    "bnMeaning": "আমি মেট্রোর মানচিত্র চাই।",
-    "en": "I would like a metro map."
-  },
-  {
-    "fr": "Où est la gare routière?",
-    "bn": "উ এ লা গার রুতিয়ে?",
-    "bnMeaning": "বাস টার্মিনাল কোথায়?",
-    "en": "Where is the bus station?"
-  },
-  {
-    "fr": "Je voudrais un ticket de bus.",
-    "bn": "ঝে ভুদ্রে ঔঁ টিকে দ্য বাস।",
-    "bnMeaning": "আমি একটি বাস টিকিট চাই।",
-    "en": "I would like a bus ticket."
-  },
-  {
-    "fr": "À quelle heure part le prochain bus?",
-    "bn": "আ কেল ঔর পার লে প্রোকঁ বাস?",
-    "bnMeaning": "পরবর্তী বাস কখন ছাড়ে?",
-    "en": "What time does the next bus leave?"
+    "fr": "Le prochain arrêt est où?",
+    "bn": "লে প্রোকঁ আরে এ উ?",
+    "bnMeaning": "পরবর্তী স্টপ কোথায়?",
+    "en": "Where is the next stop?"
   },
   {
     "fr": "Je voudrais un taxi, s'il vous plaît.",
@@ -1866,124 +643,772 @@
     "en": "Can you call me a taxi?"
   },
   {
-    "fr": "Je voudrais louer une voiture.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভোইতুর।",
-    "bnMeaning": "আমি একটি গাড়ি ভাড়া নিতে চাই।",
-    "en": "I would like to rent a car."
+    "fr": "Où est la station de métro?",
+    "bn": "উ এ লা স্টাসিঁ দে মেত্রো?",
+    "bnMeaning": "মেট্রো স্টেশন কোথায়?",
+    "en": "Where is the metro station?"
   },
   {
-    "fr": "Y a-t-il un parking près d'ici?",
-    "bn": "ই ইয়-ত-ইল ঔঁ পারকিং প্রে দিসি?",
-    "bnMeaning": "এখানে কাছাকাছি পার্কিং আছে কি?",
-    "en": "Is there parking nearby?"
+    "fr": "Je ne comprends pas.",
+    "bn": "ঝে নে কমপ্রঁ পা।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don't understand."
   },
   {
-    "fr": "Où est la station de taxis?",
-    "bn": "উ এ লা স্টাসিঁ দে তাক্সি?",
-    "bnMeaning": "ট্যাক্সি স্ট্যান্ড কোথায়?",
-    "en": "Where is the taxi stand?"
+    "fr": "Comment puis-je obtenir un visa pour la France?",
+    "bn": "কোমঁ পুই-ঝে অবতনে ঔঁ ভিসা পুর লা ফ্রঁস?",
+    "bnMeaning": "আমি কীভাবে ফ্রান্সের জন্য ভিসা পাব?",
+    "en": "How can I get a visa for France?"
   },
   {
-    "fr": "Je voudrais un billet d'avion pour Marseille.",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত দ্যাভিয়ঁ পুর মার্সেই।",
-    "bnMeaning": "আমি মার্সেইয়ের জন্য একটি বিমান টিকিট চাই।",
-    "en": "I would like a plane ticket to Marseille."
+    "fr": "Quel est le meilleur moyen de transport ici?",
+    "bn": "কেল এ লে মেইয়র মোয়েং দ্য ত্রান্সপোর্ত ইসি?",
+    "bnMeaning": "এখানে সেরা পরিবহন মাধ্যম কী?",
+    "en": "What is the best means of transport here?"
   },
   {
-    "fr": "À quelle heure décolle l'avion?",
-    "bn": "আ কেল ঔর দেকল ল্যাভিয়ঁ?",
-    "bnMeaning": "বিমান কখন উড়ে?",
-    "en": "What time does the plane take off?"
+    "fr": "Y a-t-il des réductions pour les étudiants?",
+    "bn": "ই ইয়-ত-ইল দে রেদুইসিওঁ পুর লে এতুদিয়ঁ?",
+    "bnMeaning": "ছাত্রদের জন্য কি কোনো ছাড় আছে?",
+    "en": "Are there discounts for students?"
   },
   {
-    "fr": "Où puis-je récupérer mes bagages?",
-    "bn": "উ পুই-ঝে রেকুপেরে মেস বাগাজ?",
-    "bnMeaning": "আমি কোথায় আমার লাগেজ নিতে পারি?",
-    "en": "Where can I collect my luggage?"
+    "fr": "Je cherche un logement abordable.",
+    "bn": "ঝে শেরশ ঔঁ লোজমঁ আবোর্দাব্লে।",
+    "bnMeaning": "আমি সাশ্রয়ী ভাড়া বাড়ি খুঁজছি।",
+    "en": "I am looking for affordable accommodation."
   },
   {
-    "fr": "Je voudrais un billet de train pour Lyon.",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত দ্য ট্রাঁ পুর লিয়ঁ।",
-    "bnMeaning": "আমি লিওনের জন্য একটি ট্রেন টিকিট চাই।",
-    "en": "I would like a train ticket to Lyon."
+    "fr": "Quels documents dois-je fournir pour l'inscription?",
+    "bn": "কেল দকুমঁ দোয়-ঝে ফুরনির পুর লঁস্ক্রিপসিওঁ?",
+    "bnMeaning": "নিবন্ধনের জন্য আমি কী কী কাগজপত্র দিতে হবে?",
+    "en": "What documents do I need to provide for registration?"
   },
   {
-    "fr": "Quels sont les horaires d'ouverture?",
-    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর?",
-    "bnMeaning": "খোলার সময় কী?",
-    "en": "What are the opening hours?"
+    "fr": "Pouvez-vous m'expliquer le système de santé ici?",
+    "bn": "পুভে-ভু মেক্সপ্লিকে লে সিস্তেম দ্য সঁতে ইসি?",
+    "bnMeaning": "আপনি কি এখানে স্বাস্থ্য ব্যবস্থা ব্যাখ্যা করতে পারেন?",
+    "en": "Can you explain the healthcare system here?"
   },
   {
-    "fr": "Je voudrais visiter le musée d'art moderne.",
-    "bn": "ঝে ভুদ্রে ভিজিতে লে মিউজে দ'আর মোদের্ন।",
-    "bnMeaning": "আমি আধুনিক শিল্পের মিউজিয়াম দেখতে চাই।",
-    "en": "I would like to visit the modern art museum."
+    "fr": "Je voudrais ouvrir un compte bancaire en ligne.",
+    "bn": "ঝে ভুদ্রে উভির ঔঁ কঁপ্তে ব্যাংকের অঁ লিনে।",
+    "bnMeaning": "আমি অনলাইনে একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
+    "en": "I would like to open an online bank account."
   },
   {
-    "fr": "Où est le bureau de tourisme?",
-    "bn": "উ এ লে বুরো দ্য তুরিসম?",
-    "bnMeaning": "পর্যটন অফিস কোথায়?",
-    "en": "Where is the tourist office?"
+    "fr": "Où puis-je trouver un centre culturel?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সঁত্র কুলতুরেল?",
+    "bnMeaning": "আমি কোথায় একটি সাংস্কৃতিক কেন্দ্র পাব?",
+    "en": "Where can I find a cultural center?"
   },
   {
-    "fr": "Je voudrais un guide touristique.",
-    "bn": "ঝে ভুদ্রে ঔঁ গিদ তুরিস্তিক।",
-    "bnMeaning": "আমি একটি ট্যুর গাইড চাই।",
-    "en": "I would like a tour guide."
+    "fr": "Quel est le meilleur moment pour visiter Paris?",
+    "bn": "কেল এ লে মেইয়র মমঁ পুর ভিজিতে প্যারি?",
+    "bnMeaning": "প্যারিস ভ্রমণের জন্য সেরা সময় কখন?",
+    "en": "What is the best time to visit Paris?"
   },
   {
-    "fr": "Pouvez-vous me recommander un bon restaurant?",
-    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ রেস্তোরাঁ?",
-    "bnMeaning": "আপনি কি আমাকে একটি ভালো রেস্টুরেন্ট সুপারিশ করতে পারেন?",
-    "en": "Can you recommend a good restaurant?"
+    "fr": "Je voudrais apprendre le français rapidement.",
+    "bn": "ঝে ভুদ্রে আপ্রঁদ্রে লে ফ্রঁসেই রাপিদমঁ।",
+    "bnMeaning": "আমি দ্রুত ফরাসি শিখতে চাই।",
+    "en": "I want to learn French quickly."
   },
   {
-    "fr": "Je suis allergique aux fruits de mer.",
-    "bn": "ঝে সুই আলেরজিক ও ফ্রুই দ্য মের।",
-    "bnMeaning": "আমার সামুদ্রিক খাবারের এলার্জি আছে।",
-    "en": "I am allergic to seafood."
+    "fr": "Y a-t-il des événements culturels cette semaine?",
+    "bn": "ই ইয়-ত-ইল দে জেভেনমঁ কুলতুরেল সেট সেমেন?",
+    "bnMeaning": "এই সপ্তাহে কি কোনো সাংস্কৃতিক অনুষ্ঠান আছে?",
+    "en": "Are there any cultural events this week?"
   },
   {
-    "fr": "Je ne mange pas de gluten.",
-    "bn": "ঝে নে মানজ পা দ্য গ্লুটঁ।",
-    "bnMeaning": "আমি গ্লুটেন খাই না।",
-    "en": "I don't eat gluten."
+    "fr": "Je cherche un emploi à temps partiel.",
+    "bn": "ঝে শেরশ ঔঁঁ এমপ্লো আ তঁ পার্তিয়েল।",
+    "bnMeaning": "আমি পার্ট-টাইম চাকরি খুঁজছি।",
+    "en": "I am looking for a part-time job."
   },
   {
-    "fr": "L'addition, s'il vous plaît.",
-    "bn": "লাদিশঁ, সিল ভু প্লে।",
-    "bnMeaning": "বিল, অনুগ্রহ করে।",
-    "en": "The bill, please."
+    "fr": "Quels sont les meilleurs restaurants végétariens?",
+    "bn": "কেল সঁ লে মেইয়র রেস্তোরাঁ ভেজেতারিয়ঁ?",
+    "bnMeaning": "সেরা নিরামিষ রেস্টুরেন্টগুলো কী কী?",
+    "en": "What are the best vegetarian restaurants?"
   },
   {
-    "fr": "Où est la plage la plus proche?",
-    "bn": "উ এ লা প্লাজ লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের সমুদ্র সৈকত কোথায়?",
-    "en": "Where is the nearest beach?"
+    "fr": "Je voudrais un abonnement à la bibliothèque.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ আ লা বিবলিওতেক।",
+    "bnMeaning": "আমি লাইব্রেরির জন্য একটি সদস্যপদ চাই।",
+    "en": "I would like a library membership."
   },
   {
-    "fr": "Je voudrais louer un appartement.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ আপার্তেমঁ।",
-    "bnMeaning": "আমি একটি অ্যাপার্টমেন্ট ভাড়া নিতে চাই।",
-    "en": "I would like to rent an apartment."
+    "fr": "Où puis-je trouver un marché bio?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ মার্শে বিয়ো?",
+    "bnMeaning": "আমি কোথায় একটি অর্গানিক বাজার পাব?",
+    "en": "Where can I find an organic market?"
   },
   {
-    "fr": "Combien coûte le loyer?",
-    "bn": "কঁবিয়ঁ কূত লে লোয়ে?",
-    "bnMeaning": "ভাড়ার দাম কত?",
-    "en": "How much is the rent?"
+    "fr": "Je cherche un cours de français pour débutants.",
+    "bn": "ঝে শেরশ ঔঁ কুর দ্য ফ্রঁসেই পুর দেবুতাঁ।",
+    "bnMeaning": "আমি শুরুদের জন্য ফরাসি ক্লাস খুঁজছি।",
+    "en": "I am looking for a French course for beginners."
   },
   {
-    "fr": "Je voudrais une carte de transport pour une semaine.",
-    "bn": "ঝে ভুদ্রে ঔঁ কার্ত দ্য ত্রান্সপোর্ত পুর ঔঁ সেমেন।",
-    "bnMeaning": "আমি এক সপ্তাহের জন্য একটি ট্রান্সপোর্ট কার্ড চাই।",
-    "en": "I would like a transport card for one week."
+    "fr": "Quels sont les horaires d'ouverture de la bibliothèque?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্য লা বিবলিওতেক?",
+    "bnMeaning": "লাইব্রেরির খোলার সময় কী?",
+    "en": "What are the library opening hours?"
   },
   {
-    "fr": "Où puis-je acheter un ticket de métro?",
-    "bn": "উ পুই-ঝে আশতে ঔঁ টিকে দ্য মেত্রো?",
-    "bnMeaning": "আমি কোথায় মেট্রো টিকিট কিনতে পারি?",
-    "en": "Where can I buy a metro ticket?"
+    "fr": "Je voudrais un certificat de scolarité.",
+    "bn": "ঝে ভুদ্রে ঔঁ সেরতিফিকা দ্য স্কোলারিতে।",
+    "bnMeaning": "আমি একটি শিক্ষাগত সনদ চাই।",
+    "en": "I would like a school certificate."
+  },
+  {
+    "fr": "Pouvez-vous m'aider à remplir ce formulaire en ligne?",
+    "bn": "পুভে-ভু মেদে আ রঁপ্লির সে ফর্মুলেরে অঁ লিনে?",
+    "bnMeaning": "আপনি কি আমাকে অনলাইনে এই ফরম পূরণ করতে সাহায্য করবেন?",
+    "en": "Can you help me fill out this form online?"
+  },
+  {
+    "fr": "Je cherche un médecin qui parle anglais.",
+    "bn": "ঝে শেরশ ঔঁ মেদসঁ কি পারল আংগলে।",
+    "bnMeaning": "আমি এমন একজন ডাক্তার খুঁজছি যিনি ইংরেজি বলতে পারেন।",
+    "en": "I am looking for a doctor who speaks English."
+  },
+  {
+    "fr": "Où est la station de métro la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দ্য মেত্রো লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
+    "en": "Where is the nearest metro station?"
+  },
+  {
+    "fr": "Je voudrais un ticket de métro pour une semaine.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে দ্য মেত্রো পুর ঔঁ সেমেন।",
+    "bnMeaning": "আমি এক সপ্তাহের জন্য মেট্রো টিকিট চাই।",
+    "en": "I would like a metro ticket for one week."
+  },
+  {
+    "fr": "Quels sont les tarifs pour le transport en commun?",
+    "bn": "কেল সঁ লে তারিফ পুর লে ত্রান্সপোর্ত অঁ কোমঁ?",
+    "bnMeaning": "সাধারণ পরিবহনের জন্য কত খরচ?",
+    "en": "What are the fares for public transport?"
+  },
+  {
+    "fr": "Je cherche un bon café avec wifi gratuit.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কাফে আভেক ওয়াইফাই গ্রাতুই।",
+    "bnMeaning": "আমি একটি ভালো ক্যাফে খুঁজছি যেখানে বিনামূল্যে ওয়াইফাই আছে।",
+    "en": "I am looking for a good café with free wifi."
+  },
+  {
+    "fr": "Pouvez-vous me recommander un bon médecin?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ মেদসঁ?",
+    "bnMeaning": "আপনি কি আমাকে একজন ভালো ডাক্তার সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good doctor?"
+  },
+  {
+    "fr": "Je voudrais prendre rendez-vous pour un examen médical.",
+    "bn": "ঝে ভুদ্রে প্রঁদ্রে রঁদেজ-ভু পুর ঔঁ এক্সামঁ মেডিকাল।",
+    "bnMeaning": "আমি একটি চিকিৎসা পরীক্ষার জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like to make an appointment for a medical exam."
+  },
+  {
+    "fr": "Où est la pharmacie de garde la plus proche?",
+    "bn": "উ এ লা ফারমাসি দ্য গার্দে লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের জরুরি ফার্মেসি কোথায়?",
+    "en": "Where is the nearest emergency pharmacy?"
+  },
+  {
+    "fr": "Je cherche un logement étudiant.",
+    "bn": "ঝে শেরশ ঔঁ লোজমঁ এতুদিয়ঁ।",
+    "bnMeaning": "আমি ছাত্রাবাস খুঁজছি।",
+    "en": "I am looking for student accommodation."
+  },
+  {
+    "fr": "Quels sont les meilleurs quartiers pour vivre?",
+    "bn": "কেল সঁ লে মেইয়র কার্তিয়ে পুর ভিভ্রে?",
+    "bnMeaning": "বসবাসের জন্য সেরা এলাকা কোনগুলো?",
+    "en": "What are the best neighborhoods to live in?"
+  },
+  {
+    "fr": "Je voudrais un guide touristique pour visiter la ville.",
+    "bn": "ঝে ভুদ্রে ঔঁ গিদ তুরিস্তিক পুর ভিজিতে লা ভিল।",
+    "bnMeaning": "আমি শহর ঘুরে দেখার জন্য একটি গাইড চাই।",
+    "en": "I would like a tour guide to visit the city."
+  },
+  {
+    "fr": "Où puis-je acheter un pass pour les transports en commun?",
+    "bn": "উ পুই-ঝে আশতে ঔঁ পাস পুর লে ত্রান্সপোর্ত অঁ কোমঁ?",
+    "bnMeaning": "আমি কোথায় সাধারণ পরিবহনের জন্য পাস কিনতে পারি?",
+    "en": "Where can I buy a pass for public transport?"
+  },
+  {
+    "fr": "Je voudrais louer un vélo pour la journée.",
+    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভেলো পুর লা জুরনে।",
+    "bnMeaning": "আমি এক দিনের জন্য একটি সাইকেল ভাড়া নিতে চাই।",
+    "en": "I would like to rent a bicycle for the day."
+  },
+  {
+    "fr": "Quels sont les horaires du marché local?",
+    "bn": "কেল সঁ লে জোরেয়ার দ্যু মার্শে লোকাল?",
+    "bnMeaning": "স্থানীয় বাজারের খোলার সময় কী?",
+    "en": "What are the opening hours of the local market?"
+  },
+  {
+    "fr": "Je cherche un restaurant halal.",
+    "bn": "ঝে শেরশ ঔঁ রেস্তোরাঁ হালাল।",
+    "bnMeaning": "আমি একটি হালাল রেস্টুরেন্ট খুঁজছি।",
+    "en": "I am looking for a halal restaurant."
+  },
+  {
+    "fr": "Où est le bureau de poste le plus proche?",
+    "bn": "উ এ লে বুরো দ্য পোস্ত লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ডাকঘর কোথায়?",
+    "en": "Where is the nearest post office?"
+  },
+  {
+    "fr": "Je voudrais envoyer un colis en recommandé.",
+    "bn": "ঝে ভুদ্রে আঁভয়ে ঔঁ কোলি আঁ রেকমঁদে।",
+    "bnMeaning": "আমি একটি রেজিস্টার্ড পার্সেল পাঠাতে চাই।",
+    "en": "I would like to send a registered parcel."
+  },
+  {
+    "fr": "Pouvez-vous m'aider à remplir cette déclaration?",
+    "bn": "পুভে-ভু মেদে আ রঁপ্লির সেট দেক্লারাসিওঁ?",
+    "bnMeaning": "আপনি কি আমাকে এই ঘোষণা পূরণ করতে সাহায্য করবেন?",
+    "en": "Can you help me fill out this declaration?"
+  },
+  {
+    "fr": "Je cherche un avocat spécialisé en droit des étrangers.",
+    "bn": "ঝে শেরশ ঔঁ আভোকা স্পেসিয়ালিজে আ দ্রো দে জত্রঁজের।",
+    "bnMeaning": "আমি বিদেশিদের আইনে বিশেষজ্ঞ একজন আইনজীবী খুঁজছি।",
+    "en": "I am looking for a lawyer specialized in immigration law."
+  },
+  {
+    "fr": "Quels sont les documents nécessaires pour un permis de conduire?",
+    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর ঔঁ পেরমি দ্য কঁদুইর?",
+    "bnMeaning": "ড্রাইভিং লাইসেন্সের জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are needed for a driving license?"
+  },
+  {
+    "fr": "Je voudrais prendre rendez-vous pour un examen de conduite.",
+    "bn": "ঝে ভুদ্রে প্রঁদ্রে রঁদেজ-ভু পুর ঔঁ এক্সামঁ দ্য কঁদুইত।",
+    "bnMeaning": "আমি ড্রাইভিং পরীক্ষার জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like to make an appointment for a driving test."
+  },
+  {
+    "fr": "Où est le centre de vaccination le plus proche?",
+    "bn": "উ এ লে সঁত্র দ্য ভাকসিনাসিওঁ লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের টিকা কেন্দ্র কোথায়?",
+    "en": "Where is the nearest vaccination center?"
+  },
+  {
+    "fr": "Je voudrais m'inscrire à un cours de langue.",
+    "bn": "ঝে ভুদ্রে মঁসক্রিরে আ ঔঁ কুর দ্য লঁগ।",
+    "bnMeaning": "আমি একটি ভাষা কোর্সে ভর্তি হতে চাই।",
+    "en": "I would like to enroll in a language course."
+  },
+  {
+    "fr": "Quels sont les moyens de paiement acceptés?",
+    "bn": "কেল সঁ লে মোয়েং দ্য পায়ে মান আক্সেপ্টে?",
+    "bnMeaning": "কোন কোন পেমেন্ট পদ্ধতি গ্রহণযোগ্য?",
+    "en": "What payment methods are accepted?"
+  },
+  {
+    "fr": "Je cherche un supermarché ouvert tard le soir.",
+    "bn": "ঝে শেরশ ঔঁ সুপেরমারশে উভের তার লে সুয়ার।",
+    "bnMeaning": "আমি সন্ধ্যায় দেরি পর্যন্ত খোলা একটি সুপারমার্কেট খুঁজছি।",
+    "en": "I am looking for a supermarket open late in the evening."
+  },
+  {
+    "fr": "Pouvez-vous me dire où se trouve la station de taxis?",
+    "bn": "পুভে-ভু মঁ দির উ স ত্রুভ লা স্টাসিঁ দে তাক্সি?",
+    "bnMeaning": "আপনি কি আমাকে বলতে পারেন ট্যাক্সি স্ট্যান্ড কোথায়?",
+    "en": "Can you tell me where the taxi stand is?"
+  },
+  {
+    "fr": "Je voudrais un billet pour le spectacle de ce soir.",
+    "bn": "ঝে ভুদ্রে ঔঁ বিলেত পুর লে স্পেকতাকল দ্য সে সুয়ার।",
+    "bnMeaning": "আমি আজ সন্ধ্যার শোয়ের জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for tonight's show."
+  },
+  {
+    "fr": "Où est le bureau d'information touristique?",
+    "bn": "উ এ লে বুরো দিনফরমাসিওঁ তুরিস্তিক?",
+    "bnMeaning": "পর্যটন তথ্য অফিস কোথায়?",
+    "en": "Where is the tourist information office?"
+  },
+  {
+    "fr": "Je cherche un bon coiffeur près d'ici.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কোয়েফুর প্রে দিসি।",
+    "bnMeaning": "আমি এখানে কাছাকাছি একটি ভালো নাপিত খুঁজছি।",
+    "en": "I am looking for a good hairdresser nearby."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture du musée d'histoire?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু মিউজে দিস্তোয়ার?",
+    "bnMeaning": "ঐতিহাসিক মিউজিয়ামের খোলার সময় কী?",
+    "en": "What are the opening hours of the history museum?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le métro jusqu'à la station Charles de Gaulle.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে মেত্রো জুসকা লা স্টাসিঁ শার্ল দ্য গল।",
+    "bnMeaning": "আমি চার্লস দ্য গল স্টেশন পর্যন্ত মেট্রো টিকিট চাই।",
+    "en": "I would like a metro ticket to Charles de Gaulle station."
+  },
+  {
+    "fr": "Pouvez-vous me dire où est la sortie de secours?",
+    "bn": "পুভে-ভু মঁ দির উ এ লা সোর্তি দ্য সেকুর?",
+    "bnMeaning": "আপনি কি আমাকে বলতে পারেন জরুরি নির্গমণ কোথায়?",
+    "en": "Can you tell me where the emergency exit is?"
+  },
+  {
+    "fr": "Je cherche un café avec une terrasse extérieure.",
+    "bn": "ঝে শেরশ ঔঁ কাফে আভেক ঔঁ তেরাস এক্স্তেরিয়োর।",
+    "bnMeaning": "আমি একটি বাইরের টেরেস সহ ক্যাফে খুঁজছি।",
+    "en": "I am looking for a café with an outdoor terrace."
+  },
+  {
+    "fr": "Quels sont les plats typiques de cette région?",
+    "bn": "কেল সঁ লে প্লা টিপিক দ্য সেট রেজিওঁ?",
+    "bnMeaning": "এই অঞ্চলের প্রচলিত খাবারগুলো কী কী?",
+    "en": "What are the typical dishes of this region?"
+  },
+  {
+    "fr": "Je voudrais acheter un ticket pour le théâtre.",
+    "bn": "ঝে ভুদ্রে আশতে ঔঁ টিকে পুর লে থিয়াত্র।",
+    "bnMeaning": "আমি থিয়েটারের জন্য একটি টিকিট কিনতে চাই।",
+    "en": "I would like to buy a ticket for the theater."
+  },
+  {
+    "fr": "Où est la station de location de voitures?",
+    "bn": "উ এ লা স্টাসিঁ দ্য লোকাসিওঁ দ্য ভোইতুর?",
+    "bnMeaning": "গাড়ি ভাড়ার স্টেশন কোথায়?",
+    "en": "Where is the car rental station?"
+  },
+  {
+    "fr": "Je cherche un magasin de vêtements pas cher.",
+    "bn": "ঝে শেরশ ঔঁ মাগাজিন দ্য ভেতমঁ পা শের।",
+    "bnMeaning": "আমি সস্তা পোশাকের দোকান খুঁজছি।",
+    "en": "I am looking for a cheap clothing store."
+  },
+  {
+    "fr": "Quels sont les moyens de transport pour aller à l'université?",
+    "bn": "কেল সঁ লে মোয়েং দ্য ত্রান্সপোর্ত পুর আলে আ লুনিভেরসিতে?",
+    "bnMeaning": "বিশ্ববিদ্যালয়ে যাওয়ার জন্য পরিবহনের মাধ্যম কী কী?",
+    "en": "What are the means of transport to go to the university?"
+  },
+  {
+    "fr": "Je voudrais un abonnement pour le bus scolaire.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ পুর লে বাস স্কুলের।",
+    "bnMeaning": "আমি স্কুল বাসের জন্য একটি সাবস্ক্রিপশন চাই।",
+    "en": "I would like a subscription for the school bus."
+  },
+  {
+    "fr": "Pouvez-vous me dire où est la bibliothèque universitaire?",
+    "bn": "পুভে-ভু মঁ দির উ এ লা বিবলিওতেক ইউনিভেরসিটার?",
+    "bnMeaning": "আপনি কি আমাকে বলতে পারেন বিশ্ববিদ্যালয়ের লাইব্রেরি কোথায়?",
+    "en": "Can you tell me where the university library is?"
+  },
+  {
+    "fr": "Je cherche un café étudiant avec des prix abordables.",
+    "bn": "ঝে শেরশ ঔঁ কাফে এতুদিয়ঁ আভেক দে প্রি আবোর্দাব্ল।",
+    "bnMeaning": "আমি সাশ্রয়ী মূল্যের ছাত্র ক্যাফে খুঁজছি।",
+    "en": "I am looking for a student café with affordable prices."
+  },
+  {
+    "fr": "Quels sont les événements culturels ce mois-ci?",
+    "bn": "কেল সঁ লে জেভেনমঁ কুলতুরেল সে মোয়-সি?",
+    "bnMeaning": "এই মাসে কি সাংস্কৃতিক অনুষ্ঠান আছে?",
+    "en": "What cultural events are there this month?"
+  },
+  {
+    "fr": "Je voudrais un plan détaillé du centre-ville.",
+    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দেতাইয়ে দ্য সঁত্র-ভিল।",
+    "bnMeaning": "আমি শহরের বিস্তারিত মানচিত্র চাই।",
+    "en": "I would like a detailed map of the city center."
+  },
+  {
+    "fr": "Où puis-je trouver un parking sécurisé?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ পারকিং সেকিউরিজে?",
+    "bnMeaning": "আমি কোথায় নিরাপদ পার্কিং পাব?",
+    "en": "Where can I find secure parking?"
+  },
+  {
+    "fr": "Je cherche un coiffeur qui parle anglais.",
+    "bn": "ঝে শেরশ ঔঁ কোয়েফুর কি পারল আংগলে।",
+    "bnMeaning": "আমি এমন নাপিত খুঁজছি যিনি ইংরেজি বলতে পারেন।",
+    "en": "I am looking for a hairdresser who speaks English."
+  },
+  {
+    "fr": "Quels sont les horaires des transports publics le dimanche?",
+    "bn": "কেল সঁ লে জোরেয়ার দে ত্রান্সপোর পাবলিক লে দিনমঁশ?",
+    "bnMeaning": "রবিবার সাধারণ পরিবহনের সময়সূচি কী?",
+    "en": "What are the public transport schedules on Sunday?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le tramway.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে ত্রামওয়ে।",
+    "bnMeaning": "আমি ট্রামওয়ের জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the tram."
+  },
+  {
+    "fr": "Où est la station de taxis la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দে তাক্সি লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ট্যাক্সি স্ট্যান্ড কোথায়?",
+    "en": "Where is the nearest taxi stand?"
+  },
+  {
+    "fr": "Je cherche un médecin généraliste.",
+    "bn": "ঝে শেরশ ঔঁ মেদসঁ জেনেরালিস্ট।",
+    "bnMeaning": "আমি একজন সাধারণ চিকিৎসক খুঁজছি।",
+    "en": "I am looking for a general practitioner."
+  },
+  {
+    "fr": "Quels sont les documents requis pour une assurance santé?",
+    "bn": "কেল সঁ লে দকুমঁ রেকুই পুর ঔঁ আস্যুরঁস সঁতে?",
+    "bnMeaning": "স্বাস্থ্য বীমার জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are required for health insurance?"
+  },
+  {
+    "fr": "Je voudrais prendre un rendez-vous pour une consultation.",
+    "bn": "ঝে ভুদ্রে প্রঁদ্রে ঔঁ রঁদেজ-ভু পুর ঔঁ কঁসালতাসিওঁ।",
+    "bnMeaning": "আমি পরামর্শের জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like to make an appointment for a consultation."
+  },
+  {
+    "fr": "Où est le centre commercial le plus proche?",
+    "bn": "উ এ লে সঁত্র কোমারসিয়াল লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের শপিং সেন্টার কোথায়?",
+    "en": "Where is the nearest shopping center?"
+  },
+  {
+    "fr": "Je cherche un bon coiffeur pas cher.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কোয়েফুর পা শের।",
+    "bnMeaning": "আমি সস্তা একটি ভালো নাপিত খুঁজছি।",
+    "en": "I am looking for a good cheap hairdresser."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture du centre sportif?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু সঁত্র স্পোরতিফ?",
+    "bnMeaning": "ক্রীড়া কেন্দ্রে খোলার সময় কী?",
+    "en": "What are the opening hours of the sports center?"
+  },
+  {
+    "fr": "Je voudrais m'inscrire à la salle de sport.",
+    "bn": "ঝে ভুদ্রে মঁসক্রিরে আ লা সাল দ্য স্পোরত।",
+    "bnMeaning": "আমি জিমে ভর্তি হতে চাই।",
+    "en": "I would like to register at the gym."
+  },
+  {
+    "fr": "Où puis-je acheter des billets pour le cinéma?",
+    "bn": "উ পুই-ঝে আশতে দে বিলেত পুর লে সিনেমা?",
+    "bnMeaning": "আমি কোথায় সিনেমার টিকিট কিনতে পারি?",
+    "en": "Where can I buy tickets for the cinema?"
+  },
+  {
+    "fr": "Je cherche un bon dentiste.",
+    "bn": "ঝে শেরশ ঔঁ বঁ দঁতিস্ট।",
+    "bnMeaning": "আমি একজন ভালো দন্ত চিকিৎসক খুঁজছি।",
+    "en": "I am looking for a good dentist."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture de la poste?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্য লা পোস্ত?",
+    "bnMeaning": "ডাকঘরের খোলার সময় কী?",
+    "en": "What are the post office opening hours?"
+  },
+  {
+    "fr": "Je voudrais envoyer une lettre recommandée.",
+    "bn": "ঝে ভুদ্রে আঁভয়ে ঔঁ লেত্র রেকমঁদে।",
+    "bnMeaning": "আমি একটি রেজিস্টার্ড চিঠি পাঠাতে চাই।",
+    "en": "I would like to send a registered letter."
+  },
+  {
+    "fr": "Où est le distributeur automatique le plus proche?",
+    "bn": "উ এ লে দিস্ত্রিবুতের অতোমাতিক লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের এটিএম কোথায়?",
+    "en": "Where is the nearest ATM?"
+  },
+  {
+    "fr": "Je cherche un magasin de vêtements pour enfants.",
+    "bn": "ঝে শেরশ ঔঁ মাগাজিন দ্য ভেতমঁ পুর আনফঁ।",
+    "bnMeaning": "আমি বাচ্চাদের জন্য পোশাকের দোকান খুঁজছি।",
+    "en": "I am looking for a children's clothing store."
+  },
+  {
+    "fr": "Quels sont les moyens de paiement acceptés dans ce magasin?",
+    "bn": "কেল সঁ লে মোয়েং দ্য পায়ে মান আক্সেপ্টে দঁ সে মাগাজিন?",
+    "bnMeaning": "এই দোকানে কোন কোন পেমেন্ট পদ্ধতি গ্রহণযোগ্য?",
+    "en": "What payment methods are accepted in this store?"
+  },
+  {
+    "fr": "Je voudrais un abonnement internet haut débit.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ ইন্টারনেত ও দেবে।",
+    "bnMeaning": "আমি উচ্চ গতির ইন্টারনেট সাবস্ক্রিপশন চাই।",
+    "en": "I would like a high-speed internet subscription."
+  },
+  {
+    "fr": "Où puis-je trouver un centre médical?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সঁত্র মেডিকাল?",
+    "bnMeaning": "আমি কোথায় একটি চিকিৎসা কেন্দ্র পাব?",
+    "en": "Where can I find a medical center?"
+  },
+  {
+    "fr": "Je cherche un bon restaurant pour un dîner romantique.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ পুর ঔঁ দিনের রোমঁতিক।",
+    "bnMeaning": "আমি একটি ভালো রেস্টুরেন্ট খুঁজছি রোমান্টিক ডিনারের জন্য।",
+    "en": "I am looking for a good restaurant for a romantic dinner."
+  },
+  {
+    "fr": "Quels sont les horaires des transports publics le week-end?",
+    "bn": "কেল সঁ লে জোরেয়ার দে ত্রান্সপোর পাবলিক লে উইক-এঁ?",
+    "bnMeaning": "সপ্তাহান্তে সাধারণ পরিবহনের সময়সূচি কী?",
+    "en": "What are the public transport schedules on weekends?"
+  },
+  {
+    "fr": "Je voudrais un ticket de métro aller-retour.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে দ্য মেত্রো আলে-রেতুর।",
+    "bnMeaning": "আমি যাত্রা-ফিরার মেট্রো টিকিট চাই।",
+    "en": "I would like a round-trip metro ticket."
+  },
+  {
+    "fr": "Où est la station de métro la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দ্য মেত্রো লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
+    "en": "Where is the nearest metro station?"
+  },
+  {
+    "fr": "Je cherche un bon hôtel avec piscine.",
+    "bn": "ঝে শেরশ ঔঁ বঁ অতেল আভেক পিসিন।",
+    "bnMeaning": "আমি একটি সুইমিং পুল সহ ভালো হোটেল খুঁজছি।",
+    "en": "I am looking for a good hotel with a swimming pool."
+  },
+  {
+    "fr": "Quels sont les documents nécessaires pour louer un appartement?",
+    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর লুয়ে ঔঁ আপার্তেমঁ?",
+    "bnMeaning": "একটি অ্যাপার্টমেন্ট ভাড়ার জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are needed to rent an apartment?"
+  },
+  {
+    "fr": "Je voudrais un contrat de location.",
+    "bn": "ঝে ভুদ্রে ঔঁ কঁত্রা দ্য লোকাসিওঁ।",
+    "bnMeaning": "আমি একটি ভাড়ার চুক্তিপত্র চাই।",
+    "en": "I would like a rental contract."
+  },
+  {
+    "fr": "Où puis-je trouver un supermarché ouvert 24h?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সুপেরমারশে উভের ভঁ-ভঁ-আ?",
+    "bnMeaning": "আমি কোথায় ২৪ ঘণ্টা খোলা সুপারমার্কেট পাব?",
+    "en": "Where can I find a supermarket open 24 hours?"
+  },
+  {
+    "fr": "Je cherche un bon café pour travailler.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কাফে পুর ত্রাভাইয়ে।",
+    "bnMeaning": "আমি কাজ করার জন্য একটি ভালো ক্যাফে খুঁজছি।",
+    "en": "I am looking for a good café to work."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des magasins le dimanche?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে মাগাজিন লে দিনমঁশ?",
+    "bnMeaning": "রবিবার দোকানের খোলার সময় কী?",
+    "en": "What are the store opening hours on Sunday?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le bus touristique.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে বাস তুরিস্তিক।",
+    "bnMeaning": "আমি ট্যুরিস্ট বাসের জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the tourist bus."
+  },
+  {
+    "fr": "Où est le bureau de change le plus proche?",
+    "bn": "উ এ লে বুরো দ্য শঁজ লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের মুদ্রা বিনিময় অফিস কোথায়?",
+    "en": "Where is the nearest currency exchange office?"
+  },
+  {
+    "fr": "Je cherche un bon coiffeur pour une coupe de cheveux.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কোয়েফুর পুর ঔঁ কুপ দ্য শেভু।",
+    "bnMeaning": "আমি চুল কাটানোর জন্য একটি ভালো নাপিত খুঁজছি।",
+    "en": "I am looking for a good hairdresser for a haircut."
+  },
+  {
+    "fr": "Quels sont les moyens de transport pour aller à l'aéroport?",
+    "bn": "কেল সঁ লে মোয়েং দ্য ত্রান্সপোর পুর আলে আ লায়েরোপোর্স?",
+    "bnMeaning": "বিমানবন্দরে যাওয়ার জন্য পরিবহনের মাধ্যম কী কী?",
+    "en": "What are the means of transport to go to the airport?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le métro jusqu'à la station Gare du Nord.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে মেত্রো জুসকা লা স্টাসিঁ গার দ্যু নর।",
+    "bnMeaning": "আমি গার দ্যু নর স্টেশন পর্যন্ত মেট্রো টিকিট চাই।",
+    "en": "I would like a metro ticket to Gare du Nord station."
+  },
+  {
+    "fr": "Pouvez-vous m'indiquer le chemin pour aller à la mairie?",
+    "bn": "পুভে-ভু মঁদিনকে লে শমঁ পুর আলে আ লা মেরে?",
+    "bnMeaning": "আপনি কি আমাকে মিউনিসিপ্যালিটি অফিসে যাওয়ার পথ দেখাতে পারেন?",
+    "en": "Can you show me the way to the town hall?"
+  },
+  {
+    "fr": "Je cherche un bon restaurant pour un déjeuner d'affaires.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ পুর ঔঁ দেজ্যুন দাফেয়ার।",
+    "bnMeaning": "আমি একটি ভালো রেস্টুরেন্ট খুঁজছি ব্যবসায়িক লাঞ্চের জন্য।",
+    "en": "I am looking for a good restaurant for a business lunch."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des musées le lundi?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে মিউজে লে লঁদি?",
+    "bnMeaning": "সোমবার মিউজিয়ামের খোলার সময় কী?",
+    "en": "What are the museum opening hours on Monday?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le bus navette.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে বাস নাভেত।",
+    "bnMeaning": "আমি শাটল বাসের জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the shuttle bus."
+  },
+  {
+    "fr": "Où est la station de taxis la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দে তাক্সি লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ট্যাক্সি স্ট্যান্ড কোথায়?",
+    "en": "Where is the nearest taxi stand?"
+  },
+  {
+    "fr": "Je cherche un médecin spécialiste en cardiologie.",
+    "bn": "ঝে শেরশ ঔঁ মেদসঁ স্পেসিয়ালিস্ট আ কার্ডিওলজি।",
+    "bnMeaning": "আমি কার্ডিওলজি বিশেষজ্ঞ একজন ডাক্তার খুঁজছি।",
+    "en": "I am looking for a cardiologist."
+  },
+  {
+    "fr": "Quels sont les documents nécessaires pour une demande de carte de séjour?",
+    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর ঔঁ দেমঁদ দ্য কার্ত দে সেজুর?",
+    "bnMeaning": "বাসস্থান কার্ডের জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are needed for a residence permit application?"
+  },
+  {
+    "fr": "Je voudrais prendre rendez-vous pour un renouvellement de titre de séjour.",
+    "bn": "ঝে ভুদ্রে প্রঁদ্রে রঁদেজ-ভু পুর ঔঁ রেনুভেলমঁ দ্য তিত্র দে সেজুর।",
+    "bnMeaning": "আমি বাসস্থান কার্ড নবায়নের জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like to make an appointment for a residence permit renewal."
+  },
+  {
+    "fr": "Où est la mairie la plus proche?",
+    "bn": "উ এ লা মেরে লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের মিউনিসিপ্যালিটি অফিস কোথায়?",
+    "en": "Where is the nearest town hall?"
+  },
+  {
+    "fr": "Je cherche un bon coiffeur pour une coupe de cheveux courte.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কোয়েফুর পুর ঔঁ কুপ দ্য শেভু কুর্ত।",
+    "bnMeaning": "আমি ছোট চুল কাটানোর জন্য একটি ভালো নাপিত খুঁজছি।",
+    "en": "I am looking for a good hairdresser for a short haircut."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des banques?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে ব্যাংক?",
+    "bnMeaning": "ব্যাংকের খোলার সময় কী?",
+    "en": "What are the bank opening hours?"
+  },
+  {
+    "fr": "Je voudrais ouvrir un compte bancaire en ligne.",
+    "bn": "ঝে ভুদ্রে উভির ঔঁ কঁপ্তে ব্যাংকের অঁ লিনে।",
+    "bnMeaning": "আমি অনলাইনে একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
+    "en": "I would like to open an online bank account."
+  },
+  {
+    "fr": "Où puis-je trouver un distributeur automatique?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ দিস্ত্রিবুতের অতোমাতিক?",
+    "bnMeaning": "আমি কোথায় একটি এটিএম পাব?",
+    "en": "Where can I find an ATM?"
+  },
+  {
+    "fr": "Je cherche un bon dentiste pour un contrôle régulier.",
+    "bn": "ঝে শেরশ ঔঁ বঁ দঁতিস্ট পুর ঔঁ কঁত্রোল রেগুলিয়ে।",
+    "bnMeaning": "আমি নিয়মিত চেকআপের জন্য একজন ভালো দন্ত চিকিৎসক খুঁজছি।",
+    "en": "I am looking for a good dentist for regular check-ups."
+  },
+  {
+    "fr": "Quels sont les documents nécessaires pour l'inscription à l'université?",
+    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর লঁস্ক্রিপসিওঁ আ লুনিভেরসিতে?",
+    "bnMeaning": "বিশ্ববিদ্যালয়ে ভর্তি হওয়ার জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are needed for university enrollment?"
+  },
+  {
+    "fr": "Je voudrais un certificat de naissance.",
+    "bn": "ঝে ভুদ্রে ঔঁ সেরতিফিকা দ্য নেসাঁস।",
+    "bnMeaning": "আমি একটি জন্ম সনদ চাই।",
+    "en": "I would like a birth certificate."
+  },
+  {
+    "fr": "Où est le centre de loisirs pour enfants?",
+    "bn": "উ এ লে সঁত্র দ্য লোয়েসির পুর আনফঁ?",
+    "bnMeaning": "বাচ্চাদের জন্য বিনোদন কেন্দ্র কোথায়?",
+    "en": "Where is the leisure center for children?"
+  },
+  {
+    "fr": "Je cherche un bon restaurant pour un repas d'affaires.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ পুর ঔঁ রেপা দাফেয়ার।",
+    "bnMeaning": "আমি একটি ভালো রেস্টুরেন্ট খুঁজছি ব্যবসায়িক খাবারের জন্য।",
+    "en": "I am looking for a good restaurant for a business meal."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des bibliothèques?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে বিবলিওতেক?",
+    "bnMeaning": "লাইব্রেরির খোলার সময় কী?",
+    "en": "What are the library opening hours?"
+  },
+  {
+    "fr": "Je voudrais un abonnement à la salle de sport.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ আ লা সাল দ্য স্পোরত।",
+    "bnMeaning": "আমি জিমের জন্য একটি সাবস্ক্রিপশন চাই।",
+    "en": "I would like a gym membership."
+  },
+  {
+    "fr": "Où puis-je trouver un centre commercial?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সঁত্র কোমারসিয়াল?",
+    "bnMeaning": "আমি কোথায় একটি শপিং সেন্টার পাব?",
+    "en": "Where can I find a shopping center?"
+  },
+  {
+    "fr": "Je cherche un bon hôtel pour un séjour de longue durée.",
+    "bn": "ঝে শেরশ ঔঁ বঁ অতেল পুর ঔঁ সেজুর দ্য লঁগ দুরে।",
+    "bnMeaning": "আমি দীর্ঘমেয়াদী থাকার জন্য একটি ভালো হোটেল খুঁজছি।",
+    "en": "I am looking for a good hotel for a long stay."
+  },
+  {
+    "fr": "Quels sont les moyens de transport pour aller à la plage?",
+    "bn": "কেল সঁ লে মোয়েং দ্য ত্রান্সপোর পুর আলে আ লা প্লাজ?",
+    "bnMeaning": "সমুদ্র সৈকতে যাওয়ার জন্য পরিবহনের মাধ্যম কী কী?",
+    "en": "What are the means of transport to go to the beach?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le ferry.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে ফেরি।",
+    "bnMeaning": "আমি ফেরির জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the ferry."
+  },
+  {
+    "fr": "Où est la station de taxis la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দে তাক্সি লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ট্যাক্সি স্ট্যান্ড কোথায়?",
+    "en": "Where is the nearest taxi stand?"
+  },
+  {
+    "fr": "Je cherche un médecin spécialiste en pédiatrie.",
+    "bn": "ঝে শেরশ ঔঁ মেদসঁ স্পেসিয়ালিস্ট আ পেদিয়াত্রি।",
+    "bnMeaning": "আমি শিশু চিকিৎসায় বিশেষজ্ঞ একজন ডাক্তার খুঁজছি।",
+    "en": "I am looking for a pediatrician."
+  },
+  {
+    "fr": "Comment puis-je ouvrir un compte bancaire en ligne?",
+    "bn": "কোমঁ পুই-ঝে উভির ঔঁ কঁপ্তে ব্যাংকের অঁ লিনে?",
+    "bnMeaning": "আমি কীভাবে অনলাইনে একটি ব্যাংক অ্যাকাউন্ট খুলতে পারি?",
+    "en": "How can I open an online bank account?"
+  },
+  {
+    "fr": "Où est la station de métro la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দ্য মেত্রো লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
+    "en": "Where is the nearest metro station?"
   },
   {
     "fr": "Je voudrais un abonnement mensuel pour le métro.",
@@ -1992,34 +1417,64 @@
     "en": "I would like a monthly subscription for the metro."
   },
   {
-    "fr": "À quelle heure ferme la station de métro?",
-    "bn": "আ কেল ঔর ফের্ম লা স্টাসিঁ দ্য মেত্রো?",
-    "bnMeaning": "মেট্রো স্টেশন কখন বন্ধ হয়?",
-    "en": "What time does the metro station close?"
+    "fr": "Quels sont les documents nécessaires pour louer un appartement?",
+    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর লুয়ে ঔঁ আপার্তেমঁ?",
+    "bnMeaning": "একটি অ্যাপার্টমেন্ট ভাড়ার জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are needed to rent an apartment?"
   },
   {
-    "fr": "Où est la gare la plus proche?",
-    "bn": "উ এ লা গার লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের রেলস্টেশন কোথায়?",
-    "en": "Where is the nearest train station?"
+    "fr": "Je cherche un bon restaurant végétarien.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ ভেজেতারিয়ঁ।",
+    "bnMeaning": "আমি একটি ভালো নিরামিষ রেস্টুরেন্ট খুঁজছি।",
+    "en": "I am looking for a good vegetarian restaurant."
   },
   {
-    "fr": "Je voudrais un billet aller-retour.",
-    "bn": "ঝে ভুদ্রে ঔঁ বিলেত আলে-রেতুর।",
-    "bnMeaning": "আমি যাত্রা-ফিরার টিকিট চাই।",
-    "en": "I would like a round-trip ticket."
+    "fr": "Pouvez-vous m'aider à remplir ce formulaire?",
+    "bn": "পুভে-ভু মেদে আ রঁপ্লির সে ফর্মুলেরে?",
+    "bnMeaning": "আপনি কি আমাকে এই ফরম পূরণ করতে সাহায্য করবেন?",
+    "en": "Can you help me fill out this form?"
   },
   {
-    "fr": "Combien coûte un billet aller simple?",
-    "bn": "কঁবিয়ঁ কূত ঔঁ বিলেত আলে সঁপ্ল?",
-    "bnMeaning": "একমুখী টিকিটের দাম কত?",
-    "en": "How much is a one-way ticket?"
+    "fr": "Je voudrais un rendez-vous chez le médecin.",
+    "bn": "ঝে ভুদ্রে ঔঁ রঁদেজ-ভু শে লে মেদসঁ।",
+    "bnMeaning": "আমি ডাক্তারের কাছে একটি অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like an appointment with the doctor."
   },
   {
-    "fr": "Où est la station de bus?",
-    "bn": "উ এ লা স্টাসিঁ দ্য বাস?",
-    "bnMeaning": "বাস স্টপ কোথায়?",
-    "en": "Where is the bus stop?"
+    "fr": "Où puis-je trouver une pharmacie ouverte 24h?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ ফারমাসি উভের ভঁ-ভঁ?",
+    "bnMeaning": "আমি কোথায় ২৪ ঘণ্টা খোলা ফার্মেসি পাব?",
+    "en": "Where can I find a pharmacy open 24 hours?"
+  },
+  {
+    "fr": "Je suis allergique aux noix.",
+    "bn": "ঝে সুই আলেরজিক ও নোয়া।",
+    "bnMeaning": "আমার বাদামের এলার্জি আছে।",
+    "en": "I am allergic to nuts."
+  },
+  {
+    "fr": "Je voudrais un taxi pour l'aéroport.",
+    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি পুর লায়েরোপোর্স।",
+    "bnMeaning": "আমি বিমানবন্দরে যাওয়ার জন্য একটি ট্যাক্সি চাই।",
+    "en": "I would like a taxi to the airport."
+  },
+  {
+    "fr": "À quelle heure part le prochain train?",
+    "bn": "আ কেল ঔর পার লে প্রোকঁ ট্রাঁ?",
+    "bnMeaning": "পরবর্তী ট্রেন কখন ছাড়ে?",
+    "en": "What time does the next train leave?"
+  },
+  {
+    "fr": "Je voudrais acheter un billet aller-retour.",
+    "bn": "ঝে ভুদ্রে আশতে ঔঁ বিলেত আলে-রেতুর।",
+    "bnMeaning": "আমি যাত্রা-ফিরার টিকিট কিনতে চাই।",
+    "en": "I would like to buy a round-trip ticket."
+  },
+  {
+    "fr": "Où est la gare routière?",
+    "bn": "উ এ লা গার রুতিয়ে?",
+    "bnMeaning": "বাস টার্মিনাল কোথায়?",
+    "en": "Where is the bus station?"
   },
   {
     "fr": "Je voudrais un ticket de bus.",
@@ -2028,34 +1483,460 @@
     "en": "I would like a bus ticket."
   },
   {
-    "fr": "À quelle heure part le prochain bus?",
-    "bn": "আ কেল ঔর পার লে প্রোকঁ বাস?",
-    "bnMeaning": "পরবর্তী বাস কখন ছাড়ে?",
-    "en": "What time does the next bus leave?"
+    "fr": "Quels sont les horaires d'ouverture du musée?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু মিউজে?",
+    "bnMeaning": "মিউজিয়ামের খোলার সময় কী?",
+    "en": "What are the museum opening hours?"
   },
   {
-    "fr": "Je voudrais un taxi.",
-    "bn": "ঝে ভুদ্রে ঔঁ তাক্সি।",
-    "bnMeaning": "আমি একটি ট্যাক্সি চাই।",
-    "en": "I would like a taxi."
+    "fr": "Je voudrais visiter le musée d'art moderne.",
+    "bn": "ঝে ভুদ্রে ভিজিতে লে মিউজে দ'আর মোদের্ন।",
+    "bnMeaning": "আমি আধুনিক শিল্পের মিউজিয়াম দেখতে চাই।",
+    "en": "I would like to visit the modern art museum."
   },
   {
-    "fr": "Pouvez-vous m'appeler un taxi?",
-    "bn": "পুভে-ভু মাপেলে ঔঁ তাক্সি?",
-    "bnMeaning": "আপনি কি আমাকে একটি ট্যাক্সি ডাকতে পারেন?",
-    "en": "Can you call me a taxi?"
+    "fr": "Où est le centre-ville?",
+    "bn": "উ এ লে সঁত্র-ভিল?",
+    "bnMeaning": "শহরের কেন্দ্র কোথায়?",
+    "en": "Where is the city center?"
   },
   {
-    "fr": "Je voudrais louer une voiture.",
-    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভোইতুর।",
-    "bnMeaning": "আমি একটি গাড়ি ভাড়া নিতে চাই।",
-    "en": "I would like to rent a car."
+    "fr": "Je cherche un bon hôtel avec piscine.",
+    "bn": "ঝে শেরশ ঔঁ বঁ অতেল আভেক পিসিন।",
+    "bnMeaning": "আমি একটি সুইমিং পুল সহ ভালো হোটেল খুঁজছি।",
+    "en": "I am looking for a good hotel with a swimming pool."
   },
   {
-    "fr": "Y a-t-il un parking ici?",
-    "bn": "ই ইয়-ত-ইল ঔঁ পারকিং ইসি?",
-    "bnMeaning": "এখানে কি পার্কিং আছে?",
-    "en": "Is there parking here?"
+    "fr": "Pouvez-vous me recommander un bon restaurant?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ রেস্তোরাঁ?",
+    "bnMeaning": "আপনি কি আমাকে একটি ভালো রেস্টুরেন্ট সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good restaurant?"
+  },
+  {
+    "fr": "Je suis végétarien(ne).",
+    "bn": "ঝে সুই ভেজেতারিয়ঁ(ন)।",
+    "bnMeaning": "আমি নিরামিষভোজী।",
+    "en": "I am a vegetarian."
+  },
+  {
+    "fr": "Je ne mange pas de viande.",
+    "bn": "ঝে নে মানজ পা দ্য ভিয়ঁদ।",
+    "bnMeaning": "আমি মাংস খাই না।",
+    "en": "I don't eat meat."
+  },
+  {
+    "fr": "L'addition, s'il vous plaît.",
+    "bn": "লাদিশঁ, সিল ভু প্লে।",
+    "bnMeaning": "বিল, অনুগ্রহ করে।",
+    "en": "The bill, please."
+  },
+  {
+    "fr": "Où est la plage?",
+    "bn": "উ এ লা প্লাজ?",
+    "bnMeaning": "সমুদ্র সৈকত কোথায়?",
+    "en": "Where is the beach?"
+  },
+  {
+    "fr": "Je voudrais louer un vélo.",
+    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভেলো।",
+    "bnMeaning": "আমি একটি সাইকেল ভাড়া নিতে চাই।",
+    "en": "I would like to rent a bicycle."
+  },
+  {
+    "fr": "Où est la bibliothèque?",
+    "bn": "উ এ লা বিবলিওতেক?",
+    "bnMeaning": "লাইব্রেরি কোথায়?",
+    "en": "Where is the library?"
+  },
+  {
+    "fr": "Puis-je emprunter un livre?",
+    "bn": "পুই-ঝে আম্পরঁতে ঔঁ লিভর?",
+    "bnMeaning": "আমি কি একটি বই ধার নিতে পারি?",
+    "en": "Can I borrow a book?"
+  },
+  {
+    "fr": "Combien de temps puis-je garder le livre?",
+    "bn": "কঁবিয়ঁ দ্য তঁ পুই-ঝে গার্দে লে লিভর?",
+    "bnMeaning": "আমি কতদিন বইটি রাখতে পারি?",
+    "en": "How long can I keep the book?"
+  },
+  {
+    "fr": "Où est la mairie?",
+    "bn": "উ এ লা মেরে?",
+    "bnMeaning": "মিউনিসিপ্যালিটি অফিস কোথায়?",
+    "en": "Where is the town hall?"
+  },
+  {
+    "fr": "Je voudrais m'inscrire à la mairie.",
+    "bn": "ঝে ভুদ্রে মঁসক্রিরে আ লা মেরে।",
+    "bnMeaning": "আমি মিউনিসিপ্যালিটি অফিসে নিবন্ধন করতে চাই।",
+    "en": "I would like to register at the town hall."
+  },
+  {
+    "fr": "Quels documents sont nécessaires pour l'inscription?",
+    "bn": "কেল দকুমঁ সঁ নেসেসের পুর লঁস্ক্রিপসিওঁ?",
+    "bnMeaning": "নিবন্ধনের জন্য কী কী কাগজপত্র দরকার?",
+    "en": "What documents are needed for registration?"
+  },
+  {
+    "fr": "Où est la police?",
+    "bn": "উ এ লা পুলিশ?",
+    "bnMeaning": "পুলিশ স্টেশন কোথায়?",
+    "en": "Where is the police station?"
+  },
+  {
+    "fr": "Je voudrais faire une déclaration de perte.",
+    "bn": "ঝে ভুদ্রে ফের ঔঁ দেক্লারাসিওঁ দ্য পের্তে।",
+    "bnMeaning": "আমি একটি হারানোর রিপোর্ট করতে চাই।",
+    "en": "I would like to file a loss report."
+  },
+  {
+    "fr": "Où puis-je trouver un avocat?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ আভোকা?",
+    "bnMeaning": "আমি কোথায় একজন আইনজীবী পাব?",
+    "en": "Where can I find a lawyer?"
+  },
+  {
+    "fr": "Je voudrais un rendez-vous avec un avocat.",
+    "bn": "ঝে ভুদ্রে ঔঁ রঁদেজ-ভু আভেক ঔঁ আভোকা।",
+    "bnMeaning": "আমি একজন আইনজীবীর সাথে সাক্ষাৎ করতে চাই।",
+    "en": "I would like an appointment with a lawyer."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture de la mairie?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্য লা মেরে?",
+    "bnMeaning": "মিউনিসিপ্যালিটির খোলার সময় কী?",
+    "en": "What are the opening hours of the town hall?"
+  },
+  {
+    "fr": "Je voudrais renouveler mon passeport.",
+    "bn": "ঝে ভুদ্রে রেনুভেলে মঁ পাসপোর।",
+    "bnMeaning": "আমি আমার পাসপোর্ট নবায়ন করতে চাই।",
+    "en": "I would like to renew my passport."
+  },
+  {
+    "fr": "Où est le consulat du Bangladesh?",
+    "bn": "উ এ লে কঁসুলা দ্যু বানগলাদেশ?",
+    "bnMeaning": "বাংলাদেশের কনস্যুলেট কোথায়?",
+    "en": "Where is the Bangladesh consulate?"
+  },
+  {
+    "fr": "Je voudrais prendre rendez-vous au consulat.",
+    "bn": "ঝে ভুদ্রে প্রঁদ্রে রঁদেজ-ভু ও কঁসুলা।",
+    "bnMeaning": "আমি কনস্যুলেটে অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like to make an appointment at the consulate."
+  },
+  {
+    "fr": "Quels documents sont nécessaires pour un visa?",
+    "bn": "কেল দকুমঁ সঁ নেসেসের পুর ঔঁ ভিসা?",
+    "bnMeaning": "ভিসার জন্য কী কী কাগজপত্র দরকার?",
+    "en": "What documents are needed for a visa?"
+  },
+  {
+    "fr": "Je voudrais prolonger mon visa.",
+    "bn": "ঝে ভুদ্রে প্রোলঁজে মঁ ভিসা।",
+    "bnMeaning": "আমি আমার ভিসা বাড়াতে চাই।",
+    "en": "I would like to extend my visa."
+  },
+  {
+    "fr": "Je voudrais réserver une table pour quatre personnes.",
+    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ তাবল পুর কত্র পেরসঁ।",
+    "bnMeaning": "আমি চারজনের জন্য একটি টেবিল বুক করতে চাই।",
+    "en": "I would like to reserve a table for four people."
+  },
+  {
+    "fr": "Quels sont les plats du jour aujourd'hui?",
+    "bn": "কেল সঁ লে প্লা দ্যু জুর আজুরদুই?",
+    "bnMeaning": "আজকের বিশেষ খাবারগুলো কী কী?",
+    "en": "What are today's specials?"
+  },
+  {
+    "fr": "Je suis allergique au gluten.",
+    "bn": "ঝে সুই আলেরজিক ও গ্লুটঁ।",
+    "bnMeaning": "আমার গ্লুটেনের এলার্জি আছে।",
+    "en": "I am allergic to gluten."
+  },
+  {
+    "fr": "Pouvez-vous me recommander un bon hôtel près d'ici?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ অতেল প্রে দিসি?",
+    "bnMeaning": "আপনি কি আমাকে এখানে কাছাকাছি একটি ভালো হোটেল সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good hotel nearby?"
+  },
+  {
+    "fr": "Je voudrais louer une voiture pour une semaine.",
+    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভোইতুর পুর ঔঁ সেমেন।",
+    "bnMeaning": "আমি এক সপ্তাহের জন্য একটি গাড়ি ভাড়া নিতে চাই।",
+    "en": "I would like to rent a car for one week."
+  },
+  {
+    "fr": "Où est le bureau de poste le plus proche?",
+    "bn": "উ এ লে বুরো দ্য পোস্ত লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ডাকঘর কোথায়?",
+    "en": "Where is the nearest post office?"
+  },
+  {
+    "fr": "Je voudrais envoyer un colis en recommandé.",
+    "bn": "ঝে ভুদ্রে আঁভয়ে ঔঁ কোলি আঁ রেকমঁদে।",
+    "bnMeaning": "আমি একটি রেজিস্টার্ড পার্সেল পাঠাতে চাই।",
+    "en": "I would like to send a registered parcel."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture du centre commercial?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু সঁত্র কোমারসিয়াল?",
+    "bnMeaning": "শপিং সেন্টারের খোলার সময় কী?",
+    "en": "What are the shopping center opening hours?"
+  },
+  {
+    "fr": "Je cherche un médecin généraliste parlant anglais.",
+    "bn": "ঝে শেরশ ঔঁ মেদসঁ জেনেরালিস্ট পারলাঁ আংগলে।",
+    "bnMeaning": "আমি এমন একজন সাধারণ ডাক্তার খুঁজছি যিনি ইংরেজি বলতে পারেন।",
+    "en": "I am looking for a general practitioner who speaks English."
+  },
+  {
+    "fr": "Pouvez-vous m'aider à remplir ce formulaire en ligne?",
+    "bn": "পুভে-ভু মেদে আ রঁপ্লির সে ফর্মুলেরে অঁ লিনে?",
+    "bnMeaning": "আপনি কি আমাকে অনলাইনে এই ফরম পূরণ করতে সাহায্য করবেন?",
+    "en": "Can you help me fill out this form online?"
+  },
+  {
+    "fr": "Je voudrais un abonnement internet haut débit.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ ইন্টারনেত ও দেবে।",
+    "bnMeaning": "আমি উচ্চ গতির ইন্টারনেট সাবস্ক্রিপশন চাই।",
+    "en": "I would like a high-speed internet subscription."
+  },
+  {
+    "fr": "Où puis-je trouver un distributeur automatique?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ দিস্ত্রিবুতের অতোমাতিক?",
+    "bnMeaning": "আমি কোথায় একটি এটিএম পাব?",
+    "en": "Where can I find an ATM?"
+  },
+  {
+    "fr": "Je cherche un bon dentiste pour un contrôle régulier.",
+    "bn": "ঝে শেরশ ঔঁ বঁ দঁতিস্ট পুর ঔঁ কঁত্রোল রেগুলিয়ে।",
+    "bnMeaning": "আমি নিয়মিত চেকআপের জন্য একজন ভালো দন্ত চিকিৎসক খুঁজছি।",
+    "en": "I am looking for a good dentist for regular check-ups."
+  },
+  {
+    "fr": "Quels sont les documents nécessaires pour l'inscription à l'université?",
+    "bn": "কেল সঁ লে দকুমঁ নেসেসের পুর লঁস্ক্রিপসিওঁ আ লুনিভেরসিতে?",
+    "bnMeaning": "বিশ্ববিদ্যালয়ে ভর্তি হওয়ার জন্য কোন কোন কাগজপত্র দরকার?",
+    "en": "What documents are needed for university enrollment?"
+  },
+  {
+    "fr": "Je voudrais un certificat de naissance.",
+    "bn": "ঝে ভুদ্রে ঔঁ সেরতিফিকা দ্য নেসাঁস।",
+    "bnMeaning": "আমি একটি জন্ম সনদ চাই।",
+    "en": "I would like a birth certificate."
+  },
+  {
+    "fr": "Où est le centre de loisirs pour enfants?",
+    "bn": "উ এ লে সঁত্র দ্য লোয়েসির পুর আনফঁ?",
+    "bnMeaning": "বাচ্চাদের জন্য বিনোদন কেন্দ্র কোথায়?",
+    "en": "Where is the leisure center for children?"
+  },
+  {
+    "fr": "Je cherche un bon restaurant pour un repas d'affaires.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ পুর ঔঁ রেপা দাফেয়ার।",
+    "bnMeaning": "আমি একটি ভালো রেস্টুরেন্ট খুঁজছি ব্যবসায়িক খাবারের জন্য।",
+    "en": "I am looking for a good restaurant for a business meal."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des bibliothèques?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে বিবলিওতেক?",
+    "bnMeaning": "লাইব্রেরির খোলার সময় কী?",
+    "en": "What are the library opening hours?"
+  },
+  {
+    "fr": "Je voudrais un abonnement à la salle de sport.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ আ লা সাল দ্য স্পোরত।",
+    "bnMeaning": "আমি জিমের জন্য একটি সাবস্ক্রিপশন চাই।",
+    "en": "I would like a gym membership."
+  },
+  {
+    "fr": "Où puis-je trouver un centre commercial?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ সঁত্র কোমারসিয়াল?",
+    "bnMeaning": "আমি কোথায় একটি শপিং সেন্টার পাব?",
+    "en": "Where can I find a shopping center?"
+  },
+  {
+    "fr": "Je cherche un bon hôtel pour un séjour de longue durée.",
+    "bn": "ঝে শেরশ ঔঁ বঁ অতেল পুর ঔঁ সেজুর দ্য লঁগ দুরে।",
+    "bnMeaning": "আমি দীর্ঘমেয়াদী থাকার জন্য একটি ভালো হোটেল খুঁজছি।",
+    "en": "I am looking for a good hotel for a long stay."
+  },
+  {
+    "fr": "Quels sont les moyens de transport pour aller à la plage?",
+    "bn": "কেল সঁ লে মোয়েং দ্য ত্রান্সপোর পুর আলে আ লা প্লাজ?",
+    "bnMeaning": "সমুদ্র সৈকতে যাওয়ার জন্য পরিবহনের মাধ্যম কী কী?",
+    "en": "What are the means of transport to go to the beach?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le ferry.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে ফেরি।",
+    "bnMeaning": "আমি ফেরির জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the ferry."
+  },
+  {
+    "fr": "Où est la station de taxis la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দে তাক্সি লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ট্যাক্সি স্ট্যান্ড কোথায়?",
+    "en": "Where is the nearest taxi stand?"
+  },
+  {
+    "fr": "Je cherche un médecin spécialiste en pédiatrie.",
+    "bn": "ঝে শেরশ ঔঁ মেদসঁ স্পেসিয়ালিস্ট আ পেদিয়াত্রি।",
+    "bnMeaning": "আমি শিশু চিকিৎসায় বিশেষজ্ঞ একজন ডাক্তার খুঁজছি।",
+    "en": "I am looking for a pediatrician."
+  },
+  {
+    "fr": "Pouvez-vous me dire où est la pharmacie la plus proche?",
+    "bn": "পুভে-ভু মঁ দির উ এ লা ফারমাসি লা প্লু প্রোশ?",
+    "bnMeaning": "আপনি কি আমাকে বলতে পারেন সবথেকে কাছের ফার্মেসি কোথায়?",
+    "en": "Can you tell me where the nearest pharmacy is?"
+  },
+  {
+    "fr": "Je voudrais un plan de la ville détaillé.",
+    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল দেতাইয়ে।",
+    "bnMeaning": "আমি শহরের বিস্তারিত মানচিত্র চাই।",
+    "en": "I would like a detailed city map."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des musées le dimanche?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে মিউজে লে দিনমঁশ?",
+    "bnMeaning": "রবিবার মিউজিয়ামের খোলার সময় কী?",
+    "en": "What are the museum opening hours on Sunday?"
+  },
+  {
+    "fr": "Je cherche un bon coiffeur pour une coupe courte.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কোয়েফুর পুর ঔঁ কুপ কুর্ত।",
+    "bnMeaning": "আমি ছোট চুল কাটানোর জন্য একটি ভালো নাপিত খুঁজছি।",
+    "en": "I am looking for a good hairdresser for a short haircut."
+  },
+  {
+    "fr": "Pouvez-vous m'aider à trouver un logement étudiant?",
+    "bn": "পুভে-ভু মেদে আ ত্রুভে ঔঁ লোজমঁ এতুদিয়ঁ?",
+    "bnMeaning": "আপনি কি আমাকে ছাত্রাবাস খুঁজতে সাহায্য করতে পারেন?",
+    "en": "Can you help me find student accommodation?"
+  },
+  {
+    "fr": "Je voudrais un abonnement mensuel pour le bus.",
+    "bn": "ঝে ভুদ্রে ঔঁ আবোনমঁ মঁসুয়েল পুর লে বাস।",
+    "bnMeaning": "আমি বাসের জন্য একটি মাসিক সাবস্ক্রিপশন চাই।",
+    "en": "I would like a monthly subscription for the bus."
+  },
+  {
+    "fr": "Où est la station de tramway la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দ্য ত্রামওয়ে লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ট্রামওয়ে স্টেশন কোথায়?",
+    "en": "Where is the nearest tram station?"
+  },
+  {
+    "fr": "Je cherche un bon café avec connexion wifi.",
+    "bn": "ঝে শেরশ ঔঁ বঁ কাফে আভেক কোনেক্সিওঁ ওয়াইফাই।",
+    "bnMeaning": "আমি ওয়াইফাই সংযোগসহ একটি ভালো ক্যাফে খুঁজছি।",
+    "en": "I am looking for a good café with wifi connection."
+  },
+  {
+    "fr": "Quels sont les tarifs pour les taxis en ville?",
+    "bn": "কেল সঁ লে তারিফ পুর লে তাক্সি অঁ ভিল?",
+    "bnMeaning": "শহরের ট্যাক্সির ভাড়া কত?",
+    "en": "What are the taxi fares in the city?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le métro jusqu'à la station Bastille.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে মেত্রো জুসকা লা স্টাসিঁ বাসতিয়।",
+    "bnMeaning": "আমি বাসতিয় স্টেশন পর্যন্ত মেট্রো টিকিট চাই।",
+    "en": "I would like a metro ticket to Bastille station."
+  },
+  {
+    "fr": "Pouvez-vous me montrer le chemin pour aller à la gare?",
+    "bn": "পুভে-ভু মঁ মনত্রে লে শমঁ পুর আলে আ লা গার?",
+    "bnMeaning": "আপনি কি আমাকে রেলস্টেশনে যাওয়ার পথ দেখাতে পারেন?",
+    "en": "Can you show me the way to the train station?"
+  },
+  {
+    "fr": "Je cherche un bon restaurant pour un dîner en famille.",
+    "bn": "ঝে শেরশ ঔঁ বঁ রেস্তোরাঁ পুর ঔঁ দিনের অঁ ফামি।",
+    "bnMeaning": "আমি পরিবারের জন্য একটি ভালো রেস্টুরেন্ট খুঁজছি।",
+    "en": "I am looking for a good restaurant for a family dinner."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture des magasins le samedi?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে মাগাজিন লে সামেদি?",
+    "bnMeaning": "শনিবার দোকানের খোলার সময় কী?",
+    "en": "What are the store opening hours on Saturday?"
+  },
+  {
+    "fr": "Je voudrais un ticket pour le bus scolaire.",
+    "bn": "ঝে ভুদ্রে ঔঁ টিকে পুর লে বাস স্কুলের।",
+    "bnMeaning": "আমি স্কুল বাসের জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the school bus."
+  },
+  {
+    "fr": "Où est la station de taxis la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দে তাক্সি লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের ট্যাক্সি স্ট্যান্ড কোথায়?",
+    "en": "Where is the nearest taxi stand?"
+  },
+  {
+    "fr": "Je voudrais un billet pour le train de 10 heures.",
+    "bn": "ঝে ভুদ্রে ঔঁ বিলেত পুর লে ট্রাঁ দ্য ১০ ঔর।",
+    "bnMeaning": "আমি ১০টার ট্রেনের জন্য একটি টিকিট চাই।",
+    "en": "I would like a ticket for the 10 o'clock train."
+  },
+  {
+    "fr": "Où est l'arrêt de bus le plus proche?",
+    "bn": "উ এ লারে দ্য বাস লে প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের বাস স্টপ কোথায়?",
+    "en": "Where is the nearest bus stop?"
+  },
+  {
+    "fr": "Pouvez-vous me dire comment aller à la cathédrale?",
+    "bn": "পুভে-ভু মঁ দির কোমঁ আলে আ লা কাথেদ্রাল?",
+    "bnMeaning": "আপনি কি আমাকে বলতে পারেন ক্যাথেড্রালে কীভাবে যাব?",
+    "en": "Can you tell me how to get to the cathedral?"
+  },
+  {
+    "fr": "Je cherche un hôtel avec petit déjeuner inclus.",
+    "bn": "ঝে শেরশ ঔঁ অতেল আভেক পঁতি দেজ্যুন অঁক্লু।",
+    "bnMeaning": "আমি একটি হোটেল খুঁজছি যেখানে নাস্তা অন্তর্ভুক্ত।",
+    "en": "I am looking for a hotel with breakfast included."
+  },
+  {
+    "fr": "Quels sont les moyens de paiement acceptés ici?",
+    "bn": "কেল সঁ লে মোয়েং দ্য পায়ে মান আক্সেপ্টে ইসি?",
+    "bnMeaning": "এখানে কোন কোন পেমেন্ট পদ্ধতি গ্রহণযোগ্য?",
+    "en": "What payment methods are accepted here?"
+  },
+  {
+    "fr": "Je voudrais un plan de la ville.",
+    "bn": "ঝে ভুদ্রে ঔঁ প্লাঁ দ্য লা ভিল।",
+    "bnMeaning": "আমি শহরের একটি মানচিত্র চাই।",
+    "en": "I would like a city map."
+  },
+  {
+    "fr": "Où puis-je acheter des souvenirs?",
+    "bn": "উ পুই-ঝে আশতে দে সুভেনির?",
+    "bnMeaning": "আমি কোথায় স্মৃতিচিহ্ন কিনতে পারি?",
+    "en": "Where can I buy souvenirs?"
+  },
+  {
+    "fr": "Je cherche un restaurant ouvert tard le soir.",
+    "bn": "ঝে শেরশ ঔঁ রেস্তোরাঁ উভের তার লে সুয়ার।",
+    "bnMeaning": "আমি সন্ধ্যায় দেরি পর্যন্ত খোলা একটি রেস্টুরেন্ট খুঁজছি।",
+    "en": "I am looking for a restaurant open late in the evening."
+  },
+  {
+    "fr": "Pouvez-vous m'aider à trouver un médecin anglophone?",
+    "bn": "পুভে-ভু মেদে আ ত্রুভে ঔঁ মেদসঁ আংগলোফোন?",
+    "bnMeaning": "আপনি কি আমাকে ইংরেজি ভাষী একজন ডাক্তার খুঁজতে সাহায্য করতে পারেন?",
+    "en": "Can you help me find an English-speaking doctor?"
+  },
+  {
+    "fr": "Je voudrais un rendez-vous pour un contrôle médical.",
+    "bn": "ঝে ভুদ্রে ঔঁ রঁদেজ-ভু পুর ঔঁ কঁত্রোল মেডিকাল।",
+    "bnMeaning": "আমি একটি চিকিৎসা পরীক্ষার জন্য অ্যাপয়েন্টমেন্ট নিতে চাই।",
+    "en": "I would like an appointment for a medical check-up."
   },
   {
     "fr": "Où est la station de taxis?",
@@ -2064,16 +1945,46 @@
     "en": "Where is the taxi stand?"
   },
   {
+    "fr": "Je cherche un magasin de vêtements pas cher.",
+    "bn": "ঝে শেরশ ঔঁ মাগাজিন দ্য ভেতমঁ পা শের।",
+    "bnMeaning": "আমি সস্তা পোশাকের দোকান খুঁজছি।",
+    "en": "I am looking for a cheap clothing store."
+  },
+  {
+    "fr": "Quels sont les horaires d'ouverture du marché?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দ্যু মার্শে?",
+    "bnMeaning": "বাজারের খোলার সময় কী?",
+    "en": "What are the market opening hours?"
+  },
+  {
+    "fr": "Je voudrais louer un vélo pour la journée.",
+    "bn": "ঝে ভুদ্রে লুয়ে ঔঁ ভেলো পুর লা জুরনে।",
+    "bnMeaning": "আমি এক দিনের জন্য একটি সাইকেল ভাড়া নিতে চাই।",
+    "en": "I would like to rent a bicycle for the day."
+  },
+  {
+    "fr": "Pouvez-vous me recommander un bon guide touristique?",
+    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ গিদ তুরিস্তিক?",
+    "bnMeaning": "আপনি কি আমাকে একটি ভালো ট্যুর গাইড সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good tour guide?"
+  },
+  {
+    "fr": "Je cherche un supermarché ouvert le dimanche.",
+    "bn": "ঝে শেরশ ঔঁ সুপেরমারশে উভের লে দিনমঁশ।",
+    "bnMeaning": "আমি রবিবার খোলা একটি সুপারমার্কেট খুঁজছি।",
+    "en": "I am looking for a supermarket open on Sunday."
+  },
+  {
+    "fr": "Quels sont les moyens de transport pour aller à l'aéroport?",
+    "bn": "কেল সঁ লে মোয়েং দ্য ত্রান্সপোর পুর আলে আ লায়েরোপোর্স?",
+    "bnMeaning": "বিমানবন্দরে যাওয়ার জন্য পরিবহনের মাধ্যম কী কী?",
+    "en": "What are the means of transport to go to the airport?"
+  },
+  {
     "fr": "Je voudrais un billet d'avion pour Marseille.",
     "bn": "ঝে ভুদ্রে ঔঁ বিলেত দ্যাভিয়ঁ পুর মার্সেই।",
     "bnMeaning": "আমি মার্সেইয়ের জন্য একটি বিমান টিকিট চাই।",
     "en": "I would like a plane ticket to Marseille."
-  },
-  {
-    "fr": "À quelle heure décolle l'avion?",
-    "bn": "আ কেল ঔর দেকল ল্যাভিয়ঁ?",
-    "bnMeaning": "বিমান কখন উড়ে?",
-    "en": "What time does the plane take off?"
   },
   {
     "fr": "Où puis-je récupérer mes bagages?",
@@ -2088,10 +1999,10 @@
     "en": "I would like a train ticket to Lyon."
   },
   {
-    "fr": "Quels sont les horaires d'ouverture?",
-    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর?",
-    "bnMeaning": "খোলার সময় কী?",
-    "en": "What are the opening hours?"
+    "fr": "Quels sont les horaires d'ouverture des musées?",
+    "bn": "কেল সঁ লে জোরেয়ার দুভেরতুর দে মিউজে?",
+    "bnMeaning": "মিউজিয়ামের খোলার সময় কী?",
+    "en": "What are the museum opening hours?"
   },
   {
     "fr": "Je voudrais visiter le musée d'art moderne.",
@@ -2112,12 +2023,6 @@
     "en": "I would like a tour guide."
   },
   {
-    "fr": "Pouvez-vous me recommander un bon restaurant?",
-    "bn": "পুভে-ভু মঁ রেকমঁদে ঔঁ বঁ রেস্তোরাঁ?",
-    "bnMeaning": "আপনি কি আমাকে একটি ভালো রেস্টুরেন্ট সুপারিশ করতে পারেন?",
-    "en": "Can you recommend a good restaurant?"
-  },
-  {
     "fr": "Je suis allergique aux fruits de mer.",
     "bn": "ঝে সুই আলেরজিক ও ফ্রুই দ্য মের।",
     "bnMeaning": "আমার সামুদ্রিক খাবারের এলার্জি আছে।",
@@ -2134,12 +2039,6 @@
     "bn": "লাদিশঁ, সিল ভু প্লে।",
     "bnMeaning": "বিল, অনুগ্রহ করে।",
     "en": "The bill, please."
-  },
-  {
-    "fr": "Où est la plage la plus proche?",
-    "bn": "উ এ লা প্লাজ লা প্লু প্রোশ?",
-    "bnMeaning": "সবচেয়ে কাছের সমুদ্র সৈকত কোথায়?",
-    "en": "Where is the nearest beach?"
   },
   {
     "fr": "Je voudrais louer un appartement.",
@@ -2154,8 +2053,6 @@
     "en": "How much is the rent?"
   }
 ]
-
-
 
 
 
