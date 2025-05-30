@@ -1798,5 +1798,607 @@
     "bn": "গ্রাসিয়াস পর আয়ুদারমে আ আপ্রেন্দের।",
     "bnMeaning": "আমাকে শেখাতে সাহায্য করার জন্য ধন্যবাদ।",
     "en": "Thank you for helping me learn."
+  },
+  {
+    "es": "Estoy usando tarjetas de memoria para estudiar.",
+    "bn": "এস্তোই উসান্দো তারখেতাস দে মেমোরিয়া পারা এস্তুদিয়ার।",
+    "bnMeaning": "আমি পড়াশোনার জন্য ফ্ল্যাশকার্ড ব্যবহার করছি।",
+    "en": "I am using flashcards to study."
+  },
+  {
+    "es": "¿Cuál es la palabra más difícil que aprendiste?",
+    "bn": "কুয়াল এস লা পালাব্রা মাস দিফিসিল কে আপ্রেনদিস্তে?",
+    "bnMeaning": "তুমি যে সবচেয়ে কঠিন শব্দ শিখেছো তা কী?",
+    "en": "What is the most difficult word you learned?"
+  },
+  {
+    "es": "Me gusta practicar con hablantes nativos.",
+    "bn": "মে গুস্তা প্রাক্তিকার কন আবলান্তেস নাতিভোস।",
+    "bnMeaning": "আমি দেশীয় ভাষাভাষীদের সঙ্গে অনুশীলন করতে পছন্দ করি।",
+    "en": "I like to practice with native speakers."
+  },
+  {
+    "es": "A veces cometo errores tontos.",
+    "bn": "আ বেসেস কোমেতো এরোরেস তোনতোস।",
+    "bnMeaning": "আমি মাঝে মাঝে হাস্যকর ভুল করি।",
+    "en": "Sometimes I make silly mistakes."
+  },
+  {
+    "es": "Estoy aprendiendo mucho vocabulario nuevo.",
+    "bn": "এস্তোই আপ্রেনদিয়েন্দো মুচো বোকাবুলারিও নুয়েভো।",
+    "bnMeaning": "আমি অনেক নতুন শব্দভাণ্ডার শিখছি।",
+    "en": "I am learning a lot of new vocabulary."
+  },
+  {
+    "es": "Leo cuentos infantiles para practicar.",
+    "bn": "লেও কুয়েনতোস ইনফান্তিলেস পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি অনুশীলনের জন্য শিশুদের গল্প পড়ি।",
+    "en": "I read children's stories to practice."
+  },
+  {
+    "es": "Me gusta la música en español.",
+    "bn": "মে গুস্তা লা মুসিকা এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ গান পছন্দ করি।",
+    "en": "I like music in Spanish."
+  },
+  {
+    "es": "Trato de usar palabras nuevas en contexto.",
+    "bn": "ত্রাতো দে উসার পালাব্রাস নুয়েভাস এন কনতেখতো।",
+    "bnMeaning": "আমি নতুন শব্দগুলো প্রসঙ্গে ব্যবহার করার চেষ্টা করি।",
+    "en": "I try to use new words in context."
+  },
+  {
+    "es": "Estoy preparando una presentación en español.",
+    "bn": "এস্তোই প্রেপারান্দো উনা প্রেজেনতাসিওন এন এস্পানিওল।",
+    "bnMeaning": "আমি একটি স্প্যানিশ প্রেজেন্টেশন প্রস্তুত করছি।",
+    "en": "I am preparing a presentation in Spanish."
+  },
+  {
+    "es": "Me encanta hablar sobre cultura española.",
+    "bn": "মে এনকান্তা আবলার সোব্রে কুলতুরা এস্পানিওলা।",
+    "bnMeaning": "আমি স্প্যানিশ সংস্কৃতি নিয়ে কথা বলতে ভালোবাসি।",
+    "en": "I love talking about Spanish culture."
+  },
+  {
+    "es": "Uso aplicaciones móviles para estudiar.",
+    "bn": "উসো আপ্লিকাসিওনেস মোভিলেস পারা এস্তুদিয়ার।",
+    "bnMeaning": "আমি পড়াশোনার জন্য মোবাইল অ্যাপ ব্যবহার করি।",
+    "en": "I use mobile apps to study."
+  },
+  {
+    "es": "Estoy escribiendo un diario en español.",
+    "bn": "এস্তোই এসক্রিবিয়েন্দো উন দিয়ারিও এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশে একটি ডায়েরি লিখছি।",
+    "en": "I am writing a diary in Spanish."
+  },
+  {
+    "es": "¿Puedes repetir eso más despacio, por favor?",
+    "bn": "পুয়েদেস রেপেতির এসো মাস দেশপাসিও, পর ফাভোর?",
+    "bnMeaning": "আপনি কি দয়া করে একটু ধীরে সেটা বলতে পারেন?",
+    "en": "Can you repeat that more slowly, please?"
+  },
+  {
+    "es": "Me cuesta recordar algunas palabras.",
+    "bn": "মে কুয়েস্তা রেকোর্দার আলগুনাস পালাব্রাস।",
+    "bnMeaning": "কিছু শব্দ মনে রাখা আমার জন্য কঠিন।",
+    "en": "I struggle to remember some words."
+  },
+  {
+    "es": "Trato de leer un artículo cada día.",
+    "bn": "ত্রাতো দে লেয়ার উন আর্তিকুলো কাদা দিয়া।",
+    "bnMeaning": "আমি প্রতিদিন একটি আর্টিকেল পড়ার চেষ্টা করি।",
+    "en": "I try to read one article a day."
+  },
+  {
+    "es": "Hago pausas para revisar lo aprendido.",
+    "bn": "হাগো পাউসাস পারা রেভিসার লো আপ্রেনদিদো।",
+    "bnMeaning": "শেখা বিষয়গুলো পুনরাবৃত্তি করতে আমি বিরতি দিই।",
+    "en": "I take breaks to review what I've learned."
+  },
+  {
+    "es": "Grabo mi voz para mejorar la pronunciación.",
+    "bn": "গ্রাবো মি ভোস পারা মেহোরার লা প্রোনুনসিয়াসিওন।",
+    "bnMeaning": "আমি উচ্চারণ উন্নত করতে আমার কণ্ঠ রেকর্ড করি।",
+    "en": "I record my voice to improve pronunciation."
+  },
+  {
+    "es": "Me ayuda hablar frente al espejo.",
+    "bn": "মে আয়ুদা আবলার ফ্রেন্তে আল এসপেখো।",
+    "bnMeaning": "আয়নার সামনে কথা বললে তা আমাকে সাহায্য করে।",
+    "en": "Speaking in front of a mirror helps me."
+  },
+  {
+    "es": "Estoy construyendo frases con nuevas palabras.",
+    "bn": "এস্তোই কন্সত্রুয়েনদো ফ্রাসেস কন নুয়েভাস পালাব্রাস।",
+    "bnMeaning": "আমি নতুন শব্দ দিয়ে বাক্য তৈরি করছি।",
+    "en": "I am building sentences with new words."
+  },
+  {
+    "es": "Hablo con mis amigos en español en línea.",
+    "bn": "আবলো কন মিস আমিগোস এন এস্পানিওল এন লিনেয়া।",
+    "bnMeaning": "আমি অনলাইনে আমার বন্ধুদের সঙ্গে স্প্যানিশে কথা বলি।",
+    "en": "I speak with my friends in Spanish online."
+  },
+  {
+    "es": "Practico con juegos de palabras en línea.",
+    "bn": "প্রাক্তিকো কন খুয়েগোস দে পালাব্রাস এন লিনেয়া।",
+    "bnMeaning": "আমি অনলাইনে শব্দের খেলা দিয়ে অনুশীলন করি।",
+    "en": "I practice with word games online."
+  },
+  {
+    "es": "Participo en grupos de estudio virtuales.",
+    "bn": "পার্তিসিপো এন গ্রুপোস দে এস্তুদিও ভারচুয়ালেস।",
+    "bnMeaning": "আমি ভার্চুয়াল স্টাডি গ্রুপে অংশ নিই।",
+    "en": "I participate in virtual study groups."
+  },
+  {
+    "es": "Escucho audiolibros en español.",
+    "bn": "এস্কুচো আউদিওলিব্রোস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ অডিওবুক শুনি।",
+    "en": "I listen to audiobooks in Spanish."
+  },
+  {
+    "es": "Uso subtítulos para mejorar la comprensión.",
+    "bn": "উসো সুবতিতুলোস পারা মেহোরার লা কমপ্রেনসিওন।",
+    "bnMeaning": "আমি বোঝার ক্ষমতা বাড়াতে সাবটাইটেল ব্যবহার করি।",
+    "en": "I use subtitles to improve understanding."
+  },
+  {
+    "es": "Juego juegos de rol para practicar.",
+    "bn": "হুয়েগো খুয়েগোস দে রোল পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি অনুশীলনের জন্য ভূমিকা নির্ভর খেলা খেলি।",
+    "en": "I play role-playing games to practice."
+  },
+  {
+    "es": "A veces escribo pequeñas historias.",
+    "bn": "আ বেসেস এসক্রিবো পেকেনিয়াস হিস্তোরিয়াস।",
+    "bnMeaning": "আমি মাঝে মাঝে ছোট গল্প লিখি।",
+    "en": "Sometimes I write short stories."
+  },
+  {
+    "es": "Me gusta ver documentales en español.",
+    "bn": "মে গুস্তা বের দকুমেনতালেস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ ডকুমেন্টারি দেখতে পছন্দ করি।",
+    "en": "I like watching documentaries in Spanish."
+  },
+  {
+    "es": "Repito frases para mejorar mi memoria.",
+    "bn": "রেপিতো ফ্রাসেস পারা মেহোরার মি মেমোরিয়া।",
+    "bnMeaning": "আমি আমার মেমোরি উন্নত করতে বাক্যগুলো পুনরাবৃত্তি করি।",
+    "en": "I repeat sentences to improve my memory."
+  },
+  {
+    "es": "Me esfuerzo por entender los acentos.",
+    "bn": "মে এসফুয়েরজো পর এনতেন্দের লোস আসেন্তোস।",
+    "bnMeaning": "আমি বিভিন্ন উচ্চারণ বুঝতে চেষ্টা করি।",
+    "en": "I make an effort to understand the accents."
+  },
+  {
+    "es": "Comparo palabras entre idiomas.",
+    "bn": "কোম্পারো পালাব্রাস এনত্রে ইদিওমাস।",
+    "bnMeaning": "আমি ভাষার মধ্যে শব্দ তুলনা করি।",
+    "en": "I compare words between languages."
+  },
+  {
+    "es": "Aprendo canciones para mejorar mi acento.",
+    "bn": "আপ্রেন্দো ক্যানসিওনেস পারা মেহোরার মি আসেন্তো।",
+    "bnMeaning": "আমি আমার উচ্চারণ উন্নত করতে গান শিখি।",
+    "en": "I learn songs to improve my accent."
+  },
+  {
+    "es": "Uso mapas mentales para organizar vocabulario.",
+    "bn": "উসো মাপাস মেন্তালেস পারা অর্গানিসার বোকাবুলারিও।",
+    "bnMeaning": "আমি শব্দভাণ্ডার সংগঠিত করতে মানসিক মানচিত্র ব্যবহার করি।",
+    "en": "I use mind maps to organize vocabulary."
+  },
+  {
+    "es": "Escribo correos electrónicos en español.",
+    "bn": "এসক্রিবো কোরেওস ইলেকত্রোনিকোস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশে ইমেইল লিখি।",
+    "en": "I write emails in Spanish."
+  },
+  {
+    "es": "Veo series de televisión para escuchar el idioma.",
+    "bn": "বেয়ো সেরিয়েস দে তেলেবিসিওন পারা এসকুচার এল ইদিওমা।",
+    "bnMeaning": "আমি ভাষা শোনার জন্য টিভি সিরিজ দেখি।",
+    "en": "I watch TV series to listen to the language."
+  },
+  {
+    "es": "Repaso vocabulario antes de dormir.",
+    "bn": "রেপাসো বোকাবুলারিও আনতেস দে দোরমির।",
+    "bnMeaning": "ঘুমানোর আগে আমি শব্দভাণ্ডার পুনরাবৃত্তি করি।",
+    "en": "I review vocabulary before going to sleep."
+  },
+  {
+    "es": "Me gusta aprender frases hechas.",
+    "bn": "মে গুস্তা আপ্রেন্দের ফ্রাসেস এইচাস।",
+    "bnMeaning": "আমি তৈরি বাক্য শিখতে পছন্দ করি।",
+    "en": "I like learning set phrases."
+  },
+  {
+    "es": "Participo en foros para practicar escritura.",
+    "bn": "পার্তিসিপো এন ফোরোস পারা প্রাক্তিকার এসক্রিতুরা।",
+    "bnMeaning": "আমি লেখার অনুশীলনের জন্য ফোরামে অংশ নিই।",
+    "en": "I participate in forums to practice writing."
+  },
+  {
+    "es": "Intento pensar en español durante el día.",
+    "bn": "ইনতেন্তো পেনসার এন এস্পানিওল দুরান্তে এল দিয়া।",
+    "bnMeaning": "আমি সারাদিন স্প্যানিশে ভাবার চেষ্টা করি।",
+    "en": "I try to think in Spanish throughout the day."
+  },
+  {
+    "es": "Grabo vídeos hablando en español.",
+    "bn": "গ্রাবো ভিদেওস আবলান্দো এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশে কথা বলার ভিডিও রেকর্ড করি।",
+    "en": "I record videos speaking in Spanish."
+  },
+  {
+    "es": "Leo en voz alta para mejorar la fluidez.",
+    "bn": "লেও এন ভোস আলতা পারা মেহোরার লা ফ্লুইদেস।",
+    "bnMeaning": "আমি সাবলীলতা উন্নত করতে জোরে জোরে পড়ি।",
+    "en": "I read aloud to improve fluency."
+  },
+  {
+    "es": "Estudio con tarjetas de memoria.",
+    "bn": "এস্তুদিও কন তারহেতাস দে মেমোরিয়া।",
+    "bnMeaning": "আমি মেমোরি কার্ডের মাধ্যমে পড়াশোনা করি।",
+    "en": "I study with flashcards."
+  },
+  {
+    "es": "Uso un diccionario para nuevas palabras.",
+    "bn": "উসো উন দিকসিওনারিও পারা নুয়েভাস পালাব্রাস।",
+    "bnMeaning": "আমি নতুন শব্দের জন্য অভিধান ব্যবহার করি।",
+    "en": "I use a dictionary for new words."
+  },
+  {
+    "es": "Practico la entonación con canciones.",
+    "bn": "প্রাক্তিকো লা এনতোনাসিওন কন ক্যানসিওনেস।",
+    "bnMeaning": "আমি গানের সাথে সুরের অনুশীলন করি।",
+    "en": "I practice intonation with songs."
+  },
+  {
+    "es": "Busco sinónimos para enriquecer mi vocabulario.",
+    "bn": "বুসকো সিনোনিমোস পারা এনরিকেসের মি বোকাবুলারিও।",
+    "bnMeaning": "আমি শব্দভাণ্ডার সমৃদ্ধ করতে সমার্থক শব্দ খুঁজি।",
+    "en": "I look for synonyms to enrich my vocabulary."
+  },
+  {
+    "es": "Corrijo mis errores con ayuda de un tutor.",
+    "bn": "কোরিহো মিস এরোরেস কন আয়ুদা দে উন তুতোর।",
+    "bnMeaning": "আমি একজন শিক্ষকের সাহায্যে আমার ভুলগুলো ঠিক করি।",
+    "en": "I correct my mistakes with the help of a tutor."
+  },
+  {
+    "es": "Leo artículos sobre temas de mi interés.",
+    "bn": "লেও আর্তিকুলোস সোব্রে তেমাস দে মি ইনতেরেস।",
+    "bnMeaning": "আমি আমার আগ্রহের বিষয় নিয়ে আর্টিকেল পড়ি।",
+    "en": "I read articles on topics of my interest."
+  },
+  {
+    "es": "Hablo conmigo mismo para practicar.",
+    "bn": "আবলো কনমিগো মিসমো পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি অনুশীলনের জন্য নিজের সঙ্গে কথা বলি।",
+    "en": "I speak to myself for practice."
+  },
+  {
+    "es": "Escucho podcasts mientras camino.",
+    "bn": "এস্কুচো পোডকাস্ট মিয়েনত্রাস কামিনো।",
+    "bnMeaning": "আমি হাঁটার সময় পডকাস্ট শুনি।",
+    "en": "I listen to podcasts while walking."
+  },
+  {
+    "es": "Aprendo de mis errores y los repito correctamente.",
+    "bn": "আপ্রেন্দো দে মিস এরোরেস ই লোস রেপিতো কোররেক্তামেন্তে।",
+    "bnMeaning": "আমি আমার ভুল থেকে শিখি এবং তা ঠিকভাবে পুনরাবৃত্তি করি।",
+    "en": "I learn from my mistakes and repeat them correctly."
+  },
+  {
+    "es": "Uso expresiones idiomáticas para sonar natural.",
+    "bn": "উসো এক্সপ্রেসিওনেস ইদিওমাতিকাস পারা সোনার নাটুরাল।",
+    "bnMeaning": "আমি স্বাভাবিকভাবে কথা বলার জন্য বাগধারা ব্যবহার করি।",
+    "en": "I use idiomatic expressions to sound natural."
+  },
+  {
+    "es": "Aprendo palabras con imágenes.",
+    "bn": "আপ্রেন্দো পালাব্রাস কন ইমাহেনেস।",
+    "bnMeaning": "আমি ছবি দিয়ে শব্দ শিখি।",
+    "en": "I learn words with pictures."
+  },
+  {
+    "es": "Me gusta practicar con amigos.",
+    "bn": "মে গুস্তা প্রাক্তিকার কন আমিগোস।",
+    "bnMeaning": "আমি বন্ধুদের সঙ্গে অনুশীলন করতে পছন্দ করি।",
+    "en": "I like to practice with friends."
+  },
+  {
+    "es": "Utilizo aplicaciones para estudiar.",
+    "bn": "উতিলিজো আপ্লিকাসিওনেস পারা এস্তুদিওর।",
+    "bnMeaning": "আমি পড়াশোনার জন্য অ্যাপ ব্যবহার করি।",
+    "en": "I use apps to study."
+  },
+  {
+    "es": "Anoto nuevas frases en mi cuaderno.",
+    "bn": "আনোতো নুয়েভাস ফ্রাসেস এন মি কুয়াদের্নো।",
+    "bnMeaning": "আমি আমার খাতায় নতুন বাক্যগুলো লিখি।",
+    "en": "I write down new phrases in my notebook."
+  },
+  {
+    "es": "Miro vídeos educativos en español.",
+    "bn": "মিরো ভিদেওস এদুকাতিভোস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ শিক্ষামূলক ভিডিও দেখি।",
+    "en": "I watch educational videos in Spanish."
+  },
+  {
+    "es": "Repito oraciones para tener fluidez.",
+    "bn": "রেপিতো ওরাসিওনেস পারা তেনের ফ্লুইদেস।",
+    "bnMeaning": "আমি সাবলীলতার জন্য বাক্য পুনরাবৃত্তি করি।",
+    "en": "I repeat sentences to build fluency."
+  },
+  {
+    "es": "Pregunto si no entiendo algo.",
+    "bn": "প্রেগুনতো সি নো এনতেন্দো আলগো।",
+    "bnMeaning": "যদি কিছু না বুঝি তাহলে আমি প্রশ্ন করি।",
+    "en": "I ask questions if I don't understand something."
+  },
+  {
+    "es": "Leo libros infantiles para aprender mejor.",
+    "bn": "লেও লিব্রোস ইনফান্তিলেস পারা আপ্রেন্দের মেহোর।",
+    "bnMeaning": "আমি সহজে শেখার জন্য শিশুদের বই পড়ি।",
+    "en": "I read children's books to learn better."
+  },
+  {
+    "es": "Hago listas de vocabulario semanalmente.",
+    "bn": "আগো লিস্তাস দে বোকাবুলারিও সেমানালমেন্তে।",
+    "bnMeaning": "আমি প্রতি সপ্তাহে শব্দের তালিকা তৈরি করি।",
+    "en": "I make vocabulary lists weekly."
+  },
+  {
+    "es": "Escucho canciones y canto con ellas.",
+    "bn": "এস্কুচো ক্যানসিওনেস ই কান্তো কন এয়সাস।",
+    "bnMeaning": "আমি গান শুনি এবং সঙ্গে গাই।",
+    "en": "I listen to songs and sing along."
+  },
+  {
+    "es": "Intento escribir un diario en español.",
+    "bn": "ইনতেন্তো এসক্রিবির উন দিয়ারিও এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশে একটি ডায়েরি লেখার চেষ্টা করি।",
+    "en": "I try to write a diary in Spanish."
+  },
+  {
+    "es": "Uso subtítulos para entender mejor.",
+    "bn": "উসো সুবতিতুলোস পারা এনতেনদের মেহোর।",
+    "bnMeaning": "আমি ভালোভাবে বুঝতে সাবটাইটেল ব্যবহার করি।",
+    "en": "I use subtitles to understand better."
+  },
+  {
+    "es": "Me uno a grupos de estudio en línea.",
+    "bn": "মে উনো আ গ্রুপোস দে এস্তুদিও এন লিনেয়া।",
+    "bnMeaning": "আমি অনলাইনে স্টাডি গ্রুপে যোগ দিই।",
+    "en": "I join online study groups."
+  },
+  {
+    "es": "Aprendo con juegos de palabras.",
+    "bn": "আপ্রেন্দো কন juegos দে পালাব্রাস।",
+    "bnMeaning": "আমি শব্দের খেলার মাধ্যমে শিখি।",
+    "en": "I learn with word games."
+  },
+  {
+    "es": "Uso notas adhesivas para recordar frases.",
+    "bn": "উসো নোতাস আদেসিভাস পারা রেকর্দার ফ্রাসেস।",
+    "bnMeaning": "আমি বাক্য মনে রাখার জন্য স্টিকি নোট ব্যবহার করি।",
+    "en": "I use sticky notes to remember phrases."
+  },
+  {
+    "es": "Me esfuerzo en mejorar mi pronunciación.",
+    "bn": "মে এসফুয়েরসো এন মেহোরার মি প্রোনুন্সিয়াসিওন।",
+    "bnMeaning": "আমি আমার উচ্চারণ উন্নত করতে চেষ্টা করি।",
+    "en": "I make an effort to improve my pronunciation."
+  },
+  {
+    "es": "Leo revistas y periódicos en español.",
+    "bn": "লেও রেভিস্তাস ই পেরিওদিকোস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ ম্যাগাজিন ও সংবাদপত্র পড়ি।",
+    "en": "I read magazines and newspapers in Spanish."
+  },
+  {
+    "es": "Repaso los errores que cometo.",
+    "bn": "রেপাসো লোস এরোরেস কে কোমেতো।",
+    "bnMeaning": "আমি যেসব ভুল করি তা আমি পুনরাবৃত্তি করে দেখি।",
+    "en": "I review the mistakes I make."
+  },
+  {
+    "es": "Grabo mi voz para evaluar mi progreso.",
+    "bn": "গ্রাবো মি ভোস পারা এভালুয়ার মি প্রোগ্রেসো।",
+    "bnMeaning": "আমি আমার অগ্রগতি পর্যালোচনার জন্য নিজের কণ্ঠ রেকর্ড করি।",
+    "en": "I record my voice to evaluate my progress."
+  },
+  {
+    "es": "Hago ejercicios de traducción todos los días.",
+    "bn": "আগো এহেরথিসিওস দে ত্রাদুকসিওন তোদোস লোস দিয়াস।",
+    "bnMeaning": "আমি প্রতিদিন অনুবাদের অনুশীলন করি।",
+    "en": "I do translation exercises every day."
+  },
+  {
+    "es": "Hablo con nativos cuando tengo oportunidad.",
+    "bn": "আবলো কন নাতিবোস কুয়ান্দো তেংগো অপোরতুনিদাদ।",
+    "bnMeaning": "আমি যখন সুযোগ পাই তখন স্থানীয়দের সঙ্গে কথা বলি।",
+    "en": "I talk to native speakers when I get the chance."
+  },
+  {
+    "es": "Intento pensar en español todo el día.",
+    "bn": "ইনতেন্তো পেনসার এন এস্পানিওল তোদো এল দিয়া।",
+    "bnMeaning": "আমি সারাদিন স্প্যানিশে চিন্তা করার চেষ্টা করি।",
+    "en": "I try to think in Spanish all day."
+  },
+  {
+    "es": "Juego a juegos de rol para practicar.",
+    "bn": "হুয়েগো আ হুয়েগোস দে রোল পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি অনুশীলনের জন্য ভূমিকাভিত্তিক খেলা খেলি।",
+    "en": "I play role-playing games to practice."
+  },
+  {
+    "es": "Uso frases comunes en mis conversaciones.",
+    "bn": "উসো ফ্রাসেস কোমুনেস এন মিস কনভারসাসিওনেস।",
+    "bnMeaning": "আমি কথোপকথনে সাধারণ বাক্য ব্যবহার করি।",
+    "en": "I use common phrases in my conversations."
+  },
+  {
+    "es": "Escribo pequeñas historias en español.",
+    "bn": "এসক্রিবো পেকেনিয়াস হিস্তোরিয়াস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশে ছোট গল্প লিখি।",
+    "en": "I write short stories in Spanish."
+  },
+  {
+    "es": "Grabo audios de mi lectura para mejorar.",
+    "bn": "গ্রাবো আউদিওস দে মি লেখ্তুরা পারা মেহোরার।",
+    "bnMeaning": "আমি উন্নতির জন্য আমার পড়া রেকর্ড করি।",
+    "en": "I record audios of my reading to improve."
+  },
+  {
+    "es": "Repito diálogos de películas.",
+    "bn": "রেপিতো দিয়ালোগোস দে পেলিকুলাস।",
+    "bnMeaning": "আমি সিনেমার সংলাপ পুনরাবৃত্তি করি।",
+    "en": "I repeat dialogues from movies."
+  },
+  {
+    "es": "Aprendo modismos para sonar natural.",
+    "bn": "আপ্রেন্দো মোদিসমোস পারা সোনার নাটুরাল।",
+    "bnMeaning": "আমি স্বাভাবিকভাবে কথা বলার জন্য বাগধারা শিখি।",
+    "en": "I learn idioms to sound natural."
+  },
+  {
+    "es": "Miro series en español sin subtítulos.",
+    "bn": "মিরো সেরিয়েস এন এস্পানিওল সিন সুবতিতুলোস।",
+    "bnMeaning": "আমি সাবটাইটেল ছাড়া স্প্যানিশ সিরিজ দেখি।",
+    "en": "I watch Spanish series without subtitles."
+  },
+  {
+    "es": "Practico dictados con un amigo.",
+    "bn": "প্রাক্তিকো দিকতাদোস কন উন আমিগো।",
+    "bnMeaning": "আমি একজন বন্ধুর সঙ্গে ডিকটেশন অনুশীলন করি।",
+    "en": "I practice dictations with a friend."
+  },
+  {
+    "es": "Practico la entonación con canciones.",
+    "bn": "প্রাক্তিকো লা এনতোনাসিওন কন ক্যানসিওনেস।",
+    "bnMeaning": "আমি গান দিয়ে টোন অনুশীলন করি।",
+    "en": "I practice intonation with songs."
+  },
+  {
+    "es": "Escribo correos electrónicos en español.",
+    "bn": "এসক্রিবো কোরেওস ইলেকত্রোনিকোস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশে ইমেইল লিখি।",
+    "en": "I write emails in Spanish."
+  },
+  {
+    "es": "Veo noticias en canales en español.",
+    "bn": "বেও নোতিসিয়াস এন কানালেস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ চ্যানেলে সংবাদ দেখি।",
+    "en": "I watch news on Spanish channels."
+  },
+  {
+    "es": "Memorizo expresiones comunes.",
+    "bn": "মেমোরিসো এক্সপ্রেসিওনেস কোমুনেস।",
+    "bnMeaning": "আমি সাধারণ অভিব্যক্তি মুখস্থ করি।",
+    "en": "I memorize common expressions."
+  },
+  {
+    "es": "Uso diccionarios para aprender significado.",
+    "bn": "উসো দিকসিওনারিওস পারা আপ্রেন্দের সিগনিফিকাদো।",
+    "bnMeaning": "আমি অর্থ শিখতে অভিধান ব্যবহার করি।",
+    "en": "I use dictionaries to learn meanings."
+  },
+  {
+    "es": "Aprendo con tarjetas de vocabulario.",
+    "bn": "আপ্রেন্দো কন তারহেতাস দে বোকাবুলারিও।",
+    "bnMeaning": "আমি শব্দভাণ্ডারের কার্ড দিয়ে শিখি।",
+    "en": "I learn with vocabulary flashcards."
+  },
+  {
+    "es": "Me esfuerzo en hablar todos los días.",
+    "bn": "মে এসফুয়েরসো এন আবরার তোদোস লোস দিয়াস।",
+    "bnMeaning": "আমি প্রতিদিন কথা বলার চেষ্টা করি।",
+    "en": "I make an effort to speak every day."
+  },
+  {
+    "es": "Escribo reflexiones diarias en español.",
+    "bn": "এসক্রিবো রেফ্লেক্সিওনেস দিয়ারিয়াস এন এস্পানিওল।",
+    "bnMeaning": "আমি প্রতিদিন স্প্যানিশে ভাবনা লিখি।",
+    "en": "I write daily reflections in Spanish."
+  },
+  {
+    "es": "Uso aplicaciones de intercambio de idiomas.",
+    "bn": "উসো আপ্লিকাসিওনেস দে ইনতেরকাম্বিও দে ইদিওমাস।",
+    "bnMeaning": "আমি ভাষা বিনিময়ের অ্যাপ ব্যবহার করি।",
+    "en": "I use language exchange apps."
+  },
+  {
+    "es": "Practico con un compañero de idioma.",
+    "bn": "প্রাক্তিকো কন উন কম্পানিয়েরো দে ইদিওমা।",
+    "bnMeaning": "আমি ভাষার এক সঙ্গীর সঙ্গে অনুশীলন করি।",
+    "en": "I practice with a language partner."
+  },
+[
+  {
+    "es": "Estoy aprendiendo frases para el trabajo.",
+    "bn": "এস্তোয় আপ্রেন্দিয়েন্দো ফ্রাসেস পারা এল ত্রাবাখো।",
+    "bnMeaning": "আমি কাজের জন্য বাক্য শিখছি।",
+    "en": "I am learning phrases for work."
+  },
+  {
+    "es": "Quiero mejorar mi comprensión auditiva.",
+    "bn": "কিয়েরো মেহোরার মি কমপ্রেনসিওন আওদিতিভা।",
+    "bnMeaning": "আমি আমার শ্রবণ বোঝাপড়া উন্নত করতে চাই।",
+    "en": "I want to improve my listening comprehension."
+  },
+  {
+    "es": "Leo en voz alta para practicar.",
+    "bn": "লেও এন ভোস আলতা পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি অনুশীলনের জন্য জোরে পড়ি।",
+    "en": "I read aloud to practice."
+  },
+  {
+    "es": "Grabo mis conversaciones para analizar.",
+    "bn": "গ্রাবো মিস কনভারসাসিওনেস পারা আনালিসার।",
+    "bnMeaning": "আমি বিশ্লেষণের জন্য আমার কথোপকথন রেকর্ড করি।",
+    "en": "I record my conversations to analyze."
+  },
+  {
+    "es": "Intento usar nuevas palabras cada día.",
+    "bn": "ইনতেন্তো উসার নুয়েভাস পালাব্রাস কাদা দিয়া।",
+    "bnMeaning": "আমি প্রতিদিন নতুন শব্দ ব্যবহার করার চেষ্টা করি।",
+    "en": "I try to use new words every day."
+  },
+  {
+    "es": "Escribo notas sobre lo que aprendo.",
+    "bn": "এসক্রিবো নোতাস সোব্রে লো কে আপ্রেন্দো।",
+    "bnMeaning": "আমি যা শিখি তা নিয়ে নোট লিখি।",
+    "en": "I write notes about what I learn."
+  },
+  {
+    "es": "Practico con grabaciones de hablantes nativos.",
+    "bn": "প্রাক্তিকো কন গ্রাবাসিওনেস দে আব্লান্তেস নাতিবোস।",
+    "bnMeaning": "আমি স্থানীয় বক্তাদের রেকর্ডিং দিয়ে অনুশীলন করি।",
+    "en": "I practice with recordings of native speakers."
+  },
+  {
+    "es": "Aprendo frases útiles para el mercado.",
+    "bn": "আপ্রেন্দো ফ্রাসেস উতিলেস পারা এল মেরকাদো।",
+    "bnMeaning": "আমি বাজারের জন্য দরকারি বাক্য শিখি।",
+    "en": "I learn useful phrases for the market."
+  },
+  {
+    "es": "Reviso mis apuntes antes de dormir.",
+    "bn": "রেবিসো মিস আপুন্তেস আন্তেস দে দোর্মির।",
+    "bnMeaning": "আমি ঘুমানোর আগে আমার নোটগুলো দেখি।",
+    "en": "I review my notes before sleeping."
+  },
+  {
+    "es": "Utilizo juegos para memorizar vocabulario.",
+    "bn": "উতিলিসো হুয়েগোস পারা মেমোরিসার বোকাবুলারিও।",
+    "bnMeaning": "আমি শব্দভাণ্ডার মুখস্থ করার জন্য খেলা ব্যবহার করি।",
+    "en": "I use games to memorize vocabulary."
   }
 ]
+
