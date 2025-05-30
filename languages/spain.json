@@ -1558,5 +1558,245 @@
     "bn": "নেসেসিতো প্রাক্তিকার মাস পারা আবলার ফ্লুইদামেন্তে।",
     "bnMeaning": "স্বচ্ছন্দে কথা বলার জন্য আমাকে আরও অনুশীলন করতে হবে।",
     "en": "I need to practice more to speak fluently."
+  },
+  {
+    "es": "¿Dónde puedo encontrar un compañero de intercambio?",
+    "bn": "দোন্দে পুয়েদো এনকোন্ত্রার উন কম্পানিয়েরো দে ইন্তেরকাম্বিও?",
+    "bnMeaning": "আমি কোথায় ভাষা বিনিময়ের একজন সঙ্গী পেতে পারি?",
+    "en": "Where can I find a language exchange partner?"
+  },
+  {
+    "es": "Quiero aprender frases comunes para el trabajo.",
+    "bn": "কিয়েরো আপ্রেন্দের ফ্রাসেস কোমুনেস পারা এল ত্রাবাখো।",
+    "bnMeaning": "আমি কাজের জন্য সাধারণ বাক্যাংশ শিখতে চাই।",
+    "en": "I want to learn common phrases for work."
+  },
+  {
+    "es": "Estoy usando podcasts en español.",
+    "bn": "এস্তোই উসান্দো পোডকাস্টস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ পডকাস্ট ব্যবহার করছি।",
+    "en": "I am using podcasts in Spanish."
+  },
+  {
+    "es": "A veces escribo textos para practicar.",
+    "bn": "আ বেসেস এসক্রিবো তেক্সতোস পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি মাঝে মাঝে অনুশীলনের জন্য লেখালেখি করি।",
+    "en": "Sometimes I write texts to practice."
+  },
+  {
+    "es": "Aprender otro idioma amplía la mente.",
+    "bn": "আপ্রেন্দের ওত্রো ইদিওমা আমপ্লিয়া লা মেন্তে।",
+    "bnMeaning": "অন্য ভাষা শেখা মনকে প্রসারিত করে।",
+    "en": "Learning another language broadens the mind."
+  },
+  {
+    "es": "Cada día aprendo algo nuevo.",
+    "bn": "কাদা দিয়াস আপ্রেন্দো আলগো নুয়েভো।",
+    "bnMeaning": "প্রতিদিন আমি কিছু নতুন শিখি।",
+    "en": "Every day I learn something new."
+  },
+  {
+    "es": "¿Puedes repetirme eso más despacio?",
+    "bn": "পুয়েদেস রেপেতিরমে এসো মাস দেশ্পাসিও?",
+    "bnMeaning": "তুমি কি এটা একটু ধীরে বলতে পারো?",
+    "en": "Can you repeat that more slowly?"
+  },
+  {
+    "es": "Estoy tomando una clase de español.",
+    "bn": "এস্তোই তোমান্দো উনা ক্লাসে দে এস্পানিওল।",
+    "bnMeaning": "আমি একটি স্প্যানিশ ক্লাস নিচ্ছি।",
+    "en": "I am taking a Spanish class."
+  },
+  {
+    "es": "Me esfuerzo mucho por mejorar.",
+    "bn": "মে এসফুয়ের্সো মুচো পর মেহোরার।",
+    "bnMeaning": "উন্নতির জন্য আমি অনেক চেষ্টা করি।",
+    "en": "I try hard to improve."
+  },
+  {
+    "es": "La motivación es importante para aprender.",
+    "bn": "লা মোটিবাসিওন এস ইমপর্তান্তে পারা আপ্রেন্দের।",
+    "bnMeaning": "শেখার জন্য অনুপ্রেরণা গুরুত্বপূর্ণ।",
+    "en": "Motivation is important for learning."
+  },
+  {
+    "es": "Estoy leyendo libros en español para mejorar.",
+    "bn": "এস্তোই লেইয়েন্দো লিব্রোস এন এস্পানিওল পারা মেহোরার।",
+    "bnMeaning": "আমি উন্নতির জন্য স্প্যানিশ বই পড়ছি।",
+    "en": "I am reading books in Spanish to improve."
+  },
+  {
+    "es": "¿Cuál es tu palabra favorita en español?",
+    "bn": "কুয়াল এস তু পালাব্রা ফাভোরিতা এন এস্পানিওল?",
+    "bnMeaning": "তোমার প্রিয় স্প্যানিশ শব্দ কোনটি?",
+    "en": "What is your favorite word in Spanish?"
+  },
+  {
+    "es": "Intento pensar en español todo el día.",
+    "bn": "ইনতেনতো পেনসার এন এস্পানিওল তোদো এল দিয়া।",
+    "bnMeaning": "আমি সারাদিন স্প্যানিশে ভাবার চেষ্টা করি।",
+    "en": "I try to think in Spanish all day."
+  },
+  {
+    "es": "Uso imágenes para memorizar palabras.",
+    "bn": "উসো ইমাহেনেস পারা মেমোরিসার পালাব্রাস।",
+    "bnMeaning": "আমি শব্দ মনে রাখার জন্য ছবি ব্যবহার করি।",
+    "en": "I use images to memorize words."
+  },
+  {
+    "es": "Estoy aprendiendo mucho con canciones.",
+    "bn": "এস্তোই আপ্রেনদিয়েন্দো মুচো কন কানসিওনেস।",
+    "bnMeaning": "আমি গান দিয়ে অনেক কিছু শিখছি।",
+    "en": "I am learning a lot with songs."
+  },
+  {
+    "es": "Practico con mi familia en casa.",
+    "bn": "প্রাক্তিকো কন মি ফামিলিয়া এন কাসা।",
+    "bnMeaning": "আমি বাড়িতে আমার পরিবারের সঙ্গে অনুশীলন করি।",
+    "en": "I practice with my family at home."
+  },
+  {
+    "es": "Hablo conmigo mismo para practicar.",
+    "bn": "আবলো কনমিগো মিসমো পারা প্রাক্তিকার।",
+    "bnMeaning": "আমি নিজে নিজে অনুশীলনের জন্য কথা বলি।",
+    "en": "I talk to myself to practice."
+  },
+  {
+    "es": "Estoy usando una libreta de vocabulario.",
+    "bn": "এস্তোই উসান্দো উনা লিব্রেতা দে বোকাবুলারিও।",
+    "bnMeaning": "আমি একটি শব্দভাণ্ডারের খাতা ব্যবহার করছি।",
+    "en": "I am using a vocabulary notebook."
+  },
+  {
+    "es": "Mi profesor me corrige los errores.",
+    "bn": "মি প্রফেসোর মে কোর্রিহে লোস এরোরেস।",
+    "bnMeaning": "আমার শিক্ষক আমাকে ভুলগুলো সংশোধন করে দেন।",
+    "en": "My teacher corrects my mistakes."
+  },
+  {
+    "es": "La práctica diaria mejora mi fluidez.",
+    "bn": "লা প্রাক্তিকা দিয়ারিয়া মেহোরা মি ফ্লুইদেস।",
+    "bnMeaning": "দৈনিক অনুশীলন আমার স্বচ্ছন্দতা উন্নত করে।",
+    "en": "Daily practice improves my fluency."
+  },
+  {
+    "es": "Estoy empezando a entender más conversaciones.",
+    "bn": "এস্তোই এমপেসান্দো আ এন্তেন্দের মাস কনভারসিওনেস।",
+    "bnMeaning": "আমি এখন আরও বেশি কথোপকথন বুঝতে শুরু করেছি।",
+    "en": "I am beginning to understand more conversations."
+  },
+  {
+    "es": "Me gusta aprender con juegos interactivos.",
+    "bn": "মে গুস্তা আপ্রেন্দের কন jueগোস ইন্তেরাক্তিভোস।",
+    "bnMeaning": "আমি ইন্টারঅ্যাকটিভ গেমের মাধ্যমে শিখতে পছন্দ করি।",
+    "en": "I like learning with interactive games."
+  },
+  {
+    "es": "Practico escuchando la radio en español.",
+    "bn": "প্রাক্তিকো এসকুচান্দো লা রাদিও এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ রেডিও শুনে অনুশীলন করি।",
+    "en": "I practice by listening to the radio in Spanish."
+  },
+  {
+    "es": "Hago preguntas cuando no entiendo algo.",
+    "bn": "হাগো প্রেগুনতাস কুয়ানদো নো এন্তেন্দো আলগো।",
+    "bnMeaning": "যখন কিছু বুঝতে পারি না তখন আমি প্রশ্ন করি।",
+    "en": "I ask questions when I don't understand something."
+  },
+  {
+    "es": "Tengo una aplicación para practicar vocabulario.",
+    "bn": "তেনগো উনা আপ্লিকাসিওন পারা প্রাক্তিকার বোকাবুলারিও।",
+    "bnMeaning": "আমার শব্দভাণ্ডার অনুশীলনের জন্য একটি অ্যাপ আছে।",
+    "en": "I have an app to practice vocabulary."
+  },
+  {
+    "es": "Me esfuerzo en mejorar mi pronunciación.",
+    "bn": "মে এসফুয়ের্সো এন মেহোরার মি প্রোনুনসিয়াসিওন।",
+    "bnMeaning": "আমি আমার উচ্চারণ উন্নত করার চেষ্টা করি।",
+    "en": "I try to improve my pronunciation."
+  },
+  {
+    "es": "Uso subtítulos en español para entender mejor.",
+    "bn": "উসো সুবতিতুলোস এন এস্পানিওল পারা এন্তেন্দের মেহোর।",
+    "bnMeaning": "ভালোভাবে বোঝার জন্য আমি স্প্যানিশ সাবটাইটেল ব্যবহার করি।",
+    "en": "I use Spanish subtitles to understand better."
+  },
+  {
+    "es": "Trato de hablar todos los días en español.",
+    "bn": "ত্রাতো দে আবলার তোদোস লোস দিয়াস এন এস্পানিওল।",
+    "bnMeaning": "আমি প্রতিদিন স্প্যানিশে কথা বলার চেষ্টা করি।",
+    "en": "I try to speak Spanish every day."
+  },
+  {
+    "es": "Estoy más confiado al hablar.",
+    "bn": "এস্তোই মাস কনফিয়াদো আল আবলার।",
+    "bnMeaning": "আমি কথা বলার সময় এখন আরও আত্মবিশ্বাসী।",
+    "en": "I feel more confident speaking now."
+  },
+  {
+    "es": "Me encanta aprender idiomas nuevos.",
+    "bn": "মে এনকান্তা আপ্রেন্দের ইদিওমাস নুয়েভোস।",
+    "bnMeaning": "আমি নতুন ভাষা শিখতে ভালোবাসি।",
+    "en": "I love learning new languages."
+  },
+  {
+    "es": "¿Cuánto tiempo llevas aprendiendo español?",
+    "bn": "কুয়ান্তো তিয়েম্পো য়েভাস আপ্রেন্দিয়েনদো এস্পানিওল?",
+    "bnMeaning": "তুমি কতদিন ধরে স্প্যানিশ শিখছো?",
+    "en": "How long have you been learning Spanish?"
+  },
+  {
+    "es": "Aprendo mejor con ejemplos visuales.",
+    "bn": "আপ্রেন্দো মেহোর কন এহেম্পলোস ভিসুয়ালেস।",
+    "bnMeaning": "আমি দৃশ্যমান উদাহরণ দিয়ে ভালো শিখি।",
+    "en": "I learn better with visual examples."
+  },
+  {
+    "es": "Hago listas de palabras nuevas cada semana.",
+    "bn": "হাগো লিস্তাস দে পালাব্রাস নুয়েভাস কাদা সেমানা।",
+    "bnMeaning": "আমি প্রতি সপ্তাহে নতুন শব্দের তালিকা করি।",
+    "en": "I make lists of new words every week."
+  },
+  {
+    "es": "La gramática a veces es difícil.",
+    "bn": "লা গ্রামাতিকাআ বেসেস এস দিফিসিল।",
+    "bnMeaning": "ব্যাকরণ কখনও কখনও কঠিন হয়।",
+    "en": "Grammar is sometimes difficult."
+  },
+  {
+    "es": "Los verbos irregulares me confunden.",
+    "bn": "লোস ভের্বোস ইর্রেগুলারেস মে কনফুন্দেন।",
+    "bnMeaning": "অসাধারণ ক্রিয়াগুলো আমাকে বিভ্রান্ত করে।",
+    "en": "Irregular verbs confuse me."
+  },
+  {
+    "es": "Veo películas en español sin subtítulos.",
+    "bn": "ভেও পেলিকুলাস এন এস্পানিওল সিন সুবতিতুলোস।",
+    "bnMeaning": "আমি কোনো সাবটাইটেল ছাড়াই স্প্যানিশ সিনেমা দেখি।",
+    "en": "I watch Spanish movies without subtitles."
+  },
+  {
+    "es": "Leo noticias en español todos los días.",
+    "bn": "লেও নোতিসিয়াস এন এস্পানিওল তোদোস লোস দিয়াস।",
+    "bnMeaning": "আমি প্রতিদিন স্প্যানিশে সংবাদ পড়ি।",
+    "en": "I read news in Spanish every day."
+  },
+  {
+    "es": "Tengo un diccionario español-bengalí.",
+    "bn": "তেনগো উন দিসিওনারিও এস্পানিওল-বেঙ্গালি।",
+    "bnMeaning": "আমার কাছে একটি স্প্যানিশ-বাংলা অভিধান আছে।",
+    "en": "I have a Spanish-Bengali dictionary."
+  },
+  {
+    "es": "Me siento orgulloso de mi progreso.",
+    "bn": "মে সিয়েন্তো ওর্গুলোসো দে মি প্রোগ্রেসো।",
+    "bnMeaning": "আমি আমার অগ্রগতিতে গর্বিত বোধ করি।",
+    "en": "I feel proud of my progress."
+  },
+  {
+    "es": "Gracias por ayudarme a aprender.",
+    "bn": "গ্রাসিয়াস পর আয়ুদারমে আ আপ্রেন্দের।",
+    "bnMeaning": "আমাকে শেখাতে সাহায্য করার জন্য ধন্যবাদ।",
+    "en": "Thank you for helping me learn."
   }
 ]
