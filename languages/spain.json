@@ -1318,5 +1318,245 @@
     "bn": "তেনগো কে কামবিয়ার দে ত্রেন।",
     "bnMeaning": "আমাকে ট্রেন পরিবর্তন করতে হবে।",
     "en": "I have to change the train."
+  },
+  {
+    "es": "¿Cuál es la línea correcta para el aeropuerto?",
+    "bn": "কুয়াল এস লা লিনিয়া কোরেক্তা পারা এল আয়েরোপুয়েরতো?",
+    "bnMeaning": "এয়ারপোর্টে যাওয়ার জন্য সঠিক লাইন কোনটি?",
+    "en": "Which is the correct line for the airport?"
+  },
+  {
+    "es": "¿Dónde puedo comprar un billete de ida y vuelta?",
+    "bn": "দোন্দে পুয়েদো কম্প্রার উন বিল্লেতে দে ইদা ই বুয়েল্তা?",
+    "bnMeaning": "আমি কোথায় একটি রিটার্ন টিকিট কিনতে পারি?",
+    "en": "Where can I buy a return ticket?"
+  },
+  {
+    "es": "¿Este tren para en Barcelona?",
+    "bn": "এস্তে ত্রেন পারা এন বার্সেলোনা?",
+    "bnMeaning": "এই ট্রেন কি বার্সেলোনায় থামে?",
+    "en": "Does this train stop in Barcelona?"
+  },
+  {
+    "es": "¿Cuándo llega el autobús?",
+    "bn": "কুয়ান্দো য়েগা এল আউতোবুস?",
+    "bnMeaning": "বাসটি কখন পৌঁছাবে?",
+    "en": "When does the bus arrive?"
+  },
+  {
+    "es": "Perdí mi billete.",
+    "bn": "পেরদি মি বিল্লেতে।",
+    "bnMeaning": "আমি আমার টিকিট হারিয়ে ফেলেছি।",
+    "en": "I lost my ticket."
+  },
+  {
+    "es": "¿Dónde se compra el billete?",
+    "bn": "দোন্দে সে কম্প্রা এল বিল্লেতে?",
+    "bnMeaning": "টিকিট কোথায় কিনতে হয়?",
+    "en": "Where do you buy the ticket?"
+  },
+  {
+    "es": "Necesito ayuda con la máquina de billetes.",
+    "bn": "নেসেসিতো আয়ুদা কন লা মাকিনা দে বিল্লেতেস।",
+    "bnMeaning": "আমার টিকিট মেশিন ব্যবহার করতে সাহায্য দরকার।",
+    "en": "I need help with the ticket machine."
+  },
+  {
+    "es": "¿Cuánto cuesta el abono mensual?",
+    "bn": "কুয়ান্তো কুয়েস্তা এল আবোনো মেন্সুয়াল?",
+    "bnMeaning": "মাসিক পাসের দাম কত?",
+    "en": "How much is the monthly pass?"
+  },
+  {
+    "es": "¿Dónde puedo validar mi billete?",
+    "bn": "দোন্দে পুয়েদো ভালিদার মি বিল্লেতে?",
+    "bnMeaning": "আমি কোথায় আমার টিকিট ভ্যালিড করতে পারি?",
+    "en": "Where can I validate my ticket?"
+  },
+  {
+    "es": "La estación está cerrada.",
+    "bn": "লা এস্তাসিওন এস্তা সেররাদা।",
+    "bnMeaning": "স্টেশনটি বন্ধ আছে।",
+    "en": "The station is closed."
+  },
+  {
+    "es": "¿Puede hablar más despacio, por favor?",
+    "bn": "পুয়েদে আবরার মাস দেশপাসিও, পোর ফাভোর?",
+    "bnMeaning": "আপনি কি দয়া করে একটু ধীরে কথা বলবেন?",
+    "en": "Can you speak more slowly, please?"
+  },
+  {
+    "es": "No entiendo lo que dice.",
+    "bn": "নো এনতিয়েন্দো লো কে দিসে।",
+    "bnMeaning": "আমি যা বলছেন তা বুঝতে পারছি না।",
+    "en": "I don't understand what you're saying."
+  },
+  {
+    "es": "¿Puede repetirlo, por favor?",
+    "bn": "পুয়েদে রেপেতিরলো, পোর ফাভোর?",
+    "bnMeaning": "আপনি কি দয়া করে এটা আবার বলতে পারেন?",
+    "en": "Can you repeat it, please?"
+  },
+  {
+    "es": "Estoy aprendiendo español.",
+    "bn": "এস্তোই আপ্রেনদিয়েনদো এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ শিখছি।",
+    "en": "I am learning Spanish."
+  },
+  {
+    "es": "¿Cómo se dice esto en español?",
+    "bn": "কোমো সে দিসে এস্তো এন এস্পানিওল?",
+    "bnMeaning": "এটি স্প্যানিশে কী বলা হয়?",
+    "en": "How do you say this in Spanish?"
+  },
+  {
+    "es": "¿Puede escribirlo, por favor?",
+    "bn": "পুয়েদে এসক্রিবিরলো, পোর ফাভোর?",
+    "bnMeaning": "আপনি কি দয়া করে এটা লিখে দিতে পারেন?",
+    "en": "Can you write it down, please?"
+  },
+  {
+    "es": "¿Qué significa esta palabra?",
+    "bn": "কে সিগনিফিকা এস্তা পালাব্রা?",
+    "bnMeaning": "এই শব্দের মানে কী?",
+    "en": "What does this word mean?"
+  },
+  {
+    "es": "Estoy tratando de mejorar mi español.",
+    "bn": "এস্তোই ত্রাতান্দো দে মেহোরার মি এস্পানিওল।",
+    "bnMeaning": "আমি আমার স্প্যানিশ উন্নত করার চেষ্টা করছি।",
+    "en": "I am trying to improve my Spanish."
+  },
+  {
+    "es": "Gracias por su paciencia.",
+    "bn": "গ্রাসিয়াস পোর সু পাসিয়েন্সিয়া।",
+    "bnMeaning": "আপনার ধৈর্যের জন্য ধন্যবাদ।",
+    "en": "Thank you for your patience."
+  },
+  {
+    "es": "¿Puede ayudarme a practicar?",
+    "bn": "পুয়েদে আয়ুদারমে আ প্রাক্তিকার?",
+    "bnMeaning": "আপনি কি আমাকে অনুশীলনে সাহায্য করতে পারেন?",
+    "en": "Can you help me practice?"
+  },
+  {
+    "es": "¿Tiene un diccionario en español?",
+    "bn": "তিয়েনে উন দিসিওনারিও এন এস্পানিওল?",
+    "bnMeaning": "আপনার কাছে কি স্প্যানিশ অভিধান আছে?",
+    "en": "Do you have a Spanish dictionary?"
+  },
+  {
+    "es": "Estoy buscando una escuela de idiomas.",
+    "bn": "এস্তোই বুস্কান্দো উনা এসকুয়েলা দে ইদিওমাস।",
+    "bnMeaning": "আমি একটি ভাষা বিদ্যালয় খুঁজছি।",
+    "en": "I am looking for a language school."
+  },
+  {
+    "es": "Quiero mejorar mi pronunciación.",
+    "bn": "কিয়েরো মেহোরার মি প্রোনুনসিয়াসিওন।",
+    "bnMeaning": "আমি আমার উচ্চারণ উন্নত করতে চাই।",
+    "en": "I want to improve my pronunciation."
+  },
+  {
+    "es": "¿Puede corregirme si me equivoco?",
+    "bn": "পুয়েদে কোরেখিরমে সি মে একিবোকো?",
+    "bnMeaning": "আমি ভুল করলে আপনি কি আমাকে সংশোধন করতে পারেন?",
+    "en": "Can you correct me if I'm wrong?"
+  },
+  {
+    "es": "Estoy practicando todos los días.",
+    "bn": "এস্তোই প্রাক্তিকান্দো তোদোস লোস দিয়াস।",
+    "bnMeaning": "আমি প্রতিদিন অনুশীলন করছি।",
+    "en": "I am practicing every day."
+  },
+  {
+    "es": "¿Conoce alguna aplicación para aprender español?",
+    "bn": "কোনোসে আলগুনা আপ্লিকাসিওন পারা আপ্রেন্দের এস্পানিওল?",
+    "bnMeaning": "আপনি কি স্প্যানিশ শেখার জন্য কোনো অ্যাপ জানেন?",
+    "en": "Do you know any app to learn Spanish?"
+  },
+  {
+    "es": "¿Qué libros recomienda para principiantes?",
+    "bn": "কে লিব্রোস রেকোমিয়েনদা পারা প্রিন্সিপিয়ান্তেস?",
+    "bnMeaning": "শুরুর জন্য আপনি কী বই সুপারিশ করেন?",
+    "en": "What books do you recommend for beginners?"
+  },
+  {
+    "es": "Estoy viendo películas en español.",
+    "bn": "এস্তোই বিয়েন্দো পেলিকুলাস এন এস্পানিওল।",
+    "bnMeaning": "আমি স্প্যানিশ সিনেমা দেখছি।",
+    "en": "I am watching movies in Spanish."
+  },
+  {
+    "es": "Me gusta aprender nuevos idiomas.",
+    "bn": "মে গুস্তা আপ্রেন্দের নুয়েভোস ইদিওমাস।",
+    "bnMeaning": "আমার নতুন ভাষা শিখতে ভালো লাগে।",
+    "en": "I like learning new languages."
+  },
+  {
+    "es": "Hablo un poco de español.",
+    "bn": "আবলো উন পোকো দে এস্পানিওল।",
+    "bnMeaning": "আমি সামান্য স্প্যানিশ বলতে পারি।",
+    "en": "I speak a little Spanish."
+  },
+  {
+    "es": "¿Dónde puedo encontrar un traductor?",
+    "bn": "দোন্দে পুয়েদো এনকোন্ত্রার উন ত্রাদুকতোর?",
+    "bnMeaning": "আমি কোথায় একজন অনুবাদক পেতে পারি?",
+    "en": "Where can I find a translator?"
+  },
+  {
+    "es": "¿Cuál es el mejor sitio para practicar conversación?",
+    "bn": "কুয়াল এস এল মেহোর সিতিও পারা প্রাক্তিকার কনভারসাসিওন?",
+    "bnMeaning": "কথোপকথন অনুশীলনের জন্য সবচেয়ে ভালো জায়গা কোনটি?",
+    "en": "What is the best place to practice conversation?"
+  },
+  {
+    "es": "¿Tiene ejercicios de gramática?",
+    "bn": "তিয়েনে এহেরসিসিওস দে গ্রামাতিকা?",
+    "bnMeaning": "আপনার কি ব্যাকরণের অনুশীলনী আছে?",
+    "en": "Do you have grammar exercises?"
+  },
+  {
+    "es": "¿Dónde puedo escuchar español fácilmente?",
+    "bn": "দোন্দে পুয়েদো এস্কুচার এস্পানিওল ফাসিলমেন্তে?",
+    "bnMeaning": "আমি সহজে কোথায় স্প্যানিশ শুনতে পারি?",
+    "en": "Where can I easily listen to Spanish?"
+  },
+  {
+    "es": "Estoy empezando a entender más.",
+    "bn": "এস্তোই এমপেসান্দো আ এনতেনদের মাস।",
+    "bnMeaning": "আমি ধীরে ধীরে আরও বুঝতে শুরু করছি।",
+    "en": "I am starting to understand more."
+  },
+  {
+    "es": "Me gustaría hablar con nativos.",
+    "bn": "মে গুস্তারিয়া আবলার কন নাতিভোস।",
+    "bnMeaning": "আমি স্থানীয়দের সঙ্গে কথা বলতে চাই।",
+    "en": "I would like to speak with native speakers."
+  },
+  {
+    "es": "Estoy usando una aplicación para aprender.",
+    "bn": "এস্তোই উসান্দো উনা আপ্লিকাসিওন পারা আপ্রেন্দের।",
+    "bnMeaning": "আমি শেখার জন্য একটি অ্যাপ ব্যবহার করছি।",
+    "en": "I am using an app to learn."
+  },
+  {
+    "es": "¿Cuántas palabras nuevas aprendiste hoy?",
+    "bn": "কুয়ান্তাস পালাব্রাস নুয়েভাস আপ্রেন্দিস্তে ওয়েই?",
+    "bnMeaning": "তুমি আজ নতুন কতটি শব্দ শিখেছো?",
+    "en": "How many new words did you learn today?"
+  },
+  {
+    "es": "Estoy mejorando mi comprensión auditiva.",
+    "bn": "এস্তোই মেহোরান্দো মি কমপ্রেনসিওন আওদিতিভা।",
+    "bnMeaning": "আমি আমার শ্রবণ বোঝার ক্ষমতা উন্নত করছি।",
+    "en": "I am improving my listening comprehension."
+  },
+  {
+    "es": "Necesito practicar más para hablar fluidamente.",
+    "bn": "নেসেসিতো প্রাক্তিকার মাস পারা আবলার ফ্লুইদামেন্তে।",
+    "bnMeaning": "স্বচ্ছন্দে কথা বলার জন্য আমাকে আরও অনুশীলন করতে হবে।",
+    "en": "I need to practice more to speak fluently."
   }
 ]
