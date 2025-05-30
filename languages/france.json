@@ -1,0 +1,122 @@
+[
+  {
+    "fr": "Bonjour",
+    "bn": "বঁজুর",
+    "bnMeaning": "সুপ্রভাত / হ্যালো",
+    "en": "Hello / Good morning"
+  },
+  {
+    "fr": "Comment ça va?",
+    "bn": "কোমঁ সা ভা?",
+    "bnMeaning": "কেমন আছেন?",
+    "en": "How are you?"
+  },
+  {
+    "fr": "Merci",
+    "bn": "মেরসি",
+    "bnMeaning": "ধন্যবাদ",
+    "en": "Thank you"
+  },
+  {
+    "fr": "S'il vous plaît",
+    "bn": "সিল ভু প্লে",
+    "bnMeaning": "অনুগ্রহ করে",
+    "en": "Please"
+  },
+  {
+    "fr": "Excusez-moi",
+    "bn": "এক্সকিউজে-মোয়া",
+    "bnMeaning": "ক্ষমা করবেন",
+    "en": "Excuse me / Sorry"
+  },
+  {
+    "fr": "Où sont les toilettes?",
+    "bn": "উ সঁ লে তুয়ালেত?",
+    "bnMeaning": "টয়লেট কোথায়?",
+    "en": "Where are the toilets?"
+  },
+  {
+    "fr": "Je ne parle pas français",
+    "bn": "ঝে নে পার্লে পা ফ্রঁসেই",
+    "bnMeaning": "আমি ফরাসি বলতে পারি না",
+    "en": "I don't speak French"
+  },
+  {
+    "fr": "Pouvez-vous m'aider?",
+    "bn": "পুভে-ভু মেদে?",
+    "bnMeaning": "আপনি কি আমাকে সাহায্য করতে পারেন?",
+    "en": "Can you help me?"
+  },
+  {
+    "fr": "Combien ça coûte?",
+    "bn": "কঁবিয়ঁ সা কূত?",
+    "bnMeaning": "এটা কত দাম?",
+    "en": "How much does it cost?"
+  },
+  {
+    "fr": "Je voudrais de l'eau",
+    "bn": "ঝে ভুদ্রে দে ল’ও",
+    "bnMeaning": "আমি পানি চাই",
+    "en": "I would like some water"
+  },
+  {
+    "fr": "Je suis perdu",
+    "bn": "ঝে সুই পেরদু",
+    "bnMeaning": "আমি পথ হারিয়েছি (পুরুষ)",
+    "en": "I am lost"
+  },
+  {
+    "fr": "Je suis perdue",
+    "bn": "ঝে সুই পেরদু",
+    "bnMeaning": "আমি পথ হারিয়েছি (মহিলা)",
+    "en": "I am lost"
+  },
+  {
+    "fr": "Où est la station de métro la plus proche?",
+    "bn": "উ এ লা স্টাসিঁ দে মেত্রো লা প্লু প্রোশ?",
+    "bnMeaning": "সবচেয়ে কাছের মেট্রো স্টেশন কোথায়?",
+    "en": "Where is the nearest metro station?"
+  },
+  {
+    "fr": "Je voudrais un billet pour Paris",
+    "bn": "ঝে ভুদ্রে ঔঁ বিলেত পুর প্যারি",
+    "bnMeaning": "আমি প্যারিসের জন্য একটি টিকিট চাই",
+    "en": "I would like a ticket to Paris"
+  },
+  {
+    "fr": "À quelle heure part le train suivant?",
+    "bn": "আ কেল ঔর পার লে ট্রাঁ স্যুভাঁ?",
+    "bnMeaning": "পরবর্তী ট্রেন কখন ছাড়ে?",
+    "en": "What time does the next train leave?"
+  },
+  {
+    "fr": "Je suis étudiant",
+    "bn": "ঝে সুই এতুদিয়ঁ",
+    "bnMeaning": "আমি ছাত্র (পুরুষ)",
+    "en": "I am a student"
+  },
+  {
+    "fr": "Je suis étudiante",
+    "bn": "ঝে সুই এতুদিয়ঁত",
+    "bnMeaning": "আমি ছাত্রী (মহিলা)",
+    "en": "I am a student"
+  },
+  {
+    "fr": "Où puis-je trouver un médecin?",
+    "bn": "উ পুই-ঝে ত্রুভে ঔঁ মেদসঁ?",
+    "bnMeaning": "আমি কোথায় ডাক্তার পাব?",
+    "en": "Where can I find a doctor?"
+  },
+  {
+    "fr": "Appelez une ambulance, s'il vous plaît!",
+    "bn": "আপেলে ঔঁ আম্বুলাঁস, সিল ভু প্লে!",
+    "bnMeaning": "অ্যাম্বুলেন্স ডাকুন, অনুগ্রহ করে!",
+    "en": "Call an ambulance, please!"
+  },
+  {
+    "fr": "Je voudrais réserver une chambre",
+    "bn": "ঝে ভুদ্রে রিজার্ভে ঔঁ শঁব্র",
+    "bnMeaning": "আমি একটি রুম বুক করতে চাই",
+    "en": "I would like to book a room"
+  }
+]
