@@ -1,187 +1,160 @@
-// 🔧 Service Worker for Speak EU
+// 🎯 Speak EU Service Worker
 // Provides offline functionality and caching
 
-const CACHE_NAME = 'speak-eu-v2.0.0';
-const STATIC_CACHE = 'speak-eu-static-v2.0.0';
-const DYNAMIC_CACHE = 'speak-eu-dynamic-v2.0.0';
+const CACHE_NAME = 'speak-eu-v3.0.0';
+const OFFLINE_URL = '/offline.html';
 
-// Files to cache immediately
-const STATIC_FILES = [
+// Files to cache for offline use
+const CACHE_FILES = [
   '/',
   '/index.html',
+  '/manifest.json',
   '/css/style.css',
   '/css/themes.css',
   '/css/animations.css',
   '/js/app.js',
-  '/manifest.json',
   '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/icons/icon-512x512.png',
+  // Add more critical files here
 ];
 
-// Dynamic files that will be cached as they're used
-const DYNAMIC_FILES = [
-  '/data/languages.json',
-  '/data/vocabulary/',
-  '/images/',
-  '/audio/'
-];
-
-// Install event - cache static files
-self.addEventListener('install', event => {
-  console.log('SW: Installing...');
+// Install event - cache critical resources
+self.addEventListener('install', (event) => {
+  console.log('🔧 Service Worker installing...');
   
   event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then(cache => {
-        console.log('SW: Caching static files');
-        return cache.addAll(STATIC_FILES);
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('📦 Caching app shell');
+        return cache.addAll(CACHE_FILES);
       })
       .then(() => {
-        console.log('SW: Installation complete');
+        console.log('✅ Service Worker installed');
         return self.skipWaiting();
       })
-      .catch(error => {
-        console.error('SW: Installation failed', error);
+      .catch((error) => {
+        console.error('❌ Cache failed:', error);
       })
   );
 });
 
-// Activate event - cleanup old caches
-self.addEventListener('activate', event => {
-  console.log('SW: Activating...');
+// Activate event - clean up old caches
+self.addEventListener('activate', (event) => {
+  console.log('🚀 Service Worker activating...');
   
   event.waitUntil(
     caches.keys()
-      .then(cacheNames => {
+      .then((cacheNames) => {
         return Promise.all(
-          cacheNames
-            .filter(cacheName => {
-              return cacheName !== STATIC_CACHE && 
-                     cacheName !== DYNAMIC_CACHE;
-            })
-            .map(cacheName => {
-              console.log('SW: Deleting old cache:', cacheName);
+          cacheNames.map((cacheName) => {
+            if (cacheName !== CACHE_NAME) {
+              console.log('🗑️ Deleting old cache:', cacheName);
               return caches.delete(cacheName);
-            })
+            }
+          })
         );
       })
       .then(() => {
-        console.log('SW: Activation complete');
+        console.log('✅ Service Worker activated');
         return self.clients.claim();
       })
   );
 });
 
-// Fetch event - serve from cache or network
-self.addEventListener('fetch', event => {
-  const { request } = event;
-  const url = new URL(request.url);
-  
+// Fetch event - serve from cache, fallback to network
+self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
-  if (request.method !== 'GET') {
-    return;
-  }
+  if (event.request.method !== 'GET') return;
   
-  // Skip external requests
-  if (url.origin !== location.origin) {
-    return;
-  }
+  // Skip chrome-extension and other non-http requests
+  if (!event.request.url.startsWith('http')) return;
   
   event.respondWith(
-    caches.match(request)
-      .then(cachedResponse => {
+    caches.match(event.request)
+      .then((cachedResponse) => {
+        // Return cached version if available
         if (cachedResponse) {
-          console.log('SW: Serving from cache:', request.url);
           return cachedResponse;
         }
         
-        // Not in cache, fetch from network
-        return fetch(request)
-          .then(networkResponse => {
+        // Otherwise fetch from network
+        return fetch(event.request)
+          .then((response) => {
             // Don't cache non-successful responses
-            if (!networkResponse || networkResponse.status !== 200) {
-              return networkResponse;
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
             }
             
-            // Determine which cache to use
-            const shouldCache = STATIC_FILES.some(file => 
-              request.url.endsWith(file)
-            ) || DYNAMIC_FILES.some(pattern => 
-              request.url.includes(pattern)
-            );
+            // Clone the response for caching
+            const responseToCache = response.clone();
             
-            if (shouldCache) {
-              const responseClone = networkResponse.clone();
-              const cacheToUse = STATIC_FILES.some(file => 
-                request.url.endsWith(file)
-              ) ? STATIC_CACHE : DYNAMIC_CACHE;
-              
-              caches.open(cacheToUse)
-                .then(cache => {
-                  console.log('SW: Caching new resource:', request.url);
-                  cache.put(request, responseClone);
-                });
-            }
+            // Cache the new resource
+            caches.open(CACHE_NAME)
+              .then((cache) => {
+                cache.put(event.request, responseToCache);
+              });
             
-            return networkResponse;
+            return response;
           })
-          .catch(error => {
-            console.error('SW: Network request failed:', error);
-            
-            // Serve offline fallback for HTML pages
-            if (request.headers.get('accept').includes('text/html')) {
-              return caches.match('/index.html');
+          .catch(() => {
+            // If both cache and network fail, show offline page for navigation requests
+            if (event.request.mode === 'navigate') {
+              return caches.match(OFFLINE_URL);
             }
             
-            // For other files, just fail
-            throw error;
+            // For other requests, return a generic offline response
+            return new Response('Offline', {
+              status: 503,
+              statusText: 'Service Unavailable',
+              headers: { 'Content-Type': 'text/plain' }
+            });
           });
       })
   );
 });
 
-// Background sync for offline actions
-self.addEventListener('sync', event => {
-  console.log('SW: Background sync triggered');
-  
-  if (event.tag === 'progress-sync') {
-    event.waitUntil(syncProgress());
+// Background sync for when connection is restored
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'background-sync') {
+    console.log('🔄 Background sync triggered');
+    event.waitUntil(
+      // Perform background tasks here
+      syncUserData()
+    );
   }
 });
 
-// Push notifications (future feature)
-self.addEventListener('push', event => {
-  console.log('SW: Push notification received');
-  
-  const options = {
-    body: event.data ? event.data.text() : 'নতুন আপডেট উপলব্ধ!',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/badge-72x72.png',
-    vibrate: [200, 100, 200],
-    tag: 'speak-eu-update',
-    actions: [
-      {
-        action: 'open',
-        title: 'খুলুন',
-        icon: '/icons/action-open.png'
-      },
-      {
-        action: 'close',
-        title: 'বন্ধ করুন',
-        icon: '/icons/action-close.png'
-      }
-    ]
-  };
-  
-  event.waitUntil(
-    self.registration.showNotification('Speak EU', options)
-  );
+// Push notification handling
+self.addEventListener('push', (event) => {
+  if (event.data) {
+    const data = event.data.json();
+    
+    const options = {
+      body: data.body || 'নতুন আপডেট উপলব্ধ!',
+      icon: '/icons/icon-192x192.png',
+      badge: '/icons/icon-72x72.png',
+      vibrate: [100, 50, 100],
+      data: data.data || {},
+      actions: [
+        {
+          action: 'open',
+          title: 'খুলুন'
+        },
+        {
+          action: 'close',
+          title: 'বন্ধ করুন'
+        }
+      ]
+    };
+    
+    event.waitUntil(
+      self.registration.showNotification(data.title || 'Speak EU', options)
+    );
+  }
 });
 
-// Notification click handler
-self.addEventListener('notificationclick', event => {
-  console.log('SW: Notification clicked');
-  
+// Notification click handling
+self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   
   if (event.action === 'open') {
@@ -191,29 +164,25 @@ self.addEventListener('notificationclick', event => {
   }
 });
 
-// Helper function to sync progress
-async function syncProgress() {
+// Helper function for background sync
+async function syncUserData() {
   try {
-    const storedProgress = localStorage.getItem('speak_eu_state');
-    if (storedProgress) {
-      // In a real app, this would sync to a server
-      console.log('SW: Progress synced successfully');
-    }
+    // Sync user progress, favorites, etc.
+    console.log('📊 Syncing user data...');
+    
+    // Implementation would go here
+    return Promise.resolve();
   } catch (error) {
-    console.error('SW: Progress sync failed:', error);
+    console.error('❌ Sync failed:', error);
+    throw error;
   }
 }
 
-// Cache cleanup utility
-async function cleanupCaches() {
-  const cacheNames = await caches.keys();
-  const oldCaches = cacheNames.filter(name => 
-    !name.includes('v2.0.0')
-  );
-  
-  return Promise.all(
-    oldCaches.map(name => caches.delete(name))
-  );
-}
+// Cache update check
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
-console.log('SW: Service Worker loaded successfully');
+console.log('🎯 Speak EU Service Worker loaded');
