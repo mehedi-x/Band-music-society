@@ -1,188 +1,138 @@
 {
   "metadata": {
-    "version": "2.0.0",
+    "version": "3.0.0",
+    "lastUpdated": "2024-01-01",
     "totalLanguages": 28,
-    "totalWords": 140284,
-    "lastUpdated": "2024-12-31",
-    "description": "Complete European language dataset for Speak EU"
+    "totalWords": 140000,
+    "categories": 23
   },
   "languages": {
     "germany": {
-      "sampleVocabulary": [
-        {
-          "id": "de_daily_001",
-          "category": "daily",
-          "difficulty": "beginner",
-          "de": "Guten Tag",
-          "bn": "শুভ দিন",
-          "bnMeaning": "দিনের শুভেচ্ছা জানানোর জন্য ব্যবহৃত হয়",
-          "en": "Good day",
-          "pronunciation": "[ˈɡuːtən taːk]",
-          "tags": ["greeting", "formal", "common"],
-          "priority": 1,
-          "audioUrl": null
-        },
-        {
-          "id": "de_daily_002",
-          "category": "daily",
-          "difficulty": "beginner",
-          "de": "Wie geht es Ihnen?",
-          "bn": "আপনি কেমন আছেন?",
-          "bnMeaning": "কারো খোঁজখবর নেওয়ার জন্য ব্যবহৃত প্রশ্ন",
-          "en": "How are you?",
-          "pronunciation": "[viː ɡeːt ɛs ˈiːnən]",
-          "tags": ["question", "polite", "common"],
-          "priority": 1,
-          "audioUrl": null
-        },
-        {
-          "id": "de_emergency_001",
-          "category": "emergency",
-          "difficulty": "beginner",
-          "de": "Hilfe! Rufen Sie die Polizei!",
-          "bn": "সাহায্য! পুলিশ ডাকুন!",
-          "bnMeaning": "জরুরি অবস্থায় পুলিশের সাহায্যের জন্য",
-          "en": "Help! Call the police!",
-          "pronunciation": "[ˈhɪlfə ˈruːfən ziː diː poliˈtsaɪ]",
-          "tags": ["emergency", "urgent", "safety"],
-          "priority": 3,
-          "audioUrl": null
-        },
-        {
-          "id": "de_work_001",
-          "category": "work",
-          "difficulty": "intermediate",
-          "de": "Ich hätte gern einen Termin",
-          "bn": "আমি একটি সময় নিতে চাই",
-          "bnMeaning": "অ্যাপয়েন্টমেন্ট বা মিটিং এর জন্য অনুরোধ",
-          "en": "I would like an appointment",
-          "pronunciation": "[ɪç ˈhɛtə ɡɛʁn ˈaɪnən tɛʁˈmiːn]",
-          "tags": ["professional", "appointment", "formal"],
-          "priority": 2,
-          "audioUrl": null
-        }
-      ]
+      "code": "de",
+      "name": "জার্মান",
+      "nativeName": "Deutsch",
+      "country": "জার্মানি",
+      "flag": "🇩🇪",
+      "type": "schengen",
+      "population": "83M",
+      "difficulty": "intermediate",
+      "wordCount": 5284,
+      "categories": 23,
+      "priority": "high",
+      "capital": "বার্লিন",
+      "currency": "ইউরো",
+      "timeZone": "CET",
+      "samplePhrases": {
+        "emergency": [
+          "Hilfe!",
+          "Rufen Sie die Polizei!",
+          "Ich brauche einen Arzt"
+        ],
+        "daily": [
+          "Guten Tag",
+          "Wie geht es Ihnen?",
+          "Danke schön"
+        ],
+        "greetings": [
+          "Hallo",
+          "Guten Morgen",
+          "Auf Wiedersehen"
+        ]
+      }
     },
     "france": {
-      "sampleVocabulary": [
-        {
-          "id": "fr_daily_001",
-          "category": "daily",
-          "difficulty": "beginner",
-          "fr": "Bonjour",
-          "bn": "নমস্কার",
-          "bnMeaning": "সকালের শুভেচ্ছা জানানোর জন্য",
-          "en": "Good morning",
-          "pronunciation": "[bon.ˈʒuʁ]",
-          "tags": ["greeting", "morning", "common"],
-          "priority": 1,
-          "audioUrl": null
-        },
-        {
-          "id": "fr_daily_002",
-          "category": "daily",
-          "difficulty": "beginner",
-          "fr": "Comment allez-vous?",
-          "bn": "আপনি কেমন আছেন?",
-          "bnMeaning": "কারো খোঁজখবর নেওয়ার ভদ্র উপায়",
-          "en": "How are you?",
-          "pronunciation": "[kɔ.mɑ̃ ta.le vu]",
-          "tags": ["question", "polite", "formal"],
-          "priority": 1,
-          "audioUrl": null
-        },
-        {
-          "id": "fr_emergency_001",
-          "category": "emergency",
-          "difficulty": "beginner",
-          "fr": "Au secours! Appelez les pompiers!",
-          "bn": "বাঁচান! ফায়ার ব্রিগেড ডাকুন!",
-          "bnMeaning": "অগ্নিকাণ্ডের জরুরি অবস্থায়",
-          "en": "Help! Call the fire department!",
-          "pronunciation": "[o s(ə).kuʁ ap.le le pɔ̃.pje]",
-          "tags": ["emergency", "fire", "urgent"],
-          "priority": 3,
-          "audioUrl": null
-        },
-        {
-          "id": "fr_food_001",
-          "category": "food",
-          "difficulty": "beginner",
-          "fr": "Je voudrais un café, s'il vous plaît",
-          "bn": "আমি একটি কফি চাই, অনুগ্রহ করে",
-          "bnMeaning": "ক্যাফে বা রেস্টুরেন্টে কফি অর্ডার করার জন্য",
-          "en": "I would like a coffee, please",
-          "pronunciation": "[ʒə vu.dʁɛ œ̃ ka.fe sil vu plɛ]",
-          "tags": ["food", "drink", "polite"],
-          "priority": 2,
-          "audioUrl": null
-        }
-      ]
+      "code": "fr",
+      "name": "ফরাসি",
+      "nativeName": "Français",
+      "country": "ফ্রান্স",
+      "flag": "🇫🇷",
+      "type": "schengen",
+      "population": "68M",
+      "difficulty": "intermediate",
+      "wordCount": 5156,
+      "categories": 23,
+      "priority": "high",
+      "capital": "প্যারিস",
+      "currency": "ইউরো",
+      "timeZone": "CET"
+    },
+    "italy": {
+      "code": "it",
+      "name": "ইতালিয়ান",
+      "nativeName": "Italiano",
+      "country": "ইতালি",
+      "flag": "🇮🇹",
+      "type": "schengen",
+      "population": "60M",
+      "difficulty": "beginner",
+      "wordCount": 4987,
+      "categories": 23,
+      "priority": "high",
+      "capital": "রোম",
+      "currency": "ইউরো",
+      "timeZone": "CET"
+    },
+    "spain": {
+      "code": "es",
+      "name": "স্প্যানিশ",
+      "nativeName": "Español",
+      "country": "স্পেন",
+      "flag": "🇪🇸",
+      "type": "schengen",
+      "population": "47M",
+      "difficulty": "beginner",
+      "wordCount": 5342,
+      "categories": 23,
+      "priority": "high",
+      "capital": "মাদ্রিদ",
+      "currency": "ইউরো",
+      "timeZone": "CET"
     },
     "russia": {
-      "sampleVocabulary": [
-        {
-          "id": "ru_daily_001",
-          "category": "daily",
-          "difficulty": "intermediate",
-          "ru": "Здравствуйте",
-          "bn": "নমস্কার",
-          "bnMeaning": "আনুষ্ঠানিক শুভেচ্ছা জানানোর জন্য",
-          "en": "Hello (formal)",
-          "pronunciation": "[ˈzdrast.vʊj.tʲe]",
-          "tags": ["greeting", "formal", "common"],
-          "priority": 1,
-          "audioUrl": null
-        },
-        {
-          "id": "ru_daily_002",
-          "category": "daily",
-          "difficulty": "intermediate",
-          "ru": "Как дела?",
-          "bn": "কেমন চলছে?",
-          "bnMeaning": "বন্ধুদের কাছে খোঁজখবর নেওয়ার অনানুষ্ঠানিক উপায়",
-          "en": "How are things?",
-          "pronunciation": "[kak dʲɪˈla]",
-          "tags": ["casual", "question", "common"],
-          "priority": 1,
-          "audioUrl": null
-        },
-        {
-          "id": "ru_travel_001",
-          "category": "travel",
-          "difficulty": "intermediate",
-          "ru": "Где находится вокзал?",
-          "bn": "রেলস্টেশন কোথায়?",
-          "bnMeaning": "ট্রেন স্টেশনের দিকনির্দেশনা জানার জন্য",
-          "en": "Where is the train station?",
-          "pronunciation": "[ɡdʲe nɐˈxodʲɪt.sə vɐɡˈzal]",
-          "tags": ["travel", "direction", "transport"],
-          "priority": 2,
-          "audioUrl": null
-        }
-      ]
+      "code": "ru",
+      "name": "রুশ",
+      "nativeName": "Русский",
+      "country": "রাশিয়া",
+      "flag": "🇷🇺",
+      "type": "non-schengen",
+      "population": "146M",
+      "difficulty": "advanced",
+      "wordCount": 5678,
+      "categories": 23,
+      "priority": "high",
+      "capital": "মস্কো",
+      "currency": "রুবল",
+      "timeZone": "MSK"
     }
   },
   "categories": {
-    "daily": {
-      "totalWords": 2847,
-      "description": "দৈনন্দিন জীবনে ব্যবহৃত সাধারণ কথোপকথন"
-    },
     "emergency": {
-      "totalWords": 234,
-      "description": "জরুরি অবস্থায় প্রয়োজনীয় বাক্য ও শব্দ"
+      "name": "জরুরি অবস্থা",
+      "icon": "🚨",
+      "priority": 1,
+      "description": "জরুরি পরিস্থিতিতে সাহায্যের জন্য অত্যাবশ্যক বাক্য",
+      "color": "#ff4757"
+    },
+    "daily": {
+      "name": "দৈনন্দিন কথোপকথন",
+      "icon": "💬",
+      "priority": 2,
+      "description": "প্রতিদিনের সাধারণ কথোপকথন",
+      "color": "#3742fa"
+    },
+    "greetings": {
+      "name": "শুভেচ্ছা ও পরিচয়",
+      "icon": "👋",
+      "priority": 3,
+      "description": "অভিবাদন ও পরিচয় পর্ব",
+      "color": "#2ed573"
     },
     "work": {
-      "totalWords": 1856,
-      "description": "কর্মক্ষেত্রে ব্যবহৃত পেশাদার কথোপকথন"
-    },
-    "travel": {
-      "totalWords": 1623,
-      "description": "ভ্রমণ ও পরিবহন সংক্রান্ত প্রয়োজনীয় বাক্য"
-    },
-    "food": {
-      "totalWords": 987,
-      "description": "খাবার অর্ডার ও রেস্টুরেন্টে ব্যবহৃত বাক্য"
+      "name": "কাজ ও পেশা",
+      "icon": "💼",
+      "priority": 4,
+      "description": "কর্মক্ষেত্রে প্রয়োজনীয় কথোপকথন",
+      "color": "#ff6348"
     }
   }
 }
