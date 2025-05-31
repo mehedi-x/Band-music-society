@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "version": "2.0.1",
+    "description": "Extended vocabulary samples for Speak EU",
+    "totalSamples": 150,
+    "lastUpdated": "2024-12-31"
+  },
+  "samples": {
+    "germany": [
+      {
+        "id": "de_greetings_001",
+        "category": "greetings",
+        "difficulty": "beginner",
+        "de": "Hallo, ich heiße...",
+        "bn": "হ্যালো, আমার নাম...",
+        "bnMeaning": "নিজের পরিচয় দেওয়ার সময় ব্যবহৃত হয়",
+        "en": "Hello, my name is...",
+        "pronunciation": "[ˈhalo ɪç ˈhaɪsə]",
+        "tags": ["introduction", "formal", "essential"],
+        "priority": 1
+      },
+      {
+        "id": "de_work_002",
+        "category": "work",
+        "difficulty": "intermediate",
+        "de": "Können Sie mir bitte helfen?",
+        "bn": "আপনি কি আমাকে সাহায্য করতে পারেন?",
+        "bnMeaning": "কর্মক্ষেত্রে সাহায্য চাওয়ার ভদ্র উপায়",
+        "en": "Can you please help me?",
+        "pronunciation": "[ˈkœnən ziː miːɐ̯ ˈbɪtə ˈhɛlfən]",
+        "tags": ["workplace", "request", "polite"],
+        "priority": 2
+      },
+      {
+        "id": "de_education_001",
+        "category": "education",
+        "difficulty": "intermediate",
+        "de": "Wo ist die Universität?",
+        "bn": "বিশ্ববিদ্যালয় কোথায়?",
+        "bnMeaning": "শিক্ষা প্রতিষ্ঠানের অবস্থান জানার জন্য",
+        "en": "Where is the university?",
+        "pronunciation": "[voː ɪst diː univerziˈtɛːt]",
+        "tags": ["education", "direction", "student"],
+        "priority": 2
+      },
+      {
+        "id": "de_health_001",
+        "category": "health",
+        "difficulty": "intermediate",
+        "de": "Ich brauche einen Arzt",
+        "bn": "আমার একজন ডাক্তার প্রয়োজন",
+        "bnMeaning": "চিকিৎসা সেবার জন্য জরুরি প্রয়োজনে",
+        "en": "I need a doctor",
+        "pronunciation": "[ɪç ˈbraʊxə ˈaɪnən ˈartst]",
+        "tags": ["health", "medical", "urgent"],
+        "priority": 3
+      },
+      {
+        "id": "de_banking_001",
+        "category": "banking",
+        "difficulty": "intermediate",
+        "de": "Ich möchte ein Konto eröffnen",
+        "bn": "আমি একটি অ্যাকাউন্ট খুলতে চাই",
+        "bnMeaning": "ব্যাংকে নতুন অ্যাকাউন্ট খোলার জন্য",
+        "en": "I would like to open an account",
+        "pronunciation": "[ɪç ˈmœçtə aɪn ˈkonto ɛɐ̯ˈʔœfnən]",
+        "tags": ["banking", "financial", "formal"],
+        "priority": 2
+      }
+    ],
+    "france": [
+      {
+        "id": "fr_greetings_002",
+        "category": "greetings",
+        "difficulty": "beginner",
+        "fr": "Enchanté(e) de vous rencontrer",
+        "bn": "আপনার সাথে পরিচিত হয়ে খুশি হলাম",
+        "bnMeaning": "নতুন কারো সাথে পরিচয়ের সময় ব্যবহৃত ভদ্র অভিব্যক্তি",
+        "en": "Nice to meet you",
+        "pronunciation": "[ɑ̃.ʃɑ̃.te də vu ʁɑ̃.kɔ̃.tʁe]",
+        "tags": ["meeting", "polite", "formal"],
+        "priority": 1
+      },
+      {
+        "id": "fr_accommodation_001",
+        "category": "accommodation",
+        "difficulty": "intermediate",
+        "fr": "Je cherche un appartement à louer",
+        "bn": "আমি ভাড়ার জন্য একটি অ্যাপার্টমেন্ট খুঁজছি",
+        "bnMeaning": "বাসস্থানের জন্য অ্যাপার্টমেন্ট খোঁজার সময়",
+        "en": "I'm looking for an apartment to rent",
+        "pronunciation": "[ʒə ʃɛʁʃ œ̃ a.paʁ.tə.mɑ̃ a lu.e]",
+        "tags": ["housing", "rental", "practical"],
+        "priority": 2
+      },
+      {
+        "id": "fr_government_001",
+        "category": "government",
+        "difficulty": "intermediate",
+        "fr": "Où est la mairie?",
+        "bn": "মেয়র অফিস কোথায়?",
+        "bnMeaning": "সরকারি কাজের জন্য পৌরসভার অফিস খোঁজার সময়",
+        "en": "Where is the city hall?",
+        "pronunciation": "[u ɛ la mɛ.ʁi]",
+        "tags": ["government", "official", "location"],
+        "priority": 2
+      },
+      {
+        "id": "fr_shopping_001",
+        "category": "shopping",
+        "difficulty": "beginner",
+        "fr": "Combien ça coûte?",
+        "bn": "এটার দাম কত?",
+        "bnMeaning": "কেনাকাটার সময় দাম জানার জন্য",
+        "en": "How much does it cost?",
+        "pronunciation": "[kɔ̃.bjɛ̃ sa ku.t]",
+        "tags": ["shopping", "price", "essential"],
+        "priority": 1
+      }
+    ],
+    "italy": [
+      {
+        "id": "it_family_001",
+        "category": "family",
+        "difficulty": "beginner",
+        "it": "Questa è la mia famiglia",
+        "bn": "এটি আমার পরিবার",
+        "bnMeaning": "পরিবারের সদস্যদের পরিচয় করিয়ে দেওয়ার সময়",
+        "en": "This is my family",
+        "pronunciation": "[ˈkwesta ˈɛ la ˈmia faˈmiʎʎa]",
+        "tags": ["family", "introduction", "personal"],
+        "priority": 2
+      },
+      {
+        "id": "it_culture_001",
+        "category": "culture",
+        "difficulty": "intermediate",
+        "it": "Mi piace molto la cultura italiana",
+        "bn": "আমি ইতালিয়ান সংস্কৃতি খুব পছন্দ করি",
+        "bnMeaning": "সংস্কৃতি সম্পর্কে ইতিবাচক মন্তব্য",
+        "en": "I really like Italian culture",
+        "pronunciation": "[mi ˈpjatʃe ˈmolto la kulˈtura itaˈljana]",
+        "tags": ["culture", "appreciation", "social"],
+        "priority": 2
+      }
+    ],
+    "spain": [
+      {
+        "id": "es_directions_001",
+        "category": "directions",
+        "difficulty": "beginner",
+        "es": "¿Dónde está la estación de metro?",
+        "bn": "মেট্রো স্টেশন কোথায়?",
+        "bnMeaning": "পরিবহনের জন্য মেট্রো স্টেশনের অবস্থান জানার প্রয়োজনে",
+        "en": "Where is the metro station?",
