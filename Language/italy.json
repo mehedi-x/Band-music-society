@@ -1,0 +1,2870 @@
+[
+  {
+    "it": "Buongiorno!",
+    "bn": "বুয়োনজোর্নো!",
+    "bnMeaning": "সুপ্রভাত!",
+    "en": "Good morning!"
+  },
+  {
+    "it": "Come ti chiami?",
+    "bn": "কোমে তি কিয়ামি?",
+    "bnMeaning": "তোমার নাম কী?",
+    "en": "What is your name?"
+  },
+  {
+    "it": "Mi chiamo Ahmed.",
+    "bn": "মি কিয়ামো আহমেদ।",
+    "bnMeaning": "আমার নাম আহমেদ।",
+    "en": "My name is Ahmed."
+  },
+  {
+    "it": "Come stai?",
+    "bn": "কোমে স্তাই?",
+    "bnMeaning": "তুমি কেমন আছো?",
+    "en": "How are you?"
+  },
+  {
+    "it": "Sto bene, grazie.",
+    "bn": "স্তো বেনে, গ্রাৎজিয়ে।",
+    "bnMeaning": "আমি ভালো আছি, ধন্যবাদ।",
+    "en": "I’m fine, thank you."
+  },
+  {
+    "it": "Piacere di conoscerti.",
+    "bn": "পিয়াচেরে দি কনোশের্তি।",
+    "bnMeaning": "তোমার সঙ্গে পরিচয় হয়ে ভালো লাগলো।",
+    "en": "Nice to meet you."
+  },
+  {
+    "it": "Di dove sei?",
+    "bn": "দি দোভে সেই?",
+    "bnMeaning": "তুমি কোথা থেকে?",
+    "en": "Where are you from?"
+  },
+  {
+    "it": "Sono del Bangladesh.",
+    "bn": "সোনো দেল বাংলাদেশ।",
+    "bnMeaning": "আমি বাংলাদেশ থেকে এসেছি।",
+    "en": "I’m from Bangladesh."
+  },
+  {
+    "it": "Parli italiano?",
+    "bn": "পারলি ইতালিয়ানো?",
+    "bnMeaning": "তুমি কি ইতালিয়ান ভাষা বলো?",
+    "en": "Do you speak Italian?"
+  },
+  {
+    "it": "Un po', sto imparando.",
+    "bn": "উন পো, স্তো ইম্পারান্দো।",
+    "bnMeaning": "একটু, আমি শিখছি।",
+    "en": "A little, I’m learning."
+  },
+  {
+    "it": "Quanti anni hai?",
+    "bn": "কুয়ান্তি আন্নি আয়?",
+    "bnMeaning": "তোমার বয়স কত?",
+    "en": "How old are you?"
+  },
+  {
+    "it": "Ho venticinque anni.",
+    "bn": "ও ভেন্তিচিনকুয়ে আন্নি।",
+    "bnMeaning": "আমার বয়স পঁচিশ বছর।",
+    "en": "I am twenty-five years old."
+  },
+  {
+    "it": "Che lavoro fai?",
+    "bn": "কে লাভোরো ফাই?",
+    "bnMeaning": "তুমি কী কাজ করো?",
+    "en": "What do you do?"
+  },
+  {
+    "it": "Lavoro in un ristorante.",
+    "bn": "লাভোরো ইন উন রিস্তোরান্তে।",
+    "bnMeaning": "আমি একটি রেস্টুরেন্টে কাজ করি।",
+    "en": "I work in a restaurant."
+  },
+  {
+    "it": "Hai fratelli o sorelle?",
+    "bn": "আই ফ্রাতেল্লি ও সোরেল্লে?",
+    "bnMeaning": "তোমার কি ভাইবোন আছে?",
+    "en": "Do you have brothers or sisters?"
+  },
+  {
+    "it": "Sì, ho due fratelli.",
+    "bn": "সি, ও দুয়ে ফ্রাতেল্লি।",
+    "bnMeaning": "হ্যাঁ, আমার দুই ভাই আছে।",
+    "en": "Yes, I have two brothers."
+  },
+  {
+    "it": "Dove abiti?",
+    "bn": "দোভে আবিতি?",
+    "bnMeaning": "তুমি কোথায় থাকো?",
+    "en": "Where do you live?"
+  },
+  {
+    "it": "Abito a Roma.",
+    "bn": "আবিতো আ রোমা।",
+    "bnMeaning": "আমি রোমে থাকি।",
+    "en": "I live in Rome."
+  },
+  {
+    "it": "Ti piace l’Italia?",
+    "bn": "তি পিয়াচে ল ইতালিয়া?",
+    "bnMeaning": "তোমার কি ইতালি ভালো লাগে?",
+    "en": "Do you like Italy?"
+  },
+  {
+    "it": "Sì, mi piace molto.",
+    "bn": "সি, মি পিয়াচে মোলতো।",
+    "bnMeaning": "হ্যাঁ, আমার খুব ভালো লাগে।",
+    "en": "Yes, I like it a lot."
+  },
+  {
+    "it": "Che ore sono?",
+    "bn": "কে ওরে সোন্নো?",
+    "bnMeaning": "কয়টা বাজে?",
+    "en": "What time is it?"
+  },
+  {
+    "it": "Sono le tre.",
+    "bn": "সোনো লে ত্রে।",
+    "bnMeaning": "তিনটা বাজে।",
+    "en": "It’s three o’clock."
+  },
+  {
+    "it": "Può aiutarmi?",
+    "bn": "পুয়ো আয়ুতারমি?",
+    "bnMeaning": "আপনি কি আমাকে সাহায্য করতে পারেন?",
+    "en": "Can you help me?"
+  },
+  {
+    "it": "Dove si trova la stazione?",
+    "bn": "দোভে সি ত্রোভা লা স্তাজিওনে?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the station?"
+  },
+  {
+    "it": "Quanto costa questo?",
+    "bn": "কুয়ান্তো কোস্তা কুয়েস্তো?",
+    "bnMeaning": "এটার দাম কত?",
+    "en": "How much does this cost?"
+  },
+  {
+    "it": "Parli inglese?",
+    "bn": "পারলি ইংলেজে?",
+    "bnMeaning": "আপনি কি ইংরেজি বলেন?",
+    "en": "Do you speak English?"
+  },
+  {
+    "it": "Non capisco.",
+    "bn": "নোন কাপনিসকো।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don’t understand."
+  },
+  {
+    "it": "Scrivilo, per favore.",
+    "bn": "স্ক্রিভিলো, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে এটা লিখে দিন।",
+    "en": "Please write it down."
+  },
+  {
+    "it": "Aspetta un momento.",
+    "bn": "আসপেত্তা উন মোমেন্তো।",
+    "bnMeaning": "একটু অপেক্ষা করুন।",
+    "en": "Wait a moment."
+  },
+  {
+    "it": "Cosa significa?",
+    "bn": "কোজা সিগনিফিকা?",
+    "bnMeaning": "এর মানে কী?",
+    "en": "What does it mean?"
+  },
+  {
+    "it": "Buona fortuna!",
+    "bn": "বুয়োনা ফোর্তুনা!",
+    "bnMeaning": "শুভ কামনা!",
+    "en": "Good luck!"
+  },
+  {
+    "it": "Ci vediamo domani.",
+    "bn": "চি ভেদিয়ামো দোমানি।",
+    "bnMeaning": "আগামীকাল দেখা হবে।",
+    "en": "See you tomorrow."
+  },
+  {
+    "it": "Scusa, dove è il bagno?",
+    "bn": "স্কুসা, দোভে এ ইল বান্যো?",
+    "bnMeaning": "মাফ করবেন, টয়লেট কোথায়?",
+    "en": "Excuse me, where is the bathroom?"
+  },
+  {
+    "it": "Ho fame.",
+    "bn": "ও ফামে।",
+    "bnMeaning": "আমার খিদে পেয়েছে।",
+    "en": "I’m hungry."
+  },
+  {
+    "it": "Ho sete.",
+    "bn": "ও সে-তে।",
+    "bnMeaning": "আমার পিপাসা পেয়েছে।",
+    "en": "I’m thirsty."
+  },
+  {
+    "it": "Sono stanco.",
+    "bn": "সোনো স্তাঙ্কো।",
+    "bnMeaning": "আমি ক্লান্ত।",
+    "en": "I am tired."
+  },
+  {
+    "it": "Andiamo!",
+    "bn": "আন্দিয়ামো!",
+    "bnMeaning": "চলো যাই!",
+    "en": "Let’s go!"
+  },
+  {
+    "it": "È molto lontano?",
+    "bn": "এ মোলতো লোনতানো?",
+    "bnMeaning": "এটা কি অনেক দূরে?",
+    "en": "Is it very far?"
+  },
+  {
+    "it": "È vicino.",
+    "bn": "এ ভিচিনো।",
+    "bnMeaning": "এটা কাছে।",
+    "en": "It’s nearby."
+  },
+  {
+    "it": "Per favore, parli più lentamente.",
+    "bn": "পের ফাভোরে, পারলি পিউ লেনতামেন্তে।",
+    "bnMeaning": "দয়া করে একটু ধীরে বলুন।",
+    "en": "Please speak more slowly."
+  },
+  {
+    "it": "Non lo so.",
+    "bn": "নন লো সো।",
+    "bnMeaning": "আমি জানি না।",
+    "en": "I don’t know."
+  },
+  {
+    "it": "Va bene.",
+    "bn": "ভা বেনে।",
+    "bnMeaning": "ঠিক আছে।",
+    "en": "Alright."
+  },
+  {
+    "it": "Mi dispiace.",
+    "bn": "মি ডিসপিয়াচে।",
+    "bnMeaning": "আমি দুঃখিত।",
+    "en": "I’m sorry."
+  },
+  {
+    "it": "È un'emergenza!",
+    "bn": "এ উন এমেরজেন্‌জা!",
+    "bnMeaning": "এটা জরুরি অবস্থা!",
+    "en": "It’s an emergency!"
+  },
+  {
+    "it": "Chiami un'ambulanza!",
+    "bn": "কিয়ামি উন অ্যাম্বুলাঞ্জা!",
+    "bnMeaning": "একটি অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "C'è un problema.",
+    "bn": "চে উন প্রোব্লেমা।",
+    "bnMeaning": "একটা সমস্যা হয়েছে।",
+    "en": "There’s a problem."
+  },
+  {
+    "it": "Sono malato.",
+    "bn": "সোনো মালাতো।",
+    "bnMeaning": "আমি অসুস্থ।",
+    "en": "I am sick."
+  },
+  {
+    "it": "Dove posso comprare un biglietto?",
+    "bn": "দোভে পোসো কম্প্রারে উন বিল্লিয়েত্তো?",
+    "bnMeaning": "আমি কোথায় টিকিট কিনতে পারি?",
+    "en": "Where can I buy a ticket?"
+  },
+  {
+    "it": "Che giorno è oggi?",
+    "bn": "কে জর্নো এ অজ্জি?",
+    "bnMeaning": "আজ কী দিন?",
+    "en": "What day is it today?"
+  },
+  {
+    "it": "È lunedì.",
+    "bn": "এ লুনেদি।",
+    "bnMeaning": "আজ সোমবার।",
+    "en": "It’s Monday."
+  },
+  {
+    "it": "È martedì.",
+    "bn": "এ মার্তেদি।",
+    "bnMeaning": "আজ মঙ্গলবার।",
+    "en": "It’s Tuesday."
+  },
+  {
+    "it": "È mercoledì.",
+    "bn": "এ মেরকোলেদি।",
+    "bnMeaning": "আজ বুধবার।",
+    "en": "It’s Wednesday."
+  },
+  {
+    "it": "È giovedì.",
+    "bn": "এ জোভেদি।",
+    "bnMeaning": "আজ বৃহস্পতিবার।",
+    "en": "It’s Thursday."
+  },
+  {
+    "it": "È venerdì.",
+    "bn": "এ ভেনেরদি।",
+    "bnMeaning": "আজ শুক্রবার।",
+    "en": "It’s Friday."
+  },
+  {
+    "it": "È sabato.",
+    "bn": "এ সাবাতো।",
+    "bnMeaning": "আজ শনিবার।",
+    "en": "It’s Saturday."
+  },
+  {
+    "it": "È domenica.",
+    "bn": "এ দোমেনিকা।",
+    "bnMeaning": "আজ রবিবার।",
+    "en": "It’s Sunday."
+  },
+  {
+    "it": "Che mese è?",
+    "bn": "কে মেসে এ?",
+    "bnMeaning": "এটা কোন মাস?",
+    "en": "What month is it?"
+  },
+  {
+    "it": "È gennaio.",
+    "bn": "এ জেন্নাইও।",
+    "bnMeaning": "এটা জানুয়ারি মাস।",
+    "en": "It’s January."
+  },
+  {
+    "it": "È febbraio.",
+    "bn": "এ ফেব্রাইও।",
+    "bnMeaning": "এটা ফেব্রুয়ারি মাস।",
+    "en": "It’s February."
+  },
+  {
+    "it": "È marzo.",
+    "bn": "এ মার্‌ৎসো।",
+    "bnMeaning": "এটা মার্চ মাস।",
+    "en": "It’s March."
+  },
+  {
+    "it": "È aprile.",
+    "bn": "এ আপ্রিলে।",
+    "bnMeaning": "এটা এপ্রিল মাস।",
+    "en": "It’s April."
+  },
+  {
+    "it": "È maggio.",
+    "bn": "এ মাজ্জো।",
+    "bnMeaning": "এটা মে মাস।",
+    "en": "It’s May."
+  },
+  {
+    "it": "È giugno.",
+    "bn": "এ জুন্ও।",
+    "bnMeaning": "এটা জুন মাস।",
+    "en": "It’s June."
+  },
+  {
+    "it": "È luglio.",
+    "bn": "এ লুল্লিও।",
+    "bnMeaning": "এটা জুলাই মাস।",
+    "en": "It’s July."
+  },
+  {
+    "it": "È agosto.",
+    "bn": "এ আগোস্তো।",
+    "bnMeaning": "এটা আগস্ট মাস।",
+    "en": "It’s August."
+  },
+  {
+    "it": "È settembre.",
+    "bn": "এ সেতেম্ব্রে।",
+    "bnMeaning": "এটা সেপ্টেম্বর মাস।",
+    "en": "It’s September."
+  },
+  {
+    "it": "È ottobre.",
+    "bn": "এ অত্তোব্রে।",
+    "bnMeaning": "এটা অক্টোবর মাস।",
+    "en": "It’s October."
+  },
+  {
+    "it": "È novembre.",
+    "bn": "এ নোভেম্ব্রে।",
+    "bnMeaning": "এটা নভেম্বর মাস।",
+    "en": "It’s November."
+  },
+  {
+    "it": "È dicembre.",
+    "bn": "এ দিচেম্ব্রে।",
+    "bnMeaning": "এটা ডিসেম্বর মাস।",
+    "en": "It’s December."
+  },
+  {
+    "it": "Che tempo fa oggi?",
+    "bn": "কে তেম্পো ফা অজ্জি?",
+    "bnMeaning": "আজ আবহাওয়া কেমন?",
+    "en": "How’s the weather today?"
+  },
+  {
+    "it": "Fa caldo.",
+    "bn": "ফা কালদো।",
+    "bnMeaning": "গরম পড়ছে।",
+    "en": "It’s hot."
+  },
+  {
+    "it": "Fa freddo.",
+    "bn": "ফা ফ্রেদ্দো।",
+    "bnMeaning": "ঠান্ডা পড়ছে।",
+    "en": "It’s cold."
+  },
+  {
+    "it": "Piove.",
+    "bn": "পিওভে।",
+    "bnMeaning": "বৃষ্টি হচ্ছে।",
+    "en": "It’s raining."
+  },
+  {
+    "it": "Nevica.",
+    "bn": "নেভিকা।",
+    "bnMeaning": "তুষারপাত হচ্ছে।",
+    "en": "It’s snowing."
+  },
+  {
+    "it": "È nuvoloso.",
+    "bn": "এ নুভোলোসো।",
+    "bnMeaning": "আকাশ মেঘাচ্ছন্ন।",
+    "en": "It’s cloudy."
+  },
+  {
+    "it": "C'è il sole.",
+    "bn": "চে ইল সোলে।",
+    "bnMeaning": "সূর্য উঠেছে।",
+    "en": "It’s sunny."
+  },
+  {
+    "it": "C'è vento.",
+    "bn": "চে ভেন্তো।",
+    "bnMeaning": "হাওয়া চলছে।",
+    "en": "It’s windy."
+  },
+  {
+    "it": "Andiamo al mercato.",
+    "bn": "আন্দিয়ামো আল মেরকাতো।",
+    "bnMeaning": "চলো বাজারে যাই।",
+    "en": "Let’s go to the market."
+  },
+  {
+    "it": "Voglio comprare frutta.",
+    "bn": "ভোইলো কোম্প্রারে ফ্রুত্তা।",
+    "bnMeaning": "আমি ফল কিনতে চাই।",
+    "en": "I want to buy fruit."
+  },
+  {
+    "it": "Mi serve del pane.",
+    "bn": "মি সেরভে দেল পানে।",
+    "bnMeaning": "আমার কিছু রুটি প্রয়োজন।",
+    "en": "I need some bread."
+  },
+  {
+    "it": "Quanto costa al chilo?",
+    "bn": "কুয়ান্তো কোস্তা আল কিলো?",
+    "bnMeaning": "এক কিলোর দাম কত?",
+    "en": "How much per kilo?"
+  },
+  {
+    "it": "È troppo caro.",
+    "bn": "এ ত্রোপ্পো কারো।",
+    "bnMeaning": "এটা অনেক দামি।",
+    "en": "It’s too expensive."
+  },
+  {
+    "it": "Ha qualcosa di più economico?",
+    "bn": "আ কুয়ালকোসা দি পিউ একোনোমিকো?",
+    "bnMeaning": "আরও সস্তা কিছু আছে?",
+    "en": "Do you have something cheaper?"
+  },
+  {
+    "it": "Vorrei un caffè.",
+    "bn": "ভোরেই উন কাফ্‌ফে।",
+    "bnMeaning": "আমি এক কাপ কফি চাই।",
+    "en": "I’d like a coffee."
+  },
+  {
+    "it": "Un cappuccino, per favore.",
+    "bn": "উন কাপুচিনো, পের ফাভোরে।",
+    "bnMeaning": "এক কাপুচিনো, দয়া করে।",
+    "en": "One cappuccino, please."
+  },
+  {
+    "it": "Il conto, per favore.",
+    "bn": "ইল কন্তো, পের ফাভোরে।",
+    "bnMeaning": "বিল দিন, অনুগ্রহ করে।",
+    "en": "The bill, please."
+  },
+  {
+    "it": "Posso pagare con la carta?",
+    "bn": "পোসসো পাগারে কোন লা কার্তা?",
+    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
+    "en": "Can I pay with card?"
+  },
+  {
+    "it": "Solo contanti.",
+    "bn": "সোলো কনতান্তি।",
+    "bnMeaning": "শুধু নগদ।",
+    "en": "Cash only."
+  },
+  {
+    "it": "Dove si trova la farmacia?",
+    "bn": "দোভে সি ত্রোভা লা ফার্মাসিয়া?",
+    "bnMeaning": "ফার্মেসি কোথায়?",
+    "en": "Where is the pharmacy?"
+  },
+  {
+    "it": "Cerco una medicina per la tosse.",
+    "bn": "চেরকো উনা মেডিচিনা পের লা তোসে।",
+    "bnMeaning": "আমি কাশির ওষুধ খুঁজছি।",
+    "en": "I’m looking for cough medicine."
+  },
+  {
+    "it": "È urgente.",
+    "bn": "এ উর্জেন্তে।",
+    "bnMeaning": "এটা জরুরি।",
+    "en": "It’s urgent."
+  },
+  {
+    "it": "Vado al lavoro.",
+    "bn": "ভাদো আল লাভোরো।",
+    "bnMeaning": "আমি কাজে যাচ্ছি।",
+    "en": "I’m going to work."
+  },
+  {
+    "it": "Sono in pausa pranzo.",
+    "bn": "সোনো ইন পাউজা প্রাঞ্জো।",
+    "bnMeaning": "আমি লাঞ্চ বিরতিতে আছি।",
+    "en": "I’m on a lunch break."
+  },
+  {
+    "it": "Torno tra poco.",
+    "bn": "তোর্নো ত্রা পোকো।",
+    "bnMeaning": "আমি একটু পরেই ফিরে আসবো।",
+    "en": "I’ll be back soon."
+  },
+  {
+    "it": "Dove lavori?",
+    "bn": "দোভে লাভোরি?",
+    "bnMeaning": "তুমি কোথায় কাজ করো?",
+    "en": "Where do you work?"
+  },
+  {
+    "it": "Lavoro in una fabbrica.",
+    "bn": "লাভোরো ইন উনা ফাব্রিকা।",
+    "bnMeaning": "আমি একটি ফ্যাক্টরিতে কাজ করি।",
+    "en": "I work in a factory."
+  },
+  {
+    "it": "A che ora inizi a lavorare?",
+    "bn": "আ কে ওরা ইনিচি আ লাভোরারে?",
+    "bnMeaning": "তুমি কখন কাজ শুরু করো?",
+    "en": "What time do you start working?"
+  },
+  {
+    "it": "Inizio alle otto.",
+    "bn": "ইনিজিও আল্লে ওত্তো।",
+    "bnMeaning": "আমি আটটায় শুরু করি।",
+    "en": "I start at eight."
+  },
+  {
+    "it": "Fai turni?",
+    "bn": "ফাই তুরনি?",
+    "bnMeaning": "তুমি কি শিফটে কাজ করো?",
+    "en": "Do you work in shifts?"
+  },
+  {
+    "it": "Sì, faccio i turni.",
+    "bn": "সি, ফাচ্চো ই তুরনি।",
+    "bnMeaning": "হ্যাঁ, আমি শিফটে কাজ করি।",
+    "en": "Yes, I work in shifts."
+  },
+  {
+    "it": "Quante ore lavori al giorno?",
+    "bn": "কুয়ান্তে ওরে লাভোরি আল জোর্নো?",
+    "bnMeaning": "তুমি দিনে কত ঘণ্টা কাজ করো?",
+    "en": "How many hours do you work per day?"
+  },
+  {
+    "it": "Lavoro otto ore.",
+    "bn": "লাভোরো ওত্তো ওরে।",
+    "bnMeaning": "আমি আট ঘণ্টা কাজ করি।",
+    "en": "I work eight hours."
+  },
+  {
+    "it": "Hai il permesso di soggiorno?",
+    "bn": "আই ইল পেরমেস্সো দি সোজ্জোর্নো?",
+    "bnMeaning": "তোমার কি থাকার অনুমতি আছে?",
+    "en": "Do you have a residence permit?"
+  },
+  {
+    "it": "Sì, ce l'ho.",
+    "bn": "সি, চে লো।",
+    "bnMeaning": "হ্যাঁ, আমার আছে।",
+    "en": "Yes, I have it."
+  },
+  {
+    "it": "Devo rinnovare il permesso.",
+    "bn": "দেভো রিনোভারে ইল পেরমেস্সো।",
+    "bnMeaning": "আমাকে পারমিট নবায়ন করতে হবে।",
+    "en": "I have to renew the permit."
+  },
+  {
+    "it": "Hai il contratto?",
+    "bn": "আই ইল কন্ত্রাত্তো?",
+    "bnMeaning": "তোমার কি কনট্রাক্ট আছে?",
+    "en": "Do you have a contract?"
+  },
+  {
+    "it": "Lavoro con contratto a tempo determinato.",
+    "bn": "লাভোরো কন কন্ত্রাত্তো আ তেম্পো দেতেরমিনাতো।",
+    "bnMeaning": "আমি নির্দিষ্ট মেয়াদের কনট্রাক্টে কাজ করি।",
+    "en": "I work on a fixed-term contract."
+  },
+  {
+    "it": "Che tipo di lavoro fai?",
+    "bn": "কে তিপো দি লাভোরো ফাই?",
+    "bnMeaning": "তুমি কী ধরনের কাজ করো?",
+    "en": "What kind of work do you do?"
+  },
+  {
+    "it": "Sono operaio.",
+    "bn": "সোনো অপেরাইও।",
+    "bnMeaning": "আমি শ্রমিক।",
+    "en": "I am a worker."
+  },
+  {
+    "it": "Dove vai oggi?",
+    "bn": "দোভে ভাই অজ্জি?",
+    "bnMeaning": "তুমি আজ কোথায় যাচ্ছো?",
+    "en": "Where are you going today?"
+  },
+  {
+    "it": "Vado in ufficio.",
+    "bn": "ভাদো ইন উফিচিও।",
+    "bnMeaning": "আমি অফিসে যাচ্ছি।",
+    "en": "I’m going to the office."
+  },
+  {
+    "it": "Hai una pausa ora?",
+    "bn": "আই উনা পাউজা ওরা?",
+    "bnMeaning": "তোমার এখন বিরতি আছে?",
+    "en": "Do you have a break now?"
+  },
+  {
+    "it": "Sì, ho 30 minuti di pausa.",
+    "bn": "সি, ও ত্রেন্তা মিনিটি দি পাউজা।",
+    "bnMeaning": "হ্যাঁ, আমার ৩০ মিনিট বিরতি আছে।",
+    "en": "Yes, I have a 30-minute break."
+  },
+  {
+    "it": "Quando finisci di lavorare?",
+    "bn": "কুয়ানদো ফিনিসচি দি লাভোরারে?",
+    "bnMeaning": "তুমি কখন কাজ শেষ করো?",
+    "en": "When do you finish work?"
+  },
+  {
+    "it": "Finisco alle cinque.",
+    "bn": "ফিনিসকো আল্লে চিনকুয়ে।",
+    "bnMeaning": "আমি পাঁচটায় কাজ শেষ করি।",
+    "en": "I finish at five."
+  },
+  {
+    "it": "Hai il giorno libero domani?",
+    "bn": "আই ইল জোর্নো লিবেরো দোমানি?",
+    "bnMeaning": "তোমার কি আগামীকাল ছুটি?",
+    "en": "Do you have a day off tomorrow?"
+  },
+  {
+    "it": "Sì, domani non lavoro.",
+    "bn": "সি, দোমানি নন লাভোরো।",
+    "bnMeaning": "হ্যাঁ, আমি আগামীকাল কাজ করবো না।",
+    "en": "Yes, I’m not working tomorrow."
+  },
+  {
+    "it": "Dove vai in vacanza?",
+    "bn": "দোভে ভাই ইন ভাকান্‌জা?",
+    "bnMeaning": "তুমি ছুটিতে কোথায় যাচ্ছো?",
+    "en": "Where are you going on vacation?"
+  },
+  {
+    "it": "Vado al mare.",
+    "bn": "ভাদো আল মারে।",
+    "bnMeaning": "আমি সমুদ্র সৈকতে যাচ্ছি।",
+    "en": "I’m going to the sea."
+  },
+  {
+    "it": "Buona vacanza!",
+    "bn": "বুয়োনা ভাকান্‌জা!",
+    "bnMeaning": "ছুটি উপভোগ করো!",
+    "en": "Have a nice vacation!"
+  },
+  {
+    "it": "Devo andare al comune.",
+    "bn": "দেভো আন্দারে আল কোমুনে।",
+    "bnMeaning": "আমাকে মিউনিসিপাল অফিসে যেতে হবে।",
+    "en": "I have to go to the town hall."
+  },
+  {
+    "it": "Voglio cambiare indirizzo.",
+    "bn": "ভোল্লিও কামবিয়ার ইন্দিরিৎসো।",
+    "bnMeaning": "আমি ঠিকানা পরিবর্তন করতে চাই।",
+    "en": "I want to change my address."
+  },
+  {
+    "it": "Hai un appuntamento?",
+    "bn": "আই উন আপুন্তামেন্তো?",
+    "bnMeaning": "তোমার কি অ্যাপয়েন্টমেন্ট আছে?",
+    "en": "Do you have an appointment?"
+  },
+  {
+    "it": "Sì, alle dieci.",
+    "bn": "সি, আল্লে দিয়েচি।",
+    "bnMeaning": "হ্যাঁ, দশটায়।",
+    "en": "Yes, at ten."
+  },
+  {
+    "it": "Porta i documenti.",
+    "bn": "পোর্তা ই দকুমেন্তি।",
+    "bnMeaning": "নথিপত্র নিয়ে যাও।",
+    "en": "Bring the documents."
+  },
+  {
+    "it": "Serve una fotocopia.",
+    "bn": "সেরভে উনা ফোতোকোপিয়া।",
+    "bnMeaning": "একটি ফটোকপি দরকার।",
+    "en": "A photocopy is needed."
+  },
+  {
+    "it": "Vai allo sportello numero 3.",
+    "bn": "ভাই আল্লো স্পোর্তেল্লো নুমেরো ত্রে।",
+    "bnMeaning": "তোমাকে কাউন্টার নম্বর ৩-এ যেতে হবে।",
+    "en": "Go to counter number 3."
+  },
+  {
+    "it": "Aspetta il tuo turno.",
+    "bn": "আসপেত্তা ইল তুও তুর্নো।",
+    "bnMeaning": "তোমার পালা অপেক্ষা করো।",
+    "en": "Wait for your turn."
+  },
+  {
+    "it": "Firma qui.",
+    "bn": "ফির্‌মা কুই।",
+    "bnMeaning": "এখানে সাইন করো।",
+    "en": "Sign here."
+  },
+  {
+    "it": "Hai bisogno di assistenza?",
+    "bn": "আই বিজোন্নো দি আসিসতেন্‌ৎসা?",
+    "bnMeaning": "তোমার কি সাহায্য দরকার?",
+    "en": "Do you need assistance?"
+  },
+  {
+    "it": "Tutto è a posto.",
+    "bn": "তুত্তো এ আ পোস্তো।",
+    "bnMeaning": "সব কিছু ঠিক আছে।",
+    "en": "Everything is fine."
+  },
+  {
+    "it": "Grazie mille!",
+    "bn": "গ্রাৎজিয়ে মিল্লে!",
+    "bnMeaning": "হাজারো ধন্যবাদ!",
+    "en": "Thanks a lot!"
+  },
+  {
+    "it": "Prego.",
+    "bn": "প্রেগো।",
+    "bnMeaning": "স্বাগতম।",
+    "en": "You’re welcome."
+  },
+  {
+    "it": "Arrivederci!",
+    "bn": "আরিভেদেরচি!",
+    "bnMeaning": "বিদায়!",
+    "en": "Goodbye!"
+  },
+  {
+    "it": "Ci sentiamo presto.",
+    "bn": "চি সেনতিয়ামো প্রেস্তো।",
+    "bnMeaning": "শীঘ্রই কথা হবে।",
+    "en": "We’ll talk soon."
+  },
+  {
+    "it": "A domani!",
+    "bn": "আ দোমানি!",
+    "bnMeaning": "আগামীকাল দেখা হবে!",
+    "en": "See you tomorrow!"
+  },
+  {
+    "it": "Buona giornata!",
+    "bn": "বুয়োনা জোর্নাতা!",
+    "bnMeaning": "শুভ দিন!",
+    "en": "Have a good day!"
+  },
+  {
+    "it": "Buona serata!",
+    "bn": "বুয়োনা সেরাতা!",
+    "bnMeaning": "শুভ সন্ধ্যা!",
+    "en": "Have a good evening!"
+  },
+  {
+    "it": "Buonanotte!",
+    "bn": "বুয়োনানোত্তে!",
+    "bnMeaning": "শুভ রাত্রি!",
+    "en": "Good night!"
+  },
+  {
+    "it": "A dopo!",
+    "bn": "আ দোপো!",
+    "bnMeaning": "পরে দেখা হবে!",
+    "en": "See you later!"
+  },
+  {
+    "it": "Stammi bene!",
+    "bn": "স্তাম্মি বেনে!",
+    "bnMeaning": "ভালো থেকো!",
+    "en": "Take care!"
+  },
+  {
+    "it": "Hai fratelli o sorelle?",
+    "bn": "আই ফ্রাতেল্লি ও সোরেল্লে?",
+    "bnMeaning": "তোমার ভাই বা বোন আছে?",
+    "en": "Do you have brothers or sisters?"
+  },
+  {
+    "it": "Ho due fratelli.",
+    "bn": "ও দুয়ে ফ্রাতেল্লি।",
+    "bnMeaning": "আমার দুই ভাই আছে।",
+    "en": "I have two brothers."
+  },
+  {
+    "it": "Ho una sorella.",
+    "bn": "ও উনা সোরেল্লা।",
+    "bnMeaning": "আমার এক বোন আছে।",
+    "en": "I have one sister."
+  },
+  {
+    "it": "Hai figli?",
+    "bn": "আই ফিল্লি?",
+    "bnMeaning": "তোমার কি সন্তান আছে?",
+    "en": "Do you have children?"
+  },
+  {
+    "it": "Sì, ho un figlio.",
+    "bn": "সি, ও উন ফিল্লিও।",
+    "bnMeaning": "হ্যাঁ, আমার এক ছেলে আছে।",
+    "en": "Yes, I have a son."
+  },
+  {
+    "it": "Ho due figlie.",
+    "bn": "ও দুয়ে ফিল্লিয়ে।",
+    "bnMeaning": "আমার দুই মেয়ে আছে।",
+    "en": "I have two daughters."
+  },
+  {
+    "it": "Come si chiama tuo padre?",
+    "bn": "কোমে সি কিয়ামা তুও পাদ্রে?",
+    "bnMeaning": "তোমার বাবার নাম কী?",
+    "en": "What’s your father’s name?"
+  },
+  {
+    "it": "Si chiama Karim.",
+    "bn": "সি কিয়ামা কারিম।",
+    "bnMeaning": "তার নাম কারিম।",
+    "en": "His name is Karim."
+  },
+  {
+    "it": "E tua madre?",
+    "bn": "এ তুয়া মাদ্রে?",
+    "bnMeaning": "আর তোমার মা?",
+    "en": "And your mother?"
+  },
+  {
+    "it": "Mia madre si chiama Runa.",
+    "bn": "মিয়া মাদ্রে সি কিয়ামা রুনা।",
+    "bnMeaning": "আমার মায়ের নাম রুনা।",
+    "en": "My mother’s name is Runa."
+  },
+  {
+    "it": "Hai un animale domestico?",
+    "bn": "আই উন আনিমালে দোমেস্তিকো?",
+    "bnMeaning": "তোমার কি কোনো পোষা প্রাণী আছে?",
+    "en": "Do you have a pet?"
+  },
+  {
+    "it": "Ho un gatto.",
+    "bn": "ও উন গাত্তো।",
+    "bnMeaning": "আমার একটি বিড়াল আছে।",
+    "en": "I have a cat."
+  },
+  {
+    "it": "Ho un cane.",
+    "bn": "ও উন কানে।",
+    "bnMeaning": "আমার একটি কুকুর আছে।",
+    "en": "I have a dog."
+  },
+  {
+    "it": "Quanti anni hai?",
+    "bn": "কুয়ান্তি আন্নি আই?",
+    "bnMeaning": "তোমার বয়স কত?",
+    "en": "How old are you?"
+  },
+  {
+    "it": "Ho venticinque anni.",
+    "bn": "ও ভেন্তিচিনকুয়ে আন্নি।",
+    "bnMeaning": "আমার বয়স পঁচিশ বছর।",
+    "en": "I am twenty-five years old."
+  },
+  {
+    "it": "Quando sei nato?",
+    "bn": "কুয়ান্দো সাই নাতো?",
+    "bnMeaning": "তুমি কখন জন্মগ্রহণ করেছো?",
+    "en": "When were you born?"
+  },
+  {
+    "it": "Sono nato nel 1990.",
+    "bn": "সোনো নাতো নেল উন মিলেনোভেচেন্তো নভান্নতা।",
+    "bnMeaning": "আমি ১৯৯০ সালে জন্মগ্রহণ করেছি।",
+    "en": "I was born in 1990."
+  },
+  {
+    "it": "Dove sei nato?",
+    "bn": "দোভে সাই নাতো?",
+    "bnMeaning": "তুমি কোথায় জন্মগ্রহণ করেছো?",
+    "en": "Where were you born?"
+  },
+  {
+    "it": "Sono nato a Dhaka.",
+    "bn": "সোনো নাতো আ ঢাকা।",
+    "bnMeaning": "আমি ঢাকায় জন্মগ্রহণ করেছি।",
+    "en": "I was born in Dhaka."
+  },
+  {
+    "it": "Parli italiano?",
+    "bn": "পারলি ইতালিয়ানো?",
+    "bnMeaning": "তুমি কি ইতালিয়ান ভাষা বলতে পারো?",
+    "en": "Do you speak Italian?"
+  },
+  {
+    "it": "Parlo un po’ di italiano.",
+    "bn": "পারলো উন পো দি ইতালিয়ানো।",
+    "bnMeaning": "আমি অল্প ইতালিয়ান বলতে পারি।",
+    "en": "I speak a little Italian."
+  },
+  {
+    "it": "Sto imparando.",
+    "bn": "স্তো ইমপারান্দো।",
+    "bnMeaning": "আমি শিখছি।",
+    "en": "I am learning."
+  },
+  {
+    "it": "Mi puoi insegnare?",
+    "bn": "মি পুই ইনসেনিয়ারি?",
+    "bnMeaning": "তুমি কি আমাকে শিখাতে পারো?",
+    "en": "Can you teach me?"
+  },
+  {
+    "it": "Certo!",
+    "bn": "চের্তো!",
+    "bnMeaning": "অবশ্যই!",
+    "en": "Of course!"
+  },
+  {
+    "it": "Ripeti per favore.",
+    "bn": "রিপেতি পের ফাভোরে।",
+    "bnMeaning": "দয়া করে আবার বলো।",
+    "en": "Please repeat."
+  },
+  {
+    "it": "Parla lentamente.",
+    "bn": "পারলা লেন্তামেন্তে।",
+    "bnMeaning": "আস্তে আস্তে বলো।",
+    "en": "Speak slowly."
+  },
+  {
+    "it": "Non capisco.",
+    "bn": "নন কাপনিস্কো।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don’t understand."
+  },
+  {
+    "it": "Puoi scriverlo?",
+    "bn": "পুই স্ক্রিভেরলো?",
+    "bnMeaning": "তুমি কি এটা লিখতে পারো?",
+    "en": "Can you write it down?"
+  },
+  {
+    "it": "Che significa questo?",
+    "bn": "কে সিনিফিকা কুয়েস্তো?",
+    "bnMeaning": "এর মানে কী?",
+    "en": "What does this mean?"
+  },
+  {
+    "it": "Mi dispiace.",
+    "bn": "মি ডিসপিয়াচে।",
+    "bnMeaning": "আমি দুঃখিত।",
+    "en": "I’m sorry."
+  },
+  {
+    "it": "Non è colpa mia.",
+    "bn": "নন এ কোলপা মিয়া।",
+    "bnMeaning": "এটা আমার দোষ নয়।",
+    "en": "It’s not my fault."
+  },
+  {
+    "it": "Va bene.",
+    "bn": "ভা বেনে।",
+    "bnMeaning": "ঠিক আছে।",
+    "en": "Okay."
+  },
+  {
+    "it": "Non c'è problema.",
+    "bn": "নন চে প্রোব্লেমা।",
+    "bnMeaning": "সমস্যা নেই।",
+    "en": "No problem."
+  },
+  {
+    "it": "È urgente.",
+    "bn": "এ উর্জেন্তে।",
+    "bnMeaning": "এটা জরুরি।",
+    "en": "It’s urgent."
+  },
+  {
+    "it": "C'è una farmacia qui vicino?",
+    "bn": "চে উনা ফার্মাসিয়া কুই ভিচিনো?",
+    "bnMeaning": "এখানে কাছে কোনো ফার্মেসি আছে?",
+    "en": "Is there a pharmacy nearby?"
+  },
+  {
+    "it": "Ho mal di testa.",
+    "bn": "ও মাল দি তেস্তা।",
+    "bnMeaning": "আমার মাথা ব্যথা করছে।",
+    "en": "I have a headache."
+  },
+  {
+    "it": "Ho la febbre.",
+    "bn": "ও লা ফেব্রে।",
+    "bnMeaning": "আমার জ্বর এসেছে।",
+    "en": "I have a fever."
+  },
+  {
+    "it": "Mi sento debole.",
+    "bn": "মি সেন্তো দেবোলে।",
+    "bnMeaning": "আমি দুর্বল বোধ করছি।",
+    "en": "I feel weak."
+  },
+  {
+    "it": "Hai un termometro?",
+    "bn": "আই উন তেরমোমেত্রো?",
+    "bnMeaning": "তোমার কি থার্মোমিটার আছে?",
+    "en": "Do you have a thermometer?"
+  },
+  {
+    "it": "Devo vedere un medico.",
+    "bn": "দেভো ভেদেরে উন মেডিকো।",
+    "bnMeaning": "আমাকে একজন ডাক্তারের কাছে যেতে হবে।",
+    "en": "I have to see a doctor."
+  },
+  {
+    "it": "Chiamate un'ambulanza!",
+    "bn": "কিয়ামাতে উন আম্বুলান্‌ৎসা!",
+    "bnMeaning": "একটি অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "Portami all'ospedale.",
+    "bn": "পোর্তামি অল্ল’ওস্পেদালে।",
+    "bnMeaning": "আমাকে হাসপাতালে নিয়ে চলো।",
+    "en": "Take me to the hospital."
+  },
+  {
+    "it": "Ho bisogno di aiuto subito.",
+    "bn": "ও বিজোন্নো দি আয়ুতো সুবিতো।",
+    "bnMeaning": "আমার এখনই সাহায্য দরকার।",
+    "en": "I need help immediately."
+  },
+  {
+    "it": "Mi gira la testa.",
+    "bn": "মি জিরা লা তেস্তা।",
+    "bnMeaning": "আমার মাথা ঘুরছে।",
+    "en": "I feel dizzy."
+  },
+  {
+    "it": "Sono allergico.",
+    "bn": "সোনো অল্লেরজিকো।",
+    "bnMeaning": "আমি অ্যালার্জিতে আক্রান্ত।",
+    "en": "I’m allergic."
+  },
+  {
+    "it": "Sto molto male.",
+    "bn": "স্তো মোলতো মালে।",
+    "bnMeaning": "আমি খুব অসুস্থ।",
+    "en": "I’m very sick."
+  },
+  {
+    "it": "Hai l'assicurazione sanitaria?",
+    "bn": "আই লা‌সিকুরাসিওনে সানিতারিয়া?",
+    "bnMeaning": "তোমার কি স্বাস্থ্য বীমা আছে?",
+    "en": "Do you have health insurance?"
+  },
+  {
+    "it": "Dove si trova l'ospedale più vicino?",
+    "bn": "দোভে সি ত্রোভা ল’ওস্পেদালে পিউ ভিচিনো?",
+    "bnMeaning": "সর্বনিকট হাসপাতাল কোথায়?",
+    "en": "Where is the nearest hospital?"
+  },
+  {
+    "it": "Hai bisogno di una ricetta?",
+    "bn": "আই বিজোন্নো দি উনা রিচেত্তা?",
+    "bnMeaning": "তোমার কি প্রেসক্রিপশন লাগবে?",
+    "en": "Do you need a prescription?"
+  },
+  {
+    "it": "Posso prenotare una visita?",
+    "bn": "পোস্সো প্রেনোতার উনা ভিজিতা?",
+    "bnMeaning": "আমি কি একটি অ্যাপয়েন্টমেন্ট বুক করতে পারি?",
+    "en": "Can I book a visit?"
+  },
+  {
+    "it": "Che sintomi hai?",
+    "bn": "কে সিন্তোমি আই?",
+    "bnMeaning": "তোমার কী লক্ষণ রয়েছে?",
+    "en": "What symptoms do you have?"
+  },
+  {
+    "it": "Ho tosse e raffreddore.",
+    "bn": "ও তোস্সে এ রাফ্রেদোরে।",
+    "bnMeaning": "আমার কাশি এবং সর্দি আছে।",
+    "en": "I have a cough and cold."
+  },
+  {
+    "it": "Hai dolori?",
+    "bn": "আই দোলোরি?",
+    "bnMeaning": "তোমার কি ব্যথা করছে?",
+    "en": "Do you feel pain?"
+  },
+  {
+    "it": "Mi fa male la schiena.",
+    "bn": "মি ফা মালে লা স্কিয়েনা।",
+    "bnMeaning": "আমার পিঠে ব্যথা করছে।",
+    "en": "My back hurts."
+  },
+  {
+    "it": "Mi fa male la gamba.",
+    "bn": "মি ফা মালে লা গাম্বা।",
+    "bnMeaning": "আমার পায়ে ব্যথা করছে।",
+    "en": "My leg hurts."
+  },
+  {
+    "it": "Devo prendere medicine?",
+    "bn": "দেভো প্রেন্দেরে মেডিচিনে?",
+    "bnMeaning": "আমার কি ওষুধ খেতে হবে?",
+    "en": "Do I need to take medicine?"
+  },
+  {
+    "it": "Prendi questa pillola ogni 8 ore.",
+    "bn": "প্রেন্দি কুয়েস্তা পিলোলা ওগনি ওত্তো ওরে।",
+    "bnMeaning": "এই ট্যাবলেটটি প্রতি ৮ ঘণ্টা পরপর খাও।",
+    "en": "Take this pill every 8 hours."
+  },
+  {
+    "it": "C'è una farmacia aperta?",
+    "bn": "চে উনা ফার্মাসিয়া আপের্তা?",
+    "bnMeaning": "কোনো ফার্মেসি কি খোলা আছে?",
+    "en": "Is there an open pharmacy?"
+  },
+  {
+    "it": "Hai bisogno di un certificato medico?",
+    "bn": "আই বিজোন্নো দি উন চের্তিফিকাতো মেডিকো?",
+    "bnMeaning": "তোমার কি ডাক্তারি সনদ দরকার?",
+    "en": "Do you need a medical certificate?"
+  },
+  {
+    "it": "Dove posso fare un test COVID?",
+    "bn": "দোভে পোস্সো ফারে উন টেস্ট কোভিড?",
+    "bnMeaning": "আমি কোথায় কোভিড টেস্ট করাতে পারি?",
+    "en": "Where can I take a COVID test?"
+  },
+  {
+    "it": "Mi sento meglio ora.",
+    "bn": "মি সেন্তো মেলিওরে ওরা।",
+    "bnMeaning": "আমি এখন ভালো অনুভব করছি।",
+    "en": "I feel better now."
+  },
+  {
+    "it": "Devo restare a casa.",
+    "bn": "দেভো রেস্তারে আ কাজা।",
+    "bnMeaning": "আমাকে বাসায় থাকতে হবে।",
+    "en": "I have to stay home."
+  },
+  {
+    "it": "Posso uscire domani?",
+    "bn": "পোস্সো উসসিরে দোমানি?",
+    "bnMeaning": "আমি কি আগামীকাল বাইরে যেতে পারি?",
+    "en": "Can I go out tomorrow?"
+  },
+  {
+    "it": "Hai la febbre alta?",
+    "bn": "আই লা ফেব্রে আলতা?",
+    "bnMeaning": "তোমার কি উচ্চ জ্বর আছে?",
+    "en": "Do you have a high fever?"
+  },
+  {
+    "it": "Bevi molta acqua.",
+    "bn": "বেভি মোলতা আক্কুয়া।",
+    "bnMeaning": "অনেক পানি পান করো।",
+    "en": "Drink plenty of water."
+  },
+  {
+    "it": "Riposa e stai a letto.",
+    "bn": "রিপোসা এ স্তাই আ লেত্তো।",
+    "bnMeaning": "বিশ্রাম নাও এবং বিছানায় থাকো।",
+    "en": "Rest and stay in bed."
+  },
+  {
+    "it": "Mangia cibo leggero.",
+    "bn": "মানজিয়া চিবো লেজ্জেরো।",
+    "bnMeaning": "হালকা খাবার খাও।",
+    "en": "Eat light food."
+  },
+  {
+    "it": "Prendi questa medicina prima dei pasti.",
+    "bn": "প্রেন্দি কুয়েস্তা মেডিচিনা প্রিমা দেই পাস্তি।",
+    "bnMeaning": "এই ওষুধ খাবারের আগে খাও।",
+    "en": "Take this medicine before meals."
+  },
+  {
+    "it": "Hai fatto il vaccino?",
+    "bn": "আই ফাত্তো ইল ভাচ্চিনো?",
+    "bnMeaning": "তুমি কি টিকা নিয়েছো?",
+    "en": "Have you taken the vaccine?"
+  },
+  {
+    "it": "Sì, ho fatto tutte le dosi.",
+    "bn": "সি, ও ফাত্তো তুত্তে লে দোসি।",
+    "bnMeaning": "হ্যাঁ, আমি সবগুলো ডোজ নিয়েছি।",
+    "en": "Yes, I took all doses."
+  },
+  {
+    "it": "Hai una mascherina?",
+    "bn": "আই উনা মাসকেরিনা?",
+    "bnMeaning": "তোমার কি মাস্ক আছে?",
+    "en": "Do you have a mask?"
+  },
+  {
+    "it": "Indossa la mascherina, per favore.",
+    "bn": "ইন্দোস্সা লা মাসকেরিনা, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে মাস্ক পরো।",
+    "en": "Please wear the mask."
+  },
+  {
+    "it": "Mantieni la distanza.",
+    "bn": "মানতিয়েনি লা দিস্তান্‌ৎসা।",
+    "bnMeaning": "দূরত্ব বজায় রাখো।",
+    "en": "Keep the distance."
+  },
+  {
+    "it": "Lavati spesso le mani.",
+    "bn": "লাভাতি স্পেসো লে মানি।",
+    "bnMeaning": "হাত বারবার ধুয়ে নাও।",
+    "en": "Wash your hands often."
+  },
+  {
+    "it": "Usa il gel disinfettante.",
+    "bn": "উসা ইল জেল দিজিনফেত্তান্তে।",
+    "bnMeaning": "স্যানিটাইজার ব্যবহার করো।",
+    "en": "Use hand sanitizer."
+  },
+  {
+    "it": "Rimani a casa se stai male.",
+    "bn": "রিমানি আ কাজা সে স্তাই মালে।",
+    "bnMeaning": "অসুস্থ হলে বাসায় থাকো।",
+    "en": "Stay home if you feel sick."
+  },
+  {
+    "it": "Contatta il medico.",
+    "bn": "কন্তাত্তা ইল মেডিকো।",
+    "bnMeaning": "ডাক্তারের সাথে যোগাযোগ করো।",
+    "en": "Contact the doctor."
+  },
+  {
+    "it": "Prenota online.",
+    "bn": "প্রেনোতা অনলাইনে।",
+    "bnMeaning": "অনলাইনে বুক করো।",
+    "en": "Book online."
+  },
+  {
+    "it": "Controlla la temperatura.",
+    "bn": "কোন্ত্রোল্লা লা তেম্পেরাতুরা।",
+    "bnMeaning": "তাপমাত্রা পরীক্ষা করো।",
+    "en": "Check the temperature."
+  },
+  {
+    "it": "Hai mal di stomaco?",
+    "bn": "আই মাল দি স্তোমাকো?",
+    "bnMeaning": "তোমার কি পেটে ব্যথা করছে?",
+    "en": "Do you have a stomach ache?"
+  },
+  {
+    "it": "Non mangiare cibo piccante.",
+    "bn": "নন মানজিয়ারে চিবো পিককান্তে।",
+    "bnMeaning": "মসলাযুক্ত খাবার খেয়ো না।",
+    "en": "Don’t eat spicy food."
+  },
+  {
+    "it": "Bevi tè caldo.",
+    "bn": "বেভি তে কালদো।",
+    "bnMeaning": "গরম চা পান করো।",
+    "en": "Drink hot tea."
+  },
+  {
+    "it": "Riprenditi presto!",
+    "bn": "রিপ্রেন্দিতি প্রেস্তো!",
+    "bnMeaning": "তাড়াতাড়ি সুস্থ হয়ে ওঠো!",
+    "en": "Get well soon!"
+  },
+  {
+    "it": "Fai attenzione alla salute.",
+    "bn": "ফাই আত্তেনৎসিওনে আল্লা সালুতে।",
+    "bnMeaning": "স্বাস্থ্যের দিকে খেয়াল রাখো।",
+    "en": "Take care of your health."
+  },
+  {
+    "it": "Spero che tu stia meglio.",
+    "bn": "স্পেরো কে তু স্তিয়া মেলিও।",
+    "bnMeaning": "আশা করি তুমি ভালো আছো।",
+    "en": "I hope you are better."
+  },
+  {
+    "it": "Ti auguro una pronta guarigione.",
+    "bn": "তি আওগুরো উনা প্রোন্তা গুয়ারিজিওনে।",
+    "bnMeaning": "আমি তোমার দ্রুত আরোগ্য কামনা করছি।",
+    "en": "I wish you a speedy recovery."
+  },
+  {
+    "it": "Hai preso l'influenza?",
+    "bn": "আই প্রেসো ল’ইনফ্লুয়েন্‌ৎসা?",
+    "bnMeaning": "তুমি কি ইনফ্লুয়েঞ্জায় আক্রান্ত?",
+    "en": "Did you catch the flu?"
+  },
+  {
+    "it": "Hai bisogno di riposo.",
+    "bn": "আই বিজোন্নো দি রিপোসো।",
+    "bnMeaning": "তোমার বিশ্রামের দরকার।",
+    "en": "You need rest."
+  },
+  {
+    "it": "Non uscire oggi.",
+    "bn": "নন উসসিরে অজ্জি।",
+    "bnMeaning": "আজ বাইরে যেও না।",
+    "en": "Don’t go out today."
+  },
+  {
+    "it": "Chiama il 118 in caso di emergenza.",
+    "bn": "কিয়ামা ইল উন উন অত্তো ইন কাজো দি এমেরজেন্‌ৎসা।",
+    "bnMeaning": "জরুরি পরিস্থিতিতে ১১৮ নম্বরে কল করো।",
+    "en": "Call 118 in case of emergency."
+  },
+  {
+    "it": "Hai un appuntamento oggi?",
+    "bn": "আই উন আপ্পুন্তামেন্তো অজ্জি?",
+    "bnMeaning": "তোমার কি আজ কোনো অ্যাপয়েন্টমেন্ট আছে?",
+    "en": "Do you have an appointment today?"
+  },
+  {
+    "it": "A che ora inizia?",
+    "bn": "আ কে ওরা ইনিচিয়া?",
+    "bnMeaning": "ক’টায় শুরু হবে?",
+    "en": "What time does it start?"
+  },
+  {
+    "it": "Quanto durerà?",
+    "bn": "কোয়ানতো দুরেরা?",
+    "bnMeaning": "এটা কতক্ষণ চলবে?",
+    "en": "How long will it last?"
+  },
+  {
+    "it": "Devo confermare l'appuntamento?",
+    "bn": "দেভো কনফেরমারে ল’আপ্পুন্তামেন্তো?",
+    "bnMeaning": "আমার কি অ্যাপয়েন্টমেন্ট কনফার্ম করতে হবে?",
+    "en": "Do I need to confirm the appointment?"
+  },
+  {
+    "it": "Hai bisogno di aiuto per il modulo?",
+    "bn": "আই বিজোন্নো দি আয়ুতো পের ইল মদুলো?",
+    "bnMeaning": "তোমার কি ফর্ম পূরণের জন্য সাহায্য দরকার?",
+    "en": "Do you need help with the form?"
+  },
+  {
+    "it": "Dove devo firmare?",
+    "bn": "দোভে দেভো ফিরমারে?",
+    "bnMeaning": "আমি কোথায় সাইন করবো?",
+    "en": "Where should I sign?"
+  },
+  {
+    "it": "Porta i documenti con te.",
+    "bn": "পোর্তা ই দকুমেন্তি কন তে।",
+    "bnMeaning": "তোমার সাথে কাগজপত্র নিয়ে এসো।",
+    "en": "Bring the documents with you."
+  },
+  {
+    "it": "Hai una copia del contratto?",
+    "bn": "আই উনা কপিয়া দেল কন্ত্রাত্তো?",
+    "bnMeaning": "তোমার কি চুক্তির কপি আছে?",
+    "en": "Do you have a copy of the contract?"
+  },
+  {
+    "it": "Devo pagare ora?",
+    "bn": "দেভো পাগারে ওরা?",
+    "bnMeaning": "আমাকে কি এখন টাকা দিতে হবে?",
+    "en": "Do I have to pay now?"
+  },
+  {
+    "it": "Posso pagare con la carta?",
+    "bn": "পোসসো পাগারে কন লা কার্তা?",
+    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
+    "en": "Can I pay with card?"
+  },
+  {
+    "it": "C'è una tassa?",
+    "bn": "চে উনা তাস্সা?",
+    "bnMeaning": "কোনো ফি আছে কি?",
+    "en": "Is there a fee?"
+  },
+  {
+    "it": "Dove si trova l'ufficio?",
+    "bn": "দোভে সি ত্রোভা ল’উফফিচিও?",
+    "bnMeaning": "অফিস কোথায় অবস্থিত?",
+    "en": "Where is the office located?"
+  },
+  {
+    "it": "L'ufficio è al secondo piano.",
+    "bn": "ল’উফফিচিও এ আল সেকোন্দো পিয়ানো।",
+    "bnMeaning": "অফিসটি দ্বিতীয় তলায়।",
+    "en": "The office is on the second floor."
+  },
+  {
+    "it": "C'è un ascensore?",
+    "bn": "চে উন আশেন্সোরে?",
+    "bnMeaning": "এখানে কি লিফট আছে?",
+    "en": "Is there an elevator?"
+  },
+  {
+    "it": "Devo prendere le scale.",
+    "bn": "দেভো প্রেন্দেরে লে স্কালে।",
+    "bnMeaning": "আমাকে সিঁড়ি ব্যবহার করতে হবে।",
+    "en": "I have to take the stairs."
+  },
+  {
+    "it": "C'è una lunga fila.",
+    "bn": "চে উনা লুঙ্গা ফিলা।",
+    "bnMeaning": "একটি দীর্ঘ লাইন আছে।",
+    "en": "There is a long queue."
+  },
+  {
+    "it": "Aspetta qui, per favore.",
+    "bn": "আস্পেত্তা কুই, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে এখানে অপেক্ষা করুন।",
+    "en": "Please wait here."
+  },
+  {
+    "it": "È il tuo turno.",
+    "bn": "এ ইল তুও তুর্নো।",
+    "bnMeaning": "এখন তোমার পালা।",
+    "en": "It's your turn."
+  },
+  {
+    "it": "Mostra il tuo documento d'identità.",
+    "bn": "মোস্ত্রা ইল তুও দকুমেন্তো দি ইদেনতিতা।",
+    "bnMeaning": "তোমার পরিচয়পত্র দেখাও।",
+    "en": "Show your ID."
+  },
+  {
+    "it": "Tutto è in regola.",
+    "bn": "তুত্তো এ ইন রেগোলা।",
+    "bnMeaning": "সবকিছু ঠিকঠাক আছে।",
+    "en": "Everything is in order."
+  },
+  {
+    "it": "Manca un documento.",
+    "bn": "মানকা উন দকুমেন্তো।",
+    "bnMeaning": "একটি কাগজপত্র কম আছে।",
+    "en": "A document is missing."
+  },
+  {
+    "it": "Torna domani con i documenti.",
+    "bn": "তোরনা দোমানি কন ই দকুমেন্তি।",
+    "bnMeaning": "আগামীকাল কাগজপত্র নিয়ে আবার আসুন।",
+    "en": "Come back tomorrow with the documents."
+  },
+  {
+    "it": "Ti contatteremo presto.",
+    "bn": "তি কন্তাত্তেরেমো প্রেস্তো।",
+    "bnMeaning": "আমরা তোমার সাথে শীঘ্রই যোগাযোগ করবো।",
+    "en": "We will contact you soon."
+  },
+  {
+    "it": "Grazie per la pazienza.",
+    "bn": "গ্রাচিয়ে পের লা পাচেন্‌ৎসা।",
+    "bnMeaning": "ধৈর্য রাখার জন্য ধন্যবাদ।",
+    "en": "Thanks for your patience."
+  },
+  {
+    "it": "Hai bisogno di una traduzione?",
+    "bn": "আই বিজোন্নো দি উনা ত্রাদুউৎসিওনে?",
+    "bnMeaning": "তোমার কি অনুবাদ দরকার?",
+    "en": "Do you need a translation?"
+  },
+  {
+    "it": "Parli inglese?",
+    "bn": "পারলি ইংলেজে?",
+    "bnMeaning": "তুমি কি ইংরেজি জানো?",
+    "en": "Do you speak English?"
+  },
+  {
+    "it": "Preferisco parlare in italiano.",
+    "bn": "প্রেফেরিস্কো পারলার ইন ইতালিয়ানো।",
+    "bnMeaning": "আমি ইতালিয়ান ভাষায় কথা বলতে পছন্দ করি।",
+    "en": "I prefer to speak in Italian."
+  },
+  {
+    "it": "C'è un interprete disponibile?",
+    "bn": "চে উন ইন্টারপ্রেতে ডিসপোনিবিলে?",
+    "bnMeaning": "কোনো দোভাষী কি আছে?",
+    "en": "Is there an interpreter available?"
+  },
+  {
+    "it": "Compila questo modulo.",
+    "bn": "কোমপিলা কুয়েস্তো মদুলো।",
+    "bnMeaning": "এই ফর্মটি পূরণ করুন।",
+    "en": "Fill out this form."
+  },
+  {
+    "it": "Firma in fondo alla pagina.",
+    "bn": "ফির্মা ইন ফোন্দো আল্লা পাজিনা।",
+    "bnMeaning": "পৃষ্ঠার নিচে স্বাক্ষর করুন।",
+    "en": "Sign at the bottom of the page."
+  },
+  {
+    "it": "Hai una penna?",
+    "bn": "আই উনা পেন্না?",
+    "bnMeaning": "তোমার কি কলম আছে?",
+    "en": "Do you have a pen?"
+  },
+  {
+    "it": "Ti serve una fotocopia?",
+    "bn": "তি সেরভে উনা ফোতোকোপিয়া?",
+    "bnMeaning": "তোমার কি ফটোকপির দরকার?",
+    "en": "Do you need a photocopy?"
+  },
+  {
+    "it": "Vai allo sportello numero 5.",
+    "bn": "ভাই আল্লো স্পোর্তেল্লো নুমেরো চিঙ্কুয়ে।",
+    "bnMeaning": "৫ নম্বর কাউন্টারে যান।",
+    "en": "Go to counter number 5."
+  },
+  {
+    "it": "Ci vuole tempo.",
+    "bn": "চি ভুয়োলি তেম্পো।",
+    "bnMeaning": "এতে সময় লাগবে।",
+    "en": "It takes time."
+  },
+  {
+    "it": "Attendi il tuo turno.",
+    "bn": "আত্তেন্দি ইল তুও তুর্নো।",
+    "bnMeaning": "তোমার পালা অপেক্ষা করো।",
+    "en": "Wait your turn."
+  },
+  {
+    "it": "Hai già prenotato?",
+    "bn": "আই জা প্রেনোতাতো?",
+    "bnMeaning": "তুমি কি আগে থেকেই বুক করেছো?",
+    "en": "Have you already booked?"
+  },
+  {
+    "it": "C'è un problema con il sistema.",
+    "bn": "চে উন প্রোব্লেমা কন ইল সিসতেমা।",
+    "bnMeaning": "সিস্টেমে কিছু সমস্যা হচ্ছে।",
+    "en": "There is a problem with the system."
+  },
+  {
+    "it": "Tornerà tra poco.",
+    "bn": "তোর্নেরা ত্রা পোকে।",
+    "bnMeaning": "সে শীঘ্রই ফিরে আসবে।",
+    "en": "He/She will be back soon."
+  },
+  {
+    "it": "Puoi sederti lì.",
+    "bn": "পুয়ো সেদেরতি লি।",
+    "bnMeaning": "তুমি সেখানে বসতে পারো।",
+    "en": "You can sit there."
+  },
+  {
+    "it": "Aspettiamo insieme.",
+    "bn": "আস্পেত্তিয়ামো ইনসিএমে।",
+    "bnMeaning": "চলো একসাথে অপেক্ষা করি।",
+    "en": "Let's wait together."
+  },
+  {
+    "it": "Tutto sarà risolto.",
+    "bn": "তুত্তো সারা রিসোলতো।",
+    "bnMeaning": "সব কিছু সমাধান হয়ে যাবে।",
+    "en": "Everything will be resolved."
+  },
+  {
+    "it": "Grazie per la collaborazione.",
+    "bn": "গ্রাচিয়ে পের লা কোল্লাবোরাচিওনে।",
+    "bnMeaning": "সহযোগিতার জন্য ধন্যবাদ।",
+    "en": "Thanks for your cooperation."
+  },
+  {
+    "it": "Ci vediamo domani.",
+    "bn": "চি ভেদিয়ামো দোমানি।",
+    "bnMeaning": "আগামীকাল দেখা হবে।",
+    "en": "See you tomorrow."
+  },
+  {
+    "it": "Buona fortuna!",
+    "bn": "বুয়োনা ফোর্তুনা!",
+    "bnMeaning": "শুভকামনা রইলো!",
+    "en": "Good luck!"
+  },
+  {
+    "it": "Auguri!",
+    "bn": "আউগুরি!",
+    "bnMeaning": "অভিনন্দন!",
+    "en": "Congratulations!"
+  },
+  {
+    "it": "Benvenuto!",
+    "bn": "বেনভেনুতো!",
+    "bnMeaning": "স্বাগতম!",
+    "en": "Welcome!"
+  },
+  {
+    "it": "Arrivederci!",
+    "bn": "আরিভেদেরচি!",
+    "bnMeaning": "আবার দেখা হবে!",
+    "en": "Goodbye!"
+  },
+  {
+    "it": "Posso aiutarti con qualcosa?",
+    "bn": "পসসো আয়ুতার্তি কন কুয়ালকোসা?",
+    "bnMeaning": "আমি কি তোমাকে কিছু সাহায্য করতে পারি?",
+    "en": "Can I help you with something?"
+  },
+  {
+    "it": "Hai bisogno di informazioni?",
+    "bn": "আই বিজোন্নো দি ইনফোর্মাজিওনি?",
+    "bnMeaning": "তোমার কি কোনো তথ্য দরকার?",
+    "en": "Do you need information?"
+  },
+  {
+    "it": "Dove sei diretto?",
+    "bn": "দোভে সেই দিরেত্তো?",
+    "bnMeaning": "তুমি কোথায় যাচ্ছো?",
+    "en": "Where are you headed?"
+  },
+  {
+    "it": "Che tipo di aiuto cerchi?",
+    "bn": "কে তিপো দি আয়ুতো চেরকি?",
+    "bnMeaning": "তুমি কেমন ধরনের সাহায্য খুঁজছো?",
+    "en": "What kind of help are you looking for?"
+  },
+  {
+    "it": "Parli lentamente, per favore.",
+    "bn": "পারলি লেন্তামেন্তে, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে ধীরে কথা বলুন।",
+    "en": "Please speak slowly."
+  },
+  {
+    "it": "Non ho capito.",
+    "bn": "নন ও কাপিতো।",
+    "bnMeaning": "আমি বুঝিনি।",
+    "en": "I didn't understand."
+  },
+  {
+    "it": "Puoi ripetere, per favore?",
+    "bn": "পুয়ো রিপেতেরে, পের ফাভোরে?",
+    "bnMeaning": "আপনি কি অনুগ্রহ করে আবার বলতে পারেন?",
+    "en": "Can you repeat, please?"
+  },
+  {
+    "it": "Scrivilo per me.",
+    "bn": "স্ক্রিভিলো পের মে।",
+    "bnMeaning": "আমার জন্য এটা লিখে দাও।",
+    "en": "Write it down for me."
+  },
+  {
+    "it": "Come si pronuncia questa parola?",
+    "bn": "কোমে সি প্রোনুনচিয়া কুয়েস্তা পারোলা?",
+    "bnMeaning": "এই শব্দটি কীভাবে উচ্চারণ করা হয়?",
+    "en": "How do you pronounce this word?"
+  },
+  {
+    "it": "Mi dispiace, non parlo bene italiano.",
+    "bn": "মি দিস্পিয়াচে, নন পারলো বেনে ইতালিয়ানো।",
+    "bnMeaning": "দুঃখিত, আমি ভালো ইতালিয়ান বলতে পারি না।",
+    "en": "Sorry, I don't speak Italian well."
+  },
+  {
+    "it": "Capisco un po' l'italiano.",
+    "bn": "কাপিস্কো উন পো ল'ইতালিয়ানো।",
+    "bnMeaning": "আমি একটু ইতালিয়ান বুঝি।",
+    "en": "I understand a little Italian."
+  },
+  {
+    "it": "Per favore, parli più lentamente.",
+    "bn": "পের ফাভোরে, পারলি পিউ লেন্তামেন্তে।",
+    "bnMeaning": "দয়া করে একটু ধীরে বলুন।",
+    "en": "Please speak a bit more slowly."
+  },
+  {
+    "it": "Che significa questa parola?",
+    "bn": "কে সিনিফিকা কুয়েস্তা পারোলা?",
+    "bnMeaning": "এই শব্দের মানে কী?",
+    "en": "What does this word mean?"
+  },
+  {
+    "it": "Sto imparando l'italiano.",
+    "bn": "স্তো ইমপারান্দো ল'ইতালিয়ানো।",
+    "bnMeaning": "আমি ইতালিয়ান শিখছি।",
+    "en": "I am learning Italian."
+  },
+  {
+    "it": "Parla un'altra lingua?",
+    "bn": "পারলা উন'আলত্রা লিঙ্গুয়া?",
+    "bnMeaning": "আপনি কি অন্য কোনো ভাষা জানেন?",
+    "en": "Do you speak another language?"
+  },
+  {
+    "it": "Può scriverlo, per favore?",
+    "bn": "পুয়ো স্ক্রিভেরলো, পের ফাভোরে?",
+    "bnMeaning": "দয়া করে আপনি এটা লিখে দিতে পারেন?",
+    "en": "Can you write it down, please?"
+  },
+  {
+    "it": "Cosa significa questo?",
+    "bn": "কোজা সিনিফিকা কুয়েস্তো?",
+    "bnMeaning": "এটার মানে কী?",
+    "en": "What does this mean?"
+  },
+  {
+    "it": "Mi piace imparare nuove lingue.",
+    "bn": "মি পিয়াচে ইমপারারে নুওভে লিঙ্গুয়ে।",
+    "bnMeaning": "নতুন ভাষা শিখতে আমার ভালো লাগে।",
+    "en": "I enjoy learning new languages."
+  },
+  {
+    "it": "Qual è la tua lingua madre?",
+    "bn": "কুয়াল এ লা তুয়া লিঙ্গুয়া মাদ্রে?",
+    "bnMeaning": "তোমার মাতৃভাষা কী?",
+    "en": "What is your mother tongue?"
+  },
+  {
+    "it": "Parli molto bene italiano.",
+    "bn": "পারলি মোলতো বেনে ইতালিয়ানো।",
+    "bnMeaning": "তুমি খুব ভালো ইতালিয়ান বলো।",
+    "en": "You speak Italian very well."
+  },
+  {
+    "it": "Posso avere un bicchiere d'acqua?",
+    "bn": "পসসো আভেরে উন বিক্কিয়েরে দাক্কুয়া?",
+    "bnMeaning": "আমি কি এক গ্লাস পানি পেতে পারি?",
+    "en": "Can I have a glass of water?"
+  },
+  {
+    "it": "C'è un bagno qui vicino?",
+    "bn": "চে উন বাঞ্জো কুই ভিচিনো?",
+    "bnMeaning": "এখানে কাছাকাছি কোনো টয়লেট আছে?",
+    "en": "Is there a bathroom nearby?"
+  },
+  {
+    "it": "Mi sento male.",
+    "bn": "মি সেনতো মালে।",
+    "bnMeaning": "আমার খারাপ লাগছে।",
+    "en": "I feel sick."
+  },
+  {
+    "it": "Ho fame.",
+    "bn": "ও ফামে।",
+    "bnMeaning": "আমি ক্ষুধার্ত।",
+    "en": "I am hungry."
+  },
+  {
+    "it": "Ho sete.",
+    "bn": "ও সেতে।",
+    "bnMeaning": "আমার তৃষ্ণা পেয়েছে।",
+    "en": "I am thirsty."
+  },
+  {
+    "it": "Dove si trova l'ospedale?",
+    "bn": "দোভে সি ত্রোভা ল'অস্পেদালে?",
+    "bnMeaning": "হাসপাতাল কোথায়?",
+    "en": "Where is the hospital?"
+  },
+  {
+    "it": "Chiamate un'ambulanza!",
+    "bn": "কিয়ামাতে উন'আম্বুলানজা!",
+    "bnMeaning": "একটি অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "C'è un medico qui?",
+    "bn": "চে উন মেডিকো কুই?",
+    "bnMeaning": "এখানে কি কোনো ডাক্তার আছেন?",
+    "en": "Is there a doctor here?"
+  },
+  {
+    "it": "Mi sono perso.",
+    "bn": "মি সোโน পার্সো।",
+    "bnMeaning": "আমি পথ হারিয়ে ফেলেছি।",
+    "en": "I am lost."
+  },
+  {
+    "it": "Può aiutarmi a trovare la strada?",
+    "bn": "পুয়ো আয়ুতারমি আ ত্রোভারে লা স্ত্রাদা?",
+    "bnMeaning": "আপনি কি আমাকে রাস্তা খুঁজে পেতে সাহায্য করতে পারেন?",
+    "en": "Can you help me find the way?"
+  },
+  {
+    "it": "Dove si trova la stazione?",
+    "bn": "দোভে সি ত্রোভা লা স্তাচিওনে?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the station?"
+  },
+  {
+    "it": "Vorrei comprare un biglietto.",
+    "bn": "ভোরেই কোম্প্রারে উন বিলিয়েত্তো।",
+    "bnMeaning": "আমি একটি টিকিট কিনতে চাই।",
+    "en": "I would like to buy a ticket."
+  },
+  {
+    "it": "A che ora parte il treno?",
+    "bn": "আ কে ওরা পারতে ইল ত্রেনো?",
+    "bnMeaning": "ট্রেন কখন ছাড়বে?",
+    "en": "What time does the train leave?"
+  },
+  {
+    "it": "Quanto costa un biglietto?",
+    "bn": "কুয়ান্তো কোস্তা উন বিলিয়েত্তো?",
+    "bnMeaning": "একটি টিকিটের দাম কত?",
+    "en": "How much is a ticket?"
+  },
+  {
+    "it": "Dove devo scendere?",
+    "bn": "দোভে দেভো স্কেন্দেরে?",
+    "bnMeaning": "আমাকে কোথায় নামতে হবে?",
+    "en": "Where do I need to get off?"
+  },
+  {
+    "it": "Questo treno va a Roma?",
+    "bn": "কুয়েস্তো ত্রেনো ভা আ রোমা?",
+    "bnMeaning": "এই ট্রেনটি কি রোমে যায়?",
+    "en": "Does this train go to Rome?"
+  },
+  {
+    "it": "C'è un autobus per il centro?",
+    "bn": "চে উন আউতোবুস পের ইল চেন্ত্রো?",
+    "bnMeaning": "শহরের কেন্দ্রের জন্য কি কোনো বাস আছে?",
+    "en": "Is there a bus to the city center?"
+  },
+  {
+    "it": "Quanto tempo ci vuole per arrivare?",
+    "bn": "কুয়ান্তো তেম্পো চি ভুয়োল পের আরিভারে?",
+    "bnMeaning": "পৌঁছাতে কত সময় লাগবে?",
+    "en": "How long does it take to arrive?"
+  },
+  {
+    "it": "Dove posso comprare un biglietto?",
+    "bn": "দোভে পসসো কোম্প্রারে উন বিলিয়েত্তো?",
+    "bnMeaning": "আমি কোথায় একটি টিকিট কিনতে পারি?",
+    "en": "Where can I buy a ticket?"
+  },
+  {
+    "it": "Mi può indicare la strada?",
+    "bn": "মি পুয়ো ইন্ডিকারে লা স্ত্রাদা?",
+    "bnMeaning": "আপনি কি আমাকে রাস্তা দেখাতে পারেন?",
+    "en": "Can you show me the way?"
+  },
+  {
+    "it": "Voglio andare all'aeroporto.",
+    "bn": "ভোলিও আন্দারে আল্ল'আএরোপোর্তো।",
+    "bnMeaning": "আমি এয়ারপোর্টে যেতে চাই।",
+    "en": "I want to go to the airport."
+  },
+  {
+    "it": "Può chiamare un taxi per me?",
+    "bn": "পুয়ো কিয়ামারে উন টাক্সি পের মে?",
+    "bnMeaning": "আপনি কি আমার জন্য একটি ট্যাক্সি ডাকতে পারেন?",
+    "en": "Can you call a taxi for me?"
+  },
+  {
+    "it": "Quanto dista da qui?",
+    "bn": "কুয়ান্তো ডিস্তা দা কুই?",
+    "bnMeaning": "এটি এখান থেকে কত দূরে?",
+    "en": "How far is it from here?"
+  },
+  {
+    "it": "Vorrei noleggiare una macchina.",
+    "bn": "ভোরেই নোলেজ্জারে উনা মাক্কিনা।",
+    "bnMeaning": "আমি একটি গাড়ি ভাড়া নিতে চাই।",
+    "en": "I would like to rent a car."
+  },
+  {
+    "it": "Dove posso prendere un taxi?",
+    "bn": "দোভে পসসো প্রেনদেরে উন টাক্সি?",
+    "bnMeaning": "আমি কোথায় ট্যাক্সি পেতে পারি?",
+    "en": "Where can I get a taxi?"
+  },
+  {
+    "it": "A che ora chiude il museo?",
+    "bn": "আ কে ওরা কিউদে ইল মুজেও?",
+    "bnMeaning": "মিউজিয়াম কখন বন্ধ হয়?",
+    "en": "What time does the museum close?"
+  },
+  {
+    "it": "Quanto costa il biglietto d'ingresso?",
+    "bn": "কুয়ান্তো কোস্তা ইল বিলিয়েত্তো দিনগ্রেস্সো?",
+    "bnMeaning": "প্রবেশের টিকিটের দাম কত?",
+    "en": "How much is the entrance ticket?"
+  },
+  {
+    "it": "Ci sono sconti per studenti?",
+    "bn": "চি সোনো স্কোন্তি পের স্টুদেন্তি?",
+    "bnMeaning": "ছাত্রদের জন্য কি ছাড় আছে?",
+    "en": "Are there discounts for students?"
+  },
+  {
+    "it": "È aperto oggi?",
+    "bn": "এ আপেরতো অজ্জি?",
+    "bnMeaning": "আজ কি খোলা আছে?",
+    "en": "Is it open today?"
+  },
+  {
+    "it": "Grazie per il suo aiuto.",
+    "bn": "গ্রাতসি পের ইল সুয়ো আয়ুতো।",
+    "bnMeaning": "আপনার সাহায্যের জন্য ধন্যবাদ।",
+    "en": "Thank you for your help."
+  },
+  {
+    "it": "Dove posso mangiare qualcosa?",
+    "bn": "দোভে পসসো মাঞ্জারে কুয়ালকোসা?",
+    "bnMeaning": "আমি কোথায় কিছু খেতে পারি?",
+    "en": "Where can I eat something?"
+  },
+  {
+    "it": "C'è un buon ristorante qui vicino?",
+    "bn": "চে উন বুয়োন রিস্তোরান্তে কুই ভিচিনো?",
+    "bnMeaning": "এখানে কি ভালো কোনো রেস্টুরেন্ট আছে?",
+    "en": "Is there a good restaurant nearby?"
+  },
+  {
+    "it": "Mi può consigliare un piatto tipico?",
+    "bn": "মি পুয়ো কনসিলিয়ার উন পিয়াত্তো তিপিকো?",
+    "bnMeaning": "আপনি কি আমাকে একটি জনপ্রিয় খাবার সাজেস্ট করবেন?",
+    "en": "Can you recommend a typical dish?"
+  },
+  {
+    "it": "Vorrei una pizza margherita.",
+    "bn": "ভোরেই উনা পিত্সা মার্ঘেরিতা।",
+    "bnMeaning": "আমি একটি মার্ঘেরিতা পিত্জা চাই।",
+    "en": "I would like a margherita pizza."
+  },
+  {
+    "it": "Il conto, per favore.",
+    "bn": "ইল কন্তো, পের ফাভোরে।",
+    "bnMeaning": "বিলটা দিন, দয়া করে।",
+    "en": "The bill, please."
+  },
+  {
+    "it": "Questo è delizioso!",
+    "bn": "কুয়েস্তো এ দেলিৎসিওজো!",
+    "bnMeaning": "এটা দারুণ সুস্বাদু!",
+    "en": "This is delicious!"
+  },
+  {
+    "it": "Sono vegetariano.",
+    "bn": "সোনো ভেজেতারিয়ানো।",
+    "bnMeaning": "আমি নিরামিষাশী।",
+    "en": "I am vegetarian."
+  },
+  {
+    "it": "Ha qualcosa senza carne?",
+    "bn": "আ কুয়ালকোসা সেন্ৎসা কারনে?",
+    "bnMeaning": "আপনার কি মাংস ছাড়া কিছু আছে?",
+    "en": "Do you have something without meat?"
+  },
+  {
+    "it": "Vorrei solo un'insalata.",
+    "bn": "ভোরেই সলো উন'ইনসালাতা।",
+    "bnMeaning": "আমি শুধু একটি সালাদ চাই।",
+    "en": "I would like only a salad."
+  },
+  {
+    "it": "Posso avere dell'acqua naturale?",
+    "bn": "পসসো আভেরে দিল্ল'আক্কুয়া নাতুরালে?",
+    "bnMeaning": "আমি কি কিছু সাধারণ পানি পেতে পারি?",
+    "en": "Can I have some still water?"
+  },
+  {
+    "it": "Avete piatti senza glutine?",
+    "bn": "আভেতে পিয়াত্তি সেন্ৎসা গ্লুতিনে?",
+    "bnMeaning": "আপনাদের কি গ্লুটেনমুক্ত খাবার আছে?",
+    "en": "Do you have gluten-free dishes?"
+  },
+  {
+    "it": "Vorrei prenotare un tavolo per due.",
+    "bn": "ভোরেই প্রেনোতার উন তাভোলো পের দুয়ে।",
+    "bnMeaning": "আমি দুজনের জন্য একটি টেবিল রিজার্ভ করতে চাই।",
+    "en": "I would like to reserve a table for two."
+  },
+  {
+    "it": "Qual è la specialità della casa?",
+    "bn": "কুয়াল এ লা স্পেচালিতা দেল্লা কাজা?",
+    "bnMeaning": "এই রেস্টুরেন্টের বিশেষ খাবার কী?",
+    "en": "What is the house specialty?"
+  },
+  {
+    "it": "Il cibo è troppo piccante.",
+    "bn": "ইল চিবো এ ত্রোপ্পো পিক্কান্তে।",
+    "bnMeaning": "খাবারটা অনেক ঝাল।",
+    "en": "The food is too spicy."
+  },
+  {
+    "it": "Vorrei qualcosa di dolce.",
+    "bn": "ভোরেই কুয়ালকোসা দি দোলচে।",
+    "bnMeaning": "আমি কিছু মিষ্টি খেতে চাই।",
+    "en": "I would like something sweet."
+  },
+  {
+    "it": "Può portare il menu, per favore?",
+    "bn": "পুয়ো পোর্তার ইল মেনু, পের ফাভোরে?",
+    "bnMeaning": "দয়া করে মেনুটা আনবেন?",
+    "en": "Can you bring the menu, please?"
+  },
+  {
+    "it": "C'è un'opzione vegana?",
+    "bn": "চে উন'অপ্সিওনে ভেগানা?",
+    "bnMeaning": "ভেগান খাবারের কোনো বিকল্প আছে কি?",
+    "en": "Is there a vegan option?"
+  },
+  {
+    "it": "Non mangio pesce.",
+    "bn": "নন মাঞ্জো পেশে।",
+    "bnMeaning": "আমি মাছ খাই না।",
+    "en": "I don’t eat fish."
+  },
+  {
+    "it": "Questo è troppo salato.",
+    "bn": "কুয়েস্তো এ ত্রোপ্পো সালাতো।",
+    "bnMeaning": "এটা অনেক বেশি লবণযুক্ত।",
+    "en": "This is too salty."
+  },
+  {
+    "it": "Tutto era perfetto, grazie!",
+    "bn": "তুত্তো এরা পারফেত্তো, গ্রাতসি!",
+    "bnMeaning": "সবকিছু নিখুঁত ছিল, ধন্যবাদ!",
+    "en": "Everything was perfect, thank you!"
+  },
+  {
+    "it": "Può farmi lo scontrino?",
+    "bn": "পুয়ো ফার্মি লো স্কোনত্রিনো?",
+    "bnMeaning": "আপনি কি আমাকে রশিদ দিতে পারেন?",
+    "en": "Can you give me the receipt?"
+  },
+  {
+    "it": "Accettate carte di credito?",
+    "bn": "আচ্চেত্তাতে কার্তে দি ক্রেদিতো?",
+    "bnMeaning": "আপনারা কি ক্রেডিট কার্ড গ্রহণ করেন?",
+    "en": "Do you accept credit cards?"
+  },
+  {
+    "it": "Dove posso cambiare dei soldi?",
+    "bn": "দোভে পসসো কামবিয়ারে দেই সোলদি?",
+    "bnMeaning": "আমি কোথায় টাকা পরিবর্তন করতে পারি?",
+    "en": "Where can I exchange money?"
+  },
+  {
+    "it": "C'è un bancomat vicino?",
+    "bn": "চে উন বানকোমাত ভিচিনো?",
+    "bnMeaning": "কাছাকাছি কি কোনো এটিএম আছে?",
+    "en": "Is there an ATM nearby?"
+  },
+  {
+    "it": "Qual è il tasso di cambio?",
+    "bn": "কুয়াল এ ইল তাস্সো দি কামবিও?",
+    "bnMeaning": "বিনিময় হার কত?",
+    "en": "What is the exchange rate?"
+  },
+  {
+    "it": "Vorrei cambiare dei contanti.",
+    "bn": "ভোরেই কামবিয়ারে দেই কন্তান্তি।",
+    "bnMeaning": "আমি কিছু নগদ অর্থ পরিবর্তন করতে চাই।",
+    "en": "I would like to exchange some cash."
+  },
+  {
+    "it": "Accettate euro?",
+    "bn": "আচ্চেত্তাতে ইউরো?",
+    "bnMeaning": "আপনারা কি ইউরো গ্রহণ করেন?",
+    "en": "Do you accept euros?"
+  },
+  {
+    "it": "Quanto posso prelevare al bancomat?",
+    "bn": "কুয়ান্তো পসসো প্রেলেভারে আল বানকোমাত?",
+    "bnMeaning": "আমি এটিএম থেকে কত টাকা তুলতে পারি?",
+    "en": "How much can I withdraw from the ATM?"
+  },
+  {
+    "it": "Ho bisogno di una ricevuta.",
+    "bn": "ও বিজোন্নো দি উনা রিচেভুতা।",
+    "bnMeaning": "আমার একটি রশিদ দরকার।",
+    "en": "I need a receipt."
+  },
+  {
+    "it": "C'è una tassa extra?",
+    "bn": "চে উনা তাস্সা এক্সত্রা?",
+    "bnMeaning": "কি কোনো অতিরিক্ত ট্যাক্স আছে?",
+    "en": "Is there an extra charge?"
+  },
+  {
+    "it": "Vorrei aprire un conto bancario.",
+    "bn": "ভোরেই আপ্রিরে উন কন্তো বাঙ্কারিও।",
+    "bnMeaning": "আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।",
+    "en": "I would like to open a bank account."
+  },
+  {
+    "it": "Quali documenti servono?",
+    "bn": "কুয়ালি দোকুমেন্তি সের্ভোনো?",
+    "bnMeaning": "কোন কোন ডকুমেন্ট লাগবে?",
+    "en": "What documents are required?"
+  },
+  {
+    "it": "C'è una filiale vicina?",
+    "bn": "চে উনা ফিলিয়ালে ভিচিনা?",
+    "bnMeaning": "কাছাকাছি কি কোনো শাখা আছে?",
+    "en": "Is there a nearby branch?"
+  },
+  {
+    "it": "Mi serve una carta di debito.",
+    "bn": "মি সেরভে উনা কার্তা দি দেবিতো।",
+    "bnMeaning": "আমার একটি ডেবিট কার্ড দরকার।",
+    "en": "I need a debit card."
+  },
+  {
+    "it": "Qual è il limite giornaliero?",
+    "bn": "কুয়াল এ ইল লিমিতে জর্নালিয়েরো?",
+    "bnMeaning": "প্রতিদিনের উত্তোলনের সীমা কত?",
+    "en": "What is the daily withdrawal limit?"
+  },
+  {
+    "it": "Come posso accedere al mio conto online?",
+    "bn": "কোমে পসসো আচ্চেদেরে আল মিও কন্তো অনলাইন?",
+    "bnMeaning": "আমি কীভাবে আমার অনলাইন অ্যাকাউন্টে প্রবেশ করব?",
+    "en": "How can I access my online account?"
+  },
+  {
+    "it": "Ho dimenticato la password.",
+    "bn": "ও দিমেন্তিকাতো লা পাস্সওয়ার্দ।",
+    "bnMeaning": "আমি পাসওয়ার্ড ভুলে গেছি।",
+    "en": "I forgot the password."
+  },
+  {
+    "it": "Posso ricevere notifiche sul telefono?",
+    "bn": "পসসো রিচেভেরে নোতিফিকে সুল তেলেফোনো?",
+    "bnMeaning": "আমি কি ফোনে নোটিফিকেশন পেতে পারি?",
+    "en": "Can I receive notifications on my phone?"
+  },
+  {
+    "it": "C'è una tassa mensile?",
+    "bn": "চে উনা তাস্সা মেনসিলে?",
+    "bnMeaning": "মাসিক কোনো ফি আছে কি?",
+    "en": "Is there a monthly fee?"
+  },
+  {
+    "it": "Come posso chiudere il conto?",
+    "bn": "কোমে পসসো কিউদেরে ইল কন্তো?",
+    "bnMeaning": "আমি কীভাবে অ্যাকাউন্ট বন্ধ করতে পারি?",
+    "en": "How can I close the account?"
+  },
+  {
+    "it": "Vorrei inviare dei soldi all'estero.",
+    "bn": "ভোরেই ইনভিয়ার দেই সোলদি আল্ল'এস্তেরো।",
+    "bnMeaning": "আমি বিদেশে টাকা পাঠাতে চাই।",
+    "en": "I would like to send money abroad."
+  },
+  {
+    "it": "Quanto costa il trasferimento?",
+    "bn": "কুয়ান্তো কোস্তা ইল ত্রাসফেরিমেন্তো?",
+    "bnMeaning": "টাকা পাঠাতে কত খরচ হয়?",
+    "en": "How much does the transfer cost?"
+  },
+  {
+    "it": "Quanto tempo ci vuole?",
+    "bn": "কুয়ান্তো তেম্পো চি ভুয়োলেছে?",
+    "bnMeaning": "কত সময় লাগবে?",
+    "en": "How long does it take?"
+  },
+  {
+    "it": "Ho bisogno del codice IBAN.",
+    "bn": "ও বিজোন্নো দেল কোদিচে আইবান।",
+    "bnMeaning": "আমার IBAN কোড দরকার।",
+    "en": "I need the IBAN code."
+  },
+  {
+    "it": "Posso ricevere un bonifico?",
+    "bn": "পসসো রিচেভেরে উন বোনিফিকো?",
+    "bnMeaning": "আমি কি একটি ব্যাংক ট্রান্সফার পেতে পারি?",
+    "en": "Can I receive a bank transfer?"
+  },
+  {
+    "it": "C'è un limite per inviare denaro?",
+    "bn": "চে উন লিমিতে পের ইনভিয়ার দেনারো?",
+    "bnMeaning": "টাকা পাঠানোর কোনো সীমা আছে কি?",
+    "en": "Is there a limit to send money?"
+  },
+  {
+    "it": "Dove posso trovare uno sportello Western Union?",
+    "bn": "দোভে পসসো ত্রোভারে উনো স্পর্তেল্লো ওয়েস্টার্ন ইউনিয়ন?",
+    "bnMeaning": "আমি কোথায় Western Union এর কাউন্টার পেতে পারি?",
+    "en": "Where can I find a Western Union counter?"
+  },
+  {
+    "it": "Il mio trasferimento è stato confermato?",
+    "bn": "ইল মিও ত্রাসফেরিমেন্তো এ স্তাতো কনফের্মাতো?",
+    "bnMeaning": "আমার ট্রান্সফার কি কনফার্ম হয়েছে?",
+    "en": "Has my transfer been confirmed?"
+  },
+  {
+    "it": "Ho ricevuto il denaro, grazie.",
+    "bn": "ও রিচেভুতো ইল দেনারো, গ্রাতসি।",
+    "bnMeaning": "আমি টাকা পেয়েছি, ধন্যবাদ।",
+    "en": "I have received the money, thank you."
+  },
+  {
+    "it": "Vorrei inviare un pacco in Bangladesh.",
+    "bn": "ভোরেই ইনভিয়ার উন পাক্কো ইন বাংলাদেশ।",
+    "bnMeaning": "আমি বাংলাদেশে একটি পার্সেল পাঠাতে চাই।",
+    "en": "I would like to send a package to Bangladesh."
+  },
+  {
+    "it": "Dove posso trovare un medico di famiglia?",
+    "bn": "দোভে পসসো ত্রোভারে উন মেডিকো দি ফামিলিয়া?",
+    "bnMeaning": "আমি কোথায় একজন পারিবারিক ডাক্তার পেতে পারি?",
+    "en": "Where can I find a family doctor?"
+  },
+  {
+    "it": "Ho bisogno di una prescrizione.",
+    "bn": "ও বিজোন্নো দি উনা প্রেসক্রিজিওনে।",
+    "bnMeaning": "আমার একটি প্রেসক্রিপশনের দরকার।",
+    "en": "I need a prescription."
+  },
+  {
+    "it": "Qual è l'orario della clinica?",
+    "bn": "কুয়াল এ লোরারিও দেল্লা ক্লিনিকা?",
+    "bnMeaning": "ক্লিনিকের সময়সূচি কী?",
+    "en": "What are the clinic hours?"
+  },
+  {
+    "it": "Devo fare un esame del sangue.",
+    "bn": "দেভো ফারে উন এসামে দেল সাংগুয়ে।",
+    "bnMeaning": "আমাকে রক্ত পরীক্ষা করতে হবে।",
+    "en": "I need to do a blood test."
+  },
+  {
+    "it": "Dove si trova la farmacia più vicina?",
+    "bn": "দোভে সি ত্রোভা লা ফার্মাচিয়া পিউ ভিচিনা?",
+    "bnMeaning": "কাছাকাছি ফার্মেসি কোথায়?",
+    "en": "Where is the nearest pharmacy?"
+  },
+  {
+    "it": "Ho la febbre e tosse.",
+    "bn": "ও লা ফেব্ব্রে এ তোসসে।",
+    "bnMeaning": "আমার জ্বর ও কাশি আছে।",
+    "en": "I have a fever and cough."
+  },
+  {
+    "it": "Mi fa male lo stomaco.",
+    "bn": "মি ফা মালে লো স্তোমাকো।",
+    "bnMeaning": "আমার পেটে ব্যথা করছে।",
+    "en": "My stomach hurts."
+  },
+  {
+    "it": "C'è un pronto soccorso vicino?",
+    "bn": "চে উন প্রোন্তো সকোরসো ভিচিনো?",
+    "bnMeaning": "কাছাকাছি কি জরুরি চিকিৎসার কেন্দ্র আছে?",
+    "en": "Is there an emergency room nearby?"
+  },
+  {
+    "it": "Ho bisogno di un appuntamento con il dottore.",
+    "bn": "ও বিজোন্নো দি উন আপ্পুনতামেন্তো কন ইল দোত্তোরে।",
+    "bnMeaning": "আমার ডাক্তারের সাথে একটি অ্যাপয়েন্টমেন্ট দরকার।",
+    "en": "I need an appointment with the doctor."
+  },
+  {
+    "it": "Sono allergico a certi farmaci.",
+    "bn": "সোনো আল্লের্জিকো আ চেরতি ফার্মাচি।",
+    "bnMeaning": "আমি কিছু ওষুধে অ্যালার্জিক।",
+    "en": "I am allergic to certain medicines."
+  },
+  {
+    "it": "Ho bisogno di un certificato medico.",
+    "bn": "ও বিজোন্নো দি উন চের্তিফিকাতো মেডিকো।",
+    "bnMeaning": "আমার একটি মেডিকেল সার্টিফিকেট দরকার।",
+    "en": "I need a medical certificate."
+  },
+  {
+    "it": "Dove posso fare una radiografia?",
+    "bn": "দোভে পসসো ফারে উনা রাদিওগ্রাফিয়া?",
+    "bnMeaning": "আমি কোথায় এক্স-রে করাতে পারি?",
+    "en": "Where can I get an X-ray?"
+  },
+  {
+    "it": "Mi sento stanco tutto il tempo.",
+    "bn": "মি সেন্তো স্তানকো তুত্তো ইল তেম্পো।",
+    "bnMeaning": "আমি সব সময় ক্লান্ত অনুভব করি।",
+    "en": "I feel tired all the time."
+  },
+  {
+    "it": "Hai mai avuto queste sintomi prima?",
+    "bn": "হাই মাই আওভুতো কুয়েস্তে সিনতোমি প্রিমা?",
+    "bnMeaning": "আপনার আগে কখনও এসব উপসর্গ হয়েছিল?",
+    "en": "Have you had these symptoms before?"
+  },
+  {
+    "it": "Devo fare una visita specialistica.",
+    "bn": "দেভো ফারে উনা ভিজিতা স্পেচিয়ালিস্তিকা।",
+    "bnMeaning": "আমাকে একজন বিশেষজ্ঞের কাছে যেতে হবে।",
+    "en": "I need to see a specialist."
+  },
+  {
+    "it": "Questo farmaco ha effetti collaterali?",
+    "bn": "কুয়েস্তো ফার্মাকো হা এফেত্তি কোল্লাতেরালি?",
+    "bnMeaning": "এই ওষুধের কি কোনো পার্শ্বপ্রতিক্রিয়া আছে?",
+    "en": "Does this medicine have side effects?"
+  },
+  {
+    "it": "Ho bisogno di occhiali da vista.",
+    "bn": "ও বিজোন্নো দি অক্কিয়ালি দা ভিস্তা।",
+    "bnMeaning": "আমার চোখের চশমা দরকার।",
+    "en": "I need prescription glasses."
+  },
+  {
+    "it": "C'è un dentista disponibile oggi?",
+    "bn": "চে উন দেন্তিস্তা ডিসপোনিবিলে অজ্জি?",
+    "bnMeaning": "আজ কি কোনো দাঁতের ডাক্তার পাওয়া যাবে?",
+    "en": "Is there a dentist available today?"
+  },
+  {
+    "it": "Quanto costa la visita?",
+    "bn": "কুয়ান্তো কোস্তা লা ভিজিতা?",
+    "bnMeaning": "এই ভিজিটের খরচ কত?",
+    "en": "How much does the visit cost?"
+  },
+  {
+    "it": "Ho bisogno di un vaccino.",
+    "bn": "ও বিজোন্নো দি উন ভাচ্চিনো।",
+    "bnMeaning": "আমার একটি টিকার দরকার।",
+    "en": "I need a vaccine."
+  },
+  {
+    "it": "Ho bisogno di riposo.",
+    "bn": "ও বিজোন্নো দি রিপোসো।",
+    "bnMeaning": "আমার বিশ্রামের প্রয়োজন।",
+    "en": "I need rest."
+  },
+  {
+    "it": "Dove posso acquistare le medicine?",
+    "bn": "দোভে পসসো আক্কুইস্তারে লে মেডিচিনে?",
+    "bnMeaning": "আমি কোথায় ওষুধ কিনতে পারি?",
+    "en": "Where can I buy the medicine?"
+  },
+  {
+    "it": "Quanto spesso devo prendere questa medicina?",
+    "bn": "কুয়ান্তো স্পেসসো দেভো প্রেনদেরে কুয়েস্তা মেডিচিনা?",
+    "bnMeaning": "এই ওষুধ কত ঘন ঘন নিতে হবে?",
+    "en": "How often should I take this medicine?"
+  },
+  {
+    "it": "Posso bere alcolici con questa medicina?",
+    "bn": "পসসো বেরে আলকোলিচি কন কুয়েস্তা মেডিচিনা?",
+    "bnMeaning": "এই ওষুধের সাথে আমি কি অ্যালকোহল খেতে পারি?",
+    "en": "Can I drink alcohol with this medicine?"
+  },
+  {
+    "it": "Ho bisogno di un’ambulanza.",
+    "bn": "ও বিজোন্নো দি উন’আম্বুলানজা।",
+    "bnMeaning": "আমার একটি অ্যাম্বুলেন্স দরকার।",
+    "en": "I need an ambulance."
+  },
+  {
+    "it": "Qual è il numero di emergenza?",
+    "bn": "কুয়ালে এ ইল নুমেরো দি এমেরজেনজা?",
+    "bnMeaning": "জরুরি নম্বরটি কী?",
+    "en": "What is the emergency number?"
+  },
+  {
+    "it": "Sono svenuto improvvisamente.",
+    "bn": "সোনো স্বেনুতো ইম্প্রোভ্বিজামেন্তে।",
+    "bnMeaning": "আমি হঠাৎ অজ্ঞান হয়ে গিয়েছিলাম।",
+    "en": "I fainted suddenly."
+  },
+  {
+    "it": "Ho una ferita alla mano.",
+    "bn": "ও উনা ফেরিতা আল্লা মানো।",
+    "bnMeaning": "আমার হাতে একটা আঘাত হয়েছে।",
+    "en": "I have a wound on my hand."
+  },
+  {
+    "it": "Serve un intervento chirurgico?",
+    "bn": "সেরভে উন ইন্তেরভেন্তো কিরুর্জিকো?",
+    "bnMeaning": "কি অপারেশন দরকার হবে?",
+    "en": "Is surgery needed?"
+  },
+  {
+    "it": "C'è una clinica gratuita?",
+    "bn": "চে উনা ক্লিনিকা গ্রাতুইতা?",
+    "bnMeaning": "কোনো ফ্রি ক্লিনিক আছে?",
+    "en": "Is there a free clinic?"
+  },
+  {
+    "it": "Quanto tempo ci vuole per guarire?",
+    "bn": "কুয়ান্তো তেম্পো চি ভুয়োলি পের গুয়ারিরে?",
+    "bnMeaning": "সুস্থ হতে কত সময় লাগবে?",
+    "en": "How long does it take to heal?"
+  },
+  {
+    "it": "Mi fa male la schiena.",
+    "bn": "মি ফা মালে লা স্কিয়েনা।",
+    "bnMeaning": "আমার পিঠে ব্যথা করছে।",
+    "en": "My back hurts."
+  },
+  {
+    "it": "Può controllare la mia pressione sanguigna?",
+    "bn": "পুয়ো কন্ট্রোল্লারে লা মিয়া প্রেস্সিওনে সাংগুইনিয়া?",
+    "bnMeaning": "আপনি কি আমার রক্তচাপ পরীক্ষা করতে পারেন?",
+    "en": "Can you check my blood pressure?"
+  },
+  {
+    "it": "Ho problemi di respirazione.",
+    "bn": "ও প্রোব্লেমি দি রেসপিরাজিওনে।",
+    "bnMeaning": "আমার শ্বাস নেওয়ার সমস্যা হচ্ছে।",
+    "en": "I have breathing problems."
+  },
+  {
+    "it": "Mi gira la testa.",
+    "bn": "মি জিরা লা তেস্তা।",
+    "bnMeaning": "আমার মাথা ঘুরছে।",
+    "en": "I feel dizzy."
+  },
+  {
+    "it": "Sono incinta.",
+    "bn": "সোনো ইনচিন্তা।",
+    "bnMeaning": "আমি গর্ভবতী।",
+    "en": "I am pregnant."
+  },
+  {
+    "it": "C'è un reparto di maternità?",
+    "bn": "চে উন রেপার্তো দি মাতের্নিতা?",
+    "bnMeaning": "এখানে কি মাতৃ বিভাগ আছে?",
+    "en": "Is there a maternity ward?"
+  },
+  {
+    "it": "Posso parlare con un infermiere?",
+    "bn": "পসসো পারলারে কন উন ইনফের্মিয়েরে?",
+    "bnMeaning": "আমি কি একজন নার্সের সাথে কথা বলতে পারি?",
+    "en": "Can I talk to a nurse?"
+  },
+  {
+    "it": "Mi sento meglio oggi.",
+    "bn": "মি সেন্তো মেলিওর অজ্জি।",
+    "bnMeaning": "আজ আমি একটু ভালো বোধ করছি।",
+    "en": "I feel better today."
+  },
+  {
+    "it": "Devo tornare per una visita di controllo?",
+    "bn": "দেভো তর্নারে পের উনা ভিজিতা দি কন্ট্রোললো?",
+    "bnMeaning": "আমাকে কি আবার ফলোআপে আসতে হবে?",
+    "en": "Do I need to come back for a follow-up?"
+  },
+  {
+    "it": "Posso avere una copia della mia cartella clinica?",
+    "bn": "পসসো আভেরে উনা কপিয়া দেল্লা মিয়া কার্তেল্লা ক্লিনিকা?",
+    "bnMeaning": "আমি কি আমার চিকিৎসা নথির একটি কপি পেতে পারি?",
+    "en": "Can I have a copy of my medical record?"
+  },
+  {
+    "it": "La mia assicurazione copre questo trattamento?",
+    "bn": "লা মিয়া আসসিকুরাজিওনে কοπরে কুয়েস্তো ত্রাত্তামেন্তো?",
+    "bnMeaning": "আমার বীমা কি এই চিকিৎসা কাভার করে?",
+    "en": "Does my insurance cover this treatment?"
+  },
+  {
+    "it": "Quali sono gli effetti collaterali?",
+    "bn": "কুয়ালি সোনো গ্লি এফেত্তি কোল্লাতেরালি?",
+    "bnMeaning": "এই ওষুধের পার্শ্বপ্রতিক্রিয়াগুলো কী কী?",
+    "en": "What are the side effects?"
+  },
+  {
+    "it": "Quanto tempo devo aspettare?",
+    "bn": "কুয়ান্তো তেম্পো দেভো আস্পেত্তারে?",
+    "bnMeaning": "আমাকে কতক্ষণ অপেক্ষা করতে হবে?",
+    "en": "How long do I have to wait?"
+  },
+  {
+    "it": "Ho bisogno di un certificato di malattia.",
+    "bn": "ও বিজোন্নো দি উন চের্তিফিকাতো দি মালাত্তিয়া।",
+    "bnMeaning": "আমার অসুস্থতার একটি সনদ দরকার।",
+    "en": "I need a sickness certificate."
+  },
+  {
+    "it": "Dove si trova il pronto soccorso?",
+    "bn": "দোভে সি ত্রোভা ইল প্রোন্তো সকোরসো?",
+    "bnMeaning": "জরুরি চিকিৎসা বিভাগ কোথায়?",
+    "en": "Where is the emergency room?"
+  },
+  {
+    "it": "Mi può spiegare la diagnosi?",
+    "bn": "মি পুয়ো স্পিয়াগারে লা দিয়াগ্নোসি?",
+    "bnMeaning": "আপনি কি আমাকে রোগ নির্ণয় ব্যাখ্যা করতে পারেন?",
+    "en": "Can you explain the diagnosis to me?"
+  },
+  {
+    "it": "Qual è la cura per questa malattia?",
+    "bn": "কুয়ালে এ লা কুরা পের কুয়েস্তা মালাত্তিয়া?",
+    "bnMeaning": "এই রোগের চিকিৎসা কী?",
+    "en": "What is the treatment for this illness?"
+  },
+  {
+    "it": "Devo seguire una dieta speciale?",
+    "bn": "দেভো সেগুইরে উনা দিয়েতা স্পেচিয়ালে?",
+    "bnMeaning": "আমাকে কি বিশেষ ডায়েট অনুসরণ করতে হবে?",
+    "en": "Do I need to follow a special diet?"
+  },
+  {
+    "it": "Quando devo tornare per il controllo?",
+    "bn": "কুয়ানদো দেভো তর্নারে পের ইল কন্ট্রোললো?",
+    "bnMeaning": "আমাকে কখন ফলোআপে আসতে হবে?",
+    "en": "When should I come back for the check-up?"
+  },
+  {
+    "it": "Devo fare un test del sangue?",
+    "bn": "দেভো ফারে উন তেস্ত দেল সাংগুয়ে?",
+    "bnMeaning": "আমাকে কি রক্ত পরীক্ষা করতে হবে?",
+    "en": "Do I need to do a blood test?"
+  },
+  {
+    "it": "C'è un laboratorio qui vicino?",
+    "bn": "চে উন লাবোরাতোরিও কুই ভিচিনো?",
+    "bnMeaning": "এখানে কি কোনো ল্যাব আছে?",
+    "en": "Is there a lab nearby?"
+  },
+  {
+    "it": "Quanto dura la terapia?",
+    "bn": "কুয়ান্তো দূরা লা তেরাপিয়া?",
+    "bnMeaning": "চিকিৎসাটি কতদিন চলবে?",
+    "en": "How long will the treatment last?"
+  },
+  {
+    "it": "Mi può dare una prescrizione?",
+    "bn": "মি পুয়ো দারে উনা প্রেসক্রিচিওনে?",
+    "bnMeaning": "আপনি কি আমাকে একটি প্রেসক্রিপশন দিতে পারেন?",
+    "en": "Can you give me a prescription?"
+  },
+  {
+    "it": "Devo evitare certi cibi?",
+    "bn": "দেভো এভিতারে চেরতি চিবি?",
+    "bnMeaning": "আমাকে কি কিছু খাবার এড়িয়ে চলতে হবে?",
+    "en": "Should I avoid certain foods?"
+  },
+  {
+    "it": "Posso continuare a lavorare?",
+    "bn": "পসসো কন্তিনুয়ারে আ লাভোরারে?",
+    "bnMeaning": "আমি কি কাজ চালিয়ে যেতে পারি?",
+    "en": "Can I continue working?"
+  },
+  {
+    "it": "Questo è contagioso?",
+    "bn": "কুয়েস্তো এ কন্তাজিওসো?",
+    "bnMeaning": "এটি কি ছোঁয়াচে?",
+    "en": "Is this contagious?"
+  },
+  {
+    "it": "Quali sono i sintomi principali?",
+    "bn": "কুয়ালি সোনো ই সিনতোমি প্রিনচিপালি?",
+    "bnMeaning": "প্রধান উপসর্গ কী কী?",
+    "en": "What are the main symptoms?"
+  },
+  {
+    "it": "C'è un medico che parla inglese?",
+    "bn": "চে উন মেডিকো কে পারলা ইংলেজে?",
+    "bnMeaning": "এখানে কি কোনো ইংরেজি বলা ডাক্তার আছেন?",
+    "en": "Is there a doctor who speaks English?"
+  },
+  {
+    "it": "Quanto tempo devo rimanere a riposo?",
+    "bn": "কুয়ান্তো তেম্পো দেভো রিমানেরে আ রিপোসো?",
+    "bnMeaning": "আমাকে কতদিন বিশ্রামে থাকতে হবে?",
+    "en": "How long should I stay in rest?"
+  },
+  {
+    "it": "Mi può dare il numero del medico?",
+    "bn": "মি পুয়ো দারে ইল নুমেরো দেল মেডিকো?",
+    "bnMeaning": "আপনি কি ডাক্তারদের নম্বর দিতে পারেন?",
+    "en": "Can you give me the doctor's number?"
+  },
+  {
+    "it": "Devo portare i documenti sanitari?",
+    "bn": "দেভো পোর্তারে ই দকুমেন্তি সানিতারি?",
+    "bnMeaning": "আমাকে কি স্বাস্থ্য সংক্রান্ত কাগজপত্র আনতে হবে?",
+    "en": "Do I need to bring medical documents?"
+  },
+  {
+    "it": "Ho un’allergia a questo farmaco.",
+    "bn": "ও উন অল্লেরজিয়া আ কুয়েস্তো ফারমাকো।",
+    "bnMeaning": "এই ওষুধে আমার অ্যালার্জি আছে।",
+    "en": "I am allergic to this medicine."
+  },
+  {
+    "it": "Devo fare una radiografia?",
+    "bn": "দেভো ফারে উনা রাদিওগ্রাফিয়া?",
+    "bnMeaning": "আমাকে কি এক্স-রে করতে হবে?",
+    "en": "Do I need to get an X-ray?"
+  },
+  {
+    "it": "C'è un centro di fisioterapia?",
+    "bn": "চে উন চেন্ত্রো দি ফিজিওতেরাপিয়া?",
+    "bnMeaning": "এখানে কি কোনো ফিজিওথেরাপি সেন্টার আছে?",
+    "en": "Is there a physiotherapy center?"
+  },
+  {
+    "it": "Quanto costa la visita?",
+    "bn": "কুয়ান্তো কোস্তা লা ভিজিতা?",
+    "bnMeaning": "ডাক্তারের চেকআপে কত খরচ?",
+    "en": "How much does the visit cost?"
+  },
+  {
+    "it": "Posso pagare con la carta?",
+    "bn": "পসসো পাগারে কন লা কার্তা?",
+    "bnMeaning": "আমি কি কার্ড দিয়ে পরিশোধ করতে পারি?",
+    "en": "Can I pay by card?"
+  },
+  {
+    "it": "La farmacia è aperta adesso?",
+    "bn": "লা ফারমাসিয়া এ আপুর্তা আদেস্সো?",
+    "bnMeaning": "এখন ফার্মেসিটি খোলা আছে?",
+    "en": "Is the pharmacy open now?"
+  },
+  {
+    "it": "Dove posso trovare un dentista?",
+    "bn": "দোভে পসসো ত্রোভারে উন দেন্তিস্তা?",
+    "bnMeaning": "আমি কোথায় একজন দাঁতের ডাক্তার পেতে পারি?",
+    "en": "Where can I find a dentist?"
+  },
+  {
+    "it": "Mi fa male il dente.",
+    "bn": "মি ফা মালে ইল দেন্তে।",
+    "bnMeaning": "আমার দাঁতে ব্যথা করছে।",
+    "en": "I have a toothache."
+  },
+  {
+    "it": "C'è un ospedale vicino?",
+    "bn": "চে উন অসপেদালে ভিচিনো?",
+    "bnMeaning": "কাছাকাছি কি কোনো হাসপাতাল আছে?",
+    "en": "Is there a hospital nearby?"
+  },
+  {
+    "it": "Ho bisogno di un’ambulanza.",
+    "bn": "ও বিজোন্নো দি উন’আম্বুলানজা।",
+    "bnMeaning": "আমার একটি অ্যাম্বুলেন্স দরকার।",
+    "en": "I need an ambulance."
+  },
+  {
+    "it": "Mi sono tagliato accidentalmente.",
+    "bn": "মি সোনো তালিয়াতো আচিদেন্তালমেন্তে।",
+    "bnMeaning": "আমি দুর্ঘটনাক্রমে কেটে ফেলেছি।",
+    "en": "I accidentally cut myself."
+  },
+  {
+    "it": "Ho la febbre alta.",
+    "bn": "ও লা ফেব্ব্রে আল্তা।",
+    "bnMeaning": "আমার জ্বর খুব বেশি।",
+    "en": "I have a high fever."
+  },
+  {
+    "it": "Mi sento molto debole.",
+    "bn": "মি সেন্তো মলতো দেবোল।",
+    "bnMeaning": "আমি নিজেকে খুব দুর্বল অনুভব করছি।",
+    "en": "I feel very weak."
+  },
+  {
+    "it": "Ho perso conoscenza.",
+    "bn": "ও পার্সো কনোসেনজা।",
+    "bnMeaning": "আমি অজ্ঞান হয়ে গিয়েছিলাম।",
+    "en": "I lost consciousness."
+  },
+  {
+    "it": "C'è un centro per i vaccini?",
+    "bn": "চে উন চেন্ত্রো পের ই ভাচ্চিনি?",
+    "bnMeaning": "এখানে কি কোনো টিকা কেন্দ্র আছে?",
+    "en": "Is there a vaccination center?"
+  },
+  {
+    "it": "Ho ricevuto tutte le vaccinazioni.",
+    "bn": "ও রিচেভুতো তুত্তে লে ভাচ্চিনাজিওনি।",
+    "bnMeaning": "আমি সব টিকা পেয়েছি।",
+    "en": "I have received all vaccinations."
+  },
+  {
+    "it": "C'è una clinica aperta nel weekend?",
+    "bn": "চে উনা ক্লিনিকা আপের্তা নেল উইকএন্ড?",
+    "bnMeaning": "উইকেন্ডে কি কোনো ক্লিনিক খোলা থাকে?",
+    "en": "Is there a clinic open on the weekend?"
+  },
+  {
+    "it": "Mi può consigliare un buon dottore?",
+    "bn": "মি পুয়ো কনসিলিয়ার উন বুয়োন দোত্তোরে?",
+    "bnMeaning": "আপনি কি ভালো কোনো ডাক্তার সুপারিশ করতে পারেন?",
+    "en": "Can you recommend a good doctor?"
+  },
+  {
+    "it": "Mi sento stanco tutto il tempo.",
+    "bn": "মি সেন্তো স্তাঙ্কো তুত্তো ইল তেম্পো।",
+    "bnMeaning": "আমি সবসময় ক্লান্ত বোধ করি।",
+    "en": "I feel tired all the time."
+  },
+  {
+    "it": "Ho problemi a dormire.",
+    "bn": "ও প্রোব্লেমি আ দোরমিরে।",
+    "bnMeaning": "আমার ঘুমাতে সমস্যা হচ্ছে।",
+    "en": "I have trouble sleeping."
+  },
+  {
+    "it": "Sto seguendo una terapia.",
+    "bn": "স্তো সেগুয়েনদো উনা তেরাপিয়া।",
+    "bnMeaning": "আমি একটি চিকিৎসা নিচ্ছি।",
+    "en": "I am undergoing treatment."
+  },
+  {
+    "it": "Ho bisogno di un appuntamento urgente.",
+    "bn": "ও বিজোন্নো দি উন আপ্পুন্তামেন্তো উর্জেন্তে।",
+    "bnMeaning": "আমার জরুরি অ্যাপয়েন্টমেন্ট দরকার।",
+    "en": "I need an urgent appointment."
+  },
+  {
+    "it": "Prendo già dei farmaci.",
+    "bn": "প্রেন্দো জা দেই ফারমাচি।",
+    "bnMeaning": "আমি আগে থেকেই ওষুধ খাচ্ছি।",
+    "en": "I am already taking some medications."
+  },
+  {
+    "it": "Sono allergico alla penicillina.",
+    "bn": "সোনো অল্লেরজিকো আল্লা পেনিচিল্লিনা।",
+    "bnMeaning": "আমি পেনিসিলিনে অ্যালার্জিক।",
+    "en": "I am allergic to penicillin."
+  },
+  {
+    "it": "Posso ricevere una copia della ricetta?",
+    "bn": "পসসো রিচেভেরে উনা কপিয়া দেলা রিচেত্তা?",
+    "bnMeaning": "আমি কি প্রেসক্রিপশনের একটি কপি পেতে পারি?",
+    "en": "Can I get a copy of the prescription?"
+  },
+  {
+    "it": "Qual è il nome del farmaco?",
+    "bn": "কুয়ালে এ ইল নোমে দেল ফারমাকো?",
+    "bnMeaning": "ঔষধটির নাম কী?",
+    "en": "What is the name of the medicine?"
+  },
+  {
+    "it": "Devo prendere questo con il cibo?",
+    "bn": "দেভো প্রেন্দেরে কুয়েস্তো কন ইল চিবো?",
+    "bnMeaning": "আমাকে কি এটা খাবারের সাথে নিতে হবে?",
+    "en": "Should I take this with food?"
+  },
+  {
+    "it": "Ci sono effetti collaterali gravi?",
+    "bn": "চি সোনো এফেত্তি কোল্লাতেরালি গ্রাভি?",
+    "bnMeaning": "এই ঔষধের কি কোনো গুরুতর পার্শ্বপ্রতিক্রিয়া আছে?",
+    "en": "Are there any serious side effects?"
+  },
+  {
+    "it": "Dove si trova il pronto soccorso?",
+    "bn": "দোভে সি ত্রোভা ইল প্রোন্তো সোকোরসো?",
+    "bnMeaning": "জরুরি সেবার স্থান কোথায়?",
+    "en": "Where is the emergency room?"
+  },
+  {
+    "it": "Mi sento meglio oggi.",
+    "bn": "মি সেন্তো মেলিও অজ্জি।",
+    "bnMeaning": "আজ আমি ভালো বোধ করছি।",
+    "en": "I feel better today."
+  },
+  {
+    "it": "Posso tornare al lavoro domani?",
+    "bn": "পসসো তোর্নারে আল লাভোরো দোমানি?",
+    "bnMeaning": "আমি কি কাল কাজে ফিরতে পারি?",
+    "en": "Can I return to work tomorrow?"
+  },
+  {
+    "it": "Ho bisogno di una visita di controllo.",
+    "bn": "ও বিজোন্নো দি উনা ভিজিতা দি কন্ট্রোল্লো।",
+    "bnMeaning": "আমার একটি ফলোআপ চেকআপ দরকার।",
+    "en": "I need a follow-up visit."
+  },
+  {
+    "it": "La mia pressione è normale?",
+    "bn": "লা মিয়া প্রেসসিওনে এ নরমালে?",
+    "bnMeaning": "আমার রক্তচাপ কি স্বাভাবিক?",
+    "en": "Is my blood pressure normal?"
+  },
+  {
+    "it": "Devo fare analisi delle urine?",
+    "bn": "দেভো ফারে আনালিসি দেল্লে উরিনে?",
+    "bnMeaning": "আমাকে কি ইউরিন টেস্ট করতে হবে?",
+    "en": "Do I need to do a urine test?"
+  },
+  {
+    "it": "C'è rischio di contagio?",
+    "bn": "চে রিস্কিও দি কন্তাজিও?",
+    "bnMeaning": "কোনো সংক্রমণের ঝুঁকি আছে কি?",
+    "en": "Is there a risk of infection?"
+  },
+  {
+    "it": "Come posso prevenire questa malattia?",
+    "bn": "কোমে পসসো প্রেভেনিরে কুয়েস্তা মালাত্তিয়া?",
+    "bnMeaning": "আমি কীভাবে এই রোগটি প্রতিরোধ করতে পারি?",
+    "en": "How can I prevent this disease?"
+  },
+  {
+    "it": "Quanti giorni di riposo mi servono?",
+    "bn": "কুয়ান্তি জোর্নি দি রিপোসো মি সেরভোনো?",
+    "bnMeaning": "আমার কতদিন বিশ্রাম দরকার?",
+    "en": "How many days of rest do I need?"
+  },
+  {
+    "it": "Grazie per il suo aiuto.",
+    "bn": "গ্রাত্সিয়ে পের ইল সুয়ো আয়ুতো।",
+    "bnMeaning": "আপনার সাহায্যের জন্য ধন্যবাদ।",
+    "en": "Thank you for your help."
+  }
+]
