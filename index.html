@@ -1,241 +1,306 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Speak EU - Language Learning</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Google Fonts for better typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <header class="app-header">
-    <h1 class="app-title">
-      <i class="fas fa-globe-europe"></i>
-      Speak EU
-    </h1>
-    <div class="header-right">
-      <select id="language-select" class="language-select">
-        <option value="">🌍 Select Language</option>
-        
-        <!-- 🟦 Schengen Countries -->
-        <optgroup label="🟦 Schengen Area">
-          <option value="austria">🇦🇹 Austria (German)</option>
-          <option value="belgium">🇧🇪 Belgium (Dutch)</option>
-          <option value="czech">🇨🇿 Czech Republic</option>
-          <option value="denmark">🇩🇰 Denmark</option>
-          <option value="estonia">🇪🇪 Estonia</option>
-          <option value="finland">🇫🇮 Finland</option>
-          <option value="france">🇫🇷 France</option>
-          <option value="germany">🇩🇪 Germany</option>
-          <option value="greece">🇬🇷 Greece</option>
-          <option value="hungary">🇭🇺 Hungary</option>
-          <option value="iceland">🇮🇸 Iceland</option>
-          <option value="italy">🇮🇹 Italy</option>
-          <option value="latvia">🇱🇻 Latvia</option>
-          <option value="liechtenstein">🇱🇮 Liechtenstein (German)</option>
-          <option value="lithuania">🇱🇹 Lithuania</option>
-          <option value="luxembourg">🇱🇺 Luxembourg</option>
-          <option value="malta">🇲🇹 Malta</option>
-          <option value="netherlands">🇳🇱 Netherlands</option>
-          <option value="norway">🇳🇴 Norway</option>
-          <option value="poland">🇵🇱 Poland</option>
-          <option value="portugal">🇵🇹 Portugal</option>
-          <option value="slovakia">🇸🇰 Slovakia</option>
-          <option value="slovenia">🇸🇮 Slovenia</option>
-          <option value="spain">🇪🇸 Spain</option>
-          <option value="sweden">🇸🇪 Sweden</option>
-          <option value="switzerland">🇨🇭 Switzerland (German)</option>
-        </optgroup>
+<!doctype html>
+<html lang="bn">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Speak EU - ইউরোপীয় ভাষা শিক্ষার প্ল্যাটফর্ম</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <meta
+            name="description"
+            content="৩০+ ইউরোপীয় ভাষা শিখুন বাংলা উচ্চারণ ও অর্থসহ। প্রতিটি ভাষার জন্য ১০০০+ কথোপকথন।"
+        />
+        <meta
+            name="keywords"
+            content="ইউরোপীয় ভাষা, জার্মান, ফ্রেঞ্চ, ইতালিয়ান, স্প্যানিশ, ভাষা শেখা"
+        />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-container">
+                <div class="header-left">
+                    <h1 class="app-title">
+                        <i class="fas fa-language"></i>
+                        Speak EU
+                    </h1>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html" class="nav-link active">হোম</a>
+                    <a href="pages/about.html" class="nav-link"
+                        >আমাদের সম্পর্কে</a
+                    >
+                    <a href="pages/contact.html" class="nav-link">যোগাযোগ</a>
+                    <a href="pages/privacy.html" class="nav-link"
+                        >গোপনীয়তা নীতি</a
+                    >
+                </nav>
+                <div class="header-right">
+                    <select class="language-select" id="languageSelect">
+                        <option value="">ভাষা নির্বাচন করুন</option>
+                        <option value="germany">🇩🇪 জার্মান</option>
+                        <option value="france">🇫🇷 ফ্রেঞ্চ</option>
+                        <option value="italy">🇮🇹 ইতালিয়ান</option>
+                        <option value="spain">🇪🇸 স্প্যানিশ</option>
+                        <option value="russia">🇷🇺 রাশিয়ান</option>
+                        <option value="netherlands">🇳🇱 ডাচ</option>
+                        <option value="portugal">🇵🇹 পর্তুগিজ</option>
+                        <option value="greece">🇬🇷 গ্রিক</option>
+                        <option value="poland">🇵🇱 পোলিশ</option>
+                        <option value="czech">🇨🇿 চেক</option>
+                        <option value="hungary">🇭🇺 হাঙ্গেরিয়ান</option>
+                        <option value="romania">🇷🇴 রোমানিয়ান</option>
+                        <option value="ukraine">🇺🇦 ইউক্রেনিয়ান</option>
+                        <option value="croatia">🇭🇷 ক্রোয়েশিয়ান</option>
+                        <option value="slovakia">🇸🇰 স্লোভাক</option>
+                        <option value="slovenia">🇸🇮 স্লোভেনিয়ান</option>
+                        <option value="estonia">🇪🇪 এস্তোনিয়ান</option>
+                        <option value="latvia">🇱🇻 লাতভিয়ান</option>
+                        <option value="lithuania">🇱🇹 লিথুয়ানিয়ান</option>
+                    </select>
+                    <button class="mode-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
 
-        <!-- 🟥 Non-Schengen EU/Europe Countries -->
-        <optgroup label="🟥 Other European">
-          <option value="russian">🇷🇺 Russian</option>
-          <option value="albania">🇦🇱 Albania</option>
-          <option value="andorra">🇦🇩 Andorra (Catalan)</option>
-          <option value="armenia">🇦🇲 Armenia</option>
-          <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-          <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
-          <option value="bulgaria">🇧🇬 Bulgaria</option>
-          <option value="croatia">🇭🇷 Croatia</option>
-          <option value="cyprus">🇨🇾 Cyprus (Greek)</option>
-          <option value="georgia">🇬🇪 Georgia</option>
-          <option value="ireland">🇮🇪 Ireland</option>
-          <option value="kosovo">🇽🇰 Kosovo (Albanian)</option>
-          <option value="moldova">🇲🇩 Moldova (Romanian)</option>
-          <option value="monaco">🇲🇨 Monaco (French)</option>
-          <option value="montenegro">🇲🇪 Montenegro</option>
-          <option value="northmacedonia">🇲🇰 North Macedonia</option>
-          <option value="romania">🇷🇴 Romania</option>
-          <option value="sanmarino">🇸🇲 San Marino (Italian)</option>
-          <option value="serbia">🇷🇸 Serbia</option>
-          <option value="turkey">🇹🇷 Turkey</option>
-          <option value="ukraine">🇺🇦 Ukraine</option>
-          <option value="unitedkingdom">🇬🇧 United Kingdom</option>
-          <option value="vatican">🇻🇦 Vatican City (Latin)</option>
-        </optgroup>
-      </select>
-      <button id="mode-toggle" class="mode-toggle" title="Toggle Theme">
-        <i class="fas fa-sun"></i>
-      </button>
-      <button id="menu-toggle" class="menu-toggle" title="Open Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section" id="welcomeSection">
+                <div class="welcome-content">
+                    <h2>Speak EU এ স্বাগতম</h2>
+                    <p>
+                        ইউরোপীয় ভাষা শিখুন সহজে ও কার্যকরভাবে। বাংলা উচ্চারণ ও
+                        অর্থসহ ১০০০+ কথোপকথন প্রতিটি ভাষার জন্য।
+                    </p>
+                    <div class="welcome-features">
+                        <div class="feature">
+                            <i class="fas fa-language"></i>
+                            <span>৩০+ ইউরোপীয় ভাষা</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-volume-up"></i>
+                            <span>বাংলা উচ্চারণ গাইড</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-comments"></i>
+                            <span>১০০০+ কথোপকথন</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-search"></i>
+                            <span>উন্নত সার্চ সিস্টেম</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>মোবাইল ফ্রেন্ডলি</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>প্রগ্রেস ট্র্যাকিং</span>
+                        </div>
+                    </div>
+                    <button
+                        class="btn btn-primary"
+                        onclick="document.getElementById('languageSelect').focus()"
+                    >
+                        শিক্ষা শুরু করুন
+                    </button>
+                </div>
+            </section>
 
-  <main class="main-content">
-    <!-- Search and Filter Section -->
-    <div id="search-section" class="search-section" style="display: none;">
-      <div class="search-container">
-        <div class="search-input-wrapper">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" id="search-input" placeholder="Search phrases..." class="search-input" />
-          <button id="clear-search" class="clear-search" style="display: none;">
-            <i class="fas fa-times"></i>
-          </button>
+            <!-- Language Content -->
+            <section
+                class="language-content"
+                id="languageContent"
+                style="display: none"
+            >
+                <!-- Search and Filter Controls -->
+                <div class="controls-section">
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="যেকোনো শব্দ বা বাক্য খুঁজুন... (প্রতিটি অক্ষর স্ক্যান করা হয়)"
+                            class="search-input"
+                        />
+                        <i class="fas fa-search search-icon"></i>
+                        <button
+                            class="clear-search"
+                            id="clearSearch"
+                            style="display: none"
+                        >
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="filter-container">
+                        <button class="filter-btn active" data-filter="all">
+                            সব
+                        </button>
+                        <button class="filter-btn" data-filter="basic">
+                            মৌলিক
+                        </button>
+                        <button class="filter-btn" data-filter="travel">
+                            ভ্রমণ
+                        </button>
+                        <button class="filter-btn" data-filter="food">
+                            খাবার
+                        </button>
+                        <button class="filter-btn" data-filter="emergency">
+                            জরুরি
+                        </button>
+                        <button class="filter-btn" data-filter="learned">
+                            শেখা
+                        </button>
+                        <button class="filter-btn" data-filter="unlearned">
+                            অশেখা
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="progress-section">
+                    <h3>আপনার অগ্রগতি</h3>
+                    <div class="progress-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="learnedCount">0</span>
+                            <span class="stat-label">শেখা হয়েছে</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalCount">0</span>
+                            <span class="stat-label">মোট কথোপকথন</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="progressPercentage"
+                                >0%</span
+                            >
+                            <span class="stat-label">সম্পন্ন</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <button class="btn btn-secondary" id="resetProgress">
+                        অগ্রগতি রিসেট করুন
+                    </button>
+                </div>
+
+                <!-- Conversations List -->
+                <div class="conversations-header">
+                    <h3 id="conversationsTitle">কথোপকথন</h3>
+                    <div class="conversations-count">
+                        <span id="filteredCount">0</span> টি কথোপকথন দেখানো
+                        হচ্ছে
+                    </div>
+                </div>
+                <div
+                    class="conversations-container"
+                    id="conversationsContainer"
+                >
+                    <!-- Conversations will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState" style="display: none">
+                <div class="spinner"></div>
+                <p>ভাষা লোড হচ্ছে...</p>
+            </div>
+
+            <!-- Error State -->
+            <div class="error-state" id="errorState" style="display: none">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>ত্রুটি</h3>
+                <p id="errorMessage">ভাষা লোড করতে সমস্যা হয়েছে।</p>
+                <button class="btn btn-primary" onclick="location.reload()">
+                    পুনরায় চেষ্টা করুন
+                </button>
+            </div>
+        </main>
+
+        <!-- Side Menu -->
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-header">
+                <h3>মেনু</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-content">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    হোম
+                </a>
+                <a href="pages/about.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    আমাদের সম্পর্কে
+                </a>
+                <a href="pages/contact.html" class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    যোগাযোগ
+                </a>
+                <a href="pages/privacy.html" class="menu-item">
+                    <i class="fas fa-shield-alt"></i>
+                    গোপনীয়তা নীতি
+                </a>
+                <div class="menu-divider"></div>
+                <div class="menu-item theme-selector">
+                    <i class="fas fa-palette"></i>
+                    <span>থিম</span>
+                    <div class="theme-options">
+                        <button class="theme-btn" data-theme="light">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                        <button class="theme-btn" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-category="all">
-            <i class="fas fa-globe"></i> All
-          </button>
-          <button class="filter-btn" data-category="basic">
-            <i class="fas fa-hand-paper"></i> Basic
-          </button>
-          <button class="filter-btn" data-category="work">
-            <i class="fas fa-briefcase"></i> Work
-          </button>
-          <button class="filter-btn" data-category="emergency">
-            <i class="fas fa-exclamation-triangle"></i> Emergency
-          </button>
-        </div>
-      </div>
-    </div>
 
-    <!-- Progress Section -->
-    <div id="progress-section" class="progress-section" style="display: none;">
-      <div class="progress-card">
-        <h3><i class="fas fa-chart-line"></i> Your Progress</h3>
-        <div class="progress-stats">
-          <div class="stat-item">
-            <span class="stat-number" id="learned-count">0</span>
-            <span class="stat-label">Learned</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" id="total-count">0</span>
-            <span class="stat-label">Total</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" id="progress-percentage">0%</span>
-            <span class="stat-label">Progress</span>
-          </div>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-      </div>
-    </div>
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
 
-    <!-- Welcome Section -->
-    <div id="welcome-section" class="welcome-section">
-      <div class="welcome-card">
-        <h2><i class="fas fa-rocket"></i> স্বাগতম Speak EU তে!</h2>
-        <p class="welcome-text">
-          <strong class="brand-highlight">Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে। এই প্ল্যাটফর্মের মাধ্যমে আপনি সহজেই ইউরোপীয় ভাষাগুলি শিখতে পারবেন।
-        </p>
-        
-        <div class="quick-start">
-          <h3><i class="fas fa-play-circle"></i> দ্রুত শুরু করুন</h3>
-          <ol class="start-steps">
-            <li><i class="fas fa-language"></i> উপরে থেকে একটি ভাষা নির্বাচন করুন</li>
-            <li><i class="fas fa-book-open"></i> আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন</li>
-            <li><i class="fas fa-calendar-day"></i> প্রতিদিন ৫টি বাক্য চর্চা করুন</li>
-            <li><i class="fas fa-chart-bar"></i> আপনার অগ্রগতি ট্র্যাক করুন</li>
-          </ol>
-        </div>
+        <!-- Notification -->
+        <div class="notification" id="notification"></div>
 
-        <div class="featured-languages">
-          <h3><i class="fas fa-star"></i> জনপ্রিয় ভাষা</h3>
-          <div class="language-grid">
-            <button class="lang-quick-select" data-lang="italy">🇮🇹 Italian</button>
-            <button class="lang-quick-select" data-lang="spain">🇪🇸 Spanish</button>
-            <button class="lang-quick-select" data-lang="germany">🇩🇪 German</button>
-            <button class="lang-quick-select" data-lang="france">🇫🇷 French</button>
-            <button class="lang-quick-select" data-lang="greece">🇬🇷 Greek</button>
-            <button class="lang-quick-select" data-lang="portugal">🇵🇹 Portuguese</button>
-          </div>
-        </div>
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Speak EU</h4>
+                    <p>ইউরোপীয় ভাষা শিক্ষার সম্পূর্ণ সমাধান</p>
+                </div>
+                <div class="footer-section">
+                    <h4>দ্রুত লিংক</h4>
+                    <ul>
+                        <li><a href="index.html">হোম</a></li>
+                        <li><a href="pages/about.html">আমাদের সম্পর্কে</a></li>
+                        <li><a href="pages/contact.html">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>নীতিমালা</h4>
+                    <ul>
+                        <li><a href="pages/privacy.html">গোপনীয়তা নীতি</a></li>
+                        <li><a href="pages/terms.html">শর্তাবলী</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ২০২৫ Speak EU. সকল অধিকার সংরক্ষিত।</p>
+            </div>
+        </footer>
 
-        <div class="contact-section">
-          <h3><i class="fas fa-users"></i> আমাদের সাথে যুক্ত হন</h3>
-          <div class="social-links">
-            <a href="https://facebook.com" target="_blank" class="social-link">
-              <i class="fab fa-facebook"></i> Facebook
-            </a>
-            <a href="https://t.me" target="_blank" class="social-link">
-              <i class="fab fa-telegram"></i> Telegram
-            </a>
-            <a href="mailto:contact@speakeu.com" class="social-link">
-              <i class="fas fa-envelope"></i> Email
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Conversation Area -->
-    <div id="conversation-area" class="conversation-area"></div>
-
-    <!-- Loading Spinner -->
-    <div id="loading-spinner" class="loading-spinner" style="display: none;">
-      <div class="spinner"></div>
-      <p>Loading language data...</p>
-    </div>
-
-    <!-- Error Message -->
-    <div id="error-message" class="error-message" style="display: none;">
-      <i class="fas fa-exclamation-circle"></i>
-      <span id="error-text">Something went wrong. Please try again.</span>
-      <button id="retry-btn" class="retry-btn">
-        <i class="fas fa-redo"></i> Retry
-      </button>
-    </div>
-  </main>
-
-  <!-- Side Menu -->
-  <div id="side-menu" class="side-menu">
-    <div class="side-menu-header">
-      <h3><i class="fas fa-globe-europe"></i> Speak EU</h3>
-      <button id="close-menu" class="close-menu" title="Close menu">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <nav class="side-menu-nav">
-      <ul>
-        <li><a href="#" data-page="home"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#" data-page="about"><i class="fas fa-info-circle"></i> About</a></li>
-        <li><a href="#" data-page="progress"><i class="fas fa-chart-line"></i> Progress</a></li>
-        <li><a href="#" data-page="settings"><i class="fas fa-cog"></i> Settings</a></li>
-        <li><a href="#" data-page="contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        <li><a href="#" data-page="privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-      </ul>
-    </nav>
-    <div class="side-menu-footer">
-      <button id="clear-progress" class="clear-btn">
-        <i class="fas fa-trash"></i> Clear Progress
-      </button>
-    </div>
-  </div>
-
-  <!-- Menu Overlay -->
-  <div id="menu-overlay" class="menu-overlay"></div>
-
-  <!-- Audio Element for Pronunciation -->
-  <audio id="audio-player" preload="none"></audio>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
