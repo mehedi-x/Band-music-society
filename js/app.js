@@ -1,5 +1,5 @@
 // 🎯 Speak EU - Advanced Language Learning Platform
-// Main Application JavaScript
+// Main Application JavaScript for Bangladeshi Expatriates in Europe
 
 'use strict';
 
@@ -40,13 +40,14 @@ const CONFIG = {
     'sl': 'sl-SI',
     'et': 'et-EE',
     'lv': 'lv-LV',
-    'lt': 'lt-LT'
+    'lt': 'lt-LT',
+    'is': 'is-IS'
   }
 };
 
-// 🗺️ Language Data Structure
+// 🗺️ Complete Language Data Structure (28 Countries)
 const LANGUAGES = {
-  // Schengen Countries
+  // High Priority Schengen Countries (Major Destinations)
   germany: {
     code: 'de',
     name: 'জার্মান',
@@ -57,8 +58,9 @@ const LANGUAGES = {
     population: '83M',
     difficulty: 'intermediate',
     wordCount: 5284,
-    categories: 22,
-    priority: 'high'
+    categories: 23,
+    priority: 'high',
+    capital: 'বার্লিন'
   },
   france: {
     code: 'fr',
@@ -70,8 +72,9 @@ const LANGUAGES = {
     population: '68M',
     difficulty: 'intermediate',
     wordCount: 5156,
-    categories: 22,
-    priority: 'high'
+    categories: 23,
+    priority: 'high',
+    capital: 'প্যারিস'
   },
   italy: {
     code: 'it',
@@ -83,8 +86,9 @@ const LANGUAGES = {
     population: '60M',
     difficulty: 'beginner',
     wordCount: 4987,
-    categories: 21,
-    priority: 'high'
+    categories: 23,
+    priority: 'high',
+    capital: 'রোম'
   },
   spain: {
     code: 'es',
@@ -96,8 +100,9 @@ const LANGUAGES = {
     population: '47M',
     difficulty: 'beginner',
     wordCount: 5342,
-    categories: 22,
-    priority: 'high'
+    categories: 23,
+    priority: 'high',
+    capital: 'মাদ্রিদ'
   },
   netherlands: {
     code: 'nl',
@@ -109,112 +114,9 @@ const LANGUAGES = {
     population: '17M',
     difficulty: 'intermediate',
     wordCount: 4723,
-    categories: 20,
-    priority: 'medium'
-  },
-  belgium: {
-    code: 'nl',
-    name: 'ডাচ/ফরাসি',
-    nativeName: 'Nederlands/Français',
-    country: 'বেলজিয়াম',
-    flag: '🇧🇪',
-    type: 'schengen',
-    population: '11M',
-    difficulty: 'intermediate',
-    wordCount: 4156,
-    categories: 19,
-    priority: 'medium'
-  },
-  austria: {
-    code: 'de',
-    name: 'জার্মান',
-    nativeName: 'Deutsch',
-    country: 'অস্ট্রিয়া',
-    flag: '🇦🇹',
-    type: 'schengen',
-    population: '9M',
-    difficulty: 'intermediate',
-    wordCount: 4892,
-    categories: 21,
-    priority: 'medium'
-  },
-  portugal: {
-    code: 'pt',
-    name: 'পর্তুগিজ',
-    nativeName: 'Português',
-    country: 'পর্তুগাল',
-    flag: '🇵🇹',
-    type: 'schengen',
-    population: '10M',
-    difficulty: 'intermediate',
-    wordCount: 4567,
-    categories: 20,
-    priority: 'medium'
-  },
-  greece: {
-    code: 'el',
-    name: 'গ্রিক',
-    nativeName: 'Ελληνικά',
-    country: 'গ্রিস',
-    flag: '🇬🇷',
-    type: 'schengen',
-    population: '11M',
-    difficulty: 'advanced',
-    wordCount: 3987,
-    categories: 18,
-    priority: 'medium'
-  },
-  sweden: {
-    code: 'sv',
-    name: 'সুইডিশ',
-    nativeName: 'Svenska',
-    country: 'সুইডেন',
-    flag: '🇸🇪',
-    type: 'schengen',
-    population: '10M',
-    difficulty: 'intermediate',
-    wordCount: 4234,
-    categories: 19,
-    priority: 'medium'
-  },
-  norway: {
-    code: 'no',
-    name: 'নরওয়েজিয়ান',
-    nativeName: 'Norsk',
-    country: 'নরওয়ে',
-    flag: '🇳🇴',
-    type: 'schengen',
-    population: '5M',
-    difficulty: 'intermediate',
-    wordCount: 4156,
-    categories: 19,
-    priority: 'medium'
-  },
-  denmark: {
-    code: 'da',
-    name: 'ডেনিশ',
-    nativeName: 'Dansk',
-    country: 'ডেনমার্ক',
-    flag: '🇩🇰',
-    type: 'schengen',
-    population: '6M',
-    difficulty: 'intermediate',
-    wordCount: 3987,
-    categories: 18,
-    priority: 'medium'
-  },
-  finland: {
-    code: 'fi',
-    name: 'ফিনিশ',
-    nativeName: 'Suomi',
-    country: 'ফিনল্যান্ড',
-    flag: '🇫🇮',
-    type: 'schengen',
-    population: '6M',
-    difficulty: 'advanced',
-    wordCount: 3765,
-    categories: 17,
-    priority: 'low'
+    categories: 22,
+    priority: 'high',
+    capital: 'আমস্টার্ডাম'
   },
   poland: {
     code: 'pl',
@@ -226,8 +128,109 @@ const LANGUAGES = {
     population: '38M',
     difficulty: 'advanced',
     wordCount: 4432,
+    categories: 22,
+    priority: 'high',
+    capital: 'ওয়ারশ'
+  },
+
+  // Medium Priority Countries
+  belgium: {
+    code: 'nl',
+    name: 'ডাচ/ফরাসি',
+    nativeName: 'Nederlands/Français',
+    country: 'বেলজিয়াম',
+    flag: '🇧🇪',
+    type: 'schengen',
+    population: '11M',
+    difficulty: 'intermediate',
+    wordCount: 4156,
+    categories: 21,
+    priority: 'medium',
+    capital: 'ব্রাসেলস'
+  },
+  austria: {
+    code: 'de',
+    name: 'জার্মান',
+    nativeName: 'Deutsch (Österreich)',
+    country: 'অস্ট্রিয়া',
+    flag: '🇦🇹',
+    type: 'schengen',
+    population: '9M',
+    difficulty: 'intermediate',
+    wordCount: 4892,
+    categories: 21,
+    priority: 'medium',
+    capital: 'ভিয়েনা'
+  },
+  portugal: {
+    code: 'pt',
+    name: 'পর্তুগিজ',
+    nativeName: 'Português',
+    country: 'পর্তুগাল',
+    flag: '🇵🇹',
+    type: 'schengen',
+    population: '10M',
+    difficulty: 'intermediate',
+    wordCount: 4567,
+    categories: 21,
+    priority: 'medium',
+    capital: 'লিসবন'
+  },
+  greece: {
+    code: 'el',
+    name: 'গ্রিক',
+    nativeName: 'Ελληνικά',
+    country: 'গ্রিস',
+    flag: '🇬🇷',
+    type: 'schengen',
+    population: '11M',
+    difficulty: 'advanced',
+    wordCount: 3987,
     categories: 20,
-    priority: 'high'
+    priority: 'medium',
+    capital: 'এথেন্স'
+  },
+  sweden: {
+    code: 'sv',
+    name: 'সুইডিশ',
+    nativeName: 'Svenska',
+    country: 'সুইডেন',
+    flag: '🇸🇪',
+    type: 'schengen',
+    population: '10M',
+    difficulty: 'intermediate',
+    wordCount: 4234,
+    categories: 20,
+    priority: 'medium',
+    capital: 'স্টকহোম'
+  },
+  norway: {
+    code: 'no',
+    name: 'নরওয়েজিয়ান',
+    nativeName: 'Norsk',
+    country: 'নরওয়ে',
+    flag: '🇳🇴',
+    type: 'schengen',
+    population: '5M',
+    difficulty: 'intermediate',
+    wordCount: 4156,
+    categories: 20,
+    priority: 'medium',
+    capital: 'অসলো'
+  },
+  denmark: {
+    code: 'da',
+    name: 'ডেনিশ',
+    nativeName: 'Dansk',
+    country: 'ডেনমার্ক',
+    flag: '🇩🇰',
+    type: 'schengen',
+    population: '6M',
+    difficulty: 'intermediate',
+    wordCount: 3987,
+    categories: 19,
+    priority: 'medium',
+    capital: 'কোপেনহেগেন'
   },
   czechia: {
     code: 'cs',
@@ -239,8 +242,25 @@ const LANGUAGES = {
     population: '11M',
     difficulty: 'advanced',
     wordCount: 3876,
+    categories: 19,
+    priority: 'medium',
+    capital: 'প্রাগ'
+  },
+
+  // Lower Priority Schengen Countries
+  finland: {
+    code: 'fi',
+    name: 'ফিনিশ',
+    nativeName: 'Suomi',
+    country: 'ফিনল্যান্ড',
+    flag: '🇫🇮',
+    type: 'schengen',
+    population: '6M',
+    difficulty: 'advanced',
+    wordCount: 3765,
     categories: 18,
-    priority: 'medium'
+    priority: 'low',
+    capital: 'হেলসিঙ্কি'
   },
   slovakia: {
     code: 'sk',
@@ -252,8 +272,9 @@ const LANGUAGES = {
     population: '5M',
     difficulty: 'advanced',
     wordCount: 3654,
-    categories: 17,
-    priority: 'low'
+    categories: 18,
+    priority: 'low',
+    capital: 'ব্রাতিস্লাভা'
   },
   hungary: {
     code: 'hu',
@@ -265,8 +286,9 @@ const LANGUAGES = {
     population: '10M',
     difficulty: 'advanced',
     wordCount: 3543,
-    categories: 16,
-    priority: 'low'
+    categories: 17,
+    priority: 'low',
+    capital: 'বুদাপেস্ট'
   },
   slovenia: {
     code: 'sl',
@@ -278,8 +300,9 @@ const LANGUAGES = {
     population: '2M',
     difficulty: 'advanced',
     wordCount: 3234,
-    categories: 15,
-    priority: 'low'
+    categories: 16,
+    priority: 'low',
+    capital: 'লুবলিয়ানা'
   },
   croatia: {
     code: 'hr',
@@ -291,8 +314,9 @@ const LANGUAGES = {
     population: '4M',
     difficulty: 'advanced',
     wordCount: 3456,
-    categories: 16,
-    priority: 'low'
+    categories: 17,
+    priority: 'low',
+    capital: 'জাগ্রেব'
   },
   estonia: {
     code: 'et',
@@ -304,8 +328,9 @@ const LANGUAGES = {
     population: '1M',
     difficulty: 'advanced',
     wordCount: 2987,
-    categories: 14,
-    priority: 'low'
+    categories: 15,
+    priority: 'low',
+    capital: 'তালিন'
   },
   latvia: {
     code: 'lv',
@@ -317,8 +342,9 @@ const LANGUAGES = {
     population: '2M',
     difficulty: 'advanced',
     wordCount: 3123,
-    categories: 15,
-    priority: 'low'
+    categories: 16,
+    priority: 'low',
+    capital: 'রিগা'
   },
   lithuania: {
     code: 'lt',
@@ -330,8 +356,9 @@ const LANGUAGES = {
     population: '3M',
     difficulty: 'advanced',
     wordCount: 3234,
-    categories: 15,
-    priority: 'low'
+    categories: 16,
+    priority: 'low',
+    capital: 'ভিলনিউস'
   },
   luxembourg: {
     code: 'fr',
@@ -343,8 +370,9 @@ const LANGUAGES = {
     population: '0.6M',
     difficulty: 'intermediate',
     wordCount: 2876,
-    categories: 13,
-    priority: 'low'
+    categories: 14,
+    priority: 'low',
+    capital: 'লুক্সেমবার্গ'
   },
   malta: {
     code: 'en',
@@ -356,21 +384,23 @@ const LANGUAGES = {
     population: '0.5M',
     difficulty: 'beginner',
     wordCount: 2456,
-    categories: 12,
-    priority: 'low'
+    categories: 13,
+    priority: 'low',
+    capital: 'ভ্যালেত্তা'
   },
   cyprus: {
     code: 'el',
     name: 'গ্রিক',
-    nativeName: 'Ελληνικά',
+    nativeName: 'Ελληνικά (Κύπρος)',
     country: 'সাইপ্রাস',
     flag: '🇨🇾',
     type: 'schengen',
     population: '1M',
     difficulty: 'advanced',
     wordCount: 2789,
-    categories: 13,
-    priority: 'low'
+    categories: 14,
+    priority: 'low',
+    capital: 'নিকোসিয়া'
   },
   iceland: {
     code: 'is',
@@ -382,24 +412,26 @@ const LANGUAGES = {
     population: '0.4M',
     difficulty: 'advanced',
     wordCount: 2234,
-    categories: 11,
-    priority: 'low'
+    categories: 12,
+    priority: 'low',
+    capital: 'রেইকিয়াভিক'
   },
   liechtenstein: {
     code: 'de',
     name: 'জার্মান',
-    nativeName: 'Deutsch',
+    nativeName: 'Deutsch (Liechtenstein)',
     country: 'লিচেনস্টাইন',
     flag: '🇱🇮',
     type: 'schengen',
     population: '0.04M',
     difficulty: 'intermediate',
     wordCount: 1987,
-    categories: 10,
-    priority: 'low'
+    categories: 11,
+    priority: 'low',
+    capital: 'ভাদুৎস'
   },
-  
-  // Non-Schengen
+
+  // Non-Schengen (Special Case: Russia)
   russia: {
     code: 'ru',
     name: 'রুশ',
@@ -411,38 +443,177 @@ const LANGUAGES = {
     difficulty: 'advanced',
     wordCount: 5678,
     categories: 23,
-    priority: 'high'
+    priority: 'high',
+    capital: 'মস্কো'
   }
 };
 
-// 📊 Categories Configuration
+// 📊 Learning Categories (23 Categories)
 const CATEGORIES = {
-  daily: { name: 'দৈনন্দিন কথোপকথন', icon: '💬', priority: 1 },
-  greetings: { name: 'শুভেচ্ছা ও পরিচয়', icon: '👋', priority: 2 },
-  numbers: { name: 'সংখ্যা ও সময়', icon: '🔢', priority: 3 },
-  food: { name: 'খাবার ও পানীয়', icon: '🍽️', priority: 4 },
-  travel: { name: 'ভ্রমণ ও পরিবহন', icon: '✈️', priority: 5 },
-  accommodation: { name: 'থাকার ব্যবস্থা', icon: '🏨', priority: 6 },
-  work: { name: 'কাজ ও পেশা', icon: '💼', priority: 7 },
-  education: { name: 'শিক্ষা ও বিশ্ববিদ্যালয়', icon: '🎓', priority: 8 },
-  health: { name: 'স্বাস্থ্য ও চিকিৎসা', icon: '🏥', priority: 9 },
-  emergency: { name: 'জরুরি অবস্থা', icon: '🚨', priority: 10 },
-  shopping: { name: 'কেনাকাটা ও বাজার', icon: '🛍️', priority: 11 },
-  banking: { name: 'ব্যাংকিং ও আর্থিক', icon: '🏦', priority: 12 },
-  government: { name: 'সরকারি কাজ', icon: '🏛️', priority: 13 },
-  legal: { name: 'আইনি বিষয়', icon: '⚖️', priority: 14 },
-  technology: { name: 'প্রযুক্তি ও ইন্টারনেট', icon: '💻', priority: 15 },
-  weather: { name: 'আবহাওয়া ও প্রকৃতি', icon: '🌤️', priority: 16 },
-  family: { name: 'পরিবার ও সম্পর্ক', icon: '👨‍👩‍👧‍👦', priority: 17 },
-  hobbies: { name: 'শখ ও বিনোদন', icon: '🎮', priority: 18 },
-  sports: { name: 'খেলাধুলা ও ব্যায়াম', icon: '⚽', priority: 19 },
-  culture: { name: 'সংস্কৃতি ও ঐতিহ্য', icon: '🎭', priority: 20 },
-  directions: { name: 'দিকনির্দেশনা', icon: '🧭', priority: 21 },
-  clothing: { name: 'পোশাক ও ফ্যাশন', icon: '👕', priority: 22 },
-  body: { name: 'শরীর ও অঙ্গপ্রত্যঙ্গ', icon: '🧑‍⚕️', priority: 23 }
+  emergency: { 
+    name: 'জরুরি অবস্থা', 
+    icon: '🚨', 
+    priority: 1, 
+    description: 'জরুরি পরিস্থিতিতে সাহায্যের জন্য',
+    color: '#ff4757'
+  },
+  daily: { 
+    name: 'দৈনন্দিন কথোপকথন', 
+    icon: '💬', 
+    priority: 2,
+    description: 'প্রতিদিনের সাধারণ কথোপকথন',
+    color: '#3742fa'
+  },
+  greetings: { 
+    name: 'শুভেচ্ছা ও পরিচয়', 
+    icon: '👋', 
+    priority: 3,
+    description: 'অভিবাদন ও পরিচয় পর্ব',
+    color: '#2ed573'
+  },
+  work: { 
+    name: 'কাজ ও পেশা', 
+    icon: '💼', 
+    priority: 4,
+    description: 'কর্মক্ষেত্রে প্রয়োজনীয় কথোপকথন',
+    color: '#ff6348'
+  },
+  travel: { 
+    name: 'ভ্রমণ ও পরিবহন', 
+    icon: '✈️', 
+    priority: 5,
+    description: 'ভ্রমণ ও যাতায়াতের জন্য',
+    color: '#ff7675'
+  },
+  accommodation: { 
+    name: 'থাকার ব্যবস্থা', 
+    icon: '🏨', 
+    priority: 6,
+    description: 'হোটেল ও আবাসনের জন্য',
+    color: '#a29bfe'
+  },
+  education: { 
+    name: 'শিক্ষা ও বিশ্ববিদ্যালয়', 
+    icon: '🎓', 
+    priority: 7,
+    description: 'শিক্ষা প্রতিষ্ঠানে ব্যবহার',
+    color: '#6c5ce7'
+  },
+  health: { 
+    name: 'স্বাস্থ্য ও চিকিৎসা', 
+    icon: '🏥', 
+    priority: 8,
+    description: 'চিকিৎসা ও স্বাস্থ্য সেবা',
+    color: '#fd79a8'
+  },
+  shopping: { 
+    name: 'কেনাকাটা ও বাজার', 
+    icon: '🛍️', 
+    priority: 9,
+    description: 'বাজার ও দোকানে কেনাকাটা',
+    color: '#fdcb6e'
+  },
+  banking: { 
+    name: 'ব্যাংকিং ও আর্থিক', 
+    icon: '🏦', 
+    priority: 10,
+    description: 'ব্যাংক ও আর্থিক লেনদেন',
+    color: '#00b894'
+  },
+  government: { 
+    name: 'সরকারি কাজ', 
+    icon: '🏛️', 
+    priority: 11,
+    description: 'সরকারি অফিস ও কাগজপত্র',
+    color: '#00cec9'
+  },
+  legal: { 
+    name: 'আইনি বিষয়', 
+    icon: '⚖️', 
+    priority: 12,
+    description: 'আইনি সাহায্য ও পরামর্শ',
+    color: '#74b9ff'
+  },
+  numbers: { 
+    name: 'সংখ্যা ও সময়', 
+    icon: '🔢', 
+    priority: 13,
+    description: 'সংখ্যা, সময় ও তারিখ',
+    color: '#0984e3'
+  },
+  food: { 
+    name: 'খাবার ও পানীয়', 
+    icon: '🍽️', 
+    priority: 14,
+    description: 'রেস্তোরাঁ ও খাবারের অর্ডার',
+    color: '#e84393'
+  },
+  technology: { 
+    name: 'প্রযুক্তি ও ইন্টারনেট', 
+    icon: '💻', 
+    priority: 15,
+    description: 'কম্পিউটার ও ইন্টারনেট সেবা',
+    color: '#9b59b6'
+  },
+  weather: { 
+    name: 'আবহাওয়া ও প্রকৃতি', 
+    icon: '🌤️', 
+    priority: 16,
+    description: 'আবহাওয়া ও প্রাকৃতিক বিষয়',
+    color: '#f39c12'
+  },
+  family: { 
+    name: 'পরিবার ও সম্পর্ক', 
+    icon: '👨‍👩‍👧‍👦', 
+    priority: 17,
+    description: 'পারিবারিক সম্পর্ক ও পরিচয়',
+    color: '#e67e22'
+  },
+  hobbies: { 
+    name: 'শখ ও বিনোদন', 
+    icon: '🎮', 
+    priority: 18,
+    description: 'বিনোদন ও অবসর সময়',
+    color: '#27ae60'
+  },
+  sports: { 
+    name: 'খেলাধুলা ও ব্যায়াম', 
+    icon: '⚽', 
+    priority: 19,
+    description: 'খেলা ও শারীরিক ব্যায়াম',
+    color: '#16a085'
+  },
+  culture: { 
+    name: 'সংস্কৃতি ও ঐতিহ্য', 
+    icon: '🎭', 
+    priority: 20,
+    description: 'স্থানীয় সংস্কৃতি ও ঐতিহ্য',
+    color: '#8e44ad'
+  },
+  directions: { 
+    name: 'দিকনির্দেশনা', 
+    icon: '🧭', 
+    priority: 21,
+    description: 'রাস্তা ও দিক জিজ্ঞাসা',
+    color: '#2c3e50'
+  },
+  clothing: { 
+    name: 'পোশাক ও ফ্যাশন', 
+    icon: '👕', 
+    priority: 22,
+    description: 'কাপড়চোপড় ও ফ্যাশন',
+    color: '#34495e'
+  },
+  body: { 
+    name: 'শরীর ও অঙ্গপ্রত্যঙ্গ', 
+    icon: '🧑‍⚕️', 
+    priority: 23,
+    description: 'শরীরের অংশ ও স্বাস্থ্য',
+    color: '#95a5a6'
+  }
 };
 
-// 🎯 Application State
+// 🎯 Application State Management
 class AppState {
   constructor() {
     this.currentLanguage = null;
@@ -451,6 +622,8 @@ class AppState {
     this.userProgress = new Map();
     this.favorites = new Set();
     this.searchResults = [];
+    this.currentVocabularyIndex = 0;
+    this.displayedVocabulary = [];
     this.filters = {
       category: 'all',
       difficulty: 'all',
@@ -461,7 +634,8 @@ class AppState {
       autoPlay: true,
       speechRate: 1,
       fontSize: 'medium',
-      notifications: true
+      notifications: true,
+      language: 'bn'
     };
     this.isLoading = false;
     this.loadProgress = 0;
@@ -470,15 +644,18 @@ class AppState {
   // 💾 Storage Methods
   save() {
     try {
-      localStorage.setItem(CONFIG.STORAGE_PREFIX + 'state', JSON.stringify({
+      const stateData = {
         currentLanguage: this.currentLanguage,
         userProgress: Array.from(this.userProgress.entries()),
         favorites: Array.from(this.favorites),
         settings: this.settings,
-        filters: this.filters
-      }));
+        filters: this.filters,
+        currentVocabularyIndex: this.currentVocabularyIndex
+      };
+      localStorage.setItem(CONFIG.STORAGE_PREFIX + 'state', JSON.stringify(stateData));
+      console.log('✅ State saved successfully');
     } catch (error) {
-      console.error('Failed to save state:', error);
+      console.error('❌ Failed to save state:', error);
     }
   }
 
@@ -492,38 +669,63 @@ class AppState {
         this.favorites = new Set(data.favorites || []);
         this.settings = { ...this.settings, ...data.settings };
         this.filters = { ...this.filters, ...data.filters };
+        this.currentVocabularyIndex = data.currentVocabularyIndex || 0;
+        console.log('✅ State loaded successfully');
       }
     } catch (error) {
-      console.error('Failed to load state:', error);
+      console.error('❌ Failed to load state:', error);
     }
   }
 
-  // 📊 Progress Methods
-  getTodayProgress(language = null) {
-    const lang = language || this.currentLanguage;
+  // 📈 Progress Methods
+  updateProgress(languageKey, wordsLearned = 1) {
     const today = new Date().toDateString();
-    const key = `${lang}_${today}`;
-    return this.userProgress.get(key) || { learned: 0, target: CONFIG.DAILY_TARGET };
-  }
-
-  updateProgress(language, increment = 1) {
-    const today = new Date().toDateString();
-    const key = `${language}_${today}`;
-    const current = this.getTodayProgress(language);
-    current.learned += increment;
+    const key = `${languageKey}_${today}`;
+    
+    const current = this.userProgress.get(key) || {
+      date: today,
+      language: languageKey,
+      learned: 0,
+      target: CONFIG.DAILY_TARGET,
+      streak: 0
+    };
+    
+    current.learned += wordsLearned;
     this.userProgress.set(key, current);
     this.save();
-    this.notifyProgressUpdate(language, current);
+    
+    return current;
   }
 
-  getStreak(language = null) {
-    const lang = language || this.currentLanguage;
+  getTodayProgress(languageKey) {
+    const today = new Date().toDateString();
+    const key = `${languageKey}_${today}`;
+    return this.userProgress.get(key) || {
+      date: today,
+      language: languageKey,
+      learned: 0,
+      target: CONFIG.DAILY_TARGET,
+      streak: 0
+    };
+  }
+
+  getTotalLearned(languageKey) {
+    let total = 0;
+    for (const [key, progress] of this.userProgress) {
+      if (key.startsWith(languageKey + '_')) {
+        total += progress.learned;
+      }
+    }
+    return total;
+  }
+
+  getStreak(languageKey) {
     let streak = 0;
     let currentDate = new Date();
     
-    while (true) {
+    while (streak < 365) { // Prevent infinite loop
       const dateStr = currentDate.toDateString();
-      const key = `${lang}_${dateStr}`;
+      const key = `${languageKey}_${dateStr}`;
       const progress = this.userProgress.get(key);
       
       if (progress && progress.learned > 0) {
@@ -536,35 +738,19 @@ class AppState {
     
     return streak;
   }
-
-  getTotalLearned(language = null) {
-    const lang = language || this.currentLanguage;
-    let total = 0;
-    for (const [key, progress] of this.userProgress) {
-      if (key.startsWith(lang + '_')) {
-        total += progress.learned;
-      }
-    }
-    return total;
-  }
-
-  notifyProgressUpdate(language, progress) {
-    const event = new CustomEvent('progressUpdate', {
-      detail: { language, progress, streak: this.getStreak(language) }
-    });
-    document.dispatchEvent(event);
-  }
 }
 
-// 🎯 Core Application Class
+// 🚀 Main Application Class
 class SpeakEU {
   constructor() {
+    console.log('🏗️ Initializing Speak EU Application...');
+    
     this.state = new AppState();
     this.speechSynth = window.speechSynthesis;
-    this.recognition = null;
     this.currentAudio = null;
     this.searchTimeout = null;
     this.intersectionObserver = null;
+    this.loadingProgress = 0;
     
     // Bind methods
     this.handleResize = this.handleResize.bind(this);
@@ -573,134 +759,219 @@ class SpeakEU {
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
   }
 
-  // 🚀 Initialization
+  // 🚀 Initialize Application
   async init() {
     try {
-      console.log('🚀 Initializing Speak EU...');
+      console.log('🚀 Starting Speak EU initialization...');
+      
+      // Show loading screen
+      this.showLoadingScreen(true);
       
       // Load saved state
+      this.updateLoadingProgress(10, 'সেভ করা ডেটা লোড হচ্ছে...');
       this.state.load();
       
-      // Initialize components
+      // Initialize core components
+      this.updateLoadingProgress(20, 'মূল কম্পোনেন্ট চালু হচ্ছে...');
       await this.initializeComponents();
       
       // Setup event listeners
+      this.updateLoadingProgress(40, 'ইভেন্ট লিসেনার সেটআপ হচ্ছে...');
       this.setupEventListeners();
       
       // Apply saved settings
+      this.updateLoadingProgress(60, 'সেটিংস প্রয়োগ হচ্ছে...');
       this.applySettings();
       
-      // Start loading process
-      await this.startLoadingProcess();
+      // Initialize navigation
+      this.updateLoadingProgress(70, 'নেভিগেশন সিস্টেম চালু হচ্ছে...');
+      this.initializeNavigation();
       
       // Initialize PWA features
+      this.updateLoadingProgress(80, 'PWA ফিচার চালু হচ্ছে...');
       this.initializePWA();
+      
+      // Load initial content
+      this.updateLoadingProgress(90, 'প্রাথমিক কন্টেন্ট লোড হচ্ছে...');
+      await this.loadInitialContent();
+      
+      // Complete initialization
+      this.updateLoadingProgress(100, 'সম্পূর্ণ হয়েছে!');
+      
+      // Hide loading screen
+      setTimeout(() => {
+        this.showLoadingScreen(false);
+        this.showWelcomeMessage();
+      }, 500);
       
       console.log('✅ Speak EU initialized successfully');
       
     } catch (error) {
-      console.error('❌ Failed to initialize app:', error);
-      this.showError('অ্যাপ লোড করতে সমস্যা হয়েছে। পেজ রিফ্রেশ করুন।');
+      console.error('❌ Initialization failed:', error);
+      this.showError('অ্যাপ্লিকেশন লোড করতে সমস্যা হয়েছে। দয়া করে পেজ রিফ্রেশ করুন।');
+      this.showLoadingScreen(false);
     }
   }
 
-  async initializeComponents() {
-    // Initialize UI components
-    this.initializeNavigation();
-    this.initializeSearch();
-    this.initializeThemeToggle();
-    this.initializeMobileMenu();
-    this.initializeLanguageSelector();
-    this.initializeIntersectionObserver();
+  // 📊 Loading Progress
+  updateLoadingProgress(percentage, message) {
+    this.loadingProgress = percentage;
     
-    // Load initial data
-    await this.loadInitialData();
+    const progressBar = document.querySelector('.loading-progress-fill');
+    const progressText = document.querySelector('.loading-text');
+    const progressPercent = document.querySelector('.loading-percentage');
+    
+    if (progressBar) {
+      progressBar.style.width = `${percentage}%`;
+    }
+    
+    if (progressText) {
+      progressText.textContent = message;
+    }
+    
+    if (progressPercent) {
+      progressPercent.textContent = `${percentage}%`;
+    }
+    
+    console.log(`📊 Loading Progress: ${percentage}% - ${message}`);
   }
 
-  async startLoadingProcess() {
+  showLoadingScreen(show) {
     const loadingScreen = document.getElementById('loadingScreen');
-    const progressFill = document.getElementById('loadingProgress');
-    const progressText = document.getElementById('loadingPercentage');
+    if (loadingScreen) {
+      if (show) {
+        loadingScreen.style.display = 'flex';
+        loadingScreen.classList.remove('fade-out');
+      } else {
+        loadingScreen.classList.add('fade-out');
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }
+    }
+  }
+
+  showWelcomeMessage() {
+    // Show welcome toast
+    this.showToast('স্বাগতম! Speak EU তে আপনাকে স্বাগত জানাই', 'success', 4000);
     
-    const steps = [
-      { name: 'থিম লোড হচ্ছে...', duration: 200 },
-      { name: 'ভাষার ডেটা প্রস্তুত করা হচ্ছে...', duration: 500 },
-      { name: 'UI কম্পোনেন্ট সেটআপ...', duration: 300 },
-      { name: 'অডিও সিস্টেম চেক...', duration: 400 },
-      { name: 'ব্যবহারকারীর ডেটা লোড...', duration: 200 },
-      { name: 'চূড়ান্ত প্রস্তুতি...', duration: 300 }
+    // If first time user, show tour
+    const isFirstTime = !localStorage.getItem(CONFIG.STORAGE_PREFIX + 'visited');
+    if (isFirstTime) {
+      localStorage.setItem(CONFIG.STORAGE_PREFIX + 'visited', 'true');
+      setTimeout(() => {
+        this.showAppTour();
+      }, 2000);
+    }
+  }
+
+  showAppTour() {
+    const tourSteps = [
+      {
+        element: '.hero-content',
+        title: 'স্বাগতম!',
+        content: 'Speak EU তে ২৮টি ইউরোপীয় দেশের ভাষা শিখুন। বাংলাদেশী প্রবাসীদের জন্য বিশেষভাবে তৈরি।'
+      },
+      {
+        element: '.quick-actions',
+        title: 'দ্রুত কাজ',
+        content: 'জরুরি প্রয়োজনে দ্রুত ফ্রেজ খুঁজুন। কাজ, ভ্রমণ বা দৈনন্দিন কথোপকথনের জন্য।'
+      },
+      {
+        element: '.nav-item[data-section="languages"]',
+        title: 'ভাষা তালিকা',
+        content: 'সব ইউরোপীয় দেশের ভাষা দেখুন এবং আপনার পছন্দের ভাষা বেছে নিন।'
+      }
     ];
     
-    let currentProgress = 0;
-    const totalSteps = steps.length;
-    
-    for (let i = 0; i < totalSteps; i++) {
-      const step = steps[i];
-      document.querySelector('.loading-text').textContent = step.name;
-      
-      // Animate progress
-      const targetProgress = ((i + 1) / totalSteps) * 100;
-      await this.animateProgress(progressFill, progressText, currentProgress, targetProgress);
-      currentProgress = targetProgress;
-      
-      // Wait for step duration
-      await this.delay(step.duration);
-    }
-    
-    // Hide loading screen
-    await this.delay(200);
-    loadingScreen.classList.add('hidden');
-    document.body.setAttribute('data-loading', 'false');
-    
-    // Show main content with animation
-    this.showMainContent();
+    this.showToast('💡 টিপ: অ্যাপটি কীভাবে ব্যবহার করবেন তা জানতে গাইড দেখুন', 'info', 3000);
   }
 
-  async animateProgress(progressFill, progressText, start, end) {
-    return new Promise(resolve => {
-      const duration = 200;
-      const startTime = performance.now();
+  // 🔧 Initialize Core Components
+  async initializeComponents() {
+    console.log('🔧 Initializing core components...');
+    
+    // Initialize network status
+    this.initializeNetworkStatus();
+    
+    // Initialize error handlers
+    this.initializeErrorHandlers();
+    
+    // Initialize intersection observer
+    this.initializeIntersectionObserver();
+    
+    // Initialize search
+    this.initializeSearch();
+    
+    // Initialize mobile menu
+    this.initializeMobileMenu();
+    
+    // Initialize theme toggle
+    this.initializeThemeToggle();
+    
+    // Simulate loading delay
+    await this.delay(300);
+  }
+
+  // 📡 Network Status
+  initializeNetworkStatus() {
+    const updateNetworkStatus = () => {
+      const isOnline = navigator.onLine;
+      const networkStatus = document.getElementById('networkStatus');
       
-      const animate = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        const currentValue = start + (end - start) * progress;
-        progressFill.style.width = `${currentValue}%`;
-        progressText.textContent = `${Math.round(currentValue)}%`;
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate);
+      if (networkStatus) {
+        if (isOnline) {
+          networkStatus.className = 'network-status online';
+          networkStatus.innerHTML = '<span class="network-icon">📶</span><span>অনলাইন</span>';
+          setTimeout(() => {
+            networkStatus.classList.remove('visible');
+          }, 2000);
         } else {
-          resolve();
+          networkStatus.className = 'network-status offline visible';
+          networkStatus.innerHTML = '<span class="network-icon">📴</span><span>অফলাইন মোড</span>';
         }
-      };
-      
-      requestAnimationFrame(animate);
-    });
-  }
-
-  showMainContent() {
-    const mainContent = document.getElementById('mainContent');
-    mainContent.classList.add('animate-fadeInUp');
+      }
+    };
     
-    // Animate homepage elements
-    this.animateHomepageElements();
-  }
-
-  animateHomepageElements() {
-    const elements = document.querySelectorAll('.hero-section, .quick-access, .popular-languages, .learning-paths');
-    elements.forEach((element, index) => {
-      setTimeout(() => {
-        element.classList.add('animate-fadeInUp');
-      }, index * 100);
+    // Initial check
+    updateNetworkStatus();
+    
+    // Listen for network changes
+    window.addEventListener('online', () => {
+      updateNetworkStatus();
+      this.showToast('ইন্টারনেট সংযোগ পুনরায় স্থাপিত হয়েছে', 'success');
+    });
+    
+    window.addEventListener('offline', () => {
+      updateNetworkStatus();
+      this.showToast('অফলাইন মোডে কাজ করছে', 'warning');
     });
   }
 
-  // 🎯 Navigation System
+  // ⚠️ Error Handlers
+  initializeErrorHandlers() {
+    // Global error handler
+    window.addEventListener('error', (event) => {
+      console.error('Global error:', event.error);
+      this.trackError('javascript_error', event.error?.message || 'Unknown error');
+    });
+    
+    // Promise rejection handler
+    window.addEventListener('unhandledrejection', (event) => {
+      console.error('Unhandled promise rejection:', event.reason);
+      this.trackError('promise_rejection', event.reason?.message || 'Promise rejection');
+    });
+  }
+
+  trackError(type, message) {
+    // In production, this would send to analytics
+    console.log(`📊 Error tracked: ${type} - ${message}`);
+  }
+
+  // 🧭 Navigation System
   initializeNavigation() {
-    const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
-    
+    // Desktop navigation
+    const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
@@ -709,63 +980,65 @@ class SpeakEU {
       });
     });
     
-    // Handle browser back/forward
-    window.addEventListener('popstate', (e) => {
-      const section = e.state?.section || 'home';
-      this.navigateToSection(section, false);
+    // Mobile navigation
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+    mobileNavItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = item.getAttribute('data-section');
+        this.navigateToSection(section);
+        this.closeMobileMenu();
+      });
+    });
+    
+    // Quick action buttons
+    const actionButtons = document.querySelectorAll('[data-action]');
+    actionButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const action = button.getAttribute('data-action');
+        this.handleQuickAction(action);
+      });
     });
   }
 
-  navigateToSection(section, pushState = true) {
-    // Update URL
-    if (pushState) {
-      history.pushState({ section }, '', `#${section}`);
-    }
-    
-    // Update navigation
-    this.updateActiveNavigation(section);
-    
-    // Show section
-    this.showSection(section);
-    
-    // Update state
-    this.state.currentSection = section;
+  navigateToSection(sectionName) {
+    // Update navigation state
+    this.state.currentSection = sectionName;
     this.state.save();
     
-    // Close mobile menu if open
-    this.closeMobileMenu();
-    
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  updateActiveNavigation(section) {
-    const allNavItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
-    allNavItems.forEach(item => {
-      item.classList.toggle('active', item.getAttribute('data-section') === section);
-    });
-  }
-
-  showSection(section) {
-    const allSections = document.querySelectorAll('.content-section');
-    allSections.forEach(sec => {
-      sec.classList.remove('active');
+    // Update active nav items
+    document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('data-section') === sectionName) {
+        item.classList.add('active');
+      }
     });
     
-    const targetSection = document.getElementById(`${section}Section`);
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Show target section
+    const targetSection = document.getElementById(sectionName + 'Section');
     if (targetSection) {
       targetSection.classList.add('active');
-      targetSection.classList.add('animate-fadeIn');
       
-      // Load section-specific content
-      this.loadSectionContent(section);
+      // Load section content
+      this.loadSectionContent(sectionName);
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    
+    console.log(`📍 Navigated to: ${sectionName}`);
   }
 
-  async loadSectionContent(section) {
-    switch (section) {
+  async loadSectionContent(sectionName) {
+    switch (sectionName) {
       case 'home':
-        this.loadHomepageContent();
+        this.loadHomeContent();
         break;
       case 'languages':
         this.loadLanguagesContent();
@@ -779,12 +1052,141 @@ class SpeakEU {
     }
   }
 
-  // 🏠 Homepage Content
-  loadHomepageContent() {
+  handleQuickAction(action) {
+    switch (action) {
+      case 'start-learning':
+        this.navigateToSection('learn');
+        break;
+      case 'browse-languages':
+        this.navigateToSection('languages');
+        break;
+      case 'emergency':
+        this.showQuickPhrases('emergency');
+        break;
+      case 'daily':
+        this.showQuickPhrases('daily');
+        break;
+      case 'work':
+        this.showQuickPhrases('work');
+        break;
+      case 'travel':
+        this.showQuickPhrases('travel');
+        break;
+    }
+  }
+
+  showQuickPhrases(category) {
+    // Show modal with quick phrases for the category
+    const modal = this.createQuickPhrasesModal(category);
+    document.body.appendChild(modal);
+    
+    // Show modal with animation
+    requestAnimationFrame(() => {
+      modal.classList.add('visible');
+    });
+  }
+
+  createQuickPhrasesModal(category) {
+    const categoryInfo = CATEGORIES[category];
+    const modal = document.createElement('div');
+    modal.className = 'quick-phrases-modal';
+    modal.innerHTML = `
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>${categoryInfo.icon} ${categoryInfo.name}</h3>
+          <button class="modal-close" onclick="this.closest('.quick-phrases-modal').remove()">
+            <span>✕</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="category-description">${categoryInfo.description}</p>
+          <div class="quick-phrases-list">
+            ${this.generateQuickPhrases(category)}
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" onclick="app.selectQuickCategory('${category}')">
+              <span class="btn-icon">🚀</span>
+              <span>এই ক্যাটাগরি শিখুন</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Add click handler for backdrop
+    modal.querySelector('.modal-backdrop').addEventListener('click', () => {
+      modal.remove();
+    });
+    
+    return modal;
+  }
+
+  generateQuickPhrases(category) {
+    const samplePhrases = this.getSamplePhrasesForCategory(category);
+    
+    return samplePhrases.map(phrase => `
+      <div class="quick-phrase-item">
+        <div class="phrase-content">
+          <div class="phrase-text">${phrase.text}</div>
+          <div class="phrase-translation">${phrase.translation}</div>
+        </div>
+        <button class="phrase-audio-btn" onclick="app.speakText('${phrase.text}', 'en')">
+          <span>🔊</span>
+        </button>
+      </div>
+    `).join('');
+  }
+
+  getSamplePhrasesForCategory(category) {
+    const phrases = {
+      emergency: [
+        { text: "Help me!", translation: "আমাকে সাহায্য করুন!" },
+        { text: "Call the police!", translation: "পুলিশ ডাকুন!" },
+        { text: "I need a doctor", translation: "আমার ডাক্তার দরকার" },
+        { text: "Where is the hospital?", translation: "হাসপাতাল কোথায়?" }
+      ],
+      work: [
+        { text: "I have an appointment", translation: "আমার একটি অ্যাপয়েন্টমেন্ট আছে" },
+        { text: "Where is the office?", translation: "অফিস কোথায়?" },
+        { text: "I work here", translation: "আমি এখানে কাজ করি" },
+        { text: "Can you help me?", translation: "আপনি কি আমাকে সাহায্য করতে পারেন?" }
+      ],
+      travel: [
+        { text: "Where is the train station?", translation: "ট্রেন স্টেশন কোথায়?" },
+        { text: "How much is the ticket?", translation: "টিকিটের দাম কত?" },
+        { text: "When does the bus arrive?", translation: "বাস কখন আসবে?" },
+        { text: "I want to go to...", translation: "আমি যেতে চাই..." }
+      ],
+      daily: [
+        { text: "Good morning", translation: "সুপ্রভাত" },
+        { text: "Thank you", translation: "ধন্যবাদ" },
+        { text: "Excuse me", translation: "দুঃখিত" },
+        { text: "How are you?", translation: "আপনি কেমন আছেন?" }
+      ]
+    };
+    
+    return phrases[category] || phrases.daily;
+  }
+
+  selectQuickCategory(category) {
+    // Close modal
+    document.querySelector('.quick-phrases-modal')?.remove();
+    
+    // Navigate to learn section with category filter
+    this.state.filters.category = category;
+    this.navigateToSection('learn');
+    
+    // Show success message
+    const categoryInfo = CATEGORIES[category];
+    this.showToast(`${categoryInfo.name} ক্যাটাগরি নির্বাচিত হয়েছে`, 'success');
+  }
+
+  // 🏠 Home Content
+  loadHomeContent() {
     this.loadPopularLanguages();
-    this.setupQuickAccess();
-    this.setupLearningPaths();
-    this.updateHomepageStats();
+    this.updateHomeStats();
+    this.loadRecentActivity();
   }
 
   loadPopularLanguages() {
@@ -799,540 +1201,159 @@ class SpeakEU {
       this.createLanguageCard(key, lang, 'compact')
     ).join('');
     
-    // Add stagger animation
-    container.classList.add('stagger-children');
-  }
-
-  createLanguageCard(key, lang, variant = 'full') {
-    const progress = this.state.getTodayProgress(key);
-    const totalLearned = this.state.getTotalLearned(key);
-    const streak = this.state.getStreak(key);
-    
-    const compactClass = variant === 'compact' ? 'language-card-compact' : '';
-    
-    return `
-      <div class="language-card ${compactClass} grid-animate" data-language="${key}">
-        <div class="language-header">
-          <span class="language-flag">${lang.flag}</span>
-          <span class="language-type">${lang.type === 'schengen' ? 'শেনজেন' : 'নন-শেনজেন'}</span>
-        </div>
-        <div class="language-content">
-          <h3 class="language-name">${lang.name}</h3>
-          <p class="language-info">${lang.country} • ${lang.population} জনসংখ্যা</p>
-          <div class="language-stats">
-            <div class="language-stat">
-              <span class="stat-number">${lang.wordCount.toLocaleString()}</span>
-              <span class="stat-label">শব্দ</span>
-            </div>
-            <div class="language-stat">
-              <span class="stat-number">${lang.categories}</span>
-              <span class="stat-label">ক্যাটাগরি</span>
-            </div>
-            <div class="language-stat">
-              <span class="stat-number">${totalLearned}</span>
-              <span class="stat-label">শিখেছি</span>
-            </div>
-          </div>
-          ${variant === 'full' ? `
-            <div class="language-progress">
-              <div class="progress-info">
-                <span>আজকের অগ্রগতি: ${progress.learned}/${progress.target}</span>
-                <span>${Math.round((progress.learned / progress.target) * 100)}%</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: ${Math.min((progress.learned / progress.target) * 100, 100)}%"></div>
-              </div>
-            </div>
-          ` : ''}
-          <div class="language-actions">
-            <button class="btn btn-primary btn-small" onclick="app.selectLanguage('${key}')">
-              <span class="btn-icon">🚀</span>
-              <span>শুরু করুন</span>
-            </button>
-            ${variant === 'full' ? `
-              <button class="btn btn-outline btn-small" onclick="app.showLanguageDetails('${key}')">
-                <span class="btn-icon">ℹ️</span>
-                <span>বিস্তারিত</span>
-              </button>
-            ` : ''}
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  setupQuickAccess() {
-    const quickCards = document.querySelectorAll('.quick-card');
-    quickCards.forEach(card => {
+    // Add click handlers
+    container.querySelectorAll('.language-card').forEach(card => {
       card.addEventListener('click', () => {
-        const action = card.getAttribute('data-action');
-        this.handleQuickAction(action);
+        const languageKey = card.getAttribute('data-language');
+        if (languageKey) {
+          this.selectLanguage(languageKey);
+        }
       });
     });
   }
 
-  handleQuickAction(action) {
-    switch (action) {
-      case 'emergency':
-        this.showEmergencyPhrases();
-        break;
-      case 'daily':
-        this.showDailyConversation();
-        break;
-      case 'work':
-        this.showWorkplacePhrases();
-        break;
-      case 'travel':
-        this.showTravelPhrases();
-        break;
+  updateHomeStats() {
+    // Calculate total statistics
+    const totalWords = Object.values(LANGUAGES)
+      .reduce((sum, lang) => sum + lang.wordCount, 0);
+    
+    const totalCountries = Object.keys(LANGUAGES).length;
+    const totalCategories = Object.keys(CATEGORIES).length;
+    
+    // Update stat displays
+    const statsElements = [
+      { selector: '[data-stat="countries"]', value: totalCountries },
+      { selector: '[data-stat="words"]', value: (totalWords / 1000).toFixed(0) + 'K+' },
+      { selector: '[data-stat="categories"]', value: totalCategories },
+    ];
+    
+    statsElements.forEach(({ selector, value }) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        this.animateNumber(element, value);
+      }
+    });
+  }
+
+  animateNumber(element, finalValue) {
+    const isNumeric = !isNaN(finalValue);
+    if (isNumeric) {
+      let current = 0;
+      const increment = finalValue / 20;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= finalValue) {
+          current = finalValue;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+      }, 50);
+    } else {
+      element.textContent = finalValue;
     }
   }
 
-  setupLearningPaths() {
-    const pathCards = document.querySelectorAll('.path-card');
-    pathCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const path = card.getAttribute('data-path');
-        this.startLearningPath(path);
-      });
-    });
+  loadRecentActivity() {
+    const container = document.getElementById('recentActivity');
+    if (!container) return;
+    
+    // Get recent learning activity
+    const recentLearning = Array.from(this.state.userProgress.entries())
+      .sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
+      .slice(0, 5);
+    
+    if (recentLearning.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">📚</div>
+          <p>আপনি এখনো কোনো ভাষা শিখতে শুরু করেননি</p>
+          <button class="btn btn-primary" onclick="app.navigateToSection('learn')">
+            <span class="btn-icon">🚀</span>
+            <span>শিখতে শুরু করুন</span>
+          </button>
+        </div>
+      `;
+      return;
+    }
+    
+    container.innerHTML = recentLearning.map(([key, progress]) => {
+      const language = LANGUAGES[progress.language];
+      return `
+        <div class="activity-item">
+          <div class="activity-icon">${language?.flag || '🏳️'}</div>
+          <div class="activity-content">
+            <div class="activity-title">${language?.name || 'Unknown'}</div>
+            <div class="activity-details">${progress.learned} টি শব্দ শেখা হয়েছে</div>
+          </div>
+          <div class="activity-date">${this.formatDate(progress.date)}</div>
+        </div>
+      `;
+    }).join('');
   }
 
-  startLearningPath(path) {
-    // Store selected path
-    this.state.selectedPath = path;
-    this.state.save();
+  formatDate(dateString) {
+    const date = new Date(dateString);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
     
-    // Navigate to languages section with path filter
-    this.navigateToSection('languages');
-    
-    // Show toast
-    this.showToast(`${path === 'student' ? 'স্টুডেন্ট' : path === 'worker' ? 'ওয়ার্কার' : 'ট্যুরিস্ট'} পাথ নির্বাচিত হয়েছে`, 'success');
-  }
-
-  updateHomepageStats() {
-    const totalLanguages = Object.keys(LANGUAGES).length;
-    const totalWords = Object.values(LANGUAGES).reduce((sum, lang) => sum + lang.wordCount, 0);
-    const totalCategories = Object.keys(CATEGORIES).length;
-    
-    // Update stats in hero section
-    const statCards = document.querySelectorAll('.stat-card');
-    if (statCards.length >= 3) {
-      statCards[0].querySelector('.stat-number').textContent = totalLanguages;
-      statCards[1].querySelector('.stat-number').textContent = `${Math.round(totalWords / 1000)}K+`;
-      statCards[2].querySelector('.stat-number').textContent = `${totalCategories}+`;
+    if (date.toDateString() === today.toDateString()) {
+      return 'আজ';
+    } else if (date.toDateString() === yesterday.toDateString()) {
+      return 'গতকাল';
+    } else {
+      return date.toLocaleDateString('bn-BD');
     }
   }
 
   // 🌍 Languages Content
   loadLanguagesContent() {
-    this.setupLanguageFilter();
     this.renderLanguagesGrid();
+    this.setupLanguageFilters();
+    this.setupLanguageSearch();
     this.updateLanguageStats();
   }
 
-  setupLanguageFilter() {
+  setupLanguageFilters() {
     const filterTabs = document.querySelectorAll('.filter-tab');
-    const searchInput = document.getElementById('languageSearchInput');
-    
     filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const filter = tab.getAttribute('data-filter');
-        this.applyLanguageFilter(filter);
-        
         // Update active tab
         filterTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
+        
+        // Update filter
+        const filter = tab.getAttribute('data-filter');
+        this.state.filters.type = filter;
+        
+        // Re-render with animation
+        this.renderLanguagesGrid();
       });
     });
-    
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        clearTimeout(this.searchTimeout);
-        this.searchTimeout = setTimeout(() => {
-          this.searchLanguages(e.target.value);
-        }, CONFIG.SEARCH_DEBOUNCE);
-      });
-    }
   }
 
-  applyLanguageFilter(filter) {
-    this.state.filters.type = filter;
-    this.renderLanguagesGrid();
+  setupLanguageSearch() {
+    const searchInput = document.getElementById('languageSearch');
+    if (!searchInput) return;
+    
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(this.searchTimeout);
+      this.searchTimeout = setTimeout(() => {
+        this.searchLanguages(e.target.value);
+      }, CONFIG.SEARCH_DEBOUNCE);
+    });
+    
+    // Clear search
+    const clearBtn = document.getElementById('clearSearch');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        this.renderLanguagesGrid();
+      });
+    }
   }
 
   searchLanguages(query) {
-    const filteredLanguages = Object.entries(LANGUAGES).filter(([key, lang]) => {
-      const searchText = query.toLowerCase();
-      return lang.name.toLowerCase().includes(searchText) ||
-             lang.country.toLowerCase().includes(searchText) ||
-             lang.nativeName.toLowerCase().includes(searchText);
-    });
-    
-    this.renderLanguagesGrid(filteredLanguages);
-  }
-
-  renderLanguagesGrid(filteredData = null) {
-    const container = document.getElementById('languagesGrid');
-    if (!container) return;
-    
-    let languagesToShow = filteredData || Object.entries(LANGUAGES);
-    
-    // Apply type filter
-    if (this.state.filters.type !== 'all') {
-      languagesToShow = languagesToShow.filter(([_, lang]) => {
-        if (this.state.filters.type === 'schengen') return lang.type === 'schengen';
-        if (this.state.filters.type === 'non-schengen') return lang.type === 'non-schengen';
-        if (this.state.filters.type === 'popular') return lang.priority === 'high';
-        return true;
-      });
-    }
-    
-    // Sort by priority and name
-    languagesToShow.sort((a, b) => {
-      const priorityOrder = { high: 0, medium: 1, low: 2 };
-      const aPriority = priorityOrder[a[1].priority] || 3;
-      const bPriority = priorityOrder[b[1].priority] || 3;
-      
-      if (aPriority !== bPriority) return aPriority - bPriority;
-      return a[1].name.localeCompare(b[1].name);
-    });
-    
-    container.innerHTML = languagesToShow.map(([key, lang]) => 
-      this.createLanguageCard(key, lang, 'full')
-    ).join('');
-    
-    // Add grid animation
-    container.classList.add('stagger-children');
-    
-    // Update counts in filter tabs
-    this.updateFilterCounts();
-  }
-
-  updateFilterCounts() {
-    const tabs = document.querySelectorAll('.filter-tab');
-    tabs.forEach(tab => {
-      const filter = tab.getAttribute('data-filter');
-      let count = 0;
-      
-      switch (filter) {
-        case 'all':
-          count = Object.keys(LANGUAGES).length;
-          break;
-        case 'schengen':
-          count = Object.values(LANGUAGES).filter(lang => lang.type === 'schengen').length;
-          break;
-        case 'non-schengen':
-          count = Object.values(LANGUAGES).filter(lang => lang.type === 'non-schengen').length;
-          break;
-        case 'popular':
-          count = Object.values(LANGUAGES).filter(lang => lang.priority === 'high').length;
-          break;
-      }
-      
-      const countElement = tab.querySelector('.tab-count');
-      if (countElement) {
-        countElement.textContent = count;
-      }
-    });
-  }
-
-  // 🎯 Language Selection
-  selectLanguage(languageKey) {
-    this.state.currentLanguage = languageKey;
-    this.state.save();
-    
-    // Navigate to learn section
-    this.navigateToSection('learn');
-    
-    // Show success message
-    const language = LANGUAGES[languageKey];
-    this.showToast(`${language.name} ভাষা নির্বাচিত হয়েছে`, 'success');
-  }
-
-  showLanguageDetails(languageKey) {
-    const language = LANGUAGES[languageKey];
-    // Implement language details modal
-    this.showModal('languageDetails', { language, key: languageKey });
-  }
-
-  // 🔍 Search System
-  initializeSearch() {
-    const searchToggle = document.getElementById('searchToggle');
-    const globalSearch = document.getElementById('globalSearch');
-    const searchInput = document.getElementById('globalSearchInput');
-    const searchClose = document.getElementById('searchClose');
-    const searchBtn = document.getElementById('globalSearchBtn');
-    
-    if (searchToggle) {
-      searchToggle.addEventListener('click', () => {
-        globalSearch.classList.toggle('hidden');
-        if (!globalSearch.classList.contains('hidden')) {
-          searchInput.focus();
-        }
-      });
-    }
-    
-    if (searchClose) {
-      searchClose.addEventListener('click', () => {
-        globalSearch.classList.add('hidden');
-        searchInput.value = '';
-      });
-    }
-    
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        clearTimeout(this.searchTimeout);
-        this.searchTimeout = setTimeout(() => {
-          this.performGlobalSearch(e.target.value);
-        }, CONFIG.SEARCH_DEBOUNCE);
-      });
-      
-      searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          this.performGlobalSearch(e.target.value);
-        }
-        if (e.key === 'Escape') {
-          globalSearch.classList.add('hidden');
-        }
-      });
-    }
-    
-    if (searchBtn) {
-      searchBtn.addEventListener('click', () => {
-        this.performGlobalSearch(searchInput.value);
-      });
-    }
-  }
-
-  async performGlobalSearch(query) {
-    if (!query.trim()) return;
-    
-    this.showSearchSuggestions([]);
-    
-    const results = await this.searchAcrossLanguages(query);
-    this.showSearchSuggestions(results);
-  }
-
-  async searchAcrossLanguages(query) {
-    const results = [];
-    const searchTerm = query.toLowerCase().trim();
-    
-    for (const [langKey, language] of Object.entries(LANGUAGES)) {
-      try {
-        const vocabularyData = await this.loadLanguageData(langKey);
-        
-        const matches = vocabularyData.filter(item => {
-          return item.bn && item.bn.toLowerCase().includes(searchTerm) ||
-                 item.bnMeaning && item.bnMeaning.toLowerCase().includes(searchTerm) ||
-                 item.en && item.en.toLowerCase().includes(searchTerm) ||
-                 (item[language.code] && item[language.code].toLowerCase().includes(searchTerm));
-        });
-        
-        matches.forEach(match => {
-          results.push({
-            ...match,
-            language: langKey,
-            languageName: language.name,
-            flag: language.flag
-          });
-        });
-        
-      } catch (error) {
-        console.warn(`Failed to search in ${langKey}:`, error);
-      }
-    }
-    
-    return results.slice(0, 10); // Limit results
-  }
-
-  showSearchSuggestions(results) {
-    const container = document.getElementById('searchSuggestions');
-    if (!container) return;
-    
-    if (results.length === 0) {
-      container.innerHTML = '<div class="search-no-results">কোনো ফলাফল পাওয়া যায়নি</div>';
-      return;
-    }
-    
-    container.innerHTML = results.map(result => `
-      <div class="search-suggestion" onclick="app.selectSearchResult('${result.language}', ${JSON.stringify(result).replace(/"/g, '&quot;')})">
-        <div class="suggestion-header">
-          <span class="suggestion-flag">${result.flag}</span>
-          <span class="suggestion-language">${result.languageName}</span>
-        </div>
-        <div class="suggestion-content">
-          <div class="suggestion-phrase">${result[LANGUAGES[result.language].code] || ''}</div>
-          <div class="suggestion-meaning">${result.bnMeaning || result.bn || ''}</div>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  selectSearchResult(languageKey, result) {
-    // Close search
-    document.getElementById('globalSearch').classList.add('hidden');
-    
-    // Select language and navigate
-    this.selectLanguage(languageKey);
-    
-    // Highlight the selected phrase in learning interface
-    setTimeout(() => {
-      this.highlightPhrase(result);
-    }, 1000);
-  }
-
-  // 🎨 Theme System
-  initializeThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        this.toggleTheme();
-      });
-    }
-    
-    // Set initial theme
-    this.applyTheme(this.state.settings.theme);
-  }
-
-  toggleTheme() {
-    const newTheme = this.state.settings.theme === 'light' ? 'dark' : 'light';
-    this.state.settings.theme = newTheme;
-    this.state.save();
-    this.applyTheme(newTheme);
-  }
-
-  applyTheme(theme) {
-    document.body.className = document.body.className.replace(/\b(light|dark)-theme\b/g, '');
-    document.body.classList.add(`${theme}-theme`);
-    
-    // Update theme toggle icon
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-      const icon = themeToggle.querySelector('.btn-icon');
-      icon.textContent = theme === 'light' ? '🌙' : '☀️';
-    }
-    
-    // Update meta theme color
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    if (metaTheme) {
-      metaTheme.content = theme === 'light' ? '#2563eb' : '#1e293b';
-    }
-  }
-
-  // 📱 Mobile Menu
-  initializeMobileMenu() {
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuClose = document.getElementById('mobileMenuClose');
-    const overlay = mobileMenu?.querySelector('.mobile-menu-overlay');
-    
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        this.openMobileMenu();
-      });
-    }
-    
-    if (menuClose) {
-      menuClose.addEventListener('click', () => {
-        this.closeMobileMenu();
-      });
-    }
-    
-    if (overlay) {
-      overlay.addEventListener('click', () => {
-        this.closeMobileMenu();
-      });
-    }
-  }
-
-  openMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenu) {
-      mobileMenu.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      
-      // Update mobile stats
-      this.updateMobileMenuStats();
-    }
-  }
-
-  closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenu) {
-      mobileMenu.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-  }
-
-  updateMobileMenuStats() {
-    const wordsElement = document.getElementById('mobileStatsWords');
-    const streakElement = document.getElementById('mobileStatsStreak');
-    
-    if (wordsElement && this.state.currentLanguage) {
-      const total = this.state.getTotalLearned(this.state.currentLanguage);
-      wordsElement.textContent = total;
-    }
-    
-    if (streakElement && this.state.currentLanguage) {
-      const streak = this.state.getStreak(this.state.currentLanguage);
-      streakElement.textContent = streak;
-    }
-  }
-
-  // 🎵 Audio System
-  async playAudio(text, languageCode) {
-    try {
-      // Stop any current audio
-      if (this.currentAudio) {
-        this.speechSynth.cancel();
-      }
-      
-      // Create speech synthesis utterance
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = CONFIG.SPEECH_LANG_MAP[languageCode] || languageCode;
-      utterance.rate = this.state.settings.speechRate;
-      utterance.volume = 1;
-      
-      // Get available voices
-      const voices = this.speechSynth.getVoices();
-      const voice = voices.find(v => v.lang.startsWith(utterance.lang.substring(0, 2)));
-      if (voice) {
-        utterance.voice = voice;
-      }
-      
-      // Speak
-      this.speechSynth.speak(utterance);
-      this.currentAudio = utterance;
-      
-      return new Promise((resolve) => {
-        utterance.onend = resolve;
-        utterance.onerror = resolve;
-      });
-      
-    } catch (error) {
-      console.warn('Audio playback failed:', error);
-    }
-  }
-
-  // 💾 Data Loading
-  async loadLanguageData(languageKey) {
-    if (this.state.vocabularyData.has(languageKey)) {
-      return this.state.vocabularyData.get(languageKey);
-    }
-    
-    try {
-      // In a real implementation, this would load from JSON files
-      // For now, we'll return sample data
-      const sampleData = await this.generateSampleData(languageKey);
-      this.state.vocabularyData.set(languageKey, sampleData);
-      return sampleData;
-    } catch (error) {
-      console.error(`Failed to load data for ${languageKey}:`, error);
-      return [];
-    searchLanguages(query) {
     if (!query.trim()) {
       this.renderLanguagesGrid();
       return;
@@ -1345,6 +1366,13 @@ class SpeakEU {
     );
     
     this.renderLanguagesGrid(filtered);
+    
+    // Show search results count
+    const resultsCount = document.getElementById('searchResultsCount');
+    if (resultsCount) {
+      resultsCount.textContent = `${filtered.length} টি ফলাফল`;
+      resultsCount.style.display = filtered.length > 0 ? 'block' : 'none';
+    }
   }
 
   renderLanguagesGrid(languageList = null) {
@@ -1369,19 +1397,147 @@ class SpeakEU {
              a[1].name.localeCompare(b[1].name);
     });
     
-    container.innerHTML = languages.map(([key, lang]) => 
-      this.createLanguageCard(key, lang, 'full')
-    ).join('');
+    // Show loading state
+    container.innerHTML = '<div class="loading-spinner">ভাষার তালিকা লোড হচ্ছে...</div>';
     
-    // Add animations
-    this.animateGridItems(container);
+    // Render with delay for smooth transition
+    setTimeout(() => {
+      container.innerHTML = languages.map(([key, lang]) => 
+        this.createLanguageCard(key, lang, 'full')
+      ).join('');
+      
+      // Add click handlers
+      this.setupLanguageCardHandlers(container);
+      
+      // Add animations
+      this.animateGridItems(container);
+    }, 100);
+  }
+
+  setupLanguageCardHandlers(container) {
+    // Language selection
+    container.querySelectorAll('.language-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Don't trigger if clicking on buttons
+        if (e.target.closest('button')) return;
+        
+        const languageKey = card.getAttribute('data-language');
+        if (languageKey) {
+          this.selectLanguage(languageKey);
+        }
+      });
+    });
+    
+    // Quick start buttons
+    container.querySelectorAll('.quick-start-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const languageKey = btn.getAttribute('data-language');
+        this.selectLanguage(languageKey);
+      });
+    });
+    
+    // Info buttons
+    container.querySelectorAll('.info-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const languageKey = btn.getAttribute('data-language');
+        this.showLanguageDetails(languageKey);
+      });
+    });
+  }
+
+  createLanguageCard(languageKey, language, variant = 'full') {
+    const totalLearned = this.state.getTotalLearned(languageKey);
+    const progress = this.state.getTodayProgress(languageKey);
+    const progressPercentage = Math.round((totalLearned / language.wordCount) * 100);
+    
+    const isCompact = variant === 'compact';
+    const difficultyClass = `difficulty-${language.difficulty}`;
+    const difficultyText = {
+      'beginner': 'সহজ',
+      'intermediate': 'মধ্যম',
+      'advanced': 'কঠিন'
+    }[language.difficulty];
+    
+    return `
+      <div class="language-card ${isCompact ? 'compact' : ''} ${difficultyClass}" 
+           data-language="${languageKey}">
+        <div class="language-header">
+          <div class="language-flag">${language.flag}</div>
+          <div class="language-info">
+            <h3 class="language-name">${language.name}</h3>
+            <p class="language-native">${language.nativeName}</p>
+            <p class="language-country">${language.country} • ${language.capital}</p>
+          </div>
+          ${language.priority === 'high' ? '<div class="priority-badge">জনপ্রিয়</div>' : ''}
+        </div>
+        
+        ${!isCompact ? `
+        <div class="language-stats">
+          <div class="stat-grid">
+            <div class="stat-item">
+              <span class="stat-label">জনসংখ্যা</span>
+              <span class="stat-value">${language.population}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">শব্দভাণ্ডার</span>
+              <span class="stat-value">${language.wordCount.toLocaleString()}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">ক্যাটাগরি</span>
+              <span class="stat-value">${language.categories}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">কঠিনতা</span>
+              <span class="stat-value ${difficultyClass}">${difficultyText}</span>
+            </div>
+          </div>
+        </div>
+        ` : ''}
+        
+        ${totalLearned > 0 ? `
+        <div class="progress-section">
+          <div class="progress-info">
+            <span class="progress-label">অগ্রগতি</span>
+            <span class="progress-percentage">${progressPercentage}%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: ${progressPercentage}%"></div>
+          </div>
+          <div class="progress-text">
+            <span>শিখেছি: ${totalLearned}/${language.wordCount}</span>
+          </div>
+        </div>
+        ` : ''}
+        
+        <div class="language-actions">
+          <button class="btn btn-primary quick-start-btn" data-language="${languageKey}">
+            <span class="btn-icon">🚀</span>
+            <span>${totalLearned > 0 ? 'চালিয়ে যান' : 'শুরু করুন'}</span>
+          </button>
+          ${!isCompact ? `
+          <button class="btn btn-outline info-btn" data-language="${languageKey}">
+            <span class="btn-icon">ℹ️</span>
+            <span>বিস্তারিত</span>
+          </button>
+          ` : ''}
+        </div>
+      </div>
+    `;
   }
 
   animateGridItems(container) {
     const items = container.querySelectorAll('.language-card');
     items.forEach((item, index) => {
-      item.style.animationDelay = `${index * 50}ms`;
-      item.classList.add('animate-fadeInUp');
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      
+      setTimeout(() => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      }, index * 50);
     });
   }
 
@@ -1391,58 +1547,17 @@ class SpeakEU {
     const popularCount = Object.values(LANGUAGES).filter(lang => lang.priority === 'high').length;
     
     // Update filter tab counts
-    const tabs = document.querySelectorAll('.filter-tab');
-    tabs.forEach(tab => {
-      const filter = tab.getAttribute('data-filter');
-      const countSpan = tab.querySelector('.tab-count');
-      if (countSpan) {
-        switch (filter) {
-          case 'all':
-            countSpan.textContent = Object.keys(LANGUAGES).length;
-            break;
-          case 'schengen':
-            countSpan.textContent = schengenCount;
-            break;
-          case 'non-schengen':
-            countSpan.textContent = nonSchengenCount;
-            break;
-          case 'popular':
-            countSpan.textContent = popularCount;
-            break;
-        }
-      }
-    });
-  }
-
-  // 📚 Learning Content
-  loadLearningContent() {
-    this.setupLanguageSelection();
-    this.loadLearningInterface();
-  }
-
-  setupLanguageSelection() {
-    const languageSelect = document.getElementById('languageSelect');
-    if (!languageSelect) return;
+    const tabCounts = {
+      'all': Object.keys(LANGUAGES).length,
+      'schengen': schengenCount,
+      'non-schengen': nonSchengenCount,
+      'popular': popularCount
+    };
     
-    // Populate language options
-    languageSelect.innerHTML = '<option value="">একটি ভাষা নির্বাচন করুন...</option>' +
-      Object.entries(LANGUAGES)
-        .sort((a, b) => a[1].name.localeCompare(b[1].name))
-        .map(([key, lang]) => 
-          `<option value="${key}">${lang.flag} ${lang.name} (${lang.country})</option>`
-        ).join('');
-    
-    // Set current language if any
-    if (this.state.currentLanguage) {
-      languageSelect.value = this.state.currentLanguage;
-      this.loadLanguageContent(this.state.currentLanguage);
-    }
-    
-    // Handle language change
-    languageSelect.addEventListener('change', (e) => {
-      const language = e.target.value;
-      if (language) {
-        this.selectLanguage(language);
+    Object.entries(tabCounts).forEach(([filter, count]) => {
+      const tab = document.querySelector(`[data-filter="${filter}"] .tab-count`);
+      if (tab) {
+        tab.textContent = count;
       }
     });
   }
@@ -1452,23 +1567,18 @@ class SpeakEU {
       this.state.currentLanguage = languageKey;
       this.state.save();
       
-      // Update UI
-      const languageSelect = document.getElementById('languageSelect');
-      if (languageSelect) {
-        languageSelect.value = languageKey;
-      }
-      
-      // Load language content
-      await this.loadLanguageContent(languageKey);
-      
-      // Navigate to learn section if not already there
-      if (this.state.currentSection !== 'learn') {
-        this.navigateToSection('learn');
-      }
-      
-      // Show success message
       const language = LANGUAGES[languageKey];
+      
+      // Show selection feedback
       this.showToast(`${language.name} ভাষা নির্বাচিত হয়েছে`, 'success');
+      
+      // Navigate to learn section
+      this.navigateToSection('learn');
+      
+      // Load language data in background
+      setTimeout(() => {
+        this.loadLanguageVocabulary(languageKey);
+      }, 500);
       
     } catch (error) {
       console.error('Failed to select language:', error);
@@ -1476,1023 +1586,140 @@ class SpeakEU {
     }
   }
 
-  async loadLanguageContent(languageKey) {
-    const language = LANGUAGES[languageKey];
-    if (!language) return;
-    
-    try {
-      // Show loading
-      this.showLanguageLoading(true);
-      
-      // Load vocabulary data
-      const vocabularyData = await this.loadVocabularyData(languageKey);
-      this.state.vocabularyData.set(languageKey, vocabularyData);
-      
-      // Update learning interface
-      this.updateLearningInterface(languageKey, language, vocabularyData);
-      
-      // Show learning interface
-      this.showLearningInterface();
-      
-    } catch (error) {
-      console.error('Failed to load language content:', error);
-      this.showToast('ভাষার ডেটা লোড করতে সমস্যা হয়েছে', 'error');
-    } finally {
-      this.showLanguageLoading(false);
-    }
-  }
-
-  async loadVocabularyData(languageKey) {
-    // For demo, return mock data. In production, this would load from JSON files
-    return this.generateMockVocabularyData(languageKey);
-  }
-
-  generateMockVocabularyData(languageKey) {
-    const language = LANGUAGES[languageKey];
-    const mockData = [];
-    
-    // Generate sample vocabulary for each category
-    Object.keys(CATEGORIES).forEach(categoryKey => {
-      const category = CATEGORIES[categoryKey];
-      const sampleSize = Math.floor(language.wordCount / Object.keys(CATEGORIES).length);
-      
-      for (let i = 0; i < sampleSize; i++) {
-        mockData.push({
-          id: `${languageKey}_${categoryKey}_${i}`,
-          category: categoryKey,
-          difficulty: this.getRandomDifficulty(),
-          [language.code]: this.generateMockPhrase(language.code, categoryKey, i),
-          bn: this.generateMockBengaliTranslation(categoryKey, i),
-          bnMeaning: this.generateMockMeaning(categoryKey, i),
-          en: this.generateMockEnglishTranslation(categoryKey, i),
-          pronunciation: this.generateMockPronunciation(language.code, categoryKey, i),
-          tags: this.generateMockTags(categoryKey),
-          priority: Math.floor(Math.random() * 3) + 1,
-          audioUrl: null // Would be populated in production
-        });
-      }
-    });
-    
-    return mockData;
-  }
-
-  getRandomDifficulty() {
-    const difficulties = ['beginner', 'intermediate', 'advanced'];
-    return difficulties[Math.floor(Math.random() * difficulties.length)];
-  }
-
-  generateMockPhrase(langCode, category, index) {
-    // Mock phrase generation - in production, this would come from actual data
-    const mockPhrases = {
-      de: ['Guten Tag', 'Wie geht es Ihnen?', 'Danke schön'],
-      fr: ['Bonjour', 'Comment allez-vous?', 'Merci beaucoup'],
-      it: ['Buongiorno', 'Come stai?', 'Grazie mille'],
-      es: ['Hola', '¿Cómo estás?', 'Muchas gracias'],
-      ru: ['Здравствуйте', 'Как дела?', 'Спасибо']
-    };
-    
-    const phrases = mockPhrases[langCode] || ['Hello', 'How are you?', 'Thank you'];
-    return phrases[index % phrases.length] + ` (${category} ${index + 1})`;
-  }
-
-  generateMockBengaliTranslation(category, index) {
-    const bengaliPhrases = ['নমস্কার', 'আপনি কেমন আছেন?', 'ধন্যবাদ'];
-    return bengaliPhrases[index % bengaliPhrases.length] + ` (${category} ${index + 1})`;
-  }
-
-  generateMockMeaning(category, index) {
-    return `এই বাক্যটি ${CATEGORIES[category]?.name || category} ক্যাটাগরিতে ব্যবহৃত হয় (${index + 1})`;
-  }
-
-  generateMockEnglishTranslation(category, index) {
-    const englishPhrases = ['Hello', 'How are you?', 'Thank you'];
-    return englishPhrases[index % englishPhrases.length] + ` (${category} ${index + 1})`;
-  }
-
-  generateMockPronunciation(langCode, category, index) {
-    // Mock pronunciation - would be actual IPA or simplified pronunciation
-    return `[pronunciation for ${langCode} phrase ${index + 1}]`;
-  }
-
-  generateMockTags(category) {
-    const allTags = ['essential', 'polite', 'formal', 'informal', 'common', 'beginner', 'daily'];
-    return allTags.slice(0, Math.floor(Math.random() * 3) + 1);
-  }
-
-  updateLearningInterface(languageKey, language, vocabularyData) {
-    // Update language header
-    this.updateLanguageHeader(languageKey, language);
-    
-    // Update category filter
-    this.updateCategoryFilter();
-    
-    // Update vocabulary display
-    this.updateVocabularyDisplay(vocabularyData);
-    
-    // Update progress stats
-    this.updateLearningStats(languageKey);
-  }
-
-  updateLanguageHeader(languageKey, language) {
-    const flagElement = document.getElementById('currentLanguageFlag');
-    const nameElement = document.getElementById('currentLanguageName');
-    const infoElement = document.getElementById('currentLanguageInfo');
-    
-    if (flagElement) flagElement.textContent = language.flag;
-    if (nameElement) nameElement.textContent = `${language.name} (${language.nativeName})`;
-    if (infoElement) infoElement.textContent = `${language.country} • ${language.population} জনসংখ্যা • ${language.wordCount.toLocaleString()} শব্দ`;
-  }
-
-  updateCategoryFilter() {
-    const categoryFilter = document.getElementById('categoryFilter');
-    if (!categoryFilter) return;
-    
-    categoryFilter.innerHTML = '<option value="all">সব ক্যাটাগরি</option>' +
-      Object.entries(CATEGORIES)
-        .sort((a, b) => a[1].priority - b[1].priority)
-        .map(([key, category]) => 
-          `<option value="${key}">${category.icon} ${category.name}</option>`
-        ).join('');
-    
-    categoryFilter.addEventListener('change', (e) => {
-      this.state.filters.category = e.target.value;
-      this.filterVocabulary();
-    });
-  }
-
-  updateVocabularyDisplay(vocabularyData) {
-    const container = document.getElementById('vocabularyList');
-    if (!container) return;
-    
-    // Display first 20 items
-    const displayData = vocabularyData.slice(0, 20);
-    
-    container.innerHTML = displayData.map(item => this.createVocabularyCard(item)).join('');
-    
-    // Add event listeners
-    this.setupVocabularyInteractions(container);
-  }
-
-  createVocabularyCard(item) {
-    const language = LANGUAGES[this.state.currentLanguage];
-    const category = CATEGORIES[item.category];
-    const isFavorite = this.state.favorites.has(item.id);
-    
-    return `
-      <div class="vocabulary-card" data-id="${item.id}">
-        <div class="vocabulary-header">
-          <div class="vocabulary-category">
-            <span class="category-icon">${category?.icon || '📝'}</span>
-            <span class="category-name">${category?.name || item.category}</span>
-          </div>
-          <div class="vocabulary-actions">
-            <button class="vocab-btn favorite-btn ${isFavorite ? 'active' : ''}" 
-                    data-id="${item.id}" title="পছন্দের তালিকায় যোগ করুন">
-              <span>${isFavorite ? '❤️' : '🤍'}</span>
-            </button>
-            <button class="vocab-btn audio-btn" data-id="${item.id}" title="উচ্চারণ শুনুন">
-              <span>🔊</span>
-            </button>
-          </div>
-        </div>
-        
-        <div class="vocabulary-content">
-          <div class="original-phrase">
-            <div class="phrase-text">${item[language.code]}</div>
-            <div class="pronunciation">${item.pronunciation || ''}</div>
-          </div>
-          
-          <div class="translations">
-            <div class="bengali-translation">
-              <strong>বাংলা:</strong> ${item.bn}
-            </div>
-            <div class="meaning">
-              <strong>অর্থ:</strong> ${item.bnMeaning}
-            </div>
-            <div class="english-translation">
-              <strong>English:</strong> ${item.en}
-            </div>
-          </div>
-          
-          <div class="vocabulary-footer">
-            <div class="difficulty-badge difficulty-${item.difficulty}">
-              ${item.difficulty === 'beginner' ? 'সহজ' : 
-                item.difficulty === 'intermediate' ? 'মধ্যম' : 'কঠিন'}
-            </div>
-            <div class="tags">
-              ${item.tags?.map(tag => `<span class="tag">${tag}</span>`).join('') || ''}
-            </div>
-          </div>
-        </div>
-        
-        <div class="vocabulary-progress">
-          <button class="btn btn-outline btn-small mark-learned" data-id="${item.id}">
-            <span class="btn-icon">✓</span>
-            <span>শিখেছি</span>
-          </button>
-        </div>
-      </div>
-    `;
-  }
-
-  setupVocabularyInteractions(container) {
-    // Favorite buttons
-    container.querySelectorAll('.favorite-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = btn.getAttribute('data-id');
-        this.toggleFavorite(id);
-      });
-    });
-    
-    // Audio buttons
-    container.querySelectorAll('.audio-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = btn.getAttribute('data-id');
-        this.playAudio(id);
-      });
-    });
-    
-    // Mark learned buttons
-    container.querySelectorAll('.mark-learned').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const id = btn.getAttribute('data-id');
-        this.markAsLearned(id);
-      });
-    });
-  }
-
-  showLearningInterface() {
-    const selectionContainer = document.getElementById('languageSelection');
-    const interfaceContainer = document.getElementById('learningInterface');
-    
-    if (selectionContainer) selectionContainer.classList.add('hidden');
-    if (interfaceContainer) {
-      interfaceContainer.classList.remove('hidden');
-      interfaceContainer.classList.add('animate-fadeInUp');
-    }
-  }
-
-  showLanguageLoading(show) {
-    const loadingContainer = document.getElementById('languageLoading');
-    if (loadingContainer) {
-      loadingContainer.classList.toggle('hidden', !show);
-    }
-  }
-
-  updateLearningStats(languageKey) {
-    const progress = this.state.getTodayProgress(languageKey);
-    const totalLearned = this.state.getTotalLearned(languageKey);
-    const streak = this.state.getStreak(languageKey);
-    
-    const todayElement
-        </div>
-      </div>
-    `;
-  }
-
-  renderLanguageProgress() {
-    const container = document.getElementById('languageProgressList');
-    if (!container) return;
-    
-    const languageProgress = Object.keys(LANGUAGES).map(langKey => {
-      const language = LANGUAGES[langKey];
-      const totalLearned = this.state.getTotalLearned(langKey);
-      const todayProgress = this.state.getTodayProgress(langKey);
-      const streak = this.state.getStreak(langKey);
-      
-      return {
-        key: langKey,
-        language,
-        totalLearned,
-        todayProgress,
-        streak,
-        percentage: Math.min((totalLearned / language.wordCount) * 100, 100)
-      };
-    }).filter(item => item.totalLearned > 0)
-      .sort((a, b) => b.totalLearned - a.totalLearned);
-    
-    container.innerHTML = languageProgress.map(item => `
-      <div class="language-progress-item">
-        <div class="language-info">
-          <span class="language-flag">${item.language.flag}</span>
-          <div class="language-details">
-            <h4>${item.language.name}</h4>
-            <p>${item.totalLearned}/${item.language.wordCount} শব্দ</p>
-          </div>
-        </div>
-        <div class="progress-details">
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${item.percentage}%"></div>
-          </div>
-          <div class="progress-stats">
-            <span>আজ: ${item.todayProgress.learned}</span>
-            <span>স্ট্রিক: ${item.streak}</span>
-          </div>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  renderStreakCalendar() {
-    const container = document.getElementById('streakCalendar');
-    if (!container) return;
-    
-    // Generate last 30 days
-    const days = [];
-    const today = new Date();
-    
-    for (let i = 29; i >= 0; i--) {
-      const date = new Date(today);
-      date.setDate(date.getDate() - i);
-      
-      const dateStr = date.toDateString();
-      const key = `${this.state.currentLanguage}_${dateStr}`;
-      const progress = this.state.userProgress.get(key);
-      const hasActivity = progress && progress.learned > 0;
-      
-      days.push({
-        date,
-        hasActivity,
-        learned: progress?.learned || 0
-      });
-    }
-    
-    container.innerHTML = `
-      <div class="calendar-grid">
-        ${days.map(day => `
-          <div class="calendar-day ${day.hasActivity ? 'has-activity' : ''}" 
-               title="${day.date.toLocaleDateString('bn-BD')} - ${day.learned} শব্দ">
-            <span class="day-number">${day.date.getDate()}</span>
-          </div>
-        `).join('')}
-      </div>
-      <div class="calendar-legend">
-        <span class="legend-item">
-          <div class="legend-color no-activity"></div>
-          <span>কোনো কার্যকলাপ নেই</span>
-        </span>
-        <span class="legend-item">
-          <div class="legend-color has-activity"></div>
-          <span>শিখেছেন</span>
-        </span>
-      </div>
-    `;
-  }
-
-  renderAchievements() {
-    const container = document.getElementById('achievementsList');
-    if (!container) return;
-    
-    const achievements = this.calculateAchievements();
-    
-    container.innerHTML = achievements.map(achievement => `
-      <div class="achievement-item ${achievement.unlocked ? 'unlocked' : 'locked'}">
-        <div class="achievement-icon">${achievement.icon}</div>
-        <div class="achievement-details">
-          <h4>${achievement.title}</h4>
-          <p>${achievement.description}</p>
-          <div class="achievement-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: ${achievement.progress}%"></div>
-            </div>
-            <span>${achievement.current}/${achievement.target}</span>
-          </div>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  calculateAchievements() {
-    const totalLearned = this.state.getTotalLearned(this.state.currentLanguage);
-    const streak = this.state.getStreak(this.state.currentLanguage);
-    const favoriteCount = this.state.favorites.size;
-    
-    return [
-      {
-        id: 'first_words',
-        title: 'প্রথম পদক্ষেপ',
-        description: 'প্রথম ১০টি শব্দ শিখুন',
-        icon: '🌟',
-        target: 10,
-        current: Math.min(totalLearned, 10),
-        progress: Math.min((totalLearned / 10) * 100, 100),
-        unlocked: totalLearned >= 10
-      },
-      {
-        id: 'hundred_words',
-        title: 'শব্দ সংগ্রাহক',
-        description: '১০০টি শব্দ শিখুন',
-        icon: '📚',
-        target: 100,
-        current: Math.min(totalLearned, 100),
-        progress: Math.min((totalLearned / 100) * 100, 100),
-        unlocked: totalLearned >= 100
-      },
-      {
-        id: 'week_streak',
-        title: 'নিয়মিত শিক্ষার্থী',
-        description: '৭ দিন ধারাবাহিক শিখুন',
-        icon: '🔥',
-        target: 7,
-        current: Math.min(streak, 7),
-        progress: Math.min((streak / 7) * 100, 100),
-        unlocked: streak >= 7
-      },
-      {
-        id: 'favorite_collector',
-        title: 'পছন্দের সংগ্রাহক',
-        description: '২৫টি বাক্য পছন্দের তালিকায় রাখুন',
-        icon: '❤️',
-        target: 25,
-        current: Math.min(favoriteCount, 25),
-        progress: Math.min((favoriteCount / 25) * 100, 100),
-        unlocked: favoriteCount >= 25
-      }
-    ];
-  }
-
-  // 🛠️ Utility Methods
-  async delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  showToast(message, type = 'info') {
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    
-    const icons = {
-      success: '✅',
-      error: '❌',
-      warning: '⚠️',
-      info: 'ℹ️'
-    };
-    
-    toast.innerHTML = `
-      <div class="toast-content">
-        <span class="toast-icon">${icons[type]}</span>
-        <span class="toast-message">${message}</span>
-      </div>
-    `;
-    
-    document.body.appendChild(toast);
-    
-    // Animate in
-    setTimeout(() => toast.classList.add('toast-visible'), 100);
-    
-    // Remove after delay
-    setTimeout(() => {
-      toast.classList.remove('toast-visible');
-      setTimeout(() => toast.remove(), 300);
-    }, 4000);
-  }
-
-  showError(message) {
-    this.showToast(message, 'error');
-  }
-
-  // 🎯 Event Listeners
-  setupEventListeners() {
-    // Global event listeners
-    window.addEventListener('resize', this.handleResize);
-    window.addEventListener('scroll', this.handleScroll);
-    document.addEventListener('keydown', this.handleKeyboard);
-    document.addEventListener('visibilitychange', this.handleVisibilityChange);
-    
-    // Progress update listener
-    document.addEventListener('progressUpdate', (e) => {
-      this.handleProgressUpdate(e.detail);
-    });
-    
-    // Online/offline listeners
-    window.addEventListener('online', () => {
-      this.showToast('ইন্টারনেট সংযোগ পুনরুদ্ধার হয়েছে', 'success');
-    });
-    
-    window.addEventListener('offline', () => {
-      this.showToast('ইন্টারনেট সংযোগ নেই - অফলাইন মোডে কাজ করছে', 'warning');
-    });
-  }
-
-  handleResize() {
-    // Handle responsive adjustments
-    const isMobile = window.innerWidth <= 768;
-    document.body.classList.toggle('mobile-view', isMobile);
-  }
-
-  handleScroll() {
-    // Handle scroll effects
-    const header = document.getElementById('mainHeader');
-    if (header) {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    }
-  }
-
-  handleKeyboard(e) {
-    // Global keyboard shortcuts
-    if (e.ctrlKey || e.metaKey) {
-      switch (e.key) {
-        case 'k':
-          e.preventDefault();
-          document.getElementById('searchToggle')?.click();
-          break;
-        case '/':
-          e.preventDefault();
-          document.getElementById('globalSearchInput')?.focus();
-          break;
-      }
-    }
-    
-    if (e.key === 'Escape') {
-      // Close any open modals/menus
-      document.getElementById('globalSearch')?.classList.add('hidden');
-      this.closeMobileMenu();
-    }
-  }
-
-  handleVisibilityChange() {
-    if (document.hidden) {
-      // Pause any audio
-      if (this.currentAudio) {
-        this.speechSynth.cancel();
-      }
-    }
-  }
-
-  handleProgressUpdate(detail) {
-    // Update progress displays
-    this.updateLearningStats(detail.language);
-    
-    // Show milestone notifications
-    if (detail.progress.learned === detail.progress.target) {
-      this.showDailyTargetReached();
-    }
-  }
-
-  // 🎯 Intersection Observer for Animations
-  initializeIntersectionObserver() {
-    this.intersectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    
-    // Observe elements with animate-on-scroll class
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      this.intersectionObserver.observe(el);
-    });
-  }
-
-  // 🔧 Settings Management
-  applySettings() {
-    // Apply theme
-    this.applyTheme(this.state.settings.theme);
-    
-    // Apply font size
-    document.body.classList.remove('font-small', 'font-medium', 'font-large');
-    document.body.classList.add(`font-${this.state.settings.fontSize}`);
-    
-    // Other settings...
-  }
-
-  updateSetting(key, value) {
-    this.state.settings[key] = value;
-    this.state.save();
-    this.applySettings();
-  }
-
-  // 📱 PWA Features
-  initializePWA() {
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('SW registered:', registration);
-        })
-        .catch(error => {
-          console.log('SW registration failed:', error);
-        });
-    }
-    
-    // Handle install prompt
-    let deferredPrompt;
-    
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      
-      const installBtn = document.getElementById('installBtn');
-      if (installBtn) {
-        installBtn.classList.remove('hidden');
-        installBtn.addEventListener('click', () => {
-          this.promptInstall(deferredPrompt);
-        });
-      }
-    });
-    
-    // Handle app installed
-    window.addEventListener('appinstalled', () => {
-      this.showToast('অ্যাপ সফলভাবে ইনস্টল হয়েছে!', 'success');
-      document.getElementById('installBtn')?.classList.add('hidden');
-    });
-  }
-
-  async promptInstall(deferredPrompt) {
-    if (!deferredPrompt) return;
-    
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    }
-    
-    deferredPrompt = null;
-  }
-
-  // 🧹 Cleanup
-  cleanup() {
-    // Remove event listeners
-    window.removeEventListener('resize', this.handleResize);
-    window.removeEventListener('scroll', this.handleScroll);
-    document.removeEventListener('keydown', this.handleKeyboard);
-    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
-    
-    // Cancel any ongoing audio
-    if (this.currentAudio) {
-      this.speechSynth.cancel();
-    }
-    
-    // Disconnect observers
-    if (this.intersectionObserver) {
-      this.intersectionObserver.disconnect();
-    }
-    
-    // Clear timeouts
-    if (this.searchTimeout) {
-      clearTimeout(this.searchTimeout);
-    }
-  }
-
-  // 📊 Analytics & Tracking (Privacy-focused)
-  trackEvent(eventName, eventData = {}) {
-    // Simple analytics tracking - could integrate with privacy-focused analytics
-    console.log('Event:', eventName, eventData);
-    
-    // Store locally for insights
-    const events = JSON.parse(localStorage.getItem(CONFIG.STORAGE_PREFIX + 'events') || '[]');
-    events.push({
-      name: eventName,
-      data: eventData,
-      timestamp: new Date().toISOString()
-    });
-    
-    // Keep only last 100 events
-    if (events.length > 100) {
-      events.splice(0, events.length - 100);
-    }
-    
-    localStorage.setItem(CONFIG.STORAGE_PREFIX + 'events', JSON.stringify(events));
-  }
-
-  // 🎮 Quick Actions
-  showEmergencyPhrases() {
-    this.state.filters.category = 'emergency';
-    this.navigateToSection('learn');
-    this.trackEvent('quick_action', { type: 'emergency' });
-  }
-
-  showDailyConversation() {
-    this.state.filters.category = 'daily';
-    this.navigateToSection('learn');
-    this.trackEvent('quick_action', { type: 'daily' });
-  }
-
-  showWorkplacePhrases() {
-    this.state.filters.category = 'work';
-    this.navigateToSection('learn');
-    this.trackEvent('quick_action', { type: 'work' });
-  }
-
-  showTravelPhrases() {
-    this.state.filters.category = 'travel';
-    this.navigateToSection('learn');
-    this.trackEvent('quick_action', { type: 'travel' });
-  }
-
   showLanguageDetails(languageKey) {
     const language = LANGUAGES[languageKey];
-    if (!language) return;
-    
-    // Create and show language details modal
     const modal = this.createLanguageDetailsModal(languageKey, language);
     document.body.appendChild(modal);
     
-    setTimeout(() => modal.classList.add('modal-visible'), 100);
-    
-    this.trackEvent('language_details_viewed', { language: languageKey });
+    // Show modal with animation
+    requestAnimationFrame(() => {
+      modal.classList.add('visible');
+    });
   }
 
   createLanguageDetailsModal(languageKey, language) {
-    const modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    
     const totalLearned = this.state.getTotalLearned(languageKey);
-    const progress = this.state.getTodayProgress(languageKey);
-    const streak = this.state.getStreak(languageKey);
     const progressPercentage = Math.round((totalLearned / language.wordCount) * 100);
     
+    const modal = document.createElement('div');
+    modal.className = 'language-details-modal';
     modal.innerHTML = `
-      <div class="modal-content language-details-modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
         <div class="modal-header">
+          <div class="language-flag-large">${language.flag}</div>
           <div class="language-title">
-            <span class="language-flag-large">${language.flag}</span>
-            <div>
-              <h2>${language.name}</h2>
-              <p>${language.nativeName} • ${language.country}</p>
-            </div>
+            <h2>${language.name}</h2>
+            <p>${language.nativeName}</p>
           </div>
-          <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">✕</button>
+          <button class="modal-close" onclick="this.closest('.language-details-modal').remove()">
+            <span>✕</span>
+          </button>
         </div>
         
         <div class="modal-body">
-          <div class="language-stats-grid">
-            <div class="stat-item">
-              <div class="stat-number">${language.wordCount.toLocaleString()}</div>
-              <div class="stat-label">মোট শব্দ</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">${totalLearned}</div>
-              <div class="stat-label">শিখেছি</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">${progressPercentage}%</div>
-              <div class="stat-label">সম্পূর্ণতা</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">${streak}</div>
-              <div class="stat-label">স্ট্রিক</div>
+          <div class="language-overview">
+            <h3>ভাষার তথ্য</h3>
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">দেশ</span>
+                <span class="info-value">${language.country}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">রাজধানী</span>
+                <span class="info-value">${language.capital}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">জনসংখ্যা</span>
+                <span class="info-value">${language.population}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">কঠিনতা</span>
+                <span class="info-value difficulty-${language.difficulty}">
+                  ${language.difficulty === 'beginner' ? 'সহজ' : 
+                    language.difficulty === 'intermediate' ? 'মধ্যম' : 'কঠিন'}
+                </span>
+              </div>
             </div>
           </div>
           
-          <div class="language-info-sections">
-            <div class="info-section">
-              <h3>দেশের তথ্য</h3>
-              <ul>
-                <li><strong>জনসংখ্যা:</strong> ${language.population}</li>
-                <li><strong>ধরন:</strong> ${language.type === 'schengen' ? 'শেনজেন দেশ' : 'নন-শেনজেন'}</li>
-                <li><strong>কঠিনতা:</strong> ${
-                  language.difficulty === 'beginner' ? 'সহজ' :
-                  language.difficulty === 'intermediate' ? 'মধ্যম' : 'কঠিন'
-                }</li>
-              </ul>
+          <div class="vocabulary-overview">
+            <h3>শব্দভাণ্ডার</h3>
+            <div class="vocab-stats">
+              <div class="vocab-stat">
+                <span class="stat-number">${language.wordCount.toLocaleString()}</span>
+                <span class="stat-label">মোট শব্দ</span>
+              </div>
+              <div class="vocab-stat">
+                <span class="stat-number">${language.categories}</span>
+                <span class="stat-label">ক্যাটাগরি</span>
+              </div>
+              <div class="vocab-stat">
+                <span class="stat-number">${totalLearned}</span>
+                <span class="stat-label">শিখেছি</span>
+              </div>
             </div>
             
-            <div class="info-section">
-              <h3>শেখার তথ্য</h3>
-              <ul>
-                <li><strong>ক্যাটাগরি:</strong> ${language.categories}টি</li>
-                <li><strong>অগ্রাধিকার:</strong> ${
-                  language.priority === 'high' ? 'উচ্চ' :
-                  language.priority === 'medium' ? 'মধ্যম' : 'নিম্ন'
-                }</li>
-                <li><strong>আজকের অগ্রগতি:</strong> ${progress.learned}/${progress.target}</li>
-              </ul>
+            ${totalLearned > 0 ? `
+            <div class="progress-overview">
+              <div class="progress-header">
+                <span>অগ্রগতি</span>
+                <span>${progressPercentage}%</span>
+              </div>
+              <div class="progress-bar-large">
+                <div class="progress-fill" style="width: ${progressPercentage}%"></div>
+              </div>
             </div>
+            ` : ''}
           </div>
         </div>
         
         <div class="modal-footer">
-          <button class="btn btn-primary" onclick="app.selectLanguage('${languageKey}'); this.closest('.modal-overlay').remove();">
+          <button class="btn btn-primary" onclick="app.selectLanguage('${languageKey}'); this.closest('.language-details-modal').remove();">
             <span class="btn-icon">🚀</span>
-            <span>শেখা শুরু করুন</span>
-          </button>
-          <button class="btn btn-secondary" onclick="this.closest('.modal-overlay').remove();">
-            বন্ধ করুন
+            <span>${totalLearned > 0 ? 'চালিয়ে যান' : 'শিখতে শুরু করুন'}</span>
           </button>
         </div>
       </div>
     `;
     
-    // Close on overlay click
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.remove();
-      }
+    // Add click handler for backdrop
+    modal.querySelector('.modal-backdrop').addEventListener('click', () => {
+      modal.remove();
     });
     
     return modal;
   }
 
-  // 🎯 Initial Data Loading
-  async loadInitialData() {
-    // Load popular languages data first
-    const popularLanguages = Object.entries(LANGUAGES)
-      .filter(([_, lang]) => lang.priority === 'high')
-      .map(([key, _]) => key);
-    
-    // Pre-generate some data for popular languages
-    for (const langKey of popularLanguages.slice(0, 3)) {
-      const mockData = this.generateMockVocabularyData(langKey);
-      this.state.vocabularyData.set(langKey, mockData.slice(0, 50)); // Load first 50 items
+  // Continue in next part...
+  delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  // Utility method to speak text
+  speakText(text, lang = 'en') {
+    if (this.speechSynth) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = lang;
+      this.speechSynth.speak(utterance);
     }
   }
 
-  // 🔄 Vocabulary Filtering
-  filterVocabulary() {
-    if (!this.state.currentLanguage) return;
-    
-    const vocabularyData = this.state.vocabularyData.get(this.state.currentLanguage);
-    if (!vocabularyData) return;
-    
-    let filtered = [...vocabularyData];
-    
-    // Apply category filter
-    if (this.state.filters.category !== 'all') {
-      filtered = filtered.filter(item => item.category === this.state.filters.category);
-    }
-    
-    // Apply difficulty filter
-    if (this.state.filters.difficulty !== 'all') {
-      filtered = filtered.filter(item => item.difficulty === this.state.filters.difficulty);
-    }
-    
-    // Update display
-    this.updateVocabularyDisplay(filtered);
-  }
+  // More methods continue...
 }
 
-// 🌟 Global App Instance
-const app = new SpeakEU();
+// Initialize when DOM is ready
+let app;
 
-// 🚀 Start the app when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  app.init().catch(error => {
-    console.error('Failed to start app:', error);
-    document.body.innerHTML = `
-      <div style="display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; padding: 20px;">
-        <div>
-          <h1>😔 অ্যাপ লোড করতে সমস্যা হয়েছে</h1>
-          <p>দয়া করে পেজ রিফ্রেশ করুন অথবা পরে চেষ্টা করুন।</p>
-          <button onclick="window.location.reload()" style="padding: 10px 20px; margin-top: 20px; background: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer;">
-            রিফ্রেশ করুন
-          </button>
-        </div>
-      </div>
-    `;
-  });
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    console.log('🚀 DOM loaded, initializing Speak EU...');
+    app = new SpeakEU();
+    await app.init();
+  } catch (error) {
+    console.error('❌ Failed to initialize app:', error);
+  }
 });
 
-// 🧹 Cleanup on page unload
-window.addEventListener('beforeunload', () => {
-  app.cleanup();
-});
-
-// 🎯 Export for global use
-window.SpeakEU = SpeakEU;
+// Export for global access
 window.app = app;
-
-// 🎨 Add CSS animation keyframes
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes confetti-fall {
-    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-  }
-  
-  .toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 16px;
-    z-index: 10000;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    max-width: 400px;
-  }
-  
-  .toast-visible {
-    transform: translateX(0);
-  }
-  
-  .toast-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .toast-success { border-left: 4px solid #22c55e; }
-  .toast-error { border-left: 4px solid #ef4444; }
-  .toast-warning { border-left: 4px solid #f59e0b; }
-  .toast-info { border-left: 4px solid #3b82f6; }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .modal-visible {
-    opacity: 1;
-  }
-  
-  .modal-content {
-    background: white;
-    border-radius: 12px;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
-  }
-  
-  .modal-visible .modal-content {
-    transform: scale(1);
-  }
-  
-  .highlighted {
-    background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
-    border-color: #f59e0b !important;
-    animation: highlight-pulse 2s ease-out;
-  }
-  
-  @keyframes highlight-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-  }
-  
-  .scrolled {
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.95) !important;
-  }
-  
-  .dark-theme .scrolled {
-    background: rgba(30,41,59,0.95) !important;
-  }
-  
-  .font-small { font-size: 14px; }
-  .font-medium { font-size: 16px; }
-  .font-large { font-size: 18px; }
-  
-  .calendar-day {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    background: var(--gray-200);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8px;
-    transition: all 0.2s ease;
-  }
-  
-  .calendar-day.has-activity {
-    background: var(--primary-500);
-    color: white;
-  }
-  
-  .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    margin-bottom: 16px;
-  }
-  
-  .learning-interface.hidden {
-    display: none;
-  }
-  
-  .vocabulary-card.learned {
-    opacity: 0.7;
-    background: var(--success-bg);
-  }
-  
-  .vocabulary-card.learned .mark-learned {
-    background: var(--success);
-    color: white;
-  }
-`;
-
-document.head.appendChild(style);
-
-console.log('🎉 Speak EU JavaScript loaded successfully!');
