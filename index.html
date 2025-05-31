@@ -1,306 +1,276 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Speak EU - ইউরোপীয় ভাষা শিক্ষার প্ল্যাটফর্ম</title>
-        <link rel="stylesheet" href="style.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <meta
-            name="description"
-            content="৩০+ ইউরোপীয় ভাষা শিখুন বাংলা উচ্চারণ ও অর্থসহ। প্রতিটি ভাষার জন্য ১০০০+ কথোপকথন।"
-        />
-        <meta
-            name="keywords"
-            content="ইউরোপীয় ভাষা, জার্মান, ফ্রেঞ্চ, ইতালিয়ান, স্প্যানিশ, ভাষা শেখা"
-        />
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-container">
-                <div class="header-left">
-                    <h1 class="app-title">
-                        <i class="fas fa-language"></i>
-                        Speak EU
-                    </h1>
-                </div>
-                <nav class="header-nav">
-                    <a href="index.html" class="nav-link active">হোম</a>
-                    <a href="pages/about.html" class="nav-link"
-                        >আমাদের সম্পর্কে</a
-                    >
-                    <a href="pages/contact.html" class="nav-link">যোগাযোগ</a>
-                    <a href="pages/privacy.html" class="nav-link"
-                        >গোপনীয়তা নীতি</a
-                    >
-                </nav>
-                <div class="header-right">
-                    <select class="language-select" id="languageSelect">
-                        <option value="">ভাষা নির্বাচন করুন</option>
-                        <option value="germany">🇩🇪 জার্মান</option>
-                        <option value="france">🇫🇷 ফ্রেঞ্চ</option>
-                        <option value="italy">🇮🇹 ইতালিয়ান</option>
-                        <option value="spain">🇪🇸 স্প্যানিশ</option>
-                        <option value="russia">🇷🇺 রাশিয়ান</option>
-                        <option value="netherlands">🇳🇱 ডাচ</option>
-                        <option value="portugal">🇵🇹 পর্তুগিজ</option>
-                        <option value="greece">🇬🇷 গ্রিক</option>
-                        <option value="poland">🇵🇱 পোলিশ</option>
-                        <option value="czech">🇨🇿 চেক</option>
-                        <option value="hungary">🇭🇺 হাঙ্গেরিয়ান</option>
-                        <option value="romania">🇷🇴 রোমানিয়ান</option>
-                        <option value="ukraine">🇺🇦 ইউক্রেনিয়ান</option>
-                        <option value="croatia">🇭🇷 ক্রোয়েশিয়ান</option>
-                        <option value="slovakia">🇸🇰 স্লোভাক</option>
-                        <option value="slovenia">🇸🇮 স্লোভেনিয়ান</option>
-                        <option value="estonia">🇪🇪 এস্তোনিয়ান</option>
-                        <option value="latvia">🇱🇻 লাতভিয়ান</option>
-                        <option value="lithuania">🇱🇹 লিথুয়ানিয়ান</option>
-                    </select>
-                    <button class="mode-toggle" id="themeToggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="menu-toggle" id="menuToggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Welcome Section -->
-            <section class="welcome-section" id="welcomeSection">
-                <div class="welcome-content">
-                    <h2>Speak EU এ স্বাগতম</h2>
-                    <p>
-                        ইউরোপীয় ভাষা শিখুন সহজে ও কার্যকরভাবে। বাংলা উচ্চারণ ও
-                        অর্থসহ ১০০০+ কথোপকথন প্রতিটি ভাষার জন্য।
-                    </p>
-                    <div class="welcome-features">
-                        <div class="feature">
-                            <i class="fas fa-language"></i>
-                            <span>৩০+ ইউরোপীয় ভাষা</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-volume-up"></i>
-                            <span>বাংলা উচ্চারণ গাইড</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-comments"></i>
-                            <span>১০০০+ কথোপকথন</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-search"></i>
-                            <span>উন্নত সার্চ সিস্টেম</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>মোবাইল ফ্রেন্ডলি</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-chart-line"></i>
-                            <span>প্রগ্রেস ট্র্যাকিং</span>
-                        </div>
-                    </div>
-                    <button
-                        class="btn btn-primary"
-                        onclick="document.getElementById('languageSelect').focus()"
-                    >
-                        শিক্ষা শুরু করুন
-                    </button>
-                </div>
-            </section>
-
-            <!-- Language Content -->
-            <section
-                class="language-content"
-                id="languageContent"
-                style="display: none"
-            >
-                <!-- Search and Filter Controls -->
-                <div class="controls-section">
-                    <div class="search-container">
-                        <input
-                            type="text"
-                            id="searchInput"
-                            placeholder="যেকোনো শব্দ বা বাক্য খুঁজুন... (প্রতিটি অক্ষর স্ক্যান করা হয়)"
-                            class="search-input"
-                        />
-                        <i class="fas fa-search search-icon"></i>
-                        <button
-                            class="clear-search"
-                            id="clearSearch"
-                            style="display: none"
-                        >
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <div class="filter-container">
-                        <button class="filter-btn active" data-filter="all">
-                            সব
-                        </button>
-                        <button class="filter-btn" data-filter="basic">
-                            মৌলিক
-                        </button>
-                        <button class="filter-btn" data-filter="travel">
-                            ভ্রমণ
-                        </button>
-                        <button class="filter-btn" data-filter="food">
-                            খাবার
-                        </button>
-                        <button class="filter-btn" data-filter="emergency">
-                            জরুরি
-                        </button>
-                        <button class="filter-btn" data-filter="learned">
-                            শেখা
-                        </button>
-                        <button class="filter-btn" data-filter="unlearned">
-                            অশেখা
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Progress Section -->
-                <div class="progress-section">
-                    <h3>আপনার অগ্রগতি</h3>
-                    <div class="progress-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" id="learnedCount">0</span>
-                            <span class="stat-label">শেখা হয়েছে</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="totalCount">0</span>
-                            <span class="stat-label">মোট কথোপকথন</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" id="progressPercentage"
-                                >0%</span
-                            >
-                            <span class="stat-label">সম্পন্ন</span>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <button class="btn btn-secondary" id="resetProgress">
-                        অগ্রগতি রিসেট করুন
-                    </button>
-                </div>
-
-                <!-- Conversations List -->
-                <div class="conversations-header">
-                    <h3 id="conversationsTitle">কথোপকথন</h3>
-                    <div class="conversations-count">
-                        <span id="filteredCount">0</span> টি কথোপকথন দেখানো
-                        হচ্ছে
-                    </div>
-                </div>
-                <div
-                    class="conversations-container"
-                    id="conversationsContainer"
-                >
-                    <!-- Conversations will be loaded here -->
-                </div>
-            </section>
-
-            <!-- Loading State -->
-            <div class="loading-state" id="loadingState" style="display: none">
-                <div class="spinner"></div>
-                <p>ভাষা লোড হচ্ছে...</p>
-            </div>
-
-            <!-- Error State -->
-            <div class="error-state" id="errorState" style="display: none">
-                <i class="fas fa-exclamation-triangle"></i>
-                <h3>ত্রুটি</h3>
-                <p id="errorMessage">ভাষা লোড করতে সমস্যা হয়েছে।</p>
-                <button class="btn btn-primary" onclick="location.reload()">
-                    পুনরায় চেষ্টা করুন
-                </button>
-            </div>
-        </main>
-
-        <!-- Side Menu -->
-        <div class="side-menu" id="sideMenu">
-            <div class="menu-header">
-                <h3>মেনু</h3>
-                <button class="close-menu" id="closeMenu">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="menu-content">
-                <a href="index.html" class="menu-item">
-                    <i class="fas fa-home"></i>
-                    হোম
-                </a>
-                <a href="pages/about.html" class="menu-item">
-                    <i class="fas fa-info-circle"></i>
-                    আমাদের সম্পর্কে
-                </a>
-                <a href="pages/contact.html" class="menu-item">
-                    <i class="fas fa-envelope"></i>
-                    যোগাযোগ
-                </a>
-                <a href="pages/privacy.html" class="menu-item">
-                    <i class="fas fa-shield-alt"></i>
-                    গোপনীয়তা নীতি
-                </a>
-                <div class="menu-divider"></div>
-                <div class="menu-item theme-selector">
-                    <i class="fas fa-palette"></i>
-                    <span>থিম</span>
-                    <div class="theme-options">
-                        <button class="theme-btn" data-theme="light">
-                            <i class="fas fa-sun"></i>
-                        </button>
-                        <button class="theme-btn" data-theme="dark">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speak EU - ইউরোপীয় ভাষা শিখুন</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 🎯 কম্প্যাক্ট হেডার - 720x120 -->
+  <header class="app-header-compact">
+    <div class="header-container">
+      <div class="header-left">
+        <h1 class="app-title-compact">
+          <span class="logo-icon">🗣️</span>
+          <span class="title-text">Speak EU</span>
+          <span class="subtitle">ইউরোপীয় ভাষা শিখুন</span>
+        </h1>
+      </div>
+      
+      <div class="header-center">
+        <!-- 🔍 সার্চ এবং ফিল্টার -->
+        <div class="search-container">
+          <input type="text" id="vocabulary-search" placeholder="শব্দ খুঁজুন..." class="search-input">
+          <button id="search-btn" class="search-btn">🔍</button>
         </div>
+        
+        <!-- ভাষা নির্বাচন -->
+        <select id="language-select" class="language-select-compact">
+          <option value="">ভাষা নির্বাচন করুন</option>
+          <!-- Schengen Countries -->
+          <optgroup label="🟦 শেনজেন দেশসমূহ">
+            <option value="austria">🇦🇹 অস্ট্রিয়া (জার্মান)</option>
+            <option value="belgium">🇧🇪 বেলজিয়াম (ডাচ)</option>
+            <option value="czech">🇨🇿 চেক প্রজাতন্ত্র (চেক)</option>
+            <option value="denmark">🇩🇰 ডেনমার্ক (ডেনিশ)</option>
+            <option value="finland">🇫🇮 ফিনল্যান্ড (ফিনিশ)</option>
+            <option value="france">🇫🇷 ফ্রান্স (ফ্রেঞ্চ)</option>
+            <option value="germany">🇩🇪 জার্মানি (জার্মান)</option>
+            <option value="greece">🇬🇷 গ্রিস (গ্রিক)</option>
+            <option value="italy">🇮🇹 ইতালি (ইতালিয়ান)</option>
+            <option value="netherlands">🇳🇱 নেদারল্যান্ডস (ডাচ)</option>
+            <option value="spain">🇪🇸 স্পেন (স্প্যানিশ)</option>
+            <option value="portugal">🇵🇹 পর্তুগাল (পর্তুগিজ)</option>
+          </optgroup>
+          
+          <!-- Non-Schengen EU/Europe -->
+          <optgroup label="🟥 অন্যান্য ইউরোপীয় দেশ">
+            <option value="russian">🇷🇺 রাশিয়া (রুশ)</option>
+            <option value="unitedkingdom">🇬🇧 যুক্তরাজ্য (ইংরেজি)</option>
+            <option value="turkey">🇹🇷 তুরস্ক (তুর্কি)</option>
+          </optgroup>
+        </select>
+      </div>
+      
+      <div class="header-right">
+        <!-- 📊 প্রগ্রেস ইন্ডিকেটর -->
+        <div class="progress-indicator">
+          <span class="progress-text">আজকের অগ্রগতি</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="daily-progress"></div>
+          </div>
+          <span class="progress-count" id="words-learned-today">০/১০</span>
+        </div>
+        
+        <!-- কন্ট্রোল বাটন -->
+        <div class="control-buttons">
+          <button id="mode-toggle" class="control-btn" title="থিম পরিবর্তন">☀️</button>
+          <button id="stats-toggle" class="control-btn" title="পরিসংখ্যান">📊</button>
+          <button id="menu-toggle" class="control-btn" title="মেনু">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-        <!-- Overlay -->
-        <div class="overlay" id="overlay"></div>
+  <!-- 🎛️ ফিল্টার এবং সর্টিং প্যানেল -->
+  <div class="filter-panel" id="filter-panel">
+    <div class="filter-container">
+      <div class="filter-group">
+        <label>ক্যাটেগরি:</label>
+        <select id="category-filter">
+          <option value="all">সব ক্যাটেগরি</option>
+          <option value="greetings">অভিবাদন</option>
+          <option value="daily">দৈনন্দিন</option>
+          <option value="work">কাজকর্ম</option>
+          <option value="medical">চিকিৎসা</option>
+          <option value="shopping">কেনাকাটা</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>অসুবিধা:</label>
+        <select id="difficulty-filter">
+          <option value="all">সব লেভেল</option>
+          <option value="beginner">শুরুর (সহজ)</option>
+          <option value="intermediate">মধ্যম</option>
+          <option value="advanced">উন্নত</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>স্ট্যাটাস:</label>
+        <select id="status-filter">
+          <option value="all">সব শব্দ</option>
+          <option value="learned">শিখেছি</option>
+          <option value="learning">শিখছি</option>
+          <option value="new">নতুন</option>
+        </select>
+      </div>
+      
+      <button id="clear-filters" class="clear-btn">ফিল্টার মুছুন</button>
+    </div>
+  </div>
 
-        <!-- Notification -->
-        <div class="notification" id="notification"></div>
+  <!-- 📊 স্ট্যাটিস্টিক্স প্যানেল -->
+  <div class="stats-panel" id="stats-panel">
+    <div class="stats-container">
+      <h3>🏆 আপনার অগ্রগতি</h3>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="total-words-learned">০</div>
+          <div class="stat-label">মোট শব্দ শিখেছেন</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="current-streak">০</div>
+          <div class="stat-label">ধারাবাহিক দিন</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="words-this-week">০</div>
+          <div class="stat-label">এই সপ্তাহে</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="accuracy-rate">০%</div>
+          <div class="stat-label">নির্ভুলতার হার</div>
+        </div>
+      </div>
+      
+      <!-- সাপ্তাহিক প্রগ্রেস চার্ট -->
+      <div class="progress-chart">
+        <h4>সাপ্তাহিক অগ্রগতি</h4>
+        <div class="chart-container" id="weekly-chart">
+          <!-- Chart will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- Footer -->
-        <footer class="app-footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Speak EU</h4>
-                    <p>ইউরোপীয় ভাষা শিক্ষার সম্পূর্ণ সমাধান</p>
-                </div>
-                <div class="footer-section">
-                    <h4>দ্রুত লিংক</h4>
-                    <ul>
-                        <li><a href="index.html">হোম</a></li>
-                        <li><a href="pages/about.html">আমাদের সম্পর্কে</a></li>
-                        <li><a href="pages/contact.html">যোগাযোগ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>নীতিমালা</h4>
-                    <ul>
-                        <li><a href="pages/privacy.html">গোপনীয়তা নীতি</a></li>
-                        <li><a href="pages/terms.html">শর্তাবলী</a></li>
-                    </ul>
-                </div>
+  <!-- 📖 মূল কনটেন্ট এরিয়া -->
+  <main id="conversation-area" class="conversation-area-enhanced">
+    <!-- লোডিং স্টেট -->
+    <div class="loading-container" id="loading-container">
+      <div class="loading-spinner"></div>
+      <p>ভাষার ডেটা লোড হচ্ছে...</p>
+    </div>
+    
+    <!-- ডিফল্ট কনটেন্ট -->
+    <div class="welcome-content" id="welcome-content">
+      <div class="hero-section">
+        <h2>🌍 ইউরোপীয় ভাষা শিখুন সহজেই</h2>
+        <p class="hero-description">
+          <strong>Speak EU</strong> দিয়ে ইউরোপের যেকোনো দেশের ভাষা শিখুন। 
+          প্রতিদিন মাত্র ১৫ মিনিট অনুশীলন করুন এবং নতুন ভাষায় কথা বলতে শিখুন।
+        </p>
+        
+        <div class="feature-highlights">
+          <div class="feature-item">
+            <span class="feature-icon">🎯</span>
+            <span>লক্ষ্যভিত্তিক শিক্ষা</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📈</span>
+            <span>অগ্রগতি ট্র্যাকিং</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🔄</span>
+            <span>নিয়মিত অনুশীলন</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 🚀 কুইক স্টার্ট -->
+      <section class="quick-start-section">
+        <h3>🚀 শুরু করার জন্য করণীয়</h3>
+        <div class="steps-container">
+          <div class="step-item">
+            <div class="step-number">১</div>
+            <div class="step-content">
+              <h4>ভাষা নির্বাচন করুন</h4>
+              <p>উপরের ড্রপডাউন থেকে আপনার পছন্দের ভাষা বেছে নিন</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; ২০২৫ Speak EU. সকল অধিকার সংরক্ষিত।</p>
+          </div>
+          <div class="step-item">
+            <div class="step-number">২</div>
+            <div class="step-content">
+              <h4>শব্দভাণ্ডার অন্বেষণ করুন</h4>
+              <p>দৈনন্দিন প্রয়োজনীয় শব্দ এবং বাক্য শিখুন</p>
             </div>
-        </footer>
+          </div>
+          <div class="step-item">
+            <div class="step-number">৩</div>
+            <div class="step-content">
+              <h4>নিয়মিত অনুশীলন করুন</h4>
+              <p>প্রতিদিন কমপক্ষে ১০টি নতুন শব্দ শিখুন</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- জনপ্রিয় ভাষা -->
+      <section class="popular-languages">
+        <h3>🌟 জনপ্রিয় ভাষাসমূহ</h3>
+        <div class="language-grid">
+          <div class="language-card" data-lang="italy">
+            <span class="flag">🇮🇹</span>
+            <h4>ইতালিয়ান</h4>
+            <p>২,৮৭১ শব্দ</p>
+          </div>
+          <div class="language-card" data-lang="spain">
+            <span class="flag">🇪🇸</span>
+            <h4>স্প্যানিশ</h4>
+            <p>১,৮০৩ শব্দ</p>
+          </div>
+          <div class="language-card" data-lang="russian">
+            <span class="flag">🇷🇺</span>
+            <h4>রুশ</h4>
+            <p>৩৩ শব্দ</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- ভোকাবুলারি কনটেন্ট -->
+    <div class="vocabulary-content" id="vocabulary-content" style="display: none;">
+      <!-- Dynamic content will be loaded here -->
+    </div>
+  </main>
 
-        <script src="script.js"></script>
-    </body>
+  <!-- সাইড মেনু -->
+  <div id="side-menu" class="side-menu-enhanced">
+    <button id="close-menu" class="close-menu-btn">✖</button>
+    
+    <div class="menu-header">
+      <h3>Speak EU</h3>
+      <p>ইউরোপীয় ভাষা শিখুন</p>
+    </div>
+    
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="#" id="menu-home">🏠 হোম</a></li>
+        <li><a href="#" id="menu-progress">📊 অগ্রগতি</a></li>
+        <li><a href="#" id="menu-vocabulary">📚 শব্দভাণ্ডার</a></li>
+        <li><a href="#" id="menu-settings">⚙️ সেটিংস</a></li>
+        <li><a href="#" id="menu-about">ℹ️ সম্পর্কে</a></li>
+        <li><a href="#" id="menu-help">❓ সাহায্য</a></li>
+      </ul>
+    </nav>
+    
+    <div class="menu-footer">
+      <div class="social-links">
+        <a href="#" class="social-link">📘 Facebook</a>
+        <a href="#" class="social-link">📢 Telegram</a>
+      </div>
+      <p class="copyright">© ২০২৪ Speak EU</p>
+    </div>
+  </div>
+
+  <!-- 🎉 টোস্ট নোটিফিকেশন -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- স্ক্রিপ্ট -->
+  <script src="script.js"></script>
+</body>
 </html>
