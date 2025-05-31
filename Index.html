@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak EU - ইউরোপীয় ভাষা শিখুন | ২৮টি দেশের ভাষা</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="২৮টি ইউরোপীয় দেশের ভাষা শিখুন। ১,৪০,০০০+ শব্দ ও বাক্যের বিশাল সংগ্রহ। বাংলাদেশী প্রবাসীদের জন্য বিশেষভাবে তৈরি।">
+    <meta name="keywords" content="ইউরোপীয় ভাষা, জার্মান, ফরাসি, স্প্যানিশ, ইতালিয়ান, ভাষা শেখা, বাংলাদেশী প্রবাসী">
+    <meta name="author" content="Speak EU">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Speak EU - ইউরোপীয় ভাষা শিখুন">
+    <meta property="og:description" content="২৮টি ইউরোপীয় দেশের ভাষা শিখুন। ১,৪০,০০০+ শব্দ ও বাক্যের বিশাল সংগ্রহ।">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mehedi-x.github.io/speak_eu/">
+    <meta property="og:image" content="https://mehedi-x.github.io/speak_eu/icons/icon-512x512.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speak EU - ইউরোপীয় ভাষা শিখুন">
+    <meta name="twitter:description" content="২৮টি ইউরোপীয় দেশের ভাষা শিখুন। ১,৪০,০০০+ শব্দ ও বাক্যের বিশাল সংগ্রহ।">
+    
+    <!-- PWA Meta -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Speak EU">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <link rel="mask-icon" href="icons/icon-192x192.png" color="#2563eb">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/app.js" as="script">
+</head>
+<body class="light-theme">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">🗣️ Speak EU</div>
+            <div id="loadingText" class="loading-text">অ্যাপ্লিকেশন প্রস্তুত করা হচ্ছে...</div>
+            <div class="loading-progress">
+                <div id="loadingProgress" class="loading-progress-bar" style="width: 0%"></div>
+            </div>
+            <div id="loadingPercentage" class="loading-percentage">0%</div>
+            <div class="loading-subtitle">দয়া করে অপেক্ষা করুন</div>
+        </div>
+    </div>
+
+    <!-- Network Status -->
+    <div id="networkStatus" class="network-status">
+        <span id="networkMessage">ইন্টারনেট সংযোগ চেক করা হচ্ছে...</span>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header id="mainHeader" class="main-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden">
+                        <span class="btn-icon">☰</span>
+                    </button>
+                    
+                    <div class="app-logo">
+                        <span class="logo-icon">🗣️</span>
+                        <span class="logo-text">Speak EU</span>
+                    </div>
+                </div>
+                
+                <nav class="main-nav hidden md:flex">
+                    <button class="nav-item active" data-section="home">
+                        <span class="nav-icon">🏠</span>
+                        <span>হোম</span>
+                    </button>
+                    <button class="nav-item" data-section="languages">
+                        <span class="nav-icon">🌍</span>
+                        <span>ভাষাসমূহ</span>
+                    </button>
+                    <button class="nav-item" data-section="learn">
+                        <span class="nav-icon">📚</span>
+                        <span>শিখুন</span>
+                    </button>
+                    <button class="nav-item" data-section="progress">
+                        <span class="nav-icon">📊</span>
+                        <span>অগ্রগতি</span>
+                    </button>
+                </nav>
+                
+                <div class="header-actions">
+                    <button id="searchToggle" class="action-btn" title="সার্চ করুন">
+                        <span class="btn-icon">🔍</span>
+                    </button>
+                    
+                    <button id="themeToggle" class="action-btn" title="থিম পরিবর্তন করুন">
+                        <span class="btn-icon">🌙</span>
+                    </button>
+                    
+                    <div class="progress-indicator">
+                        <span class="progress-text">আজ: <span id="todayProgress">0</span></span>
+                        <span class="streak-text">স্ট্রিক: <span id="currentStreak">0</span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Global Search -->
+        <div id="globalSearch" class="global-search hidden">
+            <div class="search-container">
+                <div class="search-header">
+                    <input type="text" id="globalSearchInput" class="search-input" 
+                           placeholder="যেকোনো ভাষায় বা বাংলায় সার্চ করুন...">
+                    <button id="globalSearchBtn" class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                    <button id="searchClose" class="search-close">
+                        <span>✕</span>
+                    </button>
+                </div>
+                <div id="searchSuggestions" class="search-suggestions">
+                    <!-- Search results will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main id="mainContent" class="main-content">
+            <!-- Home Section -->
+            <section id="homeSection" class="content-section active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="title-main">🗣️ Speak EU</span>
+                            <span class="title-subtitle">ইউরোপীয় ভাষা শিখুন</span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            ২৮টি ইউরোপীয় দেশের ভাষা শিখুন। ১,৪০,০০০+ শব্দ ও বাক্যের বিশাল সংগ্রহ। 
+                            বাংলাদেশী ছাত্র, কর্মী ও পর্যটকদের জন্য বিশেষভাবে তৈরি।
+                        </p>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">28</div>
+                                <div class="stat-label">দেশের ভাষা</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">140K+</div>
+                                <div class="stat-label">শব্দ ও বাক্য</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">23</div>
+                                <div class="stat-label">ক্যাটাগরি</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-large" data-action="start-learning">
+                                <span class="btn-icon">🚀</span>
+                                <span>শেখা শুরু করুন</span>
+                            </button>
+                            
+                            <button class="btn btn-secondary btn-large" data-action="browse-languages">
+                                <span class="btn-icon">🌍</span>
+                                <span>ভাষা দেখুন</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2>দ্রুত অ্যাক্সেস</h2>
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-card" data-action="emergency">
+                            <span class="action-icon">🚨</span>
+                            <h3>জরুরি বাক্য</h3>
+                            <p>জরুরি অবস্থায় প্রয়োজনীয় বাক্য</p>
+                        </button>
+                        
+                        <button class="quick-action-card" data-action="daily">
+                            <span class="action-icon">💬</span>
+                            <h3>দৈনন্দিন কথোপকথন</h3>
+                            <p>প্রতিদিনের প্রয়োজনীয় বাক্য</p>
+                        </button>
+                        
+                        <button class="quick-action-card" data-action="work">
+                            <span class="action-icon">💼</span>
+                            <h3>কর্মক্ষেত্রের ভাষা</h3>
+                            <p>অফিস ও কাজের জন্য প্রয়োজনীয় বাক্য</p>
+                        </button>
+                        
+                        <button class="quick-action-card" data-action="travel">
+                            <span class="action-icon">✈️</span>
+                            <h3>ভ্রমণের ভাষা</h3>
+                            <p>ভ্রমণ ও পরিবহনের জন্য বাক্য</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Popular Languages -->
+                <div class="popular-languages">
+                    <h2>জনপ্রিয় ভাষাসমূহ</h2>
+                    <div id="popularLanguagesGrid" class="languages-grid">
+                        <!-- Popular languages will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languagesSection" class="content-section">
+                <div class="section-header">
+                    <h1>🌍 ইউরোপীয় ভাষাসমূহ</h1>
+                    <p>২৮টি দেশের ভাষা শিখুন - শেনজেন ও নন-শেনজেন দেশ সহ</p>
+                </div>
+                
+                <!-- Language Filters -->
+                <div class="filter-section">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">
+                            <span>সব ভাষা</span>
+                            <span class="tab-count">28</span>
+                        </button>
+                        <button class="filter-tab" data-filter="popular">
+                            <span>জনপ্রিয়</span>
+                            <span class="tab-count">5</span>
+                        </button>
+                        <button class="filter-tab" data-filter="schengen">
+                            <span>শেনজেন</span>
+                            <span class="tab-count">27</span>
+                        </button>
+                        <button class="filter-tab" data-filter="non-schengen">
+                            <span>নন-শেনজেন</span>
+                            <span class="tab-count">1</span>
+                        </button>
+                    </div>
+                    
+                    <div class="search-filter">
+                        <input type="text" id="languageSearch" class="search-input" 
+                               placeholder="ভাষা বা দেশের নাম খুঁজুন...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </div>
+                
+                <!-- Languages Grid -->
+                <div id="languagesGrid" class="languages-grid">
+                    <!-- Languages will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Learning Section -->
+            <section id="learnSection" class="content-section">
+                <!-- Language Selection -->
+                <div id="languageSelection" class="language-selection">
+                    <div class="selection-header">
+                        <h1>📚 ভাষা শিখুন</h1>
+                        <p>আপনার পছন্দের ভাষা নির্বাচন করুন</p>
+                    </div>
+                    
+                    <div class="language-selector">
+                        <select id="languageSelect" class="language-select">
+                            <option value="">একটি ভাষা নির্বাচন করুন...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Learning Interface -->
+                <div id="learningInterface" class="learning-interface hidden">
+                    <!-- Current Language Header -->
+                    <div class="current-language">
+                        <div class="language-info">
+                            <span id="currentLanguageFlag" class="language-flag">🇩🇪</span>
+                            <div class="language-details">
+                                <h2 id="currentLanguageName">জার্মান (Deutsch)</h2>
+                                <p id="currentLanguageInfo">জার্মানি • 83M জনসংখ্যা • 5,284 শব্দ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="learning-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">আজ শিখেছি</span>
+                                <span id="todayLearned" class="stat-value">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">মোট শিখেছি</span>
+                                <span id="totalLearned" class="stat-value">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">স্ট্রিক</span>
+                                <span id="learningStreak" class="stat-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Learning Controls -->
+                    <div class="learning-controls">
+                        <div class="control-group">
+                            <label for="categoryFilter">ক্যাটাগরি:</label>
+                            <select id="categoryFilter" class="control-select">
+                                <option value="all">সব ক্যাটাগরি</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="difficultyFilter">কঠিনতা:</label>
+                            <select id="difficultyFilter" class="control-select">
+                                <option value="all">সব লেভেল</option>
+                                <option value="beginner">সহজ</option>
+                                <option value="intermediate">মধ্যম</option>
+                                <option value="advanced">কঠিন</option>
+                            </select>
+                        </div>
+                        
+                        <button id="shuffleBtn" class="btn btn-outline">
+                            <span class="btn-icon">🔀</span>
+                            <span>এলোমেলো</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Vocabulary List -->
+                    <div id="vocabularyList" class="vocabulary-list">
+                        <!-- Vocabulary cards will be loaded here -->
+                    </div>
+                    
+                    <!-- Load More -->
+                    <div class="load-more-section">
+                        <button id="loadMoreBtn" class="btn btn-secondary">
+                            <span class="btn-icon">📥</span>
+                            <span>আরো লোড করুন</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Loading State -->
+                <div id="languageLoading" class="component-loading hidden">
+                    <div class="loading-spinner"></div>
+                    <span>ভাষার ডেটা লোড করা হচ্ছে...</span>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progressSection" class="content-section">
+                <div class="section-header">
+                    <h1>📊 আপনার অগ্রগতি</h1>
+                    <p>শেখার পরিসংখ্যান ও অর্জনসমূহ</p>
+                </div>
+                
+                <!-- Progress Overview -->
+                <div id="progressOverview" class="progress-overview">
+                    <!-- Progress cards will be loaded here -->
+                </div>
+                
+                <!-- Progress Charts -->
+                <div id="progressCharts" class="progress-charts">
+                    <!-- Charts will be loaded here -->
+                </div>
+                
+                <!-- Language Progress -->
+                <div class="language-progress-section">
+                    <h2>ভাষাভিত্তিক অগ্রগতি</h2>
+                    <div id="languageProgressList" class="language-progress-list">
+                        <!-- Language progress will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Streak Calendar -->
+                <div class="streak-section">
+                    <h2>শেখার ক্যালেন্ডার</h2>
+                    <div id="streakCalendar" class="streak-calendar">
+                        <!-- Streak calendar will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="achievements-section">
+                    <h2>🏆 অর্জনসমূহ</h2>
+                    <div id="achievementsList" class="achievements-list">
+                        <!-- Achievements will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu hidden">
+            <div class="mobile-menu-overlay"></div>
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <div class="app-logo">
+                        <span class="logo-icon">🗣️</span>
+                        <span class="logo-text">Speak EU</span>
+                    </div>
+                    <button id="mobileMenuClose" class="close-btn">✕</button>
+                </div>
+                
+                <nav class="mobile-nav">
+                    <button class="mobile-nav-item active" data-section="home">
+                        <span class="nav-icon">🏠</span>
+                        <span>হোম</span>
+                    </button>
+                    <button class="mobile-nav-item" data-section="languages">
+                        <span class="nav-icon">🌍</span>
+                        <span>ভাষাসমূহ</span>
+                    </button>
+                    <button class="mobile-nav-item" data-section="learn">
+                        <span class="nav-icon">📚</span>
+                        <span>শিখুন</span>
+                    </button>
+                    <button class="mobile-nav-item" data-section="progress">
+                        <span class="nav-icon">📊</span>
+                        <span>অগ্রগতি</span>
+                    </button>
+                </nav>
+                
+                <div class="mobile-menu-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">মোট শব্দ</span>
+                        <span id="mobileStatsWords" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">স্ট্রিক</span>
+                        <span id="mobileStatsStreak" class="stat-value">0</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-actions">
+                    <button id="mobileThemeToggle" class="btn btn-outline">
+                        <span class="btn-icon">🌙</span>
+                        <span>থিম পরিবর্তন</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Install Button (PWA) -->
+        <button id="installBtn" class="install-btn hidden">
+            <span class="btn-icon">📱</span>
+            <span>অ্যাপ ইনস্টল করুন</span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    
+    <!-- Critical Loading Fix Script -->
+    <script>
+    // 🔧 CRITICAL LOADING FIX - Must be included
+    (function() {
+        'use strict';
+        
+        let appInitialized = false;
+        let loadingSteps = [
+            { target: 15, message: 'ভাষার ডেটা প্রস্তুত করা হচ্ছে...' },
+            { target: 30, message: 'অডিও সিস্টেম লোড করা হচ্ছে...' },
+            { target: 50, message: 'ব্যবহারকারীর সেটিংস লোড করা হচ্ছে...' },
+            { target: 70, message: 'ইন্টারফেস প্রস্তুত করা হচ্ছে...' },
+            { target: 85, message: 'অগ্রগতির ডেটা লোড করা হচ্ছে...' },
+            { target: 95, message: 'চূড়ান্ত প্রস্তুতি...' }
+        ];
+        
+        function updateLoadingProgress() {
+            const progressBar = document.getElementById('loadingProgress');
+            const percentage = document.getElementById('loadingPercentage');
+            const loadingText = document.getElementById('loadingText');
+            
+            if (!progressBar || !percentage || !loadingText) {
+                console.warn('Loading elements not found');
+                return;
+            }
+            
+            let currentStep = 0;
+            let currentProgress = 0;
+            
+            const progressInterval = setInterval(() => {
+                if (currentStep >= loadingSteps.length) {
+                    clearInterval(progressInterval);
+                    return;
+                }
+                
+                const step = loadingSteps[currentStep];
+                const targetProgress = step.target;
+                const increment = (targetProgress - currentProgress) / 8;
+                
+                currentProgress += increment;
+                
+                if (currentProgress >= targetProgress - 1) {
+                    currentProgress = targetProgress;
+                    loadingText.textContent = step.message;
+                    currentStep++;
+                }
+                
+                progressBar.style.width = currentProgress + '%';
+                percentage.textContent = Math.round(currentProgress) + '%';
+                
+            }, 150);
+        }
+        
+        function completeLoading() {
+            const progressBar = document.getElementById('loadingProgress');
+            const percentage = document.getElementById('loadingPercentage');
+            const loadingText = document.getElementById('loadingText');
+            
+            if (progressBar) progressBar.style.width = '100%';
+            if (percentage) percentage.textContent = '100%';
+            if (loadingText) loadingText.textContent = 'সম্পূর্ণ! স্বাগতম Speak EU তে 🎉';
+            
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('hidden');
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.remove();
+                        }
+                    }, 500);
+                }
+            }, 800);
+        }
+        
+        function showErrorScreen(error) {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.innerHTML = `
+                    <div class="loading-content">
+                        <div style="text-align: center; color: white;">
+                            <h2 style="color: #ef4444; margin-bottom: 20px;">😔 লোডিং এ সমস্যা হয়েছে</h2>
+                            <p style="margin-bottom: 20px;">দয়া করে পেজ রিফ্রেশ করুন বা পরে চেষ্টা করুন</p>
+                            <div style="background: rgba(239, 68, 68, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                                <p style="font-size: 14px; color: #fca5a5;">Error: ${error?.message || 'Unknown error'}</p>
+                            </div>
+                            <button onclick="window.location.reload()" 
+                                    style="background: #ef4444; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px;">
+                                🔄 পেজ রিফ্রেশ করুন
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        async function initializeApp() {
+            if (appInitialized) return;
+            
+            try {
+                console.log('🚀 Starting Speak EU initialization...');
+                
+                // Check if app exists
+                if (typeof window.app === 'undefined') {
+                    throw new Error('Main app object not found. Check if app.js loaded correctly.');
+                }
+                
+                // Initialize the app
+                await window.app.init();
+                
+                appInitialized = true;
+                console.log('✅ Speak EU initialized successfully');
+                
+                // Complete loading animation
+                completeLoading();
+                
+            } catch (error) {
+                console.error('❌ App initialization failed:', error);
+                showErrorScreen(error);
+            }
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM loaded, starting initialization...');
+            
+            // Start loading animation
+            updateLoadingProgress();
+            
+            // Initialize app after a short delay to show loading
+            setTimeout(() => {
+                initializeApp();
+            }, 2000);
+        });
+        
+        // Handle loading errors
+        window.addEventListener('error', function(event) {
+            console.error('Global error:', event.error);
+            if (!appInitialized) {
+                showErrorScreen(event.error);
+            }
+        });
+        
+        // Handle unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+            if (!appInitialized) {
+                showErrorScreen(new Error('Promise rejection: ' + event.reason));
+            }
+        });
+        
+    })();
+    </script>
+</body>
+</html>
