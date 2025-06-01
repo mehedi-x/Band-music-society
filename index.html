@@ -18,18 +18,24 @@
     <p>Loading Speak EU...</p>
   </div>
 
-  <!-- 📱 Universal Header (Mobile + Desktop Responsive) -->
-  <header class="app-header">
+  <!-- 🔝 Top Header (Scrollable) -->
+  <div id="top-header" class="top-header">
+    <div class="top-header-container">
+      <h1 class="brand-title">Speak EU</h1>
+      <div class="brand-subtitle">Learn 40+ European Languages</div>
+    </div>
+  </div>
+
+  <!-- 📱 Main Header (Sticky) -->
+  <header id="main-header" class="main-header">
     <div class="header-container">
-      <h1 class="app-title">Speak EU</h1>
-      
-      <div class="header-center">
+      <div class="header-left">
         <select id="language-select" class="language-selector">
           <option value="">🌍 Select Language</option>
           <!-- Schengen Countries -->
           <optgroup label="🟦 Schengen Area">
-            <option value="austria">🇦🇹 Austria (German)</option>
-            <option value="belgium">🇧🇪 Belgium (Dutch)</option>
+            <option value="austria">🇦🇹 Austria</option>
+            <option value="belgium">🇧🇪 Belgium</option>
             <option value="czech">🇨🇿 Czech Republic</option>
             <option value="denmark">🇩🇰 Denmark</option>
             <option value="estonia">🇪🇪 Estonia</option>
@@ -85,25 +91,23 @@
         </select>
       </div>
       
-      <div class="header-actions">
-        <button id="mode-toggle" class="action-btn" title="Toggle Theme" aria-label="Toggle dark/light mode">☀️</button>
-        <button id="menu-toggle" class="action-btn" title="Open Menu" aria-label="Open navigation menu">☰</button>
+      <div class="header-right">
+        <button id="mode-toggle" class="action-btn" title="Toggle Theme">☀️</button>
+        <button id="menu-toggle" class="action-btn" title="Open Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- 🔍 Search & Filter Panel (Responsive) -->
+  <!-- 🔍 Control Panel -->
   <div id="control-panel" class="control-panel hidden">
     <div class="control-container">
-      <!-- Search Row -->
       <div class="search-row">
         <div class="search-wrapper">
           <input type="text" id="search-box" placeholder="🔍 Search vocabulary..." autocomplete="off" />
-          <button id="clear-search" class="clear-btn" title="Clear search">✕</button>
+          <button id="clear-search" class="clear-btn">✕</button>
         </div>
       </div>
       
-      <!-- Filter Row -->
       <div class="filter-row">
         <select id="category-filter" class="filter-select">
           <option value="">📚 All Categories</option>
@@ -121,18 +125,17 @@
         </select>
         
         <div class="action-buttons">
-          <button id="favorites-toggle" class="action-btn" title="Show Favorites" aria-label="Toggle favorites">⭐</button>
-          <button id="audio-toggle" class="action-btn active" title="Audio Enabled" aria-label="Toggle audio">🔊</button>
-          <button id="progress-toggle" class="action-btn" title="Show Progress" aria-label="Toggle progress view">📊</button>
+          <button id="favorites-toggle" class="action-btn" title="Show Favorites">⭐</button>
+          <button id="audio-toggle" class="action-btn active" title="Audio Enabled">🔊</button>
+          <button id="progress-toggle" class="action-btn" title="Show Progress">📊</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 📊 Progress Dashboard (Enhanced) -->
+  <!-- 📊 Progress Dashboard -->
   <div id="progress-dashboard" class="progress-dashboard hidden">
     <div class="progress-container">
-      <!-- Daily Progress Card -->
       <div class="progress-card daily-card">
         <div class="card-header">
           <h3>📈 Today's Progress</h3>
@@ -148,7 +151,6 @@
         </div>
       </div>
 
-      <!-- Stats Grid -->
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-icon">🔥</div>
@@ -204,7 +206,6 @@
           <p class="hero-subtitle">ইউরোপের ৪০+ দেশের ভাষা শিখুন সহজেই</p>
         </div>
         
-        <!-- Feature Showcase -->
         <div class="features-showcase">
           <div class="feature-card">
             <div class="feature-icon">🔍</div>
@@ -228,7 +229,6 @@
           </div>
         </div>
 
-        <!-- Quick Start Guide -->
         <div class="quick-start-guide">
           <h3>🚀 ৩ ধাপে শুরু করুন</h3>
           <div class="steps-container">
@@ -256,7 +256,6 @@
           </div>
         </div>
 
-        <!-- Popular Languages -->
         <div class="popular-section">
           <h3>🌟 জনপ্রিয় ভাষাসমূহ</h3>
           <div class="language-grid">
@@ -315,20 +314,17 @@
 
   <!-- 📱 Responsive Side Menu -->
   <div id="side-menu" class="side-menu">
-    <div class="menu-overlay" id="menu-overlay"></div>
+    <div id="menu-overlay" class="menu-overlay"></div>
     <div class="menu-panel">
-      <!-- Menu Header -->
       <div class="menu-header">
         <div class="menu-brand">
           <h3>📚 Speak EU</h3>
           <p>Language Learning</p>
         </div>
-        <button id="close-menu" class="close-btn" aria-label="Close menu">✕</button>
+        <button id="close-menu" class="close-btn">✕</button>
       </div>
       
-      <!-- Menu Content -->
       <div class="menu-content">
-        <!-- Navigation Section -->
         <div class="menu-section">
           <h4>🧭 Navigation</h4>
           <nav class="menu-nav">
@@ -351,7 +347,6 @@
           </nav>
         </div>
 
-        <!-- Statistics Section -->
         <div class="menu-section">
           <h4>📊 Your Statistics</h4>
           <div class="stats-summary">
@@ -379,7 +374,6 @@
           </div>
         </div>
 
-        <!-- Settings Section -->
         <div class="menu-section">
           <h4>⚙️ Quick Settings</h4>
           <div class="settings-panel">
@@ -428,41 +422,12 @@
             </div>
           </div>
         </div>
-
-        <!-- App Info Section -->
-        <div class="menu-section">
-          <h4>ℹ️ Information</h4>
-          <nav class="menu-nav">
-            <a href="#about" class="nav-item">
-              <span class="nav-icon">📖</span>
-              <span class="nav-text">About Speak EU</span>
-            </a>
-            <a href="#help" class="nav-item">
-              <span class="nav-icon">❓</span>
-              <span class="nav-text">Help & Tutorial</span>
-            </a>
-            <a href="#contact" class="nav-item">
-              <span class="nav-icon">📧</span>
-              <span class="nav-text">Contact Us</span>
-            </a>
-            <a href="#privacy" class="nav-item">
-              <span class="nav-icon">🔒</span>
-              <span class="nav-text">Privacy Policy</span>
-            </a>
-          </nav>
-        </div>
       </div>
 
-      <!-- Menu Footer -->
       <div class="menu-footer">
         <div class="app-info">
           <p>Made with ❤️ for language learners</p>
           <p class="version">Version 2.0 - Universal</p>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-link" title="Facebook">📘</a>
-          <a href="#" class="social-link" title="Telegram">✈️</a>
-          <a href="#" class="social-link" title="WhatsApp">💬</a>
         </div>
       </div>
     </div>
@@ -470,14 +435,6 @@
 
   <!-- 💬 Toast Notifications -->
   <div id="toast-container" class="toast-container"></div>
-
-  <!-- 🔄 Loading States -->
-  <div id="loading-overlay" class="loading-overlay hidden">
-    <div class="loading-content">
-      <div class="loading-spinner-small"></div>
-      <p>Loading content...</p>
-    </div>
-  </div>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
