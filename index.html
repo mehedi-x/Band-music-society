@@ -1,469 +1,352 @@
 <!DOCTYPE html>
-<html lang="bn" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ইউরো কথা - ইউরোপীয় ভাষা শিখুন</title>
-    
-    <!-- Meta Tags -->
-    <meta name="description" content="বাংলাদেশী প্রবাসীদের জন্য ইউরোপীয় ভাষার ব্যবহারিক কথোপকথন শিখুন">
-    <meta name="keywords" content="ইউরোপীয় ভাষা, প্রবাসী, কথোপকথন, ভাষা শিক্ষা">
-    <meta name="author" content="ইউরো কথা">
-    
-    <!-- PWA Meta -->
-    <meta name="theme-color" content="#4F46E5">
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇺</text></svg>">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speak EU - Advanced Language Learning Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-logo">🇪🇺</div>
-            <h2>ইউরো কথা</h2>
-            <div class="loading-spinner"></div>
-            <p>লোড হচ্ছে...</p>
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading Speak EU...</p>
+  </div>
+
+  <header class="app-header">
+    <h1 class="app-title">Speak EU</h1>
+    <div class="header-center">
+      <!-- Search Box -->
+      <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search vocabulary..." />
+        <button id="clear-search">✕</button>
+      </div>
+      
+      <!-- Category Filter -->
+      <select id="category-filter">
+        <option value="">All Categories</option>
+        <option value="basic">Basic (1-500)</option>
+        <option value="intermediate">Intermediate (501-1000)</option>
+        <option value="advanced">Advanced (1001+)</option>
+        <option value="greetings">Greetings</option>
+        <option value="numbers">Numbers</option>
+        <option value="food">Food & Dining</option>
+        <option value="travel">Travel</option>
+        <option value="work">Work</option>
+        <option value="health">Health</option>
+        <option value="family">Family</option>
+        <option value="emergency">Emergency</option>
+      </select>
+    </div>
+    
+    <div class="header-right">
+      <select id="language-select">
+        <option value="">Select Language</option>
+        <!-- Schengen Countries -->
+        <optgroup label="🟦 Schengen Area">
+          <option value="austria">🇦🇹 Austria</option>
+          <option value="belgium">🇧🇪 Belgium</option>
+          <option value="czech">🇨🇿 Czech Republic</option>
+          <option value="denmark">🇩🇰 Denmark</option>
+          <option value="estonia">🇪🇪 Estonia</option>
+          <option value="finland">🇫🇮 Finland</option>
+          <option value="france">🇫🇷 France</option>
+          <option value="germany">🇩🇪 Germany</option>
+          <option value="greece">🇬🇷 Greece</option>
+          <option value="hungary">🇭🇺 Hungary</option>
+          <option value="iceland">🇮🇸 Iceland</option>
+          <option value="italy">🇮🇹 Italy</option>
+          <option value="latvia">🇱🇻 Latvia</option>
+          <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+          <option value="lithuania">🇱🇹 Lithuania</option>
+          <option value="luxembourg">🇱🇺 Luxembourg</option>
+          <option value="malta">🇲🇹 Malta</option>
+          <option value="netherlands">🇳🇱 Netherlands</option>
+          <option value="norway">🇳🇴 Norway</option>
+          <option value="poland">🇵🇱 Poland</option>
+          <option value="portugal">🇵🇹 Portugal</option>
+          <option value="slovakia">🇸🇰 Slovakia</option>
+          <option value="slovenia">🇸🇮 Slovenia</option>
+          <option value="spain">🇪🇸 Spain</option>
+          <option value="sweden">🇸🇪 Sweden</option>
+          <option value="switzerland">🇨🇭 Switzerland</option>
+        </optgroup>
+        
+        <!-- Non-Schengen European Countries -->
+        <optgroup label="🟥 Other European Countries">
+          <option value="albania">🇦🇱 Albania</option>
+          <option value="andorra">🇦🇩 Andorra</option>
+          <option value="armenia">🇦🇲 Armenia</option>
+          <option value="azerbaijan">🇦🇿 Azerbaijan</option>
+          <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
+          <option value="bulgaria">🇧🇬 Bulgaria</option>
+          <option value="croatia">🇭🇷 Croatia</option>
+          <option value="cyprus">🇨🇾 Cyprus</option>
+          <option value="georgia">🇬🇪 Georgia</option>
+          <option value="ireland">🇮🇪 Ireland</option>
+          <option value="kosovo">🇽🇰 Kosovo</option>
+          <option value="moldova">🇲🇩 Moldova</option>
+          <option value="monaco">🇲🇨 Monaco</option>
+          <option value="montenegro">🇲🇪 Montenegro</option>
+          <option value="northmacedonia">🇲🇰 North Macedonia</option>
+          <option value="romania">🇷🇴 Romania</option>
+          <option value="russian">🇷🇺 Russian</option>
+          <option value="sanmarino">🇸🇲 San Marino</option>
+          <option value="serbia">🇷🇸 Serbia</option>
+          <option value="turkey">🇹🇷 Turkey</option>
+          <option value="ukraine">🇺🇦 Ukraine</option>
+          <option value="unitedkingdom">🇬🇧 United Kingdom</option>
+          <option value="vatican">🇻🇦 Vatican City</option>
+        </optgroup>
+      </select>
+      
+      <!-- Favorites Toggle -->
+      <button id="favorites-toggle" title="Show Favorites">⭐</button>
+      
+      <!-- Audio Controls -->
+      <button id="audio-toggle" title="Enable Audio">🔊</button>
+      
+      <!-- Progress Button -->
+      <button id="progress-toggle" title="View Progress">📊</button>
+      
+      <!-- Settings -->
+      <button id="settings-toggle" title="Settings">⚙️</button>
+      
+      <button id="mode-toggle">☀️</button>
+      <button id="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar-container" class="progress-bar-container hidden">
+    <div class="progress-info">
+      <span id="daily-progress">Today: 0/10 words</span>
+      <span id="total-progress">Total: 0 words learned</span>
+      <span id="streak-counter">🔥 0 day streak</span>
+    </div>
+    <div class="progress-bar">
+      <div id="progress-fill" class="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div id="quick-stats" class="quick-stats hidden">
+    <div class="stat-card">
+      <h3>📚 Today's Goal</h3>
+      <p id="daily-goal-stat">0/10</p>
+    </div>
+    <div class="stat-card">
+      <h3>⭐ Favorites</h3>
+      <p id="favorites-stat">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>🎯 Accuracy</h3>
+      <p id="accuracy-stat">100%</p>
+    </div>
+    <div class="stat-card">
+      <h3>🔄 Review Due</h3>
+      <p id="review-stat">0</p>
+    </div>
+  </div>
+
+  <!-- Filter Results Info -->
+  <div id="filter-info" class="filter-info hidden">
+    <span id="results-count">Showing all vocabulary</span>
+    <button id="clear-filters">Clear Filters</button>
+  </div>
+
+  <!-- Main Content -->
+  <main id="conversation-area" class="main-content">
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+      <div class="welcome-content">
+        <h2>🌟 স্বাগতম Speak EU তে!</h2>
+        <p class="welcome-subtitle">ইউরোপের ৪০+ দেশের ভাষা শিখুন সহজেই</p>
+        
+        <!-- Quick Features -->
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Smart Search</h3>
+            <p>যেকোনো ভাষায় সার্চ করুন</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔊</div>
+            <h3>Audio Pronunciation</h3>
+            <p>সঠিক উচ্চারণ শিখুন</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Progress Tracking</h3>
+            <p>আপনার অগ্রগতি দেখুন</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>Favorites System</h3>
+            <p>গুরুত্বপূর্ণ শব্দ সেভ করুন</p>
+          </div>
         </div>
-    </div>
 
-    <!-- App Container -->
-    <div id="app" class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-content">
-                <div class="header-left">
-                    <button id="menu-btn" class="menu-btn" aria-label="মেনু খুলুন">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="logo">
-                        <span class="logo-icon">🇪🇺</span>
-                        <span class="logo-text">ইউরো কথা</span>
-                    </div>
-                </div>
-                
-                <div class="header-right">
-                    <div class="progress-indicator">
-                        <span id="progress-text">০/০</span>
-                        <div class="progress-bar">
-                            <div id="progress-fill" class="progress-fill"></div>
-                        </div>
-                    </div>
-                    
-                    <button id="theme-toggle" class="theme-toggle" aria-label="থিম পরিবর্তন">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar Menu -->
-        <aside id="sidebar" class="sidebar">
-            <div class="sidebar-header">
-                <h3>মেনু</h3>
-                <button id="close-sidebar" class="close-btn">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-item active" data-section="home">
-                    <i class="fas fa-home"></i>
-                    <span>হোম</span>
-                </a>
-                <a href="#" class="nav-item" data-section="conversations">
-                    <i class="fas fa-comments"></i>
-                    <span>কথোপকথন</span>
-                </a>
-                <a href="#" class="nav-item" data-section="progress">
-                    <i class="fas fa-chart-line"></i>
-                    <span>অগ্রগতি</span>
-                </a>
-                <a href="#" class="nav-item" data-section="settings">
-                    <i class="fas fa-cog"></i>
-                    <span>সেটিংস</span>
-                </a>
-            </nav>
-            
-            <div class="sidebar-footer">
-                <div class="daily-goal">
-                    <span>আজকের লক্ষ্য</span>
-                    <div class="goal-progress">
-                        <span id="daily-count">০</span>/<span id="daily-target">১০</span>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Overlay for mobile sidebar -->
-        <div id="sidebar-overlay" class="sidebar-overlay"></div>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Home Section -->
-            <section id="home-section" class="content-section active">
-                <!-- Hero Section -->
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <h1 class="hero-title">ইউরোপীয় ভাষা শিখুন</h1>
-                        <p class="hero-subtitle">বাংলাদেশী প্রবাসীদের জন্য ব্যবহারিক কথোপকথন</p>
-                        
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">২৯</span>
-                                <span class="stat-label">দেশ</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">১০০০+</span>
-                                <span class="stat-label">কথোপকথন</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">১০০%</span>
-                                <span class="stat-label">বিনামূল্যে</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Instructions -->
-                <div class="instructions-section">
-                    <div class="instruction-card">
-                        <div class="instruction-icon">🌍</div>
-                        <h3>১. দেশ বেছে নিন</h3>
-                        <p>যে দেশের ভাষা শিখতে চান সেটি পতাকা দেখে ক্লিক করুন</p>
-                    </div>
-                    <div class="instruction-card">
-                        <div class="instruction-icon">💬</div>
-                        <h3>২. কথোপকথন দেখুন</h3>
-                        <p>আপনার প্রয়োজনীয় পরিস্থিতির কথোপকথন বেছে নিন</p>
-                    </div>
-                    <div class="instruction-card">
-                        <div class="instruction-icon">🔊</div>
-                        <h3>৩. শুনুন ও শিখুন</h3>
-                        <p>অডিও শুনে সঠিক উচ্চারণ শিখুন</p>
-                    </div>
-                </div>
-
-                <!-- Country Selection -->
-                <div class="section-header">
-                    <h2>দেশ নির্বাচন করুন</h2>
-                    <p>যে দেশের ভাষা শিখতে চান সেটি বেছে নিন</p>
-                </div>
-
-                <!-- Search and Filter -->
-                <div class="search-filter-bar">
-                    <div class="search-box">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text" id="country-search" placeholder="দেশ খুঁজুন..." class="search-input">
-                    </div>
-                    
-                    <div class="filter-tabs">
-                        <button class="filter-tab active" data-filter="all">সব</button>
-                        <button class="filter-tab" data-filter="popular">জনপ্রিয়</button>
-                        <button class="filter-tab" data-filter="schengen">শেনজেন</button>
-                        <button class="filter-tab" data-filter="easy">সহজ</button>
-                    </div>
-                </div>
-
-                <!-- Countries Grid -->
-                <div id="countries-grid" class="countries-grid">
-                    <!-- Countries will be loaded dynamically -->
-                </div>
-            </section>
-
-            <!-- Conversations Section -->
-            <section id="conversations-section" class="content-section">
-                <div class="section-header">
-                    <button id="back-to-countries" class="back-btn">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>দেশ পরিবর্তন</span>
-                    </button>
-                    
-                    <div class="selected-country-info">
-                        <span id="selected-country-flag" class="country-flag-large">🇩🇪</span>
-                        <div class="country-details">
-                            <h2 id="selected-country-name">জার্মানি</h2>
-                            <p id="selected-country-language">জার্মান ভাষা</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category Selection -->
-                <div class="category-section">
-                    <h3>কথোপকথনের ধরন</h3>
-                    <div id="categories-grid" class="categories-grid">
-                        <!-- Categories will be loaded dynamically -->
-                    </div>
-                </div>
-
-                <!-- Conversations List -->
-                <div id="conversations-list" class="conversations-list">
-                    <!-- Conversations will be loaded dynamically -->
-                </div>
-            </section>
-
-            <!-- Progress Section -->
-            <section id="progress-section" class="content-section">
-                <div class="section-header">
-                    <h2>আপনার অগ্রগতি</h2>
-                    <p>শেখার পরিসংখ্যান দেখুন</p>
-                </div>
-
-                <div class="progress-cards">
-                    <div class="progress-card">
-                        <div class="progress-card-icon">📊</div>
-                        <div class="progress-card-content">
-                            <h3 id="total-learned">০</h3>
-                            <p>মোট কথোপকথন শিখেছেন</p>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-card">
-                        <div class="progress-card-icon">🔥</div>
-                        <div class="progress-card-content">
-                            <h3 id="current-streak">০</h3>
-                            <p>দিনের স্ট্রিক</p>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-card">
-                        <div class="progress-card-icon">🌍</div>
-                        <div class="progress-card-content">
-                            <h3 id="countries-learned">০</h3>
-                            <p>দেশের ভাষা শিখেছেন</p>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-card">
-                        <div class="progress-card-icon">⏱️</div>
-                        <div class="progress-card-content">
-                            <h3 id="time-spent">০ মিনিট</h3>
-                            <p>মোট সময় ব্যয়</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Achievement Badges -->
-                <div class="achievements-section">
-                    <h3>আপনার অর্জনসমূহ</h3>
-                    <div id="achievements-grid" class="achievements-grid">
-                        <!-- Achievements will be loaded dynamically -->
-                    </div>
-                </div>
-
-                <!-- Weekly Progress Chart -->
-                <div class="chart-container">
-                    <h3>সাপ্তাহিক অগ্রগতি</h3>
-                    <div id="weekly-chart" class="weekly-chart">
-                        <!-- Chart will be generated dynamically -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Settings Section -->
-            <section id="settings-section" class="content-section">
-                <div class="section-header">
-                    <h2>সেটিংস</h2>
-                    <p>আপনার পছন্দ অনুযায়ী কাস্টমাইজ করুন</p>
-                </div>
-
-                <div class="settings-groups">
-                    <div class="settings-group">
-                        <h3>সাধারণ সেটিংস</h3>
-                        
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>দৈনিক লক্ষ্য</label>
-                                <p>প্রতিদিন কতটি কথোপকথন শিখবেন</p>
-                            </div>
-                            <select id="daily-goal-select" class="setting-select">
-                                <option value="5">৫টি</option>
-                                <option value="10" selected>১০টি</option>
-                                <option value="15">১৫টি</option>
-                                <option value="20">২০টি</option>
-                            </select>
-                        </div>
-
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>অডিও গতি</label>
-                                <p>উচ্চারণের গতি নির্ধারণ করুন</p>
-                            </div>
-                            <select id="audio-speed-select" class="setting-select">
-                                <option value="0.75">ধীর</option>
-                                <option value="1" selected>স্বাভাবিক</option>
-                                <option value="1.25">দ্রুত</option>
-                            </select>
-                        </div>
-
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>অটো-প্লে</label>
-                                <p>স্বয়ংক্রিয়ভাবে অডিও চালানো</p>
-                            </div>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="auto-play-toggle" checked>
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>নোটিফিকেশন</label>
-                                <p>দৈনিক অনুস্মারক পেতে চান</p>
-                            </div>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="notification-toggle">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="settings-group">
-                        <h3>ডেটা ও গোপনীয়তা</h3>
-                        
-                        <div class="setting-item">
-                            <button class="setting-btn" id="export-data-btn">
-                                <i class="fas fa-download"></i>
-                                <span>ডেটা এক্সপোর্ট করুন</span>
-                            </button>
-                        </div>
-
-                        <div class="setting-item">
-                            <button class="setting-btn warning" id="reset-progress-btn">
-                                <i class="fas fa-trash"></i>
-                                <span>অগ্রগতি রিসেট করুন</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="settings-group">
-                        <h3>অ্যাপ সম্পর্কে</h3>
-                        
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>সংস্করণ</label>
-                                <p>১.০.০</p>
-                            </div>
-                        </div>
-
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>তৈরি করেছেন</label>
-                                <p>বাংলাদেশী প্রবাসীদের জন্য ❤️</p>
-                            </div>
-                        </div>
-
-                        <div class="setting-item">
-                            <div class="setting-info">
-                                <label>যোগাযোগ</label>
-                                <p>সহায়তার জন্য ইমেইল করুন</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Conversation Modal -->
-    <div id="conversation-modal" class="modal-overlay">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h3 id="conversation-title">কথোপকথন</h3>
-                <button id="close-modal" class="close-btn">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="modal-content">
-                <div class="conversation-scenario">
-                    <div class="scenario-icon">📍</div>
-                    <p id="conversation-scenario">পরিস্থিতি: রেস্তোরাঁয় খাবার অর্ডার করা</p>
-                </div>
-
-                <div id="conversation-content" class="conversation-content">
-                    <!-- Conversation will be loaded here -->
-                </div>
-                
-                <div class="conversation-controls">
-                    <button id="play-conversation" class="control-btn primary">
-                        <i class="fas fa-play"></i>
-                        <span>শুনুন</span>
-                    </button>
-                    
-                    <button id="slow-play" class="control-btn">
-                        <i class="fas fa-play-circle"></i>
-                        <span>ধীরে শুনুন</span>
-                    </button>
-                    
-                    <button id="mark-learned" class="control-btn success">
-                        <i class="fas fa-check"></i>
-                        <span>শিখেছি</span>
-                    </button>
-
-                    <button id="repeat-play" class="control-btn">
-                        <i class="fas fa-redo"></i>
-                        <span>আবার শুনুন</span>
-                    </button>
-                </div>
-            </div>
+        <div class="quick-start">
+          <h3>🚀 দ্রুত শুরু করুন</h3>
+          <ol>
+            <li>উপরে থেকে একটি ভাষা নির্বাচন করুন</li>
+            <li>আপনার দৈনিক লক্ষ্য সেট করুন</li>
+            <li>শিখতে শুরু করুন!</li>
+          </ol>
         </div>
-    </div>
 
-    <!-- Confirmation Modal -->
-    <div id="confirm-modal" class="modal-overlay">
-        <div class="modal-container small">
-            <div class="modal-header">
-                <h3 id="confirm-title">নিশ্চিত করুন</h3>
-            </div>
-            
-            <div class="modal-content">
-                <p id="confirm-message">আপনি কি নিশ্চিত?</p>
-                
-                <div class="confirm-controls">
-                    <button id="confirm-cancel" class="control-btn">বাতিল</button>
-                    <button id="confirm-ok" class="control-btn warning">হ্যাঁ</button>
-                </div>
-            </div>
+        <!-- Popular Languages -->
+        <div class="popular-languages">
+          <h3>🌟 জনপ্রিয় ভাষা</h3>
+          <div class="language-buttons">
+            <button class="lang-btn" data-lang="italy">🇮🇹 Italian</button>
+            <button class="lang-btn" data-lang="spain">🇪🇸 Spanish</button>
+            <button class="lang-btn" data-lang="germany">🇩🇪 German</button>
+            <button class="lang-btn" data-lang="france">🇫🇷 French</button>
+            <button class="lang-btn" data-lang="greece">🇬🇷 Greek</button>
+            <button class="lang-btn" data-lang="portugal">🇵🇹 Portuguese</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <!-- Toast Notifications -->
-    <div id="toast-container" class="toast-container"></div>
+    <!-- Vocabulary Content (Hidden by default) -->
+    <div id="vocabulary-content" class="vocabulary-content hidden">
+      <!-- Content will be dynamically loaded here -->
+    </div>
+  </main>
 
-    <!-- Audio Element for pronunciation -->
-    <audio id="audio-player" preload="none"></audio>
+  <!-- Side Menu -->
+  <div id="side-menu">
+    <button id="close-menu" title="Close menu">✖</button>
+    <h3>📚 Speak EU</h3>
+    
+    <div class="menu-section">
+      <h4>📊 Statistics</h4>
+      <div id="menu-stats">
+        <p>Words Learned: <span id="menu-total-words">0</span></p>
+        <p>Current Streak: <span id="menu-streak">0</span> days</p>
+        <p>Favorite Words: <span id="menu-favorites">0</span></p>
+      </div>
+    </div>
 
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
-        }
-    </script>
+    <div class="menu-section">
+      <h4>⚙️ Settings</h4>
+      <div class="setting-item">
+        <label for="daily-goal-input">Daily Goal:</label>
+        <input type="number" id="daily-goal-input" min="5" max="100" value="10">
+      </div>
+      <div class="setting-item">
+        <label for="audio-speed">Audio Speed:</label>
+        <input type="range" id="audio-speed" min="0.5" max="2" step="0.1" value="1">
+        <span id="speed-display">1.0x</span>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="auto-play-audio"> Auto-play audio
+        </label>
+      </div>
+    </div>
 
-    <!-- Scripts -->
-    <script src="js/data.js"></script>
-    <script src="js/app.js"></script>
+    <ul class="menu-links">
+      <li><a href="#home">🏠 Home</a></li>
+      <li><a href="#about">ℹ️ About</a></li>
+      <li><a href="#contact">📞 Contact us</a></li>
+      <li><a href="#privacy">🔒 Privacy Policy</a></li>
+      <li><a href="#feedback">💬 Feedback</a></li>
+    </ul>
+
+    <div class="menu-footer">
+      <p>Made with ❤️ for language learners</p>
+      <p>Version 2.0</p>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>⚙️ Settings</h3>
+        <button id="close-settings">✖</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-group">
+          <h4>🎯 Learning Goals</h4>
+          <label>Daily Word Goal: <input type="number" id="modal-daily-goal" min="5" max="100" value="10"></label>
+          <label>Reminder Time: <input type="time" id="reminder-time" value="19:00"></label>
+        </div>
+        
+        <div class="setting-group">
+          <h4>🔊 Audio Settings</h4>
+          <label>Speech Rate: <input type="range" id="modal-audio-speed" min="0.5" max="2" step="0.1" value="1"></label>
+          <label>Voice Volume: <input type="range" id="audio-volume" min="0" max="1" step="0.1" value="0.8"></label>
+          <label><input type="checkbox" id="modal-auto-play"> Auto-play pronunciation</label>
+        </div>
+
+        <div class="setting-group">
+          <h4>📱 Interface</h4>
+          <label><input type="checkbox" id="compact-mode"> Compact mode</label>
+          <label><input type="checkbox" id="show-phonetics"> Show phonetics</label>
+          <label><input type="checkbox" id="animations-enabled" checked> Enable animations</label>
+        </div>
+
+        <div class="setting-group">
+          <h4>🔄 Data Management</h4>
+          <button id="export-progress" class="btn-secondary">Export Progress</button>
+          <button id="reset-progress" class="btn-danger">Reset All Progress</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Modal -->
+  <div id="progress-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📊 Learning Progress</h3>
+        <button id="close-progress-modal">✖</button>
+      </div>
+      <div class="modal-body">
+        <div class="progress-overview">
+          <div class="progress-card">
+            <h4>📚 Total Words</h4>
+            <p class="big-number" id="total-words-learned">0</p>
+          </div>
+          <div class="progress-card">
+            <h4>🔥 Current Streak</h4>
+            <p class="big-number" id="current-streak">0</p>
+          </div>
+          <div class="progress-card">
+            <h4>⭐ Favorites</h4>
+            <p class="big-number" id="total-favorites">0</p>
+          </div>
+        </div>
+
+        <div class="progress-chart">
+          <h4>📈 Weekly Progress</h4>
+          <div id="weekly-chart" class="chart-container">
+            <!-- Chart will be generated here -->
+          </div>
+        </div>
+
+        <div class="language-breakdown">
+          <h4>🌍 Language Breakdown</h4>
+          <div id="language-stats">
+            <!-- Language stats will be generated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for modals -->
+  <div id="modal-overlay" class="modal-overlay hidden"></div>
+
+  <!-- JavaScript Files -->
+  <script src="script.js"></script>
 </body>
 </html>
