@@ -1,1122 +1,1663 @@
-// ================================
-// MAIN APPLICATION
-// ================================
+/* ================================
+   GLOBAL VARIABLES
+================================ */
 
-// Global Variables
-let currentLanguage = '';
-let currentLanguageData = null;
-let vocabularyData = [];
-let filteredData = [];
-let searchQuery = '';
+let currentCountry = null;
 let currentCategory = 'all';
-let currentPage = 1;
-const ITEMS_PER_PAGE = 12;
+let currentConversations = [];
+let userProgress = {};
+let userSettings = {};
+let achievements = [];
+let audioPlayer = null;
 
-// DOM Elements
+/* ================================
+   DOM ELEMENTS
+================================ */
+
 const elements = {
-  // Navigation
-  menuToggle: document.getElementById('menu-toggle'),
-  closeMenu: document.getElementById('close-menu'),
-  sideMenu: document.getElementById('side-menu'),
-  modeToggle: document.getElementById('mode-toggle'),
-  
-  // Content sections
-  welcomeContent: document.getElementById('welcome-content'),
-  vocabularyContent: document.getElementById('vocabulary-content'),
-  gameContent: document.getElementById('game-content'),
-  
-  // Language selection
-  languageSearch: document.getElementById('language-search'),
-  countriesGrid: document.getElementById('countries-grid'),
-  startLearningBtn: document.getElementById('start-learning-btn'),
-  
-  // Vocabulary
-  vocabularySearch: document.getElementById('vocabulary-search'),
-  vocabularyGrid: document.getElementById('vocabulary-grid'),
-  loadMoreBtn: document.getElementById('load-more-btn'),
-  
-  // Progress
-  dailyProgress: document.getElementById('daily-progress'),
-  wordsLearnedToday: document.getElementById('words-learned-today'),
-  currentStreak: document.getElementById('current-streak'),
-  accuracyRate: document.getElementById('accuracy-rate'),
-  userLevel: document.getElementById('user-level'),
-  levelProgress: document.getElementById('level-progress'),
-  
-  // Loading
-  loadingScreen: document.getElementById('loading-screen')
+    // Loading
+    loadingScreen: document.getElementById('loading-screen'),
+    
+    // Header
+    menuBtn: document.getElementById('menu-btn'),
+    themeToggle: document.getElementById('theme-toggle'),
+    progressText: document.getElementById('progress-text'),
+    progressFill: document.getElementById('progress-fill'),
+    
+    // Sidebar
+    sidebar: document.getElementById('sidebar'),
+    sidebarOverlay: document.getElementById('sidebar-overlay'),
+    closeSidebar: document.getElementById('close-sidebar'),
+    navItems: document.querySelectorAll('.nav-item'),
+    dailyCount: document.getElementById('daily-count'),
+    dailyTarget: document.getElementById('daily-target'),
+    
+    // Content sections
+    homeSection: document.getElementById('home-section'),
+    conversationsSection: document.getElementById('conversations-section'),
+    progressSection: document.getElementById('progress-section'),
+    settingsSection: document.getElementById('settings-section'),
+    
+    // Home
+    countrySearch: document.getElementById('country-search'),
+    filterTabs: document.querySelectorAll('.filter-tab'),
+    countriesGrid: document.getElementById('countries-grid'),
+    
+    // Conversations
+    backToCountries: document.getElementById('back-to-countries'),
+    selectedCountryFlag: document.getElementById('selected-country-flag'),
+    selectedCountryName: document.getElementById('selected-country-name'),
+    selectedCountryLanguage: document.getElementById('selected-country-language'),
+    categoriesGrid: document.getElementById('categories-grid'),
+    conversationsList: document.getElementById('conversations-list'),
+    
+    // Progress
+    totalLearned: document.getElementById('total-learned'),
+    currentStreak: document.getElementById('current-streak'),
+    countriesLearned: document.getElementById('countries-learned'),
+    timeSpent: document.getElementById('time-spent'),
+    achievementsGrid: document.getElementById('achievements-grid'),
+    weeklyChart: document.getElementById('weekly-chart'),
+    
+    // Settings
+    dailyGoalSelect: document.getElementById('daily-goal-select'),
+    audioSpeedSelect: document.getElementById('audio-speed-select'),
+    autoPlayToggle: document.getElementById('auto-play-toggle'),
+    notificationToggle: document.getElementById('notification-toggle'),
+    exportDataBtn: document.getElementById('export-data-btn'),
+    resetProgressBtn: document.getElementById('reset-progress-btn'),
+    
+    // Modal
+    conversationModal: document.getElementById('conversation-modal'),
+    conversationTitle: document.getElementById('conversation-title'),
+    conversationScenario: document.getElementById('conversation-scenario'),
+    conversationContent: document.getElementById('conversation-content'),
+    closeModal: document.getElementById('close-modal'),
+    playConversation: document.getElementById('play-conversation'),
+    slowPlay: document.getElementById('slow-play'),
+    markLearned: document.getElementById('mark-learned'),
+    repeatPlay: document.getElementById('repeat-play'),
+    
+    // Confirm Modal
+    confirmModal: document.getElementById('confirm-modal'),
+    confirmTitle: document.getElementById('confirm-title'),
+    confirmMessage: document.getElementById('confirm-message'),
+    confirmCancel: document.getElementById('confirm-cancel'),
+    confirmOk: document.getElementById('confirm-ok'),
+    
+    // Toast
+    toastContainer: document.getElementById('toast-container'),
+    
+    // Audio
+    audioPlayer: document.getElementById('audio-player')
 };
 
-// ================================
-// INITIALIZATION
-// ================================
+/* ================================
+   INITIALIZATION
+================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-  initializeApp();
+    initializeApp();
 });
 
 async function initializeApp() {
-  try {
-    showLoading();
-    
-    // Initialize theme
-    initializeTheme();
-    
-    // Load user data
-    loadUserStats();
-    
-    // Setup event listeners
-    setupEventListeners();
-    
-    // Render countries
-    renderCountries();
-    
-    // Update progress displays
-    updateProgressDisplays();
-    
-    // Load saved language if any
-    const savedLanguage = loadFromStorage(CONFIG.STORAGE_KEYS.selectedLanguage);
-    if (savedLanguage && COUNTRIES_DATA[savedLanguage]) {
-      await selectLanguage(savedLanguage);
+    try {
+        // Show loading screen
+        showLoadingScreen();
+        
+        // Initialize data
+        await loadUserData();
+        initializeSettings();
+        initializeAudio();
+        
+        // Setup event listeners
+        setupEventListeners();
+        
+        // Render initial content
+        renderCountries();
+        updateProgressDisplay();
+        
+        // Hide loading screen
+        setTimeout(() => {
+            hideLoadingScreen();
+            showToast('স্বাগতম! ইউরোপীয় ভাষা শেখা শুরু করুন 🎉', 'success');
+        }, 1500);
+        
+    } catch (error) {
+        console.error('অ্যাপ শুরু করতে সমস্যা:', error);
+        hideLoadingScreen();
+        showToast('অ্যাপ লোড করতে সমস্যা হয়েছে', 'error');
     }
-    
-    hideLoading();
-    showSection('welcome-content');
-    
-  } catch (error) {
-    console.error('App initialization failed:', error);
-    showToast('অ্যাপ লোড করতে সমস্যা হয়েছে', 'error');
-    hideLoading();
-  }
 }
 
-function showLoading() {
-  if (elements.loadingScreen) {
-    elements.loadingScreen.classList.remove('hidden');
-  }
+function showLoadingScreen() {
+    if (elements.loadingScreen) {
+        elements.loadingScreen.classList.remove('hidden');
+    }
 }
 
-function hideLoading() {
-  if (elements.loadingScreen) {
-    elements.loadingScreen.classList.add('hidden');
-  }
+function hideLoadingScreen() {
+    if (elements.loadingScreen) {
+        elements.loadingScreen.classList.add('hidden');
+    }
 }
 
-// ================================
-// EVENT LISTENERS SETUP
-// ================================
+/* ================================
+   EVENT LISTENERS
+================================ */
 
 function setupEventListeners() {
-  // Menu toggle
-  if (elements.menuToggle) {
-    elements.menuToggle.addEventListener('click', toggleMenu);
-  }
-  
-  if (elements.closeMenu) {
-    elements.closeMenu.addEventListener('click', closeMenu);
-  }
-  
-  // Theme toggle
-  if (elements.modeToggle) {
-    elements.modeToggle.addEventListener('click', toggleTheme);
-  }
-  
-  // Language search
-  if (elements.languageSearch) {
-    elements.languageSearch.addEventListener('input', handleLanguageSearch);
-  }
-  
-  // Vocabulary search
-  if (elements.vocabularySearch) {
-    elements.vocabularySearch.addEventListener('input', handleVocabularySearch);
-  }
-  
-  // Start learning button
-  if (elements.startLearningBtn) {
-    elements.startLearningBtn.addEventListener('click', startLearning);
-  }
-  
-  // Load more button
-  if (elements.loadMoreBtn) {
-    elements.loadMoreBtn.addEventListener('click', loadMoreVocabulary);
-  }
-  
-  // Menu navigation
-  setupMenuNavigation();
-  
-  // Filter tabs
-  setupFilterTabs();
-  
-  // Goal buttons
-  setupGoalButtons();
-  
-  // Category tags
-  setupCategoryTags();
-  
-  // Voice search
-  setupVoiceSearch();
-  
-  // Keyboard shortcuts
-  setupKeyboardShortcuts();
-}
-
-function setupMenuNavigation() {
-  const menuItems = document.querySelectorAll('.menu-item');
-  menuItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      const section = this.id.replace('menu-', '') + '-content';
-      
-      // Special handling for different sections
-      switch(this.id) {
-        case 'menu-home':
-          showSection('welcome-content');
-          break;
-        case 'menu-vocabulary':
-          if (currentLanguageData) {
-            showSection('vocabulary-content');
-          } else {
-            showToast('প্রথমে একটি দেশ নির্বাচন করুন', 'warning');
-          }
-          break;
-        case 'menu-games':
-          if (currentLanguageData) {
-            showSection('game-content');
-          } else {
-            showToast('প্রথমে একটি দেশ নির্বাচন করুন', 'warning');
-          }
-          break;
-        case 'menu-achievements':
-          showAchievements();
-          break;
-        case 'menu-settings':
-          showSettings();
-          break;
-        default:
-          showSection('welcome-content');
-      }
-      
-      // Update active menu item
-      menuItems.forEach(mi => mi.classList.remove('active'));
-      this.classList.add('active');
-      
-      closeMenu();
-    });
-  });
-}
-
-function setupFilterTabs() {
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      filterTabs.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      
-      const filter = this.getAttribute('data-filter');
-      filterCountries(filter);
-    });
-  });
-}
-
-function setupGoalButtons() {
-  const goalButtons = document.querySelectorAll('.goal-btn');
-  goalButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      goalButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      
-      const goal = parseInt(this.getAttribute('data-goal'));
-      setDailyGoal(goal);
-    });
-  });
-}
-
-function setupCategoryTags() {
-  const categoryTags = document.querySelectorAll('.category-tag');
-  categoryTags.forEach(tag => {
-    tag.addEventListener('click', function() {
-      categoryTags.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      
-      currentCategory = this.getAttribute('data-category');
-      filterVocabulary();
-    });
-  });
-}
-
-function setupVoiceSearch() {
-  const voiceBtn = document.getElementById('voice-search-btn');
-  if (voiceBtn && 'webkitSpeechRecognition' in window) {
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = 'bn-BD';
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    
-    voiceBtn.addEventListener('click', function() {
-      recognition.start();
-      this.classList.add('recording');
-      showToast('বলুন...', 'info', 3000);
-    });
-    
-    recognition.onresult = function(event) {
-      const result = event.results[0][0].transcript;
-      elements.vocabularySearch.value = result;
-      handleVocabularySearch();
-      voiceBtn.classList.remove('recording');
-    };
-    
-    recognition.onerror = function() {
-      voiceBtn.classList.remove('recording');
-      showToast('ভয়েস রিকগনিশন ব্যর্থ হয়েছে', 'error');
-    };
-  } else if (voiceBtn) {
-    voiceBtn.style.display = 'none';
-  }
-}
-
-function setupKeyboardShortcuts() {
-  document.addEventListener('keydown', function(event) {
-    // Only handle shortcuts when not typing in inputs
-    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
-      return;
+    // Header events
+    if (elements.menuBtn) {
+        elements.menuBtn.addEventListener('click', toggleSidebar);
     }
     
-    switch(event.key) {
-      case '/':
-        event.preventDefault();
-        if (elements.vocabularySearch) {
-          elements.vocabularySearch.focus();
-        }
-        break;
-      case 'Escape':
-        closeMenu();
-        break;
-      case '1':
-      case '2':
-      case '3':
-      case '4':
-        if (event.ctrlKey) {
-          event.preventDefault();
-          const sections = ['welcome-content', 'vocabulary-content', 'game-content'];
-          const index = parseInt(event.key) - 1;
-          if (sections[index]) {
-            showSection(sections[index]);
-          }
-        }
-        break;
+    if (elements.themeToggle) {
+        elements.themeToggle.addEventListener('click', toggleTheme);
     }
-  });
+    
+    // Sidebar events
+    if (elements.closeSidebar) {
+        elements.closeSidebar.addEventListener('click', closeSidebar);
+    }
+    
+    if (elements.sidebarOverlay) {
+        elements.sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+    
+    // Navigation events
+    elements.navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = this.dataset.section;
+            switchSection(section);
+            closeSidebar();
+        });
+    });
+    
+    // Search events
+    if (elements.countrySearch) {
+        elements.countrySearch.addEventListener('input', debounce(handleCountrySearch, 300));
+    }
+    
+    // Filter events
+    elements.filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            setActiveFilter(this);
+            const filter = this.dataset.filter;
+            filterCountries(filter);
+        });
+    });
+    
+    // Conversation section events
+    if (elements.backToCountries) {
+        elements.backToCountries.addEventListener('click', () => switchSection('home'));
+    }
+    
+    // Modal events
+    if (elements.closeModal) {
+        elements.closeModal.addEventListener('click', closeConversationModal);
+    }
+    
+    if (elements.conversationModal) {
+        elements.conversationModal.addEventListener('click', function(e) {
+            if (e.target === this) closeConversationModal();
+        });
+    }
+    
+    // Conversation control events
+    if (elements.playConversation) {
+        elements.playConversation.addEventListener('click', playCurrentConversation);
+    }
+    
+    if (elements.slowPlay) {
+        elements.slowPlay.addEventListener('click', () => playCurrentConversation(0.75));
+    }
+    
+    if (elements.repeatPlay) {
+        elements.repeatPlay.addEventListener('click', () => playCurrentConversation(1, true));
+    }
+    
+    if (elements.markLearned) {
+        elements.markLearned.addEventListener('click', markConversationLearned);
+    }
+    
+    // Settings events
+    if (elements.dailyGoalSelect) {
+        elements.dailyGoalSelect.addEventListener('change', updateDailyGoal);
+    }
+    
+    if (elements.audioSpeedSelect) {
+        elements.audioSpeedSelect.addEventListener('change', updateAudioSpeed);
+    }
+    
+    if (elements.autoPlayToggle) {
+        elements.autoPlayToggle.addEventListener('change', updateAutoPlay);
+    }
+    
+    if (elements.notificationToggle) {
+        elements.notificationToggle.addEventListener('change', updateNotifications);
+    }
+    
+    if (elements.exportDataBtn) {
+        elements.exportDataBtn.addEventListener('click', exportUserData);
+    }
+    
+    if (elements.resetProgressBtn) {
+        elements.resetProgressBtn.addEventListener('click', confirmResetProgress);
+    }
+    
+    // Confirm modal events
+    if (elements.confirmCancel) {
+        elements.confirmCancel.addEventListener('click', closeConfirmModal);
+    }
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', handleKeyboardShortcuts);
+    
+    // Window events
+    window.addEventListener('beforeunload', saveUserData);
 }
 
-// ================================
-// THEME MANAGEMENT
-// ================================
+/* ================================
+   DATA MANAGEMENT
+================================ */
 
-function initializeTheme() {
-  const savedTheme = loadFromStorage(CONFIG.STORAGE_KEYS.theme, 'light');
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+async function loadUserData() {
+    try {
+        // Load user progress
+        const savedProgress = localStorage.getItem(STORAGE_KEYS.userProgress);
+        userProgress = savedProgress ? JSON.parse(savedProgress) : {
+            totalLearned: 0,
+            currentStreak: 0,
+            longestStreak: 0,
+            countriesStarted: [],
+            conversationsCompleted: [],
+            lastActiveDate: null,
+            totalTimeSpent: 0
+        };
+        
+        // Load settings
+        const savedSettings = localStorage.getItem(STORAGE_KEYS.settings);
+        userSettings = savedSettings ? JSON.parse(savedSettings) : { ...DEFAULT_SETTINGS };
+        
+        // Load achievements
+        const savedAchievements = localStorage.getItem(STORAGE_KEYS.achievements);
+        achievements = savedAchievements ? JSON.parse(savedAchievements) : [];
+        
+        // Load selected country
+        const savedCountry = localStorage.getItem(STORAGE_KEYS.selectedCountry);
+        if (savedCountry && COUNTRIES_DATA[savedCountry]) {
+            currentCountry = savedCountry;
+        }
+        
+        // Check and update streak
+        updateStreakStatus();
+        
+    } catch (error) {
+        console.error('ডেটা লোড করতে সমস্যা:', error);
+        // Initialize with defaults if loading fails
+        userProgress = {
+            totalLearned: 0,
+            currentStreak: 0,
+            longestStreak: 0,
+            countriesStarted: [],
+            conversationsCompleted: [],
+            lastActiveDate: null,
+            totalTimeSpent: 0
+        };
+        userSettings = { ...DEFAULT_SETTINGS };
+        achievements = [];
+    }
 }
+
+function saveUserData() {
+    try {
+        localStorage.setItem(STORAGE_KEYS.userProgress, JSON.stringify(userProgress));
+        localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(userSettings));
+        localStorage.setItem(STORAGE_KEYS.achievements, JSON.stringify(achievements));
+        if (currentCountry) {
+            localStorage.setItem(STORAGE_KEYS.selectedCountry, currentCountry);
+        }
+    } catch (error) {
+        console.error('ডেটা সেভ করতে সমস্যা:', error);
+    }
+}
+
+function initializeSettings() {
+    // Apply theme
+    const theme = userSettings.theme || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    updateThemeIcon(theme);
+    
+    // Update settings UI
+    if (elements.dailyGoalSelect) {
+        elements.dailyGoalSelect.value = userSettings.dailyGoal || 10;
+    }
+    
+    if (elements.audioSpeedSelect) {
+        elements.audioSpeedSelect.value = userSettings.audioSpeed || 1;
+    }
+    
+    if (elements.autoPlayToggle) {
+        elements.autoPlayToggle.checked = userSettings.autoPlay !== false;
+    }
+    
+    if (elements.notificationToggle) {
+        elements.notificationToggle.checked = userSettings.notifications === true;
+    }
+}
+
+function initializeAudio() {
+    audioPlayer = elements.audioPlayer;
+    if (audioPlayer) {
+        audioPlayer.addEventListener('error', function() {
+            showToast('অডিও প্লে করতে সমস্যা হয়েছে', 'error');
+        });
+    }
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+
+function toggleSidebar() {
+    if (elements.sidebar) {
+        elements.sidebar.classList.toggle('open');
+    }
+}
+
+function closeSidebar() {
+    if (elements.sidebar) {
+        elements.sidebar.classList.remove('open');
+    }
+}
+
+function switchSection(sectionName) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => section.classList.remove('active'));
+    
+    // Show target section
+    const targetSection = document.getElementById(`${sectionName}-section`);
+    if (targetSection) {
+        targetSection.classList.add('active');
+    }
+    
+    // Update active nav item
+    elements.navItems.forEach(item => item.classList.remove('active'));
+    const activeNavItem = document.querySelector(`[data-section="${sectionName}"]`);
+    if (activeNavItem) {
+        activeNavItem.classList.add('active');
+    }
+    
+    // Load section-specific content
+    switch(sectionName) {
+        case 'conversations':
+            if (currentCountry) {
+                loadConversationsForCountry(currentCountry);
+            } else {
+                showToast('প্রথমে একটি দেশ নির্বাচন করুন', 'warning');
+                switchSection('home');
+            }
+            break;
+        case 'progress':
+            updateProgressDisplay();
+            renderAchievements();
+            renderWeeklyChart();
+            break;
+        case 'settings':
+            // Settings are already initialized
+            break;
+    }
+}
+
+/* ================================
+   THEME MANAGEMENT
+================================ */
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  
-  document.documentElement.setAttribute('data-theme', newTheme);
-  saveToStorage(CONFIG.STORAGE_KEYS.theme, newTheme);
-  updateThemeIcon(newTheme);
-  
-  showToast(`${newTheme === 'dark' ? 'ডার্ক' : 'লাইট'} থিম সক্রিয় করা হয়েছে`, 'success');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    userSettings.theme = newTheme;
+    updateThemeIcon(newTheme);
+    saveUserData();
+    
+    showToast(`${newTheme === 'dark' ? 'ডার্ক' : 'লাইট'} থিম সক্রিয় করা হয়েছে`, 'success');
 }
 
 function updateThemeIcon(theme) {
-  const icon = elements.modeToggle?.querySelector('i');
-  if (icon) {
-    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-  }
+    const icon = elements.themeToggle?.querySelector('i');
+    if (icon) {
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
 }
 
-// ================================
-// MENU MANAGEMENT
-// ================================
-
-function toggleMenu() {
-  if (elements.sideMenu) {
-    elements.sideMenu.classList.toggle('open');
-  }
-}
-
-function closeMenu() {
-  if (elements.sideMenu) {
-    elements.sideMenu.classList.remove('open');
-  }
-}
-
-// ================================
-// SECTION MANAGEMENT
-// ================================
-
-function showSection(sectionId) {
-  // Hide all sections
-  const sections = document.querySelectorAll('.content-section');
-  sections.forEach(section => {
-    section.classList.remove('active');
-  });
-  
-  // Show target section
-  const targetSection = document.getElementById(sectionId);
-  if (targetSection) {
-    targetSection.classList.add('active');
-  }
-  
-  // Update current country display
-  updateCurrentCountryDisplay();
-}
-
-// ================================
-// COUNTRY MANAGEMENT
-// ================================
+/* ================================
+   COUNTRIES RENDERING
+================================ */
 
 function renderCountries() {
-  if (!elements.countriesGrid) return;
-  
-  const countries = Object.entries(COUNTRIES_DATA);
-  const countryCards = countries.map(([code, data]) => {
-    return createCountryCard(code, data);
-  }).join('');
-  
-  elements.countriesGrid.innerHTML = countryCards;
-  
-  // Add click handlers
-  const countryCards_elements = elements.countriesGrid.querySelectorAll('.country-card');
-  countryCards_elements.forEach(card => {
-    card.addEventListener('click', function() {
-      const countryCode = this.getAttribute('data-country');
-      selectCountry(countryCode);
+    if (!elements.countriesGrid) return;
+    
+    const countries = Object.entries(COUNTRIES_DATA);
+    elements.countriesGrid.innerHTML = '';
+    
+    countries.forEach(([code, data]) => {
+        const countryCard = createCountryCard(code, data);
+        elements.countriesGrid.appendChild(countryCard);
     });
-  });
 }
 
 function createCountryCard(code, data) {
-  const isSelected = currentLanguage === code;
-  const schengBadge = data.isSchengen ? '<div class="schengen-badge">শেনজেন</div>' : '';
-  
-  return `
-    <div class="country-card ${isSelected ? 'selected' : ''}" data-country="${code}">
-      ${schengBadge}
-      <div class="country-flag">${data.flag}</div>
-      <div class="country-info">
-        <h4>${data.name}</h4>
+    const card = document.createElement('div');
+    card.className = `country-card ${currentCountry === code ? 'selected' : ''}`;
+    card.dataset.country = code;
+    
+    // Check if user has started this country
+    const hasStarted = userProgress.countriesStarted.includes(code);
+    
+    card.innerHTML = `
+        <div class="country-flag">${data.flag}</div>
+        <div class="country-name">${data.name}</div>
         <div class="country-language">${data.language}</div>
         <div class="country-features">
-          <span class="feature-tag difficulty-${data.difficulty}">${getDifficultyText(data.difficulty)}</span>
-          <span class="feature-tag">${data.capital}</span>
+            ${data.isSchengen ? '<span class="feature-tag schengen">শেনজেন</span>' : ''}
+            <span class="feature-tag difficulty-${data.difficulty}">${getDifficultyText(data.difficulty)}</span>
+            ${hasStarted ? '<span class="feature-tag">শুরু করেছেন</span>' : ''}
         </div>
-      </div>
-    </div>
-  `;
+    `;
+    
+    card.addEventListener('click', () => selectCountry(code));
+    
+    return card;
 }
 
 function getDifficultyText(difficulty) {
-  const difficultyMap = {
-    'easy': 'সহজ',
-    'medium': 'মাঝারি',
-    'hard': 'কঠিন'
-  };
-  return difficultyMap[difficulty] || 'মাঝারি';
+    const difficultyMap = {
+        'easy': 'সহজ',
+        'medium': 'মাঝারি',
+        'hard': 'কঠিন'
+    };
+    return difficultyMap[difficulty] || 'মাঝারি';
 }
 
 function selectCountry(countryCode) {
-  // Update selection visual
-  const countryCards = document.querySelectorAll('.country-card');
-  countryCards.forEach(card => {
-    card.classList.remove('selected');
-  });
-  
-  const selectedCard = document.querySelector(`[data-country="${countryCode}"]`);
-  if (selectedCard) {
-    selectedCard.classList.add('selected');
-  }
-  
-  // Load language data
-  selectLanguage(countryCode);
-  
-  // Show start button
-  if (elements.startLearningBtn) {
-    elements.startLearningBtn.style.display = 'flex';
-  }
-}
-
-async function selectLanguage(countryCode) {
-  try {
-    currentLanguage = countryCode;
+    if (!COUNTRIES_DATA[countryCode]) return;
+    
+    currentCountry = countryCode;
     const countryData = COUNTRIES_DATA[countryCode];
     
-    if (!countryData) {
-      throw new Error('দেশের ডেটা পাওয়া যায়নি');
+    // Update visual selection
+    document.querySelectorAll('.country-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    
+    const selectedCard = document.querySelector(`[data-country="${countryCode}"]`);
+    if (selectedCard) {
+        selectedCard.classList.add('selected');
     }
     
-    showToast(`${countryData.name} নির্বাচিত হয়েছে`, 'success');
-    
-    // Generate vocabulary data
-    const languageKey = LANGUAGE_FILES[countryCode] || 'german';
-    currentLanguageData = generateVocabularyData(countryData.language, languageKey);
-    vocabularyData = currentLanguageData;
-    
-    // Save selection
-    saveToStorage(CONFIG.STORAGE_KEYS.selectedLanguage, countryCode);
-    
-    // Update displays
-    updateCurrentCountryDisplay();
-    
-    return true;
-  } catch (error) {
-    console.error('Language selection failed:', error);
-    showToast('ভাষা নির্বাচনে সমস্যা হয়েছে', 'error');
-    return false;
-  }
-}
-
-function updateCurrentCountryDisplay() {
-  const currentCountryElement = document.getElementById('current-country');
-  if (currentCountryElement && currentLanguage && COUNTRIES_DATA[currentLanguage]) {
-    const countryData = COUNTRIES_DATA[currentLanguage];
-    currentCountryElement.querySelector('.country-flag').textContent = countryData.flag;
-    currentCountryElement.querySelector('.country-name').textContent = countryData.name;
-  }
-}
-
-// ================================
-// SEARCH AND FILTERING
-// ================================
-
-function handleLanguageSearch() {
-  const query = elements.languageSearch.value.toLowerCase();
-  const countryCards = document.querySelectorAll('.country-card');
-  
-  countryCards.forEach(card => {
-    const countryCode = card.getAttribute('data-country');
-    const countryData = COUNTRIES_DATA[countryCode];
-    const searchText = `${countryData.name} ${countryData.language}`.toLowerCase();
-    
-    if (searchText.includes(query)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
+    // Track that user started this country
+    if (!userProgress.countriesStarted.includes(countryCode)) {
+        userProgress.countriesStarted.push(countryCode);
+        saveUserData();
     }
-  });
+    
+    // Update conversations section
+    updateSelectedCountryDisplay(countryData);
+    
+    showToast(`${countryData.name} নির্বাচিত হয়েছে! কথোপকথন দেখতে ক্লিক করুন`, 'success');
+    
+    // Auto-switch to conversations after a delay
+    setTimeout(() => {
+        switchSection('conversations');
+    }, 1000);
+}
+
+function updateSelectedCountryDisplay(countryData) {
+    if (elements.selectedCountryFlag) {
+        elements.selectedCountryFlag.textContent = countryData.flag;
+    }
+    
+    if (elements.selectedCountryName) {
+        elements.selectedCountryName.textContent = countryData.name;
+    }
+    
+    if (elements.selectedCountryLanguage) {
+        elements.selectedCountryLanguage.textContent = `${countryData.language} ভাষা`;
+    }
+}
+
+/* ================================
+   SEARCH AND FILTERING
+================================ */
+
+function handleCountrySearch() {
+    const query = elements.countrySearch.value.toLowerCase().trim();
+    const countryCards = document.querySelectorAll('.country-card');
+    
+    countryCards.forEach(card => {
+        const countryCode = card.dataset.country;
+        const countryData = COUNTRIES_DATA[countryCode];
+        
+        const searchText = `${countryData.name} ${countryData.language} ${countryData.capital}`.toLowerCase();
+        
+        if (searchText.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function setActiveFilter(activeTab) {
+    elements.filterTabs.forEach(tab => tab.classList.remove('active'));
+    activeTab.classList.add('active');
 }
 
 function filterCountries(filter) {
-  const countryCards = document.querySelectorAll('.country-card');
-  
-  countryCards.forEach(card => {
-    const countryCode = card.getAttribute('data-country');
-    const countryData = COUNTRIES_DATA[countryCode];
-    let show = false;
+    const countryCards = document.querySelectorAll('.country-card');
     
-    switch(filter) {
-      case 'all':
-        show = true;
-        break;
-      case 'schengen':
-        show = countryData.isSchengen;
-        break;
-      case 'easy':
-        show = countryData.difficulty === 'easy';
-        break;
-      case 'popular':
-        show = ['germany', 'france', 'spain', 'italy'].includes(countryCode);
-        break;
-    }
-    
-    card.style.display = show ? 'block' : 'none';
-  });
-}
-
-function handleVocabularySearch() {
-  searchQuery = elements.vocabularySearch.value.toLowerCase();
-  currentPage = 1;
-  filterVocabulary();
-}
-
-function filterVocabulary() {
-  if (!vocabularyData) return;
-  
-  filteredData = vocabularyData.filter(word => {
-    const matchesSearch = !searchQuery || 
-      word.word.toLowerCase().includes(searchQuery) ||
-      word.meaning.toLowerCase().includes(searchQuery) ||
-      word.pronunciation.toLowerCase().includes(searchQuery);
-    
-    const matchesCategory = currentCategory === 'all' || word.categoryKey === currentCategory;
-    
-    return matchesSearch && matchesCategory;
-  });
-  
-  renderVocabulary();
-}
-
-// ================================
-// VOCABULARY RENDERING
-// ================================
-
-function renderVocabulary() {
-  if (!elements.vocabularyGrid || !filteredData) return;
-  
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const pageData = filteredData.slice(0, endIndex);
-  
-  if (currentPage === 1) {
-    elements.vocabularyGrid.innerHTML = '';
-  }
-  
-  const vocabularyCards = pageData.slice(startIndex).map(word => {
-    return createVocabularyCard(word);
-  }).join('');
-  
-  elements.vocabularyGrid.insertAdjacentHTML('beforeend', vocabularyCards);
-  
-  // Update load more button
-  if (elements.loadMoreBtn) {
-    elements.loadMoreBtn.style.display = endIndex < filteredData.length ? 'block' : 'none';
-  }
-  
-  // Add click handlers for new cards
-  const newCards = elements.vocabularyGrid.querySelectorAll('.vocabulary-card:not([data-initialized])');
-  newCards.forEach(card => {
-    card.setAttribute('data-initialized', 'true');
-    setupVocabularyCardEvents(card);
-  });
-}
-
-function createVocabularyCard(word) {
-  const isLearned = word.learned;
-  const learnedBadge = isLearned ? '<div class="learned-badge">শিখেছেন</div>' : '';
-  
-  return `
-    <div class="vocabulary-card ${isLearned ? 'learned' : ''}" data-word-id="${word.id}">
-      ${learnedBadge}
-      <div class="word-header">
-        <div class="word-info">
-          <h3>${highlightText(word.word, searchQuery)}</h3>
-          <div class="word-pronunciation">[${word.pronunciation}]</div>
-        </div>
-        <div class="word-actions">
-          <button class="word-btn audio-btn" title="উচ্চারণ শুনুন">
-            <i class="fas fa-volume-up"></i>
-          </button>
-          <button class="word-btn favorite-btn" title="পছন্দের তালিকায় যোগ করুন">
-            <i class="fas fa-heart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="word-meaning">${highlightText(word.meaning, searchQuery)}</div>
-      <div class="word-category">${word.category}</div>
-      <div class="word-example">${word.example}</div>
-    </div>
-  `;
-}
-
-function setupVocabularyCardEvents(card) {
-  const wordId = parseInt(card.getAttribute('data-word-id'));
-  const word = vocabularyData.find(w => w.id === wordId);
-  
-  if (!word) return;
-  
-  // Audio button
-  const audioBtn = card.querySelector('.audio-btn');
-  if (audioBtn) {
-    audioBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      playWordAudio(word);
+    countryCards.forEach(card => {
+        const countryCode = card.dataset.country;
+        const countryData = COUNTRIES_DATA[countryCode];
+        let show = true;
+        
+        switch(filter) {
+            case 'popular':
+                show = countryData.isPopular === true;
+                break;
+            case 'schengen':
+                show = countryData.isSchengen === true;
+                break;
+            case 'easy':
+                show = countryData.difficulty === 'easy';
+                break;
+            case 'all':
+            default:
+                show = true;
+        }
+        
+        card.style.display = show ? 'block' : 'none';
     });
-  }
-  
-  // Favorite button
-  const favoriteBtn = card.querySelector('.favorite-btn');
-  if (favoriteBtn) {
-    favoriteBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      toggleFavorite(word);
-    });
-  }
-  
-  // Card click to mark as learned
-  card.addEventListener('click', function() {
-    toggleWordLearned(word, card);
-  });
 }
 
-function playWordAudio(word) {
-  const languageKey = LANGUAGE_FILES[currentLanguage] || 'german';
-  audioSystem.playWord(word.word, languageKey);
-}
+/* ================================
+   CONVERSATIONS MANAGEMENT
+================================ */
 
-function toggleFavorite(word) {
-  // Implementation for favorites
-  showToast('পছন্দের তালিকায় যোগ করা হয়েছে', 'success');
-}
-
-function toggleWordLearned(word, card) {
-  word.learned = !word.learned;
-  word.lastReviewed = Date.now();
-  
-  if (word.learned) {
-    card.classList.add('learned');
-    if (!card.querySelector('.learned-badge')) {
-      card.insertAdjacentHTML('afterbegin', '<div class="learned-badge">শিখেছেন</div>');
-    }
-    showToast('শব্দটি শেখা হয়েছে বলে চিহ্নিত করা হয়েছে!', 'success');
-    updateWordsLearned(1);
-  } else {
-    card.classList.remove('learned');
-    const badge = card.querySelector('.learned-badge');
-    if (badge) badge.remove();
-    showToast('শব্দটি আনলার্নড করা হয়েছে', 'info');
-    updateWordsLearned(-1);
-  }
-  
-  // Save progress
-  saveVocabularyProgress();
-}
-
-function loadMoreVocabulary() {
-  currentPage++;
-  renderVocabulary();
-}
-
-// ================================
-// PROGRESS MANAGEMENT
-// ================================
-
-function loadUserStats() {
-  const defaultStats = {
-    totalWordsLearned: 0,
-    currentStreak: 0,
-    bestStreak: 0,
-    accuracyRate: 0,
-    gamesPlayed: 0,
-    timeSpent: 0,
-    lastActiveDate: null,
-    languageProgress: {}
-  };
-  
-  const userStats = loadFromStorage(CONFIG.STORAGE_KEYS.userStats, defaultStats);
-  
-  // Check if streak should be reset
-  const today = getTodayDate();
-  if (userStats.lastActiveDate && userStats.lastActiveDate !== today) {
-    const lastDate = new Date(userStats.lastActiveDate);
-    const todayDate = new Date(today);
-    const diffDays = Math.floor((todayDate - lastDate) / (1000 * 60 * 60 * 24));
+function loadConversationsForCountry(countryCode) {
+    if (!COUNTRIES_DATA[countryCode]) return;
     
-    if (diffDays > 1) {
-      userStats.currentStreak = 0;
+    // Render categories
+    renderCategories();
+    
+    // Load conversations for this country
+    const languageKey = getLanguageKey(countryCode);
+    currentConversations = [];
+    
+    // Add sample conversations
+    if (SAMPLE_CONVERSATIONS[languageKey]) {
+        Object.entries(SAMPLE_CONVERSATIONS[languageKey]).forEach(([category, conversations]) => {
+            currentConversations.push(...conversations.map(conv => ({
+                ...conv,
+                category: category,
+                language: languageKey,
+                country: countryCode
+            })));
+        });
     }
-  }
-  
-  return userStats;
+    
+    // Generate additional conversations
+    Object.keys(CONVERSATION_CATEGORIES).forEach(category => {
+        const generated = generateConversations(languageKey, category, 20);
+        currentConversations.push(...generated);
+    });
+    
+    // Render conversations
+    renderConversations();
 }
 
-function updateWordsLearned(increment) {
-  const userStats = loadUserStats();
-  const dailyProgress = getDailyProgress();
-  
-  userStats.totalWordsLearned = Math.max(0, userStats.totalWordsLearned + increment);
-  dailyProgress.wordsLearned = Math.max(0, dailyProgress.wordsLearned + increment);
-  
-  // Update streak
-  const today = getTodayDate();
-  if (userStats.lastActiveDate !== today && increment > 0) {
-    userStats.currentStreak++;
-    userStats.bestStreak = Math.max(userStats.bestStreak, userStats.currentStreak);
-    userStats.lastActiveDate = today;
-  }
-  
-  // Save data
-  saveToStorage(CONFIG.STORAGE_KEYS.userStats, userStats);
-  saveToStorage(CONFIG.STORAGE_KEYS.dailyProgress, dailyProgress);
-  
-  // Update displays
-  updateProgressDisplays();
-  
-  // Check achievements
-  const achievements = achievementSystem.checkAchievements(userStats, loadFromStorage(CONFIG.STORAGE_KEYS.gameStats, {}));
-  achievements.forEach(achievement => {
-    console.log('New achievement unlocked:', achievement.name);
-  });
-}
-
-function updateProgressDisplays() {
-  const userStats = loadUserStats();
-  const dailyProgress = getDailyProgress();
-  
-  // Update progress elements
-  if (elements.wordsLearnedToday) {
-    elements.wordsLearnedToday.textContent = dailyProgress.wordsLearned;
-  }
-  
-  if (elements.currentStreak) {
-    elements.currentStreak.textContent = userStats.currentStreak;
-  }
-  
-  const headerStreak = document.getElementById('header-streak');
-  if (headerStreak) {
-    headerStreak.textContent = userStats.currentStreak;
-  }
-  
-  if (elements.accuracyRate) {
-    const accuracy = dailyProgress.totalAttempts > 0 
-      ? Math.round((dailyProgress.correctAnswers / dailyProgress.totalAttempts) * 100)
-      : 0;
-    elements.accuracyRate.textContent = `${accuracy}%`;
-  }
-  
-  // Update daily progress bar
-  if (elements.dailyProgress) {
-    const progressPercentage = Math.min(100, (dailyProgress.wordsLearned / dailyProgress.target) * 100);
-    elements.dailyProgress.style.width = `${progressPercentage}%`;
-  }
-  
-  const dailyTarget = document.getElementById('daily-target');
-  if (dailyTarget) {
-    dailyTarget.textContent = `${dailyProgress.wordsLearned}/${dailyProgress.target}`;
-  }
-  
-  // Update user level
-  updateUserLevel(userStats.totalWordsLearned);
-}
-
-function updateUserLevel(totalWords) {
-  const level = calculateUserLevel(totalWords);
-  const levelData = CONFIG.LEVELS[level];
-  
-  if (elements.userLevel) {
-    elements.userLevel.textContent = `লেভেল ${level}: ${levelData.name}`;
-  }
-  
-  if (elements.levelProgress) {
-    const progress = ((totalWords - levelData.minWords) / (levelData.maxWords - levelData.minWords)) * 100;
-    elements.levelProgress.style.width = `${Math.min(100, progress)}%`;
-  }
-}
-
-function setDailyGoal(goal) {
-  const dailyProgress = getDailyProgress();
-  dailyProgress.target = goal;
-  saveToStorage(CONFIG.STORAGE_KEYS.dailyProgress, dailyProgress);
-  updateProgressDisplays();
-  showToast(`দৈনিক লক্ষ্য ${goal}টি শব্দে সেট করা হয়েছে`, 'success');
-}
-
-function saveVocabularyProgress() {
-  if (vocabularyData && currentLanguage) {
-    const progressData = {
-      language: currentLanguage,
-      vocabulary: vocabularyData,
-      lastUpdated: Date.now()
+function getLanguageKey(countryCode) {
+    // Map countries to language keys
+    const languageMap = {
+        'germany': 'german',
+        'austria': 'german',
+        'switzerland': 'german',
+        'france': 'french',
+        'belgium': 'french',
+        'luxembourg': 'french',
+        'spain': 'spanish',
+        'italy': 'italian',
+        'netherlands': 'dutch',
+        'portugal': 'portuguese'
     };
-    saveToStorage(CONFIG.STORAGE_KEYS.vocabulary + '_' + currentLanguage, progressData);
-  }
-}
-
-// ================================
-// ADDITIONAL FEATURES
-// ================================
-
-function startLearning() {
-  if (currentLanguageData && currentLanguageData.length > 0) {
-    showSection('vocabulary-content');
-    currentPage = 1;
-    filterVocabulary();
-    showToast('শেখা শুরু করুন! 📚', 'success');
-  } else {
-    showToast('প্রথমে একটি দেশ নির্বাচন করুন', 'warning');
-  }
-}
-
-function showAchievements() {
-  const userStats = loadUserStats();
-  const gameStats = loadFromStorage(CONFIG.STORAGE_KEYS.gameStats, {});
-  
-  let achievementsHTML = '<div class="achievements-grid">';
-  
-  Object.values(CONFIG.ACHIEVEMENTS).forEach(achievement => {
-    const isUnlocked = achievementSystem.isUnlocked(achievement.id);
-    const progress = achievementSystem.getAchievementProgress(achievement, userStats, gameStats);
     
-    achievementsHTML += `
-      <div class="achievement-card ${isUnlocked ? 'unlocked' : ''}">
-        <div class="achievement-icon">${achievement.icon}</div>
-        <div class="achievement-name">${achievement.name}</div>
-        <div class="achievement-description">${achievement.description}</div>
-        ${!isUnlocked ? `
-          <div class="achievement-progress">
-            <div class="progress-text">${progress.current}/${progress.total}</div>
-            <div class="achievement-progress-bar">
-              <div class="achievement-progress-fill" style="width: ${progress.percentage}%"></div>
-            </div>
-          </div>
-        ` : ''}
-      </div>
+    return languageMap[countryCode] || 'german';
+}
+
+function renderCategories() {
+    if (!elements.categoriesGrid) return;
+    
+    elements.categoriesGrid.innerHTML = '';
+    
+    Object.entries(CONVERSATION_CATEGORIES).forEach(([key, category]) => {
+        const categoryCard = createCategoryCard(key, category);
+        elements.categoriesGrid.appendChild(categoryCard);
+    });
+}
+
+function createCategoryCard(key, category) {
+    const card = document.createElement('div');
+    card.className = `category-card ${currentCategory === key ? 'active' : ''}`;
+    card.dataset.category = key;
+    
+    const count = currentConversations.filter(conv => conv.category === key).length;
+    
+    card.innerHTML = `
+        <div class="category-icon">${category.icon}</div>
+        <div class="category-name">${category.name}</div>
+        <div class="category-count">${count}টি কথোপকথন</div>
     `;
-  });
-  
-  achievementsHTML += '</div>';
-  
-  showModal('অর্জনসমূহ', achievementsHTML);
+    
+    card.addEventListener('click', () => selectCategory(key));
+    
+    return card;
 }
 
-function showSettings() {
-  const settingsHTML = `
-    <div class="settings-content">
-      <div class="setting-item">
-        <h4>থিম</h4>
-        <button class="action-btn" onclick="toggleTheme()">
-          <i class="fas fa-palette"></i>
-          <span>থিম পরিবর্তন করুন</span>
-        </button>
-      </div>
-      <div class="setting-item">
-        <h4>ডেটা</h4>
-        <button class="action-btn" onclick="exportData()">
-          <i class="fas fa-download"></i>
-          <span>ডেটা এক্সপোর্ট করুন</span>
-        </button>
-        <button class="action-btn" onclick="clearAllData()">
-          <i class="fas fa-trash"></i>
-          <span>সব ডেটা মুছুন</span>
-        </button>
-      </div>
-      <div class="setting-item">
-        <h4>সাহায্য</h4>
-        <button class="action-btn" onclick="showHelp()">
-          <i class="fas fa-question-circle"></i>
-          <span>সাহায্য দেখুন</span>
-        </button>
-      </div>
-    </div>
-  `;
-  
-  showModal('সেটিংস', settingsHTML);
-}
-
-function exportData() {
-  const data = {
-    userStats: loadFromStorage(CONFIG.STORAGE_KEYS.userStats, {}),
-    vocabulary: loadFromStorage(CONFIG.STORAGE_KEYS.vocabulary, {}),
-    achievements: loadFromStorage(CONFIG.STORAGE_KEYS.achievements, []),
-    gameStats: loadFromStorage(CONFIG.STORAGE_KEYS.gameStats, {}),
-    exportDate: new Date().toISOString()
-  };
-  
-  const dataStr = JSON.stringify(data, null, 2);
-  const dataBlob = new Blob([dataStr], {type: 'application/json'});
-  const url = URL.createObjectURL(dataBlob);
-  
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `euroLang_backup_${new Date().toISOString().split('T')[0]}.json`;
-  link.click();
-  
-  URL.revokeObjectURL(url);
-  showToast('ডেটা এক্সপোর্ট সম্পন্ন হয়েছে', 'success');
-}
-
-function clearAllData() {
-  if (confirm('আপনি কি নিশ্চিত যে সব ডেটা মুছে ফেলতে চান? এটি পূর্বাবস্থায় ফেরানো যাবে না।')) {
-    Object.values(CONFIG.STORAGE_KEYS).forEach(key => {
-      localStorage.removeItem(key);
+function selectCategory(categoryKey) {
+    currentCategory = categoryKey;
+    
+    // Update active category
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
     });
     
-    // Reset app state
-    currentLanguage = '';
-    currentLanguageData = null;
-    vocabularyData = [];
-    filteredData = [];
+    const activeCard = document.querySelector(`[data-category="${categoryKey}"]`);
+    if (activeCard) {
+        activeCard.classList.add('active');
+    }
     
-    showToast('সব ডেটা মুছে ফেলা হয়েছে', 'success');
-    setTimeout(() => {
-      location.reload();
-    }, 2000);
-  }
+    // Re-render conversations
+    renderConversations();
 }
 
-function showHelp() {
-  const helpHTML = `
-    <div class="help-content">
-      <h4>কীভাবে ব্যবহার করবেন:</h4>
-      <ul>
-        <li>একটি দেশ নির্বাচন করুন</li>
-        <li>"শেখা শুরু করুন" বাটনে ক্লিক করুন</li>
-        <li>শব্দের উপর ক্লিক করে শিখেছেন বলে চিহ্নিত করুন</li>
-        <li>গেমস খেলে অনুশীলন করুন</li>
-      </ul>
-      
-      <h4>কীবোর্ড শর্টকাট:</h4>
-      <ul>
-        <li><kbd>/</kbd> - অনুসন্ধান বক্সে ফোকাস</li>
-        <li><kbd>Esc</kbd> - মেনু বন্ধ করুন</li>
-        <li><kbd>Ctrl + 1-3</kbd> - বিভিন্ন বিভাগে যান</li>
-      </ul>
-    </div>
-  `;
-  
-  showModal('সাহায্য', helpHTML);
+function renderConversations() {
+    if (!elements.conversationsList) return;
+    
+    let conversationsToShow = currentConversations;
+    
+    // Filter by category if not 'all'
+    if (currentCategory !== 'all') {
+        conversationsToShow = currentConversations.filter(conv => conv.category === currentCategory);
+    }
+    
+    elements.conversationsList.innerHTML = '';
+    
+    if (conversationsToShow.length === 0) {
+        elements.conversationsList.innerHTML = `
+            <div class="no-conversations">
+                <h3>কোনো কথোপকথন পাওয়া যায়নি</h3>
+                <p>অন্য ক্যাটাগরি ট্রাই করুন</p>
+            </div>
+        `;
+        return;
+    }
+    
+    conversationsToShow.forEach(conversation => {
+        const conversationItem = createConversationItem(conversation);
+        elements.conversationsList.appendChild(conversationItem);
+    });
 }
 
-// ================================
-// MODAL SYSTEM
-// ================================
-
-function showModal(title, content) {
-  const modal = document.getElementById('modal-overlay');
-  const modalTitle = document.getElementById('modal-title');
-  const modalBody = document.getElementById('modal-body');
-  
-  if (modal && modalTitle && modalBody) {
-    modalTitle.textContent = title;
-    modalBody.innerHTML = content;
-    modal.classList.add('show');
-  }
+function createConversationItem(conversation) {
+    const item = document.createElement('div');
+    item.className = 'conversation-item';
+    item.dataset.conversationId = conversation.id;
+    
+    const isLearned = userProgress.conversationsCompleted.includes(conversation.id);
+    const category = CONVERSATION_CATEGORIES[conversation.category];
+    
+    item.innerHTML = `
+        <div class="conversation-header">
+            <div class="conversation-scenario">
+                <h4>${conversation.scenario}</h4>
+                <p>${category ? category.name : 'সাধারণ'}</p>
+            </div>
+            <div class="conversation-status">
+                ${isLearned ? '<span class="status-badge learned">শিখেছি ✓</span>' : '<span class="status-badge">নতুন</span>'}
+            </div>
+        </div>
+        <div class="conversation-preview">
+            "${conversation.dialogue && conversation.dialogue[0] ? conversation.dialogue[0].text : 'কথোপকথন দেখতে ক্লিক করুন'}"
+        </div>
+    `;
+    
+    item.addEventListener('click', () => openConversationModal(conversation));
+    
+    return item;
 }
 
-function hideModal() {
-  const modal = document.getElementById('modal-overlay');
-  if (modal) {
-    modal.classList.remove('show');
-  }
+/* ================================
+   CONVERSATION MODAL
+================================ */
+
+function openConversationModal(conversation) {
+    if (!elements.conversationModal) return;
+    
+    // Set modal content
+    if (elements.conversationTitle) {
+        elements.conversationTitle.textContent = conversation.scenario;
+    }
+    
+    if (elements.conversationScenario) {
+        const category = CONVERSATION_CATEGORIES[conversation.category];
+        elements.conversationScenario.textContent = `পরিস্থিতি: ${conversation.scenario}`;
+    }
+    
+    // Render conversation dialogue
+    renderConversationDialogue(conversation);
+    
+    // Update mark learned button
+    updateMarkLearnedButton(conversation);
+    
+    // Store current conversation for controls
+    elements.conversationModal.dataset.conversationId = conversation.id;
+    
+    // Show modal
+    elements.conversationModal.classList.add('show');
+    
+    // Auto-play if enabled
+    if (userSettings.autoPlay) {
+        setTimeout(() => playCurrentConversation(), 500);
+    }
 }
 
-// Close modal when clicking outside
-document.addEventListener('click', function(event) {
-  const modal = document.getElementById('modal-overlay');
-  const modalContent = document.querySelector('.modal');
-  
-  if (modal && modal.classList.contains('show') && 
-      !modalContent.contains(event.target)) {
-    hideModal();
-  }
-});
-
-// Close modal button
-document.addEventListener('DOMContentLoaded', function() {
-  const closeModalBtn = document.getElementById('close-modal');
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', hideModal);
-  }
-});
-
-// ================================
-// UTILITY FUNCTIONS
-// ================================
-
-function getTodayDate() {
-  return new Date().toISOString().split('T')[0];
+function renderConversationDialogue(conversation) {
+    if (!elements.conversationContent || !conversation.dialogue) return;
+    
+    elements.conversationContent.innerHTML = '';
+    
+    conversation.dialogue.forEach((line, index) => {
+        const dialogueItem = document.createElement('div');
+        dialogueItem.className = `dialogue-item ${line.speaker === 'you' ? 'user' : 'other'}`;
+        
+        dialogueItem.innerHTML = `
+            <div class="dialogue-text">
+                <strong>${line.text}</strong>
+                <button class="play-line-btn" data-text="${line.text}" data-index="${index}">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+            <div class="dialogue-bengali">${line.bengali}</div>
+        `;
+        
+        // Add click event for individual line playback
+        const playBtn = dialogueItem.querySelector('.play-line-btn');
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            playText(line.text, userSettings.audioSpeed || 1);
+        });
+        
+        elements.conversationContent.appendChild(dialogueItem);
+    });
 }
 
-function saveToStorage(key, value) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch (error) {
-    console.error('Storage error:', error);
-  }
+function updateMarkLearnedButton(conversation) {
+    if (!elements.markLearned) return;
+    
+    const isLearned = userProgress.conversationsCompleted.includes(conversation.id);
+    
+    if (isLearned) {
+        elements.markLearned.innerHTML = '<i class="fas fa-undo"></i><span>আবার শিখুন</span>';
+        elements.markLearned.classList.add('learned');
+    } else {
+        elements.markLearned.innerHTML = '<i class="fas fa-check"></i><span>শিখেছি</span>';
+        elements.markLearned.classList.remove('learned');
+    }
 }
 
-function loadFromStorage(key, defaultValue = null) {
-  try {
-    const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : defaultValue;
-  } catch (error) {
-    console.error('Storage error:', error);
-    return defaultValue;
-  }
+function closeConversationModal() {
+    if (elements.conversationModal) {
+        elements.conversationModal.classList.remove('show');
+    }
+    
+    // Stop any playing audio
+    if (audioPlayer) {
+        audioPlayer.pause();
+    }
 }
 
-function highlightText(text, query) {
-  if (!query || typeof text !== 'string') return text;
-  const regex = new RegExp(`(${query})`, 'gi');
-  return text.replace(regex, '<mark>$1</mark>');
+/* ================================
+   AUDIO PLAYBACK
+================================ */
+
+function playCurrentConversation(speed = null, repeat = false) {
+    const conversationId = elements.conversationModal?.dataset.conversationId;
+    if (!conversationId) return;
+    
+    const conversation = currentConversations.find(c => c.id == conversationId);
+    if (!conversation || !conversation.dialogue) return;
+    
+    const playbackSpeed = speed || userSettings.audioSpeed || 1;
+    
+    // Collect all text to speak
+    const textsToSpeak = conversation.dialogue.map(line => line.text);
+    
+    // Play sequence
+    playTextSequence(textsToSpeak, playbackSpeed, repeat);
 }
 
-function getDailyProgress() {
-  const today = getTodayDate();
-  let progress = loadFromStorage(CONFIG.STORAGE_KEYS.dailyProgress, {
-    date: today,
-    wordsLearned: 0,
-    target: CONFIG.DAILY_TARGET,
-    correctAnswers: 0,
-    totalAttempts: 0
-  });
-  
-  if (progress.date !== today) {
-    progress = {
-      date: today,
-      wordsLearned: 0,
-      target: progress.target || CONFIG.DAILY_TARGET,
-      correctAnswers: 0,
-      totalAttempts: 0
+function playTextSequence(texts, speed = 1, repeat = false) {
+    if (!texts || texts.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    function playNext() {
+        if (currentIndex >= texts.length) {
+            if (repeat) {
+                currentIndex = 0;
+            } else {
+                return;
+            }
+        }
+        
+        playText(texts[currentIndex], speed, () => {
+            currentIndex++;
+            setTimeout(playNext, 500); // Pause between lines
+        });
+    }
+    
+    playNext();
+}
+
+function playText(text, speed = 1, callback = null) {
+    if (!text || !window.speechSynthesis) {
+        if (callback) callback();
+        return;
+    }
+    
+    // Stop any ongoing speech
+    window.speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    
+    // Try to set appropriate language
+    const languageMap = {
+        'german': 'de-DE',
+        'french': 'fr-FR',
+        'spanish': 'es-ES',
+        'italian': 'it-IT',
+        'dutch': 'nl-NL',
+        'portuguese': 'pt-PT'
     };
-    saveToStorage(CONFIG.STORAGE_KEYS.dailyProgress, progress);
-  }
-  
-  return progress;
+    
+    const currentLanguage = getLanguageKey(currentCountry);
+    utterance.lang = languageMap[currentLanguage] || 'en-US';
+    utterance.rate = speed;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    
+    if (callback) {
+        utterance.onend = callback;
+    }
+    
+    utterance.onerror = function(error) {
+        console.error('Speech synthesis error:', error);
+        if (callback) callback();
+    };
+    
+    window.speechSynthesis.speak(utterance);
 }
 
-// ================================
-// TOAST SYSTEM
-// ================================
+/* ================================
+   PROGRESS TRACKING
+================================ */
+
+function markConversationLearned() {
+    const conversationId = elements.conversationModal?.dataset.conversationId;
+    if (!conversationId) return;
+    
+    const conversation = currentConversations.find(c => c.id == conversationId);
+    if (!conversation) return;
+    
+    const isCurrentlyLearned = userProgress.conversationsCompleted.includes(parseInt(conversationId));
+    
+    if (isCurrentlyLearned) {
+        // Remove from learned
+        userProgress.conversationsCompleted = userProgress.conversationsCompleted.filter(id => id !== parseInt(conversationId));
+        userProgress.totalLearned = Math.max(0, userProgress.totalLearned - 1);
+        showToast('কথোপকথনটি আবার শেখার তালিকায় যোগ করা হয়েছে', 'info');
+    } else {
+        // Mark as learned
+        userProgress.conversationsCompleted.push(parseInt(conversationId));
+        userProgress.totalLearned++;
+        
+        // Update daily progress
+        updateDailyProgress();
+        
+        // Check achievements
+        checkAchievements();
+        
+        showToast('অভিনন্দন! কথোপকথনটি শেখা সম্পন্ন হয়েছে ✓', 'success');
+    }
+    
+    // Update UI
+    updateMarkLearnedButton(conversation);
+    updateProgressDisplay();
+    renderConversations(); // Refresh to show updated status
+    saveUserData();
+}
+
+function updateDailyProgress() {
+    const today = new Date().toDateString();
+    
+    if (userProgress.lastActiveDate !== today) {
+        // New day - check streak
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        
+        if (userProgress.lastActiveDate === yesterday.toDateString()) {
+            // Consecutive day - maintain streak
+            userProgress.currentStreak++;
+        } else {
+            // Streak broken - reset
+            userProgress.currentStreak = 1;
+        }
+        
+        userProgress.lastActiveDate = today;
+        
+        // Update longest streak
+        if (userProgress.currentStreak > userProgress.longestStreak) {
+            userProgress.longestStreak = userProgress.currentStreak;
+        }
+    }
+}
+
+function updateStreakStatus() {
+    const today = new Date().toDateString();
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (userProgress.lastActiveDate && userProgress.lastActiveDate !== today && userProgress.lastActiveDate !== yesterday.toDateString()) {
+        // More than 1 day gap - reset streak
+        userProgress.currentStreak = 0;
+    }
+}
+
+function updateProgressDisplay() {
+    // Update header progress
+    const dailyGoal = userSettings.dailyGoal || 10;
+    const todayLearned = getTodayLearnedCount();
+    
+    if (elements.progressText) {
+        elements.progressText.textContent = `${todayLearned}/${dailyGoal}`;
+    }
+    
+    if (elements.progressFill) {
+        const percentage = Math.min(100, (todayLearned / dailyGoal) * 100);
+        elements.progressFill.style.width = `${percentage}%`;
+    }
+    
+    // Update sidebar daily count
+    if (elements.dailyCount) {
+        elements.dailyCount.textContent = todayLearned;
+    }
+    
+    if (elements.dailyTarget) {
+        elements.dailyTarget.textContent = dailyGoal;
+    }
+    
+    // Update progress section
+    if (elements.totalLearned) {
+        elements.totalLearned.textContent = userProgress.totalLearned || 0;
+    }
+    
+    if (elements.currentStreak) {
+        elements.currentStreak.textContent = userProgress.currentStreak || 0;
+    }
+    
+    if (elements.countriesLearned) {
+        elements.countriesLearned.textContent = userProgress.countriesStarted.length || 0;
+    }
+    
+    if (elements.timeSpent) {
+        const minutes = Math.floor((userProgress.totalTimeSpent || 0) / 60);
+        elements.timeSpent.textContent = `${minutes} মিনিট`;
+    }
+}
+
+function getTodayLearnedCount() {
+    const today = new Date().toDateString();
+    return userProgress.lastActiveDate === today ? userProgress.todayLearned || 0 : 0;
+}
+
+/* ================================
+   ACHIEVEMENTS
+================================ */
+
+function checkAchievements() {
+    const newAchievements = [];
+    
+    Object.entries(ACHIEVEMENTS).forEach(([key, achievement]) => {
+        if (achievements.includes(achievement.id)) return; // Already unlocked
+        
+        let unlocked = false;
+        
+        switch(achievement.id) {
+            case 'first_conversation':
+                unlocked = userProgress.totalLearned >= 1;
+                break;
+            case 'ten_conversations':
+                unlocked = userProgress.totalLearned >= 10;
+                break;
+            case 'weekly_streak':
+                unlocked = userProgress.currentStreak >= 7;
+                break;
+            case 'polyglot':
+                unlocked = userProgress.countriesStarted.length >= 3;
+                break;
+            case 'dedicated':
+                unlocked = userProgress.totalLearned >= 100;
+                break;
+        }
+        
+        if (unlocked) {
+            achievements.push(achievement.id);
+            newAchievements.push(achievement);
+        }
+    });
+    
+    // Show new achievements
+    newAchievements.forEach(achievement => {
+        setTimeout(() => {
+            showToast(`🏆 নতুন অর্জন আনলক: ${achievement.name}!`, 'success', 5000);
+        }, 1000);
+    });
+    
+    if (newAchievements.length > 0) {
+        saveUserData();
+    }
+}
+
+function renderAchievements() {
+    if (!elements.achievementsGrid) return;
+    
+    elements.achievementsGrid.innerHTML = '';
+    
+    Object.entries(ACHIEVEMENTS).forEach(([key, achievement]) => {
+        const isUnlocked = achievements.includes(achievement.id);
+        
+        const achievementElement = document.createElement('div');
+        achievementElement.className = `achievement-badge ${isUnlocked ? 'unlocked' : ''}`;
+        
+        achievementElement.innerHTML = `
+            <div class="achievement-icon">${achievement.icon}</div>
+            <div class="achievement-name">${achievement.name}</div>
+            <div class="achievement-description">${achievement.description}</div>
+        `;
+        
+        elements.achievementsGrid.appendChild(achievementElement);
+    });
+}
+
+/* ================================
+   WEEKLY CHART
+================================ */
+
+function renderWeeklyChart() {
+    if (!elements.weeklyChart) return;
+    
+    elements.weeklyChart.innerHTML = '';
+    
+    const days = ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহঃ', 'শুক্র', 'শনি'];
+    const today = new Date();
+    
+    days.forEach((day, index) => {
+        const bar = document.createElement('div');
+        bar.className = 'chart-bar';
+        bar.dataset.day = day;
+        
+        // Generate some sample data (in real app, use actual data)
+        const height = Math.random() * 80 + 20;
+        bar.style.height = `${height}%`;
+        
+        elements.weeklyChart.appendChild(bar);
+    });
+}
+
+/* ================================
+   SETTINGS MANAGEMENT
+================================ */
+
+function updateDailyGoal() {
+    const newGoal = parseInt(elements.dailyGoalSelect.value);
+    userSettings.dailyGoal = newGoal;
+    updateProgressDisplay();
+    saveUserData();
+    showToast(`দৈনিক লক্ষ্য ${newGoal}টি কথোপকথনে সেট করা হয়েছে`, 'success');
+}
+
+function updateAudioSpeed() {
+    const newSpeed = parseFloat(elements.audioSpeedSelect.value);
+    userSettings.audioSpeed = newSpeed;
+    saveUserData();
+    showToast('অডিও গতি আপডেট করা হয়েছে', 'success');
+}
+
+function updateAutoPlay() {
+    userSettings.autoPlay = elements.autoPlayToggle.checked;
+    saveUserData();
+    showToast(`অটো-প্লে ${userSettings.autoPlay ? 'চালু' : 'বন্ধ'} করা হয়েছে`, 'success');
+}
+
+function updateNotifications() {
+    userSettings.notifications = elements.notificationToggle.checked;
+    saveUserData();
+    
+    if (userSettings.notifications) {
+        requestNotificationPermission();
+    }
+    
+    showToast(`নোটিফিকেশন ${userSettings.notifications ? 'চালু' : 'বন্ধ'} করা হয়েছে`, 'success');
+}
+
+function requestNotificationPermission() {
+    if ('Notification' in window) {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                showToast('নোটিফিকেশনের অনুমতি দেওয়া হয়েছে', 'success');
+            }
+        });
+    }
+}
+
+/* ================================
+   DATA EXPORT/IMPORT
+================================ */
+
+function exportUserData() {
+    const exportData = {
+        userProgress,
+        userSettings,
+        achievements,
+        currentCountry,
+        exportDate: new Date().toISOString(),
+        version: '1.0.0'
+    };
+    
+    const dataStr = JSON.stringify(exportData, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(dataBlob);
+    link.download = `euro-talk-backup-${new Date().toISOString().split('T')[0]}.json`;
+    link.click();
+    
+    showToast('ডেটা এক্সপোর্ট সম্পন্ন হয়েছে', 'success');
+}
+
+function confirmResetProgress() {
+    showConfirmModal(
+        'অগ্রগতি রিসেট করুন',
+        'আপনি কি নিশ্চিত যে সমস্ত অগ্রগতি মুছে ফেলতে চান? এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।',
+        resetProgress
+    );
+}
+
+function resetProgress() {
+    // Reset all progress data
+    userProgress = {
+        totalLearned: 0,
+        currentStreak: 0,
+        longestStreak: 0,
+        countriesStarted: [],
+        conversationsCompleted: [],
+        lastActiveDate: null,
+        totalTimeSpent: 0
+    };
+    
+    achievements = [];
+    currentCountry = null;
+    
+    // Clear localStorage
+    localStorage.removeItem(STORAGE_KEYS.userProgress);
+    localStorage.removeItem(STORAGE_KEYS.achievements);
+    localStorage.removeItem(STORAGE_KEYS.selectedCountry);
+    
+    // Update UI
+    updateProgressDisplay();
+    renderCountries();
+    renderAchievements();
+    
+    closeConfirmModal();
+    showToast('সমস্ত অগ্রগতি রিসেট করা হয়েছে', 'success');
+}
+
+/* ================================
+   MODAL MANAGEMENT
+================================ */
+
+function showConfirmModal(title, message, confirmCallback) {
+    if (!elements.confirmModal) return;
+    
+    if (elements.confirmTitle) {
+        elements.confirmTitle.textContent = title;
+    }
+    
+    if (elements.confirmMessage) {
+        elements.confirmMessage.textContent = message;
+    }
+    
+    // Set up confirm callback
+    const confirmHandler = () => {
+        confirmCallback();
+        elements.confirmOk.removeEventListener('click', confirmHandler);
+    };
+    
+    elements.confirmOk.addEventListener('click', confirmHandler);
+    
+    // Show modal
+    elements.confirmModal.classList.add('show');
+}
+
+function closeConfirmModal() {
+    if (elements.confirmModal) {
+        elements.confirmModal.classList.remove('show');
+    }
+}
+
+/* ================================
+   TOAST NOTIFICATIONS
+================================ */
 
 function showToast(message, type = 'info', duration = 4000) {
-  const toastContainer = document.getElementById('toast-container');
-  if (!toastContainer) return;
-  
-  const toast = document.createElement('div');
-  const colors = {
-    success: '#28a745',
-    error: '#dc3545',
-    warning: '#ffc107',
-    info: '#0066cc'
-  };
-  
-  const icons = {
-    success: '✅',
-    error: '❌', 
-    warning: '⚠️',
-    info: 'ℹ️'
-  };
-  
-  toast.className = 'toast-notification show';
-  toast.innerHTML = `
-    <div style="display: flex; align-items: center; gap: 12px; color: #333;">
-      <span style="font-size: 18px;">${icons[type] || icons.info}</span>
-      <span style="flex: 1; font-weight: 500;">${message}</span>
-      <button style="background: none; border: none; font-size: 16px; cursor: pointer;" onclick="this.parentElement.parentElement.remove()">✖</button>
-    </div>
-  `;
-  
-  toast.style.borderLeft = `4px solid ${colors[type] || colors.info}`;
-  
-  toastContainer.appendChild(toast);
-  
-  setTimeout(() => {
-    if (toast.parentNode) {
-      toast.remove();
-    }
-  }, duration);
+    if (!elements.toastContainer) return;
+    
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    
+    const icons = {
+        success: '✅',
+        error: '❌',
+        warning: '⚠️',
+        info: 'ℹ️'
+    };
+    
+    toast.innerHTML = `
+        <div class="toast-content">
+            <span class="toast-icon">${icons[type] || icons.info}</span>
+            <span class="toast-message">${message}</span>
+            <button class="toast-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // Style the toast
+    toast.style.cssText = `
+        background: white;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+        box-shadow: var(--shadow-lg);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+        max-width: 400px;
+        word-wrap: break-word;
+    `;
+    
+    const colors = {
+        success: '#10B981',
+        error: '#EF4444',
+        warning: '#F59E0B',
+        info: '#3B82F6'
+    };
+    
+    toast.style.borderLeftColor = colors[type] || colors.info;
+    
+    elements.toastContainer.appendChild(toast);
+    
+    // Animate in
+    setTimeout(() => {
+        toast.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }
+    }, duration);
 }
 
-// ================================
-// EXPORT GLOBAL FUNCTIONS
-// ================================
+/* ================================
+   KEYBOARD SHORTCUTS
+================================ */
 
-window.showSection = showSection;
-window.showModal = showModal;
-window.hideModal = hideModal;
-window.showToast = showToast;
-window.toggleTheme = toggleTheme;
-window.exportData = exportData;
-window.clearAllData = clearAllData;
-window.showHelp = showHelp;
+function handleKeyboardShortcuts(event) {
+    // Only handle shortcuts when not typing in inputs
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        return;
+    }
+    
+    switch(event.key) {
+        case 'Escape':
+            closeConversationModal();
+            closeConfirmModal();
+            closeSidebar();
+            break;
+        case ' ':
+            if (elements.conversationModal.classList.contains('show')) {
+                event.preventDefault();
+                playCurrentConversation();
+            }
+            break;
+        case 'Enter':
+            if (elements.conversationModal.classList.contains('show')) {
+                event.preventDefault();
+                markConversationLearned();
+            }
+            break;
+    }
+}
+
+/* ================================
+   UTILITY FUNCTIONS
+================================ */
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Auto-save every 30 seconds
+setInterval(saveUserData, 30000);
+
+/* ================================
+   CSS for Toast (Added to document)
+================================ */
+
+const toastStyles = document.createElement('style');
+toastStyles.textContent = `
+    .toast-container {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 1000;
+        pointer-events: none;
+    }
+    
+    .toast {
+        pointer-events: all;
+        margin-bottom: 12px;
+    }
+    
+    .toast-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .toast-icon {
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+    
+    .toast-message {
+        flex: 1;
+        color: var(--text-primary);
+    }
+    
+    .toast-close {
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: var(--text-muted);
+        padding: 4px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+    
+    .toast-close:hover {
+        background-color: var(--background-tertiary);
+        color: var(--text-primary);
+    }
+    
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-overlay);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .modal-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .modal-container {
+        background-color: var(--background-primary);
+        border-radius: var(--radius-xl);
+        max-width: 90vw;
+        max-height: 90vh;
+        width: 600px;
+        box-shadow: var(--shadow-2xl);
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .modal-overlay.show .modal-container {
+        transform: scale(1);
+    }
+    
+    .modal-container.small {
+        width: 400px;
+    }
+    
+    .modal-header {
+        padding: var(--spacing-xl);
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--background-secondary);
+    }
+    
+    .modal-header h3 {
+        margin: 0;
+        color: var(--text-primary);
+        font-size: var(--font-size-xl);
+    }
+    
+    .modal-content {
+        padding: var(--spacing-xl);
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+    
+    .conversation-scenario {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        background-color: var(--background-secondary);
+        border-radius: var(--radius-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .scenario-icon {
+        font-size: 1.5rem;
+    }
+    
+    .conversation-content {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .dialogue-item {
+        margin-bottom: var(--spacing-lg);
+        padding: var(--spacing-md);
+        border-radius: var(--radius-lg);
+        position: relative;
+    }
+    
+    .dialogue-item.user {
+        background-color: var(--primary-light);
+        margin-left: 40px;
+    }
+    
+    .dialogue-item.other {
+        background-color: var(--background-secondary);
+        margin-right: 40px;
+    }
+    
+    .dialogue-text {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .dialogue-text strong {
+        flex: 1;
+        color: var(--text-primary);
+        font-size: var(--font-size-lg);
+    }
+    
+    .play-line-btn {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        padding: var(--spacing-xs);
+        border-radius: var(--radius-sm);
+        transition: all 0.2s ease;
+    }
+    
+    .play-line-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: scale(1.1);
+    }
+    
+    .dialogue-bengali {
+        color: var(--text-secondary);
+        font-style: italic;
+        font-size: var(--font-size-sm);
+    }
+    
+    .conversation-controls {
+        display: flex;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: var(--spacing-lg);
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .control-btn {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) var(--spacing-lg);
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: var(--font-family-bangla);
+        font-weight: 500;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    .control-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .control-btn.primary {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+    
+    .control-btn.success {
+        background-color: var(--success-color);
+        color: white;
+        border-color: var(--success-color);
+    }
+    
+    .control-btn.success.learned {
+        background-color: var(--warning-color);
+        border-color: var(--warning-color);
+    }
+    
+    .confirm-controls {
+        display: flex;
+        gap: var(--spacing-md);
+        justify-content: flex-end;
+        margin-top: var(--spacing-lg);
+    }
+    
+    .control-btn.warning {
+        background-color: var(--error-color);
+        color: white;
+        border-color: var(--error-color);
+    }
+    
+    @media (max-width: 768px) {
+        .modal-container {
+            width: 95vw;
+            margin: 20px;
+        }
+        
+        .conversation-controls {
+            flex-direction: column;
+        }
+        
+        .control-btn {
+            width: 100%;
+        }
+        
+        .dialogue-item.user {
+            margin-left: 20px;
+        }
+        
+        .dialogue-item.other {
+            margin-right: 20px;
+        }
+    }
+`;
+
+document.head.appendChild(toastStyles);
+
+console.log('✅ ইউরো কথা অ্যাপ সফলভাবে লোড হয়েছে!');
