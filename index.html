@@ -8,20 +8,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- 🎯 সরল হেডার - 720x120 -->
+  <!-- 🎯 চিকন হেডার -->
   <header class="app-header">
     <div class="header-container">
       <div class="header-left">
         <h1 class="app-title">
-          <span class="logo-icon">🗣️</span>
+          <span class="logo-icon">🇪🇺</span>
           <span class="title-text">Speak EU</span>
         </h1>
       </div>
       
       <div class="header-right">
-        <button id="mode-toggle" class="control-btn" title="থিম পরিবর্তন">☀️</button>
+        <div class="user-stats" id="user-stats" style="display: none;">
+          <span class="streak-count">🔥<span id="header-streak">0</span></span>
+        </div>
+        <button id="mode-toggle" class="control-btn" title="থিম পরিবর্তন">🌙</button>
         <button id="menu-toggle" class="control-btn" title="মেনু">☰</button>
       </div>
     </div>
@@ -39,32 +43,108 @@
     <div class="welcome-content" id="welcome-content">
       <!-- হিরো সেকশন -->
       <div class="hero-section">
+        <div class="hero-animation">
+          <div class="floating-icon">🇪🇺</div>
+          <div class="floating-icon">📚</div>
+          <div class="floating-icon">🎯</div>
+        </div>
         <h2>🌍 ইউরোপীয় ভাষা শিখুন সহজেই</h2>
         <p class="hero-description">
-          <strong>Speak EU</strong> দিয়ে ইউরোপের যেকোনো দেশের ভাষা শিখুন। 
-          প্রতিদিন মাত্র ১৫ মিনিট অনুশীলন করুন এবং নতুন ভাষায় কথা বলতে শিখুন।
+          <strong>Speak EU</strong> দিয়ে ২৯টি ইউরোপীয় দেশের ভাষা শিখুন। 
+          শেনজেন দেশ এবং রাশিয়া - সব দেশের ভাষা এক জায়গায়।
         </p>
+        
+        <!-- দ্রুত পরিসংখ্যান -->
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="stat-number">29</span>
+            <span class="stat-label">দেশ</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">24</span>
+            <span class="stat-label">ভাষা</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">Free</span>
+            <span class="stat-label">বিনামূল্যে</span>
+          </div>
+        </div>
       </div>
       
       <!-- ভাষা নির্বাচন -->
       <div class="language-selection">
         <h3>🎯 আপনার ভাষা নির্বাচন করুন</h3>
+        <div class="language-search">
+          <input type="text" id="language-search" placeholder="দেশ বা ভাষার নাম লিখুন..." class="language-search-input">
+        </div>
+        
         <select id="language-select" class="language-select">
-          <option value="">ভাষা নির্বাচন করুন</option>
-          <option value="italy">🇮🇹 ইতালি (ইতালিয়ান)</option>
-          <option value="spain">🇪🇸 স্পেন (স্প্যানিশ)</option>
-          <option value="russian">🇷🇺 রাশিয়া (রুশ)</option>
+          <option value="">দেশ ও ভাষা নির্বাচন করুন</option>
+          
+          <!-- শেনজেন দেশসমূহ (২৮টি) -->
+          <optgroup label="🇪🇺 শেনজেন দেশসমূহ">
+            <option value="austria">🇦🇹 অস্ট্রিয়া (Deutsch)</option>
+            <option value="belgium">🇧🇪 বেলজিয়াম (Nederlands/Français/Deutsch)</option>
+            <option value="bulgaria">🇧🇬 বুলগেরিয়া (Български)</option>
+            <option value="croatia">🇭🇷 ক্রোয়েশিয়া (Hrvatski)</option>
+            <option value="cyprus">🇨🇾 সাইপ্রাস (Ελληνικά)</option>
+            <option value="czechia">🇨🇿 চেক প্রজাতন্ত্র (Čeština)</option>
+            <option value="denmark">🇩🇰 ডেনমার্ক (Dansk)</option>
+            <option value="estonia">🇪🇪 এস্তোনিয়া (Eesti)</option>
+            <option value="finland">🇫🇮 ফিনল্যান্ড (Suomi/Svenska)</option>
+            <option value="france">🇫🇷 ফ্রান্স (Français)</option>
+            <option value="germany">🇩🇪 জার্মানি (Deutsch)</option>
+            <option value="greece">🇬🇷 গ্রিস (Ελληνικά)</option>
+            <option value="hungary">🇭🇺 হাঙ্গেরি (Magyar)</option>
+            <option value="iceland">🇮🇸 আইসল্যান্ড (Íslenska)</option>
+            <option value="italy">🇮🇹 ইতালি (Italiano)</option>
+            <option value="latvia">🇱🇻 লাটভিয়া (Latviešu)</option>
+            <option value="liechtenstein">🇱🇮 লিশটেনস্টাইন (Deutsch)</option>
+            <option value="lithuania">🇱🇹 লিথুয়ানিয়া (Lietuvių)</option>
+            <option value="luxembourg">🇱🇺 লুক্সেমবার্গ (Lëtzebuergesch/Français/Deutsch)</option>
+            <option value="malta">🇲🇹 মাল্টা (Malti/English)</option>
+            <option value="netherlands">🇳🇱 নেদারল্যান্ডস (Nederlands)</option>
+            <option value="norway">🇳🇴 নরওয়ে (Norsk)</option>
+            <option value="poland">🇵🇱 পোল্যান্ড (Polski)</option>
+            <option value="portugal">🇵🇹 পর্তুগাল (Português)</option>
+            <option value="romania">🇷🇴 রোমানিয়া (Română)</option>
+            <option value="slovakia">🇸🇰 স্লোভাকিয়া (Slovenčina)</option>
+            <option value="slovenia">🇸🇮 স্লোভেনিয়া (Slovenščina)</option>
+            <option value="spain">🇪🇸 স্পেন (Español)</option>
+            <option value="sweden">🇸🇪 সুইডেন (Svenska)</option>
+            <option value="switzerland">🇨🇭 সুইজারল্যান্ড (Deutsch/Français/Italiano/Romansh)</option>
+          </optgroup>
+          
+          <!-- অন্যান্য ইউরোপীয় দেশ -->
+          <optgroup label="🌍 অন্যান্য ইউরোপীয় দেশ">
+            <option value="russia">🇷🇺 রাশিয়া (Русский)</option>
+          </optgroup>
         </select>
+        
+        <button id="start-learning-btn" class="start-btn" style="display: none;">
+          🚀 শেখা শুরু করুন
+        </button>
       </div>
       
       <!-- 📊 প্রগ্রেস সেকশন -->
       <div class="progress-section" id="progress-section" style="display: none;">
         <h3>📈 আজকের অগ্রগতি</h3>
-        <div class="progress-bar-container">
-          <div class="progress-bar">
-            <div class="progress-fill" id="daily-progress"></div>
+        <div class="progress-container">
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress-fill" id="daily-progress"></div>
+            </div>
+            <span class="progress-count" id="words-learned-today">০/১০</span>
           </div>
-          <span class="progress-count" id="words-learned-today">০/১০</span>
+          
+          <div class="daily-goal">
+            <span class="goal-label">দৈনিক লক্ষ্য:</span>
+            <div class="goal-selector">
+              <button class="goal-btn" data-goal="5">৫</button>
+              <button class="goal-btn active" data-goal="10">১০</button>
+              <button class="goal-btn" data-goal="20">২০</button>
+            </div>
+          </div>
         </div>
         
         <div class="stats-summary">
@@ -76,6 +156,10 @@
             <span class="stat-number" id="current-streak">০</span>
             <span class="stat-label">ধারাবাহিক দিন</span>
           </div>
+          <div class="stat-item">
+            <span class="stat-number" id="accuracy-rate">০%</span>
+            <span class="stat-label">নির্ভুলতা</span>
+          </div>
         </div>
       </div>
       
@@ -84,12 +168,52 @@
         <div class="search-container">
           <input type="text" id="vocabulary-search" placeholder="শব্দ খুঁজুন..." class="search-input">
           <button id="search-btn" class="search-btn">🔍</button>
+          <button id="voice-search-btn" class="voice-btn" title="ভয়েস সার্চ">🎤</button>
         </div>
         
         <div class="filter-options">
+          <div class="filter-tags">
+            <button class="filter-tag active" data-category="all">সবগুলো</button>
+            <button class="filter-tag" data-category="basic">মৌলিক</button>
+            <button class="filter-tag" data-category="food">খাবার</button>
+            <button class="filter-tag" data-category="travel">ভ্রমণ</button>
+            <button class="filter-tag" data-category="family">পরিবার</button>
+            <button class="filter-tag" data-category="business">ব্যবসা</button>
+          </div>
           <button id="clear-filters" class="clear-btn">ফিল্টার মুছুন</button>
         </div>
       </div>
+      
+      <!-- 🎮 মিনি গেমস সেকশন -->
+      <section class="mini-games-section" id="mini-games-section" style="display: none;">
+        <h3>🎮 ভাষা গেমস</h3>
+        <div class="games-grid">
+          <div class="game-card" data-game="flashcard">
+            <div class="game-icon">📇</div>
+            <h4>ফ্ল্যাশকার্ড</h4>
+            <p>শব্দ মনে রাখার অনুশীলন</p>
+            <button class="play-btn">খেলুন</button>
+          </div>
+          <div class="game-card" data-game="quiz">
+            <div class="game-icon">🧩</div>
+            <h4>কুইজ চ্যালেঞ্জ</h4>
+            <p>আপনার জ্ঞান পরীক্ষা করুন</p>
+            <button class="play-btn">খেলুন</button>
+          </div>
+          <div class="game-card" data-game="listening">
+            <div class="game-icon">👂</div>
+            <h4>শ্রবণ অনুশীলন</h4>
+            <p>উচ্চারণ শুনে বুঝুন</p>
+            <button class="play-btn">খেলুন</button>
+          </div>
+          <div class="game-card" data-game="pronunciation">
+            <div class="game-icon">🗣️</div>
+            <h4>উচ্চারণ প্র্যাকটিস</h4>
+            <p>সঠিক উচ্চারণ শিখুন</p>
+            <button class="play-btn">খেলুন</button>
+          </div>
+        </div>
+      </section>
       
       <!-- 🚀 কুইক স্টার্ট -->
       <section class="quick-start-section">
@@ -98,8 +222,8 @@
           <div class="step-item">
             <div class="step-number">১</div>
             <div class="step-content">
-              <h4>ভাষা নির্বাচন করুন</h4>
-              <p>উপরের ড্রপডাউন থেকে আপনার পছন্দের ভাষা বেছে নিন</p>
+              <h4>দেশ নির্বাচন করুন</h4>
+              <p>২৯টি ইউরোপীয় দেশের মধ্য থেকে আপনার পছন্দের দেশ বেছে নিন</p>
             </div>
           </div>
           <div class="step-item">
@@ -112,6 +236,13 @@
           <div class="step-item">
             <div class="step-number">৩</div>
             <div class="step-content">
+              <h4>গেমস খেলুন</h4>
+              <p>মজার গেমসের মাধ্যমে শেখা আরও সহজ করুন</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">৪</div>
+            <div class="step-content">
               <h4>নিয়মিত অনুশীলন করুন</h4>
               <p>প্রতিদিন কমপক্ষে ১০টি নতুন শব্দ শিখুন</p>
             </div>
@@ -119,24 +250,98 @@
         </div>
       </section>
       
-      <!-- জনপ্রিয় ভাষা -->
+      <!-- জনপ্রিয় দেশ -->
       <section class="popular-languages">
-        <h3>🌟 জনপ্রিয় ভাষাসমূহ</h3>
+        <h3>🌟 জনপ্রিয় দেশ ও ভাষা</h3>
         <div class="language-grid">
-          <div class="language-card" data-lang="italy">
-            <span class="flag">🇮🇹</span>
-            <h4>ইতালিয়ান</h4>
-            <p>২,৮৭১ শব্দ</p>
+          <div class="language-card" data-lang="germany">
+            <span class="flag">🇩🇪</span>
+            <h4>জার্মানি</h4>
+            <p>৯৫০+ শব্দ</p>
+            <div class="difficulty medium">মধ্যম</div>
+          </div>
+          <div class="language-card" data-lang="france">
+            <span class="flag">🇫🇷</span>
+            <h4>ফ্রান্স</h4>
+            <p>১,১০০+ শব্দ</p>
+            <div class="difficulty medium">মধ্যম</div>
           </div>
           <div class="language-card" data-lang="spain">
             <span class="flag">🇪🇸</span>
-            <h4>স্প্যানিশ</h4>
-            <p>১,৮০৩ শব্দ</p>
+            <h4>স্পেন</h4>
+            <p>১,২০০+ শব্দ</p>
+            <div class="difficulty easy">সহজ</div>
           </div>
-          <div class="language-card" data-lang="russian">
+          <div class="language-card" data-lang="italy">
+            <span class="flag">🇮🇹</span>
+            <h4>ইতালি</h4>
+            <p>৮৮০+ শব্দ</p>
+            <div class="difficulty easy">সহজ</div>
+          </div>
+          <div class="language-card" data-lang="netherlands">
+            <span class="flag">🇳🇱</span>
+            <h4>নেদারল্যান্ডস</h4>
+            <p>৭৮০+ শব্দ</p>
+            <div class="difficulty medium">মধ্যম</div>
+          </div>
+          <div class="language-card" data-lang="russia">
             <span class="flag">🇷🇺</span>
-            <h4>রুশ</h4>
-            <p>৩৩ শব্দ</p>
+            <h4>রাশিয়া</h4>
+            <p>৬০০+ শব্দ</p>
+            <div class="difficulty hard">কঠিন</div>
+          </div>
+          <div class="language-card" data-lang="poland">
+            <span class="flag">🇵🇱</span>
+            <h4>পোল্যান্ড</h4>
+            <p>৫৫০+ শব্দ</p>
+            <div class="difficulty hard">কঠিন</div>
+          </div>
+          <div class="language-card" data-lang="sweden">
+            <span class="flag">🇸🇪</span>
+            <h4>সুইডেন</h4>
+            <p>৪৮০+ শব্দ</p>
+            <div class="difficulty medium">মধ্যম</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📍 শেনজেন ইনফো -->
+      <section class="schengen-info">
+        <h3>🇪🇺 শেনজেন এরিয়া সম্পর্কে</h3>
+        <div class="info-card">
+          <div class="info-icon">🛂</div>
+          <div class="info-content">
+            <h4>২৮টি শেনজেন দেশ</h4>
+            <p>শেনজেন এরিয়ার সব দেশের ভাষা শিখুন। একবার ভিসা পেলে সব দেশে যেতে পারবেন!</p>
+            <ul class="country-list">
+              <li>🇩🇪 জার্মানি, 🇫🇷 ফ্রান্স, 🇪🇸 স্পেন, 🇮🇹 ইতালি</li>
+              <li>🇳🇱 নেদারল্যান্ডস, 🇵🇱 পোল্যান্ড, 🇸🇪 সুইডেন, 🇳🇴 নরওয়ে</li>
+              <li>+ আরও ২০টি দেশ</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📈 মোটিভেশন সেকশন -->
+      <section class="motivation-section">
+        <h3>💪 আজকের অনুপ্রেরণা</h3>
+        <div class="motivation-card" id="daily-motivation">
+          <div class="motivation-icon">🌟</div>
+          <p class="motivation-text">"প্রতিটি নতুন ভাষা একটি নতুন জীবনের দরজা খুলে দেয়।"</p>
+          <span class="motivation-author">- চেক প্রবাদ</span>
+        </div>
+        
+        <div class="achievement-preview">
+          <h4>🏆 সাম্প্রতিক অর্জন</h4>
+          <div class="achievements-list" id="achievements-list">
+            <div class="achievement-item locked">
+              <span class="achievement-icon">🥇</span>
+              <span class="achievement-text">প্রথম ১০টি শব্দ শিখুন</span>
+            </div>
+            <div class="achievement-item locked">
+              <span class="achievement-icon">🌍</span>
+              <span class="achievement-text">প্রথম দেশের ভাষা সম্পূর্ণ করুন</span>
+            </div>
           </div>
         </div>
       </section>
@@ -146,6 +351,11 @@
     <div class="vocabulary-content" id="vocabulary-content" style="display: none;">
       <!-- Dynamic content will be loaded here -->
     </div>
+
+    <!-- গেম কনটেন্ট -->
+    <div class="game-content" id="game-content" style="display: none;">
+      <!-- Dynamic game content will be loaded here -->
+    </div>
   </main>
 
   <!-- সাইড মেনু -->
@@ -153,15 +363,26 @@
     <button id="close-menu" class="close-menu-btn">✖</button>
     
     <div class="menu-header">
-      <h3>Speak EU</h3>
-      <p>ইউরোপীয় ভাষা শিখুন</p>
+      <h3>🇪🇺 Speak EU</h3>
+      <p>২৯টি ইউরোপীয় দেশের ভাষা</p>
+      <div class="user-level">
+        <span class="level-badge">Level <span id="user-level">1</span></span>
+        <div class="level-progress">
+          <div class="level-fill" id="level-progress"></div>
+        </div>
+      </div>
     </div>
     
     <nav class="menu-nav">
       <ul>
-        <li><a href="#" id="menu-home">🏠 হোম</a></li>
+        <li><a href="#" id="menu-home" class="active">🏠 হোম</a></li>
+        <li><a href="#" id="menu-countries">🌍 দেশসমূহ</a></li>
         <li><a href="#" id="menu-progress">📊 অগ্রগতি</a></li>
         <li><a href="#" id="menu-vocabulary">📚 শব্দভাণ্ডার</a></li>
+        <li><a href="#" id="menu-games">🎮 গেমস</a></li>
+        <li><a href="#" id="menu-schengen">🛂 শেনজেন তথ্য</a></li>
+        <li><a href="#" id="menu-achievements">🏆 অর্জন</a></li>
+        <li><a href="#" id="menu-settings">⚙️ সেটিংস</a></li>
         <li><a href="#" id="menu-about">ℹ️ সম্পর্কে</a></li>
         <li><a href="#" id="menu-help">❓ সাহায্য</a></li>
       </ul>
@@ -171,13 +392,30 @@
       <div class="social-links">
         <a href="#" class="social-link">📘 Facebook</a>
         <a href="#" class="social-link">📢 Telegram</a>
+        <a href="#" class="social-link">📧 Gmail</a>
+        <a href="#" class="social-link">🌐 Website</a>
       </div>
-      <p class="copyright">© ২০২৪ Speak EU</p>
+      <div class="app-info">
+        <p class="version">v2.0.0 Final</p>
+        <p class="copyright">© ২০২৪ Speak EU</p>
+        <p class="tagline">🇪🇺 All European Languages</p>
+      </div>
     </div>
   </div>
 
   <!-- 🎉 টোস্ট নোটিফিকেশন -->
   <div id="toast-container" class="toast-container"></div>
+
+  <!-- মোডাল -->
+  <div id="modal-overlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close">✖</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- অডিও এলিমেন্ট -->
+  <audio id="audio-player" preload="none"></audio>
 
   <!-- স্ক্রিপ্ট -->
   <script src="script.js"></script>
