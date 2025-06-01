@@ -1,40 +1,27 @@
-// 🌟 Speak EU - Advanced Language Learning Platform
-// Version 2.0 - Enhanced with all features
+// 🌟 Speak EU - Mobile Friendly Language Learning Platform
+// Version 2.0 Mobile - Optimized for touch devices
 
 // 🔧 Global Configuration
 const CONFIG = {
-  version: '2.0',
-  defaultLanguage: '',
+  version: '2.0-mobile',
   defaultDailyGoal: 10,
-  audioEnabled: true,
-  autoPlay: false,
   audioSpeed: 1.0,
   audioVolume: 0.8,
-  animationsEnabled: true,
-  compactMode: false,
-  showPhonetics: true,
+  autoPlay: false,
   
-  // Spaced Repetition Settings
-  spacedRepetition: {
-    easyInterval: 4,      // days
-    normalInterval: 1,    // days
-    hardInterval: 0.5,    // days
-    maxInterval: 30       // days
-  },
-  
-  // Categories mapping
-  categories: {
-    basic: 'Basic (1-500)',
-    intermediate: 'Intermediate (501-1000)',
-    advanced: 'Advanced (1001+)',
-    greetings: 'Greetings',
-    numbers: 'Numbers',
-    food: 'Food & Dining',
-    travel: 'Travel',
-    work: 'Work',
-    health: 'Health',
-    family: 'Family',
-    emergency: 'Emergency'
+  // Storage Keys
+  storageKeys: {
+    selectedLanguage: 'speakEU_selectedLanguage',
+    learnedWords: 'speakEU_learnedWords',
+    favoriteWords: 'speakEU_favoriteWords',
+    dailyGoal: 'speakEU_dailyGoal',
+    audioEnabled: 'speakEU_audioEnabled',
+    autoPlay: 'speakEU_autoPlay',
+    audioSpeed: 'speakEU_audioSpeed',
+    currentStreak: 'speakEU_currentStreak',
+    lastStudyDate: 'speakEU_lastStudyDate',
+    dailyProgress: 'speakEU_dailyProgress',
+    theme: 'speakEU_theme'
   }
 };
 
@@ -59,31 +46,27 @@ let appState = {
   filteredVocabulary: [],
   searchQuery: '',
   selectedCategory: '',
-  currentPage: 1,
-  itemsPerPage: 20,
+  showFavorites: false,
   
   // User Progress
   learnedWords: new Set(),
   favoriteWords: new Set(),
-  wordProgress: new Map(),
-  dailyStats: new Map(),
-  weeklyStats: [],
+  dailyGoal: CONFIG.defaultDailyGoal,
+  todayLearned: 0,
   currentStreak: 0,
   lastStudyDate: null,
   
   // Settings
-  dailyGoal: CONFIG.defaultDailyGoal,
-  audioEnabled: CONFIG.audioEnabled,
+  audioEnabled: true,
   autoPlay: CONFIG.autoPlay,
   audioSpeed: CONFIG.audioSpeed,
   
   // UI State
-  showProgress: false,
-  showFavorites: false,
-  isLoading: false
+  isLoading: false,
+  menuOpen: false
 };
 
-// 🔊 Audio System
+// 🔊 Audio Manager
 class AudioManager {
   constructor() {
     this.synthesis = window.speechSynthesis;
@@ -91,40 +74,38 @@ class AudioManager {
     this.isPlaying = false;
   }
 
-  async speak(text, language = 'en', speed = 1.0, volume = 0.8) {
-    if (!appState.audioEnabled || !this.synthesis) return;
+  async speak(text, language = 'en') {
+    if (!appState.audioEnabled || !this.synthesis || !text) return;
 
     try {
-      // Stop any current speech
       this.stop();
 
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = this.getLanguageCode(language);
-      utterance.rate = speed;
-      utterance.volume = volume;
+      utterance.rate = appState.audioSpeed;
+      utterance.volume = CONFIG.audioVolume;
       utterance.pitch = 1;
 
       utterance.onstart = () => {
         this.isPlaying = true;
-        this.addAudioIndicator();
+        this.addPlayingIndicator();
       };
 
       utterance.onend = () => {
         this.isPlaying = false;
-        this.removeAudioIndicator();
+        this.removePlayingIndicator();
       };
 
-      utterance.onerror = (event) => {
-        console.warn('Speech synthesis error:', event.error);
+      utterance.onerror = () => {
         this.isPlaying = false;
-        this.removeAudioIndicator();
+        this.removePlayingIndicator();
       };
 
       this.currentUtterance = utterance;
       this.synthesis.speak(utterance);
 
     } catch (error) {
-      console.error('Audio playback error:', error);
+      console.error('Audio error:', error);
     }
   }
 
@@ -132,11 +113,11 @@ class AudioManager {
     if (this.synthesis && this.isPlaying) {
       this.synthesis.cancel();
       this.isPlaying = false;
-      this.removeAudioIndicator();
+      this.removePlayingIndicator();
     }
   }
 
-  getLanguageCode(language) {
+  getLanguageCode(lang) {
     const codes = {
       'en': 'en-US', 'es': 'es-ES', 'fr': 'fr-FR', 'de': 'de-DE',
       'it': 'it-IT', 'pt': 'pt-PT', 'ru': 'ru-RU', 'el': 'el-GR',
@@ -144,21 +125,16 @@ class AudioManager {
       'fi': 'fi-FI', 'pl': 'pl-PL', 'cs': 'cs-CZ', 'sk': 'sk-SK',
       'hu': 'hu-HU', 'ro': 'ro-RO', 'bg': 'bg-BG', 'hr': 'hr-HR'
     };
-    return codes[language] || 'en-US';
+    return codes[lang] || 'en-US';
   }
 
-  addAudioIndicator() {
+  addPlayingIndicator() {
     document.querySelectorAll('.audio-playing').forEach(el => {
       el.classList.remove('audio-playing');
     });
-    
-    const activeButton = document.querySelector('.control-btn.audio-btn:focus');
-    if (activeButton) {
-      activeButton.closest('.conversation-item').classList.add('audio-playing');
-    }
   }
 
-  removeAudioIndicator() {
+  removePlayingIndicator() {
     document.querySelectorAll('.audio-playing').forEach(el => {
       el.classList.remove('audio-playing');
     });
@@ -167,411 +143,275 @@ class AudioManager {
 
 // 💾 Storage Manager
 class StorageManager {
-  constructor() {
-    this.prefix = 'speakEU_';
-  }
-
   save(key, data) {
     try {
-      const serialized = JSON.stringify(data);
-      localStorage.setItem(this.prefix + key, serialized);
+      localStorage.setItem(key, JSON.stringify(data));
     } catch (error) {
-      console.error('Failed to save to localStorage:', error);
+      console.error('Storage save error:', error);
     }
   }
 
   load(key, defaultValue = null) {
     try {
-      const item = localStorage.getItem(this.prefix + key);
+      const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : defaultValue;
     } catch (error) {
-      console.error('Failed to load from localStorage:', error);
+      console.error('Storage load error:', error);
       return defaultValue;
     }
   }
 
   remove(key) {
-    localStorage.removeItem(this.prefix + key);
-  }
-
-  clear() {
-    const keys = Object.keys(localStorage).filter(key => key.startsWith(this.prefix));
-    keys.forEach(key => localStorage.removeItem(key));
-  }
-
-  export() {
-    const data = {};
-    const keys = Object.keys(localStorage).filter(key => key.startsWith(this.prefix));
-    keys.forEach(key => {
-      data[key.replace(this.prefix, '')] = localStorage.getItem(key);
-    });
-    return data;
-  }
-
-  import(data) {
-    Object.entries(data).forEach(([key, value]) => {
-      localStorage.setItem(this.prefix + key, value);
-    });
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.error('Storage remove error:', error);
+    }
   }
 }
 
-// 🧠 Spaced Repetition System
-class SpacedRepetitionManager {
+// 📊 Progress Manager
+class ProgressManager {
   constructor() {
-    this.reviews = new Map();
+    this.loadProgress();
   }
 
-  addWord(wordId, difficulty = 'normal') {
-    const now = new Date();
-    const intervals = CONFIG.spacedRepetition;
+  recordWordLearned(wordId) {
+    const today = this.getTodayKey();
     
-    let nextReview;
-    switch (difficulty) {
-      case 'easy':
-        nextReview = new Date(now.getTime() + intervals.easyInterval * 24 * 60 * 60 * 1000);
-        break;
-      case 'hard':
-        nextReview = new Date(now.getTime() + intervals.hardInterval * 24 * 60 * 60 * 1000);
-        break;
-      default:
-        nextReview = new Date(now.getTime() + intervals.normalInterval * 24 * 60 * 60 * 1000);
-    }
-
-    this.reviews.set(wordId, {
-      nextReview: nextReview.toISOString(),
-      difficulty: difficulty,
-      reviewCount: 1,
-      lastReviewed: now.toISOString()
-    });
-
-    this.saveReviews();
-  }
-
-  updateWord(wordId, difficulty) {
-    const review = this.reviews.get(wordId);
-    if (!review) return this.addWord(wordId, difficulty);
-
-    const now = new Date();
-    const intervals = CONFIG.spacedRepetition;
-    let multiplier = 1;
-
-    // Adjust interval based on performance
-    switch (difficulty) {
-      case 'easy':
-        multiplier = 2.5;
-        break;
-      case 'normal':
-        multiplier = 1.3;
-        break;
-      case 'hard':
-        multiplier = 0.5;
-        break;
-    }
-
-    const currentInterval = intervals.normalInterval * Math.pow(multiplier, review.reviewCount);
-    const maxInterval = intervals.maxInterval;
-    const nextInterval = Math.min(currentInterval, maxInterval);
-    
-    const nextReview = new Date(now.getTime() + nextInterval * 24 * 60 * 60 * 1000);
-
-    this.reviews.set(wordId, {
-      ...review,
-      nextReview: nextReview.toISOString(),
-      difficulty: difficulty,
-      reviewCount: review.reviewCount + 1,
-      lastReviewed: now.toISOString()
-    });
-
-    this.saveReviews();
-  }
-
-  getDueWords() {
-    const now = new Date();
-    const dueWords = [];
-
-    this.reviews.forEach((review, wordId) => {
-      const nextReview = new Date(review.nextReview);
-      if (nextReview <= now) {
-        dueWords.push(wordId);
-      }
-    });
-
-    return dueWords;
-  }
-
-  getReviewStats() {
-    const now = new Date();
-    const today = now.toDateString();
-    let todayReviews = 0;
-    let totalWords = this.reviews.size;
-    let dueWords = this.getDueWords().length;
-
-    this.reviews.forEach(review => {
-      const lastReviewed = new Date(review.lastReviewed);
-      if (lastReviewed.toDateString() === today) {
-        todayReviews++;
-      }
-    });
-
-    return { todayReviews, totalWords, dueWords };
-  }
-
-  loadReviews() {
-    const saved = storage.load('spacedRepetition', {});
-    this.reviews = new Map(Object.entries(saved));
-  }
-
-  saveReviews() {
-    const obj = Object.fromEntries(this.reviews);
-    storage.save('spacedRepetition', obj);
-  }
-}
-
-// 📊 Progress Tracker
-class ProgressTracker {
-  constructor() {
-    this.dailyStats = new Map();
-    this.weeklyStats = [];
-    this.loadStats();
-  }
-
-  recordWordLearned(wordId, language) {
-    const today = new Date().toDateString();
-    const stats = this.dailyStats.get(today) || {
-      date: today,
-      wordsLearned: 0,
-      timeSpent: 0,
-      languages: new Set(),
-      accuracy: 100
-    };
-
-    stats.wordsLearned++;
-    stats.languages.add(language);
-    this.dailyStats.set(today, stats);
-
-    // Update weekly stats
-    this.updateWeeklyStats();
-    this.saveStats();
+    // Update today's count
+    appState.todayLearned++;
     
     // Update streak
     this.updateStreak();
+    
+    // Save progress
+    this.saveProgress();
+    
+    // Update UI
+    this.updateProgressUI();
   }
 
   updateStreak() {
-    const today = new Date();
-    const yesterday = new Date(today);
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    const todayKey = today.toDateString();
-    const yesterdayKey = yesterday.toDateString();
-
-    if (this.dailyStats.has(todayKey)) {
-      appState.lastStudyDate = todayKey;
-      
-      if (this.dailyStats.has(yesterdayKey) || appState.currentStreak === 0) {
+    const today = this.getTodayKey();
+    
+    if (appState.lastStudyDate !== today) {
+      if (this.isConsecutiveDay(appState.lastStudyDate, today)) {
         appState.currentStreak++;
+      } else {
+        appState.currentStreak = 1;
       }
-    } else if (appState.lastStudyDate !== todayKey) {
-      // Reset streak if missed a day
+      appState.lastStudyDate = today;
+    }
+  }
+
+  isConsecutiveDay(lastDate, currentDate) {
+    if (!lastDate) return false;
+    
+    const last = new Date(lastDate);
+    const current = new Date(currentDate);
+    const diffTime = current - last;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    return diffDays === 1;
+  }
+
+  getTodayKey() {
+    return new Date().toDateString();
+  }
+
+  getProgressPercentage() {
+    return Math.min((appState.todayLearned / appState.dailyGoal) * 100, 100);
+  }
+
+  updateProgressUI() {
+    // Update progress bar
+    const progressFill = document.getElementById('progress-fill');
+    const dailyProgress = document.getElementById('daily-progress');
+    const streakCounter = document.getElementById('streak-counter');
+
+    if (progressFill) {
+      progressFill.style.width = `${this.getProgressPercentage()}%`;
+    }
+
+    if (dailyProgress) {
+      dailyProgress.textContent = `Today: ${appState.todayLearned}/${appState.dailyGoal} words`;
+    }
+
+    if (streakCounter) {
+      streakCounter.textContent = `🔥 ${appState.currentStreak} day streak`;
+    }
+
+    // Update menu stats
+    this.updateMenuStats();
+  }
+
+  updateMenuStats() {
+    const totalWordsEl = document.getElementById('menu-total-words');
+    const streakEl = document.getElementById('menu-streak');
+    const favoritesEl = document.getElementById('menu-favorites');
+
+    if (totalWordsEl) totalWordsEl.textContent = appState.learnedWords.size;
+    if (streakEl) streakEl.textContent = `${appState.currentStreak} days`;
+    if (favoritesEl) favoritesEl.textContent = appState.favoriteWords.size;
+  }
+
+  loadProgress() {
+    const today = this.getTodayKey();
+    
+    appState.currentStreak = storage.load(CONFIG.storageKeys.currentStreak, 0);
+    appState.lastStudyDate = storage.load(CONFIG.storageKeys.lastStudyDate, null);
+    
+    // Load today's progress
+    const dailyData = storage.load(CONFIG.storageKeys.dailyProgress, {});
+    appState.todayLearned = dailyData[today] || 0;
+    
+    // Reset daily count if it's a new day
+    if (appState.lastStudyDate && appState.lastStudyDate !== today && !this.isConsecutiveDay(appState.lastStudyDate, today)) {
       appState.currentStreak = 0;
+      appState.todayLearned = 0;
     }
-
-    storage.save('currentStreak', appState.currentStreak);
-    storage.save('lastStudyDate', appState.lastStudyDate);
   }
 
-  updateWeeklyStats() {
-    const now = new Date();
-    const weekStart = new Date(now);
-    weekStart.setDate(now.getDate() - now.getDay());
+  saveProgress() {
+    const today = this.getTodayKey();
     
-    const weeklyData = [];
-    for (let i = 0; i < 7; i++) {
-      const date = new Date(weekStart);
-      date.setDate(weekStart.getDate() + i);
-      const dateKey = date.toDateString();
-      const dayStats = this.dailyStats.get(dateKey);
-      
-      weeklyData.push({
-        day: date.toLocaleDateString('en', { weekday: 'short' }),
-        date: dateKey,
-        words: dayStats ? dayStats.wordsLearned : 0
-      });
-    }
+    storage.save(CONFIG.storageKeys.currentStreak, appState.currentStreak);
+    storage.save(CONFIG.storageKeys.lastStudyDate, appState.lastStudyDate);
     
-    this.weeklyStats = weeklyData;
-  }
-
-  getTodayProgress() {
-    const today = new Date().toDateString();
-    const stats = this.dailyStats.get(today);
-    return {
-      wordsLearned: stats ? stats.wordsLearned : 0,
-      goal: appState.dailyGoal,
-      percentage: stats ? Math.min((stats.wordsLearned / appState.dailyGoal) * 100, 100) : 0
-    };
-  }
-
-  getTotalStats() {
-    let totalWords = 0;
-    let totalLanguages = new Set();
-    
-    this.dailyStats.forEach(stats => {
-      totalWords += stats.wordsLearned;
-      stats.languages.forEach(lang => totalLanguages.add(lang));
-    });
-
-    return {
-      totalWords,
-      totalLanguages: totalLanguages.size,
-      totalDays: this.dailyStats.size,
-      currentStreak: appState.currentStreak
-    };
-  }
-
-  loadStats() {
-    const savedDaily = storage.load('dailyStats', {});
-    this.dailyStats = new Map(Object.entries(savedDaily));
-    
-    this.weeklyStats = storage.load('weeklyStats', []);
-    appState.currentStreak = storage.load('currentStreak', 0);
-    appState.lastStudyDate = storage.load('lastStudyDate', null);
-    
-    this.updateWeeklyStats();
-  }
-
-  saveStats() {
-    const dailyObj = Object.fromEntries(
-      Array.from(this.dailyStats.entries()).map(([key, value]) => [
-        key, 
-        {
-          ...value,
-          languages: Array.from(value.languages)
-        }
-      ])
-    );
-    
-    storage.save('dailyStats', dailyObj);
-    storage.save('weeklyStats', this.weeklyStats);
+    // Save daily progress
+    const dailyData = storage.load(CONFIG.storageKeys.dailyProgress, {});
+    dailyData[today] = appState.todayLearned;
+    storage.save(CONFIG.storageKeys.dailyProgress, dailyData);
   }
 }
 
 // 🎨 UI Manager
 class UIManager {
   constructor() {
-    this.elements = this.initializeElements();
+    this.elements = this.getElements();
     this.bindEvents();
+    this.loadSettings();
   }
 
-  initializeElements() {
+  getElements() {
     return {
-      // Header elements
+      // Loading
+      loadingSpinner: document.getElementById('loading-spinner'),
+      
+      // Header
       languageSelect: document.getElementById('language-select'),
+      modeToggle: document.getElementById('mode-toggle'),
+      menuToggle: document.getElementById('menu-toggle'),
+      
+      // Search section
+      searchSection: document.getElementById('search-section'),
       searchBox: document.getElementById('search-box'),
       clearSearch: document.getElementById('clear-search'),
       categoryFilter: document.getElementById('category-filter'),
       favoritesToggle: document.getElementById('favorites-toggle'),
       audioToggle: document.getElementById('audio-toggle'),
-      progressToggle: document.getElementById('progress-toggle'),
-      settingsToggle: document.getElementById('settings-toggle'),
-      modeToggle: document.getElementById('mode-toggle'),
-      menuToggle: document.getElementById('menu-toggle'),
-
-      // Content areas
-      loadingSpinner: document.getElementById('loading-spinner'),
-      welcomeScreen: document.getElementById('welcome-screen'),
-      vocabularyContent: document.getElementById('vocabulary-content'),
-      conversationArea: document.getElementById('conversation-area'),
-
-      // Progress elements
-      progressBarContainer: document.getElementById('progress-bar-container'),
+      
+      // Progress section
+      progressSection: document.getElementById('progress-section'),
       progressFill: document.getElementById('progress-fill'),
       dailyProgress: document.getElementById('daily-progress'),
-      totalProgress: document.getElementById('total-progress'),
       streakCounter: document.getElementById('streak-counter'),
-
-      // Stats elements
-      quickStats: document.getElementById('quick-stats'),
-      dailyGoalStat: document.getElementById('daily-goal-stat'),
-      favoritesStat: document.getElementById('favorites-stat'),
-      accuracyStat: document.getElementById('accuracy-stat'),
-      reviewStat: document.getElementById('review-stat'),
-
+      
       // Filter info
       filterInfo: document.getElementById('filter-info'),
       resultsCount: document.getElementById('results-count'),
       clearFilters: document.getElementById('clear-filters'),
-
-      // Side menu
+      
+      // Content
+      welcomeScreen: document.getElementById('welcome-screen'),
+      vocabularyContent: document.getElementById('vocabulary-content'),
+      
+      // Menu
       sideMenu: document.getElementById('side-menu'),
       closeMenu: document.getElementById('close-menu'),
-
-      // Modals
-      settingsModal: document.getElementById('settings-modal'),
-      progressModal: document.getElementById('progress-modal'),
-      modalOverlay: document.getElementById('modal-overlay')
+      modalOverlay: document.getElementById('modal-overlay'),
+      
+      // Menu links
+      homeLink: document.getElementById('home-link'),
+      progressLink: document.getElementById('progress-link'),
+      favoritesLink: document.getElementById('favorites-link'),
+      settingsLink: document.getElementById('settings-link'),
+      
+      // Settings
+      dailyGoalInput: document.getElementById('daily-goal-input'),
+      audioSpeedRange: document.getElementById('audio-speed'),
+      speedDisplay: document.getElementById('speed-display'),
+      autoPlayCheckbox: document.getElementById('auto-play-audio')
     };
   }
 
   bindEvents() {
     // Language selection
-    this.elements.languageSelect.addEventListener('change', () => {
-      const lang = this.elements.languageSelect.value;
+    this.elements.languageSelect?.addEventListener('change', (e) => {
+      const lang = e.target.value;
       if (lang) {
         this.loadLanguage(lang);
       }
     });
 
     // Search functionality
-    this.elements.searchBox.addEventListener('input', debounce(() => {
+    this.elements.searchBox?.addEventListener('input', this.debounce(() => {
       this.handleSearch();
     }, 300));
 
-    this.elements.clearSearch.addEventListener('click', () => {
+    this.elements.clearSearch?.addEventListener('click', () => {
       this.clearSearch();
     });
 
     // Category filter
-    this.elements.categoryFilter.addEventListener('change', () => {
-      this.handleCategoryFilter();
+    this.elements.categoryFilter?.addEventListener('change', () => {
+      this.applyFilters();
     });
 
     // Toggle buttons
-    this.elements.favoritesToggle.addEventListener('click', () => {
+    this.elements.favoritesToggle?.addEventListener('click', () => {
       this.toggleFavorites();
     });
 
-    this.elements.audioToggle.addEventListener('click', () => {
+    this.elements.audioToggle?.addEventListener('click', () => {
       this.toggleAudio();
     });
 
-    this.elements.progressToggle.addEventListener('click', () => {
-      this.toggleProgress();
-    });
-
-    this.elements.settingsToggle.addEventListener('click', () => {
-      this.openSettings();
-    });
-
-    this.elements.modeToggle.addEventListener('click', () => {
+    // Theme toggle
+    this.elements.modeToggle?.addEventListener('click', () => {
       this.toggleTheme();
     });
 
-    this.elements.menuToggle.addEventListener('click', () => {
-      this.toggleMenu();
+    // Menu
+    this.elements.menuToggle?.addEventListener('click', () => {
+      this.openMenu();
     });
 
-    // Menu and modals
-    this.elements.closeMenu.addEventListener('click', () => {
+    this.elements.closeMenu?.addEventListener('click', () => {
       this.closeMenu();
     });
 
-    this.elements.modalOverlay.addEventListener('click', () => {
-      this.closeAllModals();
+    this.elements.modalOverlay?.addEventListener('click', () => {
+      this.closeMenu();
+    });
+
+    // Menu links
+    this.elements.homeLink?.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.showWelcome();
+      this.closeMenu();
+    });
+
+    this.elements.favoritesLink?.addEventListener('click', (e) => {
+      e.preventDefault();
+      appState.showFavorites = true;
+      this.applyFilters();
+      this.closeMenu();
     });
 
     // Clear filters
-    this.elements.clearFilters.addEventListener('click', () => {
+    this.elements.clearFilters?.addEventListener('click', () => {
       this.clearAllFilters();
     });
 
@@ -584,30 +424,97 @@ class UIManager {
       });
     });
 
-    // Keyboard shortcuts
-    document.addEventListener('keydown', (e) => {
-      this.handleKeyboardShortcuts(e);
+    // Settings
+    this.elements.dailyGoalInput?.addEventListener('change', (e) => {
+      appState.dailyGoal = parseInt(e.target.value) || CONFIG.defaultDailyGoal;
+      storage.save(CONFIG.storageKeys.dailyGoal, appState.dailyGoal);
+      progressManager.updateProgressUI();
+    });
+
+    this.elements.audioSpeedRange?.addEventListener('input', (e) => {
+      appState.audioSpeed = parseFloat(e.target.value);
+      this.elements.speedDisplay.textContent = `${appState.audioSpeed}x`;
+      storage.save(CONFIG.storageKeys.audioSpeed, appState.audioSpeed);
+    });
+
+    this.elements.autoPlayCheckbox?.addEventListener('change', (e) => {
+      appState.autoPlay = e.target.checked;
+      storage.save(CONFIG.storageKeys.autoPlay, appState.autoPlay);
+    });
+
+    // Touch/swipe events for mobile
+    this.bindTouchEvents();
+  }
+
+  bindTouchEvents() {
+    let startX = 0;
+    let startY = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      if (!startX || !startY) return;
+
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+
+      const diffX = startX - endX;
+      const diffY = startY - endY;
+
+      // Swipe detection
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        if (diffX > 0) {
+          // Swipe left - open menu
+          this.openMenu();
+        } else {
+          // Swipe right - close menu
+          this.closeMenu();
+        }
+      }
+
+      startX = 0;
+      startY = 0;
     });
   }
 
+  debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
   showLoading() {
-    this.elements.loadingSpinner.classList.remove('hidden');
+    this.elements.loadingSpinner?.classList.remove('hidden');
     appState.isLoading = true;
   }
 
   hideLoading() {
-    this.elements.loadingSpinner.classList.add('hidden');
+    this.elements.loadingSpinner?.classList.add('hidden');
     appState.isLoading = false;
   }
 
   showWelcome() {
-    this.elements.welcomeScreen.classList.remove('hidden');
-    this.elements.vocabularyContent.classList.add('hidden');
+    this.elements.welcomeScreen?.classList.remove('hidden');
+    this.elements.vocabularyContent?.classList.add('hidden');
+    this.elements.searchSection?.classList.add('hidden');
+    this.elements.progressSection?.classList.add('hidden');
+    this.elements.filterInfo?.classList.add('hidden');
   }
 
   hideWelcome() {
-    this.elements.welcomeScreen.classList.add('hidden');
-    this.elements.vocabularyContent.classList.remove('hidden');
+    this.elements.welcomeScreen?.classList.add('hidden');
+    this.elements.vocabularyContent?.classList.remove('hidden');
+    this.elements.searchSection?.classList.remove('hidden');
+    this.elements.progressSection?.classList.remove('hidden');
   }
 
   async loadLanguage(lang) {
@@ -628,19 +535,20 @@ class UIManager {
       appState.filteredVocabulary = [...data];
 
       // Save language preference
-      storage.save('selectedLanguage', lang);
+      storage.save(CONFIG.storageKeys.selectedLanguage, lang);
 
-      // Hide welcome and show content
+      // Update UI
       this.hideWelcome();
       this.renderVocabulary();
-      this.updateUI();
+      this.updateFilterInfo();
+      progressManager.updateProgressUI();
 
       // Show success message
-      this.showSuccessMessage(`Loaded ${data.length} words for ${lang}!`);
+      this.showMessage(`Loaded ${data.length} words for ${lang}!`, 'success');
 
     } catch (error) {
       console.error('Error loading language:', error);
-      this.showErrorMessage(`Failed to load language data: ${error.message}`);
+      this.showMessage(`Failed to load language: ${error.message}`, 'error');
     } finally {
       this.hideLoading();
     }
@@ -648,11 +556,13 @@ class UIManager {
 
   renderVocabulary() {
     const container = this.elements.vocabularyContent;
+    if (!container) return;
+
     const vocabulary = appState.filteredVocabulary;
     
     if (!vocabulary.length) {
       container.innerHTML = `
-        <div class="text-center" style="padding: 3rem;">
+        <div style="text-align: center; padding: 2rem;">
           <h3>No vocabulary found</h3>
           <p>Try adjusting your search or filter criteria.</p>
         </div>
@@ -665,6 +575,7 @@ class UIManager {
       const wordId = `${appState.currentLanguage}_${index}`;
       const isLearned = appState.learnedWords.has(wordId);
       const isFavorite = appState.favoriteWords.has(wordId);
+      
       const localWord = item[langCode] || '—';
       const bnWord = item.bn || '—';
       const bnMeaning = item.bnMeaning || '—';
@@ -715,14 +626,7 @@ class UIManager {
     }).join('');
 
     container.innerHTML = html;
-
-    // Add event listeners to vocabulary items
     this.bindVocabularyEvents();
-    
-    // Add animations
-    if (CONFIG.animationsEnabled) {
-      this.animateVocabularyItems();
-    }
   }
 
   bindVocabularyEvents() {
@@ -732,7 +636,7 @@ class UIManager {
         e.stopPropagation();
         const text = btn.dataset.text;
         const lang = btn.dataset.lang;
-        audioManager.speak(text, lang, appState.audioSpeed, CONFIG.audioVolume);
+        audioManager.speak(text, lang);
       });
     });
 
@@ -753,62 +657,11 @@ class UIManager {
         this.toggleLearned(wordId);
       });
     });
-
-    // Auto-play audio if enabled
-    if (appState.autoPlay && appState.audioEnabled) {
-      const firstAudioBtn = document.querySelector('.audio-btn');
-      if (firstAudioBtn) {
-        setTimeout(() => firstAudioBtn.click(), 500);
-      }
-    }
-  }
-
-  animateVocabularyItems() {
-    const items = document.querySelectorAll('.conversation-item');
-    items.forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      
-      setTimeout(() => {
-        item.style.transition = 'all 0.4s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, index * 50);
-    });
   }
 
   handleSearch() {
-    const query = this.elements.searchBox.value.toLowerCase().trim();
-    appState.searchQuery = query;
-
-    if (!query) {
-      appState.filteredVocabulary = [...appState.currentVocabulary];
-    } else {
-      appState.filteredVocabulary = appState.currentVocabulary.filter(item => {
-        const langCode = langCodeMap[appState.currentLanguage];
-        const searchFields = [
-          item[langCode],
-          item.bn,
-          item.bnMeaning,
-          item.en
-        ];
-
-        return searchFields.some(field => 
-          field && field.toLowerCase().includes(query)
-        );
-      });
-    }
-
+    appState.searchQuery = this.elements.searchBox.value.toLowerCase().trim();
     this.applyFilters();
-    this.renderVocabulary();
-    this.updateFilterInfo();
-  }
-
-  handleCategoryFilter() {
-    appState.selectedCategory = this.elements.categoryFilter.value;
-    this.applyFilters();
-    this.renderVocabulary();
-    this.updateFilterInfo();
   }
 
   applyFilters() {
@@ -816,7 +669,7 @@ class UIManager {
 
     // Apply search filter
     if (appState.searchQuery) {
-      const query = appState.searchQuery.toLowerCase();
+      const query = appState.searchQuery;
       const langCode = langCodeMap[appState.currentLanguage];
       
       filtered = filtered.filter(item => {
@@ -828,10 +681,11 @@ class UIManager {
     }
 
     // Apply category filter
-    if (appState.selectedCategory) {
+    const selectedCategory = this.elements.categoryFilter?.value;
+    if (selectedCategory) {
       filtered = filtered.filter(item => {
         const category = item.category || 'basic';
-        return category === appState.selectedCategory;
+        return category === selectedCategory;
       });
     }
 
@@ -844,32 +698,33 @@ class UIManager {
     }
 
     appState.filteredVocabulary = filtered;
+    this.renderVocabulary();
+    this.updateFilterInfo();
   }
 
   clearSearch() {
     this.elements.searchBox.value = '';
     appState.searchQuery = '';
-    this.handleSearch();
+    this.applyFilters();
   }
 
   clearAllFilters() {
     this.elements.searchBox.value = '';
     this.elements.categoryFilter.value = '';
     appState.searchQuery = '';
-    appState.selectedCategory = '';
     appState.showFavorites = false;
     
-    this.elements.favoritesToggle.classList.remove('active');
+    this.elements.favoritesToggle?.classList.remove('active');
     this.applyFilters();
-    this.renderVocabulary();
-    this.updateFilterInfo();
   }
 
   updateFilterInfo() {
+    if (!this.elements.filterInfo || !this.elements.resultsCount) return;
+
     const total = appState.currentVocabulary.length;
     const filtered = appState.filteredVocabulary.length;
     
-    if (filtered === total && !appState.searchQuery && !appState.selectedCategory && !appState.showFavorites) {
+    if (filtered === total && !appState.searchQuery && !appState.showFavorites) {
       this.elements.filterInfo.classList.add('hidden');
     } else {
       this.elements.filterInfo.classList.remove('hidden');
@@ -891,23 +746,23 @@ class UIManager {
       appState.favoriteWords.add(wordId);
     }
     
-    storage.save('favoriteWords', Array.from(appState.favoriteWords));
+    storage.save(CONFIG.storageKeys.favoriteWords, Array.from(appState.favoriteWords));
     
     // Update UI
     const item = document.querySelector(`[data-word-id="${wordId}"]`);
-    const btn = item.querySelector('.favorite-btn');
+    const btn = item?.querySelector('.favorite-btn');
     
     if (appState.favoriteWords.has(wordId)) {
-      item.classList.add('favorite');
-      btn.classList.add('active');
-      this.showSuccessMessage('Added to favorites! ⭐');
+      item?.classList.add('favorite');
+      btn?.classList.add('active');
+      this.showMessage('Added to favorites! ⭐', 'success');
     } else {
-      item.classList.remove('favorite');
-      btn.classList.remove('active');
-      this.showSuccessMessage('Removed from favorites');
+      item?.classList.remove('favorite');
+      btn?.classList.remove('active');
+      this.showMessage('Removed from favorites', 'info');
     }
     
-    this.updateStats();
+    progressManager.updateMenuStats();
   }
 
   toggleLearned(wordId) {
@@ -915,339 +770,186 @@ class UIManager {
       appState.learnedWords.delete(wordId);
     } else {
       appState.learnedWords.add(wordId);
-      
-      // Record progress
-      progressTracker.recordWordLearned(wordId, appState.currentLanguage);
-      
-      // Add to spaced repetition
-      spacedRepetitionManager.addWord(wordId, 'normal');
+      progressManager.recordWordLearned(wordId);
     }
     
-    storage.save('learnedWords', Array.from(appState.learnedWords));
+    storage.save(CONFIG.storageKeys.learnedWords, Array.from(appState.learnedWords));
     
     // Update UI
     const item = document.querySelector(`[data-word-id="${wordId}"]`);
-    const btn = item.querySelector('.learned-btn');
+    const btn = item?.querySelector('.learned-btn');
     
     if (appState.learnedWords.has(wordId)) {
-      item.classList.add('learned');
-      btn.classList.add('active');
-      this.showSuccessMessage('Word learned! ✓');
+      item?.classList.add('learned');
+      btn?.classList.add('active');
+      this.showMessage('Word learned! ✓', 'success');
     } else {
-      item.classList.remove('learned');
-      btn.classList.remove('active');
+      item?.classList.remove('learned');
+      btn?.classList.remove('active');
     }
     
-    this.updateStats();
-    this.updateProgress();
+    progressManager.updateMenuStats();
   }
 
   toggleFavorites() {
     appState.showFavorites = !appState.showFavorites;
-    this.elements.favoritesToggle.classList.toggle('active', appState.showFavorites);
-    
+    this.elements.favoritesToggle?.classList.toggle('active', appState.showFavorites);
     this.applyFilters();
-    this.renderVocabulary();
-    this.updateFilterInfo();
   }
 
   toggleAudio() {
     appState.audioEnabled = !appState.audioEnabled;
-    this.elements.audioToggle.classList.toggle('active', appState.audioEnabled);
-    storage.save('audioEnabled', appState.audioEnabled);
+    this.elements.audioToggle?.classList.toggle('active', appState.audioEnabled);
+    storage.save(CONFIG.storageKeys.audioEnabled, appState.audioEnabled);
     
     if (appState.audioEnabled) {
-      this.showSuccessMessage('Audio enabled 🔊');
+      this.showMessage('Audio enabled 🔊', 'success');
     } else {
-      this.showSuccessMessage('Audio disabled 🔇');
+      this.showMessage('Audio disabled 🔇', 'info');
       audioManager.stop();
-    }
-  }
-
-  toggleProgress() {
-    appState.showProgress = !appState.showProgress;
-    this.elements.progressBarContainer.classList.toggle('hidden', !appState.showProgress);
-    this.elements.quickStats.classList.toggle('hidden', !appState.showProgress);
-    this.elements.progressToggle.classList.toggle('active', appState.showProgress);
-    
-    if (appState.showProgress) {
-      this.updateProgress();
-      this.updateStats();
     }
   }
 
   toggleTheme() {
     const isDark = document.body.classList.toggle('dark-mode');
     this.elements.modeToggle.textContent = isDark ? '🌙' : '☀️';
-    storage.save('theme', isDark ? 'dark' : 'light');
+    storage.save(CONFIG.storageKeys.theme, isDark ? 'dark' : 'light');
   }
 
-  toggleMenu() {
-    this.elements.sideMenu.classList.toggle('active');
-    this.updateMenuStats();
+  openMenu() {
+    this.elements.sideMenu?.classList.add('active');
+    this.elements.modalOverlay?.classList.remove('hidden');
+    appState.menuOpen = true;
+    document.body.style.overflow = 'hidden';
   }
 
   closeMenu() {
-    this.elements.sideMenu.classList.remove('active');
+    this.elements.sideMenu?.classList.remove('active');
+    this.elements.modalOverlay?.classList.add('hidden');
+    appState.menuOpen = false;
+    document.body.style.overflow = '';
   }
 
-  openSettings() {
-    this.elements.settingsModal.classList.remove('hidden');
-    this.elements.modalOverlay.classList.remove('hidden');
-    this.loadSettingsValues();
-  }
+  showMessage(text, type = 'info') {
+    const container = document.getElementById('message-container');
+    if (!container) return;
 
-  closeAllModals() {
-    document.querySelectorAll('.modal').forEach(modal => {
-      modal.classList.add('hidden');
-    });
-    this.elements.modalOverlay.classList.add('hidden');
-  }
+    const message = document.createElement('div');
+    message.className = `message message-${type}`;
+    message.textContent = text;
 
-  updateProgress() {
-    const progress = progressTracker.getTodayProgress();
-    
-    // Update progress bar
-    this.elements.progressFill.style.width = `${progress.percentage}%`;
-    
-    // Update progress text
-    this.elements.dailyProgress.textContent = `Today: ${progress.wordsLearned}/${progress.goal} words`;
-    this.elements.totalProgress.textContent = `Total: ${appState.learnedWords.size} words learned`;
-    this.elements.streakCounter.textContent = `🔥 ${appState.currentStreak} day streak`;
-  }
+    container.appendChild(message);
 
-  updateStats() {
-    const reviewStats = spacedRepetitionManager.getReviewStats();
-    
-    // Update quick stats
-    this.elements.dailyGoalStat.textContent = `${progressTracker.getTodayProgress().wordsLearned}/${appState.dailyGoal}`;
-    this.elements.favoritesStat.textContent = appState.favoriteWords.size;
-    this.elements.accuracyStat.textContent = '100%'; // Placeholder
-    this.elements.reviewStat.textContent = reviewStats.dueWords;
-  }
-
-  updateMenuStats() {
-    const totalStats = progressTracker.getTotalStats();
-    
-    document.getElementById('menu-total-words').textContent = totalStats.totalWords;
-    document.getElementById('menu-streak').textContent = totalStats.currentStreak;
-    document.getElementById('menu-favorites').textContent = appState.favoriteWords.size;
-  }
-
-  loadSettingsValues() {
-    // Load current settings into modal
-    const dailyGoalInput = document.getElementById('modal-daily-goal');
-    const audioSpeedInput = document.getElementById('modal-audio-speed');
-    const autoPlayInput = document.getElementById('modal-auto-play');
-    
-    if (dailyGoalInput) dailyGoalInput.value = appState.dailyGoal;
-    if (audioSpeedInput) audioSpeedInput.value = appState.audioSpeed;
-    if (autoPlayInput) autoPlayInput.checked = appState.autoPlay;
-  }
-
-  showSuccessMessage(message) {
-    const messageEl = document.createElement('div');
-    messageEl.className = 'success-message';
-    messageEl.textContent = message;
-    
-    document.body.appendChild(messageEl);
-    
+    // Auto remove after 3 seconds
     setTimeout(() => {
-      messageEl.remove();
+      message.remove();
     }, 3000);
   }
 
-  showErrorMessage(message) {
-    console.error(message);
-    // Could implement a toast notification system here
-  }
-
-  updateUI() {
-    this.updateProgress();
-    this.updateStats();
-    this.updateFilterInfo();
-  }
-
-  handleKeyboardShortcuts(e) {
-    // Ctrl/Cmd + F for search
-    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
-      e.preventDefault();
-      this.elements.searchBox.focus();
+  loadSettings() {
+    // Load saved language and auto-load if available
+    const savedLang = storage.load(CONFIG.storageKeys.selectedLanguage);
+    if (savedLang && this.elements.languageSelect) {
+      this.elements.languageSelect.value = savedLang;
+      this.loadLanguage(savedLang);
     }
-    
-    // Escape to close modals/menu
-    if (e.key === 'Escape') {
-      this.closeAllModals();
-      this.closeMenu();
-    }
-  }
-}
 
-// 🚀 Application Initialization
-class App {
-  constructor() {
-    this.init();
-  }
-
-  async init() {
-    try {
-      // Initialize managers
-      window.storage = new StorageManager();
-      window.audioManager = new AudioManager();
-      window.spacedRepetitionManager = new SpacedRepetitionManager();
-      window.progressTracker = new ProgressTracker();
-      window.uiManager = new UIManager();
-
-      // Load saved data
-      this.loadSavedData();
-      
-      // Initialize UI
-      this.initializeUI();
-      
-      // Load saved language if exists
-      const savedLang = storage.load('selectedLanguage');
-      if (savedLang) {
-        uiManager.elements.languageSelect.value = savedLang;
-        await uiManager.loadLanguage(savedLang);
-      }
-
-      // Hide loading spinner
-      uiManager.hideLoading();
-      
-      console.log('✅ Speak EU initialized successfully!');
-      
-    } catch (error) {
-      console.error('❌ Failed to initialize Speak EU:', error);
-      uiManager.hideLoading();
-    }
-  }
-
-  loadSavedData() {
-    // Load user preferences
-    appState.dailyGoal = storage.load('dailyGoal', CONFIG.defaultDailyGoal);
-    appState.audioEnabled = storage.load('audioEnabled', CONFIG.audioEnabled);
-    appState.autoPlay = storage.load('autoPlay', CONFIG.autoPlay);
-    appState.audioSpeed = storage.load('audioSpeed', CONFIG.audioSpeed);
-    
-    // Load user progress
-    const savedLearned = storage.load('learnedWords', []);
-    const savedFavorites = storage.load('favoriteWords', []);
-    
-    appState.learnedWords = new Set(savedLearned);
-    appState.favoriteWords = new Set(savedFavorites);
-    
     // Load theme
-    const savedTheme = storage.load('theme', 'light');
+    const savedTheme = storage.load(CONFIG.storageKeys.theme);
     if (savedTheme === 'dark') {
       document.body.classList.add('dark-mode');
-      uiManager.elements.modeToggle.textContent = '🌙';
+      this.elements.modeToggle.textContent = '🌙';
     }
 
-    // Load spaced repetition data
-    spacedRepetitionManager.loadReviews();
-  }
+    // Load other settings
+    appState.learnedWords = new Set(storage.load(CONFIG.storageKeys.learnedWords, []));
+    appState.favoriteWords = new Set(storage.load(CONFIG.storageKeys.favoriteWords, []));
+    appState.dailyGoal = storage.load(CONFIG.storageKeys.dailyGoal, CONFIG.defaultDailyGoal);
+    appState.audioEnabled = storage.load(CONFIG.storageKeys.audioEnabled, true);
+    appState.autoPlay = storage.load(CONFIG.storageKeys.autoPlay, false);
+    appState.audioSpeed = storage.load(CONFIG.storageKeys.audioSpeed, CONFIG.audioSpeed);
 
-  initializeUI() {
-    // Set up daily goal input
-    const dailyGoalInput = document.getElementById('daily-goal-input');
-    if (dailyGoalInput) {
-      dailyGoalInput.value = appState.dailyGoal;
-      dailyGoalInput.addEventListener('change', (e) => {
-        appState.dailyGoal = parseInt(e.target.value) || CONFIG.defaultDailyGoal;
-        storage.save('dailyGoal', appState.dailyGoal);
-        uiManager.updateProgress();
-      });
+    // Update UI with loaded settings
+    if (this.elements.dailyGoalInput) {
+      this.elements.dailyGoalInput.value = appState.dailyGoal;
     }
-
-    // Set up audio speed control
-    const audioSpeedInput = document.getElementById('audio-speed');
-    const speedDisplay = document.getElementById('speed-display');
-    if (audioSpeedInput && speedDisplay) {
-      audioSpeedInput.value = appState.audioSpeed;
-      speedDisplay.textContent = `${appState.audioSpeed}x`;
-      
-      audioSpeedInput.addEventListener('input', (e) => {
-        appState.audioSpeed = parseFloat(e.target.value);
-        speedDisplay.textContent = `${appState.audioSpeed}x`;
-        storage.save('audioSpeed', appState.audioSpeed);
-      });
+    
+    if (this.elements.audioSpeedRange) {
+      this.elements.audioSpeedRange.value = appState.audioSpeed;
+      this.elements.speedDisplay.textContent = `${appState.audioSpeed}x`;
     }
-
-    // Set up auto-play checkbox
-    const autoPlayCheckbox = document.getElementById('auto-play-audio');
-    if (autoPlayCheckbox) {
-      autoPlayCheckbox.checked = appState.autoPlay;
-      autoPlayCheckbox.addEventListener('change', (e) => {
-        appState.autoPlay = e.target.checked;
-        storage.save('autoPlay', appState.autoPlay);
-      });
+    
+    if (this.elements.autoPlayCheckbox) {
+      this.elements.autoPlayCheckbox.checked = appState.autoPlay;
     }
-
-    // Initialize button states
-    uiManager.elements.audioToggle.classList.toggle('active', appState.audioEnabled);
-  }
-}
-
-// 🛠️ Utility Functions
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-function throttle(func, limit) {
-  let inThrottle;
-  return function() {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
+    
+    if (this.elements.audioToggle) {
+      this.elements.audioToggle.classList.toggle('active', appState.audioEnabled);
     }
   }
 }
 
-// 🎯 Application Entry Point
+// 🚀 Initialize Application
+let audioManager, storage, progressManager, ui;
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🌟 Starting Speak EU v2.0...');
-  new App();
+  // Initialize managers
+  audioManager = new AudioManager();
+  storage = new StorageManager();
+  progressManager = new ProgressManager();
+  ui = new UIManager();
+
+  // Hide loading spinner after initialization
+  setTimeout(() => {
+    ui.hideLoading();
+  }, 1000);
+
+  console.log('🌟 Speak EU Mobile v2.0 initialized successfully!');
 });
 
-// 💾 Save data before page unload
-window.addEventListener('beforeunload', () => {
-  if (window.progressTracker) {
-    progressTracker.saveStats();
-  }
-  if (window.spacedRepetitionManager) {
-    spacedRepetitionManager.saveReviews();
-  }
+// 🎯 Service Worker Registration (for PWA features)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration);
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
+
+// 📱 Handle orientation changes
+window.addEventListener('orientationchange', () => {
+  setTimeout(() => {
+    if (ui && appState.currentLanguage) {
+      ui.renderVocabulary();
+    }
+  }, 100);
 });
 
 // 🔄 Handle online/offline status
 window.addEventListener('online', () => {
-  console.log('✅ Back online');
+  ui?.showMessage('Connection restored 📶', 'success');
 });
 
 window.addEventListener('offline', () => {
-  console.log('📴 Offline mode');
+  ui?.showMessage('You are offline 📵', 'warning');
 });
 
-// Export for debugging (development only)
-if (typeof window !== 'undefined') {
-  window.SpeakEU = {
-    appState,
-    CONFIG,
-    storage,
-    audioManager,
-    spacedRepetitionManager,
-    progressTracker,
-    uiManager
-  };
-}
+// 🎯 Prevent default touch behaviors on iOS
+document.addEventListener('touchstart', (e) => {
+  if (e.touches.length > 1) {
+    e.preventDefault();
+  }
+});
+
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (e) => {
+  const now = new Date().getTime();
+  if (now - lastTouchEnd <= 300) {
+    e.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
