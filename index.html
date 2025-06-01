@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Speak EU - Language Learning Platform</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="theme-color" content="#0066cc">
 </head>
 <body>
   <!-- Loading Spinner -->
@@ -16,18 +18,18 @@
     <p>Loading Speak EU...</p>
   </div>
 
-  <!-- 📱 Mobile Friendly Header -->
+  <!-- 📱 Universal Header (Mobile + Desktop Responsive) -->
   <header class="app-header">
-    <div class="header-content">
+    <div class="header-container">
       <h1 class="app-title">Speak EU</h1>
       
       <div class="header-center">
         <select id="language-select" class="language-selector">
-          <option value="">Select Language</option>
+          <option value="">🌍 Select Language</option>
           <!-- Schengen Countries -->
           <optgroup label="🟦 Schengen Area">
-            <option value="austria">🇦🇹 Austria</option>
-            <option value="belgium">🇧🇪 Belgium</option>
+            <option value="austria">🇦🇹 Austria (German)</option>
+            <option value="belgium">🇧🇪 Belgium (Dutch)</option>
             <option value="czech">🇨🇿 Czech Republic</option>
             <option value="denmark">🇩🇰 Denmark</option>
             <option value="estonia">🇪🇪 Estonia</option>
@@ -83,203 +85,399 @@
         </select>
       </div>
       
-      <div class="header-right">
-        <button id="mode-toggle" class="header-btn" title="Toggle Theme">☀️</button>
-        <button id="menu-toggle" class="header-btn" title="Menu">☰</button>
+      <div class="header-actions">
+        <button id="mode-toggle" class="action-btn" title="Toggle Theme" aria-label="Toggle dark/light mode">☀️</button>
+        <button id="menu-toggle" class="action-btn" title="Open Menu" aria-label="Open navigation menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Search & Filter Section (Only shown when language is selected) -->
-  <div id="search-section" class="search-section hidden">
-    <div class="search-container">
-      <input type="text" id="search-box" placeholder="Search vocabulary..." />
-      <button id="clear-search" class="clear-btn">✕</button>
-    </div>
-    
-    <div class="filter-row">
-      <select id="category-filter" class="filter-select">
-        <option value="">All Categories</option>
-        <option value="basic">Basic (1-500)</option>
-        <option value="intermediate">Intermediate (501-1000)</option>
-        <option value="advanced">Advanced (1001+)</option>
-        <option value="greetings">Greetings</option>
-        <option value="numbers">Numbers</option>
-        <option value="food">Food & Dining</option>
-        <option value="travel">Travel</option>
-        <option value="work">Work</option>
-        <option value="health">Health</option>
-        <option value="family">Family</option>
-        <option value="emergency">Emergency</option>
-      </select>
+  <!-- 🔍 Search & Filter Panel (Responsive) -->
+  <div id="control-panel" class="control-panel hidden">
+    <div class="control-container">
+      <!-- Search Row -->
+      <div class="search-row">
+        <div class="search-wrapper">
+          <input type="text" id="search-box" placeholder="🔍 Search vocabulary..." autocomplete="off" />
+          <button id="clear-search" class="clear-btn" title="Clear search">✕</button>
+        </div>
+      </div>
       
-      <button id="favorites-toggle" class="filter-btn" title="Show Favorites">⭐</button>
-      <button id="audio-toggle" class="filter-btn active" title="Audio On">🔊</button>
-    </div>
-  </div>
-
-  <!-- Progress Bar (Only shown when language is selected) -->
-  <div id="progress-section" class="progress-section hidden">
-    <div class="progress-info">
-      <span id="daily-progress">Today: 0/10 words</span>
-      <span id="streak-counter">🔥 0 day streak</span>
-    </div>
-    <div class="progress-bar">
-      <div id="progress-fill" class="progress-fill"></div>
-    </div>
-  </div>
-
-  <!-- Filter Results Info -->
-  <div id="filter-info" class="filter-info hidden">
-    <span id="results-count">Showing all vocabulary</span>
-    <button id="clear-filters" class="clear-filters-btn">Clear Filters</button>
-  </div>
-
-  <!-- Main Content -->
-  <main id="main-content" class="main-content">
-    <!-- Welcome Screen -->
-    <div id="welcome-screen" class="welcome-screen">
-      <div class="welcome-content">
-        <div class="welcome-icon">🌟</div>
-        <h2>স্বাগতম Speak EU তে!</h2>
-        <p class="welcome-subtitle">ইউরোপের ৪০+ দেশের ভাষা শিখুন সহজেই</p>
+      <!-- Filter Row -->
+      <div class="filter-row">
+        <select id="category-filter" class="filter-select">
+          <option value="">📚 All Categories</option>
+          <option value="basic">🟢 Basic (1-500)</option>
+          <option value="intermediate">🟡 Intermediate (501-1000)</option>
+          <option value="advanced">🔴 Advanced (1001+)</option>
+          <option value="greetings">👋 Greetings</option>
+          <option value="numbers">🔢 Numbers</option>
+          <option value="food">🍽️ Food & Dining</option>
+          <option value="travel">✈️ Travel</option>
+          <option value="work">💼 Work</option>
+          <option value="health">🏥 Health</option>
+          <option value="family">👨‍👩‍👧‍👦 Family</option>
+          <option value="emergency">🚨 Emergency</option>
+        </select>
         
-        <!-- Quick Features -->
-        <div class="feature-grid">
+        <div class="action-buttons">
+          <button id="favorites-toggle" class="action-btn" title="Show Favorites" aria-label="Toggle favorites">⭐</button>
+          <button id="audio-toggle" class="action-btn active" title="Audio Enabled" aria-label="Toggle audio">🔊</button>
+          <button id="progress-toggle" class="action-btn" title="Show Progress" aria-label="Toggle progress view">📊</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📊 Progress Dashboard (Enhanced) -->
+  <div id="progress-dashboard" class="progress-dashboard hidden">
+    <div class="progress-container">
+      <!-- Daily Progress Card -->
+      <div class="progress-card daily-card">
+        <div class="card-header">
+          <h3>📈 Today's Progress</h3>
+          <span id="daily-percentage" class="percentage">0%</span>
+        </div>
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <div class="progress-text">
+            <span id="daily-progress">0/10 words learned</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">🔥</div>
+          <div class="stat-content">
+            <span class="stat-label">Streak</span>
+            <span id="streak-counter" class="stat-value">0 days</span>
+          </div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-content">
+            <span class="stat-label">Favorites</span>
+            <span id="favorites-count" class="stat-value">0</span>
+          </div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">📚</div>
+          <div class="stat-content">
+            <span class="stat-label">Total Learned</span>
+            <span id="total-learned" class="stat-value">0</span>
+          </div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-content">
+            <span class="stat-label">Accuracy</span>
+            <span id="accuracy-rate" class="stat-value">100%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔍 Filter Results Info -->
+  <div id="filter-info" class="filter-info hidden">
+    <div class="filter-container">
+      <span id="results-count" class="results-text">Showing all vocabulary</span>
+      <button id="clear-filters" class="clear-filters-btn">🗑️ Clear Filters</button>
+    </div>
+  </div>
+
+  <!-- 📱 Main Content Area -->
+  <main id="main-content" class="main-content">
+    <!-- 🌟 Welcome Screen -->
+    <div id="welcome-screen" class="welcome-screen">
+      <div class="welcome-container">
+        <div class="welcome-hero">
+          <div class="hero-icon">🌟</div>
+          <h1 class="hero-title">স্বাগতম Speak EU তে!</h1>
+          <p class="hero-subtitle">ইউরোপের ৪০+ দেশের ভাষা শিখুন সহজেই</p>
+        </div>
+        
+        <!-- Feature Showcase -->
+        <div class="features-showcase">
           <div class="feature-card">
             <div class="feature-icon">🔍</div>
             <h3>Smart Search</h3>
-            <p>যেকোনো ভাষায় সার্চ করুন</p>
+            <p>যেকোনো ভাষায় তাৎক্ষণিক সার্চ</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🔊</div>
             <h3>Audio Pronunciation</h3>
-            <p>সঠিক উচ্চারণ শিখুন</p>
+            <p>নেটিভ স্পিকারের মতো উচ্চারণ</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">📊</div>
             <h3>Progress Tracking</h3>
-            <p>আপনার অগ্রগতি দেখুন</p>
+            <p>বিস্তারিত অগ্রগতি ট্র্যাকিং</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">⭐</div>
-            <h3>Favorites System</h3>
-            <p>গুরুত্বপূর্ণ শব্দ সেভ করুন</p>
+            <h3>Smart Favorites</h3>
+            <p>গুরুত্বপূর্ণ শব্দ সংরক্ষণ</p>
           </div>
         </div>
 
-        <div class="quick-start">
-          <h3>🚀 দ্রুত শুরু করুন</h3>
-          <ol>
-            <li>উপরে থেকে একটি ভাষা নির্বাচন করুন</li>
-            <li>আপনার দৈনিক লক্ষ্য সেট করুন</li>
-            <li>শিখতে শুরু করুন!</li>
-          </ol>
+        <!-- Quick Start Guide -->
+        <div class="quick-start-guide">
+          <h3>🚀 ৩ ধাপে শুরু করুন</h3>
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>ভাষা নির্বাচন</h4>
+                <p>উপরে থেকে আপনার পছন্দের ভাষা বেছে নিন</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>লক্ষ্য নির্ধারণ</h4>
+                <p>দৈনিক শেখার লক্ষ্য সেট করুন</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>শিখতে শুরু করুন</h4>
+                <p>মজার সাথে ভাষা শিখুন!</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Popular Languages -->
-        <div class="popular-languages">
-          <h3>🌟 জনপ্রিয় ভাষা</h3>
-          <div class="language-buttons">
-            <button class="lang-btn" data-lang="italy">🇮🇹 Italian</button>
-            <button class="lang-btn" data-lang="spain">🇪🇸 Spanish</button>
-            <button class="lang-btn" data-lang="germany">🇩🇪 German</button>
-            <button class="lang-btn" data-lang="france">🇫🇷 French</button>
-            <button class="lang-btn" data-lang="greece">🇬🇷 Greek</button>
-            <button class="lang-btn" data-lang="portugal">🇵🇹 Portuguese</button>
+        <div class="popular-section">
+          <h3>🌟 জনপ্রিয় ভাষাসমূহ</h3>
+          <div class="language-grid">
+            <button class="language-card" data-lang="italy">
+              <div class="lang-flag">🇮🇹</div>
+              <div class="lang-info">
+                <h4>Italian</h4>
+                <p>ইতালিয়ান</p>
+              </div>
+            </button>
+            <button class="language-card" data-lang="spain">
+              <div class="lang-flag">🇪🇸</div>
+              <div class="lang-info">
+                <h4>Spanish</h4>
+                <p>স্প্যানিশ</p>
+              </div>
+            </button>
+            <button class="language-card" data-lang="germany">
+              <div class="lang-flag">🇩🇪</div>
+              <div class="lang-info">
+                <h4>German</h4>
+                <p>জার্মান</p>
+              </div>
+            </button>
+            <button class="language-card" data-lang="france">
+              <div class="lang-flag">🇫🇷</div>
+              <div class="lang-info">
+                <h4>French</h4>
+                <p>ফরাসি</p>
+              </div>
+            </button>
+            <button class="language-card" data-lang="greece">
+              <div class="lang-flag">🇬🇷</div>
+              <div class="lang-info">
+                <h4>Greek</h4>
+                <p>গ্রিক</p>
+              </div>
+            </button>
+            <button class="language-card" data-lang="portugal">
+              <div class="lang-flag">🇵🇹</div>
+              <div class="lang-info">
+                <h4>Portuguese</h4>
+                <p>পর্তুগিজ</p>
+              </div>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Vocabulary Content (Hidden by default) -->
+    <!-- 📚 Vocabulary Content -->
     <div id="vocabulary-content" class="vocabulary-content hidden">
-      <!-- Content will be dynamically loaded here -->
+      <!-- Dynamic content will be loaded here -->
     </div>
   </main>
 
-  <!-- 📱 Mobile Side Menu -->
+  <!-- 📱 Responsive Side Menu -->
   <div id="side-menu" class="side-menu">
-    <div class="menu-header">
-      <h3>📚 Speak EU</h3>
-      <button id="close-menu" class="close-btn">✖</button>
-    </div>
-    
-    <div class="menu-content">
-      <!-- Navigation Links -->
-      <div class="menu-section">
-        <h4>🏠 Navigation</h4>
-        <ul class="menu-links">
-          <li><a href="#" id="home-link">🏠 Home</a></li>
-          <li><a href="#" id="progress-link">📊 Progress</a></li>
-          <li><a href="#" id="favorites-link">⭐ Favorites</a></li>
-          <li><a href="#" id="settings-link">⚙️ Settings</a></li>
-        </ul>
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <div class="menu-panel">
+      <!-- Menu Header -->
+      <div class="menu-header">
+        <div class="menu-brand">
+          <h3>📚 Speak EU</h3>
+          <p>Language Learning</p>
+        </div>
+        <button id="close-menu" class="close-btn" aria-label="Close menu">✕</button>
       </div>
+      
+      <!-- Menu Content -->
+      <div class="menu-content">
+        <!-- Navigation Section -->
+        <div class="menu-section">
+          <h4>🧭 Navigation</h4>
+          <nav class="menu-nav">
+            <a href="#" id="home-link" class="nav-item">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+            </a>
+            <a href="#" id="progress-link" class="nav-item">
+              <span class="nav-icon">📊</span>
+              <span class="nav-text">Progress</span>
+            </a>
+            <a href="#" id="favorites-link" class="nav-item">
+              <span class="nav-icon">⭐</span>
+              <span class="nav-text">Favorites</span>
+            </a>
+            <a href="#" id="settings-link" class="nav-item">
+              <span class="nav-icon">⚙️</span>
+              <span class="nav-text">Settings</span>
+            </a>
+          </nav>
+        </div>
 
-      <!-- Quick Stats -->
-      <div class="menu-section">
-        <h4>📊 Your Stats</h4>
-        <div class="menu-stats">
-          <div class="stat-item">
-            <span class="stat-label">Words Learned:</span>
-            <span class="stat-value" id="menu-total-words">0</span>
+        <!-- Statistics Section -->
+        <div class="menu-section">
+          <h4>📊 Your Statistics</h4>
+          <div class="stats-summary">
+            <div class="summary-item">
+              <span class="summary-icon">📚</span>
+              <div class="summary-content">
+                <span class="summary-label">Words Learned</span>
+                <span id="menu-total-words" class="summary-value">0</span>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="summary-icon">🔥</span>
+              <div class="summary-content">
+                <span class="summary-label">Current Streak</span>
+                <span id="menu-streak" class="summary-value">0 days</span>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="summary-icon">⭐</span>
+              <div class="summary-content">
+                <span class="summary-label">Favorites</span>
+                <span id="menu-favorites" class="summary-value">0</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-label">Current Streak:</span>
-            <span class="stat-value" id="menu-streak">0 days</span>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="menu-section">
+          <h4>⚙️ Quick Settings</h4>
+          <div class="settings-panel">
+            <div class="setting-group">
+              <label for="daily-goal-input" class="setting-label">
+                <span class="setting-icon">🎯</span>
+                Daily Goal:
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="daily-goal-input" min="5" max="100" value="10" class="setting-input">
+                <span class="input-suffix">words</span>
+              </div>
+            </div>
+            
+            <div class="setting-group">
+              <label for="audio-speed" class="setting-label">
+                <span class="setting-icon">🔊</span>
+                Audio Speed:
+              </label>
+              <div class="range-wrapper">
+                <input type="range" id="audio-speed" min="0.5" max="2" step="0.1" value="1" class="setting-range">
+                <span id="speed-display" class="range-value">1.0x</span>
+              </div>
+            </div>
+
+            <div class="setting-group checkbox-group">
+              <label class="checkbox-wrapper">
+                <input type="checkbox" id="auto-play-audio" class="setting-checkbox">
+                <span class="checkmark"></span>
+                <span class="checkbox-label">
+                  <span class="checkbox-icon">🎵</span>
+                  Auto-play audio
+                </span>
+              </label>
+            </div>
+
+            <div class="setting-group checkbox-group">
+              <label class="checkbox-wrapper">
+                <input type="checkbox" id="show-progress-always" class="setting-checkbox">
+                <span class="checkmark"></span>
+                <span class="checkbox-label">
+                  <span class="checkbox-icon">📊</span>
+                  Always show progress
+                </span>
+              </label>
+            </div>
           </div>
-          <div class="stat-item">
-            <span class="stat-label">Favorite Words:</span>
-            <span class="stat-value" id="menu-favorites">0</span>
-          </div>
+        </div>
+
+        <!-- App Info Section -->
+        <div class="menu-section">
+          <h4>ℹ️ Information</h4>
+          <nav class="menu-nav">
+            <a href="#about" class="nav-item">
+              <span class="nav-icon">📖</span>
+              <span class="nav-text">About Speak EU</span>
+            </a>
+            <a href="#help" class="nav-item">
+              <span class="nav-icon">❓</span>
+              <span class="nav-text">Help & Tutorial</span>
+            </a>
+            <a href="#contact" class="nav-item">
+              <span class="nav-icon">📧</span>
+              <span class="nav-text">Contact Us</span>
+            </a>
+            <a href="#privacy" class="nav-item">
+              <span class="nav-icon">🔒</span>
+              <span class="nav-text">Privacy Policy</span>
+            </a>
+          </nav>
         </div>
       </div>
 
-      <!-- Quick Settings -->
-      <div class="menu-section">
-        <h4>⚙️ Quick Settings</h4>
-        <div class="setting-item">
-          <label for="daily-goal-input">Daily Goal:</label>
-          <input type="number" id="daily-goal-input" min="5" max="100" value="10" class="setting-input">
+      <!-- Menu Footer -->
+      <div class="menu-footer">
+        <div class="app-info">
+          <p>Made with ❤️ for language learners</p>
+          <p class="version">Version 2.0 - Universal</p>
         </div>
-        <div class="setting-item">
-          <label for="audio-speed">Audio Speed:</label>
-          <input type="range" id="audio-speed" min="0.5" max="2" step="0.1" value="1" class="setting-range">
-          <span id="speed-display">1.0x</span>
-        </div>
-        <div class="setting-item">
-          <label class="checkbox-label">
-            <input type="checkbox" id="auto-play-audio">
-            <span class="checkmark"></span>
-            Auto-play audio
-          </label>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="Telegram">✈️</a>
+          <a href="#" class="social-link" title="WhatsApp">💬</a>
         </div>
       </div>
-
-      <!-- App Info -->
-      <div class="menu-section">
-        <h4>ℹ️ About</h4>
-        <ul class="menu-links">
-          <li><a href="#about">About Speak EU</a></li>
-          <li><a href="#contact">Contact us</a></li>
-          <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#feedback">Send Feedback</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="menu-footer">
-      <p>Made with ❤️ for language learners</p>
-      <p>Version 2.0 Mobile</p>
     </div>
   </div>
 
-  <!-- Modal Overlay -->
-  <div id="modal-overlay" class="modal-overlay hidden"></div>
+  <!-- 💬 Toast Notifications -->
+  <div id="toast-container" class="toast-container"></div>
 
-  <!-- Success/Error Messages -->
-  <div id="message-container" class="message-container"></div>
+  <!-- 🔄 Loading States -->
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loading-content">
+      <div class="loading-spinner-small"></div>
+      <p>Loading content...</p>
+    </div>
+  </div>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
