@@ -252,6 +252,14 @@ function setupEventListeners() {
         elements.confirmCancel.addEventListener('click', closeConfirmModal);
     }
     
+    if (elements.confirmOk) {
+        elements.confirmOk.addEventListener('click', function() {
+            if (elements.confirmModal.confirmCallback) {
+                elements.confirmModal.confirmCallback();
+            }
+        });
+    }
+    
     // Keyboard shortcuts
     document.addEventListener('keydown', handleKeyboardShortcuts);
     
@@ -829,6 +837,11 @@ function closeConversationModal() {
     if (audioPlayer) {
         audioPlayer.pause();
     }
+    
+    // Cancel speech synthesis
+    if ('speechSynthesis' in window) {
+        speechSynthesis.cancel();
+    }
 }
 
 /* ================================
@@ -867,7 +880,7 @@ function playTextSequence(texts, speed = 1, repeat = false) {
         
         playText(texts[currentIndex], speed, () => {
             currentIndex++;
-            setTimeout(playNext, 500); // Pause between lines
+            setTimeout(playNext, 800); // Pause between lines
         });
     }
     
@@ -875,46 +888,49 @@ function playTextSequence(texts, speed = 1, repeat = false) {
 }
 
 function playText(text, speed = 1, callback = null) {
-    if (!text || !window.speechSynthesis) {
+    if (!text) return;
+    
+    // Use Web Speech API for text-to-speech
+    if ('speechSynthesis' in window) {
+        // Cancel any ongoing speech
+        speechSynthesis.cancel();
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        
+        // Set language based on current country
+        const languageMap = {
+            'german': 'de-DE',
+            'french': 'fr-FR',
+            'spanish': 'es-ES',
+            'italian': 'it-IT',
+            'dutch': 'nl-NL',
+            'portuguese': 'pt-PT'
+        };
+        
+        const languageKey = getLanguageKey(currentCountry);
+        utterance.lang = languageMap[languageKey] || 'en-US';
+        utterance.rate = speed;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        
+        utterance.onend = function() {
+            if (callback) callback();
+        };
+        
+        utterance.onerror = function() {
+            showToast('অডিও প্লে করতে সমস্যা হয়েছে', 'error');
+            if (callback) callback();
+        };
+        
+        speechSynthesis.speak(utterance);
+    } else {
+        showToast('আপনার ব্রাউজার অডিও সাপোর্ট করে না', 'warning');
         if (callback) callback();
-        return;
     }
-    
-    // Stop any ongoing speech
-    window.speechSynthesis.cancel();
-    
-    const utterance = new SpeechSynthesisUtterance(text);
-    
-    // Try to set appropriate language
-    const languageMap = {
-        'german': 'de-DE',
-        'french': 'fr-FR',
-        'spanish': 'es-ES',
-        'italian': 'it-IT',
-        'dutch': 'nl-NL',
-        'portuguese': 'pt-PT'
-    };
-    
-    const currentLanguage = getLanguageKey(currentCountry);
-    utterance.lang = languageMap[currentLanguage] || 'en-US';
-    utterance.rate = speed;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-    
-    if (callback) {
-        utterance.onend = callback;
-    }
-    
-    utterance.onerror = function(error) {
-        console.error('Speech synthesis error:', error);
-        if (callback) callback();
-    };
-    
-    window.speechSynthesis.speak(utterance);
 }
 
 /* ================================
-   PROGRESS TRACKING
+   PROGRESS MANAGEMENT
 ================================ */
 
 function markConversationLearned() {
@@ -924,9 +940,9 @@ function markConversationLearned() {
     const conversation = currentConversations.find(c => c.id == conversationId);
     if (!conversation) return;
     
-    const isCurrentlyLearned = userProgress.conversationsCompleted.includes(parseInt(conversationId));
+    const isLearned = userProgress.conversationsCompleted.includes(parseInt(conversationId));
     
-    if (isCurrentlyLearned) {
+    if (isLearned) {
         // Remove from learned
         userProgress.conversationsCompleted = userProgress.conversationsCompleted.filter(id => id !== parseInt(conversationId));
         userProgress.totalLearned = Math.max(0, userProgress.totalLearned - 1);
@@ -936,55 +952,63 @@ function markConversationLearned() {
         userProgress.conversationsCompleted.push(parseInt(conversationId));
         userProgress.totalLearned++;
         
-        // Update daily progress
+        // Update streak
         updateDailyProgress();
         
-        // Check achievements
-        checkAchievements();
+        showToast('অভিনন্দন! কথোপকথনটি সম্পন্ন হয়েছে 🎉', 'success');
         
-        showToast('অভিনন্দন! কথোপকথনটি শেখা সম্পন্ন হয়েছে ✓', 'success');
+        // Check for achievements
+        checkAchievements();
     }
     
-    // Update UI
+    // Update button
     updateMarkLearnedButton(conversation);
+    
+    // Update progress display
     updateProgressDisplay();
-    renderConversations(); // Refresh to show updated status
+    
+    // Re-render conversations list
+    renderConversations();
+    
+    // Save data
     saveUserData();
 }
 
 function updateDailyProgress() {
     const today = new Date().toDateString();
     
+    // Update last active date
     if (userProgress.lastActiveDate !== today) {
-        // New day - check streak
+        userProgress.lastActiveDate = today;
+        
+        // Update streak
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
         
         if (userProgress.lastActiveDate === yesterday.toDateString()) {
-            // Consecutive day - maintain streak
             userProgress.currentStreak++;
         } else {
-            // Streak broken - reset
             userProgress.currentStreak = 1;
         }
         
-        userProgress.lastActiveDate = today;
-        
-        // Update longest streak
-        if (userProgress.currentStreak > userProgress.longestStreak) {
-            userProgress.longestStreak = userProgress.currentStreak;
-        }
+        userProgress.longestStreak = Math.max(userProgress.longestStreak, userProgress.currentStreak);
     }
 }
 
 function updateStreakStatus() {
     const today = new Date().toDateString();
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
+    const lastActive = userProgress.lastActiveDate;
     
-    if (userProgress.lastActiveDate && userProgress.lastActiveDate !== today && userProgress.lastActiveDate !== yesterday.toDateString()) {
-        // More than 1 day gap - reset streak
-        userProgress.currentStreak = 0;
+    if (lastActive) {
+        const lastActiveDate = new Date(lastActive);
+        const todayDate = new Date(today);
+        const diffTime = todayDate - lastActiveDate;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        if (diffDays > 1) {
+            // Streak broken
+            userProgress.currentStreak = 0;
+        }
     }
 }
 
@@ -1011,7 +1035,7 @@ function updateProgressDisplay() {
         elements.dailyTarget.textContent = dailyGoal;
     }
     
-    // Update progress section
+    // Update progress cards
     if (elements.totalLearned) {
         elements.totalLearned.textContent = userProgress.totalLearned || 0;
     }
@@ -1025,14 +1049,20 @@ function updateProgressDisplay() {
     }
     
     if (elements.timeSpent) {
-        const minutes = Math.floor((userProgress.totalTimeSpent || 0) / 60);
-        elements.timeSpent.textContent = `${minutes} মিনিট`;
+        const hours = Math.floor((userProgress.totalTimeSpent || 0) / 60);
+        const minutes = (userProgress.totalTimeSpent || 0) % 60;
+        elements.timeSpent.textContent = hours > 0 ? `${hours} ঘন্টা ${minutes} মিনিট` : `${minutes} মিনিট`;
     }
 }
 
 function getTodayLearnedCount() {
     const today = new Date().toDateString();
-    return userProgress.lastActiveDate === today ? userProgress.todayLearned || 0 : 0;
+    if (userProgress.lastActiveDate === today) {
+        // This is a simplified calculation
+        // In a real app, you'd track daily completions separately
+        return Math.min(userProgress.totalLearned, userSettings.dailyGoal || 10);
+    }
+    return 0;
 }
 
 /* ================================
@@ -1071,16 +1101,20 @@ function checkAchievements() {
         }
     });
     
-    // Show new achievements
-    newAchievements.forEach(achievement => {
+    // Show new achievement notifications
+    newAchievements.forEach((achievement, index) => {
         setTimeout(() => {
-            showToast(`🏆 নতুন অর্জন আনলক: ${achievement.name}!`, 'success', 5000);
-        }, 1000);
+            showAchievementNotification(achievement);
+        }, index * 2000);
     });
     
     if (newAchievements.length > 0) {
         saveUserData();
     }
+}
+
+function showAchievementNotification(achievement) {
+    showToast(`🏆 নতুন অর্জন আনলক: ${achievement.name}!`, 'success', 5000);
 }
 
 function renderAchievements() {
@@ -1090,18 +1124,23 @@ function renderAchievements() {
     
     Object.entries(ACHIEVEMENTS).forEach(([key, achievement]) => {
         const isUnlocked = achievements.includes(achievement.id);
-        
-        const achievementElement = document.createElement('div');
-        achievementElement.className = `achievement-badge ${isUnlocked ? 'unlocked' : ''}`;
-        
-        achievementElement.innerHTML = `
-            <div class="achievement-icon">${achievement.icon}</div>
-            <div class="achievement-name">${achievement.name}</div>
-            <div class="achievement-description">${achievement.description}</div>
-        `;
-        
-        elements.achievementsGrid.appendChild(achievementElement);
+        const badge = createAchievementBadge(achievement, isUnlocked);
+        elements.achievementsGrid.appendChild(badge);
     });
+}
+
+function createAchievementBadge(achievement, isUnlocked) {
+    const badge = document.createElement('div');
+    badge.className = `achievement-badge ${isUnlocked ? 'unlocked' : ''}`;
+    
+    badge.innerHTML = `
+        <div class="achievement-icon">${achievement.icon}</div>
+        <div class="achievement-name">${achievement.name}</div>
+        <div class="achievement-description">${achievement.description}</div>
+        ${isUnlocked ? '<div class="achievement-status">✓ আনলক</div>' : '<div class="achievement-status">🔒 লক</div>'}
+    `;
+    
+    return badge;
 }
 
 /* ================================
@@ -1113,20 +1152,35 @@ function renderWeeklyChart() {
     
     elements.weeklyChart.innerHTML = '';
     
-    const days = ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহঃ', 'শুক্র', 'শনি'];
+    // Generate last 7 days data
+    const days = ['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহ', 'শুক', 'শনি'];
     const today = new Date();
     
-    days.forEach((day, index) => {
+    for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(date.getDate() - i);
+        
+        const dayName = days[date.getDay()];
+        const isToday = i === 0;
+        
+        // Simulate some data (in real app, you'd track daily progress)
+        const progress = isToday ? getTodayLearnedCount() : Math.floor(Math.random() * 15);
+        const maxHeight = 150;
+        const height = Math.max(20, (progress / 20) * maxHeight);
+        
         const bar = document.createElement('div');
         bar.className = 'chart-bar';
-        bar.dataset.day = day;
+        bar.style.height = `${height}px`;
+        bar.dataset.day = dayName;
+        bar.dataset.count = progress;
+        bar.title = `${dayName}: ${progress}টি কথোপকথন`;
         
-        // Generate some sample data (in real app, use actual data)
-        const height = Math.random() * 80 + 20;
-        bar.style.height = `${height}%`;
+        if (isToday) {
+            bar.classList.add('today');
+        }
         
         elements.weeklyChart.appendChild(bar);
-    });
+    }
 }
 
 /* ================================
@@ -1134,16 +1188,16 @@ function renderWeeklyChart() {
 ================================ */
 
 function updateDailyGoal() {
-    const newGoal = parseInt(elements.dailyGoalSelect.value);
-    userSettings.dailyGoal = newGoal;
+    const goal = parseInt(elements.dailyGoalSelect.value);
+    userSettings.dailyGoal = goal;
     updateProgressDisplay();
     saveUserData();
-    showToast(`দৈনিক লক্ষ্য ${newGoal}টি কথোপকথনে সেট করা হয়েছে`, 'success');
+    showToast(`দৈনিক লক্ষ্য ${goal}টি কথোপকথনে সেট করা হয়েছে`, 'success');
 }
 
 function updateAudioSpeed() {
-    const newSpeed = parseFloat(elements.audioSpeedSelect.value);
-    userSettings.audioSpeed = newSpeed;
+    const speed = parseFloat(elements.audioSpeedSelect.value);
+    userSettings.audioSpeed = speed;
     saveUserData();
     showToast('অডিও গতি আপডেট করা হয়েছে', 'success');
 }
@@ -1169,7 +1223,12 @@ function requestNotificationPermission() {
     if ('Notification' in window) {
         Notification.requestPermission().then(permission => {
             if (permission === 'granted') {
-                showToast('নোটিফিকেশনের অনুমতি দেওয়া হয়েছে', 'success');
+                showToast('নোটিফিকেশন অনুমতি দেওয়া হয়েছে', 'success');
+            } else {
+                showToast('নোটিফিকেশন অনুমতি প্রয়োজন', 'warning');
+                userSettings.notifications = false;
+                elements.notificationToggle.checked = false;
+                saveUserData();
             }
         });
     }
@@ -1180,7 +1239,7 @@ function requestNotificationPermission() {
 ================================ */
 
 function exportUserData() {
-    const exportData = {
+    const data = {
         userProgress,
         userSettings,
         achievements,
@@ -1189,7 +1248,7 @@ function exportUserData() {
         version: '1.0.0'
     };
     
-    const dataStr = JSON.stringify(exportData, null, 2);
+    const dataStr = JSON.stringify(data, null, 2);
     const dataBlob = new Blob([dataStr], { type: 'application/json' });
     
     const link = document.createElement('a');
@@ -1228,10 +1287,11 @@ function resetProgress() {
     localStorage.removeItem(STORAGE_KEYS.achievements);
     localStorage.removeItem(STORAGE_KEYS.selectedCountry);
     
-    // Update UI
+    // Update displays
     updateProgressDisplay();
     renderCountries();
     renderAchievements();
+    renderWeeklyChart();
     
     closeConfirmModal();
     showToast('সমস্ত অগ্রগতি রিসেট করা হয়েছে', 'success');
@@ -1241,7 +1301,7 @@ function resetProgress() {
    MODAL MANAGEMENT
 ================================ */
 
-function showConfirmModal(title, message, confirmCallback) {
+function showConfirmModal(title, message, onConfirm) {
     if (!elements.confirmModal) return;
     
     if (elements.confirmTitle) {
@@ -1252,21 +1312,17 @@ function showConfirmModal(title, message, confirmCallback) {
         elements.confirmMessage.textContent = message;
     }
     
-    // Set up confirm callback
-    const confirmHandler = () => {
-        confirmCallback();
-        elements.confirmOk.removeEventListener('click', confirmHandler);
-    };
+    // Store confirm callback
+    elements.confirmModal.dataset.onConfirm = 'true';
+    elements.confirmModal.confirmCallback = onConfirm;
     
-    elements.confirmOk.addEventListener('click', confirmHandler);
-    
-    // Show modal
     elements.confirmModal.classList.add('show');
 }
 
 function closeConfirmModal() {
     if (elements.confirmModal) {
         elements.confirmModal.classList.remove('show');
+        delete elements.confirmModal.confirmCallback;
     }
 }
 
@@ -1278,7 +1334,7 @@ function showToast(message, type = 'info', duration = 4000) {
     if (!elements.toastContainer) return;
     
     const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
+    toast.className = `toast ${type}`;
     
     const icons = {
         success: '✅',
@@ -1295,47 +1351,17 @@ function showToast(message, type = 'info', duration = 4000) {
         </div>
     `;
     
-    // Style the toast
-    toast.style.cssText = `
-        background: white;
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-md);
-        margin-bottom: var(--spacing-sm);
-        box-shadow: var(--shadow-lg);
-        transform: translateX(100%);
-        transition: transform var(--transition-normal);
-        max-width: 400px;
-        word-wrap: break-word;
-    `;
-    
-    const colors = {
-        success: '#10B981',
-        error: '#EF4444',
-        warning: '#F59E0B',
-        info: '#3B82F6'
-    };
-    
-    toast.style.borderLeftColor = colors[type] || colors.info;
-    
     elements.toastContainer.appendChild(toast);
     
-    // Animate in
-    setTimeout(() => {
-        toast.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Auto remove
+    // Auto-remove after duration
     setTimeout(() => {
         if (toast.parentNode) {
-            toast.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                if (toast.parentNode) {
-                    toast.parentNode.removeChild(toast);
-                }
-            }, 300);
+            toast.remove();
         }
     }, duration);
+    
+    // Add click to dismiss
+    toast.addEventListener('click', () => toast.remove());
 }
 
 /* ================================
@@ -1343,7 +1369,7 @@ function showToast(message, type = 'info', duration = 4000) {
 ================================ */
 
 function handleKeyboardShortcuts(event) {
-    // Only handle shortcuts when not typing in inputs
+    // Don't trigger shortcuts when typing in inputs
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
         return;
     }
@@ -1355,16 +1381,23 @@ function handleKeyboardShortcuts(event) {
             closeSidebar();
             break;
         case ' ':
+            event.preventDefault();
             if (elements.conversationModal.classList.contains('show')) {
-                event.preventDefault();
                 playCurrentConversation();
             }
             break;
         case 'Enter':
             if (elements.conversationModal.classList.contains('show')) {
-                event.preventDefault();
                 markConversationLearned();
             }
+            break;
+        case 'm':
+        case 'M':
+            toggleSidebar();
+            break;
+        case 't':
+        case 'T':
+            toggleTheme();
             break;
     }
 }
@@ -1385,279 +1418,39 @@ function debounce(func, wait) {
     };
 }
 
-// Auto-save every 30 seconds
-setInterval(saveUserData, 30000);
+function formatTime(minutes) {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    
+    if (hours > 0) {
+        return `${hours} ঘন্টা ${mins} মিনিট`;
+    }
+    return `${mins} মিনিট`;
+}
+
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
 
 /* ================================
-   CSS for Toast (Added to document)
+   AUTO-SAVE AND CLEANUP
 ================================ */
 
-const toastStyles = document.createElement('style');
-toastStyles.textContent = `
-    .toast-container {
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        z-index: 1000;
-        pointer-events: none;
-    }
-    
-    .toast {
-        pointer-events: all;
-        margin-bottom: 12px;
-    }
-    
-    .toast-content {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-    
-    .toast-icon {
-        font-size: 16px;
-        flex-shrink: 0;
-    }
-    
-    .toast-message {
-        flex: 1;
-        color: var(--text-primary);
-    }
-    
-    .toast-close {
-        background: none;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
-        color: var(--text-muted);
-        padding: 4px;
-        border-radius: 4px;
-        transition: all 0.2s ease;
-    }
-    
-    .toast-close:hover {
-        background-color: var(--background-tertiary);
-        color: var(--text-primary);
-    }
-    
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--background-overlay);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .modal-overlay.show {
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .modal-container {
-        background-color: var(--background-primary);
-        border-radius: var(--radius-xl);
-        max-width: 90vw;
-        max-height: 90vh;
-        width: 600px;
-        box-shadow: var(--shadow-2xl);
-        transform: scale(0.9);
-        transition: transform 0.3s ease;
-        overflow: hidden;
-    }
-    
-    .modal-overlay.show .modal-container {
-        transform: scale(1);
-    }
-    
-    .modal-container.small {
-        width: 400px;
-    }
-    
-    .modal-header {
-        padding: var(--spacing-xl);
-        border-bottom: 1px solid var(--border-color);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--background-secondary);
-    }
-    
-    .modal-header h3 {
-        margin: 0;
-        color: var(--text-primary);
-        font-size: var(--font-size-xl);
-    }
-    
-    .modal-content {
-        padding: var(--spacing-xl);
-        max-height: 60vh;
-        overflow-y: auto;
-    }
-    
-    .conversation-scenario {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-md);
-        padding: var(--spacing-md);
-        background-color: var(--background-secondary);
-        border-radius: var(--radius-lg);
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .scenario-icon {
-        font-size: 1.5rem;
-    }
-    
-    .conversation-content {
-        margin-bottom: var(--spacing-xl);
-    }
-    
-    .dialogue-item {
-        margin-bottom: var(--spacing-lg);
-        padding: var(--spacing-md);
-        border-radius: var(--radius-lg);
-        position: relative;
-    }
-    
-    .dialogue-item.user {
-        background-color: var(--primary-light);
-        margin-left: 40px;
-    }
-    
-    .dialogue-item.other {
-        background-color: var(--background-secondary);
-        margin-right: 40px;
-    }
-    
-    .dialogue-text {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .dialogue-text strong {
-        flex: 1;
-        color: var(--text-primary);
-        font-size: var(--font-size-lg);
-    }
-    
-    .play-line-btn {
-        background: none;
-        border: none;
-        color: var(--primary-color);
-        cursor: pointer;
-        padding: var(--spacing-xs);
-        border-radius: var(--radius-sm);
-        transition: all 0.2s ease;
-    }
-    
-    .play-line-btn:hover {
-        background-color: var(--primary-color);
-        color: white;
-        transform: scale(1.1);
-    }
-    
-    .dialogue-bengali {
-        color: var(--text-secondary);
-        font-style: italic;
-        font-size: var(--font-size-sm);
-    }
-    
-    .conversation-controls {
-        display: flex;
-        gap: var(--spacing-md);
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-top: var(--spacing-lg);
-        border-top: 1px solid var(--border-color);
-    }
-    
-    .control-btn {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        padding: var(--spacing-md) var(--spacing-lg);
-        border: 2px solid var(--border-color);
-        border-radius: var(--radius-lg);
-        background-color: var(--background-primary);
-        color: var(--text-primary);
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-family: var(--font-family-bangla);
-        font-weight: 500;
-        min-width: 120px;
-        justify-content: center;
-    }
-    
-    .control-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-    }
-    
-    .control-btn.primary {
-        background-color: var(--primary-color);
-        color: white;
-        border-color: var(--primary-color);
-    }
-    
-    .control-btn.success {
-        background-color: var(--success-color);
-        color: white;
-        border-color: var(--success-color);
-    }
-    
-    .control-btn.success.learned {
-        background-color: var(--warning-color);
-        border-color: var(--warning-color);
-    }
-    
-    .confirm-controls {
-        display: flex;
-        gap: var(--spacing-md);
-        justify-content: flex-end;
-        margin-top: var(--spacing-lg);
-    }
-    
-    .control-btn.warning {
-        background-color: var(--error-color);
-        color: white;
-        border-color: var(--error-color);
-    }
-    
-    @media (max-width: 768px) {
-        .modal-container {
-            width: 95vw;
-            margin: 20px;
-        }
-        
-        .conversation-controls {
-            flex-direction: column;
-        }
-        
-        .control-btn {
-            width: 100%;
-        }
-        
-        .dialogue-item.user {
-            margin-left: 20px;
-        }
-        
-        .dialogue-item.other {
-            margin-right: 20px;
-        }
-    }
-`;
+// Auto-save every 30 seconds
+setInterval(() => {
+    saveUserData();
+}, 30000);
 
-document.head.appendChild(toastStyles);
+// Track time spent
+let sessionStartTime = Date.now();
+setInterval(() => {
+    const sessionTime = Math.floor((Date.now() - sessionStartTime) / 60000); // minutes
+    userProgress.totalTimeSpent = (userProgress.totalTimeSpent || 0) + 1;
+}, 60000); // Every minute
 
-console.log('✅ ইউরো কথা অ্যাপ সফলভাবে লোড হয়েছে!');
+console.log('🇪🇺 ইউরো কথা অ্যাপ লোড হয়েছে! ইউরোপীয় ভাষা শেখার যাত্রা শুরু করুন!');
