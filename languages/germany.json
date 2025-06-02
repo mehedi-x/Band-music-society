@@ -1816,5 +1816,701 @@
     "bn": "ইশ হাবে ইরে নাখরিশট নিশট বেকোমেন।",
     "bnMeaning": "আমি আপনার মেসেজ পাইনি।",
     "en": "I didn't receive your message."
+  },
+  {
+    "de": "Ich verstehe das nicht.",
+    "bn": "ইশ ফেরশটেহে দাস নিশট।",
+    "bnMeaning": "আমি এটা বুঝতে পারছি না।",
+    "en": "I don't understand that."
+  },
+  {
+    "de": "Das ist sehr kompliziert.",
+    "bn": "দাস ইস্ট জের কমপ্লিৎসির্ট।",
+    "bnMeaning": "এটা খুব জটিল।",
+    "en": "That is very complicated."
+  },
+  {
+    "de": "Das ist einfach.",
+    "bn": "দাস ইস্ট আইনফাখ।",
+    "bnMeaning": "এটা সহজ।",
+    "en": "That is simple."
+  },
+  {
+    "de": "Können Sie mir das zeigen?",
+    "bn": "কোনেন জি মির দাস ৎসাইগেন?",
+    "bnMeaning": "আপনি কি আমাকে এটা দেখাতে পারেন?",
+    "en": "Can you show me that?"
+  },
+  {
+    "de": "Wo finde ich das?",
+    "bn": "ভো ফিন্ডে ইশ দাস?",
+    "bnMeaning": "আমি এটা কোথায় পাব?",
+    "en": "Where can I find that?"
+  },
+  {
+    "de": "Das ist hier.",
+    "bn": "দাস ইস্ট হির।",
+    "bnMeaning": "এটা এখানে।",
+    "en": "That is here."
+  },
+  {
+    "de": "Das ist dort.",
+    "bn": "দাস ইস্ট দোর্ট।",
+    "bnMeaning": "এটা ওখানে।",
+    "en": "That is there."
+  },
+  {
+    "de": "Das ist oben.",
+    "bn": "দাস ইস্ট ওবেন।",
+    "bnMeaning": "এটা উপরে।",
+    "en": "That is upstairs."
+  },
+  {
+    "de": "Das ist unten.",
+    "bn": "দাস ইস্ট উনটেন।",
+    "bnMeaning": "এটা নিচে।",
+    "en": "That is downstairs."
+  },
+  {
+    "de": "Das ist links.",
+    "bn": "দাস ইস্ট লিঙ্কস।",
+    "bnMeaning": "এটা বামে।",
+    "en": "That is on the left."
+  },
+  {
+    "de": "Das ist rechts.",
+    "bn": "দাস ইস্ট রেশটস।",
+    "bnMeaning": "এটা ডানে।",
+    "en": "That is on the right."
+  },
+  {
+    "de": "Das ist in der Mitte.",
+    "bn": "দাস ইস্ট ইন ডের মিটে।",
+    "bnMeaning": "এটা মাঝখানে।",
+    "en": "That is in the middle."
+  },
+  {
+    "de": "Das ist vorne.",
+    "bn": "দাস ইস্ট ফোর্নে।",
+    "bnMeaning": "এটা সামনে।",
+    "en": "That is in front."
+  },
+  {
+    "de": "Das ist hinten.",
+    "bn": "দাস ইস্ট হিনটেন।",
+    "bnMeaning": "এটা পেছনে।",
+    "en": "That is behind."
+  },
+  {
+    "de": "Das ist neben mir.",
+    "bn": "দাস ইস্ট নেবেন মির।",
+    "bnMeaning": "এটা আমার পাশে।",
+    "en": "That is next to me."
+  },
+  {
+    "de": "Das ist gegenüber.",
+    "bn": "দাস ইস্ট গেগেনুবার।",
+    "bnMeaning": "এটা বিপরীতে।",
+    "en": "That is opposite."
+  },
+  {
+    "de": "Das ist zwischen den Häusern.",
+    "bn": "দাস ইস্ট ৎসভিশেন ডেন হয়জার্ন।",
+    "bnMeaning": "এটা বাড়িগুলোর মাঝে।",
+    "en": "That is between the houses."
+  },
+  {
+    "de": "Wie komme ich dahin?",
+    "bn": "ভি কোমে ইশ দাহিন?",
+    "bnMeaning": "আমি সেখানে কীভাবে যাব?",
+    "en": "How do I get there?"
+  },
+  {
+    "de": "Ist das weit von hier?",
+    "bn": "ইস্ট দাস ভাইট ফন হির?",
+    "bnMeaning": "এটা কি এখান থেকে দূরে?",
+    "en": "Is that far from here?"
+  },
+  {
+    "de": "Das ist ganz nah.",
+    "bn": "দাস ইস্ট গানৎস নাহ।",
+    "bnMeaning": "এটা একদম কাছে।",
+    "en": "That is very close."
+  },
+  {
+    "de": "Das ist sehr weit.",
+    "bn": "দাস ইস্ট জের ভাইট।",
+    "bnMeaning": "এটা খুব দূরে।",
+    "en": "That is very far."
+  },
+  {
+    "de": "Ich bin neu hier.",
+    "bn": "ইশ বিন নয় হির।",
+    "bnMeaning": "আমি এখানে নতুন।",
+    "en": "I am new here."
+  },
+  {
+    "de": "Ich kenne mich hier nicht aus.",
+    "bn": "ইশ কেনে মিশ হির নিশট আউস।",
+    "bnMeaning": "আমি এখানে চিনি না।",
+    "en": "I don't know my way around here."
+  },
+  {
+    "de": "Können Sie mir eine Karte geben?",
+    "bn": "কোনেন জি মির আইনে কার্টে গেবেন?",
+    "bnMeaning": "আপনি কি আমাকে একটি ম্যাপ দিতে পারেন?",
+    "en": "Can you give me a map?"
+  },
+  {
+    "de": "Wo ist die Touristeninformation?",
+    "bn": "ভো ইস্ট ডি টুরিস্টেনইনফরমাৎসিওন?",
+    "bnMeaning": "পর্যটক তথ্যকেন্দ্র কোথায়?",
+    "en": "Where is the tourist information?"
+  },
+  {
+    "de": "Was gibt es hier zu sehen?",
+    "bn": "ভাস গিবট এস হির ৎসু জেহেন?",
+    "bnMeaning": "এখানে দেখার কী আছে?",
+    "en": "What is there to see here?"
+  },
+  {
+    "de": "Gibt es hier ein Museum?",
+    "bn": "গিবট এস হির আইন মুজেউম?",
+    "bnMeaning": "এখানে কি কোনো জাদুঘর আছে?",
+    "en": "Is there a museum here?"
+  },
+  {
+    "de": "Wo ist die Kirche?",
+    "bn": "ভো ইস্ট ডি কিরশে?",
+    "bnMeaning": "গির্জা কোথায়?",
+    "en": "Where is the church?"
+  },
+  {
+    "de": "Wo ist die Moschee?",
+    "bn": "ভো ইস্ট ডি মোশে?",
+    "bnMeaning": "মসজিদ কোথায়?",
+    "en": "Where is the mosque?"
+  },
+  {
+    "de": "Gibt es hier einen Park?",
+    "bn": "গিবট এস হির আইনেন পার্ক?",
+    "bnMeaning": "এখানে কি কোনো পার্ক আছে?",
+    "en": "Is there a park here?"
+  },
+  {
+    "de": "Wo kann ich spazieren gehen?",
+    "bn": "ভো কান ইশ শপাৎসিরেন গেহেন?",
+    "bnMeaning": "আমি কোথায় হাঁটতে যেতে পারি?",
+    "en": "Where can I go for a walk?"
+  },
+  {
+    "de": "Das ist sehr schön hier.",
+    "bn": "দাস ইস্ট জের শোন হির।",
+    "bnMeaning": "এখানে খুব সুন্দর।",
+    "en": "It is very beautiful here."
+  },
+  {
+    "de": "Mir gefällt es hier.",
+    "bn": "মির গেফেল্ট এস হির।",
+    "bnMeaning": "আমার এখানে ভালো লাগছে।",
+    "en": "I like it here."
+  },
+  {
+    "de": "Das Wetter ist heute schön.",
+    "bn": "দাস ভেটার ইস্ট হয়টে শোন।",
+    "bnMeaning": "আজ আবহাওয়া সুন্দর।",
+    "en": "The weather is nice today."
+  },
+  {
+    "de": "Es ist sonnig.",
+    "bn": "এস ইস্ট জোনিগ।",
+    "bnMeaning": "রোদ উঠেছে।",
+    "en": "It is sunny."
+  },
+  {
+    "de": "Es ist bewölkt.",
+    "bn": "এস ইস্ট বেভোল্কট।",
+    "bnMeaning": "মেঘলা আকাশ।",
+    "en": "It is cloudy."
+  },
+  {
+    "de": "Es ist windig.",
+    "bn": "এস ইস্ট ভিন্ডিগ।",
+    "bnMeaning": "বাতাস বইছে।",
+    "en": "It is windy."
+  },
+  {
+    "de": "Es donnert.",
+    "bn": "এস ডোনার্ট।",
+    "bnMeaning": "বজ্রপাত হচ্ছে।",
+    "en": "It is thundering."
+  },
+  {
+    "de": "Es blitzt.",
+    "bn": "এস ব্লিৎস।",
+    "bnMeaning": "বিদ্যুৎ চমকাচ্ছে।",
+    "en": "It is lightning."
+  },
+  {
+    "de": "Ich brauche einen Regenschirm.",
+    "bn": "ইশ ব্রাউখে আইনেন রেগেনশির্ম।",
+    "bnMeaning": "আমার একটি ছাতা দরকার।",
+    "en": "I need an umbrella."
+  },
+  {
+    "de": "Ich bin nass geworden.",
+    "bn": "ইশ বিন নাস গেভোর্ডেন।",
+    "bnMeaning": "আমি ভিজে গেছি।",
+    "en": "I got wet."
+  },
+  {
+    "de": "Können Sie mir ein Handtuch geben?",
+    "bn": "কোনেন জি মির আইন হান্ডটুখ গেবেন?",
+    "bnMeaning": "আপনি কি আমাকে একটি তোয়ালে দিতে পারেন?",
+    "en": "Can you give me a towel?"
+  },
+  {
+    "de": "Ich muss meine Kleidung wechseln.",
+    "bn": "ইশ মুস মাইনে ক্লাইডুং ভেকসেলন।",
+    "bnMeaning": "আমাকে কাপড় বদলাতে হবে।",
+    "en": "I need to change my clothes."
+  },
+  {
+    "de": "Wo kann ich das waschen?",
+    "bn": "ভো কান ইশ দাস ভাশেন?",
+    "bnMeaning": "আমি এটা কোথায় ধুতে পারি?",
+    "en": "Where can I wash this?"
+  },
+  {
+    "de": "Gibt es hier eine Wäscherei?",
+    "bn": "গিবট এস হির আইনে ভেশেরাই?",
+    "bnMeaning": "এখানে কি কোনো লন্ড্রি আছে?",
+    "en": "Is there a laundry here?"
+  },
+  {
+    "de": "Wann ist das fertig?",
+    "bn": "ভান ইস্ট দাস ফের্টিগ?",
+    "bnMeaning": "এটা কখন তৈরি হবে?",
+    "en": "When will this be ready?"
+  },
+  {
+    "de": "Das dauert zwei Tage.",
+    "bn": "দাস দাউয়ার্ট ৎসভাই টাগে।",
+    "bnMeaning": "এটা দুই দিন লাগবে।",
+    "en": "That takes two days."
+  },
+  {
+    "de": "Ich bin in Eile.",
+    "bn": "ইশ বিন ইন আইলে।",
+    "bnMeaning": "আমার তাড়া আছে।",
+    "en": "I am in a hurry."
+  },
+  {
+    "de": "Kann das schneller gehen?",
+    "bn": "কান দাস শনেলার গেহেন?",
+    "bnMeaning": "এটা কি তাড়াতাড়ি হতে পারে?",
+    "en": "Can that be done faster?"
+  },
+  {
+    "de": "Das kostet extra.",
+    "bn": "দাস কোস্টেট এক্সট্রা।",
+    "bnMeaning": "এর জন্য অতিরিক্ত টাকা লাগবে।",
+    "en": "That costs extra."
+  },
+  {
+    "de": "Das ist in Ordnung.",
+    "bn": "দাস ইস্ট ইন ওর্ডনুং।",
+    "bnMeaning": "এটা ঠিক আছে।",
+    "en": "That is fine."
+  },
+  {
+    "de": "Ich nehme es so.",
+    "bn": "ইশ নেহমে এস জো।",
+    "bnMeaning": "আমি এটা এভাবেই নেব।",
+    "en": "I'll take it as it is."
+  },
+  {
+    "de": "Haben Sie etwas Besseres?",
+    "bn": "হাবেন জি এটভাস বেসেরেস?",
+    "bnMeaning": "আপনার কাছে কি আরো ভালো কিছু আছে?",
+    "en": "Do you have something better?"
+  },
+  {
+    "de": "Das ist das Beste, was wir haben.",
+    "bn": "দাস ইস্ট দাস বেস্টে, ভাস ভির হাবেন।",
+    "bnMeaning": "আমাদের কাছে এটাই সবচেয়ে ভালো।",
+    "en": "That is the best we have."
+  },
+  {
+    "de": "Das reicht mir.",
+    "bn": "দাস রাইখট মির।",
+    "bnMeaning": "এটা আমার জন্য যথেষ্ট।",
+    "en": "That is enough for me."
+  },
+  {
+    "de": "Das ist zu viel für mich.",
+    "bn": "দাস ইস্ট ৎসু ফিল ফুর মিশ।",
+    "bnMeaning": "এটা আমার জন্য খুব বেশি।",
+    "en": "That is too much for me."
+  },
+  {
+    "de": "Können Sie weniger geben?",
+    "bn": "কোনেন জি ভেনিগার গেবেন?",
+    "bnMeaning": "আপনি কি কম দিতে পারেন?",
+    "en": "Can you give less?"
+  },
+  {
+    "de": "Das ist perfekt.",
+    "bn": "দাস ইস্ট পেরফেক্ট।",
+    "bnMeaning": "এটা নিখুঁত।",
+    "en": "That is perfect."
+  },
+  {
+    "de": "Ich bin zufrieden.",
+    "bn": "ইশ বিন ৎসুফ্রিডেন।",
+    "bnMeaning": "আমি সন্তুষ্ট।",
+    "en": "I am satisfied."
+  },
+  {
+    "de": "Das gefällt mir nicht.",
+    "bn": "দাস গেফেল্ট মির নিশট।",
+    "bnMeaning": "এটা আমার পছন্দ নয়।",
+    "en": "I don't like that."
+  },
+  {
+    "de": "Das ist nicht mein Geschmack.",
+    "bn": "দাস ইস্ট নিশট মাইন গেশমাক।",
+    "bnMeaning": "এটা আমার রুচির নয়।",
+    "en": "That is not my taste."
+  },
+  {
+    "de": "Haben Sie etwas anderes?",
+    "bn": "হাবেন জি এটভাস আন্ডেরেস?",
+    "bnMeaning": "আপনার কাছে কি অন্য কিছু আছে?",
+    "en": "Do you have something else?"
+  },
+  {
+    "de": "Zeigen Sie mir etwas anderes.",
+    "bn": "ৎসাইগেন জি মির এটভাস আন্ডেরেস।",
+    "bnMeaning": "আমাকে অন্য কিছু দেখান।",
+    "en": "Show me something else."
+  },
+  {
+    "de": "Das ist interessant.",
+    "bn": "দাস ইস্ট ইনটেরেসান্ট।",
+    "bnMeaning": "এটা আকর্ষণীয়।",
+    "en": "That is interesting."
+  },
+  {
+    "de": "Das ist langweilig.",
+    "bn": "দাস ইস্ট লাংভাইলিগ।",
+    "bnMeaning": "এটা বিরক্তিকর।",
+    "en": "That is boring."
+  },
+  {
+    "de": "Das macht Spaß.",
+    "bn": "দাস মাখট শপাস।",
+    "bnMeaning": "এটা মজার।",
+    "en": "That is fun."
+  },
+  {
+    "de": "Das ist aufregend.",
+    "bn": "দাস ইস্ট আউফরেগেন্ড।",
+    "bnMeaning": "এটা উত্তেজনাপূর্ণ।",
+    "en": "That is exciting."
+  },
+  {
+    "de": "Ich freue mich darauf.",
+    "bn": "ইশ ফ্রয়ে মিশ দারাউফ।",
+    "bnMeaning": "আমি এর জন্য উৎসুক।",
+    "en": "I am looking forward to it."
+  },
+  {
+    "de": "Das wird toll.",
+    "bn": "দাস ভির্ড টোল।",
+    "bnMeaning": "এটা দুর্দান্ত হবে।",
+    "en": "That will be great."
+  },
+  {
+    "de": "Ich bin gespannt.",
+    "bn": "ইশ বিন গেশপানট।",
+    "bnMeaning": "আমি কৌতূহলী।",
+    "en": "I am curious."
+  },
+  {
+    "de": "Das kann ich kaum erwarten.",
+    "bn": "দাস কান ইশ কাউম এরভার্টেন।",
+    "bnMeaning": "আমি খুব কমই অপেক্ষা করতে পারি।",
+    "en": "I can hardly wait."
+  },
+  {
+    "de": "Wann fängt es an?",
+    "bn": "ভান ফেংট এস আন?",
+    "bnMeaning": "এটা কখন শুরু হবে?",
+    "en": "When does it start?"
+  },
+  {
+    "de": "Wann ist es zu Ende?",
+    "bn": "ভান ইস্ট এস ৎসু এন্ডে?",
+    "bnMeaning": "এটা কখন শেষ হবে?",
+    "en": "When does it end?"
+  },
+  {
+    "de": "Wie lange geht das?",
+    "bn": "ভি লাঙ্গে গেট দাস?",
+    "bnMeaning": "এটা কত সময় চলবে?",
+    "en": "How long does that go?"
+  },
+  {
+    "de": "Das geht drei Stunden.",
+    "bn": "দাস গেট ড্রাই শটুন্ডেন।",
+    "bnMeaning": "এটা তিন ঘন্টা চলবে।",
+    "en": "That goes for three hours."
+  },
+  {
+    "de": "Das ist zu lang für mich.",
+    "bn": "দাস ইস্ট ৎসু লাং ফুর মিশ।",
+    "bnMeaning": "এটা আমার জন্য খুব লম্বা।",
+    "en": "That is too long for me."
+  },
+  {
+    "de": "Das ist kurz.",
+    "bn": "দাস ইস্ট কুর্ৎস।",
+    "bnMeaning": "এটা ছোট।",
+    "en": "That is short."
+  },
+  {
+    "de": "Das geht schnell vorbei.",
+    "bn": "দাস গেট শনেল ফোরবাই।",
+    "bnMeaning": "এটা তাড়াতাড়ি শেষ হয়ে যাবে।",
+    "en": "That goes by quickly."
+  },
+  {
+    "de": "Gibt es eine Pause?",
+    "bn": "গিবট এস আইনে পাউজে?",
+    "bnMeaning": "কোনো বিরতি আছে?",
+    "en": "Is there a break?"
+  },
+  {
+    "de": "Wann ist die Pause?",
+    "bn": "ভান ইস্ট ডি পাউজে?",
+    "bnMeaning": "বিরতি কখন?",
+    "en": "When is the break?"
+  },
+  {
+    "de": "Kann ich zwischendurch rausgehen?",
+    "bn": "কান ইশ ৎসভিশেনদুর্খ রাউসগেহেন?",
+    "bnMeaning": "আমি কি মাঝে মাঝে বাইরে যেতে পারি?",
+    "en": "Can I go out in between?"
+  },
+  {
+    "de": "Ist das erlaubt?",
+    "bn": "ইস্ট দাস এরলাউবট?",
+    "bnMeaning": "এটা কি অনুমতি আছে?",
+    "en": "Is that allowed?"
+  },
+  {
+    "de": "Das ist verboten.",
+    "bn": "দাস ইস্ট ফেরবোটেন।",
+    "bnMeaning": "এটা নিষিদ্ধ।",
+    "en": "That is forbidden."
+  },
+  {
+    "de": "Das dürfen Sie nicht.",
+    "bn": "দাস দুরফেন জি নিশট।",
+    "bnMeaning": "আপনি এটা করতে পারবেন না।",
+    "en": "You are not allowed to do that."
+  },
+  {
+    "de": "Das müssen Sie machen.",
+    "bn": "দাস মুসেন জি মাখেন।",
+    "bnMeaning": "আপনাকে এটা করতে হবে।",
+    "en": "You must do that."
+  },
+  {
+    "de": "Das können Sie machen.",
+    "bn": "দাস কোনেন জি মাখেন।",
+    "bnMeaning": "আপনি এটা করতে পারেন।",
+    "en": "You can do that."
+  },
+  {
+    "de": "Das sollen Sie nicht machen.",
+    "bn": "দাস জোলেন জি নিশট মাখেন।",
+    "bnMeaning": "আপনার এটা করা উচিত নয়।",
+    "en": "You should not do that."
+  },
+  {
+    "de": "Das sollten Sie machen.",
+    "bn": "দাস জোলটেন জি মাখেন।",
+    "bnMeaning": "আপনার এটা করা উচিত।",
+    "en": "You should do that."
+  },
+  {
+    "de": "Ich will das machen.",
+    "bn": "ইশ ভিল দাস মাখেন।",
+    "bnMeaning": "আমি এটা করতে চাই।",
+    "en": "I want to do that."
+  },
+  {
+    "de": "Ich will das nicht machen.",
+    "bn": "ইশ ভিল দাস নিশট মাখেন।",
+    "bnMeaning": "আমি এটা করতে চাই না।",
+    "en": "I don't want to do that."
+  },
+  {
+    "de": "Ich mag das.",
+    "bn": "ইশ মাগ দাস।",
+    "bnMeaning": "আমি এটা পছন্দ করি।",
+    "en": "I like that."
+  },
+  {
+    "de": "Ich mag das nicht.",
+    "bn": "ইশ মাগ দাস নিশট।",
+    "bnMeaning": "আমি এটা পছন্দ করি না।",
+    "en": "I don't like that."
+  },
+  {
+    "de": "Das schmeckt gut.",
+    "bn": "দাস শমেকট গুট।",
+    "bnMeaning": "এটার স্বাদ ভালো।",
+    "en": "That tastes good."
+  },
+  {
+    "de": "Das schmeckt nicht gut.",
+    "bn": "দাস শমেকট নিশট গুট।",
+    "bnMeaning": "এটার স্বাদ ভালো না।",
+    "en": "That doesn't taste good."
+  },
+  {
+    "de": "Das riecht gut.",
+    "bn": "দাস রিখট গুট।",
+    "bnMeaning": "এটার গন্ধ ভালো।",
+    "en": "That smells good."
+  },
+  {
+    "de": "Das riecht schlecht.",
+    "bn": "দাস রিখট শলেশট।",
+    "bnMeaning": "এটার গন্ধ খারাপ।",
+    "en": "That smells bad."
+  },
+  {
+    "de": "Das sieht schön aus.",
+    "bn": "দাস জিট শোন আউস।",
+    "bnMeaning": "এটা দেখতে সুন্দর।",
+    "en": "That looks beautiful."
+  },
+  {
+    "de": "Das sieht nicht gut aus.",
+    "bn": "দাস জিট নিশট গুট আউস।",
+    "bnMeaning": "এটা দেখতে ভালো না।",
+    "en": "That doesn't look good."
+  },
+  {
+    "de": "Das hört sich gut an.",
+    "bn": "দাস হোর্ট জিশ গুট আন।",
+    "bnMeaning": "এটা শুনতে ভালো লাগছে।",
+    "en": "That sounds good."
+  },
+  {
+    "de": "Das hört sich interessant an.",
+    "bn": "দাস হোর্ট জিশ ইনটেরেসান্ট আন।",
+    "bnMeaning": "এটা শুনতে আকর্ষণীয় লাগছে।",
+    "en": "That sounds interesting."
+  },
+  {
+    "de": "Das fühlt sich weich an.",
+    "bn": "দাস ফুল্ট জিশ ভাইখ আন।",
+    "bnMeaning": "এটা স্পর্শে নরম লাগছে।",
+    "en": "That feels soft."
+  },
+  {
+    "de": "Das fühlt sich hart an.",
+    "bn": "দাস ফুল্ট জিশ হার্ট আন।",
+    "bnMeaning": "এটা স্পর্শে শক্ত লাগছে।",
+    "en": "That feels hard."
+  },
+  {
+    "de": "Das ist warm.",
+    "bn": "দাস ইস্ট ভার্ম।",
+    "bnMeaning": "এটা গরম।",
+    "en": "That is warm."
+  },
+  {
+    "de": "Das ist heiß.",
+    "bn": "দাস ইস্ট হাইস।",
+    "bnMeaning": "এটা গরম।",
+    "en": "That is hot."
+  },
+  {
+    "de": "Das ist kalt.",
+    "bn": "দাস ইস্ট কাল্ট।",
+    "bnMeaning": "এটা ঠান্ডা।",
+    "en": "That is cold."
+  },
+  {
+    "de": "Das ist kühl.",
+    "bn": "দাস ইস্ট কুল।",
+    "bnMeaning": "এটা শীতল।",
+    "en": "That is cool."
+  },
+  {
+    "de": "Passen Sie auf!",
+    "bn": "পাসেন জি আউফ!",
+    "bnMeaning": "সাবধান!",
+    "en": "Be careful!"
+  },
+  {
+    "de": "Das ist gefährlich.",
+    "bn": "দাস ইস্ট গেফেরলিশ।",
+    "bnMeaning": "এটা বিপজ্জনক।",
+    "en": "That is dangerous."
+  },
+  {
+    "de": "Das ist sicher.",
+    "bn": "দাস ইস্ট জিশার।",
+    "bnMeaning": "এটা নিরাপদ।",
+    "en": "That is safe."
+  },
+  {
+    "de": "Keine Sorge.",
+    "bn": "কাইনে জোর্গে।",
+    "bnMeaning": "চিন্তা নেই।",
+    "en": "Don't worry."
+  },
+  {
+    "de": "Alles wird gut.",
+    "bn": "আলেস ভির্ড গুট।",
+    "bnMeaning": "সব ঠিক হয়ে যাবে।",
+    "en": "Everything will be fine."
+  },
+  {
+    "de": "Haben Sie noch Fragen?",
+    "bn": "হাবেন জি নোখ ফ্রাগেন?",
+    "bnMeaning": "আপনার আর কোনো প্রশ্ন আছে?",
+    "en": "Do you have any more questions?"
+  },
+  {
+    "de": "Das war alles.",
+    "bn": "দাস ভার আলেস।",
+    "bnMeaning": "এটাই সব ছিল।",
+    "en": "That was everything."
+  },
+  {
+    "de": "Vielen Dank für Ihre Hilfe.",
+    "bn": "ফিলেন ডাঙ্ক ফুর ইরে হিলফে।",
+    "bnMeaning": "আপনার সাহায্যের জন্য অনেক ধন্যবাদ।",
+    "en": "Thank you very much for your help."
+  },
+  {
+    "de": "Gern geschehen.",
+    "bn": "গের্ন গেশেহেন।",
+    "bnMeaning": "কোনো ব্যাপার না।",
+    "en": "You're welcome."
+  },
+  {
+    "de": "Das war sehr nett von Ihnen.",
+    "bn": "দাস ভার জের নেট ফন ইনেন।",
+    "bnMeaning": "এটা আপনার খুব দয়া ছিল।",
+    "en": "That was very kind of you."
   }
 ]
