@@ -8,6 +8,7 @@ const closeModal = document.querySelector('.close-modal');
 // Current language data
 let currentLanguageData = [];
 let currentLanguage = '';
+let isShowingHome = false;
 
 const langCodeMap = {
   austria: 'de',
@@ -96,6 +97,7 @@ class ProgressTracker {
     if (!langProgress.learnedWords.includes(wordIndex)) {
       langProgress.learnedWords.push(wordIndex);
       this.progress.totalWordsLearned++;
+      langProgress.lastStudied = new Date().toISOString();
       this.updateStreak();
       this.checkAchievements();
       this.saveProgress();
@@ -230,6 +232,7 @@ languageSelect.addEventListener('change', () => {
 
 // ✅ ভাষা JSON লোড করে UI রেন্ডার
 function loadLanguage(lang) {
+  isShowingHome = false;
   currentLanguage = lang;
   fetch(`languages/${lang}.json`)
     .then(res => res.json())
@@ -330,6 +333,151 @@ modeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
+// Home Page Functions
+function showHome() {
+  document.getElementById('side-menu').classList.remove('active');
+  isShowingHome = true;
+  
+  // Hide current progress
+  const currentProgressDiv = document.getElementById('current-progress');
+  currentProgressDiv.style.display = 'none';
+  
+  // Show home content
+  showHomeContent();
+}
+
+function showHomeContent() {
+  conversationArea.innerHTML = `
+    <div class="home-container">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="gradient-text">Speak EU</span>
+          </h1>
+          <p class="hero-subtitle">ইউরোপের ভাষা শিখুন আত্মবিশ্বাসের সাথে</p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">${Object.keys(progressTracker.progress.languages).length}</div>
+              <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">${progressTracker.progress.totalWordsLearned}</div>
+              <div class="stat-label">Words Learned</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">${progressTracker.progress.streak}</div>
+              <div class="stat-label">Day Streak</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-animation">
+          <div class="floating-languages">
+            <span class="lang-bubble">🇮🇹 Ciao</span>
+            <span class="lang-bubble">🇪🇸 Hola</span>
+            <span class="lang-bubble">🇫🇷 Bonjour</span>
+            <span class="lang-bubble">🇩🇪 Hallo</span>
+            <span class="lang-bubble">🇬🇷 Γεια</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>44+ ইউরোপীয় ভাষা</h3>
+          <p>সকল প্রধান ইউরোপীয় দেশের ভাষা একটি প্ল্যাটফর্মে</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>প্রোগ্রেস ট্র্যাকিং</h3>
+          <p>আপনার শেখার অগ্রগতি পর্যবেক্ষণ করুন ও লক্ষ্য অর্জন করুন</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>ব্যবহারিক বাক্য</h3>
+          <p>দৈনন্দিন জীবনে ব্যবহৃত প্রয়োজনীয় বাক্য ও শব্দ</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>অর্জন ব্যাজ</h3>
+          <p>শেখার প্রেরণা বৃদ্ধির জন্য বিভিন্ন অর্জন আনলক করুন</p>
+        </div>
+      </div>
+
+      <!-- Quick Language Selector -->
+      <div class="quick-language-section">
+        <h2>দ্রুত শুরু করুন</h2>
+        <div class="quick-lang-grid">
+          <button class="quick-lang-btn" onclick="quickSelectLanguage('italy')">
+            <span class="flag">🇮🇹</span>
+            <span class="name">Italian</span>
+          </button>
+          <button class="quick-lang-btn" onclick="quickSelectLanguage('spain')">
+            <span class="flag">🇪🇸</span>
+            <span class="name">Spanish</span>
+          </button>
+          <button class="quick-lang-btn" onclick="quickSelectLanguage('france')">
+            <span class="flag">🇫🇷</span>
+            <span class="name">French</span>
+          </button>
+          <button class="quick-lang-btn" onclick="quickSelectLanguage('germany')">
+            <span class="flag">🇩🇪</span>
+            <span class="name">German</span>
+          </button>
+          <button class="quick-lang-btn" onclick="quickSelectLanguage('greece')">
+            <span class="flag">🇬🇷</span>
+            <span class="name">Greek</span>
+          </button>
+          <button class="quick-lang-btn" onclick="quickSelectLanguage('portugal')">
+            <span class="flag">🇵🇹</span>
+            <span class="name">Portuguese</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Learning Tips -->
+      <div class="tips-section">
+        <h2>🎓 শেখার কৌশল</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-number">1</div>
+            <div class="tip-content">
+              <h4>নিয়মিত অনুশীলন</h4>
+              <p>প্রতিদিন অন্তত ৫-১০টি নতুন শব্দ শিখুন</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">2</div>
+            <div class="tip-content">
+              <h4>উচ্চারণ অনুশীলন</h4>
+              <p>শব্দগুলো উচ্চ স্বরে বলে অনুশীলন করুন</p>
+            </div>
+          </div>
+          <div class="tip-card">
+            <div class="tip-number">3</div>
+            <div class="tip-content">
+              <h4>প্রসঙ্গে ব্যবহার</h4>
+              <p>দৈনন্দিন পরিস্থিতিতে শেখা বাক্য ব্যবহার করুন</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function quickSelectLanguage(language) {
+  isShowingHome = false;
+  languageSelect.value = language;
+  localStorage.setItem('selectedLanguage', language);
+  loadLanguage(language);
+}
+
 // Progress Modal Functions
 progressToggle.addEventListener('click', () => {
   showProgressModal();
@@ -359,12 +507,20 @@ function updateProgressStats() {
 }
 
 function createProgressCharts() {
+  // Destroy existing charts if they exist
+  if (window.languageChart) {
+    window.languageChart.destroy();
+  }
+  if (window.activityChart) {
+    window.activityChart.destroy();
+  }
+
   // Language Progress Chart
   const languageCtx = document.getElementById('languageChart').getContext('2d');
   const languages = Object.keys(progressTracker.progress.languages);
   const languageData = languages.map(lang => progressTracker.progress.languages[lang].learnedWords.length);
 
-  new Chart(languageCtx, {
+  window.languageChart = new Chart(languageCtx, {
     type: 'doughnut',
     data: {
       labels: languages.map(lang => lang.charAt(0).toUpperCase() + lang.slice(1)),
@@ -396,10 +552,10 @@ function createProgressCharts() {
     date.setDate(date.getDate() - i);
     last7Days.push(date.toLocaleDateString('en-US', { weekday: 'short' }));
     // Simple activity simulation - in real app, you'd track daily activity
-    activityData.push(Math.random() * 10);
+    activityData.push(Math.floor(Math.random() * 10) + 1);
   }
 
-  new Chart(activityCtx, {
+  window.activityChart = new Chart(activityCtx, {
     type: 'line',
     data: {
       labels: last7Days,
@@ -408,7 +564,8 @@ function createProgressCharts() {
         data: activityData,
         borderColor: '#36A2EB',
         backgroundColor: 'rgba(54, 162, 235, 0.1)',
-        tension: 0.4
+        tension: 0.4,
+        fill: true
       }]
     },
     options: {
@@ -469,11 +626,6 @@ if (closeMenu && sideMenu) {
 }
 
 // Menu Functions
-function showHome() {
-  document.getElementById('side-menu').classList.remove('active');
-  // Reset to home view
-}
-
 function exportProgress() {
   progressTracker.exportProgress();
   document.getElementById('side-menu').classList.remove('active');
