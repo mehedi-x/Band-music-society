@@ -1,0 +1,20 @@
+[
+  {
+    "local": "Buongiorno",
+    "bn": "বুয়োনজোর্নো",
+    "bnMeaning": "সুপ্রভাত",
+    "en": "Good morning"
+  },
+  {
+    "local": "Come ti chiami?",
+    "bn": "কোমে তি কিয়ামি?",
+    "bnMeaning": "তোমার নাম কী?",
+    "en": "What is your name?"
+  },
+  {
+    "local": "Mi chiamo...",
+    "bn": "মি কিয়ামো...",
+    "bnMeaning": "আমার নাম...",
+    "en": "My name is..."
+  }
+]
