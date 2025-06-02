@@ -1,187 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Speak EU - Language Learning</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak EU - Learn European Languages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <header class="app-header">
-    <h1 class="app-title">Speak EU</h1>
-    <div class="header-right">
-      <select id="language-select">
-  <option value="">Select Language</option>
-
-  <!-- 🟦 Schengen Countries -->
-  <option value="austria">🇦🇹 Austria</option>
-  <option value="belgium">🇧🇪 Belgium</option>
-  <option value="czech">🇨🇿 Czech Republic</option>
-  <option value="denmark">🇩🇰 Denmark</option>
-  <option value="estonia">🇪🇪 Estonia</option>
-  <option value="finland">🇫🇮 Finland</option>
-  <option value="france">🇫🇷 France</option>
-  <option value="germany">🇩🇪 Germany</option>
-  <option value="greece">🇬🇷 Greece</option>
-  <option value="hungary">🇭🇺 Hungary</option>
-  <option value="iceland">🇮🇸 Iceland</option>
-  <option value="italy">🇮🇹 Italy</option>
-  <option value="latvia">🇱🇻 Latvia</option>
-  <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-  <option value="lithuania">🇱🇹 Lithuania</option>
-  <option value="luxembourg">🇱🇺 Luxembourg</option>
-  <option value="malta">🇲🇹 Malta</option>
-  <option value="netherlands">🇳🇱 Netherlands</option>
-  <option value="norway">🇳🇴 Norway</option>
-  <option value="poland">🇵🇱 Poland</option>
-  <option value="portugal">🇵🇹 Portugal</option>
-  <option value="slovakia">🇸🇰 Slovakia</option>
-  <option value="slovenia">🇸🇮 Slovenia</option>
-  <option value="spain">🇪🇸 Spain</option>
-  <option value="sweden">🇸🇪 Sweden</option>
-  <option value="switzerland">🇨🇭 Switzerland</option>
-
-  <!-- 🟥 Non-Schengen EU/Europe Countries -->
-  <option value="russian">🇷🇺 Russian</option>
-  <option value="albania">🇦🇱 Albania</option>
-  <option value="andorra">🇦🇩 Andorra</option>
-  <option value="armenia">🇦🇲 Armenia</option>
-  <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-  <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
-  <option value="bulgaria">🇧🇬 Bulgaria</option>
-  <option value="croatia">🇭🇷 Croatia</option>
-  <option value="cyprus">🇨🇾 Cyprus</option>
-  <option value="georgia">🇬🇪 Georgia</option>
-  <option value="ireland">🇮🇪 Ireland</option>
-  <option value="kosovo">🇽🇰 Kosovo</option>
-  <option value="moldova">🇲🇩 Moldova</option>
-  <option value="monaco">🇲🇨 Monaco</option>
-  <option value="montenegro">🇲🇪 Montenegro</option>
-  <option value="northmacedonia">🇲🇰 North Macedonia</option>
-  <option value="romania">🇷🇴 Romania</option>
-  <option value="sanmarino">🇸🇲 San Marino</option>
-  <option value="serbia">🇷🇸 Serbia</option>
-  <option value="turkey">🇹🇷 Turkey</option>
-  <option value="ukraine">🇺🇦 Ukraine</option>
-  <option value="unitedkingdom">🇬🇧 United Kingdom</option>
-  <option value="vatican">🇻🇦 Vatican City</option>
-</select>
-      <button id="mode-toggle">☀️</button>
-      <button id="menu-toggle">☰</button>
-    </div>
-  </header>
-
-<main id="conversation-area" class="p-6 text-base transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 max-w-4xl mx-auto">
-  <!-- Enhanced Homepage -->
-  <div id="homepage-content">
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h2 class="hero-title">🌍 Welcome to Speak EU</h2>
-        <p class="hero-subtitle">ইউরোপের ভাষা শিখুন সহজে এবং দ্রুত</p>
-        <div class="hero-features">
-          <div class="feature-card">
-            <span class="feature-icon">📚</span>
-            <h3>৪৫+ ভাষা</h3>
-            <p>ইউরোপের প্রায় সকল দেশের ভাষা</p>
-          </div>
-          <div class="feature-card">
-            <span class="feature-icon">💾</span>
-            <h3>ফেভারিট সিস্টেম</h3>
-            <p>প্রিয় শব্দগুলো সেভ করুন</p>
-          </div>
-          <div class="feature-card">
-            <span class="feature-icon">🌙</span>
-            <h3>ডার্ক/লাইট মোড</h3>
-            <p>আপনার পছন্দমতো থিম</p>
-          </div>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container-fluid px-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <h1 class="app-title mb-0">Speak EU</h1>
+                <div class="header-controls d-flex align-items-center">
+                    <select id="languageSelect" class="form-select language-selector me-2">
+                        <option value="">Select Language</option>
+                        <option value="germany">German</option>
+                        <option value="italy">Italian</option>
+                        <option value="spain">Spanish</option>
+                        <option value="russia">Russian</option>
+                    </select>
+                    <button class="btn theme-toggle me-2" onclick="toggleTheme()" title="Toggle Theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="btn menu-toggle" onclick="toggleMenu()" title="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Quick Start -->
-    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
-      <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🚀 শুরু করার জন্য করণীয়</h3>
-      <ol class="list-decimal pl-6 space-y-1">
-        <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
-        <li>আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
-        <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
-        <li>গুরুত্বপূর্ণ শব্দগুলো ফেভারিট করুন।</li>
-      </ol>
-    </section>
-
-    <!-- Country Flags -->
-    <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm">
-      <h3 class="text-lg font-semibold mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
-      <div class="flex flex-wrap gap-4 text-sm">
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇮🇹 ইতালি (Italian)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇪🇸 স্পেন (Spanish)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇩🇪 জার্মানি (German)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇫🇷 ফ্রান্স (French)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇬🇷 গ্রিস (Greek)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇵🇹 পর্তুগাল (Portuguese)</span>
-      </div>
-    </section>
-
-    <!-- Join Us -->
-    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
-      <h3 class="text-lg font-semibold mb-3">📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
-      <p class="mb-2">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
-      <div class="flex gap-4 text-blue-600 dark:text-blue-300">
-        <a href="https://facebook.com" target="_blank" class="hover:underline">📘 Facebook</a>
-        <a href="https://t.me" target="_blank" class="hover:underline">📢 Telegram</a>
-      </div>
-    </section>
-  </div>
-
-  <!-- Error Display -->
-  <div id="error-display" class="error-container" style="display: none;">
-    <div class="error-content">
-      <span class="error-icon">⚠️</span>
-      <div class="error-text">
-        <h3>সমস্যা হয়েছে!</h3>
-        <p id="error-message"></p>
-      </div>
+    <!-- Side Menu -->
+    <div id="sideMenu" class="side-menu">
+        <div class="menu-header">
+            <h3>Speak EU</h3>
+            <button class="btn-close-menu" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-content">
+            <ul class="menu-list">
+                <li><a href="#" onclick="showHome()"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" onclick="showFavorites()"><i class="fas fa-heart"></i> Favorites</a></li>
+                <li><a href="#" onclick="exportFavorites()"><i class="fas fa-download"></i> Export Favorites</a></li>
+                <li><a href="#" onclick="document.getElementById('importFile').click()"><i class="fas fa-upload"></i> Import Favorites</a></li>
+                <li><a href="#" onclick="showAbout()"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#" onclick="showContact()"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#" onclick="showPrivacy()"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                <li><a href="#" onclick="resetAllData()"><i class="fas fa-refresh"></i> Reset All Data</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <!-- Favorites Controls -->
-  <div id="favorites-controls" style="display: none;">
-    <div class="favorites-header">
-      <h3>📋 ফেভারিট তালিকা</h3>
-      <div class="favorites-buttons">
-        <button id="show-all-btn" class="control-btn">সব দেখুন</button>
-        <button id="show-favorites-btn" class="control-btn active">ফেভারিট দেখুন</button>
-        <button id="export-favorites-btn" class="control-btn">📤 Export</button>
-        <input type="file" id="import-favorites-input" accept=".json" style="display: none;">
-        <button id="import-favorites-btn" class="control-btn">📥 Import</button>
-      </div>
+    <!-- Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Home Page -->
+        <div id="homePage" class="home-container">
+            <div class="hero-section text-center">
+                <div class="hero-content">
+                    <div class="hero-icon mb-3">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h1 class="hero-title">Welcome to<br>Speak EU</h1>
+                    <p class="hero-subtitle">ইউরোপের ভাষা শিখুন সহজেই এবং দ্রুত</p>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="feature-title">৮৫+ ভাষা</h3>
+                    <p class="feature-desc">ইউরোপের প্রায় সকল দেশের ভাষা</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <h3 class="feature-title">ফেভারিট সিস্টেম</h3>
+                    <p class="feature-desc">বিশেষ শব্দগুলো সেভ করুন</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="feature-title">ডার্ক/লাইট মোড</h3>
+                    <p class="feature-desc">আপনার পছন্দ অনুযায়ী থিম</p>
+                </div>
+            </div>
+
+            <div class="getting-started">
+                <h3><i class="fas fa-rocket"></i> শুরু করার জন্য করণীয়</h3>
+                <ol>
+                    <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
+                    <li>আপনার প্রয়োজনীয় অনুযায়ী রংয়ের</li>
+                    <li>প্রিয়তম শব্দ সেট করুন।</li>
+                    <li>শব্দগুল পরবর্তীতে ডাউনলোড করুন।</li>
+                </ol>
+            </div>
+
+            <div class="language-flags mt-4">
+                <h5 class="text-center mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h5>
+                <p class="text-center small">🇮🇹 ইতালি (Italian) 🇪🇸 স্পেন (Spanish) 🇩🇪 জার্মানি (German) 🇫🇷 ফ্রান্স (French) 🇬🇷 গ্রিস (Greek) 🇵🇹 পর্তুগাল (Portuguese)</p>
+            </div>
+
+            <div class="social-links">
+                <h4><i class="fas fa-users"></i> আমাদের সাথে যুক্ত থাকুন</h4>
+                <p>সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="#" class="social-btn telegram">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocabulary Page -->
+        <div id="vocabularyPage" class="vocabulary-container" style="display: none;">
+            <div class="search-section">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search vocabulary...">
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="controls-row">
+                    <button class="btn btn-home" onclick="showHome()">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                    <div class="language-info">
+                        <span id="languageTitle">Select a Language</span>
+                    </div>
+                    <button class="btn btn-favorites" onclick="showFavorites()">
+                        <i class="fas fa-heart"></i> Favorites
+                    </button>
+                </div>
+            </div>
+
+            <div class="vocabulary-grid" id="vocabularyGrid">
+                <!-- Vocabulary cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Favorites Page -->
+        <div id="favoritesPage" class="favorites-container" style="display: none;">
+            <div class="favorites-header">
+                <h2><i class="fas fa-heart"></i> Your Favorites</h2>
+                <div class="favorites-controls">
+                    <button class="btn btn-home" onclick="showHome()">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                    <button class="btn btn-export" onclick="exportFavorites()">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+            </div>
+            <div class="favorites-grid" id="favoritesGrid">
+                <!-- Favorite cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="aboutPage" class="page-container" style="display: none;">
+            <div class="page-header">
+                <h2><i class="fas fa-info-circle"></i> About Speak EU</h2>
+                <button class="btn btn-home" onclick="showHome()">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+            <div class="page-content">
+                <p>Speak EU is a comprehensive language learning platform designed specifically for Bangladeshi immigrants and workers who want to learn European languages.</p>
+                <h4>Features:</h4>
+                <ul>
+                    <li>Bengali pronunciation guides for all vocabulary</li>
+                    <li>45+ European languages</li>
+                    <li>Favorites system to save important words</li>
+                    <li>Export/Import functionality</li>
+                    <li>Dark/Light theme support</li>
+                    <li>Mobile-friendly design</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contactPage" class="page-container" style="display: none;">
+            <div class="page-header">
+                <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                <button class="btn btn-home" onclick="showHome()">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+            <div class="page-content">
+                <p>We'd love to hear from you! Get in touch with us through any of the following ways:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email: support@speakeu.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook: @SpeakEU</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram: @SpeakEUSupport</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Page -->
+        <div id="privacyPage" class="page-container" style="display: none;">
+            <div class="page-header">
+                <h2><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+                <button class="btn btn-home" onclick="showHome()">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+            <div class="page-content">
+                <h4>Data Collection</h4>
+                <p>Speak EU respects your privacy. We only store data locally on your device:</p>
+                <ul>
+                    <li>Favorite vocabulary items</li>
+                    <li>Theme preferences</li>
+                    <li>Language learning progress</li>
+                </ul>
+                <h4>Data Usage</h4>
+                <p>Your data is used solely to enhance your learning experience and is never shared with third parties.</p>
+                <h4>Data Control</h4>
+                <p>You have full control over your data and can reset it anytime using the "Reset All Data" option in the menu.</p>
+            </div>
+        </div>
     </div>
-  </div>
-</main>
 
-    <!-- Enhanced Side Menu -->
-<div id="side-menu">
-  <button id="close-menu" title="Close menu">✖</button>
-  <h3>🌍 Speak EU</h3>
-  <ul>
-    <li><a href="#" onclick="showHomePage()">🏠 Home</a></li>
-    <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
-    <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
-    <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
-    <li><a href="#" onclick="showFavoritesPage()">❤️ Favorites</a></li>
-    <li class="menu-divider"></li>
-    <li><a href="#" onclick="exportFavorites()">📤 Export Favorites</a></li>
-    <li><a href="#" onclick="importFavorites()">📥 Import Favorites</a></li>
-    <li class="menu-divider"></li>
-    <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
-  </ul>
-</div>
+    <!-- Hidden file input for import -->
+    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importFavorites(event)">
 
-  <!-- File input for import -->
-  <input type="file" id="file-import" accept=".json" style="display: none;">
-
-  <!-- Enhanced Script -->
-  <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
