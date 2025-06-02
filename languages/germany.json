@@ -1,0 +1,62 @@
+[
+  {
+    "de": "Hallo!",
+    "bn": "হ্যালো!",
+    "bnMeaning": "নমস্কার!",
+    "en": "Hello!"
+  },
+  {
+    "de": "Guten Tag!",
+    "bn": "গুটেন টাগ!",
+    "bnMeaning": "শুভ দিন!",
+    "en": "Good day!"
+  },
+  {
+    "de": "Wie geht es dir?",
+    "bn": "ভি গেট এস ডির?",
+    "bnMeaning": "তুমি কেমন আছো?",
+    "en": "How are you?"
+  },
+  {
+    "de": "Danke schön!",
+    "bn": "ডাঙ্কে শোন!",
+    "bnMeaning": "ধন্যবাদ!",
+    "en": "Thank you!"
+  },
+  {
+    "de": "Entschuldigung",
+    "bn": "এনৎশুলডিগুং",
+    "bnMeaning": "মাফ করবেন",
+    "en": "Excuse me"
+  },
+  {
+    "de": "Wo ist der Bahnhof?",
+    "bn": "ভো ইস্ট ডের বানহোফ?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the train station?"
+  },
+  {
+    "de": "Ich verstehe nicht.",
+    "bn": "ইশ ফেরশটেহে নিশট।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don't understand."
+  },
+  {
+    "de": "Sprechen Sie Englisch?",
+    "bn": "শপ্রেশেন জি ইংলিশ?",
+    "bnMeaning": "আপনি কি ইংরেজি বলেন?",
+    "en": "Do you speak English?"
+  },
+  {
+    "de": "Wie viel kostet das?",
+    "bn": "ভি ফিল কোস্টেট দাস?",
+    "bnMeaning": "এটার দাম কত?",
+    "en": "How much does this cost?"
+  },
+  {
+    "de": "Auf Wiedersehen!",
+    "bn": "আউফ ভিডারজেহেন!",
+    "bnMeaning": "বিদায়!",
+    "en": "Goodbye!"
+  }
+]
