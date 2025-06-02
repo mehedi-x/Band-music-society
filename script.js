@@ -1,522 +1,673 @@
-// Global variables
-let currentLanguageData = [];
-let favorites = JSON.parse(localStorage.getItem('speakeu-favorites')) || [];
-let currentTheme = localStorage.getItem('speakeu-theme') || 'light';
+const languageSelect = document.getElementById('language-select');
+const conversationArea = document.getElementById('conversation-area');
+const modeToggle = document.getElementById('mode-toggle');
 
-// Language data URLs
-const languageFiles = {
-    'germany': 'germany.json',
-    'italy': 'italy.json',
-    'spain': 'spain.json',
-    'russia': 'russia.json'
+// Language code mapping
+const langCodeMap = {
+  austria: 'de',
+  belgium: 'nl',
+  czech: 'cs',
+  denmark: 'da',
+  estonia: 'et',
+  finland: 'fi',
+  france: 'fr',
+  germany: 'de',
+  greece: 'el',
+  hungary: 'hu',
+  iceland: 'is',
+  italy: 'it',
+  latvia: 'lv',
+  liechtenstein: 'de',
+  lithuania: 'lt',
+  luxembourg: 'lb',
+  malta: 'mt',
+  netherlands: 'nl',
+  norway: 'no',
+  poland: 'pl',
+  portugal: 'pt',
+  slovakia: 'sk',
+  slovenia: 'sl',
+  spain: 'es',
+  sweden: 'sv',
+  switzerland: 'de',
+  russian: 'ru',
+  albania: 'sq',
+  andorra: 'ca',
+  armenia: 'hy',
+  azerbaijan: 'az',
+  bosnia: 'bs',
+  bulgaria: 'bg',
+  croatia: 'hr',
+  cyprus: 'el',
+  georgia: 'ka',
+  ireland: 'en',
+  kosovo: 'sq',
+  moldova: 'ro',
+  monaco: 'fr',
+  montenegro: 'sr',
+  northmacedonia: 'mk',
+  romania: 'ro',
+  sanmarino: 'it',
+  serbia: 'sr',
+  turkey: 'tr',
+  ukraine: 'uk',
+  unitedkingdom: 'en',
+  vatican: 'la'
 };
 
-// Initialize app
-document.addEventListener('DOMContentLoaded', function() {
-    initializeTheme();
-    setupEventListeners();
-    showHome();
+// Global variables
+let currentLanguage = '';
+let currentData = [];
+let favorites = JSON.parse(localStorage.getItem('speakeu_favorites')) || {};
+let showingFavorites = false;
+
+// Page load initialization
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('selectedLanguage');
+  if (savedLang) {
+    languageSelect.value = savedLang;
+    loadLanguage(savedLang);
+  } else {
+    showHomePage();
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    modeToggle.textContent = '🌙';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeToggle.textContent = '☀️';
+  }
 });
 
-// Theme Management
-function initializeTheme() {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeIcon();
-}
+// Language selection
+languageSelect.addEventListener('change', () => {
+  const lang = languageSelect.value;
+  if (!lang) {
+    showHomePage();
+    return;
+  }
+  localStorage.setItem('selectedLanguage', lang);
+  loadLanguage(lang);
+});
 
-function toggleTheme() {
-    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    localStorage.setItem('speakeu-theme', currentTheme);
-    updateThemeIcon();
-}
-
-function updateThemeIcon() {
-    const themeIcon = document.querySelector('.theme-toggle i');
-    themeIcon.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-}
-
-// Event Listeners
-function setupEventListeners() {
-    // Language selector
-    document.getElementById('languageSelect').addEventListener('change', function() {
-        const selectedLanguage = this.value;
-        if (selectedLanguage) {
-            loadLanguage(selectedLanguage);
-        }
-    });
-
-    // Search functionality
-    document.getElementById('searchInput').addEventListener('input', function() {
-        filterVocabulary(this.value);
-    });
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey || e.metaKey) {
-            switch(e.key) {
-                case 'h':
-                    e.preventDefault();
-                    showHome();
-                    break;
-                case 'f':
-                    e.preventDefault();
-                    showFavorites();
-                    break;
-                case 's':
-                    e.preventDefault();
-                    document.getElementById('searchInput').focus();
-                    break;
-            }
-        }
-        
-        if (e.key === 'Escape') {
-            if (document.getElementById('sideMenu').classList.contains('active')) {
-                toggleMenu();
-            }
-        }
+// Load language data
+function loadLanguage(lang) {
+  currentLanguage = lang;
+  showLoadingState();
+  
+  fetch(`languages/${lang}.json`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      }
+      return res.json();
+    })
+    .then(data => {
+      if (!Array.isArray(data) || data.length === 0) {
+        throw new Error('Data format is invalid or empty');
+      }
+      currentData = data;
+      hideHomePage();
+      showFavoritesControls();
+      renderVocabulary(data, langCodeMap[lang]);
+    })
+    .catch(error => {
+      showError(`ভাষার ডেটা লোড করতে সমস্যা হয়েছে: ${error.message}`);
     });
 }
 
-// Menu Management
-function toggleMenu() {
-    const sideMenu = document.getElementById('sideMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    
-    sideMenu.classList.toggle('active');
-    menuOverlay.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
-}
-
-// Page Navigation
-function showHome() {
-    hideAllPages();
-    document.getElementById('homePage').style.display = 'block';
-    toggleMenu(); // Close menu if open
-}
-
-function showVocabulary() {
-    hideAllPages();
-    document.getElementById('vocabularyPage').style.display = 'block';
-}
-
-function showFavorites() {
-    hideAllPages();
-    document.getElementById('favoritesPage').style.display = 'block';
-    renderFavorites();
-    toggleMenu(); // Close menu if open
-}
-
-function showAbout() {
-    hideAllPages();
-    document.getElementById('aboutPage').style.display = 'block';
-    toggleMenu();
-}
-
-function showContact() {
-    hideAllPages();
-    document.getElementById('contactPage').style.display = 'block';
-    toggleMenu();
-}
-
-function showPrivacy() {
-    hideAllPages();
-    document.getElementById('privacyPage').style.display = 'block';
-    toggleMenu();
-}
-
-function hideAllPages() {
-    const pages = ['homePage', 'vocabularyPage', 'favoritesPage', 'aboutPage', 'contactPage', 'privacyPage'];
-    pages.forEach(pageId => {
-        document.getElementById(pageId).style.display = 'none';
-    });
-}
-
-// Language Loading
-async function loadLanguage(languageName) {
-    try {
-        showLoadingState();
-        
-        const response = await fetch(languageFiles[languageName]);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        currentLanguageData = await response.json();
-        
-        // Update language title
-        const languageTitle = document.getElementById('languageTitle');
-        languageTitle.textContent = getLanguageDisplayName(languageName);
-        
-        renderVocabulary(currentLanguageData);
-        showVocabulary();
-        
-    } catch (error) {
-        console.error('Error loading language:', error);
-        showErrorMessage('Failed to load language data. Please try again.');
-    }
-}
-
-function getLanguageDisplayName(languageName) {
-    const displayNames = {
-        'germany': 'German - জার্মান',
-        'italy': 'Italian - ইতালিয়ান',
-        'spain': 'Spanish - স্প্যানিশ',
-        'russia': 'Russian - রাশিয়ান'
-    };
-    return displayNames[languageName] || languageName;
-}
-
+// Show loading state
 function showLoadingState() {
-    const vocabularyGrid = document.getElementById('vocabularyGrid');
-    vocabularyGrid.innerHTML = `
-        <div class="loading-container" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-            <div class="spinner" style="border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
-            <p>Loading vocabulary...</p>
-        </div>
-    `;
+  conversationArea.innerHTML = `
+    <div class="loading-container" style="text-align: center; padding: 40px;">
+      <div class="loading-spinner" style="font-size: 2rem;">⏳</div>
+      <p>ডেটা লোড হচ্ছে...</p>
+    </div>
+  `;
 }
 
-function showErrorMessage(message) {
-    const vocabularyGrid = document.getElementById('vocabularyGrid');
-    vocabularyGrid.innerHTML = `
-        <div class="error-container" style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: #e74c3c;">
-            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-            <p>${message}</p>
+// Render vocabulary with favorites
+function renderVocabulary(list, langKey) {
+  hideError();
+  conversationArea.innerHTML = '';
+
+  if (!Array.isArray(list) || list.length === 0) {
+    showError('এই ভাষার জন্য কোনো ডেটা পাওয়া যায়নি।');
+    return;
+  }
+
+  // Filter data based on current view
+  let dataToShow = list;
+  if (showingFavorites) {
+    const langFavorites = favorites[currentLanguage] || [];
+    dataToShow = list.filter((item, index) => langFavorites.includes(index));
+    
+    if (dataToShow.length === 0) {
+      conversationArea.innerHTML = `
+        <div class="no-favorites" style="text-align: center; padding: 40px;">
+          <h3>❤️ কোনো ফেভারিট আইটেম নেই</h3>
+          <p>কিছু শব্দ ফেভারিট করুন প্রথমে।</p>
+          <button onclick="showAllItems()" class="control-btn">সব দেখুন</button>
         </div>
-    `;
-}
-
-// Vocabulary Rendering
-function renderVocabulary(data) {
-    const vocabularyGrid = document.getElementById('vocabularyGrid');
-    vocabularyGrid.innerHTML = '';
-
-    if (!data || data.length === 0) {
-        vocabularyGrid.innerHTML = `
-            <div class="no-data-container" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                <p>No vocabulary data available.</p>
-            </div>
-        `;
-        return;
+      `;
+      return;
     }
+  }
 
-    data.forEach((item, index) => {
-        const card = createVocabCard(item, index);
-        vocabularyGrid.appendChild(card);
-    });
-}
-
-function createVocabCard(item, index) {
-    const card = document.createElement('div');
-    card.className = 'vocab-card';
-    
-    // Get the language key based on the data structure
-    const languageKey = Object.keys(item).find(key => !['bn', 'bnMeaning', 'en'].includes(key));
-    const foreignWord = item[languageKey] || 'Unknown';
-    
-    const isInFavorites = favorites.some(fav => 
-        fav[languageKey] === foreignWord && fav.bnMeaning === item.bnMeaning
-    );
-
-    card.innerHTML = `
-        <div class="vocab-header">
-            <h3 class="vocab-word">${foreignWord}</h3>
-            <button class="favorite-btn ${isInFavorites ? 'active' : ''}" 
-                    onclick="toggleFavorite(${index}, this)">
-                <i class="fas fa-heart"></i>
-            </button>
+  // Add favorites controls HTML
+  const favoritesControlsHtml = `
+    <div id="favorites-controls">
+      <div class="favorites-header">
+        <h3>📋 ${showingFavorites ? 'ফেভারিট তালিকা' : 'সব কথোপকথন'}</h3>
+        <div class="favorites-buttons">
+          <button id="show-all-btn" class="control-btn ${!showingFavorites ? 'active' : ''}" onclick="showAllItems()">সব দেখুন</button>
+          <button id="show-favorites-btn" class="control-btn ${showingFavorites ? 'active' : ''}" onclick="showFavoriteItems()">ফেভারিট দেখুন</button>
+          <button id="export-favorites-btn" class="control-btn" onclick="exportFavorites()">📤 Export</button>
+          <button id="import-favorites-btn" class="control-btn" onclick="importFavorites()">📥 Import</button>
         </div>
-        <div class="vocab-pronunciation">${item.bn}</div>
-        <div class="vocab-meaning">${item.bnMeaning}</div>
-        <div class="vocab-english">${item.en}</div>
-    `;
+      </div>
+    </div>
+  `;
 
-    return card;
-}
+  conversationArea.innerHTML = favoritesControlsHtml;
 
-// Favorites Management
-function toggleFavorite(index, button) {
-    const item = currentLanguageData[index];
-    const languageKey = Object.keys(item).find(key => !['bn', 'bnMeaning', 'en'].includes(key));
-    const foreignWord = item[languageKey];
+  dataToShow.forEach((item, displayIndex) => {
+    const originalIndex = showingFavorites ? 
+      list.findIndex(original => original === item) : displayIndex;
     
-    const existingIndex = favorites.findIndex(fav => 
-        fav[languageKey] === foreignWord && fav.bnMeaning === item.bnMeaning
-    );
+    const localLang = item[langKey] || '—';
+    const bn = item.bn || '—';
+    const bnMeaning = item.bnMeaning || '—';
+    const en = item.en || '—';
 
-    if (existingIndex > -1) {
-        // Remove from favorites
-        favorites.splice(existingIndex, 1);
-        button.classList.remove('active');
-        showNotification('Removed from favorites', 'success');
-    } else {
-        // Add to favorites
-        favorites.push(item);
-        button.classList.add('active');
-        showNotification('Added to favorites', 'success');
-    }
+    const isFavorited = (favorites[currentLanguage] || []).includes(originalIndex);
 
-    localStorage.setItem('speakeu-favorites', JSON.stringify(favorites));
-}
-
-function renderFavorites() {
-    const favoritesGrid = document.getElementById('favoritesGrid');
-    favoritesGrid.innerHTML = '';
-
-    if (favorites.length === 0) {
-        favoritesGrid.innerHTML = `
-            <div class="no-favorites" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                <i class="fas fa-heart" style="font-size: 3rem; color: #bdc3c7; margin-bottom: 1rem;"></i>
-                <p>No favorites yet. Start adding words you want to remember!</p>
-            </div>
-        `;
-        return;
-    }
-
-    favorites.forEach((item, index) => {
-        const card = createFavoriteCard(item, index);
-        favoritesGrid.appendChild(card);
-    });
-}
-
-function createFavoriteCard(item, index) {
-    const card = document.createElement('div');
-    card.className = 'vocab-card';
-    
-    const languageKey = Object.keys(item).find(key => !['bn', 'bnMeaning', 'en'].includes(key));
-    const foreignWord = item[languageKey] || 'Unknown';
-
-    card.innerHTML = `
-        <div class="vocab-header">
-            <h3 class="vocab-word">${foreignWord}</h3>
-            <button class="favorite-btn active" onclick="removeFavorite(${index}, this)">
-                <i class="fas fa-heart"></i>
-            </button>
-        </div>
-        <div class="vocab-pronunciation">${item.bn}</div>
-        <div class="vocab-meaning">${item.bnMeaning}</div>
-        <div class="vocab-english">${item.en}</div>
+    const div = document.createElement('div');
+    div.className = 'conversation-item';
+    div.innerHTML = `
+      <button class="favorite-btn ${isFavorited ? 'favorited' : ''}" 
+              onclick="toggleFavorite(${originalIndex})" 
+              title="${isFavorited ? 'ফেভারিট থেকে সরান' : 'ফেভারিট করুন'}">
+        ${isFavorited ? '❤️' : '🤍'}
+      </button>
+      <div>🗣️ <strong>${localLang}</strong></div>
+      <div>📝 <span>${bn}</span></div>
+      <div>📘 <em>${bnMeaning}</em></div>
+      <div>🔤 <span>${en}</span></div>
     `;
-
-    return card;
+    conversationArea.appendChild(div);
+  });
 }
 
-function removeFavorite(index, button) {
-    favorites.splice(index, 1);
-    localStorage.setItem('speakeu-favorites', JSON.stringify(favorites));
-    renderFavorites();
-    showNotification('Removed from favorites', 'success');
+// Toggle favorite status
+function toggleFavorite(index) {
+  if (!favorites[currentLanguage]) {
+    favorites[currentLanguage] = [];
+  }
+  
+  const favIndex = favorites[currentLanguage].indexOf(index);
+  if (favIndex > -1) {
+    favorites[currentLanguage].splice(favIndex, 1);
+  } else {
+    favorites[currentLanguage].push(index);
+  }
+  
+  localStorage.setItem('speakeu_favorites', JSON.stringify(favorites));
+  
+  // Re-render current view
+  if (currentData.length > 0) {
+    renderVocabulary(currentData, langCodeMap[currentLanguage]);
+  }
 }
 
-// Search Functionality
-function filterVocabulary(searchTerm) {
-    if (!currentLanguageData || currentLanguageData.length === 0) return;
-
-    const filteredData = currentLanguageData.filter(item => {
-        const languageKey = Object.keys(item).find(key => !['bn', 'bnMeaning', 'en'].includes(key));
-        const foreignWord = item[languageKey] || '';
-        
-        return foreignWord.toLowerCase().includes(searchTerm.toLowerCase()) ||
-               item.bn.toLowerCase().includes(searchTerm.toLowerCase()) ||
-               item.bnMeaning.toLowerCase().includes(searchTerm.toLowerCase()) ||
-               item.en.toLowerCase().includes(searchTerm.toLowerCase());
-    });
-
-    renderVocabulary(filteredData);
+// Show all items
+function showAllItems() {
+  showingFavorites = false;
+  if (currentData.length > 0) {
+    renderVocabulary(currentData, langCodeMap[currentLanguage]);
+  }
 }
 
-// Import/Export Functionality
+// Show favorite items only
+function showFavoriteItems() {
+  showingFavorites = true;
+  if (currentData.length > 0) {
+    renderVocabulary(currentData, langCodeMap[currentLanguage]);
+  }
+}
+
+// Export favorites
 function exportFavorites() {
-    if (favorites.length === 0) {
-        showNotification('No favorites to export', 'warning');
-        return;
-    }
-
-    const dataStr = JSON.stringify(favorites, null, 2);
-    const dataBlob = new Blob([dataStr], {type: 'application/json'});
-    
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(dataBlob);
-    link.download = 'speakeu-favorites.json';
-    link.click();
-    
-    showNotification('Favorites exported successfully', 'success');
+  const exportData = {
+    exportDate: new Date().toISOString(),
+    appName: 'Speak EU',
+    version: '1.0',
+    favorites: favorites
+  };
+  
+  const dataStr = JSON.stringify(exportData, null, 2);
+  const dataBlob = new Blob([dataStr], {type: 'application/json'});
+  
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(dataBlob);
+  link.download = `speak-eu-favorites-${new Date().toISOString().split('T')[0]}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  alert('ফেভারিট তালিকা সফলভাবে Export করা হয়েছে!');
 }
 
-function importFavorites(event) {
-    const file = event.target.files[0];
+// Import favorites
+function importFavorites() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  
+  input.onchange = function(e) {
+    const file = e.target.files[0];
     if (!file) return;
-
+    
     const reader = new FileReader();
     reader.onload = function(e) {
-        try {
-            const importedFavorites = JSON.parse(e.target.result);
-            
-            if (Array.isArray(importedFavorites)) {
-                favorites = [...favorites, ...importedFavorites];
-                // Remove duplicates
-                favorites = favorites.filter((item, index, self) => {
-                    const languageKey = Object.keys(item).find(key => !['bn', 'bnMeaning', 'en'].includes(key));
-                    return index === self.findIndex(f => {
-                        const fLanguageKey = Object.keys(f).find(key => !['bn', 'bnMeaning', 'en'].includes(key));
-                        return f[fLanguageKey] === item[languageKey] && f.bnMeaning === item.bnMeaning;
-                    });
-                });
-                
-                localStorage.setItem('speakeu-favorites', JSON.stringify(favorites));
-                showNotification('Favorites imported successfully', 'success');
-                
-                if (document.getElementById('favoritesPage').style.display !== 'none') {
-                    renderFavorites();
-                }
-            } else {
-                throw new Error('Invalid file format');
-            }
-        } catch (error) {
-            showNotification('Error importing favorites. Please check the file format.', 'error');
-        }
-    };
-    
-    reader.readAsText(file);
-    event.target.value = ''; // Reset file input
-}
-
-// Data Reset
-function resetAllData() {
-    if (confirm('Are you sure you want to reset all data? This will remove all favorites and preferences.')) {
-        localStorage.removeItem('speakeu-favorites');
-        localStorage.removeItem('speakeu-theme');
-        favorites = [];
-        currentTheme = 'light';
+      try {
+        const importData = JSON.parse(e.target.result);
         
-        initializeTheme();
-        renderFavorites();
-        showNotification('All data has been reset', 'success');
-    }
+        if (importData.favorites && typeof importData.favorites === 'object') {
+          favorites = {...favorites, ...importData.favorites};
+          localStorage.setItem('speakeu_favorites', JSON.stringify(favorites));
+          
+          // Re-render current view
+          if (currentData.length > 0) {
+            renderVocabulary(currentData, langCodeMap[currentLanguage]);
+          }
+          
+          alert('ফেভারিট তালিকা সফলভাবে Import করা হয়েছে!');
+        } else {
+          throw new Error('Invalid file format');
+        }
+      } catch (error) {
+        alert('ফাইল Import করতে সমস্যা হয়েছে। সঠিক JSON ফাইল নির্বাচন করুন।');
+      }
+    };
+    reader.readAsText(file);
+  };
+  
+  input.click();
 }
 
-// Notification System
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotifications = document.querySelectorAll('.notification');
-    existingNotifications.forEach(notification => notification.remove());
+// Reset all data
+function resetAllData() {
+  if (confirm('আপনি কি নিশ্চিত যে সব ডেটা রিসেট করতে চান? এটি আপনার সব ফেভারিট এবং সেটিংস মুছে দেবে।')) {
+    localStorage.clear();
+    favorites = {};
+    currentData = [];
+    currentLanguage = '';
+    showingFavorites = false;
+    languageSelect.value = '';
+    showHomePage();
+    alert('সব ডেটা সফলভাবে রিসেট করা হয়েছে!');
+  }
+}
 
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${getNotificationColor(type)};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-        max-width: 300px;
-        word-wrap: break-word;
-    `;
-    
-    notification.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas ${getNotificationIcon(type)}"></i>
-            <span>${message}</span>
+// Show error
+function showError(message) {
+  const errorDisplay = document.getElementById('error-display');
+  const errorMessage = document.getElementById('error-message');
+  
+  if (errorDisplay && errorMessage) {
+    errorMessage.textContent = message;
+    errorDisplay.style.display = 'block';
+  }
+  
+  hideHomePage();
+  hideFavoritesControls();
+}
+
+// Hide error
+function hideError() {
+  const errorDisplay = document.getElementById('error-display');
+  if (errorDisplay) {
+    errorDisplay.style.display = 'none';
+  }
+}
+
+// Show/hide homepage
+function showHomePage() {
+  const homepage = document.getElementById('homepage-content');
+  if (homepage) {
+    homepage.style.display = 'block';
+  }
+  hideError();
+  hideFavoritesControls();
+}
+
+function hideHomePage() {
+  const homepage = document.getElementById('homepage-content');
+  if (homepage) {
+    homepage.style.display = 'none';
+  }
+}
+
+// Show/hide favorites controls
+function showFavoritesControls() {
+  // Controls are now part of renderVocabulary function
+}
+
+function hideFavoritesControls() {
+  const controls = document.getElementById('favorites-controls');
+  if (controls) {
+    controls.style.display = 'none';
+  }
+}
+
+// Page navigation functions
+function showAboutPage() {
+  hideHomePage();
+  hideError();
+  hideFavoritesControls();
+  
+  conversationArea.innerHTML = `
+    <div class="page-content">
+      <h2>📖 আমাদের সম্পর্কে</h2>
+      <p><strong>Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে।</p>
+      
+      <h3>🎯 আমাদের লক্ষ্য</h3>
+      <ul>
+        <li>ইউরোপের ৪৫+ ভাষায় দৈনন্দিন কথোপকথন শেখানো</li>
+        <li>প্রবাসী জীবনে প্রয়োজনীয় ভাষাগত দক্ষতা অর্জনে সহায়তা</li>
+        <li>সহজ ও কার্যকর ভাষা শিক্ষার পদ্ধতি প্রদান</li>
+        <li>বাংলাদেশী সম্প্রদায়ের ভাষা শিক্ষায় অবদান রাখা</li>
+      </ul>
+      
+      <h3>✨ বৈশিষ্ট্যসমূহ</h3>
+      <ul>
+        <li>🔤 বাংলা উচ্চারণ সহ প্রতিটি শব্দ</li>
+        <li>❤️ ফেভারিট সিস্টেম</li>
+        <li>🌙 ডার্ক/লাইট মোড</li>
+        <li>📱 মোবাইল ফ্রেন্ডলি ডিজাইন</li>
+        <li>💾 ডেটা এক্সপোর্ট/ইমপোর্ট</li>
+      </ul>
+      
+      <h3>🚀 ভবিষ্যৎ পরিকল্পনা</h3>
+      <ul>
+        <li>অডিও উচ্চারণ যোগ করা</li>
+        <li>গ্রামার সেকশন যোগ করা</li>
+        <li>প্র্যাকটিস কুইজ সিস্টেম</li>
+        <li>অফলাইন সাপোর্ট</li>
+      </ul>
+      
+      <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+        <h4>💌 আমাদের মিশন</h4>
+        <p>আমাদের মূল লক্ষ্য হলো ইউরোপে বসবাসকারী বাংলাদেশী সম্প্রদায়ের ভাষাগত বাধা দূর করা এবং তাদের সামাজিক ও পেশাগত জীবনে সফলতা অর্জনে সহায়তা করা।</p>
+      </div>
+    </div>
+  `;
+  closeSideMenu();
+}
+
+function showContactPage() {
+  hideHomePage();
+  hideError();
+  hideFavoritesControls();
+  
+  conversationArea.innerHTML = `
+    <div class="page-content">
+      <h2>📞 যোগাযোগ করুন</h2>
+      <p>আমাদের সাথে যোগাযোগ করতে নিচের তথ্যগুলো ব্যবহার করুন:</p>
+      
+      <div class="contact-section">
+        <h3>📧 ইমেইল</h3>
+        <p><a href="mailto:info@speakeu.com">info@speakeu.com</a></p>
+        <p><a href="mailto:support@speakeu.com">support@speakeu.com</a></p>
+      </div>
+      
+      <div class="contact-section">
+        <h3>📱 সোশ্যাল মিডিয়া</h3>
+        <p><a href="https://facebook.com/speakeu" target="_blank">📘 Facebook</a></p>
+        <p><a href="https://t.me/speakeu" target="_blank">📢 Telegram</a></p>
+        <p><a href="https://youtube.com/speakeu" target="_blank">📺 YouTube</a></p>
+      </div>
+      
+      <div class="contact-section">
+        <h3>🕒 সাপোর্ট সময়</h3>
+        <p>সোমবার - শুক্রবার: সকাল ৯টা - রাত ৯টা (CET)</p>
+        <p>শনিবার - রবিবার: সকাল ১০টা - সন্ধ্যা ৬টা (CET)</p>
+      </div>
+      
+      <div class="contact-section">
+        <h3>🌍 অফিস ঠিকানা</h3>
+        <p>Speak EU Headquarters<br>
+        123 Language Learning Street<br>
+        Brussels, Belgium</p>
+      </div>
+      
+      <div class="contact-section">
+        <h3>🛠️ টেকনিক্যাল সাপোর্ট</h3>
+        <p>যদি আপনি কোনো টেকনিক্যাল সমস্যার সম্মুখীন হন, তাহলে দয়া করে নিচের তথ্যগুলো উল্লেখ করে আমাদের জানান:</p>
+        <ul>
+          <li>ব্রাউজারের নাম ও ভার্সন</li>
+          <li>ডিভাইসের ধরন (কম্পিউটার/মোবাইল)</li>
+          <li>সমস্যার বিস্তারিত বর্ণনা</li>
+        </ul>
+      </div>
+      
+      <div style="margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
+        <h4>💡 আপনার মতামত গুরুত্বপূর্ণ</h4>
+        <p>আপনার যেকোনো পরামর্শ, মতামত বা নতুন ফিচারের আইডিয়া থাকলে আমাদের সাথে শেয়ার করুন। আমরা আপনাদের ফিডব্যাকের ভিত্তিতে প্ল্যাটফর্মটি আরও উন্নত করতে চাই।</p>
+      </div>
+    </div>
+  `;
+  closeSideMenu();
+}
+
+function showPrivacyPage() {
+  hideHomePage();
+  hideError();
+  hideFavoritesControls();
+  
+  conversationArea.innerHTML = `
+    <div class="page-content">
+      <h2>🔒 গোপনীয়তা নীতি</h2>
+      <p><em>সর্বশেষ আপডেট: ${new Date().toLocaleDateString('bn-BD')}</em></p>
+      
+      <h3>📋 তথ্য সংগ্রহ</h3>
+      <p>আমরা নিম্নলিখিত তথ্যগুলো সংগ্রহ করি:</p>
+      <ul>
+        <li><strong>ব্যবহারের তথ্য:</strong> আপনি কোন ভাষা নির্বাচন করেন</li>
+        <li><strong>ফেভারিট তালিকা:</strong> আপনার সেভ করা শব্দগুলো</li>
+        <li><strong>সেটিংস:</strong> থিম এবং ভাষার পছন্দ</li>
+      </ul>
+      
+      <h3>💾 ডেটা সংরক্ষণ</h3>
+      <p>আপনার সকল ডেটা আপনার ডিভাইসের <strong>Local Storage</strong> এ সংরক্ষিত হয়। আমরা কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে সংরক্ষণ করি না।</p>
+      
+      <h3>🔐 ডেটা নিরাপত্তা</h3>
+      <ul>
+        <li>আপনার ডেটা শুধুমাত্র আপনার ডিভাইসেই থাকে</li>
+        <li>আমরা কোনো তৃতীয় পক্ষের সাথে আপনার তথ্য শেয়ার করি না</li>
+        <li>আপনি যেকোনো সময় আপনার ডেটা ডিলিট করতে পারেন</li>
+      </ul>
+      
+      <h3>🍪 কুকিজ</h3>
+      <p>আমরা শুধুমাত্র প্রয়োজনীয় Local Storage ব্যবহার করি। কোনো ট্র্যাকিং কুকিজ ব্যবহার করা হয় না।</p>
+      
+      <h3>🌐 তৃতীয় পক্ষের সেবা</h3>
+      <p>আমাদের ওয়েবসাইট সম্পূর্ণভাবে স্ট্যাটিক এবং কোনো তৃতীয় পক্ষের ট্র্যাকিং সার্ভিস ব্যবহার করে না।</p>
+      
+      <h3>👶 শিশুদের গোপনীয়তা</h3>
+      <p>আমাদের সেবা ১৩ বছরের কম বয়সী শিশুদের জন্য নয়। আমরা জেনেশুনে শিশুদের কাছ থেকে ব্যক্তিগত তথ্য সংগ্রহ করি না।</p>
+      
+      <h3>📝 নীতি পরিবর্তন</h3>
+      <p>এই গোপনীয়তা নীতিতে যেকোনো পরিবর্তন এই পৃষ্ঠায় প্রকাশ করা হবে। আমরা গুরুত্বপূর্ণ পরিবর্তনের ক্ষেত্রে আলাদা নোটিশ প্রদান করব।</p>
+      
+      <h3>📞 যোগাযোগ</h3>
+      <p>গোপনীয়তা সংক্রান্ত কোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন: <a href="mailto:privacy@speakeu.com">privacy@speakeu.com</a></p>
+      
+      <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 10px;">
+        <h4>⚖️ আপনার অধিকার</h4>
+        <ul>
+          <li>আপনার ডেটা দেখার অধিকার</li>
+          <li>আপনার ডেটা সংশোধনের অধিকার</li>
+          <li>আপনার ডেটা মুছে ফেলার অধিকার</li>
+          <li>আপনার ডেটা পোর্ট করার অধিকার</li>
+        </ul>
+      </div>
+    </div>
+  `;
+  closeSideMenu();
+}
+
+function showFavoritesPage() {
+  hideHomePage();
+  hideError();
+  
+  let favoritesHtml = `
+    <div class="page-content">
+      <h2>❤️ ফেভারিট তালিকা</h2>
+      <div class="favorites-overview">
+  `;
+  
+  let totalFavorites = 0;
+  for (const [lang, items] of Object.entries(favorites)) {
+    if (items.length > 0) {
+      totalFavorites += items.length;
+      const langName = getLanguageName(lang);
+      favoritesHtml += `
+        <div class="favorite-lang-section">
+          <h3>${langName}: ${items.length} টি আইটেম</h3>
+          <button onclick="loadLanguage('${lang}')" class="control-btn">দেখুন</button>
         </div>
+      `;
+    }
+  }
+  
+  if (totalFavorites === 0) {
+    favoritesHtml += `
+      <div class="no-favorites" style="text-align: center; padding: 40px;">
+        <h3>কোনো ফেভারিট আইটেম নেই</h3>
+        <p>একটি ভাষা নির্বাচন করে কিছু শব্দ ফেভারিট করুন।</p>
+      </div>
     `;
-    
-    document.body.appendChild(notification);
-    
-    // Auto remove after 3 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
+  } else {
+    favoritesHtml += `
+      <div style="margin-top: 30px;">
+        <h3>📊 পরিসংখ্যান</h3>
+        <p>মোট ফেভারিট: <strong>${totalFavorites}</strong> টি</p>
+        <p>ভাষার সংখ্যা: <strong>${Object.keys(favorites).filter(lang => favorites[lang].length > 0).length}</strong> টি</p>
+      </div>
+    `;
+  }
+  
+  favoritesHtml += `
+      </div>
+      <div style="margin-top: 30px;">
+        <button onclick="exportFavorites()" class="control-btn">📤 সব ফেভারিট Export করুন</button>
+        <button onclick="importFavorites()" class="control-btn">📥 ফেভারিট Import করুন</button>
+      </div>
+    </div>
+  `;
+  
+  conversationArea.innerHTML = favoritesHtml;
+  closeSideMenu();
 }
 
-function getNotificationColor(type) {
-    const colors = {
-        'success': '#27AE60',
-        'error': '#E74C3C',
-        'warning': '#F39C12',
-        'info': '#3498DB'
-    };
-    return colors[type] || colors.info;
+// Helper function to get language name
+function getLanguageName(langCode) {
+  const langNames = {
+    italy: '🇮🇹 ইতালি',
+    spain: '🇪🇸 স্পেন',
+    germany: '🇩🇪 জার্মানি',
+    france: '🇫🇷 ফ্রান্স',
+    russian: '🇷🇺 রাশিয়ান',
+    portugal: '🇵🇹 পর্তুগাল',
+    greece: '🇬🇷 গ্রিস',
+    netherlands: '🇳🇱 নেদারল্যান্ডস',
+    poland: '🇵🇱 পোল্যান্ড',
+    austria: '🇦🇹 অস্ট্রিয়া',
+    belgium: '🇧🇪 বেলজিয়াম',
+    czech: '🇨🇿 চেক প্রজাতন্ত্র',
+    denmark: '🇩🇰 ডেনমার্ক',
+    estonia: '🇪🇪 এস্তোনিয়া',
+    finland: '🇫🇮 ফিনল্যান্ড',
+    hungary: '🇭🇺 হাঙ্গেরি',
+    iceland: '🇮🇸 আইসল্যান্ড',
+    latvia: '🇱🇻 লাটভিয়া',
+    liechtenstein: '🇱🇮 লিচেনস্টাইন',
+    lithuania: '🇱🇹 লিথুয়ানিয়া',
+    luxembourg: '🇱🇺 লুক্সেমবার্গ',
+    malta: '🇲🇹 মাল্টা',
+    norway: '🇳🇴 নরওয়ে',
+    slovakia: '🇸🇰 স্লোভাকিয়া',
+    slovenia: '🇸🇮 স্লোভেনিয়া',
+    sweden: '🇸🇪 সুইডেন',
+    switzerland: '🇨🇭 সুইজারল্যান্ড',
+    albania: '🇦🇱 আলবেনিয়া',
+    andorra: '🇦🇩 আন্দোরা',
+    armenia: '🇦🇲 আর্মেনিয়া',
+    azerbaijan: '🇦🇿 আজারবাইজান',
+    bosnia: '🇧🇦 বসনিয়া ও হার্জেগোভিনা',
+    bulgaria: '🇧🇬 বুলগেরিয়া',
+    croatia: '🇭🇷 ক্রোয়েশিয়া',
+    cyprus: '🇨🇾 সাইপ্রাস',
+    georgia: '🇬🇪 জর্জিয়া',
+    ireland: '🇮🇪 আয়ারল্যান্ড',
+    kosovo: '🇽🇰 কসোভো',
+    moldova: '🇲🇩 মলদোভা',
+    monaco: '🇲🇨 মোনাকো',
+    montenegro: '🇲🇪 মন্টেনেগ্রো',
+    northmacedonia: '🇲🇰 উত্তর মেসিডোনিয়া',
+    romania: '🇷🇴 রোমানিয়া',
+    sanmarino: '🇸🇲 সান মারিনো',
+    serbia: '🇷🇸 সার্বিয়া',
+    turkey: '🇹🇷 তুরস্ক',
+    ukraine: '🇺🇦 ইউক্রেন',
+    unitedkingdom: '🇬🇧 যুক্তরাজ্য',
+    vatican: '🇻🇦 ভ্যাটিকান সিটি'
+  };
+  return langNames[langCode] || langCode;
 }
 
-function getNotificationIcon(type) {
-    const icons = {
-        'success': 'fa-check-circle',
-        'error': 'fa-exclamation-circle',
-        'warning': 'fa-exclamation-triangle',
-        'info': 'fa-info-circle'
-    };
-    return icons[type] || icons.info;
+// Close side menu
+function closeSideMenu() {
+  const sideMenu = document.getElementById('side-menu');
+  if (sideMenu) {
+    sideMenu.classList.remove('active');
+  }
 }
 
-// Add CSS for notifications
-const notificationStyles = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
+// Theme toggle
+modeToggle.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode');
+  modeToggle.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+// Menu toggle functionality
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+
+if (menuToggle && sideMenu) {
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('active');
+  });
+}
+
+// Close menu button
+const closeMenu = document.getElementById('close-menu');
+if (closeMenu && sideMenu) {
+  closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+  });
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (sideMenu && sideMenu.classList.contains('active')) {
+    if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      sideMenu.classList.remove('active');
     }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-`;
-
-// Inject notification styles
-const styleSheet = document.createElement('style');
-styleSheet.textContent = notificationStyles;
-document.head.appendChild(styleSheet);
-
-// Service Worker Registration (for PWA features)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(error) {
-                console.log('ServiceWorker registration failed');
-            });
-    });
-}
-
-// Performance monitoring
-window.addEventListener('load', function() {
-    // Mark app as fully loaded
-    performance.mark('app-loaded');
-    
-    // Log performance metrics
-    setTimeout(() => {
-        const perfData = performance.getEntriesByType('navigation')[0];
-        console.log('App Performance:', {
-            loadTime: perfData.loadEventEnd - perfData.loadEventStart,
-            domContentLoaded: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
-            totalTime: perfData.loadEventEnd - perfData.fetchStart
-        });
-    }, 0);
+  }
 });
