@@ -2512,5 +2512,671 @@
     "bn": "দাস ভার জের নেট ফন ইনেন।",
     "bnMeaning": "এটা আপনার খুব দয়া ছিল।",
     "en": "That was very kind of you."
+  },
+  {
+    "de": "Ich habe eine Frage.",
+    "bn": "ইশ হাবে আইনে ফ্রাগে।",
+    "bnMeaning": "আমার একটি প্রশ্ন আছে।",
+    "en": "I have a question."
+  },
+  {
+    "de": "Können Sie mir bitte helfen?",
+    "bn": "কোনেন জি মির বিটে হেলফেন?",
+    "bnMeaning": "আপনি কি দয়া করে আমাকে সাহায্য করতে পারেন?",
+    "en": "Can you please help me?"
+  },
+  {
+    "de": "Ich suche etwas.",
+    "bn": "ইশ জুখে এটভাস।",
+    "bnMeaning": "আমি কিছু একটা খুঁজছি।",
+    "en": "I am looking for something."
+  },
+  {
+    "de": "Was suchen Sie?",
+    "bn": "ভাস জুখেন জি?",
+    "bnMeaning": "আপনি কী খুঁজছেন?",
+    "en": "What are you looking for?"
+  },
+  {
+    "de": "Ich suche meinen Schlüssel.",
+    "bn": "ইশ জুখে মাইনেন শ্লুসেল।",
+    "bnMeaning": "আমি আমার চাবি খুঁজছি।",
+    "en": "I am looking for my key."
+  },
+  {
+    "de": "Haben Sie ihn gesehen?",
+    "bn": "হাবেন জি ইন গেজেহেন?",
+    "bnMeaning": "আপনি কি এটা দেখেছেন?",
+    "en": "Have you seen it?"
+  },
+  {
+    "de": "Wo haben Sie ihn zuletzt gesehen?",
+    "bn": "ভো হাবেন জি ইন ৎসুলেৎস্ট গেজেহেন?",
+    "bnMeaning": "আপনি এটা শেষবার কোথায় দেখেছিলেন?",
+    "en": "Where did you last see it?"
+  },
+  {
+    "de": "Ich erinnere mich nicht.",
+    "bn": "ইশ এরিনেরে মিশ নিশট।",
+    "bnMeaning": "আমার মনে নেই।",
+    "en": "I don't remember."
+  },
+  {
+    "de": "Denken Sie nach.",
+    "bn": "ডেঙ্কেন জি নাখ।",
+    "bnMeaning": "একটু ভেবে দেখুন।",
+    "en": "Think about it."
+  },
+  {
+    "de": "Vielleicht ist er zu Hause.",
+    "bn": "ফিলাইশট ইস্ট এর ৎসু হাউজে।",
+    "bnMeaning": "হয়তো এটা বাসায় আছে।",
+    "en": "Maybe it is at home."
+  },
+  {
+    "de": "Schauen Sie in Ihrer Tasche.",
+    "bn": "শাউয়েন জি ইন ইরার তাশে।",
+    "bnMeaning": "আপনার ব্যাগে দেখুন।",
+    "en": "Look in your bag."
+  },
+  {
+    "de": "Ich habe schon überall gesucht.",
+    "bn": "ইশ হাবে শোন উবারাল গেজুখট।",
+    "bnMeaning": "আমি সব জায়গায় খুঁজেছি।",
+    "en": "I have already looked everywhere."
+  },
+  {
+    "de": "Haben Sie im Auto nachgesehen?",
+    "bn": "হাবেন জি ইম আউটো নাখগেজেহেন?",
+    "bnMeaning": "আপনি কি গাড়িতে দেখেছেন?",
+    "en": "Have you checked in the car?"
+  },
+  {
+    "de": "Gute Idee!",
+    "bn": "গুটে ইডে!",
+    "bnMeaning": "ভালো আইডিয়া!",
+    "en": "Good idea!"
+  },
+  {
+    "de": "Da ist er!",
+    "bn": "দা ইস্ট এর!",
+    "bnMeaning": "ওই তো!",
+    "en": "There it is!"
+  },
+  {
+    "de": "Ich habe ihn gefunden!",
+    "bn": "ইশ হাবে ইন গেফুন্ডেন!",
+    "bnMeaning": "আমি এটা পেয়েছি!",
+    "en": "I found it!"
+  },
+  {
+    "de": "Wo war er?",
+    "bn": "ভো ভার এর?",
+    "bnMeaning": "এটা কোথায় ছিল?",
+    "en": "Where was it?"
+  },
+  {
+    "de": "Er war unter dem Sofa.",
+    "bn": "এর ভার উনটার ডেম জোফা।",
+    "bnMeaning": "এটা সোফার নিচে ছিল।",
+    "en": "It was under the sofa."
+  },
+  {
+    "de": "Das passiert mir oft.",
+    "bn": "দাস পাসির্ট মির অফট।",
+    "bnMeaning": "এটা আমার সাথে প্রায়ই হয়।",
+    "en": "That happens to me often."
+  },
+  {
+    "de": "Mir auch.",
+    "bn": "মির আউখ।",
+    "bnMeaning": "আমারও।",
+    "en": "Me too."
+  },
+  {
+    "de": "Das ist normal.",
+    "bn": "দাস ইস্ট নোর্মাল।",
+    "bnMeaning": "এটা স্বাভাবিক।",
+    "en": "That is normal."
+  },
+  {
+    "de": "Ich bin so vergesslich.",
+    "bn": "ইশ বিন জো ফেরগেসলিশ।",
+    "bnMeaning": "আমি খুব ভুলোমন।",
+    "en": "I am so forgetful."
+  },
+  {
+    "de": "Das macht nichts.",
+    "bn": "দাস মাখট নিশটস।",
+    "bnMeaning": "কোনো ব্যাপার না।",
+    "en": "That doesn't matter."
+  },
+  {
+    "de": "Hauptsache, Sie haben ihn gefunden.",
+    "bn": "হাউপটজাখে, জি হাবেন ইন গেফুন্ডেন।",
+    "bnMeaning": "মূল কথা, আপনি এটা পেয়েছেন।",
+    "en": "The main thing is that you found it."
+  },
+  {
+    "de": "Jetzt kann ich nach Hause gehen.",
+    "bn": "ইয়েৎস্ট কান ইশ নাখ হাউজে গেহেন।",
+    "bnMeaning": "এখন আমি বাসায় যেতে পারি।",
+    "en": "Now I can go home."
+  },
+  {
+    "de": "Fahren Sie vorsichtig.",
+    "bn": "ফারেন জি ফোরজিশটিগ।",
+    "bnMeaning": "সাবধানে গাড়ি চালান।",
+    "en": "Drive carefully."
+  },
+  {
+    "de": "Schönen Feierabend.",
+    "bn": "শোনেন ফাইয়ারাবেন্ড।",
+    "bnMeaning": "ভালো সন্ধ্যা।",
+    "en": "Have a good evening."
+  },
+  {
+    "de": "Ihnen auch.",
+    "bn": "ইনেন আউখ।",
+    "bnMeaning": "আপনারও।",
+    "en": "You too."
+  },
+  {
+    "de": "Bis morgen.",
+    "bn": "বিস মোর্গেন।",
+    "bnMeaning": "আগামীকাল দেখা হবে।",
+    "en": "See you tomorrow."
+  },
+  {
+    "de": "Ja, bis morgen.",
+    "bn": "ইয়া, বিস মোর্গেন।",
+    "bnMeaning": "হ্যাঁ, আগামীকাল দেখা হবে।",
+    "en": "Yes, see you tomorrow."
+  },
+  {
+    "de": "Haben Sie gut geschlafen?",
+    "bn": "হাবেন জি গুট গেশ্লাফেন?",
+    "bnMeaning": "আপনি কি ভালো ঘুমিয়েছেন?",
+    "en": "Did you sleep well?"
+  },
+  {
+    "de": "Ja, sehr gut.",
+    "bn": "ইয়া, জের গুট।",
+    "bnMeaning": "হ্যাঁ, খুব ভালো।",
+    "en": "Yes, very well."
+  },
+  {
+    "de": "Nein, nicht so gut.",
+    "bn": "নাইন, নিশট জো গুট।",
+    "bnMeaning": "না, খুব ভালো না।",
+    "en": "No, not so well."
+  },
+  {
+    "de": "Warum nicht?",
+    "bn": "ভারুম নিশট?",
+    "bnMeaning": "কেন না?",
+    "en": "Why not?"
+  },
+  {
+    "de": "Es war zu laut.",
+    "bn": "এস ভার ৎসু লাউট।",
+    "bnMeaning": "খুব শব্দ ছিল।",
+    "en": "It was too loud."
+  },
+  {
+    "de": "Es war zu heiß.",
+    "bn": "এস ভার ৎসু হাইস।",
+    "bnMeaning": "খুব গরম ছিল।",
+    "en": "It was too hot."
+  },
+  {
+    "de": "Ich konnte nicht einschlafen.",
+    "bn": "ইশ কোনটে নিশট আইনশ্লাফেন।",
+    "bnMeaning": "আমি ঘুমিয়ে পড়তে পারিনি।",
+    "en": "I couldn't fall asleep."
+  },
+  {
+    "de": "Das kenne ich.",
+    "bn": "দাস কেনে ইশ।",
+    "bnMeaning": "আমি এটা জানি।",
+    "en": "I know that."
+  },
+  {
+    "de": "Haben Sie etwas getrunken?",
+    "bn": "হাবেন জি এটভাস গেত্রুঙ্কেন?",
+    "bnMeaning": "আপনি কি কিছু পান করেছেন?",
+    "en": "Did you drink something?"
+  },
+  {
+    "de": "Ja, einen Kaffee.",
+    "bn": "ইয়া, আইনেন কাফে।",
+    "bnMeaning": "হ্যাঁ, একটি কফি।",
+    "en": "Yes, a coffee."
+  },
+  {
+    "de": "Das war der Fehler.",
+    "bn": "দাস ভার ডের ফেলার।",
+    "bnMeaning": "এটাই ভুল ছিল।",
+    "en": "That was the mistake."
+  },
+  {
+    "de": "Kaffee am Abend ist nicht gut.",
+    "bn": "কাফে আম আবেন্ড ইস্ট নিশট গুট।",
+    "bnMeaning": "সন্ধ্যায় কফি ভালো না।",
+    "en": "Coffee in the evening is not good."
+  },
+  {
+    "de": "Das weiß ich jetzt.",
+    "bn": "দাস ভাইস ইশ ইয়েৎস্ট।",
+    "bnMeaning": "এটা আমি এখন জানি।",
+    "en": "I know that now."
+  },
+  {
+    "de": "Trinken Sie lieber Tee.",
+    "bn": "ত্রিঙ্কেন জি লিবার তে।",
+    "bnMeaning": "বরং চা পান করুন।",
+    "en": "Better drink tea."
+  },
+  {
+    "de": "Oder warme Milch.",
+    "bn": "ওডার ভার্মে মিলশ।",
+    "bnMeaning": "অথবা গরম দুধ।",
+    "en": "Or warm milk."
+  },
+  {
+    "de": "Das hilft beim Einschlafen.",
+    "bn": "দাস হিল্ফট বাইম আইনশ্লাফেন।",
+    "bnMeaning": "এটা ঘুমাতে সাহায্য করে।",
+    "en": "That helps with falling asleep."
+  },
+  {
+    "de": "Ich probiere das heute Abend.",
+    "bn": "ইশ প্রোবিরে দাস হয়টে আবেন্ড।",
+    "bnMeaning": "আমি আজ সন্ধ্যায় এটা চেষ্টা করব।",
+    "en": "I'll try that this evening."
+  },
+  {
+    "de": "Das ist eine gute Idee.",
+    "bn": "দাস ইস্ট আইনে গুটে ইডে।",
+    "bnMeaning": "এটা একটি ভালো আইডিয়া।",
+    "en": "That is a good idea."
+  },
+  {
+    "de": "Vielen Dank für den Tipp.",
+    "bn": "ফিলেন ডাঙ্ক ফুর ডেন টিপ।",
+    "bnMeaning": "পরামর্শের জন্য অনেক ধন্যবাদ।",
+    "en": "Thank you very much for the tip."
+  },
+  {
+    "de": "Gern geschehen.",
+    "bn": "গের্ন গেশেহেন।",
+    "bnMeaning": "আনন্দের সাথে।",
+    "en": "You're welcome."
+  },
+  {
+    "de": "Ich hoffe, es hilft.",
+    "bn": "ইশ হোফে, এস হিল্ফট।",
+    "bnMeaning": "আমি আশা করি, এটা কাজ করবে।",
+    "en": "I hope it helps."
+  },
+  {
+    "de": "Das wird es bestimmt.",
+    "bn": "দাস ভির্ড এস বেশটিমট।",
+    "bnMeaning": "এটা নিশ্চয়ই কাজ করবে।",
+    "en": "It certainly will."
+  },
+  {
+    "de": "Ich fühle mich schon besser.",
+    "bn": "ইশ ফুলে মিশ শোন বেসার।",
+    "bnMeaning": "আমি ইতিমধ্যে ভালো বোধ করছি।",
+    "en": "I already feel better."
+  },
+  {
+    "de": "Das freut mich.",
+    "bn": "দাস ফ্রয়ট মিশ।",
+    "bnMeaning": "এটা আমাকে খুশি করে।",
+    "en": "That makes me happy."
+  },
+  {
+    "de": "Sie sind sehr nett.",
+    "bn": "জি জিন্ড জের নেট।",
+    "bnMeaning": "আপনি খুব দয়ালু।",
+    "en": "You are very kind."
+  },
+  {
+    "de": "Das ist doch selbstverständlich.",
+    "bn": "দাস ইস্ট দোখ জেল্বস্টফেরশটেন্ডলিশ।",
+    "bnMeaning": "এটা তো স্বাভাবিক।",
+    "en": "That goes without saying."
+  },
+  {
+    "de": "Wir helfen uns gegenseitig.",
+    "bn": "ভির হেলফেন উনস গেগেনজাইটিগ।",
+    "bnMeaning": "আমরা একে অপরকে সাহায্য করি।",
+    "en": "We help each other."
+  },
+  {
+    "de": "So sollte es sein.",
+    "bn": "জো জোলটে এস জাইন।",
+    "bnMeaning": "এভাবেই হওয়া উচিত।",
+    "en": "That's how it should be."
+  },
+  {
+    "de": "Absolut richtig.",
+    "bn": "আবজোলুট রিশটিগ।",
+    "bnMeaning": "একদম ঠিক।",
+    "en": "Absolutely right."
+  },
+  {
+    "de": "Haben Sie heute etwas vor?",
+    "bn": "হাবেন জি হয়টে এটভাস ফোর?",
+    "bnMeaning": "আজ আপনার কোনো পরিকল্পনা আছে?",
+    "en": "Do you have any plans today?"
+  },
+  {
+    "de": "Ja, ich gehe einkaufen.",
+    "bn": "ইয়া, ইশ গেহে আইনকাউফেন।",
+    "bnMeaning": "হ্যাঁ, আমি কেনাকাটা করতে যাব।",
+    "en": "Yes, I'm going shopping."
+  },
+  {
+    "de": "Was brauchen Sie?",
+    "bn": "ভাস ব্রাউখেন জি?",
+    "bnMeaning": "আপনার কী দরকার?",
+    "en": "What do you need?"
+  },
+  {
+    "de": "Ich brauche Lebensmittel.",
+    "bn": "ইশ ব্রাউখে লেবেনসমিটেল।",
+    "bnMeaning": "আমার খাবারদাবার দরকার।",
+    "en": "I need groceries."
+  },
+  {
+    "de": "Der Kühlschrank ist leer.",
+    "bn": "ডের কুলশ্রাঙ্ক ইস্ট লের।",
+    "bnMeaning": "ফ্রিজ খালি।",
+    "en": "The refrigerator is empty."
+  },
+  {
+    "de": "Das kenne ich auch.",
+    "bn": "দাস কেনে ইশ আউখ।",
+    "bnMeaning": "আমিও এটা জানি।",
+    "en": "I know that too."
+  },
+  {
+    "de": "Ich gehe auch einkaufen.",
+    "bn": "ইশ গেহে আউখ আইনকাউফেন।",
+    "bnMeaning": "আমিও কেনাকাটা করতে যাব।",
+    "en": "I'm also going shopping."
+  },
+  {
+    "de": "Sollen wir zusammen gehen?",
+    "bn": "জোলেন ভির ৎসুজামেন গেহেন?",
+    "bnMeaning": "আমরা কি একসাথে যাব?",
+    "en": "Should we go together?"
+  },
+  {
+    "de": "Das ist eine gute Idee.",
+    "bn": "দাস ইস্ট আইনে গুটে ইডে।",
+    "bnMeaning": "এটা একটি ভালো আইডিয়া।",
+    "en": "That is a good idea."
+  },
+  {
+    "de": "Wann sollen wir gehen?",
+    "bn": "ভান জোলেন ভির গেহেন?",
+    "bnMeaning": "আমরা কখন যাব?",
+    "en": "When should we go?"
+  },
+  {
+    "de": "In einer Stunde?",
+    "bn": "ইন আইনার শটুন্ডে?",
+    "bnMeaning": "এক ঘন্টা পরে?",
+    "en": "In one hour?"
+  },
+  {
+    "de": "Das passt mir gut.",
+    "bn": "দাস পাসট মির গুট।",
+    "bnMeaning": "এটা আমার ভালো লাগছে।",
+    "en": "That suits me well."
+  },
+  {
+    "de": "Wo treffen wir uns?",
+    "bn": "ভো ত্রেফেন ভির উনস?",
+    "bnMeaning": "আমরা কোথায় দেখা করব?",
+    "en": "Where do we meet?"
+  },
+  {
+    "de": "Vor dem Supermarkt?",
+    "bn": "ফোর ডেম সুপারমার্কট?",
+    "bnMeaning": "সুপারমার্কেটের সামনে?",
+    "en": "In front of the supermarket?"
+  },
+  {
+    "de": "Einverstanden.",
+    "bn": "আইনফেরশটান্ডেন।",
+    "bnMeaning": "রাজি।",
+    "en": "Agreed."
+  },
+  {
+    "de": "Bis gleich.",
+    "bn": "বিস গ্লাইশ।",
+    "bnMeaning": "একটু পরে দেখা হবে।",
+    "en": "See you soon."
+  },
+  {
+    "de": "Ja, bis gleich.",
+    "bn": "ইয়া, বিস গ্লাইশ।",
+    "bnMeaning": "হ্যাঁ, একটু পরে দেখা হবে।",
+    "en": "Yes, see you soon."
+  },
+  {
+    "de": "Sind Sie schon lange hier?",
+    "bn": "জিন্ড জি শোন লাঙ্গে হির?",
+    "bnMeaning": "আপনি এখানে কি অনেকদিন ধরে আছেন?",
+    "en": "Have you been here long?"
+  },
+  {
+    "de": "Nein, ich warte erst fünf Minuten.",
+    "bn": "নাইন, ইশ ভার্টে এর্স্ট ফুনফ মিনুটেন।",
+    "bnMeaning": "না, আমি মাত্র পাঁচ মিনিট অপেক্ষা করছি।",
+    "en": "No, I've only been waiting five minutes."
+  },
+  {
+    "de": "Das ist pünktlich.",
+    "bn": "দাস ইস্ট পুঙ্কটলিশ।",
+    "bnMeaning": "এটা সময়মতো।",
+    "en": "That is punctual."
+  },
+  {
+    "de": "Ich bin immer pünktlich.",
+    "bn": "ইশ বিন ইমার পুঙ্কটলিশ।",
+    "bnMeaning": "আমি সবসময় সময়মতো থাকি।",
+    "en": "I am always punctual."
+  },
+  {
+    "de": "Das finde ich gut.",
+    "bn": "দাস ফিন্ডে ইশ গুট।",
+    "bnMeaning": "আমি এটা ভালো মনে করি।",
+    "en": "I think that's good."
+  },
+  {
+    "de": "Ich mag es nicht zu warten.",
+    "bn": "ইশ মাগ এস নিশট ৎসু ভার্টেন।",
+    "bnMeaning": "আমি অপেক্ষা করতে পছন্দ করি না।",
+    "en": "I don't like to wait."
+  },
+  {
+    "de": "Ich auch nicht.",
+    "bn": "ইশ আউখ নিশট।",
+    "bnMeaning": "আমিও না।",
+    "en": "Me neither."
+  },
+  {
+    "de": "Zeit ist kostbar.",
+    "bn": "ৎসাইট ইস্ট কোস্টবার।",
+    "bnMeaning": "সময় মূল্যবান।",
+    "en": "Time is precious."
+  },
+  {
+    "de": "Das stimmt.",
+    "bn": "দাস শটিমট।",
+    "bnMeaning": "এটা ঠিক।",
+    "en": "That's right."
+  },
+  {
+    "de": "Gehen wir rein?",
+    "bn": "গেহেন ভির রাইন?",
+    "bnMeaning": "আমরা কি ভিতরে যাব?",
+    "en": "Shall we go in?"
+  },
+  {
+    "de": "Ja, gehen wir.",
+    "bn": "ইয়া, গেহেন ভির।",
+    "bnMeaning": "হ্যাঁ, চলো যাই।",
+    "en": "Yes, let's go."
+  },
+  {
+    "de": "Brauchen Sie einen Einkaufswagen?",
+    "bn": "ব্রাউখেন জি আইনেন আইনকাউফসভাগেন?",
+    "bnMeaning": "আপনার কি একটি কেনাকাটার ট্রলি দরকার?",
+    "en": "Do you need a shopping cart?"
+  },
+  {
+    "de": "Ja, ich kaufe viel ein.",
+    "bn": "ইয়া, ইশ কাউফে ফিল আইন।",
+    "bnMeaning": "হ্যাঁ, আমি অনেক কিছু কিনব।",
+    "en": "Yes, I'm buying a lot."
+  },
+  {
+    "de": "Ich nehme nur einen Korb.",
+    "bn": "ইশ নেহমে নুর আইনেন কোর্ব।",
+    "bnMeaning": "আমি শুধু একটি ঝুড়ি নেব।",
+    "en": "I'll just take a basket."
+  },
+  {
+    "de": "Ich brauche nicht viel.",
+    "bn": "ইশ ব্রাউখে নিশট ফিল।",
+    "bnMeaning": "আমার বেশি কিছু দরকার নেই।",
+    "en": "I don't need much."
+  },
+  {
+    "de": "Was steht auf Ihrer Liste?",
+    "bn": "ভাস শটেট আউফ ইরার লিস্টে?",
+    "bnMeaning": "আপনার তালিকায় কী আছে?",
+    "en": "What's on your list?"
+  },
+  {
+    "de": "Brot, Milch, Eier und Fleisch.",
+    "bn": "ব্রোট, মিলশ, আইয়ার উন্ড ফ্লাইশ।",
+    "bnMeaning": "রুটি, দুধ, ডিম আর মাংস।",
+    "en": "Bread, milk, eggs and meat."
+  },
+  {
+    "de": "Das ist das Wichtigste.",
+    "bn": "দাস ইস্ট দাস ভিশটিগস্টে।",
+    "bnMeaning": "এটাই সবচেয়ে গুরুত্বপূর্ণ।",
+    "en": "That's the most important."
+  },
+  {
+    "de": "Ich brauche auch Gemüse.",
+    "bn": "ইশ ব্রাউখে আউখ গেমুজে।",
+    "bnMeaning": "আমার সবজিও দরকার।",
+    "en": "I also need vegetables."
+  },
+  {
+    "de": "Und Obst.",
+    "bn": "উন্ড ওবস্ট।",
+    "bnMeaning": "আর ফল।",
+    "en": "And fruit."
+  },
+  {
+    "de": "Das ist gesund.",
+    "bn": "দাস ইস্ট গেজুন্ড।",
+    "bnMeaning": "এটা স্বাস্থ্যকর।",
+    "en": "That is healthy."
+  },
+  {
+    "de": "Ja, das ist wichtig.",
+    "bn": "ইয়া, দাস ইস্ট ভিশটিগ।",
+    "bnMeaning": "হ্যাঁ, এটা গুরুত্বপূর্ণ।",
+    "en": "Yes, that is important."
+  },
+  {
+    "de": "Wo finden wir das Brot?",
+    "bn": "ভো ফিন্ডেন ভির দাস ব্রোট?",
+    "bnMeaning": "আমরা রুটি কোথায় পাব?",
+    "en": "Where do we find the bread?"
+  },
+  {
+    "de": "In der Bäckerei-Abteilung.",
+    "bn": "ইন ডের বেকেরাই-আপটাইলুং।",
+    "bnMeaning": "বেকারি বিভাগে।",
+    "en": "In the bakery section."
+  },
+  {
+    "de": "Das ist dort drüben.",
+    "bn": "দাস ইস্ট দোর্ট দ্রুবেন।",
+    "bnMeaning": "এটা ওখানে।",
+    "en": "That's over there."
+  },
+  {
+    "de": "Ich sehe es.",
+    "bn": "ইশ জেহে এস।",
+    "bnMeaning": "আমি এটা দেখতে পাচ্ছি।",
+    "en": "I see it."
+  },
+  {
+    "de": "Gehen wir zuerst dorthin.",
+    "bn": "গেহেন ভির ৎসুএর্স্ট দোর্টহিন।",
+    "bnMeaning": "আমরা প্রথমে ওখানে যাই।",
+    "en": "Let's go there first."
+  },
+  {
+    "de": "Gute Idee.",
+    "bn": "গুটে ইডে।",
+    "bnMeaning": "ভালো আইডিয়া।",
+    "en": "Good idea."
+  },
+  {
+    "de": "Welches Brot mögen Sie?",
+    "bn": "ভেলশেস ব্রোট মোগেন জি?",
+    "bnMeaning": "আপনি কোন রুটি পছন্দ করেন?",
+    "en": "Which bread do you like?"
+  },
+  {
+    "de": "Ich mag Vollkornbrot.",
+    "bn": "ইশ মাগ ফোলকোর্নব্রোট।",
+    "bnMeaning": "আমি পূর্ণ শস্যের রুটি পছন্দ করি।",
+    "en": "I like whole grain bread."
+  },
+  {
+    "de": "Das ist sehr gesund.",
+    "bn": "দাস ইস্ট জের গেজুন্ড।",
+    "bnMeaning": "এটা খুব স্বাস্থ্যকর।",
+    "en": "That is very healthy."
+  },
+  {
+    "de": "Ich nehme Weißbrot.",
+    "bn": "ইশ নেহমে ভাইসব্রোট।",
+    "bnMeaning": "আমি সাদা রুটি নেব।",
+    "en": "I'll take white bread."
+  },
+  {
+    "de": "Das schmeckt mir besser.",
+    "bn": "দাস শমেকট মির বেসার।",
+    "bnMeaning": "এটার স্বাদ আমার ভালো লাগে।",
+    "en": "I like the taste better."
+  },
+  {
+    "de": "Jeder hat seinen Geschmack.",
+    "bn": "ইয়েডার হাট জাইনেন গেশমাক।",
+    "bnMeaning": "প্রত্যেকের নিজস্ব রুচি আছে।",
+    "en": "Everyone has their own taste."
+  },
+  {
+    "de": "Das ist richtig.",
+    "bn": "দাস ইস্ট রিশটিগ।",
+    "bnMeaning": "এটা ঠিক।",
+    "en": "That is right."
   }
 ]
