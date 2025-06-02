@@ -8,7 +8,6 @@ const closeModal = document.querySelector('.close-modal');
 // Current language data
 let currentLanguageData = [];
 let currentLanguage = '';
-let isShowingHome = false;
 
 const langCodeMap = {
   austria: 'de',
@@ -97,7 +96,6 @@ class ProgressTracker {
     if (!langProgress.learnedWords.includes(wordIndex)) {
       langProgress.learnedWords.push(wordIndex);
       this.progress.totalWordsLearned++;
-      langProgress.lastStudied = new Date().toISOString();
       this.updateStreak();
       this.checkAchievements();
       this.saveProgress();
@@ -111,7 +109,7 @@ class ProgressTracker {
     const lastStudy = this.progress.lastStudyDate;
     
     if (lastStudy === today) {
-      return; // Already studied today
+      return;
     }
     
     const yesterday = new Date();
@@ -232,7 +230,6 @@ languageSelect.addEventListener('change', () => {
 
 // ✅ ভাষা JSON লোড করে UI রেন্ডার
 function loadLanguage(lang) {
-  isShowingHome = false;
   currentLanguage = lang;
   fetch(`languages/${lang}.json`)
     .then(res => res.json())
@@ -294,12 +291,10 @@ function toggleWordLearned(wordIndex) {
   const isCurrentlyLearned = langProgress.learnedWords.includes(wordIndex);
   
   if (isCurrentlyLearned) {
-    // Remove from learned words
     const index = langProgress.learnedWords.indexOf(wordIndex);
     langProgress.learnedWords.splice(index, 1);
     progressTracker.progress.totalWordsLearned--;
   } else {
-    // Mark as learned
     progressTracker.markWordLearned(currentLanguage, wordIndex);
   }
   
@@ -313,14 +308,12 @@ function updateCurrentProgress(language, totalWords) {
   const learnedCount = langProgress.learnedWords.length;
   const progressPercent = totalWords > 0 ? (learnedCount / totalWords) * 100 : 0;
 
-  // Update language progress in tracker
   progressTracker.progress.languages[language] = {
     ...langProgress,
     totalWords: totalWords
   };
   progressTracker.saveProgress();
 
-  // Update UI
   document.getElementById('progress-language').textContent = `${language.charAt(0).toUpperCase() + language.slice(1)} Progress`;
   document.getElementById('progress-text').textContent = `${learnedCount}/${totalWords} words learned`;
   document.getElementById('progress-bar').style.width = `${progressPercent}%`;
@@ -332,151 +325,6 @@ modeToggle.addEventListener('click', () => {
   modeToggle.textContent = isDark ? '🌙' : '☀️';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
-
-// Home Page Functions
-function showHome() {
-  document.getElementById('side-menu').classList.remove('active');
-  isShowingHome = true;
-  
-  // Hide current progress
-  const currentProgressDiv = document.getElementById('current-progress');
-  currentProgressDiv.style.display = 'none';
-  
-  // Show home content
-  showHomeContent();
-}
-
-function showHomeContent() {
-  conversationArea.innerHTML = `
-    <div class="home-container">
-      <!-- Hero Section -->
-      <div class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="gradient-text">Speak EU</span>
-          </h1>
-          <p class="hero-subtitle">ইউরোপের ভাষা শিখুন আত্মবিশ্বাসের সাথে</p>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-number">${Object.keys(progressTracker.progress.languages).length}</div>
-              <div class="stat-label">Languages</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">${progressTracker.progress.totalWordsLearned}</div>
-              <div class="stat-label">Words Learned</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">${progressTracker.progress.streak}</div>
-              <div class="stat-label">Day Streak</div>
-            </div>
-          </div>
-        </div>
-        <div class="hero-animation">
-          <div class="floating-languages">
-            <span class="lang-bubble">🇮🇹 Ciao</span>
-            <span class="lang-bubble">🇪🇸 Hola</span>
-            <span class="lang-bubble">🇫🇷 Bonjour</span>
-            <span class="lang-bubble">🇩🇪 Hallo</span>
-            <span class="lang-bubble">🇬🇷 Γεια</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Features Grid -->
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>44+ ইউরোপীয় ভাষা</h3>
-          <p>সকল প্রধান ইউরোপীয় দেশের ভাষা একটি প্ল্যাটফর্মে</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>প্রোগ্রেস ট্র্যাকিং</h3>
-          <p>আপনার শেখার অগ্রগতি পর্যবেক্ষণ করুন ও লক্ষ্য অর্জন করুন</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>ব্যবহারিক বাক্য</h3>
-          <p>দৈনন্দিন জীবনে ব্যবহৃত প্রয়োজনীয় বাক্য ও শব্দ</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🏆</div>
-          <h3>অর্জন ব্যাজ</h3>
-          <p>শেখার প্রেরণা বৃদ্ধির জন্য বিভিন্ন অর্জন আনলক করুন</p>
-        </div>
-      </div>
-
-      <!-- Quick Language Selector -->
-      <div class="quick-language-section">
-        <h2>দ্রুত শুরু করুন</h2>
-        <div class="quick-lang-grid">
-          <button class="quick-lang-btn" onclick="quickSelectLanguage('italy')">
-            <span class="flag">🇮🇹</span>
-            <span class="name">Italian</span>
-          </button>
-          <button class="quick-lang-btn" onclick="quickSelectLanguage('spain')">
-            <span class="flag">🇪🇸</span>
-            <span class="name">Spanish</span>
-          </button>
-          <button class="quick-lang-btn" onclick="quickSelectLanguage('france')">
-            <span class="flag">🇫🇷</span>
-            <span class="name">French</span>
-          </button>
-          <button class="quick-lang-btn" onclick="quickSelectLanguage('germany')">
-            <span class="flag">🇩🇪</span>
-            <span class="name">German</span>
-          </button>
-          <button class="quick-lang-btn" onclick="quickSelectLanguage('greece')">
-            <span class="flag">🇬🇷</span>
-            <span class="name">Greek</span>
-          </button>
-          <button class="quick-lang-btn" onclick="quickSelectLanguage('portugal')">
-            <span class="flag">🇵🇹</span>
-            <span class="name">Portuguese</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Learning Tips -->
-      <div class="tips-section">
-        <h2>🎓 শেখার কৌশল</h2>
-        <div class="tips-grid">
-          <div class="tip-card">
-            <div class="tip-number">1</div>
-            <div class="tip-content">
-              <h4>নিয়মিত অনুশীলন</h4>
-              <p>প্রতিদিন অন্তত ৫-১০টি নতুন শব্দ শিখুন</p>
-            </div>
-          </div>
-          <div class="tip-card">
-            <div class="tip-number">2</div>
-            <div class="tip-content">
-              <h4>উচ্চারণ অনুশীলন</h4>
-              <p>শব্দগুলো উচ্চ স্বরে বলে অনুশীলন করুন</p>
-            </div>
-          </div>
-          <div class="tip-card">
-            <div class="tip-number">3</div>
-            <div class="tip-content">
-              <h4>প্রসঙ্গে ব্যবহার</h4>
-              <p>দৈনন্দিন পরিস্থিতিতে শেখা বাক্য ব্যবহার করুন</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function quickSelectLanguage(language) {
-  isShowingHome = false;
-  languageSelect.value = language;
-  localStorage.setItem('selectedLanguage', language);
-  loadLanguage(language);
-}
 
 // Progress Modal Functions
 progressToggle.addEventListener('click', () => {
@@ -507,20 +355,11 @@ function updateProgressStats() {
 }
 
 function createProgressCharts() {
-  // Destroy existing charts if they exist
-  if (window.languageChart) {
-    window.languageChart.destroy();
-  }
-  if (window.activityChart) {
-    window.activityChart.destroy();
-  }
-
-  // Language Progress Chart
   const languageCtx = document.getElementById('languageChart').getContext('2d');
   const languages = Object.keys(progressTracker.progress.languages);
   const languageData = languages.map(lang => progressTracker.progress.languages[lang].learnedWords.length);
 
-  window.languageChart = new Chart(languageCtx, {
+  new Chart(languageCtx, {
     type: 'doughnut',
     data: {
       labels: languages.map(lang => lang.charAt(0).toUpperCase() + lang.slice(1)),
@@ -542,7 +381,6 @@ function createProgressCharts() {
     }
   });
 
-  // Activity Chart (last 7 days)
   const activityCtx = document.getElementById('activityChart').getContext('2d');
   const last7Days = [];
   const activityData = [];
@@ -551,11 +389,10 @@ function createProgressCharts() {
     const date = new Date();
     date.setDate(date.getDate() - i);
     last7Days.push(date.toLocaleDateString('en-US', { weekday: 'short' }));
-    // Simple activity simulation - in real app, you'd track daily activity
-    activityData.push(Math.floor(Math.random() * 10) + 1);
+    activityData.push(Math.random() * 10);
   }
 
-  window.activityChart = new Chart(activityCtx, {
+  new Chart(activityCtx, {
     type: 'line',
     data: {
       labels: last7Days,
@@ -564,8 +401,7 @@ function createProgressCharts() {
         data: activityData,
         borderColor: '#36A2EB',
         backgroundColor: 'rgba(54, 162, 235, 0.1)',
-        tension: 0.4,
-        fill: true
+        tension: 0.4
       }]
     },
     options: {
@@ -626,6 +462,14 @@ if (closeMenu && sideMenu) {
 }
 
 // Menu Functions
+function showHome() {
+  document.getElementById('side-menu').classList.remove('active');
+  // Reset to home view - reload current language if selected
+  if (currentLanguage) {
+    loadLanguage(currentLanguage);
+  }
+}
+
 function exportProgress() {
   progressTracker.exportProgress();
   document.getElementById('side-menu').classList.remove('active');
@@ -634,4 +478,78 @@ function exportProgress() {
 function resetProgress() {
   progressTracker.resetProgress();
   document.getElementById('side-menu').classList.remove('active');
+}
+
+// 🧹 Clear Software Function
+function clearSoftware() {
+  if (confirm('Are you sure you want to clear all software data and restart? This will remove all settings and progress.')) {
+    // Clear all localStorage data
+    localStorage.clear();
+    
+    // Reset all variables
+    currentLanguageData = [];
+    currentLanguage = '';
+    
+    // Reset language selector
+    languageSelect.value = '';
+    
+    // Reset theme to light mode
+    document.body.classList.remove('dark-mode');
+    modeToggle.textContent = '☀️';
+    
+    // Hide progress bar
+    const currentProgressDiv = document.getElementById('current-progress');
+    currentProgressDiv.style.display = 'none';
+    
+    // Show default content
+    conversationArea.innerHTML = `
+      <!-- Intro -->
+      <p class="mb-6 leading-relaxed">
+        <strong class="font-semibold text-blue-600 dark:text-blue-300">Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে। এই প্ল্যাটফর্মটি বিশেষভাবে ডিজাইন করা হয়েছে যারা দ্রুত এবং কার্যকরভাবে স্থানীয় ভাষা শিখতে চান তাদের জন্য।
+      </p>
+
+      <!-- 🚀 Quick Start -->
+      <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+        <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🚀 শুরু করার জন্য করণীয়</h3>
+        <ol class="list-decimal pl-6 space-y-1">
+          <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
+          <li>আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
+          <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
+          <li>আপনার অগ্রগতি ট্র্যাক করতে 📊 বাটনে ক্লিক করুন।</li>
+        </ol>
+      </section>
+
+      <!-- 🌍 Country Flags -->
+      <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm">
+        <h3 class="text-lg font-semibold mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇮🇹 ইতালি (Italian)</span>
+          <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇪🇸 স্পেন (Spanish)</span>
+          <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇩🇪 জার্মানি (German)</span>
+          <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇫🇷 ফ্রান্স (French)</span>
+          <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇬🇷 গ্রিস (Greek)</span>
+          <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇵🇹 পর্তুগাল (Portuguese)</span>
+        </div>
+      </section>
+
+      <!-- 📢 Join Us -->
+      <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+        <h3 class="text-lg font-semibold mb-3">📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
+        <p class="mb-2">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
+        <div class="flex gap-4 text-blue-600 dark:text-blue-300">
+          <a href="https://facebook.com" target="_blank" class="hover:underline">📘 Facebook</a>
+          <a href="https://t.me" target="_blank" class="hover:underline">📢 Telegram</a>
+        </div>
+      </section>
+    `;
+    
+    // Close menu
+    document.getElementById('side-menu').classList.remove('active');
+    
+    // Recreate progress tracker
+    const newProgressTracker = new ProgressTracker();
+    
+    // Show success message
+    alert('Software has been cleared successfully! 🎉');
+  }
 }
