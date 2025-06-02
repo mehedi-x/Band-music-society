@@ -6,18 +6,11 @@
   <title>Speak EU - Language Learning</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- PWA Support -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#667eea">
-  <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
   <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
-      <!-- Search Box -->
-      <input type="text" id="search-box" placeholder="Search words..." style="display: none;">
-      
       <select id="language-select">
         <option value="">Select Language</option>
         <option value="italy">🇮🇹 Italy</option>
@@ -27,7 +20,6 @@
         <option value="greece">🇬🇷 Greece</option>
         <option value="portugal">🇵🇹 Portugal</option>
       </select>
-      
       <button id="search-toggle" title="Search">🔍</button>
       <button id="progress-toggle" title="View Progress">📊</button>
       <button id="mode-toggle">☀️</button>
@@ -35,7 +27,12 @@
     </div>
   </header>
 
-  <!-- Progress Modal -->
+  <!-- Search Box -->
+  <div id="search-container" style="display: none;">
+    <input type="text" id="search-box" placeholder="Search words in any language...">
+  </div>
+
+  <!-- Progress Dashboard Modal -->
   <div id="progress-modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -67,7 +64,7 @@
   </div>
 
   <main id="conversation-area">
-    <!-- Progress Bar -->
+    <!-- Progress Bar for Current Language -->
     <div id="current-progress" class="current-progress" style="display: none;">
       <div class="progress-header">
         <h3 id="progress-language">Learning Progress</h3>
@@ -80,54 +77,96 @@
 
     <!-- Default Content -->
     <div id="default-content">
-      <h1>🌟 Speak EU</h1>
-      <p><strong>Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম।</p>
+      <h1 class="main-title">🌟 Speak EU</h1>
+      <p class="subtitle">একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে।</p>
       
+      <!-- Quick Start -->
       <section class="quick-start">
         <h3>🚀 শুরু করার জন্য করণীয়</h3>
         <ol>
-          <li>উপরে থেকে একটি ভাষা নির্বাচন করুন</li>
-          <li>শব্দগুলো পড়ুন এবং 🔊 দিয়ে উচ্চারণ শুনুন</li>
-          <li>📚 বাটনে ক্লিক করে শেখা হিসেবে মার্ক করুন</li>
-          <li>📊 দিয়ে আপনার অগ্রগতি দেখুন</li>
+          <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
+          <li>শব্দগুলো পড়ুন এবং 🔊 দিয়ে উচ্চারণ শুনুন।</li>
+          <li>📚 বাটনে ক্লিক করে শেখা হিসেবে মার্ক করুন।</li>
+          <li>আপনার অগ্রগতি ট্র্যাক করতে 📊 বাটনে ক্লিক করুন।</li>
         </ol>
       </section>
 
+      <!-- Popular Languages -->
       <section class="popular-languages">
-        <h3>🌍 জনপ্রিয় ভাষা</h3>
+        <h3>🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
         <div class="language-grid">
-          <span onclick="selectLanguage('italy')">🇮🇹 Italian</span>
-          <span onclick="selectLanguage('spain')">🇪🇸 Spanish</span>
-          <span onclick="selectLanguage('france')">🇫🇷 French</span>
-          <span onclick="selectLanguage('germany')">🇩🇪 German</span>
-          <span onclick="selectLanguage('greece')">🇬🇷 Greek</span>
-          <span onclick="selectLanguage('portugal')">🇵🇹 Portuguese</span>
+          <span class="lang-chip" onclick="selectLanguage('italy')">🇮🇹 ইতালি (Italian)</span>
+          <span class="lang-chip" onclick="selectLanguage('spain')">🇪🇸 স্পেন (Spanish)</span>
+          <span class="lang-chip" onclick="selectLanguage('france')">🇫🇷 ফ্রান্স (French)</span>
+          <span class="lang-chip" onclick="selectLanguage('germany')">🇩🇪 জার্মানি (German)</span>
+          <span class="lang-chip" onclick="selectLanguage('greece')">🇬🇷 গ্রিস (Greek)</span>
+          <span class="lang-chip" onclick="selectLanguage('portugal')">🇵🇹 পর্তুগাল (Portuguese)</span>
+        </div>
+      </section>
+
+      <!-- Join Us -->
+      <section class="join-us">
+        <h3>📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
+        <p>সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+          <a href="https://t.me" target="_blank">📢 Telegram</a>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- Enhanced Side Menu -->
+  <!-- Side Menu -->
   <div id="side-menu">
     <div class="menu-header">
-      <button id="close-menu">✖</button>
+      <button id="close-menu" title="Close menu">✖</button>
       <h3>🌍 Speak EU</h3>
     </div>
     
     <div class="menu-content">
       <ul>
-        <li><a href="#" onclick="showPage('home')"><span>🏠</span> Home</a></li>
-        <li><a href="#" onclick="showPage('about')"><span>ℹ️</span> About</a></li>
-        <li><a href="#" onclick="showPage('contact')"><span>📞</span> Contact</a></li>
-        <li><a href="#" onclick="showPage('privacy')"><span>🔒</span> Privacy</a></li>
-        <li><a href="#" onclick="exportProgress()"><span>📊</span> Export Progress</a></li>
-        <li><a href="#" onclick="clearSoftware()"><span>🧹</span> Clear Software</a></li>
+        <li>
+          <a href="#" onclick="showPage('home')">
+            <span class="menu-icon">🏠</span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showPage('about')">
+            <span class="menu-icon">ℹ️</span>
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showPage('contact')">
+            <span class="menu-icon">📞</span>
+            <span>Contact us</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showPage('privacy')">
+            <span class="menu-icon">🔒</span>
+            <span>Privacy policy</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="exportProgress()">
+            <span class="menu-icon">📊</span>
+            <span>Export Progress</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="clearSoftware()">
+            <span class="menu-icon">🧹</span>
+            <span>Clear Software</span>
+          </a>
+        </li>
       </ul>
     </div>
     
     <div class="menu-footer">
-      <p>Made with ❤️ for Europe</p>
-      <p>Version 2.0</p>
+      <p class="menu-footer-text">Made with ❤️ for Europe</p>
+      <p class="app-version">Version 2.0</p>
     </div>
   </div>
 
