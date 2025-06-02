@@ -1,28 +1,21 @@
+// Global Variables
 const languageSelect = document.getElementById('language-select');
 const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
 const progressToggle = document.getElementById('progress-toggle');
 const progressModal = document.getElementById('progress-modal');
 const closeModal = document.querySelector('.close-modal');
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+const closeMenu = document.getElementById('close-menu');
+const searchToggle = document.getElementById('search-toggle');
+const searchBox = document.getElementById('search-box');
 
-// Current language data
 let currentLanguageData = [];
 let currentLanguage = '';
+let filteredData = [];
 
-const langCodeMap = {
-  austria: 'de', belgium: 'nl', czech: 'cs', denmark: 'da', estonia: 'et',
-  finland: 'fi', france: 'fr', germany: 'de', greece: 'el', hungary: 'hu',
-  iceland: 'is', italy: 'it', latvia: 'lv', liechtenstein: 'de', lithuania: 'lt',
-  luxembourg: 'lb', malta: 'mt', netherlands: 'nl', norway: 'no', poland: 'pl',
-  portugal: 'pt', slovakia: 'sk', slovenia: 'sl', spain: 'es', sweden: 'sv',
-  switzerland: 'de', russian: 'ru', albania: 'sq', andorra: 'ca', armenia: 'hy',
-  azerbaijan: 'az', bosnia: 'bs', bulgaria: 'bg', croatia: 'hr', cyprus: 'el',
-  georgia: 'ka', ireland: 'en', kosovo: 'sq', moldova: 'ro', monaco: 'fr',
-  montenegro: 'sr', northmacedonia: 'mk', romania: 'ro', sanmarino: 'it',
-  serbia: 'sr', turkey: 'tr', ukraine: 'uk', unitedkingdom: 'en', vatican: 'la'
-};
-
-// Progress Tracking System
+// Progress Tracking
 class ProgressTracker {
   constructor() {
     this.progress = this.loadProgress();
@@ -32,7 +25,11 @@ class ProgressTracker {
   loadProgress() {
     const saved = localStorage.getItem('speakeu_progress');
     return saved ? JSON.parse(saved) : {
-      languages: {}, streak: 0, lastStudyDate: null, achievements: [], totalWordsLearned: 0
+      languages: {},
+      streak: 0,
+      lastStudyDate: null,
+      achievements: [],
+      totalWordsLearned: 0
     };
   }
 
@@ -42,7 +39,11 @@ class ProgressTracker {
 
   markWordLearned(language, wordIndex) {
     if (!this.progress.languages[language]) {
-      this.progress.languages[language] = { learnedWords: [], totalWords: 0, lastStudied: null };
+      this.progress.languages[language] = {
+        learnedWords: [],
+        totalWords: 0,
+        lastStudied: null
+      };
     }
 
     const langProgress = this.progress.languages[language];
@@ -61,23 +62,27 @@ class ProgressTracker {
     const today = new Date().toDateString();
     const lastStudy = this.progress.lastStudyDate;
     
-    if (lastStudy === today) return;
-    
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    
-    if (lastStudy === yesterday.toDateString()) {
-      this.progress.streak++;
-    } else if (lastStudy !== today) {
-      this.progress.streak = 1;
+    if (lastStudy !== today) {
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      
+      if (lastStudy === yesterday.toDateString()) {
+        this.progress.streak++;
+      } else {
+        this.progress.streak = 1;
+      }
+      
+      this.progress.lastStudyDate = today;
+      this.saveProgress();
     }
-    
-    this.progress.lastStudyDate = today;
-    this.saveProgress();
   }
 
   getLanguageProgress(language) {
-    return this.progress.languages[language] || { learnedWords: [], totalWords: 0, lastStudied: null };
+    return this.progress.languages[language] || {
+      learnedWords: [],
+      totalWords: 0,
+      lastStudied: null
+    };
   }
 
   checkAchievements() {
@@ -85,10 +90,7 @@ class ProgressTracker {
       { id: 'first_word', name: 'First Steps', desc: 'Learn your first word', condition: () => this.progress.totalWordsLearned >= 1 },
       { id: 'ten_words', name: 'Getting Started', desc: 'Learn 10 words', condition: () => this.progress.totalWordsLearned >= 10 },
       { id: 'fifty_words', name: 'Word Collector', desc: 'Learn 50 words', condition: () => this.progress.totalWordsLearned >= 50 },
-      { id: 'hundred_words', name: 'Century Club', desc: 'Learn 100 words', condition: () => this.progress.totalWordsLearned >= 100 },
-      { id: 'week_streak', name: 'Consistent Learner', desc: '7-day learning streak', condition: () => this.progress.streak >= 7 },
-      { id: 'month_streak', name: 'Dedicated Student', desc: '30-day learning streak', condition: () => this.progress.streak >= 30 },
-      { id: 'multilingual', name: 'Polyglot', desc: 'Study 3 different languages', condition: () => Object.keys(this.progress.languages).length >= 3 }
+      { id: 'week_streak', name: 'Consistent Learner', desc: '7-day streak', condition: () => this.progress.streak >= 7 }
     ];
 
     achievements.forEach(achievement => {
@@ -122,7 +124,10 @@ class ProgressTracker {
   }
 
   exportProgress() {
-    const data = { exportDate: new Date().toISOString(), ...this.progress };
+    const data = {
+      exportDate: new Date().toISOString(),
+      ...this.progress
+    };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -135,77 +140,123 @@ class ProgressTracker {
 
 const progressTracker = new ProgressTracker();
 
-// ✅ পেজ লোড হলে লোকালস্টোরেজ থেকে ভাষা ও থিম লোড
+// Language Code Mapping
+const langCodeMap = {
+  italy: 'it',
+  spain: 'es', 
+  france: 'fr',
+  germany: 'de',
+  greece: 'el',
+  portugal: 'pt'
+};
+
+// Initialize App
 window.addEventListener('DOMContentLoaded', () => {
+  loadSavedSettings();
+  registerServiceWorker();
+});
+
+function loadSavedSettings() {
+  // Load saved language
   const savedLang = localStorage.getItem('selectedLanguage');
   if (savedLang) {
     languageSelect.value = savedLang;
     loadLanguage(savedLang);
   }
 
+  // Load saved theme
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
     modeToggle.textContent = '🌙';
-  } else {
-    document.body.classList.remove('dark-mode');
-    modeToggle.textContent = '☀️';
+  }
+}
+
+// Service Worker Registration
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered:', reg))
+      .catch(err => console.log('SW registration failed:', err));
+  }
+}
+
+// Language Selection
+languageSelect.addEventListener('change', () => {
+  const lang = languageSelect.value;
+  if (lang) {
+    localStorage.setItem('selectedLanguage', lang);
+    loadLanguage(lang);
   }
 });
 
-// ✅ ভাষা সিলেক্ট করলে সেটিংস স্মৃতি থাকে
-languageSelect.addEventListener('change', () => {
-  const lang = languageSelect.value;
-  if (!lang) return;
+function selectLanguage(lang) {
+  languageSelect.value = lang;
   localStorage.setItem('selectedLanguage', lang);
   loadLanguage(lang);
-});
+}
 
-// ✅ ভাষা JSON লোড করে UI রেন্ডার
+// Load Language Data
 function loadLanguage(lang) {
   currentLanguage = lang;
+  
   fetch(`languages/${lang}.json`)
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Language file not found');
+      return res.json();
+    })
     .then(data => {
       currentLanguageData = data;
-      renderVocabulary(data, langCodeMap[lang]);
+      filteredData = data;
+      renderVocabulary(data);
       updateCurrentProgress(lang, data.length);
+      showSearchBox();
     })
     .catch(error => {
-      conversationArea.innerHTML = `<p style="color:red;">Error loading data: ${error}</p>`;
+      console.error('Error loading language:', error);
+      conversationArea.innerHTML = `
+        <div class="error-message">
+          <h3>❌ Language file not found</h3>
+          <p>Please make sure ${lang}.json exists in the languages folder.</p>
+        </div>
+      `;
     });
 }
 
-// ✅ কথাবার্তা রেন্ডার
-function renderVocabulary(list, langKey) {
-  conversationArea.innerHTML = '';
+function showSearchBox() {
+  searchBox.style.display = 'block';
+}
 
+// Render Vocabulary
+function renderVocabulary(list) {
+  const defaultContent = document.getElementById('default-content');
+  const currentProgress = document.getElementById('current-progress');
+  
+  defaultContent.style.display = 'none';
+  currentProgress.style.display = 'block';
+  
   if (!Array.isArray(list) || list.length === 0) {
     conversationArea.innerHTML = '<p>No data found for this language.</p>';
     return;
   }
 
-  // Show current progress
-  const currentProgressDiv = document.getElementById('current-progress');
-  currentProgressDiv.style.display = 'block';
+  conversationArea.innerHTML = currentProgress.outerHTML;
 
   list.forEach((item, index) => {
-    const localLang = item[langKey] || '—';
-    const bn = item.bn || '—';
-    const bnMeaning = item.bnMeaning || '—';
-    const en = item.en || '—';
-
     const langProgress = progressTracker.getLanguageProgress(currentLanguage);
     const isLearned = langProgress.learnedWords.includes(index);
-
+    
     const div = document.createElement('div');
     div.className = `conversation-item ${isLearned ? 'learned' : ''}`;
     div.innerHTML = `
       <div class="conversation-content">
-        <div>🗣️ <strong>${localLang}</strong></div>
-        <div>📝 <span>${bn}</span></div>
-        <div>📘 <em>${bnMeaning}</em></div>
-        <div>🔤 <span>${en}</span></div>
+        <div class="word-main">
+          <span class="local-word">${item.local || item[langCodeMap[currentLanguage]] || '—'}</span>
+          <button class="speak-btn" onclick="speakWord('${item.local || item[langCodeMap[currentLanguage]] || ''}', '${langCodeMap[currentLanguage]}')">🔊</button>
+        </div>
+        <div class="word-bengali">📝 ${item.bn || '—'}</div>
+        <div class="word-meaning">📘 ${item.bnMeaning || '—'}</div>
+        <div class="word-english">🔤 ${item.en || '—'}</div>
       </div>
       <div class="conversation-actions">
         <button class="learn-btn ${isLearned ? 'learned' : ''}" 
@@ -219,6 +270,19 @@ function renderVocabulary(list, langKey) {
   });
 }
 
+// Audio Pronunciation
+function speakWord(text, lang) {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = 0.8;
+    speechSynthesis.speak(utterance);
+  } else {
+    alert('Speech synthesis not supported in this browser');
+  }
+}
+
+// Toggle Word Learned
 function toggleWordLearned(wordIndex) {
   const langProgress = progressTracker.getLanguageProgress(currentLanguage);
   const isCurrentlyLearned = langProgress.learnedWords.includes(wordIndex);
@@ -233,15 +297,19 @@ function toggleWordLearned(wordIndex) {
   
   progressTracker.saveProgress();
   updateCurrentProgress(currentLanguage, currentLanguageData.length);
-  renderVocabulary(currentLanguageData, langCodeMap[currentLanguage]);
+  renderVocabulary(filteredData);
 }
 
+// Update Progress
 function updateCurrentProgress(language, totalWords) {
   const langProgress = progressTracker.getLanguageProgress(language);
   const learnedCount = langProgress.learnedWords.length;
   const progressPercent = totalWords > 0 ? (learnedCount / totalWords) * 100 : 0;
 
-  progressTracker.progress.languages[language] = { ...langProgress, totalWords: totalWords };
+  progressTracker.progress.languages[language] = {
+    ...langProgress,
+    totalWords: totalWords
+  };
   progressTracker.saveProgress();
 
   document.getElementById('progress-language').textContent = `${language.charAt(0).toUpperCase() + language.slice(1)} Progress`;
@@ -249,24 +317,73 @@ function updateCurrentProgress(language, totalWords) {
   document.getElementById('progress-bar').style.width = `${progressPercent}%`;
 }
 
-// ✅ থিম টগল ও লোকালস্টোরেজে সংরক্ষণ
+// Search Functionality
+searchToggle.addEventListener('click', () => {
+  const isVisible = searchBox.style.display === 'block';
+  searchBox.style.display = isVisible ? 'none' : 'block';
+  if (!isVisible) {
+    searchBox.focus();
+  } else {
+    searchBox.value = '';
+    filteredData = currentLanguageData;
+    renderVocabulary(filteredData);
+  }
+});
+
+searchBox.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase();
+  if (query === '') {
+    filteredData = currentLanguageData;
+  } else {
+    filteredData = currentLanguageData.filter(item => {
+      const local = (item.local || item[langCodeMap[currentLanguage]] || '').toLowerCase();
+      const bn = (item.bn || '').toLowerCase();
+      const en = (item.en || '').toLowerCase();
+      const meaning = (item.bnMeaning || '').toLowerCase();
+      
+      return local.includes(query) || bn.includes(query) || en.includes(query) || meaning.includes(query);
+    });
+  }
+  renderVocabulary(filteredData);
+});
+
+// Theme Toggle
 modeToggle.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
   modeToggle.textContent = isDark ? '🌙' : '☀️';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
-// Progress Modal Functions
-progressToggle.addEventListener('click', () => showProgressModal());
-closeModal.addEventListener('click', () => progressModal.style.display = 'none');
+// Menu Functions
+menuToggle.addEventListener('click', () => {
+  sideMenu.classList.add('active');
+});
+
+closeMenu.addEventListener('click', () => {
+  sideMenu.classList.remove('active');
+});
+
+// Progress Modal
+progressToggle.addEventListener('click', () => {
+  showProgressModal();
+});
+
+closeModal.addEventListener('click', () => {
+  progressModal.style.display = 'none';
+});
+
 window.addEventListener('click', (e) => {
-  if (e.target === progressModal) progressModal.style.display = 'none';
+  if (e.target === progressModal) {
+    progressModal.style.display = 'none';
+  }
+  if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    sideMenu.classList.remove('active');
+  }
 });
 
 function showProgressModal() {
   progressModal.style.display = 'block';
   updateProgressStats();
-  createProgressCharts();
   displayAchievements();
 }
 
@@ -276,60 +393,13 @@ function updateProgressStats() {
   document.getElementById('languages-studied').textContent = Object.keys(progressTracker.progress.languages).length;
 }
 
-function createProgressCharts() {
-  const languageCtx = document.getElementById('languageChart').getContext('2d');
-  const languages = Object.keys(progressTracker.progress.languages);
-  const languageData = languages.map(lang => progressTracker.progress.languages[lang].learnedWords.length);
-
-  new Chart(languageCtx, {
-    type: 'doughnut',
-    data: {
-      labels: languages.map(lang => lang.charAt(0).toUpperCase() + lang.slice(1)),
-      datasets: [{
-        data: languageData,
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF']
-      }]
-    },
-    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
-  });
-
-  const activityCtx = document.getElementById('activityChart').getContext('2d');
-  const last7Days = [];
-  const activityData = [];
-  
-  for (let i = 6; i >= 0; i--) {
-    const date = new Date();
-    date.setDate(date.getDate() - i);
-    last7Days.push(date.toLocaleDateString('en-US', { weekday: 'short' }));
-    activityData.push(Math.random() * 10);
-  }
-
-  new Chart(activityCtx, {
-    type: 'line',
-    data: {
-      labels: last7Days,
-      datasets: [{
-        label: 'Words Learned',
-        data: activityData,
-        borderColor: '#36A2EB',
-        backgroundColor: 'rgba(54, 162, 235, 0.1)',
-        tension: 0.4
-      }]
-    },
-    options: { responsive: true, scales: { y: { beginAtZero: true } } }
-  });
-}
-
 function displayAchievements() {
   const achievementList = document.getElementById('achievement-list');
   const allAchievements = [
     { id: 'first_word', name: 'First Steps', desc: 'Learn your first word', icon: '🌟' },
     { id: 'ten_words', name: 'Getting Started', desc: 'Learn 10 words', icon: '🎯' },
     { id: 'fifty_words', name: 'Word Collector', desc: 'Learn 50 words', icon: '📚' },
-    { id: 'hundred_words', name: 'Century Club', desc: 'Learn 100 words', icon: '🏆' },
-    { id: 'week_streak', name: 'Consistent Learner', desc: '7-day learning streak', icon: '🔥' },
-    { id: 'month_streak', name: 'Dedicated Student', desc: '30-day learning streak', icon: '💎' },
-    { id: 'multilingual', name: 'Polyglot', desc: 'Study 3 different languages', icon: '🌍' }
+    { id: 'week_streak', name: 'Consistent Learner', desc: '7-day streak', icon: '🔥' }
   ];
 
   achievementList.innerHTML = '';
@@ -349,162 +419,236 @@ function displayAchievements() {
   });
 }
 
-// Page Content Functions
+// Page Functions
 function showPage(page) {
-  document.getElementById('side-menu').classList.remove('active');
+  sideMenu.classList.remove('active');
   document.getElementById('current-progress').style.display = 'none';
   
   let content = '';
-  
   switch(page) {
     case 'home':
-      // Return to default home view
-      window.location.reload();
-      return;
+      content = getHomeContent();
+      break;
     case 'about':
-      content = `
-        <div class="page-content">
-          <h1 class="page-title">🌍 About Speak EU</h1>
-          <p class="page-subtitle">Your Gateway to European Languages</p>
-          
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>🎯 Our Mission</h3>
-              <p>Speak EU এর মূল লক্ষ্য হলো ইউরোপে বসবাসকারী বাংলাদেশী এবং অন্যান্য দেশের মানুষদের স্থানীয় ভাষা শিখতে সাহায্য করা। আমরা বিশ্বাস করি ভাষা শেখা একটি সেতুর মতো কাজ করে যা বিভিন্ন সংস্কৃতির মানুষদের মধ্যে সংযোগ স্থাপন করে।</p>
-            </div>
-            
-            <div class="info-card">
-              <h3>🚀 Our Vision</h3>
-              <p>আমাদের স্বপ্ন হলো একটি এমন প্ল্যাটফর্ম তৈরি করা যেখানে যে কেউ সহজে এবং কার্যকরভাবে ইউরোপীয় ভাষাগুলো শিখতে পারবে। আমরা চাই প্রতিটি শিক্ষার্থী তাদের নিজস্ব গতিতে এবং পছন্দমতো ভাষা শিখতে পারুক।</p>
-            </div>
-            
-            <div class="info-card">
-              <h3>💡 Why Choose Us</h3>
-              <p>• ৪৪+ ইউরোপীয় ভাষার সাপোর্ট<br>• ব্যবহারিক এবং দৈনন্দিন শব্দভাণ্ডার<br>• প্রোগ্রেস ট্র্যাকিং সিস্টেম<br>• ইন্টারঅ্যাক্টিভ লার্নিং এক্সপেরিয়েন্স<br>• সম্পূর্ণ ফ্রি এবং বিজ্ঞাপনমুক্ত</p>
-            </div>
-            
-            <div class="info-card">
-              <h3>🏆 Our Features</h3>
-              <p>• রিয়েল-টাইম প্রোগ্রেস ট্র্যাকিং<br>• Achievement এবং Badge সিস্টেম<br>• Dark/Light Mode<br>• মোবাইল ফ্রেন্ডলি ইন্টারফেস<br>• অফলাইন সাপোর্ট<br>• ডেটা এক্সপোর্ট সুবিধা</p>
-            </div>
-          </div>
-        </div>
-      `;
+      content = getAboutContent();
       break;
     case 'contact':
-      content = `
-        <div class="page-content">
-          <h1 class="page-title">📞 Contact Us</h1>
-          <p class="page-subtitle">আমাদের সাথে যোগাযোগ করুন</p>
-          
-          <div class="contact-form">
-            <form onsubmit="handleContactForm(event)">
-              <div class="form-group">
-                <label for="name">নাম *</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="email">ইমেইল *</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject">বিষয়</label>
-                <input type="text" id="subject" name="subject">
-              </div>
-              
-              <div class="form-group">
-                <label for="message">বার্তা *</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-              </div>
-              
-              <button type="submit" class="submit-btn">📩 বার্তা পাঠান</button>
-            </form>
-          </div>
-          
-          <div class="info-grid" style="margin-top: 40px;">
-            <div class="info-card">
-              <h3>📧 Email</h3>
-              <p>info@speakeu.com<br>support@speakeu.com</p>
-            </div>
-            
-            <div class="info-card">
-              <h3>📱 Social Media</h3>
-              <p>📘 Facebook: /SpeakEU<br>📢 Telegram: @SpeakEUSupport</p>
-            </div>
-          </div>
-        </div>
-      `;
+      content = getContactContent();
       break;
     case 'privacy':
-      content = `
-        <div class="page-content">
-          <h1 class="page-title">🔒 Privacy Policy</h1>
-          <p class="page-subtitle">আপনার গোপনীয়তা আমাদের অগ্রাধিকার</p>
-          
-          <div class="info-card">
-            <h3>📊 Data Collection</h3>
-            <p>আমরা শুধুমাত্র আপনার শেখার অগ্রগতি এবং পছন্দসমূহ সংরক্ষণ করি। কোনো ব্যক্তিগত তথ্য সংগ্রহ করা হয় না।</p>
-          </div>
-          
-          <div class="info-card">
-            <h3>🔐 Data Storage</h3>
-            <p>সকল ডেটা আপনার ব্রাউজারের Local Storage এ সংরক্ষিত থাকে। আমাদের সার্ভারে কোনো ব্যক্তিগত তথ্য পাঠানো হয় না।</p>
-          </div>
-          
-          <div class="info-card">
-            <h3>🍪 Cookies</h3>
-            <p>আমরা শুধুমাত্র আপনার ভাষা পছন্দ এবং থিম সেটিংস মনে রাখার জন্য Local Storage ব্যবহার করি।</p>
-          </div>
-          
-          <div class="info-card">
-            <h3>🛡️ Your Rights</h3>
-            <p>আপনি যেকোনো সময় "Clear Software" অপশন ব্যবহার করে সকল ডেটা মুছে ফেলতে পারেন।</p>
-          </div>
-          
-          <div class="info-card">
-            <h3>📞 Contact</h3>
-            <p>গোপনীয়তা সংক্রান্ত কোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন: privacy@speakeu.com</p>
-          </div>
-        </div>
-      `;
+      content = getPrivacyContent();
       break;
   }
   
   conversationArea.innerHTML = content;
 }
 
-function handleContactForm(event) {
+function getHomeContent() {
+  return `
+    <div class="page-content">
+      <h1 class="page-title">🌟 Speak EU</h1>
+      <p class="page-subtitle">ইউরোপের ভাষা শিখুন আত্মবিশ্বাসের সাথে</p>
+      
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">${Object.keys(progressTracker.progress.languages).length}</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">${progressTracker.progress.totalWordsLearned}</div>
+          <div class="stat-label">Words Learned</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">${progressTracker.progress.streak}</div>
+          <div class="stat-label">Day Streak</div>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>6+ ইউরোপীয় ভাষা</h3>
+          <p>সকল প্রধান ইউরোপীয় দেশের ভাষা একটি প্ল্যাটফর্মে</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>প্রোগ্রেস ট্র্যাকিং</h3>
+          <p>আপনার শেখার অগ্রগতি পর্যবেক্ষণ করুন</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔊</div>
+          <h3>অডিও উচ্চারণ</h3>
+          <p>নেটিভ উচ্চারণ শুনুন এবং শিখুন</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>ব্যবহারিক বাক্য</h3>
+          <p>দৈনন্দিন জীবনে ব্যবহৃত প্রয়োজনীয় বাক্য</p>
+        </div>
+      </div>
+
+      <div class="quick-languages">
+        <h3>🚀 দ্রুত শুরু করুন</h3>
+        <div class="language-buttons">
+          <button onclick="selectLanguage('italy')">🇮🇹 Italian</button>
+          <button onclick="selectLanguage('spain')">🇪🇸 Spanish</button>
+          <button onclick="selectLanguage('france')">🇫🇷 French</button>
+          <button onclick="selectLanguage('germany')">🇩🇪 German</button>
+          <button onclick="selectLanguage('greece')">🇬🇷 Greek</button>
+          <button onclick="selectLanguage('portugal')">🇵🇹 Portuguese</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function getAboutContent() {
+  return `
+    <div class="page-content">
+      <h1 class="page-title">ℹ️ About Speak EU</h1>
+      <p class="page-subtitle">আমাদের সম্পর্কে জানুন</p>
+      
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>🎯 আমাদের মিশন</h3>
+          <p>ইউরোপের যেকোনো দেশে আপনার ভাষাগত বাধা দূর করা এবং স্থানীয় ভাষায় আত্মবিশ্বাসের সাথে কথা বলার ক্ষমতা তৈরি করা।</p>
+        </div>
+        
+        <div class="info-card">
+          <h3>🌟 কেন Speak EU?</h3>
+          <ul>
+            <li>6+ ইউরোপীয় ভাষার সাপোর্ট</li>
+            <li>ব্যবহারিক দৈনন্দিন বাক্য</li>
+            <li>প্রোগ্রেস ট্র্যাকিং সিস্টেম</li>
+            <li>অডিও উচ্চারণ সুবিধা</li>
+            <li>সম্পূর্ণ ফ্রি</li>
+          </ul>
+        </div>
+        
+        <div class="info-card">
+          <h3>🎓 শিক্ষা পদ্ধতি</h3>
+          <p>আমাদের প্ল্যাটফর্ম বিজ্ঞানভিত্তিক শিক্ষা পদ্ধতি ব্যবহার করে যা দ্রুত এবং কার্যকর ভাষা শিখতে সাহায্য করে।</p>
+        </div>
+        
+        <div class="info-card">
+          <h3>🚀 ভবিষ্যতের পরিকল্পনা</h3>
+          <p>আরও ভাষা যোগ করা, গেমিফিকেশন, AI সাপোর্ট এবং মোবাইল অ্যাপ তৈরি করার পরিকল্পনা রয়েছে।</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function getContactContent() {
+  return `
+    <div class="page-content">
+      <h1 class="page-title">📞 Contact Us</h1>
+      <p class="page-subtitle">আমাদের সাথে যোগাযোগ করুন</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <strong>ইমেইল</strong>
+            <p>support@speakeu.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <span class="contact-icon">🌐</span>
+          <div>
+            <strong>ওয়েবসাইট</strong>
+            <p>www.speakeu.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <strong>সোশ্যাল মিডিয়া</strong>
+            <p>Facebook | Telegram</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <div class="form-group">
+          <label>নাম</label>
+          <input type="text" required placeholder="আপনার নাম লিখুন">
+        </div>
+        <div class="form-group">
+          <label>ইমেইল</label>
+          <input type="email" required placeholder="আপনার ইমেইল লিখুন">
+        </div>
+        <div class="form-group">
+          <label>বার্তা</label>
+          <textarea rows="5" required placeholder="আপনার বার্তা লিখুন"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">বার্তা পাঠান</button>
+      </form>
+    </div>
+  `;
+}
+
+function getPrivacyContent() {
+  return `
+    <div class="page-content">
+      <h1 class="page-title">🔒 Privacy Policy</h1>
+      <p class="page-subtitle">গোপনীয়তা নীতি</p>
+      
+      <div class="privacy-sections">
+        <section>
+          <h3>📋 তথ্য সংগ্রহ</h3>
+          <ul>
+            <li>আমরা শুধুমাত্র আপনার শেখার অগ্রগতি সংরক্ষণ করি</li>
+            <li>কোন ব্যক্তিগত তথ্য তৃতীয় পক্ষের সাথে শেয়ার করি না</li>
+            <li>সকল ডেটা স্থানীয়ভাবে আপনার ডিভাইসে সংরক্ষিত</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>🛡️ নিরাপত্তা</h3>
+          <ul>
+            <li>আপনার ডেটা এনক্রিপ্টেড অবস্থায় সংরক্ষিত</li>
+            <li>কোন ট্র্যাকিং বা বিজ্ঞাপন নেই</li>
+            <li>সম্পূর্ণ অফলাইন কার্যকারিতা</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>🔄 ডেটা নিয়ন্ত্রণ</h3>
+          <ul>
+            <li>আপনি যেকোনো সময় আপনার ডেটা এক্সপোর্ট করতে পারেন</li>
+            <li>সম্পূর্ণ ডেটা মুছে ফেলার অপশন আছে</li>
+            <li>আপনার সম্মতি ছাড়া কোন তথ্য ব্যবহার করা হয় না</li>
+          </ul>
+        </section>
+      </div>
+      
+      <p class="last-updated">সর্বশেষ আপডেট: ২ জুন, ২০২৫</p>
+    </div>
+  `;
+}
+
+// Utility Functions
+function sendMessage(event) {
   event.preventDefault();
-  alert('ধন্যবাদ! আপনার বার্তা পাঠানো হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+  alert('ধন্যবাদ! আপনার বার্তা পাঠানো হয়েছে।');
   event.target.reset();
 }
 
-// Menu Functions
-const menuToggle = document.getElementById('menu-toggle');
-const sideMenu = document.getElementById('side-menu');
-
-if (menuToggle && sideMenu) {
-  menuToggle.addEventListener('click', () => sideMenu.classList.toggle('active'));
-}
-
-const closeMenu = document.getElementById('close-menu');
-if (closeMenu && sideMenu) {
-  closeMenu.addEventListener('click', () => sideMenu.classList.remove('active'));
-}
-
-// Export Progress
 function exportProgress() {
   progressTracker.exportProgress();
-  document.getElementById('side-menu').classList.remove('active');
+  sideMenu.classList.remove('active');
 }
 
-// Clear Software
 function clearSoftware() {
-  if (confirm('Are you sure you want to clear all data? This will restart the software completely.')) {
+  if (confirm('সব ডেটা মুছে ফেলতে চান? এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।')) {
     localStorage.clear();
-    window.location.reload();
+    location.reload();
   }
-  document.getElementById('side-menu').classList.remove('active');
+  sideMenu.classList.remove('active');
 }
