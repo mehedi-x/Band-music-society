@@ -1,5 +1,3 @@
-/* আগের সব CSS + নতুন ফিচারের CSS */
-
 /* 🌐 বডি */
 body {
   margin: 0;
@@ -15,7 +13,280 @@ body {
   color: #f9f9f9;
 }
 
-/* 🧾 সাইড মেনু (আগের মতো) */
+/* 🧱 হেডার (চিকন করা হয়েছে) */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4px 12px; /* কমিয়ে দেওয়া হয়েছে */
+  background-color: #0059b3;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 50px; /* নির্দিষ্ট উচ্চতা */
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.1rem; /* ছোট করা হয়েছে */
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* কমিয়ে দেওয়া হয়েছে */
+}
+
+/* ভাষা নির্বাচন */
+#language-select {
+  padding: 4px 8px; /* কমিয়ে দেওয়া হয়েছে */
+  font-size: 0.85rem; /* ছোট করা হয়েছে */
+  border-radius: 6px;
+  border: none;
+  min-width: 120px; /* কমিয়ে দেওয়া হয়েছে */
+  cursor: pointer;
+}
+
+/* 🌗 সব বাটন (ছোট করা হয়েছে) */
+#mode-toggle,
+#menu-toggle,
+#search-toggle,
+#progress-toggle {
+  font-size: 1rem; /* ছোট করা হয়েছে */
+  background: #003c82;
+  border: none;
+  border-radius: 50%;
+  width: 28px; /* ছোট করা হয়েছে */
+  height: 28px; /* ছোট করা হয়েছে */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#mode-toggle:hover,
+#menu-toggle:hover,
+#search-toggle:hover,
+#progress-toggle:hover {
+  background-color: #002a58;
+}
+
+/* 🔍 সার্চ সেকশন */
+.search-section {
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode .search-section {
+  background: #1e1e1e;
+}
+
+.search-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 8px 15px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #0059b3;
+}
+
+.dark-mode #search-input {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+
+#clear-search {
+  background: #ff4444;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+#clear-search:hover {
+  background: #cc0000;
+}
+
+/* 📊 প্রগ্রেস সেকশন */
+.progress-section {
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode .progress-section {
+  background: #1e1e1e;
+}
+
+.progress-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+.progress-stats strong {
+  color: #0059b3;
+}
+
+.dark-mode .progress-stats strong {
+  color: #64b5f6;
+}
+
+.progress-track {
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #0059b3, #007bff);
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+/* 📄 মেইন কনটেন্ট */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* 💬 কনভারসেশন আইটেম */
+.conversation-item {
+  padding: 14px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #222;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.conversation-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .conversation-item {
+  background-color: #1e1e1e;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+/* শেখা আইটেমের জন্য বিশেষ স্টাইল */
+.conversation-item.learned {
+  border-left: 5px solid #4CAF50;
+}
+
+/* ফ্রেজ কন্ট্রোল বাটন */
+.phrase-controls {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.speak-btn, .learn-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.speak-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.learn-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.learn-btn.learned {
+  background: #4CAF50;
+}
+
+.speak-btn:hover, .learn-btn:hover {
+  transform: scale(1.1);
+}
+
+.conversation-item div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+  word-break: break-word;
+  padding-right: 60px;
+}
+
+.conversation-item strong {
+  color: #007bff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.conversation-item span {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #222;
+}
+
+.conversation-item em {
+  font-style: normal;
+  font-size: 1rem;
+  color: #555;
+}
+
+.dark-mode .conversation-item span {
+  color: #ccc;
+}
+
+.dark-mode .conversation-item em {
+  color: #aaa;
+}
+
+/* সাইড মেনু */
 #side-menu {
   position: fixed;
   top: 0;
@@ -60,6 +331,11 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  color: #0059b3;
+}
+
+.dark-mode #side-menu h3 {
+  color: #64b5f6;
 }
 
 #side-menu ul {
@@ -92,315 +368,6 @@ body {
   background: rgba(0, 89, 179, 0.1);
 }
 
-/* 🧱 হেডার (আগের মতো) */
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 6px 14px;
-  background-color: #0059b3;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.app-title {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-}
-
-/* ভাষা নির্বাচন */
-#language-select {
-  padding: 5px 10px;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  border: none;
-  min-width: 130px;
-  cursor: pointer;
-}
-
-/* 🌗 সব বাটন (আগের মতো + নতুন) */
-#mode-toggle,
-#menu-toggle,
-#search-toggle,
-#progress-toggle {
-  font-size: 1.2rem;
-  background: #003c82;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#mode-toggle:hover,
-#menu-toggle:hover,
-#search-toggle:hover,
-#progress-toggle:hover {
-  background-color: #002a58;
-}
-
-/* 🔍 সার্চ সেকশন (নতুন) */
-.search-section {
-  background: #ffffff;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.dark-mode .search-section {
-  background: #1e1e1e;
-}
-
-.search-container {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-#search-input {
-  flex: 1;
-  padding: 10px 15px;
-  border: 2px solid #ddd;
-  border-radius: 25px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-#search-input:focus {
-  border-color: #0059b3;
-}
-
-.dark-mode #search-input {
-  background: #2a2a2a;
-  border-color: #444;
-  color: #fff;
-}
-
-#clear-search {
-  background: #ff4444;
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  color: white;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-#clear-search:hover {
-  background: #cc0000;
-}
-
-/* 📊 প্রগ্রেস সেকশন (নতুন) */
-.progress-section {
-  background: #ffffff;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.dark-mode .progress-section {
-  background: #1e1e1e;
-}
-
-.progress-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.progress-stats {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-}
-
-.progress-stats strong {
-  color: #0059b3;
-}
-
-.dark-mode .progress-stats strong {
-  color: #64b5f6;
-}
-
-.progress-track {
-  background: #e0e0e0;
-  border-radius: 10px;
-  height: 8px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  background: linear-gradient(90deg, #0059b3, #007bff);
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.5s ease;
-  width: 0%;
-}
-
-/* 📄 মেইন কনটেন্ট (আগের মতো) */
-main {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-/* ভাষার হেডার (নতুন) */
-.language-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #0059b3;
-}
-
-#language-title {
-  color: #0059b3;
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.dark-mode #language-title {
-  color: #64b5f6;
-}
-
-.language-stats {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.dark-mode .language-stats {
-  color: #ccc;
-}
-
-/* 💬 কনভারসেশন আইটেম (উন্নত) */
-.conversation-item {
-  padding: 14px;
-  margin-bottom: 16px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: #222;
-  font-size: 1rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.conversation-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.dark-mode .conversation-item {
-  background-color: #1e1e1e;
-  color: #eee;
-  border: 1px solid #444;
-}
-
-/* শেখা আইটেমের জন্য বিশেষ স্টাইল */
-.conversation-item.learned {
-  border-left: 5px solid #4CAF50;
-}
-
-.conversation-item.learned::after {
-  content: "✅";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.2rem;
-}
-
-/* ফ্রেজ কন্ট্রোল বাটন */
-.phrase-controls {
-  position: absolute;
-  top: 10px;
-  right: 40px;
-  display: flex;
-  gap: 5px;
-}
-
-.speak-btn, .learn-btn {
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.speak-btn {
-  background: #4CAF50;
-  color: white;
-}
-
-.learn-btn {
-  background: #ff9800;
-  color: white;
-}
-
-.learn-btn.learned {
-  background: #4CAF50;
-}
-
-.speak-btn:hover, .learn-btn:hover {
-  transform: scale(1.1);
-}
-
-.conversation-item div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-  line-height: 1.5;
-  word-break: break-word;
-}
-
-.conversation-item strong {
-  color: #007bff;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.conversation-item span {
-  font-weight: 500;
-  font-size: 1rem;
-  color: #222;
-}
-
-.conversation-item em {
-  font-style: normal;
-  font-size: 1rem;
-  color: #555;
-}
-
-.dark-mode .conversation-item span {
-  color: #ccc;
-}
-
-.dark-mode .conversation-item em {
-  color: #aaa;
-}
-
 /* কুইক ল্যাং সিলেকশন */
 .lang-quick {
   transition: all 0.3s ease;
@@ -412,6 +379,28 @@ main {
   transform: translateY(-2px);
 }
 
+/* কনটেন্ট সেকশন */
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-section h2 {
+  border-bottom: 2px solid #0059b3;
+  padding-bottom: 10px;
+}
+
+.content-section form input,
+.content-section form textarea {
+  border: 1px solid #ddd;
+}
+
+.dark-mode .content-section form input,
+.dark-mode .content-section form textarea {
+  border-color: #555;
+  color: #fff;
+}
+
 /* ফিল্টার করা আইটেম লুকানো */
 .conversation-item.hidden {
   display: none;
@@ -420,49 +409,56 @@ main {
 /* 📱 মোবাইল রেসপন্সিভ */
 @media (max-width: 600px) {
   .app-header {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 4px 8px;
+    height: auto;
+    min-height: 45px;
+  }
+
+  .app-title {
+    font-size: 1rem;
   }
 
   .header-right {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 10px;
+    gap: 6px;
   }
 
   #language-select {
-    flex: 1;
-    width: 100%;
+    min-width: 100px;
+    font-size: 0.8rem;
   }
 
   #mode-toggle,
   #menu-toggle,
   #search-toggle,
   #progress-toggle {
-    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 15px 10px;
   }
 
   .conversation-item {
     font-size: 0.95rem;
+    padding: 12px;
     padding-right: 50px;
   }
 
   .phrase-controls {
-    right: 10px;
-    flex-direction: column;
-    gap: 3px;
+    right: 6px;
+    top: 6px;
+  }
+
+  .speak-btn, .learn-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 0.7rem;
   }
 
   .progress-stats {
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
-
-  .language-header {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    font-size: 0.8rem;
   }
 
   .search-container {
@@ -475,22 +471,23 @@ main {
 }
 
 @media (max-width: 480px) {
-  main {
-    padding: 15px;
+  .app-header {
+    flex-direction: column;
+    height: auto;
+    padding: 6px;
   }
-  
-  .conversation-item {
-    padding: 12px;
-    padding-right: 45px;
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 6px;
   }
-  
-  .phrase-controls {
-    right: 8px;
+
+  #language-select {
+    flex: 1;
   }
-  
-  .speak-btn, .learn-btn {
-    width: 25px;
-    height: 25px;
-    font-size: 0.8rem;
+
+  .conversation-item div {
+    padding-right: 50px;
   }
 }
