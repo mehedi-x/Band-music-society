@@ -1144,5 +1144,677 @@
     "bn": "ইশ মোশটে আউসশটাইগেন।",
     "bnMeaning": "আমি নামতে চাই।",
     "en": "I want to get off."
+  },
+  {
+    "de": "Das ist mein Vater.",
+    "bn": "দাস ইস্ট মাইন ফাটার।",
+    "bnMeaning": "এই আমার বাবা।",
+    "en": "This is my father."
+  },
+  {
+    "de": "Das ist meine Mutter.",
+    "bn": "দাস ইস্ট মাইনে মুটার।",
+    "bnMeaning": "এই আমার মা।",
+    "en": "This is my mother."
+  },
+  {
+    "de": "Das ist mein Bruder.",
+    "bn": "দাস ইস্ট মাইন ব্রুডার।",
+    "bnMeaning": "এই আমার ভাই।",
+    "en": "This is my brother."
+  },
+  {
+    "de": "Das ist meine Schwester.",
+    "bn": "দাস ইস্ট মাইনে শভেস্টার।",
+    "bnMeaning": "এই আমার বোন।",
+    "en": "This is my sister."
+  },
+  {
+    "de": "Ich lerne Deutsch.",
+    "bn": "ইশ লের্নে ডয়েচ।",
+    "bnMeaning": "আমি জার্মান শিখছি।",
+    "en": "I am learning German."
+  },
+  {
+    "de": "Seit wann lernen Sie Deutsch?",
+    "bn": "জাইট ভান লের্নেন জি ডয়েচ?",
+    "bnMeaning": "আপনি কবে থেকে জার্মান শিখছেন?",
+    "en": "Since when have you been learning German?"
+  },
+  {
+    "de": "Ich lerne seit drei Monaten.",
+    "bn": "ইশ লের্নে জাইট ড্রাই মোনাটেন।",
+    "bnMeaning": "আমি তিন মাস ধরে শিখছি।",
+    "en": "I have been learning for three months."
+  },
+  {
+    "de": "Deutsch ist schwer.",
+    "bn": "ডয়েচ ইস্ট শভার।",
+    "bnMeaning": "জার্মান কঠিন।",
+    "en": "German is difficult."
+  },
+  {
+    "de": "Deutsch ist interessant.",
+    "bn": "ডয়েচ ইস্ট ইনটেরেসান্ট।",
+    "bnMeaning": "জার্মান আকর্ষণীয়।",
+    "en": "German is interesting."
+  },
+  {
+    "de": "Können Sie mir das erklären?",
+    "bn": "কোনেন জি মির দাস এরক্লেরেন?",
+    "bnMeaning": "আপনি কি আমাকে এটা ব্যাখ্যা করতে পারেন?",
+    "en": "Can you explain that to me?"
+  },
+  {
+    "de": "Ich gehe zur Arbeit.",
+    "bn": "ইশ গেহে ৎসুর আরবাইট।",
+    "bnMeaning": "আমি কাজে যাচ্ছি।",
+    "en": "I am going to work."
+  },
+  {
+    "de": "Ich komme von der Arbeit.",
+    "bn": "ইশ কোমে ফন ডের আরবাইট।",
+    "bnMeaning": "আমি কাজ থেকে আসছি।",
+    "en": "I am coming from work."
+  },
+  {
+    "de": "Wann beginnt die Arbeit?",
+    "bn": "ভান বেগিনট ডি আরবাইট?",
+    "bnMeaning": "কাজ কখন শুরু হয়?",
+    "en": "When does work start?"
+  },
+  {
+    "de": "Wann ist Feierabend?",
+    "bn": "ভান ইস্ট ফাইয়ারাবেন্ড?",
+    "bnMeaning": "কাজ কখন শেষ হয়?",
+    "en": "When does work end?"
+  },
+  {
+    "de": "Ich arbeite von 9 bis 17 Uhr.",
+    "bn": "ইশ আরবাইটে ফন নয়েন বিস জিবৎসেন উর।",
+    "bnMeaning": "আমি ৯টা থেকে ৫টা পর্যন্ত কাজ করি।",
+    "en": "I work from 9 to 5 o'clock."
+  },
+  {
+    "de": "Ich habe Pause.",
+    "bn": "ইশ হাবে পাউজে।",
+    "bnMeaning": "আমার বিরতি আছে।",
+    "en": "I have a break."
+  },
+  {
+    "de": "Ich habe Urlaub.",
+    "bn": "ইশ হাবে উরলাউব।",
+    "bnMeaning": "আমার ছুটি আছে।",
+    "en": "I have vacation."
+  },
+  {
+    "de": "Ich bin im Urlaub.",
+    "bn": "ইশ বিন ইম উরলাউব।",
+    "bnMeaning": "আমি ছুটিতে আছি।",
+    "en": "I am on vacation."
+  },
+  {
+    "de": "Morgen habe ich frei.",
+    "bn": "মোর্গেন হাবে ইশ ফ্রাই।",
+    "bnMeaning": "আগামীকাল আমার ছুটি।",
+    "en": "Tomorrow I have off."
+  },
+  {
+    "de": "Ich bin beschäftigt.",
+    "bn": "ইশ বিন বেশেফটিগট।",
+    "bnMeaning": "আমি ব্যস্ত।",
+    "en": "I am busy."
+  },
+  {
+    "de": "Haben Sie Zeit?",
+    "bn": "হাবেন জি ৎসাইট?",
+    "bnMeaning": "আপনার কি সময় আছে?",
+    "en": "Do you have time?"
+  },
+  {
+    "de": "Ich habe keine Zeit.",
+    "bn": "ইশ হাবে কাইনে ৎসাইট।",
+    "bnMeaning": "আমার সময় নেই।",
+    "en": "I don't have time."
+  },
+  {
+    "de": "Ich bin zu spät.",
+    "bn": "ইশ বিন ৎসু শপেট।",
+    "bnMeaning": "আমি দেরি করেছি।",
+    "en": "I am late."
+  },
+  {
+    "de": "Ich bin pünktlich.",
+    "bn": "ইশ বিন পুঙ্কটলিশ।",
+    "bnMeaning": "আমি সময়মতো এসেছি।",
+    "en": "I am on time."
+  },
+  {
+    "de": "Warten Sie auf mich!",
+    "bn": "ভার্টেন জি আউফ মিশ!",
+    "bnMeaning": "আমার জন্য অপেক্ষা করুন!",
+    "en": "Wait for me!"
+  },
+  {
+    "de": "Ich warte auf Sie.",
+    "bn": "ইশ ভার্টে আউফ জি।",
+    "bnMeaning": "আমি আপনার জন্য অপেক্ষা করছি।",
+    "en": "I am waiting for you."
+  },
+  {
+    "de": "Wie lange dauert das?",
+    "bn": "ভি লাঙ্গে দাউয়ার্ট দাস?",
+    "bnMeaning": "এটা কত সময় লাগবে?",
+    "en": "How long does that take?"
+  },
+  {
+    "de": "Das dauert eine Stunde.",
+    "bn": "দাস দাউয়ার্ট আইনে শটুন্ডে।",
+    "bnMeaning": "এটা এক ঘন্টা লাগবে।",
+    "en": "That takes one hour."
+  },
+  {
+    "de": "Das geht schnell.",
+    "bn": "দাস গেট শনেল।",
+    "bnMeaning": "এটা তাড়াতাড়ি হবে।",
+    "en": "That goes quickly."
+  },
+  {
+    "de": "Beeilen Sie sich!",
+    "bn": "বেআইলেন জি জিশ!",
+    "bnMeaning": "তাড়াতাড়ি করুন!",
+    "en": "Hurry up!"
+  },
+  {
+    "de": "Langsam, bitte.",
+    "bn": "লাংজাম, বিটে।",
+    "bnMeaning": "ধীরে, দয়া করে।",
+    "en": "Slowly, please."
+  },
+  {
+    "de": "Ich fahre mit dem Auto.",
+    "bn": "ইশ ফারে মিট ডেম আউটো।",
+    "bnMeaning": "আমি গাড়িতে যাচ্ছি।",
+    "en": "I am going by car."
+  },
+  {
+    "de": "Ich fahre mit dem Bus.",
+    "bn": "ইশ ফারে মিট ডেম বুস।",
+    "bnMeaning": "আমি বাসে যাচ্ছি।",
+    "en": "I am going by bus."
+  },
+  {
+    "de": "Ich fahre mit der Bahn.",
+    "bn": "ইশ ফারে মিট ডের বান।",
+    "bnMeaning": "আমি ট্রেনে যাচ্ছি।",
+    "en": "I am going by train."
+  },
+  {
+    "de": "Ich gehe zu Fuß.",
+    "bn": "ইশ গেহে ৎসু ফুস।",
+    "bnMeaning": "আমি হেঁটে যাচ্ছি।",
+    "en": "I am walking."
+  },
+  {
+    "de": "Ich fahre Fahrrad.",
+    "bn": "ইশ ফারে ফারাড।",
+    "bnMeaning": "আমি সাইকেল চালাচ্ছি।",
+    "en": "I am cycling."
+  },
+  {
+    "de": "Wo ist die Haltestelle?",
+    "bn": "ভো ইস্ট ডি হাল্টেশটেলে?",
+    "bnMeaning": "বাসস্টপ কোথায়?",
+    "en": "Where is the bus stop?"
+  },
+  {
+    "de": "Wann kommt der nächste Bus?",
+    "bn": "ভান কোমট ডের নেশস্টে বুস?",
+    "bnMeaning": "পরবর্তী বাস কখন আসবে?",
+    "en": "When does the next bus come?"
+  },
+  {
+    "de": "Eine Fahrkarte, bitte.",
+    "bn": "আইনে ফারকার্টে, বিটে।",
+    "bnMeaning": "একটি টিকিট, দয়া করে।",
+    "en": "One ticket, please."
+  },
+  {
+    "de": "Wo muss ich aussteigen?",
+    "bn": "ভো মুস ইশ আউসশটাইগেন?",
+    "bnMeaning": "আমি কোথায় নামব?",
+    "en": "Where do I need to get off?"
+  },
+  {
+    "de": "Ist dieser Platz frei?",
+    "bn": "ইস্ট ডিজার প্লাৎস ফ্রাই?",
+    "bnMeaning": "এই আসনটি কি খালি?",
+    "en": "Is this seat free?"
+  },
+  {
+    "de": "Entschuldigen Sie, das ist mein Platz.",
+    "bn": "এনৎশুলডিগেন জি, দাস ইস্ট মাইন প্লাৎস।",
+    "bnMeaning": "মাফ করবেন, এটা আমার আসন।",
+    "en": "Excuse me, that is my seat."
+  },
+  {
+    "de": "Der Zug hat Verspätung.",
+    "bn": "ডের ৎসুগ হাট ফেরশপেটুং।",
+    "bnMeaning": "ট্রেন দেরি হয়েছে।",
+    "en": "The train is delayed."
+  },
+  {
+    "de": "Wo ist Gleis 3?",
+    "bn": "ভো ইস্ট গ্লাইস ড্রাই?",
+    "bnMeaning": "প্ল্যাটফর্ম ৩ কোথায়?",
+    "en": "Where is platform 3?"
+  },
+  {
+    "de": "Ich möchte ein Taxi rufen.",
+    "bn": "ইশ মোশটে আইন ট্যাক্সি রুফেন।",
+    "bnMeaning": "আমি একটি ট্যাক্সি ডাকতে চাই।",
+    "en": "I would like to call a taxi."
+  },
+  {
+    "de": "Fahren Sie mich zum Flughafen.",
+    "bn": "ফারেন জি মিশ ৎসুম ফ্লুগহাফেন।",
+    "bnMeaning": "আমাকে বিমানবন্দরে নিয়ে যান।",
+    "en": "Take me to the airport."
+  },
+  {
+    "de": "Halten Sie hier an.",
+    "bn": "হাল্টেন জি হির আন।",
+    "bnMeaning": "এখানে থামুন।",
+    "en": "Stop here."
+  },
+  {
+    "de": "Wie viel kostet die Fahrt?",
+    "bn": "ভি ফিল কোস্টেট ডি ফার্ট?",
+    "bnMeaning": "যাত্রার দাম কত?",
+    "en": "How much does the trip cost?"
+  },
+  {
+    "de": "Ich möchte Geld wechseln.",
+    "bn": "ইশ মোশটে গেল্ড ভেকসেলন।",
+    "bnMeaning": "আমি টাকা ভাঙাতে চাই।",
+    "en": "I would like to exchange money."
+  },
+  {
+    "de": "Wo ist ein Geldautomat?",
+    "bn": "ভো ইস্ট আইন গেল্ডআউটোমাট?",
+    "bnMeaning": "এটিএম কোথায়?",
+    "en": "Where is an ATM?"
+  },
+  {
+    "de": "Ich möchte ein Konto eröffnen.",
+    "bn": "ইশ মোশটে আইন কোনটো এরোফনেন।",
+    "bnMeaning": "আমি একটি অ্যাকাউন্ট খুলতে চাই।",
+    "en": "I would like to open an account."
+  },
+  {
+    "de": "Meine Karte funktioniert nicht.",
+    "bn": "মাইনে কার্টে ফুঙ্কটসিওনির্ট নিশট।",
+    "bnMeaning": "আমার কার্ড কাজ করছে না।",
+    "en": "My card is not working."
+  },
+  {
+    "de": "Ich habe meine Karte verloren.",
+    "bn": "ইশ হাবে মাইনে কার্টে ফেরলোরেন।",
+    "bnMeaning": "আমি আমার কার্ড হারিয়ে ফেলেছি।",
+    "en": "I have lost my card."
+  },
+  {
+    "de": "Können Sie mir Kleingeld geben?",
+    "bn": "কোনেন জি মির ক্লাইনগেল্ড গেবেন?",
+    "bnMeaning": "আপনি কি আমাকে খুচরা টাকা দিতে পারেন?",
+    "en": "Can you give me change?"
+  },
+  {
+    "de": "Das ist zu viel.",
+    "bn": "দাস ইস্ট ৎসু ফিল।",
+    "bnMeaning": "এটা খুব বেশি।",
+    "en": "That is too much."
+  },
+  {
+    "de": "Das ist zu wenig.",
+    "bn": "দাস ইস্ট ৎসু ভেনিগ।",
+    "bnMeaning": "এটা খুব কম।",
+    "en": "That is too little."
+  },
+  {
+    "de": "Stimmt so.",
+    "bn": "শটিমট জো।",
+    "bnMeaning": "ঠিক আছে। (বাকিটা রাখুন)",
+    "en": "Keep the change."
+  },
+  {
+    "de": "Ich brauche eine Quittung.",
+    "bn": "ইশ ব্রাউখে আইনে কুইটুং।",
+    "bnMeaning": "আমার একটি রসিদ দরকার।",
+    "en": "I need a receipt."
+  },
+  {
+    "de": "Haben Sie das in meiner Größe?",
+    "bn": "হাবেন জি দাস ইন মাইনার গ্রোসে?",
+    "bnMeaning": "আপনার কাছে কি এটা আমার সাইজে আছে?",
+    "en": "Do you have this in my size?"
+  },
+  {
+    "de": "Kann ich das anprobieren?",
+    "bn": "কান ইশ দাস আনপ্রোবিরেন?",
+    "bnMeaning": "আমি কি এটা পরে দেখতে পারি?",
+    "en": "Can I try this on?"
+  },
+  {
+    "de": "Wo ist die Umkleidekabine?",
+    "bn": "ভো ইস্ট ডি উমক্লাইডেকাবিনে?",
+    "bnMeaning": "চেঞ্জিং রুম কোথায়?",
+    "en": "Where is the changing room?"
+  },
+  {
+    "de": "Das passt mir nicht.",
+    "bn": "দাস পাসট মির নিশট।",
+    "bnMeaning": "এটা আমার সাইজ না।",
+    "en": "This doesn't fit me."
+  },
+  {
+    "de": "Das passt perfekt.",
+    "bn": "দাস পাসট পেরফেক্ট।",
+    "bnMeaning": "এটা একদম ঠিক।",
+    "en": "This fits perfectly."
+  },
+  {
+    "de": "Das steht mir gut.",
+    "bn": "দাস শটেট মির গুট।",
+    "bnMeaning": "এটা আমার ভালো লাগছে।",
+    "en": "This looks good on me."
+  },
+  {
+    "de": "Haben Sie etwas Billigeres?",
+    "bn": "হাবেন জি এটভাস বিলিগেরেস?",
+    "bnMeaning": "আপনার কাছে কি আরো সস্তা কিছু আছে?",
+    "en": "Do you have something cheaper?"
+  },
+  {
+    "de": "Ist das im Angebot?",
+    "bn": "ইস্ট দাস ইম আনগেবোট?",
+    "bnMeaning": "এটা কি অফারে আছে?",
+    "en": "Is this on sale?"
+  },
+  {
+    "de": "Gibt es einen Rabatt?",
+    "bn": "গিবট এস আইনেন রাবাট?",
+    "bnMeaning": "কোনো ছাড় আছে?",
+    "en": "Is there a discount?"
+  },
+  {
+    "de": "Kann ich das umtauschen?",
+    "bn": "কান ইশ দাস উমটাউশেন?",
+    "bnMeaning": "আমি কি এটা বদলাতে পারি?",
+    "en": "Can I exchange this?"
+  },
+  {
+    "de": "Ich möchte das zurückgeben.",
+    "bn": "ইশ মোশটে দাস ৎসুরুকগেবেন।",
+    "bnMeaning": "আমি এটা ফেরত দিতে চাই।",
+    "en": "I would like to return this."
+  },
+  {
+    "de": "Haben Sie die Garantie?",
+    "bn": "হাবেন জি ডি গারানটি?",
+    "bnMeaning": "আপনার কি গ্যারান্টি আছে?",
+    "en": "Do you have warranty?"
+  },
+  {
+    "de": "Das ist kaputt.",
+    "bn": "দাস ইস্ট কাপুট।",
+    "bnMeaning": "এটা ভাঙা।",
+    "en": "This is broken."
+  },
+  {
+    "de": "Das funktioniert nicht.",
+    "bn": "দাস ফুঙ্কটসিওনির্ট নিশট।",
+    "bnMeaning": "এটা কাজ করছে না।",
+    "en": "This doesn't work."
+  },
+  {
+    "de": "Können Sie das reparieren?",
+    "bn": "কোনেন জি দাস রেপারিরেন?",
+    "bnMeaning": "আপনি কি এটা মেরামত করতে পারেন?",
+    "en": "Can you repair this?"
+  },
+  {
+    "de": "Wann ist das fertig?",
+    "bn": "ভান ইস্ট দাস ফের্টিগ?",
+    "bnMeaning": "এটা কখন তৈরি হবে?",
+    "en": "When will this be ready?"
+  },
+  {
+    "de": "Das ist dringend.",
+    "bn": "দাস ইস্ট দ্রিঙ্গেন্ড।",
+    "bnMeaning": "এটা জরুরি।",
+    "en": "This is urgent."
+  },
+  {
+    "de": "Das hat Zeit.",
+    "bn": "দাস হাট ৎসাইট।",
+    "bnMeaning": "এটার তাড়া নেই।",
+    "en": "This is not urgent."
+  },
+  {
+    "de": "Ich habe Kopfschmerzen.",
+    "bn": "ইশ হাবে কোপফশমের্ৎসেন।",
+    "bnMeaning": "আমার মাথাব্যথা হচ্ছে।",
+    "en": "I have a headache."
+  },
+  {
+    "de": "Ich habe Bauchschmerzen.",
+    "bn": "ইশ হাবে বাউখশমের্ৎসেন।",
+    "bnMeaning": "আমার পেটব্যথা হচ্ছে।",
+    "en": "I have stomach pain."
+  },
+  {
+    "de": "Ich habe Rückenschmerzen.",
+    "bn": "ইশ হাবে রুকেনশমের্ৎসেন।",
+    "bnMeaning": "আমার পিঠব্যথা হচ্ছে।",
+    "en": "I have back pain."
+  },
+  {
+    "de": "Ich habe Fieber.",
+    "bn": "ইশ হাবে ফিবার।",
+    "bnMeaning": "আমার জ্বর হয়েছে।",
+    "en": "I have a fever."
+  },
+  {
+    "de": "Ich habe Husten.",
+    "bn": "ইশ হাবে হুস্টেন।",
+    "bnMeaning": "আমার কাশি হচ্ছে।",
+    "en": "I have a cough."
+  },
+  {
+    "de": "Ich bin erkältet.",
+    "bn": "ইশ বিন এরকেল্টেট।",
+    "bnMeaning": "আমার সর্দি-কাশি হয়েছে।",
+    "en": "I have a cold."
+  },
+  {
+    "de": "Ich brauche Medikamente.",
+    "bn": "ইশ ব্রাউখে মেডিকামেন্টে।",
+    "bnMeaning": "আমার ওষুধ দরকার।",
+    "en": "I need medicine."
+  },
+  {
+    "de": "Haben Sie etwas gegen Kopfschmerzen?",
+    "bn": "হাবেন জি এটভাস গেগেন কোপফশমের্ৎসেন?",
+    "bnMeaning": "আপনার কাছে মাথাব্যথার জন্য কিছু আছে?",
+    "en": "Do you have something for headaches?"
+  },
+  {
+    "de": "Nehmen Sie das dreimal täglich.",
+    "bn": "নেহমেন জি দাস ড্রাইমাল টেগলিশ।",
+    "bnMeaning": "এটা দিনে তিনবার খান।",
+    "en": "Take this three times daily."
+  },
+  {
+    "de": "Vor dem Essen.",
+    "bn": "ফোর ডেম এসেন।",
+    "bnMeaning": "খাওয়ার আগে।",
+    "en": "Before eating."
+  },
+  {
+    "de": "Nach dem Essen.",
+    "bn": "নাখ ডেম এসেন।",
+    "bnMeaning": "খাওয়ার পরে।",
+    "en": "After eating."
+  },
+  {
+    "de": "Ich habe einen Termin.",
+    "bn": "ইশ হাবে আইনেন টের্মিন।",
+    "bnMeaning": "আমার একটি অ্যাপয়েন্টমেন্ট আছে।",
+    "en": "I have an appointment."
+  },
+  {
+    "de": "Können Sie mir einen Termin geben?",
+    "bn": "কোনেন জি মির আইনেন টের্মিন গেবেন?",
+    "bnMeaning": "আপনি কি আমাকে একটি অ্যাপয়েন্টমেন্ট দিতে পারেন?",
+    "en": "Can you give me an appointment?"
+  },
+  {
+    "de": "Wann haben Sie Zeit?",
+    "bn": "ভান হাবেন জি ৎসাইট?",
+    "bnMeaning": "আপনার কখন সময় আছে?",
+    "en": "When do you have time?"
+  },
+  {
+    "de": "Passt Ihnen Montag?",
+    "bn": "পাসট ইনেন মোনটাগ?",
+    "bnMeaning": "সোমবার কি আপনার ঠিক আছে?",
+    "en": "Does Monday suit you?"
+  },
+  {
+    "de": "Das passt mir gut.",
+    "bn": "দাস পাসট মির গুট।",
+    "bnMeaning": "এটা আমার ঠিক আছে।",
+    "en": "That suits me well."
+  },
+  {
+    "de": "Das passt mir nicht.",
+    "bn": "দাস পাসট মির নিশট।",
+    "bnMeaning": "এটা আমার ঠিক নেই।",
+    "en": "That doesn't suit me."
+  },
+  {
+    "de": "Ich muss den Termin verschieben.",
+    "bn": "ইশ মুস ডেন টের্মিন ফেরশিবেন।",
+    "bnMeaning": "আমাকে অ্যাপয়েন্টমেন্ট পিছিয়ে দিতে হবে।",
+    "en": "I have to postpone the appointment."
+  },
+  {
+    "de": "Ich muss den Termin absagen.",
+    "bn": "ইশ মুস ডেন টের্মিন আবজাগেন।",
+    "bnMeaning": "আমাকে অ্যাপয়েন্টমেন্ট বাতিল করতে হবে।",
+    "en": "I have to cancel the appointment."
+  },
+  {
+    "de": "Es tut mir leid, ich komme zu spät.",
+    "bn": "এস টুট মির লাইড, ইশ কোমে ৎসু শপেট।",
+    "bnMeaning": "দুঃখিত, আমি দেরি করে আসছি।",
+    "en": "I'm sorry, I'm coming late."
+  },
+  {
+    "de": "Können Sie etwas früher?",
+    "bn": "কোনেন জি এটভাস ফ্রুহার?",
+    "bnMeaning": "আপনি কি একটু আগে পারেন?",
+    "en": "Can you come a bit earlier?"
+  },
+  {
+    "de": "Können Sie etwas später?",
+    "bn": "কোনেন জি এটভাস শপেটার?",
+    "bnMeaning": "আপনি কি একটু দেরিতে পারেন?",
+    "en": "Can you come a bit later?"
+  },
+  {
+    "de": "Ich rufe Sie an.",
+    "bn": "ইশ রুফে জি আন।",
+    "bnMeaning": "আমি আপনাকে ফোন করব।",
+    "en": "I will call you."
+  },
+  {
+    "de": "Rufen Sie mich an.",
+    "bn": "রুফেন জি মিশ আন।",
+    "bnMeaning": "আপনি আমাকে ফোন করুন।",
+    "en": "Call me."
+  },
+  {
+    "de": "Meine Telefonnummer ist...",
+    "bn": "মাইনে টেলেফোননুমার ইস্ট...",
+    "bnMeaning": "আমার ফোন নাম্বার হলো...",
+    "en": "My phone number is..."
+  },
+  {
+    "de": "Können Sie das buchstabieren?",
+    "bn": "কোনেন জি দাস বুখশটাবিরেন?",
+    "bnMeaning": "আপনি কি এটা বানান করে বলতে পারেন?",
+    "en": "Can you spell that?"
+  },
+  {
+    "de": "Können Sie das aufschreiben?",
+    "bn": "কোনেন জি দাস আউফশরাইবেন?",
+    "bnMeaning": "আপনি কি এটা লিখে দিতে পারেন?",
+    "en": "Can you write that down?"
+  },
+  {
+    "de": "Haben Sie einen Stift?",
+    "bn": "হাবেন জি আইনেন শটিফট?",
+    "bnMeaning": "আপনার কি একটি কলম আছে?",
+    "en": "Do you have a pen?"
+  },
+  {
+    "de": "Haben Sie Papier?",
+    "bn": "হাবেন জি পাপির?",
+    "bnMeaning": "আপনার কি কাগজ আছে?",
+    "en": "Do you have paper?"
+  },
+  {
+    "de": "Können Sie mir Ihre E-Mail geben?",
+    "bn": "কোনেন জি মির ইরে ই-মেইল গেবেন?",
+    "bnMeaning": "আপনি কি আমাকে আপনার ইমেইল দিতে পারেন?",
+    "en": "Can you give me your email?"
+  },
+  {
+    "de": "Haben Sie Internet?",
+    "bn": "হাবেন জি ইনটারনেট?",
+    "bnMeaning": "আপনার কি ইন্টারনেট আছে?",
+    "en": "Do you have internet?"
+  },
+  {
+    "de": "Das WLAN funktioniert nicht.",
+    "bn": "দাস ভে-লান ফুঙ্কটসিওনির্ট নিশট।",
+    "bnMeaning": "ওয়াইফাই কাজ করছে না।",
+    "en": "The WiFi is not working."
+  },
+  {
+    "de": "Wie ist das Passwort?",
+    "bn": "ভি ইস্ট দাস পাসভোর্ট?",
+    "bnMeaning": "পাসওয়ার্ড কী?",
+    "en": "What is the password?"
+  },
+  {
+    "de": "Ich schicke Ihnen eine E-Mail.",
+    "bn": "ইশ শিকে ইনেন আইনে ই-মেইল।",
+    "bnMeaning": "আমি আপনাকে একটি ইমেইল পাঠাব।",
+    "en": "I will send you an email."
+  },
+  {
+    "de": "Haben Sie meine Nachricht bekommen?",
+    "bn": "হাবেন জি মাইনে নাখরিশট বেকোমেন?",
+    "bnMeaning": "আপনি কি আমার মেসেজ পেয়েছেন?",
+    "en": "Did you receive my message?"
+  },
+  {
+    "de": "Ich habe Ihre Nachricht nicht bekommen.",
+    "bn": "ইশ হাবে ইরে নাখরিশট নিশট বেকোমেন।",
+    "bnMeaning": "আমি আপনার মেসেজ পাইনি।",
+    "en": "I didn't receive your message."
   }
 ]
