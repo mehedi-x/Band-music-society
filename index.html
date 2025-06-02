@@ -12,7 +12,7 @@
     <div class="header-right">
       <select id="language-select">
         <option value="">Select Language</option>
-        
+
         <!-- 🟦 Schengen Countries -->
         <option value="austria">🇦🇹 Austria</option>
         <option value="belgium">🇧🇪 Belgium</option>
@@ -67,7 +67,6 @@
         <option value="vatican">🇻🇦 Vatican City</option>
       </select>
       
-      <!-- নতুন বাটন যোগ করা হয়েছে -->
       <button id="search-toggle" title="খুঁজুন">🔍</button>
       <button id="progress-toggle" title="অগ্রগতি">📊</button>
       <button id="mode-toggle">☀️</button>
@@ -75,11 +74,19 @@
     </div>
   </header>
 
-  <!-- প্রগ্রেস বার (লুকানো থাকবে) -->
+  <!-- সার্চ বার -->
+  <div id="search-bar" class="search-section" style="display: none;">
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="বাক্য খুঁজুন...">
+      <button id="clear-search">❌</button>
+    </div>
+  </div>
+
+  <!-- প্রগ্রেস বার -->
   <div id="progress-bar" class="progress-section" style="display: none;">
     <div class="progress-container">
       <div class="progress-stats">
-        <span>শেখা হয়েছে: <strong id="learned-count">0</strong></span>
+        <span>শেখা: <strong id="learned-count">0</strong></span>
         <span>মোট: <strong id="total-count">0</strong></span>
         <span>অগ্রগতি: <strong id="progress-percent">0%</strong></span>
       </div>
@@ -89,17 +96,10 @@
     </div>
   </div>
 
-  <!-- সার্চ বার (লুকানো থাকবে) -->
-  <div id="search-bar" class="search-section" style="display: none;">
-    <div class="search-container">
-      <input type="text" id="search-input" placeholder="বাক্য খুঁজুন...">
-      <button id="clear-search">❌</button>
-    </div>
-  </div>
-
   <main id="conversation-area" class="p-6 text-base transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 max-w-4xl mx-auto">
-    <!-- আগের মতো ইনট্রো -->
-    <div id="intro-section">
+    
+    <!-- হোম কনটেন্ট -->
+    <div id="home-content">
       <p class="mb-6 leading-relaxed">
         <strong class="font-semibold text-blue-600 dark:text-blue-300">Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে।
       </p>
@@ -111,8 +111,8 @@
           <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
           <li>🔊 বাটনে ক্লিক করে উচ্চারণ শুনুন।</li>
           <li>✅ বাটনে ক্লিক করে "শেখা হয়েছে" মার্ক করুন।</li>
-          <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
           <li>📊 বাটনে ক্লিক করে অগ্রগতি দেখুন।</li>
+          <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
         </ol>
       </section>
 
@@ -140,27 +140,158 @@
       </section>
     </div>
 
-    <!-- ভাষার কন্টেন্ট এলাকা -->
-    <div id="language-content" style="display: none;">
-      <div class="language-header">
-        <h2 id="language-title"></h2>
-        <div class="language-stats">
-          <span id="showing-count">দেখানো হচ্ছে: 0</span>
+    <!-- About Content -->
+    <div id="about-content" style="display: none;">
+      <div class="content-section">
+        <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">📖 Speak EU সম্পর্কে</h2>
+        
+        <div class="bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🎯 আমাদের লক্ষ্য</h3>
+          <p class="leading-relaxed">
+            Speak EU হল একটি বিনামূল্যের ভাষা শিক্ষার প্ল্যাটফর্ম যা বিশেষভাবে বাংলাভাষী মানুষদের জন্য তৈরি করা হয়েছে যারা ইউরোপের বিভিন্ন দেশে বসবাস করেন বা যেতে চান। আমাদের মূল উদ্দেশ্য হল দৈনন্দিন জীবনে প্রয়োজনীয় ভাষা দক্ষতা অর্জনে সহায়তা করা।
+          </p>
+        </div>
+
+        <div class="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold mb-3">✨ বিশেষ ফিচারসমূহ</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>40+ ইউরোপীয় দেশের ভাষা</li>
+            <li>বাংলা উচ্চারণ গাইড</li>
+            <li>অডিও প্রোনানসিয়েশন</li>
+            <li>অগ্রগতি ট্র্যাকিং</li>
+            <li>অফলাইন ব্যবহার</li>
+            <li>মোবাইল ফ্রেন্ডলি</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-100 dark:bg-green-900 p-5 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-3">👥 আমাদের টিম</h3>
+          <p class="leading-relaxed">
+            আমাদের টিমে রয়েছে অভিজ্ঞ ভাষাবিদ, সফটওয়্যার ডেভেলপার এবং UI/UX ডিজাইনারগণ যারা একসাথে কাজ করে এই প্ল্যাটফর্মটি তৈরি করেছেন। আমরা ক্রমাগত নতুন ভাষা এবং ফিচার যোগ করার চেষ্টা করছি।
+          </p>
         </div>
       </div>
-      <div id="vocabulary-list"></div>
+    </div>
+
+    <!-- Contact Content -->
+    <div id="contact-content" style="display: none;">
+      <div class="content-section">
+        <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">📞 যোগাযোগ করুন</h2>
+        
+        <div class="bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">💬 আমাদের সাথে যোগাযোগ</h3>
+          <p class="mb-4">আপনার কোন প্রশ্ন, পরামর্শ বা সমস্যা থাকলে আমাদের সাথে যোগাযোগ করুন:</p>
+          
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">📧</span>
+              <div>
+                <strong>ইমেইল:</strong>
+                <a href="mailto:support@speakeu.com" class="text-blue-600 dark:text-blue-300 hover:underline">support@speakeu.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">📘</span>
+              <div>
+                <strong>Facebook:</strong>
+                <a href="https://facebook.com/speakeu" target="_blank" class="text-blue-600 dark:text-blue-300 hover:underline">facebook.com/speakeu</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">📢</span>
+              <div>
+                <strong>Telegram:</strong>
+                <a href="https://t.me/speakeu" target="_blank" class="text-blue-600 dark:text-blue-300 hover:underline">t.me/speakeu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold mb-3">📝 মতামত পাঠান</h3>
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium mb-2">নাম:</label>
+              <input type="text" class="w-full p-3 border rounded-lg dark:bg-gray-600" placeholder="আপনার নাম লিখুন">
+            </div>
+            <div>
+              <label class="block font-medium mb-2">ইমেইল:</label>
+              <input type="email" class="w-full p-3 border rounded-lg dark:bg-gray-600" placeholder="আপনার ইমেইল লিখুন">
+            </div>
+            <div>
+              <label class="block font-medium mb-2">বার্তা:</label>
+              <textarea rows="4" class="w-full p-3 border rounded-lg dark:bg-gray-600" placeholder="আপনার মতামত বা প্রশ্ন লিখুন"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">পাঠান</button>
+          </form>
+        </div>
+
+        <div class="bg-yellow-100 dark:bg-yellow-900 p-5 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-3">⏰ সাপোর্ট সময়</h3>
+          <p>আমরা সপ্তাহের ৭ দিন, ২৪ ঘন্টা আপনাদের সেবায় নিয়োজিত আছি। তবে জরুরি বিষয়ে ইমেইল করলে ২৪ ঘন্টার মধ্যে উত্তর পাবেন।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy Policy Content -->
+    <div id="privacy-content" style="display: none;">
+      <div class="content-section">
+        <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-300 mb-4">🔒 গোপনীয়তা নীতি</h2>
+        
+        <div class="bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">📋 তথ্য সংগ্রহ</h3>
+          <p class="leading-relaxed">
+            Speak EU ব্যবহার করার সময় আমরা শুধুমাত্র আপনার শেখার অগ্রগতি এবং পছন্দের ভাষা আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষণ করি। আমরা কোন ব্যক্তিগত তথ্য সার্ভারে সংরক্ষণ করি না।
+          </p>
+        </div>
+
+        <div class="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold mb-3">💾 ডেটা স্টোরেজ</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>লোকাল স্টোরেজ:</strong> আপনার শেখার অগ্রগতি শুধুমাত্র আপনার ব্রাউজারে সংরক্ষিত হয়</li>
+            <li><strong>কুকিজ:</strong> আমরা শুধুমাত্র থিম এবং ভাষার পছন্দ মনে রাখতে কুকিজ ব্যবহার করি</li>
+            <li><strong>তৃতীয় পক্ষ:</strong> আমরা কোন তৃতীয় পক্ষের সাথে আপনার তথ্য শেয়ার করি না</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-100 dark:bg-green-900 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-3">🛡️ নিরাপত্তা</h3>
+          <p class="leading-relaxed">
+            আপনার গোপনীয়তা আমাদের কাছে অত্যন্ত গুরুত্বপূর্ণ। এই অ্যাপটি সম্পূর্ণভাবে ক্লায়েন্ট-সাইডে কাজ করে, যার ফলে আপনার কোন তথ্য ইন্টারনেটে পাঠানো হয় না।
+          </p>
+        </div>
+
+        <div class="bg-red-100 dark:bg-red-900 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-red-800 dark:text-red-200 mb-3">⚠️ গুরুত্বপূর্ণ নোট</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>এই অ্যাপটি শুধুমাত্র শিক্ষামূলক উদ্দেশ্যে তৈরি</li>
+            <li>আমরা কোন বাণিজ্যিক তথ্য সংগ্রহ করি না</li>
+            <li>আপনার ডেটা মুছে ফেলতে চাইলে ব্রাউজারের সেটিংস থেকে সাইটের ডেটা ক্লিয়ার করুন</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">📞 যোগাযোগ</h3>
+          <p>গোপনীয়তা সংক্রান্ত কোন প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন: <a href="mailto:privacy@speakeu.com" class="text-blue-600 hover:underline">privacy@speakeu.com</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ভাষার কনটেন্ট এলাকা -->
+    <div id="language-content" style="display: none;">
+      <!-- এখানে ভাষার কন্টেন্ট দেখানো হবে -->
     </div>
   </main>
 
-  <!-- সাইড মেনু (আগের মতো) -->
+  <!-- সাইড মেনু -->
   <div id="side-menu">
     <button id="close-menu" title="Close menu">✖</button>
     <h3>Speak EU</h3>
     <ul>
       <li><a href="#" id="home-link">🏠 Home</a></li>
       <li><a href="#" id="about-link">ℹ️ About</a></li>
-      <li><a href="#" id="progress-link">📊 Progress</a></li>
-      <li><a href="#" id="settings-link">⚙️ Settings</a></li>
       <li><a href="#" id="contact-link">📞 Contact us</a></li>
       <li><a href="#" id="privacy-link">🔒 Privacy policy</a></li>
     </ul>
