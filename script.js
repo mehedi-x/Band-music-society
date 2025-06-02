@@ -1,171 +1,146 @@
-/* Search Box */
-#search-box {
-  padding: 5px 10px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  margin-right: 10px;
-  font-size: 0.9rem;
-}
+const languageSelect = document.getElementById('language-select');
+const conversationArea = document.getElementById('conversation-area');
+const modeToggle = document.getElementById('mode-toggle');
 
-/* Speaking Button */
-.speak-btn {
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  margin-left: 10px;
-}
+const langCodeMap = {
+  austria: 'de',
+  belgium: 'nl',
+  czech: 'cs',
+  denmark: 'da',
+  estonia: 'et',
+  finland: 'fi',
+  france: 'fr',
+  germany: 'de',
+  greece: 'el',
+  hungary: 'hu',
+  iceland: 'is',
+  italy: 'it',
+  latvia: 'lv',
+  liechtenstein: 'de',
+  lithuania: 'lt',
+  luxembourg: 'lb',
+  malta: 'mt',
+  netherlands: 'nl',
+  norway: 'no',
+  poland: 'pl',
+  portugal: 'pt',
+  slovakia: 'sk',
+  slovenia: 'sl',
+  spain: 'es',
+  sweden: 'sv',
+  switzerland: 'de',
 
-.speak-btn:hover {
-  background: #45a049;
-}
+  russian: 'ru', // Russian language
 
-/* Language Grid */
-.language-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  margin-top: 15px;
-}
+  albania: 'sq',
+  andorra: 'ca',
+  armenia: 'hy',
+  azerbaijan: 'az',
+  bosnia: 'bs',
+  bulgaria: 'bg',
+  croatia: 'hr',
+  cyprus: 'el',
+  georgia: 'ka',
+  ireland: 'en',
+  kosovo: 'sq',
+  moldova: 'ro',
+  monaco: 'fr',
+  montenegro: 'sr',
+  northmacedonia: 'mk',
+  romania: 'ro',
+  sanmarino: 'it',
+  serbia: 'sr',
+  turkey: 'tr',
+  ukraine: 'uk',
+  unitedkingdom: 'en',
+  vatican: 'la'
+};
 
-.language-grid span {
-  background: #f0f0f0;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.language-grid span:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Feature Cards */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 30px 0;
-}
-
-.feature-card {
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.stat-item {
-  text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.stat-number {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-/* Quick Languages */
-.quick-languages {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 30px;
-}
-
-.language-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.language-buttons button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.language-buttons button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-/* Error Message */
-.error-message {
-  background: #fff3cd;
-  border: 1px solid #ffeaa7;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  margin: 20px 0;
-}
-
-/* Contact Form */
-.contact-info {
-  display: grid;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.contact-icon {
-  font-size: 2rem;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .language-buttons {
-    grid-template-columns: repeat(2, 1fr);
+// ✅ পেজ লোড হলে লোকালস্টোরেজ থেকে ভাষা ও থিম লোড
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('selectedLanguage');
+  if (savedLang) {
+    languageSelect.value = savedLang;
+    loadLanguage(savedLang);
   }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    modeToggle.textContent = '🌙';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeToggle.textContent = '☀️';
   }
-  
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
+});
+
+// ✅ ভাষা সিলেক্ট করলে সেটিংস স্মৃতি থাকে
+languageSelect.addEventListener('change', () => {
+  const lang = languageSelect.value;
+  if (!lang) return;
+  localStorage.setItem('selectedLanguage', lang);
+  loadLanguage(lang);
+});
+
+// ✅ ভাষা JSON লোড করে UI রেন্ডার
+function loadLanguage(lang) {
+  fetch(`languages/${lang}.json`)
+    .then(res => res.json())
+    .then(data => renderVocabulary(data, langCodeMap[lang]))
+    .catch(error => {
+      conversationArea.innerHTML = `<p style="color:red;">Error loading data: ${error}</p>`;
+    });
+}
+
+// ✅ কথাবার্তা রেন্ডার
+function renderVocabulary(list, langKey) {
+  conversationArea.innerHTML = '';
+
+  if (!Array.isArray(list) || list.length === 0) {
+    conversationArea.innerHTML = '<p>No data found for this language.</p>';
+    return;
   }
+
+  list.forEach(item => {
+    const localLang = item[langKey] || '—';
+    const bn = item.bn || '—';
+    const bnMeaning = item.bnMeaning || '—';
+    const en = item.en || '—';
+
+    const div = document.createElement('div');
+    div.className = 'conversation-item';
+    div.innerHTML = `
+      <div>🗣️ <strong>${localLang}</strong></div>
+      <div>📝 <span>${bn}</span></div>
+      <div>📘 <em>${bnMeaning}</em></div>
+      <div>🔤 <span>${en}</span></div>
+    `;
+    conversationArea.appendChild(div);
+  });
+}
+
+// ✅ থিম টগল ও লোকালস্টোরেজে সংরক্ষণ
+modeToggle.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode');
+  modeToggle.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+//মেনু 
+// ☰ মেনু টগল
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+
+if (menuToggle && sideMenu) {
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('active');
+  });
+}
+
+// ✖ ক্লোজ বাটন টগল
+const closeMenu = document.getElementById('close-menu');
+if (closeMenu && sideMenu) {
+  closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+  });
 }

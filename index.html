@@ -5,171 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speak EU - Language Learning</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
       <select id="language-select">
-        <option value="">Select Language</option>
-        <option value="italy">🇮🇹 Italy</option>
-        <option value="spain">🇪🇸 Spain</option>
-        <option value="france">🇫🇷 France</option>
-        <option value="germany">🇩🇪 Germany</option>
-        <option value="greece">🇬🇷 Greece</option>
-        <option value="portugal">🇵🇹 Portugal</option>
-      </select>
-      <button id="search-toggle" title="Search">🔍</button>
-      <button id="progress-toggle" title="View Progress">📊</button>
+  <option value="">Select Language</option>
+
+  <!-- 🟦 Schengen Countries -->
+  <option value="austria">🇦🇹 Austria</option>
+  <option value="belgium">🇧🇪 Belgium</option>
+  <option value="czech">🇨🇿 Czech Republic</option>
+  <option value="denmark">🇩🇰 Denmark</option>
+  <option value="estonia">🇪🇪 Estonia</option>
+  <option value="finland">🇫🇮 Finland</option>
+  <option value="france">🇫🇷 France</option>
+  <option value="germany">🇩🇪 Germany</option>
+  <option value="greece">🇬🇷 Greece</option>
+  <option value="hungary">🇭🇺 Hungary</option>
+  <option value="iceland">🇮🇸 Iceland</option>
+  <option value="italy">🇮🇹 Italy</option>
+  <option value="latvia">🇱🇻 Latvia</option>
+  <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+  <option value="lithuania">🇱🇹 Lithuania</option>
+  <option value="luxembourg">🇱🇺 Luxembourg</option>
+  <option value="malta">🇲🇹 Malta</option>
+  <option value="netherlands">🇳🇱 Netherlands</option>
+  <option value="norway">🇳🇴 Norway</option>
+  <option value="poland">🇵🇱 Poland</option>
+  <option value="portugal">🇵🇹 Portugal</option>
+  <option value="slovakia">🇸🇰 Slovakia</option>
+  <option value="slovenia">🇸🇮 Slovenia</option>
+  <option value="spain">🇪🇸 Spain</option>
+  <option value="sweden">🇸🇪 Sweden</option>
+  <option value="switzerland">🇨🇭 Switzerland</option>
+
+  <!-- 🟥 Non-Schengen EU/Europe Countries -->
+  <option value="russian">🇷🇺 Russian</option>
+  <option value="albania">🇦🇱 Albania</option>
+  <option value="andorra">🇦🇩 Andorra</option>
+  <option value="armenia">🇦🇲 Armenia</option>
+  <option value="azerbaijan">🇦🇿 Azerbaijan</option>
+  <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
+  <option value="bulgaria">🇧🇬 Bulgaria</option>
+  <option value="croatia">🇭🇷 Croatia</option>
+  <option value="cyprus">🇨🇾 Cyprus</option>
+  <option value="georgia">🇬🇪 Georgia</option>
+  <option value="ireland">🇮🇪 Ireland</option>
+  <option value="kosovo">🇽🇰 Kosovo</option>
+  <option value="moldova">🇲🇩 Moldova</option>
+  <option value="monaco">🇲🇨 Monaco</option>
+  <option value="montenegro">🇲🇪 Montenegro</option>
+  <option value="northmacedonia">🇲🇰 North Macedonia</option>
+  <option value="romania">🇷🇴 Romania</option>
+  <option value="sanmarino">🇸🇲 San Marino</option>
+  <option value="serbia">🇷🇸 Serbia</option>
+  <option value="turkey">🇹🇷 Turkey</option>
+  <option value="ukraine">🇺🇦 Ukraine</option>
+  <option value="unitedkingdom">🇬🇧 United Kingdom</option>
+  <option value="vatican">🇻🇦 Vatican City</option>
+</select>
       <button id="mode-toggle">☀️</button>
       <button id="menu-toggle">☰</button>
     </div>
   </header>
+<main id="conversation-area" class="p-6 text-base transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 max-w-4xl mx-auto">
+  <!-- Intro -->
+  <p class="mb-6 leading-relaxed">
+    <strong class="font-semibold text-blue-600 dark:text-blue-300">Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে। এই প্ল্যাটফর্মের মাধ্যমে ব্যবহারকারীরা সহজে স্থানীয় ভাষায় প্রয়োজনীয় দৈনন্দিন কথাবার্তা শিখতে পারেন, যা তাদের দৈনন্দিন জীবনযাত্রাকে আরও সহজ, কার্যকর এবং আত্মবিশ্বাসী করে তোলে।
+  </p>
 
-  <!-- Search Box -->
-  <div id="search-container" style="display: none;">
-    <input type="text" id="search-box" placeholder="Search words in any language...">
-  </div>
+  <!-- 🚀 Quick Start -->
+  <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+    <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🚀 শুরু করার জন্য করণীয়</h3>
+    <ol class="list-decimal pl-6 space-y-1">
+      <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
+      <li>আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
+      <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
+      <li>আপনার অগ্রগতি ট্র্যাক করতে একটি ডায়েরি রাখুন।</li>
+    </ol>
+  </section>
 
-  <!-- Progress Dashboard Modal -->
-  <div id="progress-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>📊 Learning Progress</h2>
-        <span class="close-modal">&times;</span>
-      </div>
-      <div class="modal-body">
-        <div class="progress-stats">
-          <div class="stat-card">
-            <div class="stat-number" id="total-learned">0</div>
-            <div class="stat-label">Words Learned</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="current-streak">0</div>
-            <div class="stat-label">Day Streak</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" id="languages-studied">0</div>
-            <div class="stat-label">Languages</div>
-          </div>
-        </div>
-        
-        <div class="achievements">
-          <h3>🏆 Achievements</h3>
-          <div id="achievement-list" class="achievement-grid"></div>
-        </div>
-      </div>
+  <!-- 🌍 Country Flags -->
+  <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm">
+    <h3 class="text-lg font-semibold mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
+    <div class="flex flex-wrap gap-4 text-sm">
+      <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇮🇹 ইতালি (Italian)</span>
+      <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇪🇸 স্পেন (Spanish)</span>
+      <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇩🇪 জার্মানি (German)</span>
+      <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇫🇷 ফ্রান্স (French)</span>
+      <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇬🇷 গ্রিস (Greek)</span>
+      <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇵🇹 পর্তুগাল (Portuguese)</span>
     </div>
-  </div>
+  </section>
 
-  <main id="conversation-area">
-    <!-- Progress Bar for Current Language -->
-    <div id="current-progress" class="current-progress" style="display: none;">
-      <div class="progress-header">
-        <h3 id="progress-language">Learning Progress</h3>
-        <span id="progress-text">0/0 words learned</span>
-      </div>
-      <div class="progress-bar-container">
-        <div id="progress-bar" class="progress-bar"></div>
-      </div>
+  <!-- 📢 Join Us -->
+  <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+    <h3 class="text-lg font-semibold mb-3">📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
+    <p class="mb-2">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
+    <div class="flex gap-4 text-blue-600 dark:text-blue-300">
+      <a href="https://facebook.com" target="_blank" class="hover:underline">📘 Facebook</a>
+      <a href="https://t.me" target="_blank" class="hover:underline">📢 Telegram</a>
     </div>
+  </section>
+</main>
 
-    <!-- Default Content -->
-    <div id="default-content">
-      <h1 class="main-title">🌟 Speak EU</h1>
-      <p class="subtitle">একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে।</p>
-      
-      <!-- Quick Start -->
-      <section class="quick-start">
-        <h3>🚀 শুরু করার জন্য করণীয়</h3>
-        <ol>
-          <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
-          <li>শব্দগুলো পড়ুন এবং 🔊 দিয়ে উচ্চারণ শুনুন।</li>
-          <li>📚 বাটনে ক্লিক করে শেখা হিসেবে মার্ক করুন।</li>
-          <li>আপনার অগ্রগতি ট্র্যাক করতে 📊 বাটনে ক্লিক করুন।</li>
-        </ol>
-      </section>
-
-      <!-- Popular Languages -->
-      <section class="popular-languages">
-        <h3>🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
-        <div class="language-grid">
-          <span class="lang-chip" onclick="selectLanguage('italy')">🇮🇹 ইতালি (Italian)</span>
-          <span class="lang-chip" onclick="selectLanguage('spain')">🇪🇸 স্পেন (Spanish)</span>
-          <span class="lang-chip" onclick="selectLanguage('france')">🇫🇷 ফ্রান্স (French)</span>
-          <span class="lang-chip" onclick="selectLanguage('germany')">🇩🇪 জার্মানি (German)</span>
-          <span class="lang-chip" onclick="selectLanguage('greece')">🇬🇷 গ্রিস (Greek)</span>
-          <span class="lang-chip" onclick="selectLanguage('portugal')">🇵🇹 পর্তুগাল (Portuguese)</span>
-        </div>
-      </section>
-
-      <!-- Join Us -->
-      <section class="join-us">
-        <h3>📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
-        <p>সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
-        <div class="social-links">
-          <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-          <a href="https://t.me" target="_blank">📢 Telegram</a>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- Side Menu -->
-  <div id="side-menu">
-    <div class="menu-header">
-      <button id="close-menu" title="Close menu">✖</button>
-      <h3>🌍 Speak EU</h3>
-    </div>
-    
-    <div class="menu-content">
-      <ul>
-        <li>
-          <a href="#" onclick="showPage('home')">
-            <span class="menu-icon">🏠</span>
-            <span>Home</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="showPage('about')">
-            <span class="menu-icon">ℹ️</span>
-            <span>About</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="showPage('contact')">
-            <span class="menu-icon">📞</span>
-            <span>Contact us</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="showPage('privacy')">
-            <span class="menu-icon">🔒</span>
-            <span>Privacy policy</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="exportProgress()">
-            <span class="menu-icon">📊</span>
-            <span>Export Progress</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="clearSoftware()">
-            <span class="menu-icon">🧹</span>
-            <span>Clear Software</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="menu-footer">
-      <p class="menu-footer-text">Made with ❤️ for Europe</p>
-      <p class="app-version">Version 2.0</p>
-    </div>
-  </div>
-
+    <!-- সাইড মেনু ড্রয়ার (script.js চালুর আগেই থাকা উচিত) -->
+<div id="side-menu">
+  <button id="close-menu" title="Close menu">✖</button>
+  <h3>Speak Eu</h3>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="#">privacy policy</a></li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+</div>
+  <!-- ✅ স্ক্রিপ্ট ফাইল সবশেষে -->
   <script src="script.js"></script>
 </body>
 </html>
