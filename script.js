@@ -1,24 +1,21 @@
-// Language Code Mapping
+// Language Code Mapping (আগের মতো)
 const langCodeMap = {
   austria: 'de', belgium: 'nl', czech: 'cs', denmark: 'da', estonia: 'et',
   finland: 'fi', france: 'fr', germany: 'de', greece: 'el', hungary: 'hu',
-  iceland: 'is', italy: 'it', latvia: 'lv', lithuania: 'lt', luxembourg: 'lb',
-  malta: 'mt', netherlands: 'nl', norway: 'no', poland: 'pl', portugal: 'pt',
-  slovakia: 'sk', slovenia: 'sl', spain: 'es', sweden: 'sv', switzerland: 'de',
-  russian: 'ru', albania: 'sq', bulgaria: 'bg', croatia: 'hr', cyprus: 'el',
-  ireland: 'en', romania: 'ro', serbia: 'sr', turkey: 'tr', ukraine: 'uk',
-  unitedkingdom: 'en'
+  iceland: 'is', italy: 'it', latvia: 'lv', liechtenstein: 'de', lithuania: 'lt',
+  luxembourg: 'lb', malta: 'mt', netherlands: 'nl', norway: 'no', poland: 'pl',
+  portugal: 'pt', slovakia: 'sk', slovenia: 'sl', spain: 'es', sweden: 'sv',
+  switzerland: 'de', russian: 'ru', albania: 'sq', andorra: 'ca', armenia: 'hy',
+  azerbaijan: 'az', bosnia: 'bs', bulgaria: 'bg', croatia: 'hr', cyprus: 'el',
+  georgia: 'ka', ireland: 'en', kosovo: 'sq', moldova: 'ro', monaco: 'fr',
+  montenegro: 'sr', northmacedonia: 'mk', romania: 'ro', sanmarino: 'it',
+  serbia: 'sr', turkey: 'tr', ukraine: 'uk', unitedkingdom: 'en', vatican: 'la'
 };
 
 // Global Variables
 let currentLanguageData = [];
 let currentLanguage = '';
 let learnedPhrases = JSON.parse(localStorage.getItem('learnedPhrases')) || {};
-let filteredData = [];
-let speechSynthesis = window.speechSynthesis;
-let currentQuiz = [];
-let currentQuestionIndex = 0;
-let quizScore = 0;
 
 // DOM Elements
 const languageSelect = document.getElementById('language-select');
@@ -27,20 +24,26 @@ const modeToggle = document.getElementById('mode-toggle');
 const menuToggle = document.getElementById('menu-toggle');
 const sideMenu = document.getElementById('side-menu');
 const closeMenu = document.getElementById('close-menu');
-const welcomeMessage = document.getElementById('welcome-message');
+const introSection = document.getElementById('intro-section');
 const languageContent = document.getElementById('language-content');
-const vocabularyContainer = document.getElementById('vocabulary-container');
+const languageTitle = document.getElementById('language-title');
+const vocabularyList = document.getElementById('vocabulary-list');
+const showingCount = document.getElementById('showing-count');
+
+// নতুন এলিমেন্ট
+const searchToggle = document.getElementById('search-toggle');
+const searchBar = document.getElementById('search-bar');
 const searchInput = document.getElementById('search-input');
-const filterButtons = document.querySelectorAll('.filter-btn');
-const progressContainer = document.getElementById('progress-container');
-const progressBtn = document.getElementById('progress-btn');
-const quizBtn = document.getElementById('quiz-btn');
-const quizModal = document.getElementById('quiz-modal');
-const closeQuiz = document.getElementById('close-quiz');
-const loading = document.getElementById('loading');
+const clearSearch = document.getElementById('clear-search');
+const progressToggle = document.getElementById('progress-toggle');
+const progressBar = document.getElementById('progress-bar');
+const learnedCount = document.getElementById('learned-count');
+const totalCount = document.getElementById('total-count');
+const progressPercent = document.getElementById('progress-percent');
+const progressFill = document.getElementById('progress-fill');
 
 // Initialize App
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', () => {
   loadSavedSettings();
   setupEventListeners();
   updateProgressDisplay();
@@ -48,475 +51,257 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Load Saved Settings
 function loadSavedSettings() {
-  // Load saved theme
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    modeToggle.textContent = '🌙';
-  }
-  
-  // Load saved language
   const savedLang = localStorage.getItem('selectedLanguage');
   if (savedLang) {
     languageSelect.value = savedLang;
     loadLanguage(savedLang);
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    modeToggle.textContent = '🌙';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeToggle.textContent = '☀️';
   }
 }
 
 // Setup Event Listeners
 function setupEventListeners() {
   // Language selection
-  languageSelect.addEventListener('change', handleLanguageChange);
-  
-  // Quick language buttons
-  document.querySelectorAll('.lang-quick-btn').forEach(btn => {
+  languageSelect.addEventListener('change', () => {
+    const lang = languageSelect.value;
+    if (!lang) return;
+    localStorage.setItem('selectedLanguage', lang);
+    loadLanguage(lang);
+  });
+
+  // Quick language selection
+  document.querySelectorAll('.lang-quick').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
       languageSelect.value = lang;
+      localStorage.setItem('selectedLanguage', lang);
       loadLanguage(lang);
     });
   });
-  
+
   // Theme toggle
-  modeToggle.addEventListener('click', toggleTheme);
-  
+  modeToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    modeToggle.textContent = isDark ? '🌙' : '☀️';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
   // Menu toggle
   menuToggle.addEventListener('click', () => sideMenu.classList.add('active'));
   closeMenu.addEventListener('click', () => sideMenu.classList.remove('active'));
-  
+
   // Search functionality
+  searchToggle.addEventListener('click', toggleSearch);
   searchInput.addEventListener('input', handleSearch);
-  
-  // Filter buttons
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterPhrases(btn.dataset.filter);
-    });
-  });
-  
-  // Progress toggle
-  progressBtn.addEventListener('click', toggleProgress);
-  
-  // Quiz functionality
-  quizBtn.addEventListener('click', startQuiz);
-  closeQuiz.addEventListener('click', () => quizModal.style.display = 'none');
-  document.getElementById('next-question').addEventListener('click', nextQuestion);
-  document.getElementById('finish-quiz').addEventListener('click', finishQuiz);
-  
+  clearSearch.addEventListener('click', clearSearchInput);
+
+  // Progress functionality
+  progressToggle.addEventListener('click', toggleProgress);
+
   // Menu links
   document.getElementById('home-link').addEventListener('click', showHome);
   document.getElementById('progress-link').addEventListener('click', toggleProgress);
-  document.getElementById('quiz-link').addEventListener('click', startQuiz);
 }
 
-// Handle Language Change
-function handleLanguageChange() {
-  const lang = languageSelect.value;
-  if (!lang) return;
+// Load Language
+function loadLanguage(lang) {
+  currentLanguage = lang;
   
-  localStorage.setItem('selectedLanguage', lang);
-  loadLanguage(lang);
-}
-
-// Load Language Data
-async function loadLanguage(lang) {
-  showLoading(true);
-  
-  try {
-    const response = await fetch(`languages/${lang}.json`);
-    if (!response.ok) throw new Error('Language file not found');
-    
-    const data = await response.json();
-    currentLanguageData = data;
-    currentLanguage = lang;
-    filteredData = data;
-    
-    showLanguageContent();
-    renderVocabulary();
-    updateProgressDisplay();
-    
-  } catch (error) {
-    console.error('Error loading language:', error);
-    showError('ভাষার ফাইল লোড করতে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।');
-  } finally {
-    showLoading(false);
-  }
-}
-
-// Show/Hide Loading
-function showLoading(show) {
-  loading.style.display = show ? 'block' : 'none';
-  welcomeMessage.style.display = show ? 'none' : (!currentLanguage ? 'block' : 'none');
-  languageContent.style.display = show ? 'none' : (currentLanguage ? 'block' : 'none');
+  fetch(`${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      currentLanguageData = data;
+      renderVocabulary(data, langCodeMap[lang]);
+      updateProgressDisplay();
+      showLanguageContent();
+    })
+    .catch(error => {
+      console.error('Error loading language data:', error);
+      vocabularyList.innerHTML = `<p style="color:red;">ভাষার ডেটা লোড করতে সমস্যা হয়েছে: ${error}</p>`;
+    });
 }
 
 // Show Language Content
 function showLanguageContent() {
-  welcomeMessage.style.display = 'none';
+  introSection.style.display = 'none';
   languageContent.style.display = 'block';
-  progressContainer.style.display = 'block';
+  
+  // Set language title
+  const selectedOption = languageSelect.options[languageSelect.selectedIndex];
+  languageTitle.textContent = selectedOption.text;
 }
 
 // Show Home
 function showHome() {
-  welcomeMessage.style.display = 'block';
+  introSection.style.display = 'block';
   languageContent.style.display = 'none';
-  progressContainer.style.display = 'none';
+  searchBar.style.display = 'none';
+  progressBar.style.display = 'none';
   sideMenu.classList.remove('active');
 }
 
 // Render Vocabulary
-function renderVocabulary() {
-  vocabularyContainer.innerHTML = '';
-  
-  if (!filteredData.length) {
-    vocabularyContainer.innerHTML = '<p class="no-results">কোন ফলাফল পাওয়া যায়নি।</p>';
+function renderVocabulary(list, langKey) {
+  vocabularyList.innerHTML = '';
+
+  if (!Array.isArray(list) || list.length === 0) {
+    vocabularyList.innerHTML = '<p>এই ভাষার জন্য কোন ডেটা পাওয়া যায়নি।</p>';
     return;
   }
-  
-  filteredData.forEach((item, index) => {
-    const langCode = langCodeMap[currentLanguage];
-    const nativeText = item[langCode] || '—';
-    const phoneticText = item.bn || '—';
-    const meaningText = item.bnMeaning || '—';
-    const englishText = item.en || '—';
+
+  list.forEach((item, index) => {
+    const localLang = item[langKey] || '—';
+    const bn = item.bn || '—';
+    const bnMeaning = item.bnMeaning || '—';
+    const en = item.en || '—';
     
-    const phraseId = `${currentLanguage}-${index}`;
+    const phraseId = `${currentLanguage}_${index}`;
     const isLearned = learnedPhrases[phraseId] || false;
-    
+
     const div = document.createElement('div');
     div.className = `conversation-item ${isLearned ? 'learned' : ''}`;
+    div.dataset.phraseId = phraseId;
+    
     div.innerHTML = `
-      <div class="phrase-header">
-        <div class="phrase-native">${nativeText}</div>
-        <div class="phrase-controls">
-          <button class="speak-btn" onclick="speakText('${nativeText}', '${langCode}')" title="উচ্চারণ শুনুন">
-            🔊
-          </button>
-          <button class="learn-btn ${isLearned ? 'learned' : ''}" onclick="toggleLearned('${phraseId}', this)" title="${isLearned ? 'শেখা হয়েছে' : 'শেখা হয়নি'}">
-            ${isLearned ? '✅' : '📚'}
-          </button>
-        </div>
+      <div class="phrase-controls">
+        <button class="speak-btn" onclick="speakText('${localLang}', '${langKey}')" title="উচ্চারণ শুনুন">🔊</button>
+        <button class="learn-btn ${isLearned ? 'learned' : ''}" onclick="toggleLearned('${phraseId}', this)" title="শেখা হয়েছে">
+          ${isLearned ? '✅' : '📚'}
+        </button>
       </div>
-      <div class="phrase-content">
-        <div>
-          <span>🗣️</span>
-          <span class="phrase-phonetic">${phoneticText}</span>
-        </div>
-        <div>
-          <span>📝</span>
-          <span class="phrase-meaning">${meaningText}</span>
-        </div>
-        <div>
-          <span>🔤</span>
-          <span class="phrase-english">${englishText}</span>
-        </div>
-      </div>
+      <div>🗣️ <strong>${localLang}</strong></div>
+      <div>📝 <span>${bn}</span></div>
+      <div>📘 <em>${bnMeaning}</em></div>
+      <div>🔤 <span>${en}</span></div>
     `;
     
-    vocabularyContainer.appendChild(div);
+    vocabularyList.appendChild(div);
   });
+
+  updateShowingCount(list.length);
 }
 
-// Text to Speech
+// Speak Text Function
 function speakText(text, langCode) {
-  if (!speechSynthesis) {
-    alert('আপনার ব্রাউজার স্পিচ সাপোর্ট করে না।');
-    return;
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = langCode;
+    utterance.rate = 0.8;
+    speechSynthesis.speak(utterance);
+  } else {
+    alert('আপনার ব্রাউজার স্পিচ ফিচার সাপোর্ট করে না।');
   }
-  
-  speechSynthesis.cancel(); // Stop any ongoing speech
-  
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = getFullLanguageCode(langCode);
-  utterance.rate = 0.8;
-  utterance.pitch = 1;
-  
-  speechSynthesis.speak(utterance);
-}
-
-// Get Full Language Code for Speech API
-function getFullLanguageCode(code) {
-  const langMap = {
-    'de': 'de-DE', 'nl': 'nl-NL', 'cs': 'cs-CZ', 'da': 'da-DK',
-    'et': 'et-EE', 'fi': 'fi-FI', 'fr': 'fr-FR', 'el': 'el-GR',
-    'hu': 'hu-HU', 'is': 'is-IS', 'it': 'it-IT', 'lv': 'lv-LV',
-    'lt': 'lt-LT', 'mt': 'mt-MT', 'no': 'nb-NO', 'pl': 'pl-PL',
-    'pt': 'pt-PT', 'sk': 'sk-SK', 'sl': 'sl-SI', 'es': 'es-ES',
-    'sv': 'sv-SE', 'ru': 'ru-RU', 'sq': 'sq-AL', 'bg': 'bg-BG',
-    'hr': 'hr-HR', 'en': 'en-US', 'ro': 'ro-RO', 'sr': 'sr-RS',
-    'tr': 'tr-TR', 'uk': 'uk-UA'
-  };
-  return langMap[code] || 'en-US';
 }
 
 // Toggle Learned Status
 function toggleLearned(phraseId, button) {
-  const isLearned = learnedPhrases[phraseId] || false;
-  learnedPhrases[phraseId] = !isLearned;
+  const isCurrentlyLearned = learnedPhrases[phraseId] || false;
+  learnedPhrases[phraseId] = !isCurrentlyLearned;
   
+  // Update localStorage
   localStorage.setItem('learnedPhrases', JSON.stringify(learnedPhrases));
   
-  // Update button
-  if (!isLearned) {
+  // Update UI
+  const conversationItem = button.closest('.conversation-item');
+  if (learnedPhrases[phraseId]) {
+    conversationItem.classList.add('learned');
     button.classList.add('learned');
-    button.textContent = '✅';
+    button.innerHTML = '✅';
     button.title = 'শেখা হয়েছে';
-    button.closest('.conversation-item').classList.add('learned');
   } else {
+    conversationItem.classList.remove('learned');
     button.classList.remove('learned');
-    button.textContent = '📚';
-    button.title = 'শেখা হয়নি';
-    button.closest('.conversation-item').classList.remove('learned');
+    button.innerHTML = '📚';
+    button.title = 'শেখা হয়েছে';
   }
   
   updateProgressDisplay();
 }
 
+// Toggle Search
+function toggleSearch() {
+  const isVisible = searchBar.style.display !== 'none';
+  searchBar.style.display = isVisible ? 'none' : 'block';
+  if (!isVisible) {
+    searchInput.focus();
+  } else {
+    clearSearchInput();
+  }
+}
+
 // Handle Search
 function handleSearch() {
-  const query = searchInput.value.toLowerCase().trim();
-  
-  if (!query) {
-    filteredData = currentLanguageData;
-  } else {
-    filteredData = currentLanguageData.filter(item => {
-      const langCode = langCodeMap[currentLanguage];
-      const nativeText = (item[langCode] || '').toLowerCase();
-      const phoneticText = (item.bn || '').toLowerCase();
-      const meaningText = (item.bnMeaning || '').toLowerCase();
-      const englishText = (item.en || '').toLowerCase();
-      
-      return nativeText.includes(query) || 
-             phoneticText.includes(query) || 
-             meaningText.includes(query) || 
-             englishText.includes(query);
-    });
-  }
-  
-  renderVocabulary();
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  const items = document.querySelectorAll('.conversation-item');
+  let visibleCount = 0;
+
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (searchTerm === '' || text.includes(searchTerm)) {
+      item.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+
+  updateShowingCount(visibleCount);
 }
 
-// Filter Phrases
-function filterPhrases(filter) {
-  const langCode = langCodeMap[currentLanguage];
-  
-  switch(filter) {
-    case 'learned':
-      filteredData = currentLanguageData.filter((item, index) => {
-        const phraseId = `${currentLanguage}-${index}`;
-        return learnedPhrases[phraseId];
-      });
-      break;
-    case 'unlearned':
-      filteredData = currentLanguageData.filter((item, index) => {
-        const phraseId = `${currentLanguage}-${index}`;
-        return !learnedPhrases[phraseId];
-      });
-      break;
-    default:
-      filteredData = currentLanguageData;
-  }
-  
-  renderVocabulary();
-}
-
-// Update Progress Display
-function updateProgressDisplay() {
-  if (!currentLanguage || !currentLanguageData.length) return;
-  
-  const totalPhrases = currentLanguageData.length;
-  const learnedCount = Object.keys(learnedPhrases).filter(key => 
-    key.startsWith(currentLanguage + '-') && learnedPhrases[key]
-  ).length;
-  
-  const percentage = Math.round((learnedCount / totalPhrases) * 100);
-  
-  document.getElementById('learned-count').textContent = learnedCount;
-  document.getElementById('progress-fill').style.width = `${percentage}%`;
-  
-  // Update streak (simplified - could be enhanced)
-  const today = new Date().toDateString();
-  const lastUpdate = localStorage.getItem('lastProgressUpdate');
-  if (lastUpdate !== today && learnedCount > 0) {
-    const currentStreak = parseInt(localStorage.getItem('streak')) || 0;
-    const newStreak = lastUpdate ? currentStreak + 1 : 1;
-    localStorage.setItem('streak', newStreak);
-    localStorage.setItem('lastProgressUpdate', today);
-    document.getElementById('streak-count').textContent = newStreak;
-  } else {
-    document.getElementById('streak-count').textContent = localStorage.getItem('streak') || 0;
-  }
+// Clear Search
+function clearSearchInput() {
+  searchInput.value = '';
+  document.querySelectorAll('.conversation-item').forEach(item => {
+    item.classList.remove('hidden');
+  });
+  updateShowingCount(currentLanguageData.length);
 }
 
 // Toggle Progress
 function toggleProgress() {
-  const isVisible = progressContainer.style.display !== 'none';
-  progressContainer.style.display = isVisible ? 'none' : 'block';
-  sideMenu.classList.remove('active');
+  const isVisible = progressBar.style.display !== 'none';
+  progressBar.style.display = isVisible ? 'none' : 'block';
 }
 
-// Toggle Theme
-function toggleTheme() {
-  const isDark = document.body.classList.toggle('dark-mode');
-  modeToggle.textContent = isDark ? '🌙' : '☀️';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+// Update Progress Display
+function updateProgressDisplay() {
+  if (!currentLanguage || currentLanguageData.length === 0) return;
+
+  const learned = Object.keys(learnedPhrases).filter(key => 
+    key.startsWith(currentLanguage) && learnedPhrases[key]
+  ).length;
+  
+  const total = currentLanguageData.length;
+  const percentage = total > 0 ? Math.round((learned / total) * 100) : 0;
+
+  learnedCount.textContent = learned;
+  totalCount.textContent = total;
+  progressPercent.textContent = `${percentage}%`;
+  progressFill.style.width = `${percentage}%`;
 }
 
-// Quiz Functions
-function startQuiz() {
-  if (!currentLanguageData.length) {
-    alert('প্রথমে একটি ভাষা নির্বাচন করুন!');
-    return;
-  }
-  
-  // Get learned phrases for quiz
-  const learnedIndices = Object.keys(learnedPhrases)
-    .filter(key => key.startsWith(currentLanguage + '-') && learnedPhrases[key])
-    .map(key => parseInt(key.split('-')[1]));
-  
-  if (learnedIndices.length < 4) {
-    alert('কুইজ শুরু করতে কমপক্ষে ৪টি বাক্য শিখুন!');
-    return;
-  }
-  
-  // Create quiz questions
-  currentQuiz = [];
-  currentQuestionIndex = 0;
-  quizScore = 0;
-  
-  const shuffledIndices = shuffleArray([...learnedIndices]);
-  const quizLength = Math.min(10, shuffledIndices.length);
-  
-  for (let i = 0; i < quizLength; i++) {
-    const correctIndex = shuffledIndices[i];
-    const correctItem = currentLanguageData[correctIndex];
-    const langCode = langCodeMap[currentLanguage];
-    
-    // Create wrong options
-    const wrongOptions = [];
-    while (wrongOptions.length < 3) {
-      const randomIndex = Math.floor(Math.random() * currentLanguageData.length);
-      const randomItem = currentLanguageData[randomIndex];
-      if (randomIndex !== correctIndex && !wrongOptions.includes(randomItem.bnMeaning)) {
-        wrongOptions.push(randomItem.bnMeaning);
-      }
-    }
-    
-    const options = shuffleArray([correctItem.bnMeaning, ...wrongOptions]);
-    
-    currentQuiz.push({
-      question: correctItem[langCode],
-      options: options,
-      correct: correctItem.bnMeaning
-    });
-  }
-  
-  quizModal.style.display = 'block';
-  sideMenu.classList.remove('active');
-  showQuizQuestion();
+// Update Showing Count
+function updateShowingCount(count) {
+  showingCount.textContent = `দেখানো হচ্ছে: ${count}`;
 }
 
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-function showQuizQuestion() {
-  const question = currentQuiz[currentQuestionIndex];
-  document.getElementById('quiz-question').innerHTML = `
-    <strong>এই বাক্যের অর্থ কী?</strong><br>
-    "${question.question}"
-  `;
-  
-  const optionsContainer = document.getElementById('quiz-options');
-  optionsContainer.innerHTML = '';
-  
-  question.options.forEach(option => {
-    const button = document.createElement('button');
-    button.className = 'quiz-option';
-    button.textContent = option;
-    button.addEventListener('click', () => checkAnswer(option, question.correct));
-    optionsContainer.appendChild(button);
+// Menu functionality (existing)
+if (menuToggle && sideMenu) {
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('active');
   });
-  
-  document.getElementById('quiz-feedback').innerHTML = '';
-  document.getElementById('quiz-score').textContent = `${quizScore}/${currentQuiz.length}`;
-  document.getElementById('next-question').style.display = 'none';
-  document.getElementById('finish-quiz').style.display = 'none';
 }
 
-function checkAnswer(selected, correct) {
-  const options = document.querySelectorAll('.quiz-option');
-  const feedback = document.getElementById('quiz-feedback');
-  
-  options.forEach(option => {
-    option.disabled = true;
-    if (option.textContent === correct) {
-      option.classList.add('correct');
-    } else if (option.textContent === selected && selected !== correct) {
-      option.classList.add('incorrect');
-    }
+if (closeMenu && sideMenu) {
+  closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
   });
-  
-  if (selected === correct) {
-    quizScore++;
-    feedback.textContent = '🎉 সঠিক উত্তর!';
-    feedback.className = 'correct';
-  } else {
-    feedback.textContent = `❌ ভুল! সঠিক উত্তর: ${correct}`;
-    feedback.className = 'incorrect';
-  }
-  
-  document.getElementById('quiz-score').textContent = `${quizScore}/${currentQuiz.length}`;
-  
-  if (currentQuestionIndex < currentQuiz.length - 1) {
-    document.getElementById('next-question').style.display = 'inline-block';
-  } else {
-    document.getElementById('finish-quiz').style.display = 'inline-block';
-  }
 }
-
-function nextQuestion() {
-  currentQuestionIndex++;
-  showQuizQuestion();
-}
-
-function finishQuiz() {
-  const percentage = Math.round((quizScore / currentQuiz.length) * 100);
-  let message = '';
-  
-  if (percentage >= 80) {
-    message = '🏆 অসাধারণ! আপনি দুর্দান্ত করেছেন!';
-  } else if (percentage >= 60) {
-    message = '👍 ভালো! আরো অনুশীলন করুন।';
-  } else {
-    message = '📚 আরো পড়াশোনা করুন।';
-  }
-  
-  alert(`কুইজ শেষ!\nস্কোর: ${quizScore}/${currentQuiz.length} (${percentage}%)\n${message}`);
-  quizModal.style.display = 'none';
-}
-
-// Show Error
-function showError(message) {
-  vocabularyContainer.innerHTML = `
-    <div style="text-align: center; padding: 2rem; color: #f44336;">
-      <h3>⚠️ সমস্যা হয়েছে</h3>
-      <p>${message}</p>
-    </div>
-  `;
-}
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-  if (e.target === quizModal) {
-    quizModal.style.display = 'none';
-  }
-});
