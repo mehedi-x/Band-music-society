@@ -1,1148 +1,485 @@
-// 🌟 Speak EU - Complete Mobile Friendly Language Learning Platform
-// Version 2.0 Mobile - Optimized with Scrollable Header
+const languageSelect = document.getElementById('language-select');
+const conversationArea = document.getElementById('conversation-area');
+const modeToggle = document.getElementById('mode-toggle');
+const progressToggle = document.getElementById('progress-toggle');
+const progressModal = document.getElementById('progress-modal');
+const closeModal = document.querySelector('.close-modal');
 
-const CONFIG = {
-  version: '2.0-mobile-scroll',
-  defaultDailyGoal: 10,
-  audioSpeed: 1.0,
-  audioVolume: 0.8,
-  autoPlay: false,
-  
-  storageKeys: {
-    selectedLanguage: 'speakEU_selectedLanguage',
-    learnedWords: 'speakEU_learnedWords',
-    favoriteWords: 'speakEU_favoriteWords',
-    dailyGoal: 'speakEU_dailyGoal',
-    audioEnabled: 'speakEU_audioEnabled',
-    autoPlay: 'speakEU_autoPlay',
-    audioSpeed: 'speakEU_audioSpeed',
-    currentStreak: 'speakEU_currentStreak',
-    lastStudyDate: 'speakEU_lastStudyDate',
-    dailyProgress: 'speakEU_dailyProgress',
-    theme: 'speakEU_theme'
-  },
-  
-  scrollThreshold: 100,
-  headerAnimationDuration: 300
-};
+// Current language data
+let currentLanguageData = [];
+let currentLanguage = '';
 
 const langCodeMap = {
-  austria: 'de', belgium: 'nl', czech: 'cs', denmark: 'da', estonia: 'et',
-  finland: 'fi', france: 'fr', germany: 'de', greece: 'el', hungary: 'hu',
-  iceland: 'is', italy: 'it', latvia: 'lv', liechtenstein: 'de', lithuania: 'lt',
-  luxembourg: 'lb', malta: 'mt', netherlands: 'nl', norway: 'no', poland: 'pl',
-  portugal: 'pt', slovakia: 'sk', slovenia: 'sl', spain: 'es', sweden: 'sv',
-  switzerland: 'de', russian: 'ru', albania: 'sq', andorra: 'ca', armenia: 'hy',
-  azerbaijan: 'az', bosnia: 'bs', bulgaria: 'bg', croatia: 'hr', cyprus: 'el',
-  georgia: 'ka', ireland: 'en', kosovo: 'sq', moldova: 'ro', monaco: 'fr',
-  montenegro: 'sr', northmacedonia: 'mk', romania: 'ro', sanmarino: 'it',
-  serbia: 'sr', turkey: 'tr', ukraine: 'uk', unitedkingdom: 'en', vatican: 'la'
+  austria: 'de',
+  belgium: 'nl',
+  czech: 'cs',
+  denmark: 'da',
+  estonia: 'et',
+  finland: 'fi',
+  france: 'fr',
+  germany: 'de',
+  greece: 'el',
+  hungary: 'hu',
+  iceland: 'is',
+  italy: 'it',
+  latvia: 'lv',
+  liechtenstein: 'de',
+  lithuania: 'lt',
+  luxembourg: 'lb',
+  malta: 'mt',
+  netherlands: 'nl',
+  norway: 'no',
+  poland: 'pl',
+  portugal: 'pt',
+  slovakia: 'sk',
+  slovenia: 'sl',
+  spain: 'es',
+  sweden: 'sv',
+  switzerland: 'de',
+  russian: 'ru',
+  albania: 'sq',
+  andorra: 'ca',
+  armenia: 'hy',
+  azerbaijan: 'az',
+  bosnia: 'bs',
+  bulgaria: 'bg',
+  croatia: 'hr',
+  cyprus: 'el',
+  georgia: 'ka',
+  ireland: 'en',
+  kosovo: 'sq',
+  moldova: 'ro',
+  monaco: 'fr',
+  montenegro: 'sr',
+  northmacedonia: 'mk',
+  romania: 'ro',
+  sanmarino: 'it',
+  serbia: 'sr',
+  turkey: 'tr',
+  ukraine: 'uk',
+  unitedkingdom: 'en',
+  vatican: 'la'
 };
 
-let appState = {
-  currentLanguage: '',
-  currentVocabulary: [],
-  filteredVocabulary: [],
-  searchQuery: '',
-  selectedCategory: '',
-  showFavorites: false,
-  learnedWords: new Set(),
-  favoriteWords: new Set(),
-  dailyGoal: CONFIG.defaultDailyGoal,
-  todayLearned: 0,
-  currentStreak: 0,
-  lastStudyDate: null,
-  audioEnabled: true,
-  autoPlay: CONFIG.autoPlay,
-  audioSpeed: CONFIG.audioSpeed,
-  isLoading: false,
-  menuOpen: false,
-  progressVisible: false,
-  lastScrollY: 0,
-  scrollDirection: 'up',
-  headerVisible: true
-};
-
-class ScrollManager {
+// Progress Tracking System
+class ProgressTracker {
   constructor() {
-    this.elements = {
-      topHeader: document.getElementById('top-header'),
-      mainHeader: document.getElementById('main-header'),
-      body: document.body
-    };
-    
-    this.lastScrollY = window.scrollY;
-    this.ticking = false;
-    this.bindScrollEvents();
-  }
-
-  bindScrollEvents() {
-    window.addEventListener('scroll', () => {
-      if (!this.ticking) {
-        requestAnimationFrame(() => {
-          this.handleScroll();
-          this.ticking = false;
-        });
-        this.ticking = true;
-      }
-    });
-
-    window.addEventListener('resize', this.debounce(() => {
-      this.updateScrollState();
-    }, 150));
-  }
-
-  handleScroll() {
-    const currentScrollY = window.scrollY;
-    const scrollDifference = currentScrollY - this.lastScrollY;
-    
-    if (scrollDifference > 0) {
-      appState.scrollDirection = 'down';
-    } else if (scrollDifference < 0) {
-      appState.scrollDirection = 'up';
-    }
-
-    this.updateScrollState();
-    this.lastScrollY = currentScrollY;
-    appState.lastScrollY = currentScrollY;
-  }
-
-  updateScrollState() {
-    const scrollY = window.scrollY;
-    const shouldHideHeader = scrollY > CONFIG.scrollThreshold && appState.scrollDirection === 'down';
-    
-    if (shouldHideHeader && appState.headerVisible) {
-      this.hideTopHeader();
-      appState.headerVisible = false;
-    } else if ((!shouldHideHeader || appState.scrollDirection === 'up') && !appState.headerVisible) {
-      this.showTopHeader();
-      appState.headerVisible = true;
-    }
-
-    if (scrollY > 50) {
-      this.elements.body?.classList.add('scrolled');
-    } else {
-      this.elements.body?.classList.remove('scrolled');
-    }
-  }
-
-  hideTopHeader() {
-    if (this.elements.topHeader) {
-      this.elements.topHeader.style.transform = 'translateY(-100%)';
-      this.elements.topHeader.style.opacity = '0';
-    }
-    
-    if (this.elements.mainHeader) {
-      this.elements.mainHeader.style.top = '0';
-    }
-  }
-
-  showTopHeader() {
-    if (this.elements.topHeader) {
-      this.elements.topHeader.style.transform = 'translateY(0)';
-      this.elements.topHeader.style.opacity = '1';
-    }
-    
-    if (this.elements.mainHeader) {
-      this.elements.mainHeader.style.top = '';
-    }
-  }
-
-  debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
-}
-
-class AudioManager {
-  constructor() {
-    this.synthesis = window.speechSynthesis;
-    this.currentUtterance = null;
-    this.isPlaying = false;
-    this.voices = [];
-    this.loadVoices();
-  }
-
-  loadVoices() {
-    this.voices = this.synthesis.getVoices();
-    
-    if (this.synthesis.onvoiceschanged !== undefined) {
-      this.synthesis.onvoiceschanged = () => {
-        this.voices = this.synthesis.getVoices();
-      };
-    }
-  }
-
-  getBestVoice(languageCode) {
-    const exactMatch = this.voices.find(voice => 
-      voice.lang.toLowerCase() === languageCode.toLowerCase()
-    );
-    
-    if (exactMatch) return exactMatch;
-    
-    const partialMatch = this.voices.find(voice => 
-      voice.lang.toLowerCase().startsWith(languageCode.toLowerCase().split('-')[0])
-    );
-    
-    return partialMatch || this.voices[0];
-  }
-
-  async speak(text, language = 'en') {
-    if (!appState.audioEnabled || !this.synthesis || !text) return;
-
-    try {
-      this.stop();
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      const languageCode = this.getLanguageCode(language);
-      const voice = this.getBestVoice(languageCode);
-      
-      if (voice) {
-        utterance.voice = voice;
-      }
-      
-      utterance.lang = languageCode;
-      utterance.rate = appState.audioSpeed;
-      utterance.volume = CONFIG.audioVolume;
-      utterance.pitch = 1;
-
-      utterance.onstart = () => {
-        this.isPlaying = true;
-        this.addPlayingIndicator();
-      };
-
-      utterance.onend = () => {
-        this.isPlaying = false;
-        this.removePlayingIndicator();
-      };
-
-      utterance.onerror = (event) => {
-        console.error('Speech synthesis error:', event);
-        this.isPlaying = false;
-        this.removePlayingIndicator();
-      };
-
-      this.currentUtterance = utterance;
-      this.synthesis.speak(utterance);
-
-    } catch (error) {
-      console.error('Audio error:', error);
-    }
-  }
-
-  stop() {
-    if (this.synthesis && this.isPlaying) {
-      this.synthesis.cancel();
-      this.isPlaying = false;
-      this.removePlayingIndicator();
-    }
-  }
-
-  getLanguageCode(lang) {
-    const codes = {
-      'en': 'en-US', 'es': 'es-ES', 'fr': 'fr-FR', 'de': 'de-DE',
-      'it': 'it-IT', 'pt': 'pt-PT', 'ru': 'ru-RU', 'el': 'el-GR',
-      'nl': 'nl-NL', 'sv': 'sv-SE', 'da': 'da-DK', 'no': 'no-NO',
-      'fi': 'fi-FI', 'pl': 'pl-PL', 'cs': 'cs-CZ', 'sk': 'sk-SK',
-      'hu': 'hu-HU', 'ro': 'ro-RO', 'bg': 'bg-BG', 'hr': 'hr-HR'
-    };
-    return codes[lang] || 'en-US';
-  }
-
-  addPlayingIndicator() {
-    document.querySelectorAll('.audio-playing').forEach(el => {
-      el.classList.remove('audio-playing');
-    });
-  }
-
-  removePlayingIndicator() {
-    document.querySelectorAll('.audio-playing').forEach(el => {
-      el.classList.remove('audio-playing');
-    });
-  }
-}
-
-class StorageManager {
-  save(key, data) {
-    try {
-      localStorage.setItem(key, JSON.stringify(data));
-      return true;
-    } catch (error) {
-      console.error('Storage save error:', error);
-      return false;
-    }
-  }
-
-  load(key, defaultValue = null) {
-    try {
-      const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : defaultValue;
-    } catch (error) {
-      console.error('Storage load error:', error);
-      return defaultValue;
-    }
-  }
-
-  remove(key) {
-    try {
-      localStorage.removeItem(key);
-      return true;
-    } catch (error) {
-      console.error('Storage remove error:', error);
-      return false;
-    }
-  }
-}
-
-class ProgressManager {
-  constructor() {
-    this.loadProgress();
-  }
-
-  recordWordLearned(wordId) {
-    const today = this.getTodayKey();
-    
-    appState.todayLearned++;
+    this.progress = this.loadProgress();
     this.updateStreak();
-    this.saveProgress();
-    this.updateProgressUI();
-    this.checkDailyGoal();
-  }
-
-  updateStreak() {
-    const today = this.getTodayKey();
-    
-    if (appState.lastStudyDate !== today) {
-      if (this.isConsecutiveDay(appState.lastStudyDate, today)) {
-        appState.currentStreak++;
-      } else {
-        appState.currentStreak = 1;
-      }
-      appState.lastStudyDate = today;
-    }
-  }
-
-  isConsecutiveDay(lastDate, currentDate) {
-    if (!lastDate) return false;
-    
-    const last = new Date(lastDate);
-    const current = new Date(currentDate);
-    const diffTime = current - last;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
-    return diffDays === 1;
-  }
-
-  getTodayKey() {
-    return new Date().toDateString();
-  }
-
-  getProgressPercentage() {
-    return Math.min((appState.todayLearned / appState.dailyGoal) * 100, 100);
-  }
-
-  checkDailyGoal() {
-    if (appState.todayLearned === appState.dailyGoal) {
-      ui?.showMessage('🎉 অভিনন্দন! আজকের লক্ষ্য অর্জিত!', 'success');
-      this.triggerCelebration();
-    }
-  }
-
-  triggerCelebration() {
-    const progressFill = document.getElementById('progress-fill');
-    if (progressFill) {
-      progressFill.classList.add('celebration');
-      setTimeout(() => {
-        progressFill.classList.remove('celebration');
-      }, 2000);
-    }
-  }
-
-  updateProgressUI() {
-    const progressFill = document.getElementById('progress-fill');
-    const dailyProgress = document.getElementById('daily-progress');
-    const dailyPercentage = document.getElementById('daily-percentage');
-    const streakCounter = document.getElementById('streak-counter');
-
-    if (progressFill) {
-      const percentage = this.getProgressPercentage();
-      progressFill.style.width = `${percentage}%`;
-      
-      if (percentage >= 100) {
-        progressFill.classList.add('completed');
-      } else {
-        progressFill.classList.remove('completed');
-      }
-    }
-
-    if (dailyPercentage) {
-      dailyPercentage.textContent = `${Math.round(this.getProgressPercentage())}%`;
-    }
-
-    if (dailyProgress) {
-      dailyProgress.textContent = `${appState.todayLearned}/${appState.dailyGoal} words learned`;
-    }
-
-    if (streakCounter) {
-      streakCounter.textContent = `🔥 ${appState.currentStreak} day streak`;
-    }
-
-    const totalLearned = document.getElementById('total-learned');
-    const favoritesCount = document.getElementById('favorites-count');
-    const accuracyRate = document.getElementById('accuracy-rate');
-
-    if (totalLearned) {
-      totalLearned.textContent = appState.learnedWords.size;
-    }
-
-    if (favoritesCount) {
-      favoritesCount.textContent = appState.favoriteWords.size;
-    }
-
-    if (accuracyRate) {
-      const totalAttempted = appState.learnedWords.size + (appState.todayLearned * 0.1);
-      const accuracy = totalAttempted > 0 ? Math.round((appState.learnedWords.size / totalAttempted) * 100) : 100;
-      accuracyRate.textContent = `${Math.min(accuracy, 100)}%`;
-    }
-
-    this.updateMenuStats();
-  }
-
-  updateMenuStats() {
-    const totalWordsEl = document.getElementById('menu-total-words');
-    const streakEl = document.getElementById('menu-streak');
-    const favoritesEl = document.getElementById('menu-favorites');
-
-    if (totalWordsEl) totalWordsEl.textContent = appState.learnedWords.size;
-    if (streakEl) streakEl.textContent = `${appState.currentStreak} days`;
-    if (favoritesEl) favoritesEl.textContent = appState.favoriteWords.size;
   }
 
   loadProgress() {
-    const today = this.getTodayKey();
-    
-    appState.currentStreak = storage.load(CONFIG.storageKeys.currentStreak, 0);
-    appState.lastStudyDate = storage.load(CONFIG.storageKeys.lastStudyDate, null);
-    
-    const dailyData = storage.load(CONFIG.storageKeys.dailyProgress, {});
-    appState.todayLearned = dailyData[today] || 0;
-    
-    if (appState.lastStudyDate && appState.lastStudyDate !== today && !this.isConsecutiveDay(appState.lastStudyDate, today)) {
-      appState.currentStreak = 0;
-      appState.todayLearned = 0;
-    }
+    const saved = localStorage.getItem('speakeu_progress');
+    return saved ? JSON.parse(saved) : {
+      languages: {},
+      streak: 0,
+      lastStudyDate: null,
+      achievements: [],
+      totalWordsLearned: 0
+    };
   }
 
   saveProgress() {
-    const today = this.getTodayKey();
-    
-    storage.save(CONFIG.storageKeys.currentStreak, appState.currentStreak);
-    storage.save(CONFIG.storageKeys.lastStudyDate, appState.lastStudyDate);
-    
-    const dailyData = storage.load(CONFIG.storageKeys.dailyProgress, {});
-    dailyData[today] = appState.todayLearned;
-    storage.save(CONFIG.storageKeys.dailyProgress, dailyData);
-  }
-}
-
-class UIManager {
-  constructor() {
-    this.elements = this.getElements();
-    this.bindEvents();
-    this.loadSettings();
-    this.updateUI();
+    localStorage.setItem('speakeu_progress', JSON.stringify(this.progress));
   }
 
-  getElements() {
-    return {
-      loadingSpinner: document.getElementById('loading-spinner'),
-      topHeader: document.getElementById('top-header'),
-      mainHeader: document.getElementById('main-header'),
-      languageSelect: document.getElementById('language-select'),
-      modeToggle: document.getElementById('mode-toggle'),
-      menuToggle: document.getElementById('menu-toggle'),
-      controlPanel: document.getElementById('control-panel'),
-      searchBox: document.getElementById('search-box'),
-      clearSearch: document.getElementById('clear-search'),
-      categoryFilter: document.getElementById('category-filter'),
-      favoritesToggle: document.getElementById('favorites-toggle'),
-      audioToggle: document.getElementById('audio-toggle'),
-      progressToggle: document.getElementById('progress-toggle'),
-      progressDashboard: document.getElementById('progress-dashboard'),
-      progressFill: document.getElementById('progress-fill'),
-      dailyProgress: document.getElementById('daily-progress'),
-      dailyPercentage: document.getElementById('daily-percentage'),
-      streakCounter: document.getElementById('streak-counter'),
-      filterInfo: document.getElementById('filter-info'),
-      resultsCount: document.getElementById('results-count'),
-      clearFilters: document.getElementById('clear-filters'),
-      mainContent: document.getElementById('main-content'),
-      welcomeScreen: document.getElementById('welcome-screen'),
-      vocabularyContent: document.getElementById('vocabulary-content'),
-      sideMenu: document.getElementById('side-menu'),
-      menuOverlay: document.getElementById('menu-overlay'),
-      closeMenu: document.getElementById('close-menu'),
-      homeLink: document.getElementById('home-link'),
-      progressLink: document.getElementById('progress-link'),
-      favoritesLink: document.getElementById('favorites-link'),
-      settingsLink: document.getElementById('settings-link'),
-      dailyGoalInput: document.getElementById('daily-goal-input'),
-      audioSpeedRange: document.getElementById('audio-speed'),
-      speedDisplay: document.getElementById('speed-display'),
-      autoPlayCheckbox: document.getElementById('auto-play-audio'),
-      showProgressAlways: document.getElementById('show-progress-always'),
-      toastContainer: document.getElementById('toast-container')
-    };
-  }
-
-  bindEvents() {
-    this.elements.languageSelect?.addEventListener('change', (e) => {
-      const lang = e.target.value;
-      if (lang) {
-        this.loadLanguage(lang);
-      }
-    });
-
-    this.elements.searchBox?.addEventListener('input', this.debounce(() => {
-      this.handleSearch();
-    }, 300));
-
-    this.elements.clearSearch?.addEventListener('click', () => {
-      this.clearSearch();
-    });
-
-    this.elements.categoryFilter?.addEventListener('change', () => {
-      this.applyFilters();
-    });
-
-    this.elements.favoritesToggle?.addEventListener('click', () => {
-      this.toggleFavorites();
-    });
-
-    this.elements.audioToggle?.addEventListener('click', () => {
-      this.toggleAudio();
-    });
-
-    this.elements.progressToggle?.addEventListener('click', () => {
-      this.toggleProgress();
-    });
-
-    this.elements.modeToggle?.addEventListener('click', () => {
-      this.toggleTheme();
-    });
-
-    this.elements.menuToggle?.addEventListener('click', () => {
-      this.openMenu();
-    });
-
-    this.elements.closeMenu?.addEventListener('click', () => {
-      this.closeMenu();
-    });
-
-    this.elements.menuOverlay?.addEventListener('click', () => {
-      this.closeMenu();
-    });
-
-    this.elements.homeLink?.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.showWelcome();
-      this.closeMenu();
-    });
-
-    this.elements.progressLink?.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.toggleProgress();
-      this.closeMenu();
-    });
-
-    this.elements.favoritesLink?.addEventListener('click', (e) => {
-      e.preventDefault();
-      appState.showFavorites = true;
-      this.applyFilters();
-      this.closeMenu();
-    });
-
-    this.elements.clearFilters?.addEventListener('click', () => {
-      this.clearAllFilters();
-    });
-
-    document.addEventListener('click', (e) => {
-      if (e.target.matches('.language-card') || e.target.closest('.language-card')) {
-        const card = e.target.closest('.language-card') || e.target;
-        const lang = card.dataset.lang;
-        if (lang && this.elements.languageSelect) {
-          this.elements.languageSelect.value = lang;
-          this.loadLanguage(lang);
-        }
-      }
-    });
-
-    this.elements.dailyGoalInput?.addEventListener('change', (e) => {
-      const goal = parseInt(e.target.value) || CONFIG.defaultDailyGoal;
-      appState.dailyGoal = Math.max(5, Math.min(100, goal));
-      storage.save(CONFIG.storageKeys.dailyGoal, appState.dailyGoal);
-      progressManager.updateProgressUI();
-      this.showMessage(`দৈনিক লক্ষ্য ${appState.dailyGoal} শব্দে আপডেট হয়েছে`, 'success');
-    });
-
-    this.elements.audioSpeedRange?.addEventListener('input', (e) => {
-      appState.audioSpeed = parseFloat(e.target.value);
-      if (this.elements.speedDisplay) {
-        this.elements.speedDisplay.textContent = `${appState.audioSpeed}x`;
-      }
-      storage.save(CONFIG.storageKeys.audioSpeed, appState.audioSpeed);
-    });
-
-    this.elements.autoPlayCheckbox?.addEventListener('change', (e) => {
-      appState.autoPlay = e.target.checked;
-      storage.save(CONFIG.storageKeys.autoPlay, appState.autoPlay);
-      const message = appState.autoPlay ? 'অটো-প্লে চালু হয়েছে' : 'অটো-প্লে বন্ধ হয়েছে';
-      this.showMessage(message, 'info');
-    });
-
-    this.elements.showProgressAlways?.addEventListener('change', (e) => {
-      const showAlways = e.target.checked;
-      storage.save('speakEU_showProgressAlways', showAlways);
-      
-      if (showAlways) {
-        this.elements.progressDashboard?.classList.remove('hidden');
-      } else {
-        this.elements.progressDashboard?.classList.add('hidden');
-      }
-    });
-
-    this.bindTouchEvents();
-    this.bindKeyboardEvents();
-  }
-
-  bindTouchEvents() {
-    let startX = 0;
-    let startY = 0;
-    let touchStartTime = 0;
-
-    document.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      touchStartTime = Date.now();
-    }, { passive: true });
-
-    document.addEventListener('touchend', (e) => {
-      if (!startX || !startY) return;
-
-      const endX = e.changedTouches[0].clientX;
-      const endY = e.changedTouches[0].clientY;
-      const touchEndTime = Date.now();
-      const touchDuration = touchEndTime - touchStartTime;
-
-      const diffX = startX - endX;
-      const diffY = startY - endY;
-
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50 && touchDuration < 500) {
-        if (diffX > 0 && !appState.menuOpen) {
-          this.openMenu();
-        } else if (diffX < 0 && appState.menuOpen) {
-          this.closeMenu();
-        }
-      }
-
-      startX = 0;
-      startY = 0;
-      touchStartTime = 0;
-    }, { passive: true });
-  }
-
-  bindKeyboardEvents() {
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (appState.menuOpen) {
-          this.closeMenu();
-        } else if (this.elements.searchBox?.value) {
-          this.clearSearch();
-        }
-      }
-      
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        this.elements.searchBox?.focus();
-      }
-      
-      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        e.preventDefault();
-        const firstAudioBtn = document.querySelector('.vocabulary-content .audio-btn');
-        if (firstAudioBtn) {
-          firstAudioBtn.click();
-        }
-      }
-    });
-  }
-
-  debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
+  markWordLearned(language, wordIndex) {
+    if (!this.progress.languages[language]) {
+      this.progress.languages[language] = {
+        learnedWords: [],
+        totalWords: 0,
+        lastStudied: null
       };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
+    }
+
+    const langProgress = this.progress.languages[language];
+    if (!langProgress.learnedWords.includes(wordIndex)) {
+      langProgress.learnedWords.push(wordIndex);
+      this.progress.totalWordsLearned++;
+      this.updateStreak();
+      this.checkAchievements();
+      this.saveProgress();
+      return true;
+    }
+    return false;
+  }
+
+  updateStreak() {
+    const today = new Date().toDateString();
+    const lastStudy = this.progress.lastStudyDate;
+    
+    if (lastStudy === today) {
+      return; // Already studied today
+    }
+    
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (lastStudy === yesterday.toDateString()) {
+      this.progress.streak++;
+    } else if (lastStudy !== today) {
+      this.progress.streak = 1;
+    }
+    
+    this.progress.lastStudyDate = today;
+    this.saveProgress();
+  }
+
+  getLanguageProgress(language) {
+    return this.progress.languages[language] || {
+      learnedWords: [],
+      totalWords: 0,
+      lastStudied: null
     };
   }
 
-  updateUI() {
-    if (appState.currentLanguage) {
-      this.showMainInterface();
-    } else {
-      this.showWelcome();
-    }
-    
-    progressManager.updateProgressUI();
-  }
+  checkAchievements() {
+    const achievements = [
+      { id: 'first_word', name: 'First Steps', desc: 'Learn your first word', condition: () => this.progress.totalWordsLearned >= 1 },
+      { id: 'ten_words', name: 'Getting Started', desc: 'Learn 10 words', condition: () => this.progress.totalWordsLearned >= 10 },
+      { id: 'fifty_words', name: 'Word Collector', desc: 'Learn 50 words', condition: () => this.progress.totalWordsLearned >= 50 },
+      { id: 'hundred_words', name: 'Century Club', desc: 'Learn 100 words', condition: () => this.progress.totalWordsLearned >= 100 },
+      { id: 'week_streak', name: 'Consistent Learner', desc: '7-day learning streak', condition: () => this.progress.streak >= 7 },
+      { id: 'month_streak', name: 'Dedicated Student', desc: '30-day learning streak', condition: () => this.progress.streak >= 30 },
+      { id: 'multilingual', name: 'Polyglot', desc: 'Study 3 different languages', condition: () => Object.keys(this.progress.languages).length >= 3 }
+    ];
 
-  showLoading() {
-    this.elements.loadingSpinner?.classList.remove('hidden');
-    appState.isLoading = true;
-  }
-
-  hideLoading() {
-    this.elements.loadingSpinner?.classList.add('hidden');
-    appState.isLoading = false;
-  }
-
-  showWelcome() {
-    this.elements.welcomeScreen?.classList.remove('hidden');
-    this.elements.vocabularyContent?.classList.add('hidden');
-    this.elements.controlPanel?.classList.add('hidden');
-    this.elements.progressDashboard?.classList.add('hidden');
-    this.elements.filterInfo?.classList.add('hidden');
-  }
-
-  showMainInterface() {
-    this.elements.welcomeScreen?.classList.add('hidden');
-    this.elements.vocabularyContent?.classList.remove('hidden');
-    this.elements.controlPanel?.classList.remove('hidden');
-    
-    const showProgressAlways = storage.load('speakEU_showProgressAlways', false);
-    if (showProgressAlways) {
-      this.elements.progressDashboard?.classList.remove('hidden');
-    }
-  }
-
-  async loadLanguage(lang) {
-    if (!lang || appState.currentLanguage === lang) return;
-
-    try {
-      this.showLoading();
-      
-      const response = await fetch(`languages/${lang}.json`);
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: Failed to load ${lang}.json`);
+    achievements.forEach(achievement => {
+      if (achievement.condition() && !this.progress.achievements.includes(achievement.id)) {
+        this.progress.achievements.push(achievement.id);
+        this.showAchievementNotification(achievement);
       }
-
-      const data = await response.json();
-      
-      if (!Array.isArray(data) || data.length === 0) {
-        throw new Error('Invalid vocabulary data format');
-      }
-
-      appState.currentLanguage = lang;
-      appState.currentVocabulary = data;
-      appState.filteredVocabulary = [...data];
-
-      storage.save(CONFIG.storageKeys.selectedLanguage, lang);
-
-      this.showMainInterface();
-      this.renderVocabulary();
-      this.updateFilterInfo();
-      progressManager.updateProgressUI();
-
-      this.showMessage(`✅ ${data.length} শব্দ লোড হয়েছে!`, 'success');
-
-    } catch (error) {
-      console.error('Error loading language:', error);
-      this.showMessage(`❌ ভাষা লোড করতে ব্যর্থ: ${error.message}`, 'error');
-      this.showWelcome();
-    } finally {
-      this.hideLoading();
-    }
+    });
   }
 
-  renderVocabulary() {
-    const container = this.elements.vocabularyContent;
-    if (!container) return;
-
-    const vocabulary = appState.filteredVocabulary;
-    
-    if (!vocabulary.length) {
-      container.innerHTML = `
-        <div style="text-align: center; padding: 2rem;">
-          <h3>কোন শব্দভান্ডার খুঁজে পাওয়া যায়নি</h3>
-          <p>আপনার অনুসন্ধান বা ফিল্টার সংশোধন করুন।</p>
+  showAchievementNotification(achievement) {
+    const notification = document.createElement('div');
+    notification.className = 'achievement-notification';
+    notification.innerHTML = `
+      <div class="achievement-content">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-text">
+          <strong>Achievement Unlocked!</strong>
+          <div>${achievement.name}</div>
+          <small>${achievement.desc}</small>
         </div>
-      `;
-      return;
-    }
-
-    const langCode = langCodeMap[appState.currentLanguage];
-    const html = vocabulary.map((item, index) => {
-      const wordId = `${appState.currentLanguage}_${index}`;
-      const isLearned = appState.learnedWords.has(wordId);
-      const isFavorite = appState.favoriteWords.has(wordId);
-      
-      const localWord = item[langCode] || '—';
-      const bnWord = item.bn || '—';
-      const bnMeaning = item.bnMeaning || '—';
-      const enWord = item.en || '—';
-
-      return `
-        <div class="conversation-item ${isLearned ? 'learned' : ''} ${isFavorite ? 'favorite' : ''}" 
-             data-word-id="${wordId}" data-index="${index}">
-          
-          <div class="vocabulary-controls">
-            <button class="control-btn audio-btn" data-text="${localWord}" data-lang="${langCode}" 
-                    title="উচ্চারণ শুনুন">🔊</button>
-            <button class="control-btn favorite-btn ${isFavorite ? 'active' : ''}" 
-                    title="পছন্দের তালিকায় যোগ করুন">⭐</button>
-            <button class="control-btn learned-btn ${isLearned ? 'active' : ''}" 
-                    title="শেখা হিসেবে চিহ্নিত করুন">✓</button>
-          </div>
-
-          <div class="vocabulary-row">
-            <span class="vocabulary-icon">🗣️</span>
-            <div class="vocabulary-text">
-              <strong>${this.highlightSearch(localWord)}</strong>
-            </div>
-          </div>
-
-          <div class="vocabulary-row">
-            <span class="vocabulary-icon">📝</span>
-            <div class="vocabulary-text">
-              <span>${this.highlightSearch(bnWord)}</span>
-            </div>
-          </div>
-
-          <div class="vocabulary-row">
-            <span class="vocabulary-icon">📘</span>
-            <div class="vocabulary-text">
-              <em>${this.highlightSearch(bnMeaning)}</em>
-            </div>
-          </div>
-
-          <div class="vocabulary-row">
-            <span class="vocabulary-icon">🔤</span>
-            <div class="vocabulary-text">
-              <span>${this.highlightSearch(enWord)}</span>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    container.innerHTML = html;
-    this.bindVocabularyEvents();
-  }
-
-  bindVocabularyEvents() {
-    document.querySelectorAll('.audio-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const text = btn.dataset.text;
-        const lang = btn.dataset.lang;
-        audioManager.speak(text, lang);
-      });
-    });
-
-    document.querySelectorAll('.favorite-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const wordId = btn.closest('.conversation-item').dataset.wordId;
-        this.toggleFavorite(wordId);
-      });
-    });
-
-    document.querySelectorAll('.learned-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const wordId = btn.closest('.conversation-item').dataset.wordId;
-        this.toggleLearned(wordId);
-      });
-    });
-  }
-
-  handleSearch() {
-    appState.searchQuery = this.elements.searchBox.value.toLowerCase().trim();
-    this.applyFilters();
-  }
-
-  applyFilters() {
-    let filtered = [...appState.currentVocabulary];
-
-    if (appState.searchQuery) {
-      const query = appState.searchQuery;
-      const langCode = langCodeMap[appState.currentLanguage];
-      
-      filtered = filtered.filter(item => {
-        const searchFields = [item[langCode], item.bn, item.bnMeaning, item.en];
-        return searchFields.some(field => 
-          field && field.toLowerCase().includes(query)
-        );
-      });
-    }
-
-    const selectedCategory = this.elements.categoryFilter?.value;
-    if (selectedCategory) {
-      filtered = filtered.filter(item => {
-        const category = item.category || 'basic';
-        return category === selectedCategory;
-      });
-    }
-
-    if (appState.showFavorites) {
-      filtered = filtered.filter((item, index) => {
-        const wordId = `${appState.currentLanguage}_${index}`;
-        return appState.favoriteWords.has(wordId);
-      });
-    }
-
-    appState.filteredVocabulary = filtered;
-    this.renderVocabulary();
-    this.updateFilterInfo();
-  }
-
-  clearSearch() {
-    this.elements.searchBox.value = '';
-    appState.searchQuery = '';
-    this.applyFilters();
-  }
-
-  clearAllFilters() {
-    this.elements.searchBox.value = '';
-    this.elements.categoryFilter.value = '';
-    appState.searchQuery = '';
-    appState.showFavorites = false;
-    
-    this.elements.favoritesToggle?.classList.remove('active');
-    this.applyFilters();
-  }
-
-  updateFilterInfo() {
-    if (!this.elements.filterInfo || !this.elements.resultsCount) return;
-
-    const total = appState.currentVocabulary.length;
-    const filtered = appState.filteredVocabulary.length;
-    
-    if (filtered === total && !appState.searchQuery && !appState.showFavorites) {
-      this.elements.filterInfo.classList.add('hidden');
-    } else {
-      this.elements.filterInfo.classList.remove('hidden');
-      this.elements.resultsCount.textContent = `Showing ${filtered} of ${total} words`;
-    }
-  }
-
-  highlightSearch(text) {
-    if (!appState.searchQuery || !text) return text;
-    
-    const regex = new RegExp(`(${appState.searchQuery})`, 'gi');
-    return text.replace(regex, '<span class="highlight">$1</span>');
-  }
-
-  toggleFavorite(wordId) {
-    if (appState.favoriteWords.has(wordId)) {
-      appState.favoriteWords.delete(wordId);
-    } else {
-      appState.favoriteWords.add(wordId);
-    }
-    
-    storage.save(CONFIG.storageKeys.favoriteWords, Array.from(appState.favoriteWords));
-    
-    const item = document.querySelector(`[data-word-id="${wordId}"]`);
-    const btn = item?.querySelector('.favorite-btn');
-    
-    if (appState.favoriteWords.has(wordId)) {
-      item?.classList.add('favorite');
-      btn?.classList.add('active');
-      this.showMessage('পছন্দের তালিকায় যোগ হয়েছে! ⭐', 'success');
-    } else {
-      item?.classList.remove('favorite');
-      btn?.classList.remove('active');
-      this.showMessage('পছন্দের তালিকা থেকে সরানো হয়েছে', 'info');
-    }
-    
-    progressManager.updateMenuStats();
-  }
-
-  toggleLearned(wordId) {
-    if (appState.learnedWords.has(wordId)) {
-      appState.learnedWords.delete(wordId);
-    } else {
-      appState.learnedWords.add(wordId);
-      progressManager.recordWordLearned(wordId);
-    }
-    
-    storage.save(CONFIG.storageKeys.learnedWords, Array.from(appState.learnedWords));
-    
-    const item = document.querySelector(`[data-word-id="${wordId}"]`);
-    const btn = item?.querySelector('.learned-btn');
-    
-    if (appState.learnedWords.has(wordId)) {
-      item?.classList.add('learned');
-      btn?.classList.add('active');
-      this.showMessage('শব্দটি শেখা হয়েছে! ✓', 'success');
-    } else {
-      item?.classList.remove('learned');
-      btn?.classList.remove('active');
-    }
-    
-    progressManager.updateMenuStats();
-  }
-
-  toggleFavorites() {
-    appState.showFavorites = !appState.showFavorites;
-    this.elements.favoritesToggle?.classList.toggle('active', appState.showFavorites);
-    this.applyFilters();
-  }
-
-  toggleAudio() {
-    appState.audioEnabled = !appState.audioEnabled;
-    this.elements.audioToggle?.classList.toggle('active', appState.audioEnabled);
-    storage.save(CONFIG.storageKeys.audioEnabled, appState.audioEnabled);
-    
-    if (appState.audioEnabled) {
-      this.showMessage('অডিও চালু করা হয়েছে 🔊', 'success');
-    } else {
-      this.showMessage('অডিও বন্ধ করা হয়েছে 🔇', 'info');
-      audioManager.stop();
-    }
-  }
-
-  toggleProgress() {
-    appState.progressVisible = !appState.progressVisible;
-    this.elements.progressToggle?.classList.toggle('active', appState.progressVisible);
-    
-    if (appState.progressVisible) {
-      this.elements.progressDashboard?.classList.remove('hidden');
-      this.showMessage('প্রগ্রেস ড্যাশবোর্ড দেখানো হচ্ছে', 'info');
-    } else {
-      this.elements.progressDashboard?.classList.add('hidden');
-      this.showMessage('প্রগ্রেস ড্যাশবোর্ড লুকানো হয়েছে', 'info');
-    }
-  }
-
-  toggleTheme() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    this.elements.modeToggle.textContent = isDark ? '🌙' : '☀️';
-    storage.save(CONFIG.storageKeys.theme, isDark ? 'dark' : 'light');
-  }
-
-  openMenu() {
-    this.elements.sideMenu?.classList.add('active');
-    appState.menuOpen = true;
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeMenu() {
-    this.elements.sideMenu?.classList.remove('active');
-    appState.menuOpen = false;
-    document.body.style.overflow = '';
-  }
-
-  showMessage(text, type = 'info') {
-    if (!this.elements.toastContainer) return;
-
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    toast.innerHTML = `
-      <div class="toast-content">
-        <span class="toast-icon">${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}</span>
-        <span class="toast-text">${text}</span>
       </div>
-      <button class="toast-close">✕</button>
     `;
-
-    this.elements.toastContainer.appendChild(toast);
-
-    toast.querySelector('.toast-close').addEventListener('click', () => {
-      toast.remove();
-    });
+    document.body.appendChild(notification);
 
     setTimeout(() => {
-      toast.remove();
-    }, 5000);
+      notification.classList.add('show');
+    }, 100);
+
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 4000);
   }
 
-  loadSettings() {
-    const savedLang = storage.load(CONFIG.storageKeys.selectedLanguage);
-    if (savedLang && this.elements.languageSelect) {
-      this.elements.languageSelect.value = savedLang;
-      this.loadLanguage(savedLang);
-    }
+  exportProgress() {
+    const data = {
+      exportDate: new Date().toISOString(),
+      ...this.progress
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'speakeu_progress.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 
-    const savedTheme = storage.load(CONFIG.storageKeys.theme);
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      this.elements.modeToggle.textContent = '🌙';
-    }
-
-    appState.learnedWords = new Set(storage.load(CONFIG.storageKeys.learnedWords, []));
-    appState.favoriteWords = new Set(storage.load(CONFIG.storageKeys.favoriteWords, []));
-    appState.dailyGoal = storage.load(CONFIG.storageKeys.dailyGoal, CONFIG.defaultDailyGoal);
-    appState.audioEnabled = storage.load(CONFIG.storageKeys.audioEnabled, true);
-    appState.autoPlay = storage.load(CONFIG.storageKeys.autoPlay, false);
-    appState.audioSpeed = storage.load(CONFIG.storageKeys.audioSpeed, CONFIG.audioSpeed);
-
-    if (this.elements.dailyGoalInput) {
-      this.elements.dailyGoalInput.value = appState.dailyGoal;
-    }
-    
-    if (this.elements.audioSpeedRange) {
-      this.elements.audioSpeedRange.value = appState.audioSpeed;
-      this.elements.speedDisplay.textContent = `${appState.audioSpeed}x`;
-    }
-    
-    if (this.elements.autoPlayCheckbox) {
-      this.elements.autoPlayCheckbox.checked = appState.autoPlay;
-    }
-    
-    if (this.elements.audioToggle) {
-      this.elements.audioToggle.classList.toggle('active', appState.audioEnabled);
+  resetProgress() {
+    if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+      localStorage.removeItem('speakeu_progress');
+      this.progress = this.loadProgress();
+      location.reload();
     }
   }
 }
 
-let audioManager, storage, progressManager, ui, scrollManager;
+const progressTracker = new ProgressTracker();
 
-document.addEventListener('DOMContentLoaded', () => {
-  audioManager = new AudioManager();
-  storage = new StorageManager();
-  progressManager = new ProgressManager();
-  ui = new UIManager();
-  scrollManager = new ScrollManager();
+// ✅ পেজ লোড হলে লোকালস্টোরেজ থেকে ভাষা ও থিম লোড
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('selectedLanguage');
+  if (savedLang) {
+    languageSelect.value = savedLang;
+    loadLanguage(savedLang);
+  }
 
-  setTimeout(() => {
-    ui.hideLoading();
-  }, 1000);
-
-  console.log('🌟 Speak EU Mobile v2.0 initialized successfully!');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    modeToggle.textContent = '🌙';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modeToggle.textContent = '☀️';
+  }
 });
 
-window.addEventListener('orientationchange', () => {
-  setTimeout(() => {
-    if (ui && appState.currentLanguage) {
-      ui.renderVocabulary();
+// ✅ ভাষা সিলেক্ট করলে সেটিংস স্মৃতি থাকে
+languageSelect.addEventListener('change', () => {
+  const lang = languageSelect.value;
+  if (!lang) return;
+  localStorage.setItem('selectedLanguage', lang);
+  loadLanguage(lang);
+});
+
+// ✅ ভাষা JSON লোড করে UI রেন্ডার
+function loadLanguage(lang) {
+  currentLanguage = lang;
+  fetch(`languages/${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      currentLanguageData = data;
+      renderVocabulary(data, langCodeMap[lang]);
+      updateCurrentProgress(lang, data.length);
+    })
+    .catch(error => {
+      conversationArea.innerHTML = `<p style="color:red;">Error loading data: ${error}</p>`;
+    });
+}
+
+// ✅ কথাবার্তা রেন্ডার
+function renderVocabulary(list, langKey) {
+  conversationArea.innerHTML = '';
+
+  if (!Array.isArray(list) || list.length === 0) {
+    conversationArea.innerHTML = '<p>No data found for this language.</p>';
+    return;
+  }
+
+  // Show current progress
+  const currentProgressDiv = document.getElementById('current-progress');
+  currentProgressDiv.style.display = 'block';
+
+  list.forEach((item, index) => {
+    const localLang = item[langKey] || '—';
+    const bn = item.bn || '—';
+    const bnMeaning = item.bnMeaning || '—';
+    const en = item.en || '—';
+
+    const langProgress = progressTracker.getLanguageProgress(currentLanguage);
+    const isLearned = langProgress.learnedWords.includes(index);
+
+    const div = document.createElement('div');
+    div.className = `conversation-item ${isLearned ? 'learned' : ''}`;
+    div.innerHTML = `
+      <div class="conversation-content">
+        <div>🗣️ <strong>${localLang}</strong></div>
+        <div>📝 <span>${bn}</span></div>
+        <div>📘 <em>${bnMeaning}</em></div>
+        <div>🔤 <span>${en}</span></div>
+      </div>
+      <div class="conversation-actions">
+        <button class="learn-btn ${isLearned ? 'learned' : ''}" 
+                onclick="toggleWordLearned(${index})" 
+                title="${isLearned ? 'Mark as not learned' : 'Mark as learned'}">
+          ${isLearned ? '✅' : '📚'}
+        </button>
+      </div>
+    `;
+    conversationArea.appendChild(div);
+  });
+}
+
+function toggleWordLearned(wordIndex) {
+  const langProgress = progressTracker.getLanguageProgress(currentLanguage);
+  const isCurrentlyLearned = langProgress.learnedWords.includes(wordIndex);
+  
+  if (isCurrentlyLearned) {
+    // Remove from learned words
+    const index = langProgress.learnedWords.indexOf(wordIndex);
+    langProgress.learnedWords.splice(index, 1);
+    progressTracker.progress.totalWordsLearned--;
+  } else {
+    // Mark as learned
+    progressTracker.markWordLearned(currentLanguage, wordIndex);
+  }
+  
+  progressTracker.saveProgress();
+  updateCurrentProgress(currentLanguage, currentLanguageData.length);
+  renderVocabulary(currentLanguageData, langCodeMap[currentLanguage]);
+}
+
+function updateCurrentProgress(language, totalWords) {
+  const langProgress = progressTracker.getLanguageProgress(language);
+  const learnedCount = langProgress.learnedWords.length;
+  const progressPercent = totalWords > 0 ? (learnedCount / totalWords) * 100 : 0;
+
+  // Update language progress in tracker
+  progressTracker.progress.languages[language] = {
+    ...langProgress,
+    totalWords: totalWords
+  };
+  progressTracker.saveProgress();
+
+  // Update UI
+  document.getElementById('progress-language').textContent = `${language.charAt(0).toUpperCase() + language.slice(1)} Progress`;
+  document.getElementById('progress-text').textContent = `${learnedCount}/${totalWords} words learned`;
+  document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+}
+
+// ✅ থিম টগল ও লোকালস্টোরেজে সংরক্ষণ
+modeToggle.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode');
+  modeToggle.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+// Progress Modal Functions
+progressToggle.addEventListener('click', () => {
+  showProgressModal();
+});
+
+closeModal.addEventListener('click', () => {
+  progressModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === progressModal) {
+    progressModal.style.display = 'none';
+  }
+});
+
+function showProgressModal() {
+  progressModal.style.display = 'block';
+  updateProgressStats();
+  createProgressCharts();
+  displayAchievements();
+}
+
+function updateProgressStats() {
+  document.getElementById('total-learned').textContent = progressTracker.progress.totalWordsLearned;
+  document.getElementById('current-streak').textContent = progressTracker.progress.streak;
+  document.getElementById('languages-studied').textContent = Object.keys(progressTracker.progress.languages).length;
+}
+
+function createProgressCharts() {
+  // Language Progress Chart
+  const languageCtx = document.getElementById('languageChart').getContext('2d');
+  const languages = Object.keys(progressTracker.progress.languages);
+  const languageData = languages.map(lang => progressTracker.progress.languages[lang].learnedWords.length);
+
+  new Chart(languageCtx, {
+    type: 'doughnut',
+    data: {
+      labels: languages.map(lang => lang.charAt(0).toUpperCase() + lang.slice(1)),
+      datasets: [{
+        data: languageData,
+        backgroundColor: [
+          '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', 
+          '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF'
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
     }
-  }, 100);
-});
+  });
 
-window.addEventListener('online', () => {
-  ui?.showMessage('ইন্টারনেট সংযোগ পুনরায় স্থাপিত হয়েছে 📶', 'success');
-});
+  // Activity Chart (last 7 days)
+  const activityCtx = document.getElementById('activityChart').getContext('2d');
+  const last7Days = [];
+  const activityData = [];
+  
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date();
+    date.setDate(date.getDate() - i);
+    last7Days.push(date.toLocaleDateString('en-US', { weekday: 'short' }));
+    // Simple activity simulation - in real app, you'd track daily activity
+    activityData.push(Math.random() * 10);
+  }
 
-window.addEventListener('offline', () => {
-  ui?.showMessage('ইন্টারনেট সংযোগ বিচ্ছিন্ন হয়েছে 📵', 'info');
-});
+  new Chart(activityCtx, {
+    type: 'line',
+    data: {
+      labels: last7Days,
+      datasets: [{
+        label: 'Words Learned',
+        data: activityData,
+        borderColor: '#36A2EB',
+        backgroundColor: 'rgba(54, 162, 235, 0.1)',
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+function displayAchievements() {
+  const achievementList = document.getElementById('achievement-list');
+  const allAchievements = [
+    { id: 'first_word', name: 'First Steps', desc: 'Learn your first word', icon: '🌟' },
+    { id: 'ten_words', name: 'Getting Started', desc: 'Learn 10 words', icon: '🎯' },
+    { id: 'fifty_words', name: 'Word Collector', desc: 'Learn 50 words', icon: '📚' },
+    { id: 'hundred_words', name: 'Century Club', desc: 'Learn 100 words', icon: '🏆' },
+    { id: 'week_streak', name: 'Consistent Learner', desc: '7-day learning streak', icon: '🔥' },
+    { id: 'month_streak', name: 'Dedicated Student', desc: '30-day learning streak', icon: '💎' },
+    { id: 'multilingual', name: 'Polyglot', desc: 'Study 3 different languages', icon: '🌍' }
+  ];
+
+  achievementList.innerHTML = '';
+  allAchievements.forEach(achievement => {
+    const isUnlocked = progressTracker.progress.achievements.includes(achievement.id);
+    const div = document.createElement('div');
+    div.className = `achievement-item ${isUnlocked ? 'unlocked' : 'locked'}`;
+    div.innerHTML = `
+      <div class="achievement-icon">${achievement.icon}</div>
+      <div class="achievement-info">
+        <div class="achievement-name">${achievement.name}</div>
+        <div class="achievement-desc">${achievement.desc}</div>
+      </div>
+      ${isUnlocked ? '<div class="achievement-status">✅</div>' : '<div class="achievement-status">🔒</div>'}
+    `;
+    achievementList.appendChild(div);
+  });
+}
+
+// Menu Functions
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+
+if (menuToggle && sideMenu) {
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('active');
+  });
+}
+
+const closeMenu = document.getElementById('close-menu');
+if (closeMenu && sideMenu) {
+  closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+  });
+}
+
+// Menu Functions
+function showHome() {
+  document.getElementById('side-menu').classList.remove('active');
+  // Reset to home view
+}
+
+function exportProgress() {
+  progressTracker.exportProgress();
+  document.getElementById('side-menu').classList.remove('active');
+}
+
+function resetProgress() {
+  progressTracker.resetProgress();
+  document.getElementById('side-menu').classList.remove('active');
+}
