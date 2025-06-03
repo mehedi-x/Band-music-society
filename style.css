@@ -423,155 +423,6 @@ main {
   padding-top: 80px;
 }
 
-/* 🎭 Hero Section এনহান্সমেন্ট */
-.hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 50px 25px;
-  border-radius: 20px;
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-  animation: shimmer 3s infinite;
-}
-
-.hero-section::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
-}
-
-.dark-mode .hero-section,
-.dark-blue .hero-section,
-.dark-purple .hero-section,
-.dark-green .hero-section {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-}
-
-.hero-title {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-  position: relative;
-  z-index: 2;
-}
-
-.animated-title {
-  background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: titleGlow 2s ease-in-out infinite alternate;
-}
-
-.hero-subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 35px;
-  opacity: 0.95;
-  position: relative;
-  z-index: 2;
-}
-
-.fade-in-subtitle {
-  animation: fadeInUp 1s ease-out 0.5s both;
-}
-
-.hero-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 35px;
-  position: relative;
-  z-index: 2;
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 25px;
-  border-radius: 15px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.feature-card:hover::before {
-  opacity: 1;
-}
-
-.animated-card {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideInUp 0.6s ease-out forwards;
-}
-
-.animated-card[data-delay="200"] {
-  animation-delay: 0.2s;
-}
-
-.animated-card[data-delay="400"] {
-  animation-delay: 0.4s;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-.feature-icon {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.pulse-icon {
-  animation: pulse 2s infinite;
-}
-
-.feature-card h3 {
-  margin: 12px 0 8px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.feature-card p {
-  margin: 0;
-  opacity: 0.9;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
 /* 📋 কুইক স্টার্ট সেকশন */
 .quick-start-section {
   position: relative;
@@ -1250,19 +1101,6 @@ main {
     padding: 16px;
   }
 
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-features {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   #side-menu {
     width: 280px;
   }
@@ -1275,10 +1113,6 @@ main {
   .favorites-buttons {
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .feature-card {
-    padding: 20px;
   }
 
   .modal-content {
@@ -1496,28 +1330,6 @@ main {
   transition: transform 0.1s ease-out;
 }
 
-/* 🌈 গ্রাডিয়েন্ট টেক্সট */
-.gradient-text {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 🎨 গ্লাস মরফিজম */
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark-mode .glass-morphism,
-.dark-blue .glass-morphism,
-.dark-purple .glass-morphism,
-.dark-green .glass-morphism {
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
 /* 🌈 গ্রাডিয়েন্ট টেক্সট */
 .gradient-text {
   background: linear-gradient(45deg, #667eea, #764ba2);
