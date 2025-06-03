@@ -1,0 +1,34 @@
+[
+  {
+    "topic": "বর্তমান কাল (Presente)",
+    "level": "beginner",
+    "pattern": "Io + verbo + oggetto",
+    "explanation": "ইতালিয়ানে বর্তমান কালের গঠন সহজ। ক্রিয়াপদের শেষে -o, -i, -a যোগ করে বিভিন্ন ব্যক্তির জন্য ব্যবহার করা হয়।",
+    "examples": [
+      {
+        "it": "Io mangio la pizza",
+        "breakdown": ["Io (আমি)", "mangio (খাই)", "la pizza (পিৎসা)"]
+      },
+      {
+        "it": "Tu parli italiano",
+        "breakdown": ["Tu (তুমি)", "parli (বলো)", "italiano (ইতালিয়ান)"]
+      }
+    ]
+  },
+  {
+    "topic": "নির্দেশক সর্বনাম (Articoli)",
+    "level": "beginner", 
+    "pattern": "il/la + noun",
+    "explanation": "ইতালিয়ানে প্রতিটি বিশেষ্যের সাথে নির্দেশক সর্বনাম ব্যবহার করতে হয়। পুরুষবাচক শব্দের জন্য 'il', স্ত্রীবাচক শব্দের জন্য 'la'।",
+    "examples": [
+      {
+        "it": "il libro (বই)",
+        "breakdown": ["il (পুরুষবাচক)", "libro (বই)"]
+      },
+      {
+        "it": "la casa (বাড়ি)",
+        "breakdown": ["la (স্ত্রীবাচক)", "casa (বাড়ি)"]
+      }
+    ]
+  }
+]
