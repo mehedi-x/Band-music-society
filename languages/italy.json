@@ -394,5 +394,1433 @@
     "bn": "হো সেতে।",
     "bnMeaning": "আমার তৃষ্ণা পেয়েছে।",
     "en": "I am thirsty."
+  },
+  {
+    "it": "Sono stanco.",
+    "bn": "সোনো স্তাংকো।",
+    "bnMeaning": "আমি ক্লান্ত।",
+    "en": "I am tired."
+  },
+  {
+    "it": "Ho sonno.",
+    "bn": "হো সোন্নো।",
+    "bnMeaning": "আমার ঘুম পাচ্ছে।",
+    "en": "I am sleepy."
+  },
+  {
+    "it": "Ho freddo.",
+    "bn": "হো ফ্রেদ্দো।",
+    "bnMeaning": "আমার ঠান্ডা লাগছে।",
+    "en": "I am cold."
+  },
+  {
+    "it": "Ho caldo.",
+    "bn": "হো কালদো।",
+    "bnMeaning": "আমার গরম লাগছে।",
+    "en": "I am hot."
+  },
+  {
+    "it": "Sto male.",
+    "bn": "স্তো মালে।",
+    "bnMeaning": "আমি অসুস্থ।",
+    "en": "I am sick."
+  },
+  {
+    "it": "Mi fa male la testa.",
+    "bn": "মি ফা মালে লা তেস্তা।",
+    "bnMeaning": "আমার মাথা ব্যথা।",
+    "en": "I have a headache."
+  },
+  {
+    "it": "Mi fa male lo stomaco.",
+    "bn": "মি ফা মালে লো স্তোমাকো।",
+    "bnMeaning": "আমার পেট ব্যথা।",
+    "en": "I have a stomach ache."
+  },
+  {
+    "it": "Mi fa male la schiena.",
+    "bn": "মি ফা মালে লা স্কিয়েনা।",
+    "bnMeaning": "আমার পিঠে ব্যথা।",
+    "en": "My back hurts."
+  },
+  {
+    "it": "Ho la febbre.",
+    "bn": "হো লা ফেব্রে।",
+    "bnMeaning": "আমার জ্বর।",
+    "en": "I have a fever."
+  },
+  {
+    "it": "Ho la tosse.",
+    "bn": "হো লা তোসে।",
+    "bnMeaning": "আমার কাশি।",
+    "en": "I have a cough."
+  },
+  {
+    "it": "Ho bisogno di un medico.",
+    "bn": "হো বিসোনিও দি উন মেদিকো।",
+    "bnMeaning": "আমার ডাক্তার দরকার।",
+    "en": "I need a doctor."
+  },
+  {
+    "it": "Chiamate un'ambulanza!",
+    "bn": "কিয়ামাতে উনাম্বুলানৎসা!",
+    "bnMeaning": "অ্যাম্বুলেন্স ডাকুন!",
+    "en": "Call an ambulance!"
+  },
+  {
+    "it": "È un'emergenza.",
+    "bn": "এ উনেমেরজেনৎসা।",
+    "bnMeaning": "এটা জরুরি অবস্থা।",
+    "en": "It's an emergency."
+  },
+  {
+    "it": "Aiuto!",
+    "bn": "আইউতো!",
+    "bnMeaning": "সাহায্য!",
+    "en": "Help!"
+  },
+  {
+    "it": "Chiama la polizia!",
+    "bn": "কিয়ামা লা পোলিৎসিয়া!",
+    "bnMeaning": "পুলিশ ডাকুন!",
+    "en": "Call the police!"
+  },
+  {
+    "it": "Al fuoco!",
+    "bn": "আল ফুওকো!",
+    "bnMeaning": "আগুন!",
+    "en": "Fire!"
+  },
+  {
+    "it": "Chiama i vigili del fuoco!",
+    "bn": "কিয়ামা ই ভিজিলি দেল ফুওকো!",
+    "bnMeaning": "ফায়ার ব্রিগেড ডাকুন!",
+    "en": "Call the fire department!"
+  },
+  {
+    "it": "Attenzione!",
+    "bn": "আত্তেনৎসিওনে!",
+    "bnMeaning": "সাবধান!",
+    "en": "Attention!"
+  },
+  {
+    "it": "Pericolo!",
+    "bn": "পেরিকোলো!",
+    "bnMeaning": "বিপদ!",
+    "en": "Danger!"
+  },
+  {
+    "it": "Fermati!",
+    "bn": "ফেরমাতি!",
+    "bnMeaning": "থামো!",
+    "en": "Stop!"
+  },
+  {
+    "it": "Vada via!",
+    "bn": "ভাদা ভিয়া!",
+    "bnMeaning": "চলে যান!",
+    "en": "Go away!"
+  },
+  {
+    "it": "Non mi toccare!",
+    "bn": "নন মি তোকারে!",
+    "bnMeaning": "আমাকে স্পর্শ করবেন না!",
+    "en": "Don't touch me!"
+  },
+  {
+    "it": "Lasciami in pace!",
+    "bn": "লাশামি ইন পাচে!",
+    "bnMeaning": "আমাকে শান্তিতে থাকতে দিন!",
+    "en": "Leave me alone!"
+  },
+  {
+    "it": "Ho perso il passaporto.",
+    "bn": "হো পেরসো ইল পাসাপোর্তো।",
+    "bnMeaning": "আমি পাসপোর্ট হারিয়েছি।",
+    "en": "I lost my passport."
+  },
+  {
+    "it": "Ho perso il portafoglio.",
+    "bn": "হো পেরসো ইল পোর্তাফোলিও।",
+    "bnMeaning": "আমি মানিব্যাগ হারিয়েছি।",
+    "en": "I lost my wallet."
+  },
+  {
+    "it": "Mi hanno rubato la borsa.",
+    "bn": "মি হান্নো রুবাতো লা বোরসা।",
+    "bnMeaning": "আমার ব্যাগ চুরি হয়েছে।",
+    "en": "My bag was stolen."
+  },
+  {
+    "it": "Devo andare all'ambasciata.",
+    "bn": "দেভো আন্দারে আলাম্বাশাতা।",
+    "bnMeaning": "আমাকে দূতাবাসে যেতে হবে।",
+    "en": "I need to go to the embassy."
+  },
+  {
+    "it": "Dove posso cambiare i soldi?",
+    "bn": "দোভে পোসো কাম্বিয়ারে ই সোলদি?",
+    "bnMeaning": "আমি কোথায় টাকা বদলাতে পারি?",
+    "en": "Where can I exchange money?"
+  },
+  {
+    "it": "Qual è il tasso di cambio?",
+    "bn": "কুয়াল এ ইল তাসো দি কাম্বিও?",
+    "bnMeaning": "বিনিময় হার কত?",
+    "en": "What is the exchange rate?"
+  },
+  {
+    "it": "Accettate carte di credito?",
+    "bn": "আচেত্তাতে কার্তে দি ক্রেদিতো?",
+    "bnMeaning": "আপনারা কি ক্রেডিট কার্ড নেন?",
+    "en": "Do you accept credit cards?"
+  },
+  {
+    "it": "Dove posso prelevare soldi?",
+    "bn": "দোভে পোসো প্রেলেভারে সোলদি?",
+    "bnMeaning": "আমি কোথায় টাকা তুলতে পারি?",
+    "en": "Where can I withdraw money?"
+  },
+  {
+    "it": "C'è un bancomat qui vicino?",
+    "bn": "চে উন বাংকোমাত কুই ভিচিনো?",
+    "bnMeaning": "এখানে কাছে কোনো এটিএম আছে?",
+    "en": "Is there an ATM nearby?"
+  },
+  {
+    "it": "Vorrei aprire un conto.",
+    "bn": "ভোরেই আপ্রিরে উন কোনতো।",
+    "bnMeaning": "আমি একটি অ্যাকাউন্ট খুলতে চাই।",
+    "en": "I would like to open an account."
+  },
+  {
+    "it": "Ho bisogno di documenti?",
+    "bn": "হো বিসোনিও দি দোকুমেন্তি?",
+    "bnMeaning": "আমার কাগজপত্র দরকার?",
+    "en": "Do I need documents?"
+  },
+  {
+    "it": "Quanto tempo ci vuole?",
+    "bn": "কুয়ান্তো তেমপো চি ভুওলে?",
+    "bnMeaning": "কত সময় লাগবে?",
+    "en": "How long does it take?"
+  },
+  {
+    "it": "Ho un appuntamento.",
+    "bn": "হো উন আপুন্তামেন্তো।",
+    "bnMeaning": "আমার একটি অ্যাপয়েন্টমেন্ট আছে।",
+    "en": "I have an appointment."
+  },
+  {
+    "it": "Posso fissare un appuntamento?",
+    "bn": "পোসো ফিসারে উন আপুন্তামেন্তো?",
+    "bnMeaning": "আমি কি একটি অ্যাপয়েন্টমেন্ট ঠিক করতে পারি?",
+    "en": "Can I make an appointment?"
+  },
+  {
+    "it": "A che ora è aperto?",
+    "bn": "আ কে ওরা এ আপেরতো?",
+    "bnMeaning": "কয়টায় খোলা?",
+    "en": "What time is it open?"
+  },
+  {
+    "it": "A che ora chiude?",
+    "bn": "আ কে ওরা কিউদে?",
+    "bnMeaning": "কয়টায় বন্ধ?",
+    "en": "What time does it close?"
+  },
+  {
+    "it": "È aperto oggi?",
+    "bn": "এ আপেরতো অজি?",
+    "bnMeaning": "আজ খোলা আছে?",
+    "en": "Is it open today?"
+  },
+  {
+    "it": "È chiuso la domenica.",
+    "bn": "এ কিউসো লা দোমেনিকা।",
+    "bnMeaning": "রবিবার বন্ধ।",
+    "en": "It's closed on Sunday."
+  },
+  {
+    "it": "Che giorno è oggi?",
+    "bn": "কে জোর্নো এ অজি?",
+    "bnMeaning": "আজ কী বার?",
+    "en": "What day is today?"
+  },
+  {
+    "it": "Oggi è lunedì.",
+    "bn": "অজি এ লুনেদি।",
+    "bnMeaning": "আজ সোমবার।",
+    "en": "Today is Monday."
+  },
+  {
+    "it": "Domani è martedì.",
+    "bn": "দোমানি এ মার্তেদি।",
+    "bnMeaning": "আগামীকাল মঙ্গলবার।",
+    "en": "Tomorrow is Tuesday."
+  },
+  {
+    "it": "Mercoledì",
+    "bn": "মেরকোলেদি",
+    "bnMeaning": "বুধবার",
+    "en": "Wednesday"
+  },
+  {
+    "it": "Giovedì",
+    "bn": "জোভেদি",
+    "bnMeaning": "বৃহস্পতিবার",
+    "en": "Thursday"
+  },
+  {
+    "it": "Venerdì",
+    "bn": "ভেনেরদি",
+    "bnMeaning": "শুক্রবার",
+    "en": "Friday"
+  },
+  {
+    "it": "Sabato",
+    "bn": "সাবাতো",
+    "bnMeaning": "শনিবার",
+    "en": "Saturday"
+  },
+  {
+    "it": "Domenica",
+    "bn": "দোমেনিকা",
+    "bnMeaning": "রবিবার",
+    "en": "Sunday"
+  },
+  {
+    "it": "Il fine settimana",
+    "bn": "ইল ফিনে সেত্তিমানা",
+    "bnMeaning": "সপ্তাহান্ত",
+    "en": "The weekend"
+  },
+  {
+    "it": "La settimana prossima",
+    "bn": "লা সেত্তিমানা প্রোসিমা",
+    "bnMeaning": "পরের সপ্তাহ",
+    "en": "Next week"
+  },
+  {
+    "it": "La settimana scorsa",
+    "bn": "লা সেত্তিমানা স্কোরসা",
+    "bnMeaning": "গত সপ্তাহ",
+    "en": "Last week"
+  },
+  {
+    "it": "Questa settimana",
+    "bn": "কুয়েস্তা সেত্তিমানা",
+    "bnMeaning": "এই সপ্তাহ",
+    "en": "This week"
+  },
+  {
+    "it": "Il mese prossimo",
+    "bn": "ইল মেসে প্রোসিমো",
+    "bnMeaning": "পরের মাস",
+    "en": "Next month"
+  },
+  {
+    "it": "Il mese scorso",
+    "bn": "ইল মেসে স্কোরসো",
+    "bnMeaning": "গত মাস",
+    "en": "Last month"
+  },
+  {
+    "it": "Questo mese",
+    "bn": "কুয়েস্তো মেসে",
+    "bnMeaning": "এই মাস",
+    "en": "This month"
+  },
+  {
+    "it": "L'anno prossimo",
+    "bn": "লান্নো প্রোসিমো",
+    "bnMeaning": "পরের বছর",
+    "en": "Next year"
+  },
+  {
+    "it": "L'anno scorso",
+    "bn": "লান্নো স্কোরসো",
+    "bnMeaning": "গত বছর",
+    "en": "Last year"
+  },
+  {
+    "it": "Quest'anno",
+    "bn": "কুয়েস্তান্নো",
+    "bnMeaning": "এই বছর",
+    "en": "This year"
+  },
+  {
+    "it": "Gennaio",
+    "bn": "জেন্নাইও",
+    "bnMeaning": "জানুয়ারি",
+    "en": "January"
+  },
+  {
+    "it": "Febbraio",
+    "bn": "ফেব্রাইও",
+    "bnMeaning": "ফেব্রুয়ারি",
+    "en": "February"
+  },
+  {
+    "it": "Marzo",
+    "bn": "মারৎসো",
+    "bnMeaning": "মার্চ",
+    "en": "March"
+  },
+  {
+    "it": "Aprile",
+    "bn": "আপ্রিলে",
+    "bnMeaning": "এপ্রিল",
+    "en": "April"
+  },
+  {
+    "it": "Maggio",
+    "bn": "মাজো",
+    "bnMeaning": "মে",
+    "en": "May"
+  },
+  {
+    "it": "Giugno",
+    "bn": "জুনিও",
+    "bnMeaning": "জুন",
+    "en": "June"
+  },
+  {
+    "it": "Luglio",
+    "bn": "লুলিও",
+    "bnMeaning": "জুলাই",
+    "en": "July"
+  },
+  {
+    "it": "Agosto",
+    "bn": "আগোস্তো",
+    "bnMeaning": "আগস্ট",
+    "en": "August"
+  },
+  {
+    "it": "Settembre",
+    "bn": "সেত্তেমব্রে",
+    "bnMeaning": "সেপ্টেম্বর",
+    "en": "September"
+  },
+  {
+    "it": "Ottobre",
+    "bn": "অত্তোব্রে",
+    "bnMeaning": "অক্টোবর",
+    "en": "October"
+  },
+  {
+    "it": "Novembre",
+    "bn": "নোভেম্ব্রে",
+    "bnMeaning": "নভেম্বর",
+    "en": "November"
+  },
+  {
+    "it": "Dicembre",
+    "bn": "দিচেম্ব্রে",
+    "bnMeaning": "ডিসেম্বর",
+    "en": "December"
+  },
+  {
+    "it": "Primavera",
+    "bn": "প্রিমাভেরা",
+    "bnMeaning": "বসন্ত",
+    "en": "Spring"
+  },
+  {
+    "it": "Estate",
+    "bn": "এস্তাতে",
+    "bnMeaning": "গ্রীষ্ম",
+    "en": "Summer"
+  },
+  {
+    "it": "Autunno",
+    "bn": "আউতুন্নো",
+    "bnMeaning": "শরৎ",
+    "en": "Autumn"
+  },
+  {
+    "it": "Inverno",
+    "bn": "ইনভেরনো",
+    "bnMeaning": "শীত",
+    "en": "Winter"
+  },
+  {
+    "it": "Che tempo fa?",
+    "bn": "কে তেমপো ফা?",
+    "bnMeaning": "আবহাওয়া কেমন?",
+    "en": "How is the weather?"
+  },
+  {
+    "it": "Fa caldo.",
+    "bn": "ফা কালদো।",
+    "bnMeaning": "গরম।",
+    "en": "It's hot."
+  },
+  {
+    "it": "Fa freddo.",
+    "bn": "ফা ফ্রেদ্দো।",
+    "bnMeaning": "ঠান্ডা।",
+    "en": "It's cold."
+  },
+  {
+    "it": "Piove.",
+    "bn": "পিওভে।",
+    "bnMeaning": "বৃষ্টি হচ্ছে।",
+    "en": "It's raining."
+  },
+  {
+    "it": "Nevica.",
+    "bn": "নেভিকা।",
+    "bnMeaning": "তুষারপাত হচ্ছে।",
+    "en": "It's snowing."
+  },
+  {
+    "it": "C'è il sole.",
+    "bn": "চে ইল সোলে।",
+    "bnMeaning": "রোদ আছে।",
+    "en": "It's sunny."
+  },
+  {
+    "it": "È nuvoloso.",
+    "bn": "এ নুভোলোসো।",
+    "bnMeaning": "মেঘলা।",
+    "en": "It's cloudy."
+  },
+  {
+    "it": "C'è vento.",
+    "bn": "চে ভেন্তো।",
+    "bnMeaning": "বাতাস আছে।",
+    "en": "It's windy."
+  },
+  {
+    "it": "C'è la nebbia.",
+    "bn": "চে লা নেবিয়া।",
+    "bnMeaning": "কুয়াশা আছে।",
+    "en": "It's foggy."
+  },
+  {
+    "it": "Il tempo è bello.",
+    "bn": "ইল তেমপো এ বেলো।",
+    "bnMeaning": "আবহাওয়া সুন্দর।",
+    "en": "The weather is nice."
+  },
+  {
+    "it": "Il tempo è brutto.",
+    "bn": "ইল তেমপো এ ব্রুত্তো।",
+    "bnMeaning": "আবহাওয়া খারাপ।",
+    "en": "The weather is bad."
+  },
+  {
+    "it": "Che temperatura c'è?",
+    "bn": "কে তেমপেরাতুরা চে?",
+    "bnMeaning": "তাপমাত্রা কত?",
+    "en": "What's the temperature?"
+  },
+  {
+    "it": "Ci sono 20 gradi.",
+    "bn": "চি সোনো ভেন্তি গ্রাদি।",
+    "bnMeaning": "২০ ডিগ্রি।",
+    "en": "It's 20 degrees."
+  },
+  {
+    "it": "Sotto zero",
+    "bn": "সোত্তো জেরো",
+    "bnMeaning": "শূন্যের নিচে",
+    "en": "Below zero"
+  },
+  {
+    "it": "Zero gradi",
+    "bn": "জেরো গ্রাদি",
+    "bnMeaning": "শূন্য ডিগ্রি",
+    "en": "Zero degrees"
+  },
+  {
+    "it": "Sopra zero",
+    "bn": "সোপ্রা জেরো",
+    "bnMeaning": "শূন্যের উপরে",
+    "en": "Above zero"
+  },
+  {
+    "it": "Il sole",
+    "bn": "ইল সোলে",
+    "bnMeaning": "সূর্য",
+    "en": "The sun"
+  },
+  {
+    "it": "La luna",
+    "bn": "লা লুনা",
+    "bnMeaning": "চাঁদ",
+    "en": "The moon"
+  },
+  {
+    "it": "Le stelle",
+    "bn": "লে স্তেলে",
+    "bnMeaning": "তারাগুলো",
+    "en": "The stars"
+  },
+  {
+    "it": "Il cielo",
+    "bn": "ইল চিয়েলো",
+    "bnMeaning": "আকাশ",
+    "en": "The sky"
+  },
+  {
+    "it": "Le nuvole",
+    "bn": "লে নুভোলে",
+    "bnMeaning": "মেঘগুলো",
+    "en": "The clouds"
+  },
+  {
+    "it": "La pioggia",
+    "bn": "লা পিওজা",
+    "bnMeaning": "বৃষ্টি",
+    "en": "The rain"
+  },
+  {
+    "it": "La neve",
+    "bn": "লা নেভে",
+    "bnMeaning": "তুষার",
+    "en": "The snow"
+  },
+  {
+    "it": "Il vento",
+    "bn": "ইল ভেন্তো",
+    "bnMeaning": "বাতাস",
+    "en": "The wind"
+  },
+  {
+    "it": "Il temporale",
+    "bn": "ইল তেমপোরালে",
+    "bnMeaning": "ঝড়",
+    "en": "The storm"
+  },
+  {
+    "it": "Il fulmine",
+    "bn": "ইল ফুলমিনে",
+    "bnMeaning": "বিদ্যুৎ",
+    "en": "Lightning"
+  },
+  {
+    "it": "Il tuono",
+    "bn": "ইল তুওনো",
+    "bnMeaning": "বজ্রপাত",
+    "en": "Thunder"
+  },
+  {
+    "it": "L'arcobaleno",
+    "bn": "লারকোবালেনো",
+    "bnMeaning": "রংধনু",
+    "en": "The rainbow"
+  },
+  {
+    "it": "Uno",
+    "bn": "উনো",
+    "bnMeaning": "একটি",
+    "en": "One"
+  },
+  {
+    "it": "Due",
+    "bn": "দুয়ে",
+    "bnMeaning": "দুটি",
+    "en": "Two"
+  },
+  {
+    "it": "Tre",
+    "bn": "ত্রে",
+    "bnMeaning": "তিনটি",
+    "en": "Three"
+  },
+  {
+    "it": "Quattro",
+    "bn": "কুয়াত্ত্রো",
+    "bnMeaning": "চারটি",
+    "en": "Four"
+  },
+  {
+    "it": "Cinque",
+    "bn": "চিনকুয়ে",
+    "bnMeaning": "পাঁচটি",
+    "en": "Five"
+  },
+  {
+    "it": "Sei",
+    "bn": "সেই",
+    "bnMeaning": "ছয়টি",
+    "en": "Six"
+  },
+  {
+    "it": "Sette",
+    "bn": "সেত্তে",
+    "bnMeaning": "সাতটি",
+    "en": "Seven"
+  },
+  {
+    "it": "Otto",
+    "bn": "অত্তো",
+    "bnMeaning": "আটটি",
+    "en": "Eight"
+  },
+  {
+    "it": "Nove",
+    "bn": "নোভে",
+    "bnMeaning": "নয়টি",
+    "en": "Nine"
+  },
+  {
+    "it": "Dieci",
+    "bn": "দিয়েচি",
+    "bnMeaning": "দশটি",
+    "en": "Ten"
+  },
+  {
+    "it": "Undici",
+    "bn": "উন্দিচি",
+    "bnMeaning": "এগারোটি",
+    "en": "Eleven"
+  },
+  {
+    "it": "Dodici",
+    "bn": "দোদিচি",
+    "bnMeaning": "বারোটি",
+    "en": "Twelve"
+  },
+  {
+    "it": "Tredici",
+    "bn": "ত্রেদিচি",
+    "bnMeaning": "তেরোটি",
+    "en": "Thirteen"
+  },
+  {
+    "it": "Quattordici",
+    "bn": "কুয়াত্তোরদিচি",
+    "bnMeaning": "চৌদ্দটি",
+    "en": "Fourteen"
+  },
+  {
+    "it": "Quindici",
+    "bn": "কুইন্দিচি",
+    "bnMeaning": "পনেরোটি",
+    "en": "Fifteen"
+  },
+  {
+    "it": "Sedici",
+    "bn": "সেদিচি",
+    "bnMeaning": "ষোলোটি",
+    "en": "Sixteen"
+  },
+  {
+    "it": "Diciassette",
+    "bn": "দিচাসেত্তে",
+    "bnMeaning": "সতেরোটি",
+    "en": "Seventeen"
+  },
+  {
+    "it": "Diciotto",
+    "bn": "দিচোত্তো",
+    "bnMeaning": "আঠারোটি",
+    "en": "Eighteen"
+  },
+  {
+    "it": "Diciannove",
+    "bn": "দিচান্নোভে",
+    "bnMeaning": "ঊনিশটি",
+    "en": "Nineteen"
+  },
+  {
+    "it": "Venti",
+    "bn": "ভেন্তি",
+    "bnMeaning": "বিশটি",
+    "en": "Twenty"
+  },
+  {
+    "it": "Trenta",
+    "bn": "ত্রেন্তা",
+    "bnMeaning": "ত্রিশটি",
+    "en": "Thirty"
+  },
+  {
+    "it": "Quaranta",
+    "bn": "কুয়ারান্তা",
+    "bnMeaning": "চল্লিশটি",
+    "en": "Forty"
+  },
+  {
+    "it": "Cinquanta",
+    "bn": "চিনকুয়ান্তা",
+    "bnMeaning": "পঞ্চাশটি",
+    "en": "Fifty"
+  },
+  {
+    "it": "Sessanta",
+    "bn": "সেসান্তা",
+    "bnMeaning": "ষাটটি",
+    "en": "Sixty"
+  },
+  {
+    "it": "Settanta",
+    "bn": "সেত্তান্তা",
+    "bnMeaning": "সত্তরটি",
+    "en": "Seventy"
+  },
+  {
+    "it": "Ottanta",
+    "bn": "অত্তান্তা",
+    "bnMeaning": "আশিটি",
+    "en": "Eighty"
+  },
+  {
+    "it": "Novanta",
+    "bn": "নোভান্তা",
+    "bnMeaning": "নব্বইটি",
+    "en": "Ninety"
+  },
+  {
+    "it": "Cento",
+    "bn": "চেন্তো",
+    "bnMeaning": "একশোটি",
+    "en": "One hundred"
+  },
+  {
+    "it": "Duecento",
+    "bn": "দুয়েচেন্তো",
+    "bnMeaning": "দুইশোটি",
+    "en": "Two hundred"
+  },
+  {
+    "it": "Trecento",
+    "bn": "ত্রেচেন্তো",
+    "bnMeaning": "তিনশোটি",
+    "en": "Three hundred"
+  },
+  {
+    "it": "Mille",
+    "bn": "মিলে",
+    "bnMeaning": "এক হাজার",
+    "en": "One thousand"
+  },
+  {
+    "it": "Duemila",
+    "bn": "দুয়েমিলা",
+    "bnMeaning": "দুই হাজার",
+    "en": "Two thousand"
+  },
+  {
+    "it": "Un milione",
+    "bn": "উন মিলিওনে",
+    "bnMeaning": "দশ লক্ষ",
+    "en": "One million"
+  },
+  {
+    "it": "Primo",
+    "bn": "প্রিমো",
+    "bnMeaning": "প্রথম",
+    "en": "First"
+  },
+  {
+    "it": "Secondo",
+    "bn": "সেকোন্দো",
+    "bnMeaning": "দ্বিতীয়",
+    "en": "Second"
+  },
+  {
+    "it": "Terzo",
+    "bn": "তেরৎসো",
+    "bnMeaning": "তৃতীয়",
+    "en": "Third"
+  },
+  {
+    "it": "Quarto",
+    "bn": "কুয়ার্তো",
+    "bnMeaning": "চতুর্থ",
+    "en": "Fourth"
+  },
+  {
+    "it": "Quinto",
+    "bn": "কুইন্তো",
+    "bnMeaning": "পঞ্চম",
+    "en": "Fifth"
+  },
+  {
+    "it": "Una volta",
+    "bn": "উনা ভোল্তা",
+    "bnMeaning": "একবার",
+    "en": "Once"
+  },
+  {
+    "it": "Due volte",
+    "bn": "দুয়ে ভোল্তে",
+    "bnMeaning": "দুইবার",
+    "en": "Twice"
+  },
+  {
+    "it": "Tre volte",
+    "bn": "ত্রে ভোল্তে",
+    "bnMeaning": "তিনবার",
+    "en": "Three times"
+  },
+  {
+    "it": "Molte volte",
+    "bn": "মোল্তে ভোল্তে",
+    "bnMeaning": "অনেকবার",
+    "en": "Many times"
+  },
+  {
+    "it": "Qualche volta",
+    "bn": "কুয়ালকে ভোল্তা",
+    "bnMeaning": "কখনো কখনো",
+    "en": "Sometimes"
+  },
+  {
+    "it": "Ogni volta",
+    "bn": "ওনি ভোল্তা",
+    "bnMeaning": "প্রতিবার",
+    "en": "Every time"
+  },
+  {
+    "it": "L'ultima volta",
+    "bn": "লুল্তিমা ভোল্তা",
+    "bnMeaning": "শেষবার",
+    "en": "The last time"
+  },
+  {
+    "it": "La prima volta",
+    "bn": "লা প্রিমা ভোল্তা",
+    "bnMeaning": "প্রথমবার",
+    "en": "The first time"
+  },
+  {
+    "it": "La prossima volta",
+    "bn": "লা প্রোসিমা ভোল্তা",
+    "bnMeaning": "পরের বার",
+    "en": "Next time"
+  },
+  {
+    "it": "Mai più",
+    "bn": "মাই পিউ",
+    "bnMeaning": "আর কখনো না",
+    "en": "Never again"
+  },
+  {
+    "it": "Di nuovo",
+    "bn": "দি নুওভো",
+    "bnMeaning": "আবার",
+    "en": "Again"
+  },
+  {
+    "it": "Ancora",
+    "bn": "আংকোরা",
+    "bnMeaning": "এখনও",
+    "en": "Still"
+  },
+  {
+    "it": "Già",
+    "bn": "জা",
+    "bnMeaning": "ইতিমধ্যে",
+    "en": "Already"
+  },
+  {
+    "it": "Non ancora",
+    "bn": "নন আংকোরা",
+    "bnMeaning": "এখনও না",
+    "en": "Not yet"
+  },
+  {
+    "it": "Presto",
+    "bn": "প্রেস্তো",
+    "bnMeaning": "শীঘ্রই",
+    "en": "Soon"
+  },
+  {
+    "it": "Tardi",
+    "bn": "তার্দি",
+    "bnMeaning": "দেরি",
+    "en": "Late"
+  },
+  {
+    "it": "In tempo",
+    "bn": "ইন তেমপো",
+    "bnMeaning": "সময়মতো",
+    "en": "On time"
+  },
+  {
+    "it": "In anticipo",
+    "bn": "ইন আন্তিচিপো",
+    "bnMeaning": "আগে",
+    "en": "Early"
+  },
+  {
+    "it": "In ritardo",
+    "bn": "ইন রিতার্দো",
+    "bnMeaning": "দেরিতে",
+    "en": "Late"
+  },
+  {
+    "it": "Adesso",
+    "bn": "আদেসো",
+    "bnMeaning": "এখন",
+    "en": "Now"
+  },
+  {
+    "it": "Ora",
+    "bn": "ওরা",
+    "bnMeaning": "এখন",
+    "en": "Now"
+  },
+  {
+    "it": "Prima",
+    "bn": "প্রিমা",
+    "bnMeaning": "আগে",
+    "en": "Before"
+  },
+  {
+    "it": "Dopo",
+    "bn": "দোপো",
+    "bnMeaning": "পরে",
+    "en": "After"
+  },
+  {
+    "it": "Durante",
+    "bn": "দুরান্তে",
+    "bnMeaning": "চলাকালীন",
+    "en": "During"
+  },
+  {
+    "it": "Mentre",
+    "bn": "মেন্ত্রে",
+    "bnMeaning": "যখন",
+    "en": "While"
+  },
+  {
+    "it": "Da quando",
+    "bn": "দা কুয়ান্দো",
+    "bnMeaning": "যখন থেকে",
+    "en": "Since when"
+  },
+  {
+    "it": "Fino a quando",
+    "bn": "ফিনো আ কুয়ান্দো",
+    "bnMeaning": "কতক্ষণ পর্যন্ত",
+    "en": "Until when"
+  },
+  {
+    "it": "Da molto tempo",
+    "bn": "দা মোল্তো তেমপো",
+    "bnMeaning": "অনেক দিন ধরে",
+    "en": "For a long time"
+  },
+  {
+    "it": "Da poco tempo",
+    "bn": "দা পোকো তেমপো",
+    "bnMeaning": "কিছুদিন ধরে",
+    "en": "For a short time"
+  },
+  {
+    "it": "Per sempre",
+    "bn": "পের সেমপ্রে",
+    "bnMeaning": "চিরকালের জন্য",
+    "en": "Forever"
+  },
+  {
+    "it": "Per un po'",
+    "bn": "পের উন পো",
+    "bnMeaning": "কিছুক্ষণের জন্য",
+    "en": "For a while"
+  },
+  {
+    "it": "Tutto il giorno",
+    "bn": "তুত্তো ইল জোর্নো",
+    "bnMeaning": "সারাদিন",
+    "en": "All day"
+  },
+  {
+    "it": "Tutta la notte",
+    "bn": "তুত্তা লা নোত্তে",
+    "bnMeaning": "সারারাত",
+    "en": "All night"
+  },
+  {
+    "it": "Tutto l'anno",
+    "bn": "তুত্তো লান্নো",
+    "bnMeaning": "সারা বছর",
+    "en": "All year"
+  },
+  {
+    "it": "Ogni giorno",
+    "bn": "ওনি জোর্নো",
+    "bnMeaning": "প্রতিদিন",
+    "en": "Every day"
+  },
+  {
+    "it": "Ogni settimana",
+    "bn": "ওনি সেত্তিমানা",
+    "bnMeaning": "প্রতি সপ্তাহে",
+    "en": "Every week"
+  },
+  {
+    "it": "Ogni mese",
+    "bn": "ওনি মেসে",
+    "bnMeaning": "প্রতি মাসে",
+    "en": "Every month"
+  },
+  {
+    "it": "Ogni anno",
+    "bn": "ওনি আন্নো",
+    "bnMeaning": "প্রতি বছর",
+    "en": "Every year"
+  },
+  {
+    "it": "Una volta al giorno",
+    "bn": "উনা ভোল্তা আল জোর্নো",
+    "bnMeaning": "দিনে একবার",
+    "en": "Once a day"
+  },
+  {
+    "it": "Due volte alla settimana",
+    "bn": "দুয়ে ভোল্তে আলা সেত্তিমানা",
+    "bnMeaning": "সপ্তাহে দুইবার",
+    "en": "Twice a week"
+  },
+  {
+    "it": "Una volta al mese",
+    "bn": "উনা ভোল্তা আল মেসে",
+    "bnMeaning": "মাসে একবার",
+    "en": "Once a month"
+  },
+  {
+    "it": "La mattina",
+    "bn": "লা মাত্তিনা",
+    "bnMeaning": "সকালে",
+    "en": "In the morning"
+  },
+  {
+    "it": "Il pomeriggio",
+    "bn": "ইল পোমেরিজো",
+    "bnMeaning": "বিকেলে",
+    "en": "In the afternoon"
+  },
+  {
+    "it": "La sera",
+    "bn": "লা সেরা",
+    "bnMeaning": "সন্ধ্যায়",
+    "en": "In the evening"
+  },
+  {
+    "it": "La notte",
+    "bn": "লা নোত্তে",
+    "bnMeaning": "রাতে",
+    "en": "At night"
+  },
+  {
+    "it": "Di mattina presto",
+    "bn": "দি মাত্তিনা প্রেস্তো",
+    "bnMeaning": "খুব সকালে",
+    "en": "Early in the morning"
+  },
+  {
+    "it": "A mezzogiorno",
+    "bn": "আ মেৎসোজোর্নো",
+    "bnMeaning": "দুপুরে",
+    "en": "At noon"
+  },
+  {
+    "it": "A mezzanotte",
+    "bn": "আ মেৎসানোত্তে",
+    "bnMeaning": "মধ্যরাতে",
+    "en": "At midnight"
+  },
+  {
+    "it": "All'alba",
+    "bn": "আলালবা",
+    "bnMeaning": "ভোরবেলা",
+    "en": "At dawn"
+  },
+  {
+    "it": "Al tramonto",
+    "bn": "আল ত্রামোন্তো",
+    "bnMeaning": "সূর্যাস্তে",
+    "en": "At sunset"
+  },
+  {
+    "it": "Ieri mattina",
+    "bn": "ইয়েরি মাত্তিনা",
+    "bnMeaning": "গতকাল সকালে",
+    "en": "Yesterday morning"
+  },
+  {
+    "it": "Ieri sera",
+    "bn": "ইয়েরি সেরা",
+    "bnMeaning": "গতকাল সন্ধ্যায়",
+    "en": "Yesterday evening"
+  },
+  {
+    "it": "Stamattina",
+    "bn": "স্তামাত্তিনা",
+    "bnMeaning": "আজ সকালে",
+    "en": "This morning"
+  },
+  {
+    "it": "Stasera",
+    "bn": "স্তাসেরা",
+    "bnMeaning": "আজ সন্ধ্যায়",
+    "en": "This evening"
+  },
+  {
+    "it": "Stanotte",
+    "bn": "স্তানোত্তে",
+    "bnMeaning": "আজ রাতে",
+    "en": "Tonight"
+  },
+  {
+    "it": "Domani mattina",
+    "bn": "দোমানি মাত্তিনা",
+    "bnMeaning": "আগামীকাল সকালে",
+    "en": "Tomorrow morning"
+  },
+  {
+    "it": "Domani sera",
+    "bn": "দোমানি সেরা",
+    "bnMeaning": "আগামীকাল সন্ধ্যায়",
+    "en": "Tomorrow evening"
+  },
+  {
+    "it": "Dopodomani",
+    "bn": "দোপোদোমানি",
+    "bnMeaning": "পরশু",
+    "en": "The day after tomorrow"
+  },
+  {
+    "it": "L'altro ieri",
+    "bn": "লাল্ত্রো ইয়েরি",
+    "bnMeaning": "পরশু",
+    "en": "The day before yesterday"
+  },
+  {
+    "it": "Tra due giorni",
+    "bn": "ত্রা দুয়ে জোরনি",
+    "bnMeaning": "দুই দিন পর",
+    "en": "In two days"
+  },
+  {
+    "it": "Due giorni fa",
+    "bn": "দুয়ে জোরনি ফা",
+    "bnMeaning": "দুই দিন আগে",
+    "en": "Two days ago"
+  },
+  {
+    "it": "Tra un'ora",
+    "bn": "ত্রা উনওরা",
+    "bnMeaning": "এক ঘন্টা পর",
+    "en": "In one hour"
+  },
+  {
+    "it": "Un'ora fa",
+    "bn": "উনওরা ফা",
+    "bnMeaning": "এক ঘন্টা আগে",
+    "en": "One hour ago"
+  },
+  {
+    "it": "Tra cinque minuti",
+    "bn": "ত্রা চিনকুয়ে মিনুতি",
+    "bnMeaning": "পাঁচ মিনিট পর",
+    "en": "In five minutes"
+  },
+  {
+    "it": "Cinque minuti fa",
+    "bn": "চিনকুয়ে মিনুতি ফা",
+    "bnMeaning": "পাঁচ মিনিট আগে",
+    "en": "Five minutes ago"
+  },
+  {
+    "it": "Subito",
+    "bn": "সুবিতো",
+    "bnMeaning": "তৎক্ষণাৎ",
+    "en": "Immediately"
+  },
+  {
+    "it": "Più tardi",
+    "bn": "পিউ তার্দি",
+    "bnMeaning": "পরে",
+    "en": "Later"
+  },
+  {
+    "it": "Prima possibile",
+    "bn": "প্রিমা পোসিবিলে",
+    "bnMeaning": "যত তাড়াতাড়ি সম্ভব",
+    "en": "As soon as possible"
+  },
+  {
+    "it": "Non ho tempo",
+    "bn": "নন হো তেমপো",
+    "bnMeaning": "আমার সময় নেই",
+    "en": "I don't have time"
+  },
+  {
+    "it": "Ho tempo",
+    "bn": "হো তেমপো",
+    "bnMeaning": "আমার সময় আছে",
+    "en": "I have time"
+  },
+  {
+    "it": "Ho fretta",
+    "bn": "হো ফ্রেত্তা",
+    "bnMeaning": "আমার তাড়া আছে",
+    "en": "I'm in a hurry"
+  },
+  {
+    "it": "Non ho fretta",
+    "bn": "নন হো ফ্রেত্তা",
+    "bnMeaning": "আমার তাড়া নেই",
+    "en": "I'm not in a hurry"
+  },
+  {
+    "it": "Quanto tempo ci vuole?",
+    "bn": "কুয়ান্তো তেমপো চি ভুওলে?",
+    "bnMeaning": "কত সময় লাগবে?",
+    "en": "How long does it take?"
+  },
+  {
+    "it": "Ci vuole un'ora",
+    "bn": "চি ভুওলে উনওরা",
+    "bnMeaning": "এক ঘন্টা লাগবে",
+    "en": "It takes one hour"
+  },
+  {
+    "it": "Ci vogliono due ore",
+    "bn": "চি ভোলিওনো দুয়ে ওরে",
+    "bnMeaning": "দুই ঘন্টা লাগবে",
+    "en": "It takes two hours"
+  },
+  {
+    "it": "Per quanto tempo?",
+    "bn": "পের কুয়ান্তো তেমপো?",
+    "bnMeaning": "কতক্ষণের জন্য?",
+    "en": "For how long?"
+  },
+  {
+    "it": "Da quanto tempo?",
+    "bn": "দা কুয়ান্তো তেমপো?",
+    "bnMeaning": "কতক্ষণ ধরে?",
+    "en": "For how long (since)?"
+  },
+  {
+    "it": "Il tempo passa veloce",
+    "bn": "ইল তেমপো পাসা ভেলোচে",
+    "bnMeaning": "সময় দ্রুত চলে যায়",
+    "en": "Time passes quickly"
+  },
+  {
+    "it": "Il tempo passa lento",
+    "bn": "ইল তেমপো পাসা লেন্তো",
+    "bnMeaning": "সময় ধীরে চলে",
+    "en": "Time passes slowly"
+  },
+  {
+    "it": "È presto",
+    "bn": "এ প্রেস্তো",
+    "bnMeaning": "এখনও তাড়াতাড়ি",
+    "en": "It's early"
+  },
+  {
+    "it": "È tardi",
+    "bn": "এ তার্দি",
+    "bnMeaning": "দেরি হয়েছে",
+    "en": "It's late"
+  },
+  {
+    "it": "Che ora è?",
+    "bn": "কে ওরা এ?",
+    "bnMeaning": "কয়টা বাজে?",
+    "en": "What time is it?"
+  },
+  {
+    "it": "È l'una",
+    "bn": "এ লুনা",
+    "bnMeaning": "একটা বাজে",
+    "en": "It's one o'clock"
+  },
+  {
+    "it": "Sono le due",
+    "bn": "সোনো লে দুয়ে",
+    "bnMeaning": "দুইটা বাজে",
+    "en": "It's two o'clock"
+  },
+  {
+    "it": "Sono le due e un quarto",
+    "bn": "সোনো লে দুয়ে এ উন কুয়ার্তো",
+    "bnMeaning": "সোয়া দুইটা বাজে",
+    "en": "It's quarter past two"
+  },
+  {
+    "it": "Sono le due e mezzo",
+    "bn": "সোনো লে দুয়ে এ মেৎসো",
+    "bnMeaning": "আড়াইটা বাজে",
+    "en": "It's half past two"
+  },
+  {
+    "it": "Sono le tre meno un quarto",
+    "bn": "সোনো লে ত্রে মেনো উন কুয়ার্তো",
+    "bnMeaning": "পৌনে তিনটা বাজে",
+    "en": "It's quarter to three"
+  },
+  {
+    "it": "Alle otto",
+    "bn": "আলে অত্তো",
+    "bnMeaning": "আটটায়",
+    "en": "At eight"
+  },
+  {
+    "it": "Alle otto e mezzo",
+    "bn": "আলে অত্তো এ মেৎসো",
+    "bnMeaning": "সাড়ে আটটায়",
+    "en": "At half past eight"
+  },
+  {
+    "it": "Alle nove meno dieci",
+    "bn": "আলে নোভে মেনো দিয়েচি",
+    "bnMeaning": "দশ মিনিট কম নয়টায়",
+    "en": "At ten to nine"
+  },
+  {
+    "it": "Alle nove e dieci",
+    "bn": "আলে নোভে এ দিয়েচি",
+    "bnMeaning": "দশ মিনিট বেশি নয়টায়",
+    "en": "At ten past nine"
+  },
+  {
+    "it": "L'orologio",
+    "bn": "লোরোলোজো",
+    "bnMeaning": "ঘড়ি",
+    "en": "The clock/watch"
+  },
+  {
+    "it": "Il mio orologio è rotto",
+    "bn": "ইল মিও ওরোলোজো এ রোত্তো",
+    "bnMeaning": "আমার ঘড়ি নষ্ট",
+    "en": "My watch is broken"
+  },
+  {
+    "it": "Il mio orologio è indietro",
+    "bn": "ইল মিও ওরোলোজো এ ইনদিয়েত্রো",
+    "bnMeaning": "আমার ঘড়ি পিছিয়ে",
+    "en": "My watch is slow"
+  },
+  {
+    "it": "Il mio orologio è avanti",
+    "bn": "ইল মিও ওরোলোজো এ আভান্তি",
+    "bnMeaning": "আমার ঘড়ি এগিয়ে",
+    "en": "My watch is fast"
+  },
+  {
+    "it": "Che ore fa il suo orologio?",
+    "bn": "কে ওরে ফা ইল সুও ওরোলোজো?",
+    "bnMeaning": "আপনার ঘড়িতে কয়টা?",
+    "en": "What time does your watch show?"
+  },
+  {
+    "it": "Il mio orologio segna le tre",
+    "bn": "ইল মিও ওরোলোজো সেনিয়া লে ত্রে",
+    "bnMeaning": "আমার ঘড়িতে তিনটা",
+    "en": "My watch shows three o'clock"
   }
 ]
