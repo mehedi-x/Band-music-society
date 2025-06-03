@@ -1,1 +1,42 @@
-
+[
+  {
+    "scenario": "দোকানে কেনাকাটা",
+    "level": "beginner",
+    "conversation": [
+      {
+        "speaker": "Customer",
+        "it": "Buongiorno! Quanto costa questa maglietta?",
+        "bn": "বুওনজোর্নো! কুয়ান্তো কোস্তা কুয়েস্তা মাল্যেত্তা?",
+        "bnMeaning": "সুপ্রভাত! এই টি-শার্টের দাম কত?",
+        "en": "Good morning! How much does this t-shirt cost?"
+      },
+      {
+        "speaker": "Shopkeeper",
+        "it": "Costa venti euro.",
+        "bn": "কোস্তা ভেন্তি ইউরো।",
+        "bnMeaning": "দাম বিশ ইউরো।",
+        "en": "It costs twenty euros."
+      }
+    ]
+  },
+  {
+    "scenario": "রেস্তোরাঁয় খাবার অর্ডার",
+    "level": "beginner",
+    "conversation": [
+      {
+        "speaker": "Customer",
+        "it": "Vorrei una pizza margherita, per favore.",
+        "bn": "ভোরেই উনা পিৎসা মার্গেরিতা, পের ফাভোরে।",
+        "bnMeaning": "আমি একটি মার্গেরিতা পিৎসা চাই, অনুগ্রহ করে।",
+        "en": "I would like a margherita pizza, please."
+      },
+      {
+        "speaker": "Waiter",
+        "it": "Perfetto! Qualcosa da bere?",
+        "bn": "পের্ফেত্তো! কুয়ালকোসা দা বেরে?",
+        "bnMeaning": "চমৎকার! কিছু পানীয়?",
+        "en": "Perfect! Something to drink?"
+      }
+    ]
+  }
+]
