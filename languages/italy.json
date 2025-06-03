@@ -1822,5 +1822,1283 @@
     "bn": "ইল মিও ওরোলোজো সেনিয়া লে ত্রে",
     "bnMeaning": "আমার ঘড়িতে তিনটা",
     "en": "My watch shows three o'clock"
+  },
+  {
+    "it": "La mattina",
+    "bn": "লা মাত্তিনা",
+    "bnMeaning": "সকাল",
+    "en": "The morning"
+  },
+  {
+    "it": "Il pomeriggio",
+    "bn": "ইল পোমেরিজো",
+    "bnMeaning": "দুপুর",
+    "en": "The afternoon"
+  },
+  {
+    "it": "La sera",
+    "bn": "লা সেরা",
+    "bnMeaning": "সন্ধ্যা",
+    "en": "The evening"
+  },
+  {
+    "it": "La notte",
+    "bn": "লা নোত্তে",
+    "bnMeaning": "রাত",
+    "en": "The night"
+  },
+  {
+    "it": "Il mezzogiorno",
+    "bn": "ইল মেৎসোজোর্নো",
+    "bnMeaning": "দুপুর বারোটা",
+    "en": "Noon"
+  },
+  {
+    "it": "La mezzanotte",
+    "bn": "লা মেৎসানোত্তে",
+    "bnMeaning": "মধ্যরাত",
+    "en": "Midnight"
+  },
+  {
+    "it": "All'alba",
+    "bn": "আলালবা",
+    "bnMeaning": "ভোরে",
+    "en": "At dawn"
+  },
+  {
+    "it": "Al tramonto",
+    "bn": "আল ত্রামোন্তো",
+    "bnMeaning": "সন্ধ্যায়",
+    "en": "At sunset"
+  },
+  {
+    "it": "Rosso",
+    "bn": "রোসো",
+    "bnMeaning": "লাল",
+    "en": "Red"
+  },
+  {
+    "it": "Blu",
+    "bn": "ব্লু",
+    "bnMeaning": "নীল",
+    "en": "Blue"
+  },
+  {
+    "it": "Verde",
+    "bn": "ভেরদে",
+    "bnMeaning": "সবুজ",
+    "en": "Green"
+  },
+  {
+    "it": "Giallo",
+    "bn": "জাল্লো",
+    "bnMeaning": "হলুদ",
+    "en": "Yellow"
+  },
+  {
+    "it": "Bianco",
+    "bn": "বিয়াংকো",
+    "bnMeaning": "সাদা",
+    "en": "White"
+  },
+  {
+    "it": "Nero",
+    "bn": "নেরো",
+    "bnMeaning": "কালো",
+    "en": "Black"
+  },
+  {
+    "it": "Arancione",
+    "bn": "আরানচোনে",
+    "bnMeaning": "কমলা",
+    "en": "Orange"
+  },
+  {
+    "it": "Viola",
+    "bn": "ভিওলা",
+    "bnMeaning": "বেগুনি",
+    "en": "Purple"
+  },
+  {
+    "it": "Rosa",
+    "bn": "রোসা",
+    "bnMeaning": "গোলাপি",
+    "en": "Pink"
+  },
+  {
+    "it": "Marrone",
+    "bn": "মারোনে",
+    "bnMeaning": "বাদামি",
+    "en": "Brown"
+  },
+  {
+    "it": "Grigio",
+    "bn": "গ্রিজো",
+    "bnMeaning": "ধূসর",
+    "en": "Gray"
+  },
+  {
+    "it": "Colorato",
+    "bn": "কোলোরাতো",
+    "bnMeaning": "রঙিন",
+    "en": "Colorful"
+  },
+  {
+    "it": "Chiaro",
+    "bn": "কিয়ারো",
+    "bnMeaning": "হালকা",
+    "en": "Light"
+  },
+  {
+    "it": "Scuro",
+    "bn": "স্কুরো",
+    "bnMeaning": "গাঢ়",
+    "en": "Dark"
+  },
+  {
+    "it": "Piccolo",
+    "bn": "পিকোলো",
+    "bnMeaning": "ছোট",
+    "en": "Small"
+  },
+  {
+    "it": "Grande",
+    "bn": "গ্রান্দে",
+    "bnMeaning": "বড়",
+    "en": "Big"
+  },
+  {
+    "it": "Medio",
+    "bn": "মেদিও",
+    "bnMeaning": "মাঝারি",
+    "en": "Medium"
+  },
+  {
+    "it": "Lungo",
+    "bn": "লুংগো",
+    "bnMeaning": "লম্বা",
+    "en": "Long"
+  },
+  {
+    "it": "Corto",
+    "bn": "কোর্তো",
+    "bnMeaning": "ছোট",
+    "en": "Short"
+  },
+  {
+    "it": "Alto",
+    "bn": "আল্তো",
+    "bnMeaning": "উঁচু",
+    "en": "Tall"
+  },
+  {
+    "it": "Basso",
+    "bn": "বাসো",
+    "bnMeaning": "নিচু",
+    "en": "Low"
+  },
+  {
+    "it": "Largo",
+    "bn": "লারগো",
+    "bnMeaning": "চওড়া",
+    "en": "Wide"
+  },
+  {
+    "it": "Stretto",
+    "bn": "স্ত্রেত্তো",
+    "bnMeaning": "সরু",
+    "en": "Narrow"
+  },
+  {
+    "it": "Grosso",
+    "bn": "গ্রোসো",
+    "bnMeaning": "মোটা",
+    "en": "Thick"
+  },
+  {
+    "it": "Sottile",
+    "bn": "সোত্তিলে",
+    "bnMeaning": "পাতলা",
+    "en": "Thin"
+  },
+  {
+    "it": "Pesante",
+    "bn": "পেসান্তে",
+    "bnMeaning": "ভারী",
+    "en": "Heavy"
+  },
+  {
+    "it": "Leggero",
+    "bn": "লেজেরো",
+    "bnMeaning": "হালকা",
+    "en": "Light"
+  },
+  {
+    "it": "Forte",
+    "bn": "ফোর্তে",
+    "bnMeaning": "শক্তিশালী",
+    "en": "Strong"
+  },
+  {
+    "it": "Debole",
+    "bn": "দেবোলে",
+    "bnMeaning": "দুর্বল",
+    "en": "Weak"
+  },
+  {
+    "it": "Veloce",
+    "bn": "ভেলোচে",
+    "bnMeaning": "দ্রুত",
+    "en": "Fast"
+  },
+  {
+    "it": "Lento",
+    "bn": "লেন্তো",
+    "bnMeaning": "ধীর",
+    "en": "Slow"
+  },
+  {
+    "it": "Facile",
+    "bn": "ফাচিলে",
+    "bnMeaning": "সহজ",
+    "en": "Easy"
+  },
+  {
+    "it": "Difficile",
+    "bn": "দিফিচিলে",
+    "bnMeaning": "কঠিন",
+    "en": "Difficult"
+  },
+  {
+    "it": "Semplice",
+    "bn": "সেমপ্লিচে",
+    "bnMeaning": "সরল",
+    "en": "Simple"
+  },
+  {
+    "it": "Complicato",
+    "bn": "কোমপ্লিকাতো",
+    "bnMeaning": "জটিল",
+    "en": "Complicated"
+  },
+  {
+    "it": "Nuovo",
+    "bn": "নুওভো",
+    "bnMeaning": "নতুন",
+    "en": "New"
+  },
+  {
+    "it": "Vecchio",
+    "bn": "ভেকিও",
+    "bnMeaning": "পুরাতন",
+    "en": "Old"
+  },
+  {
+    "it": "Giovane",
+    "bn": "জোভানে",
+    "bnMeaning": "তরুণ",
+    "en": "Young"
+  },
+  {
+    "it": "Anziano",
+    "bn": "আনৎসিয়ানো",
+    "bnMeaning": "বয়স্ক",
+    "en": "Elderly"
+  },
+  {
+    "it": "Moderno",
+    "bn": "মোদেরনো",
+    "bnMeaning": "আধুনিক",
+    "en": "Modern"
+  },
+  {
+    "it": "Antico",
+    "bn": "আন্তিকো",
+    "bnMeaning": "প্রাচীন",
+    "en": "Ancient"
+  },
+  {
+    "it": "Ricco",
+    "bn": "রিকো",
+    "bnMeaning": "ধনী",
+    "en": "Rich"
+  },
+  {
+    "it": "Povero",
+    "bn": "পোভেরো",
+    "bnMeaning": "গরিব",
+    "en": "Poor"
+  },
+  {
+    "it": "Caro",
+    "bn": "কারো",
+    "bnMeaning": "দামি",
+    "en": "Expensive"
+  },
+  {
+    "it": "Economico",
+    "bn": "ইকোনোমিকো",
+    "bnMeaning": "সস্তা",
+    "en": "Cheap"
+  },
+  {
+    "it": "Gratis",
+    "bn": "গ্রাতিস",
+    "bnMeaning": "ফ্রি",
+    "en": "Free"
+  },
+  {
+    "it": "Caldo",
+    "bn": "কালদো",
+    "bnMeaning": "গরম",
+    "en": "Hot"
+  },
+  {
+    "it": "Freddo",
+    "bn": "ফ্রেদ্দো",
+    "bnMeaning": "ঠান্ডা",
+    "en": "Cold"
+  },
+  {
+    "it": "Tiepido",
+    "bn": "তিয়েপিদো",
+    "bnMeaning": "হালকা গরম",
+    "en": "Warm"
+  },
+  {
+    "it": "Fresco",
+    "bn": "ফ্রেস্কো",
+    "bnMeaning": "ঠান্ডা",
+    "en": "Cool"
+  },
+  {
+    "it": "Secco",
+    "bn": "সেকো",
+    "bnMeaning": "শুকনো",
+    "en": "Dry"
+  },
+  {
+    "it": "Bagnato",
+    "bn": "বানিয়াতো",
+    "bnMeaning": "ভেজা",
+    "en": "Wet"
+  },
+  {
+    "it": "Umido",
+    "bn": "উমিদো",
+    "bnMeaning": "স্যাঁতসেঁতে",
+    "en": "Humid"
+  },
+  {
+    "it": "Pulito",
+    "bn": "পুলিতো",
+    "bnMeaning": "পরিষ্কার",
+    "en": "Clean"
+  },
+  {
+    "it": "Sporco",
+    "bn": "স্পোরকো",
+    "bnMeaning": "নোংরা",
+    "en": "Dirty"
+  },
+  {
+    "it": "Ordinato",
+    "bn": "অরদিনাতো",
+    "bnMeaning": "সুশৃঙ্খল",
+    "en": "Tidy"
+  },
+  {
+    "it": "Disordinato",
+    "bn": "দিসোরদিনাতো",
+    "bnMeaning": "অগোছালো",
+    "en": "Messy"
+  },
+  {
+    "it": "Pieno",
+    "bn": "পিয়েনো",
+    "bnMeaning": "পূর্ণ",
+    "en": "Full"
+  },
+  {
+    "it": "Vuoto",
+    "bn": "ভুওতো",
+    "bnMeaning": "খালি",
+    "en": "Empty"
+  },
+  {
+    "it": "Aperto",
+    "bn": "আপেরতো",
+    "bnMeaning": "খোলা",
+    "en": "Open"
+  },
+  {
+    "it": "Chiuso",
+    "bn": "কিউসো",
+    "bnMeaning": "বন্ধ",
+    "en": "Closed"
+  },
+  {
+    "it": "Acceso",
+    "bn": "আচেসো",
+    "bnMeaning": "চালু",
+    "en": "On"
+  },
+  {
+    "it": "Spento",
+    "bn": "স্পেনতো",
+    "bnMeaning": "বন্ধ",
+    "en": "Off"
+  },
+  {
+    "it": "Libero",
+    "bn": "লিবেরো",
+    "bnMeaning": "মুক্ত",
+    "en": "Free"
+  },
+  {
+    "it": "Occupato",
+    "bn": "অকুপাতো",
+    "bnMeaning": "ব্যস্ত",
+    "en": "Busy"
+  },
+  {
+    "it": "Disponibile",
+    "bn": "দিস্পোনিবিলে",
+    "bnMeaning": "উপলব্ধ",
+    "en": "Available"
+  },
+  {
+    "it": "Non disponibile",
+    "bn": "নন দিস্পোনিবিলে",
+    "bnMeaning": "অনুপলব্ধ",
+    "en": "Not available"
+  },
+  {
+    "it": "Possibile",
+    "bn": "পোসিবিলে",
+    "bnMeaning": "সম্ভব",
+    "en": "Possible"
+  },
+  {
+    "it": "Impossibile",
+    "bn": "ইমপোসিবিলে",
+    "bnMeaning": "অসম্ভব",
+    "en": "Impossible"
+  },
+  {
+    "it": "Necessario",
+    "bn": "নেচেসারিও",
+    "bnMeaning": "প্রয়োজনীয়",
+    "en": "Necessary"
+  },
+  {
+    "it": "Non necessario",
+    "bn": "নন নেচেসারিও",
+    "bnMeaning": "অপ্রয়োজনীয়",
+    "en": "Not necessary"
+  },
+  {
+    "it": "Importante",
+    "bn": "ইমপোর্তান্তে",
+    "bnMeaning": "গুরুত্বপূর্ণ",
+    "en": "Important"
+  },
+  {
+    "it": "Non importante",
+    "bn": "নন ইমপোর্তান্তে",
+    "bnMeaning": "অগুরুত্বপূর্ণ",
+    "en": "Not important"
+  },
+  {
+    "it": "Urgente",
+    "bn": "উরজেন্তে",
+    "bnMeaning": "জরুরি",
+    "en": "Urgent"
+  },
+  {
+    "it": "Non urgente",
+    "bn": "নন উরজেন্তে",
+    "bnMeaning": "জরুরি নয়",
+    "en": "Not urgent"
+  },
+  {
+    "it": "Sicuro",
+    "bn": "সিকুরো",
+    "bnMeaning": "নিরাপদ",
+    "en": "Safe"
+  },
+  {
+    "it": "Pericoloso",
+    "bn": "পেরিকোলোসো",
+    "bnMeaning": "বিপজ্জনক",
+    "en": "Dangerous"
+  },
+  {
+    "it": "Tranquillo",
+    "bn": "ত্রানকুইল্লো",
+    "bnMeaning": "শান্ত",
+    "en": "Quiet"
+  },
+  {
+    "it": "Rumoroso",
+    "bn": "রুমোরোসো",
+    "bnMeaning": "শব্দকারী",
+    "en": "Noisy"
+  },
+  {
+    "it": "Silenzioso",
+    "bn": "সিলেনৎসিওসো",
+    "bnMeaning": "নীরব",
+    "en": "Silent"
+  },
+  {
+    "it": "Allegro",
+    "bn": "আলেগ্রো",
+    "bnMeaning": "আনন্দিত",
+    "en": "Happy"
+  },
+  {
+    "it": "Triste",
+    "bn": "ত্রিস্তে",
+    "bnMeaning": "দুঃখিত",
+    "en": "Sad"
+  },
+  {
+    "it": "Felice",
+    "bn": "ফেলিচে",
+    "bnMeaning": "খুশি",
+    "en": "Happy"
+  },
+  {
+    "it": "Infelice",
+    "bn": "ইনফেলিচে",
+    "bnMeaning": "অখুশি",
+    "en": "Unhappy"
+  },
+  {
+    "it": "Contento",
+    "bn": "কোনতেনতো",
+    "bnMeaning": "সন্তুষ্ট",
+    "en": "Content"
+  },
+  {
+    "it": "Scontento",
+    "bn": "স্কোনতেনতো",
+    "bnMeaning": "অসন্তুষ্ট",
+    "en": "Discontent"
+  },
+  {
+    "it": "Arrabbiato",
+    "bn": "আরাবিয়াতো",
+    "bnMeaning": "রাগান্বিত",
+    "en": "Angry"
+  },
+  {
+    "it": "Calmo",
+    "bn": "কালমো",
+    "bnMeaning": "শান্ত",
+    "en": "Calm"
+  },
+  {
+    "it": "Nervoso",
+    "bn": "নেরভোসো",
+    "bnMeaning": "নার্ভাস",
+    "en": "Nervous"
+  },
+  {
+    "it": "Rilassato",
+    "bn": "রিলাসাতো",
+    "bnMeaning": "আরামদায়ক",
+    "en": "Relaxed"
+  },
+  {
+    "it": "Stressato",
+    "bn": "স্ত্রেসাতো",
+    "bnMeaning": "চাপগ্রস্ত",
+    "en": "Stressed"
+  },
+  {
+    "it": "Preoccupato",
+    "bn": "প্রেওকুপাতো",
+    "bnMeaning": "চিন্তিত",
+    "en": "Worried"
+  },
+  {
+    "it": "Sorpreso",
+    "bn": "সোরপ্রেসো",
+    "bnMeaning": "অবাক",
+    "en": "Surprised"
+  },
+  {
+    "it": "Confuso",
+    "bn": "কোনফুসো",
+    "bnMeaning": "বিভ্রান্ত",
+    "en": "Confused"
+  },
+  {
+    "it": "Chiaro",
+    "bn": "কিয়ারো",
+    "bnMeaning": "স্পষ্ট",
+    "en": "Clear"
+  },
+  {
+    "it": "Scuro",
+    "bn": "স্কুরো",
+    "bnMeaning": "অস্পষ্ট",
+    "en": "Unclear"
+  },
+  {
+    "it": "Interessante",
+    "bn": "ইন্তেরেসান্তে",
+    "bnMeaning": "আকর্ষণীয়",
+    "en": "Interesting"
+  },
+  {
+    "it": "Noioso",
+    "bn": "নোইওসো",
+    "bnMeaning": "বিরক্তিকর",
+    "en": "Boring"
+  },
+  {
+    "it": "Divertente",
+    "bn": "দিভেরতেন্তে",
+    "bnMeaning": "মজার",
+    "en": "Fun"
+  },
+  {
+    "it": "Serio",
+    "bn": "সেরিও",
+    "bnMeaning": "গুরুতর",
+    "en": "Serious"
+  },
+  {
+    "it": "Scherzoso",
+    "bn": "স্কেরৎসোসো",
+    "bnMeaning": "হাসি-ঠাট্টাপূর্ণ",
+    "en": "Playful"
+  },
+  {
+    "it": "Bello",
+    "bn": "বেলো",
+    "bnMeaning": "সুন্দর",
+    "en": "Beautiful"
+  },
+  {
+    "it": "Brutto",
+    "bn": "ব্রুত্তো",
+    "bnMeaning": "কুৎসিত",
+    "en": "Ugly"
+  },
+  {
+    "it": "Carino",
+    "bn": "কারিনো",
+    "bnMeaning": "সুন্দর",
+    "en": "Cute"
+  },
+  {
+    "it": "Elegante",
+    "bn": "এলেগান্তে",
+    "bnMeaning": "মার্জিত",
+    "en": "Elegant"
+  },
+  {
+    "it": "Semplice",
+    "bn": "সেমপ্লিচে",
+    "bnMeaning": "সাধারণ",
+    "en": "Simple"
+  },
+  {
+    "it": "Complicato",
+    "bn": "কোমপ্লিকাতো",
+    "bnMeaning": "জটিল",
+    "en": "Complicated"
+  },
+  {
+    "it": "Normale",
+    "bn": "নরমালে",
+    "bnMeaning": "স্বাভাবিক",
+    "en": "Normal"
+  },
+  {
+    "it": "Strano",
+    "bn": "স্ত্রানো",
+    "bnMeaning": "অদ্ভুত",
+    "en": "Strange"
+  },
+  {
+    "it": "Famoso",
+    "bn": "ফামোসো",
+    "bnMeaning": "বিখ্যাত",
+    "en": "Famous"
+  },
+  {
+    "it": "Sconosciuto",
+    "bn": "স্কোনোশুতো",
+    "bnMeaning": "অজানা",
+    "en": "Unknown"
+  },
+  {
+    "it": "Popolare",
+    "bn": "পোপোলারে",
+    "bnMeaning": "জনপ্রিয়",
+    "en": "Popular"
+  },
+  {
+    "it": "Impopolare",
+    "bn": "ইমপোপোলারে",
+    "bnMeaning": "অজনপ্রিয়",
+    "en": "Unpopular"
+  },
+  {
+    "it": "Speciale",
+    "bn": "স্পেচালে",
+    "bnMeaning": "বিশেষ",
+    "en": "Special"
+  },
+  {
+    "it": "Comune",
+    "bn": "কোমুনে",
+    "bnMeaning": "সাধারণ",
+    "en": "Common"
+  },
+  {
+    "it": "Raro",
+    "bn": "রারো",
+    "bnMeaning": "বিরল",
+    "en": "Rare"
+  },
+  {
+    "it": "Frequente",
+    "bn": "ফ্রেকুয়েনতে",
+    "bnMeaning": "ঘন ঘন",
+    "en": "Frequent"
+  },
+  {
+    "it": "Locale",
+    "bn": "লোকালে",
+    "bnMeaning": "স্থানীয়",
+    "en": "Local"
+  },
+  {
+    "it": "Straniero",
+    "bn": "স্ত্রানিয়েরো",
+    "bnMeaning": "বিদেশি",
+    "en": "Foreign"
+  },
+  {
+    "it": "Nazionale",
+    "bn": "নাৎসিওনালে",
+    "bnMeaning": "জাতীয়",
+    "en": "National"
+  },
+  {
+    "it": "Internazionale",
+    "bn": "ইন্তেরনাৎসিওনালে",
+    "bnMeaning": "আন্তর্জাতিক",
+    "en": "International"
+  },
+  {
+    "it": "Pubblico",
+    "bn": "পুবলিকো",
+    "bnMeaning": "সার্বজনীন",
+    "en": "Public"
+  },
+  {
+    "it": "Privato",
+    "bn": "প্রিভাতো",
+    "bnMeaning": "ব্যক্তিগত",
+    "en": "Private"
+  },
+  {
+    "it": "Personale",
+    "bn": "পেরসোনালে",
+    "bnMeaning": "ব্যক্তিগত",
+    "en": "Personal"
+  },
+  {
+    "it": "Professionale",
+    "bn": "প্রোফেসিওনালে",
+    "bnMeaning": "পেশাদার",
+    "en": "Professional"
+  },
+  {
+    "it": "Sociale",
+    "bn": "সোচালে",
+    "bnMeaning": "সামাজিক",
+    "en": "Social"
+  },
+  {
+    "it": "Antisociale",
+    "bn": "আন্তিসোচালে",
+    "bnMeaning": "অসামাজিক",
+    "en": "Antisocial"
+  },
+  {
+    "it": "Amichevole",
+    "bn": "আমিকেভোলে",
+    "bnMeaning": "বন্ধুত্বপূর্ণ",
+    "en": "Friendly"
+  },
+  {
+    "it": "Ostile",
+    "bn": "অস্তিলে",
+    "bnMeaning": "শত্রুতাপূর্ণ",
+    "en": "Hostile"
+  },
+  {
+    "it": "Gentile",
+    "bn": "জেন্তিলে",
+    "bnMeaning": "দয়ালু",
+    "en": "Kind"
+  },
+  {
+    "it": "Scortese",
+    "bn": "স্কোরতেসে",
+    "bnMeaning": "অভদ্র",
+    "en": "Rude"
+  },
+  {
+    "it": "Educato",
+    "bn": "এদুকাতো",
+    "bnMeaning": "ভদ্র",
+    "en": "Polite"
+  },
+  {
+    "it": "Maleducato",
+    "bn": "মালেদুকাতো",
+    "bnMeaning": "অভদ্র",
+    "en": "Impolite"
+  },
+  {
+    "it": "Onesto",
+    "bn": "ওনেস্তো",
+    "bnMeaning": "সৎ",
+    "en": "Honest"
+  },
+  {
+    "it": "Disonesto",
+    "bn": "দিসোনেস্তো",
+    "bnMeaning": "অসৎ",
+    "en": "Dishonest"
+  },
+  {
+    "it": "Intelligente",
+    "bn": "ইন্তেলিজেন্তে",
+    "bnMeaning": "বুদ্ধিমান",
+    "en": "Intelligent"
+  },
+  {
+    "it": "Stupido",
+    "bn": "স্তুপিদো",
+    "bnMeaning": "বোকা",
+    "en": "Stupid"
+  },
+  {
+    "it": "Bravo",
+    "bn": "ব্রাভো",
+    "bnMeaning": "দক্ষ",
+    "en": "Good"
+  },
+  {
+    "it": "Cattivo",
+    "bn": "কাত্তিভো",
+    "bnMeaning": "খারাপ",
+    "en": "Bad"
+  },
+  {
+    "it": "Attivo",
+    "bn": "আত্তিভো",
+    "bnMeaning": "সক্রিয়",
+    "en": "Active"
+  },
+  {
+    "it": "Passivo",
+    "bn": "পাসিভো",
+    "bnMeaning": "নিষ্ক্রিয়",
+    "en": "Passive"
+  },
+  {
+    "it": "Energico",
+    "bn": "এনেরজিকো",
+    "bnMeaning": "শক্তিশালী",
+    "en": "Energetic"
+  },
+  {
+    "it": "Pigro",
+    "bn": "পিগ্রো",
+    "bnMeaning": "অলস",
+    "en": "Lazy"
+  },
+  {
+    "it": "Dinamico",
+    "bn": "দিনামিকো",
+    "bnMeaning": "গতিশীল",
+    "en": "Dynamic"
+  },
+  {
+    "it": "Statico",
+    "bn": "স্তাতিকো",
+    "bnMeaning": "স্থির",
+    "en": "Static"
+  },
+  {
+    "it": "Creativo",
+    "bn": "ক্রেয়াতিভো",
+    "bnMeaning": "সৃজনশীল",
+    "en": "Creative"
+  },
+  {
+    "it": "Non creativo",
+    "bn": "নন ক্রেয়াতিভো",
+    "bnMeaning": "অসৃজনশীল",
+    "en": "Not creative"
+  },
+  {
+    "it": "Artistico",
+    "bn": "আরতিস্তিকো",
+    "bnMeaning": "শিল্পী",
+    "en": "Artistic"
+  },
+  {
+    "it": "Musicale",
+    "bn": "মুজিকালে",
+    "bnMeaning": "সংগীতপ্রিয়",
+    "en": "Musical"
+  },
+  {
+    "it": "Sportivo",
+    "bn": "স্পোরতিভো",
+    "bnMeaning": "ক্রীড়াবিদ",
+    "en": "Sporty"
+  },
+  {
+    "it": "Atletico",
+    "bn": "আতলেতিকো",
+    "bnMeaning": "অ্যাথলেটিক",
+    "en": "Athletic"
+  },
+  {
+    "it": "Sano",
+    "bn": "সানো",
+    "bnMeaning": "সুস্থ",
+    "en": "Healthy"
+  },
+  {
+    "it": "Malato",
+    "bn": "মালাতো",
+    "bnMeaning": "অসুস্থ",
+    "en": "Sick"
+  },
+  {
+    "it": "In forma",
+    "bn": "ইন ফোরমা",
+    "bnMeaning": "ফিট",
+    "en": "In shape"
+  },
+  {
+    "it": "Fuori forma",
+    "bn": "ফুওরি ফোরমা",
+    "bnMeaning": "আনফিট",
+    "en": "Out of shape"
+  },
+  {
+    "it": "Magro",
+    "bn": "মাগ্রো",
+    "bnMeaning": "পাতলা",
+    "en": "Thin"
+  },
+  {
+    "it": "Grasso",
+    "bn": "গ্রাসো",
+    "bnMeaning": "মোটা",
+    "en": "Fat"
+  },
+  {
+    "it": "Muscoloso",
+    "bn": "মুস্কোলোসো",
+    "bnMeaning": "পেশিবহুল",
+    "en": "Muscular"
+  },
+  {
+    "it": "Snello",
+    "bn": "স্নেলো",
+    "bnMeaning": "সুগঠিত",
+    "en": "Slim"
+  },
+  {
+    "it": "Attraente",
+    "bn": "আত্ত্রায়েন্তে",
+    "bnMeaning": "আকর্ষণীয়",
+    "en": "Attractive"
+  },
+  {
+    "it": "Non attraente",
+    "bn": "নন আত্ত্রায়েন্তে",
+    "bnMeaning": "অনাকর্ষণীয়",
+    "en": "Not attractive"
+  },
+  {
+    "it": "La famiglia",
+    "bn": "লা ফামিল্যা",
+    "bnMeaning": "পরিবার",
+    "en": "The family"
+  },
+  {
+    "it": "I genitori",
+    "bn": "ই জেনিতোরি",
+    "bnMeaning": "বাবা-মা",
+    "en": "The parents"
+  },
+  {
+    "it": "Il padre",
+    "bn": "ইল পাদ্রে",
+    "bnMeaning": "বাবা",
+    "en": "The father"
+  },
+  {
+    "it": "La madre",
+    "bn": "লা মাদ্রে",
+    "bnMeaning": "মা",
+    "en": "The mother"
+  },
+  {
+    "it": "Il figlio",
+    "bn": "ইল ফিল্যো",
+    "bnMeaning": "ছেলে",
+    "en": "The son"
+  },
+  {
+    "it": "La figlia",
+    "bn": "লা ফিল্যা",
+    "bnMeaning": "মেয়ে",
+    "en": "The daughter"
+  },
+  {
+    "it": "Il fratello",
+    "bn": "ইল ফ্রাতেলো",
+    "bnMeaning": "ভাই",
+    "en": "The brother"
+  },
+  {
+    "it": "La sorella",
+    "bn": "লা সোরেলা",
+    "bnMeaning": "বোন",
+    "en": "The sister"
+  },
+  {
+    "it": "Il nonno",
+    "bn": "ইল নোন্নো",
+    "bnMeaning": "দাদা",
+    "en": "The grandfather"
+  },
+  {
+    "it": "La nonna",
+    "bn": "লা নোন্না",
+    "bnMeaning": "দাদি",
+    "en": "The grandmother"
+  },
+  {
+    "it": "Lo zio",
+    "bn": "লো ৎসিও",
+    "bnMeaning": "চাচা",
+    "en": "The uncle"
+  },
+  {
+    "it": "La zia",
+    "bn": "লা ৎসিয়া",
+    "bnMeaning": "চাচি",
+    "en": "The aunt"
+  },
+  {
+    "it": "Il cugino",
+    "bn": "ইল কুজিনো",
+    "bnMeaning": "কাজিন",
+    "en": "The cousin (male)"
+  },
+  {
+    "it": "La cugina",
+    "bn": "লা কুজিনা",
+    "bnMeaning": "কাজিন",
+    "en": "The cousin (female)"
+  },
+  {
+    "it": "Il marito",
+    "bn": "ইল মারিতো",
+    "bnMeaning": "স্বামী",
+    "en": "The husband"
+  },
+  {
+    "it": "La moglie",
+    "bn": "লা মোল্যে",
+    "bnMeaning": "স্ত্রী",
+    "en": "The wife"
+  },
+  {
+    "it": "Il fidanzato",
+    "bn": "ইল ফিদানৎসাতো",
+    "bnMeaning": "বয়ফ্রেন্ড",
+    "en": "The boyfriend"
+  },
+  {
+    "it": "La fidanzata",
+    "bn": "লা ফিদানৎসাতা",
+    "bnMeaning": "গার্লফ্রেন্ড",
+    "en": "The girlfriend"
+  },
+  {
+    "it": "L'amico",
+    "bn": "লামিকো",
+    "bnMeaning": "বন্ধু",
+    "en": "The friend (male)"
+  },
+  {
+    "it": "L'amica",
+    "bn": "লামিকা",
+    "bnMeaning": "বন্ধু",
+    "en": "The friend (female)"
+  },
+  {
+    "it": "Il vicino",
+    "bn": "ইল ভিচিনো",
+    "bnMeaning": "প্রতিবেশী",
+    "en": "The neighbor (male)"
+  },
+  {
+    "it": "La vicina",
+    "bn": "লা ভিচিনা",
+    "bnMeaning": "প্রতিবেশী",
+    "en": "The neighbor (female)"
+  },
+  {
+    "it": "Il collega",
+    "bn": "ইল কোলেগা",
+    "bnMeaning": "সহকর্মী",
+    "en": "The colleague (male)"
+  },
+  {
+    "it": "La collega",
+    "bn": "লা কোলেগা",
+    "bnMeaning": "সহকর্মী",
+    "en": "The colleague (female)"
+  },
+  {
+    "it": "Il capo",
+    "bn": "ইল কাপো",
+    "bnMeaning": "বস",
+    "en": "The boss"
+  },
+  {
+    "it": "Il dipendente",
+    "bn": "ইল দিপেনদেন্তে",
+    "bnMeaning": "কর্মচারী",
+    "en": "The employee"
+  },
+  {
+    "it": "Il cliente",
+    "bn": "ইল ক্লিয়েন্তে",
+    "bnMeaning": "গ্রাহক",
+    "en": "The customer"
+  },
+  {
+    "it": "Il venditore",
+    "bn": "ইল ভেন্দিতোরে",
+    "bnMeaning": "বিক্রেতা",
+    "en": "The seller"
+  },
+  {
+    "it": "Il compratore",
+    "bn": "ইল কোমপ্রাতোরে",
+    "bnMeaning": "ক্রেতা",
+    "en": "The buyer"
+  },
+  {
+    "it": "Il visitatore",
+    "bn": "ইল ভিজিতাতোরে",
+    "bnMeaning": "দর্শনার্থী",
+    "en": "The visitor"
+  },
+  {
+    "it": "L'ospite",
+    "bn": "লোস্পিতে",
+    "bnMeaning": "অতিথি",
+    "en": "The guest"
+  },
+  {
+    "it": "Il turista",
+    "bn": "ইল তুরিস্তা",
+    "bnMeaning": "পর্যটক",
+    "en": "The tourist"
+  },
+  {
+    "it": "Il viaggiatore",
+    "bn": "ইল ভিয়াজাতোরে",
+    "bnMeaning": "ভ্রমণকারী",
+    "en": "The traveler"
+  },
+  {
+    "it": "Il passeggero",
+    "bn": "ইল পাসেজেরো",
+    "bnMeaning": "যাত্রী",
+    "en": "The passenger"
+  },
+  {
+    "it": "Il guidatore",
+    "bn": "ইল গুইদাতোরে",
+    "bnMeaning": "চালক",
+    "en": "The driver"
+  },
+  {
+    "it": "Il pilota",
+    "bn": "ইল পিলোতা",
+    "bnMeaning": "পাইলট",
+    "en": "The pilot"
+  },
+  {
+    "it": "Il capitano",
+    "bn": "ইল কাপিতানো",
+    "bnMeaning": "ক্যাপ্টেন",
+    "en": "The captain"
+  },
+  {
+    "it": "L'equipaggio",
+    "bn": "লেকুইপাজো",
+    "bnMeaning": "ক্রু",
+    "en": "The crew"
+  },
+  {
+    "it": "Il poliziotto",
+    "bn": "ইল পোলিৎসিওত্তো",
+    "bnMeaning": "পুলিশ",
+    "en": "The policeman"
+  },
+  {
+    "it": "Il vigile del fuoco",
+    "bn": "ইল ভিজিলে দেল ফুওকো",
+    "bnMeaning": "ফায়ার ফাইটার",
+    "en": "The firefighter"
+  },
+  {
+    "it": "Il paramedico",
+    "bn": "ইল পারামেদিকো",
+    "bnMeaning": "প্যারামেডিক",
+    "en": "The paramedic"
+  },
+  {
+    "it": "L'infermiere",
+    "bn": "লিনফেরমিয়েরে",
+    "bnMeaning": "নার্স",
+    "en": "The nurse"
+  },
+  {
+    "it": "Il dottore",
+    "bn": "ইল দোত্তোরে",
+    "bnMeaning": "ডাক্তার",
+    "en": "The doctor"
+  },
+  {
+    "it": "Il dentista",
+    "bn": "ইল দেন্তিস্তা",
+    "bnMeaning": "দাঁতের ডাক্তার",
+    "en": "The dentist"
   }
 ]
