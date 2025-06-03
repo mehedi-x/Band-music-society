@@ -1,93 +1,33 @@
 [
   {
-    "it": "Ciao",
-    "bn": "চাও",
-    "bnMeaning": "হ্যালো/বিদায়",
-    "en": "Hello/Goodbye"
+    "it": "Buongiorno!",
+    "bn": "বুওনজোর্নো!",
+    "bnMeaning": "সুপ্রভাত!",
+    "en": "Good morning!"
   },
   {
-    "it": "Buongiorno",
-    "bn": "বুওনজোর্নো",
-    "bnMeaning": "সুপ্রভাত",
-    "en": "Good morning"
+    "it": "Buona giornata!",
+    "bn": "বুওনা জোর্নাতা!",
+    "bnMeaning": "শুভ দিন!",
+    "en": "Good day!"
   },
   {
-    "it": "Buonasera",
-    "bn": "বুওনাসেরা",
-    "bnMeaning": "শুভ সন্ধ্যা",
-    "en": "Good evening"
+    "it": "Buonasera!",
+    "bn": "বুওনাসেরা!",
+    "bnMeaning": "শুভ সন্ধ্যা!",
+    "en": "Good evening!"
   },
   {
-    "it": "Buonanotte",
-    "bn": "বুওনানোত্তে",
-    "bnMeaning": "শুভরাত্রি",
-    "en": "Good night"
+    "it": "Buonanotte!",
+    "bn": "বুওনানোত্তে!",
+    "bnMeaning": "শুভ রাত্রি!",
+    "en": "Good night!"
   },
   {
-    "it": "Arrivederci",
-    "bn": "আরিভেদেরচি",
-    "bnMeaning": "বিদায়",
-    "en": "Goodbye"
-  },
-  {
-    "it": "Per favore",
-    "bn": "পের ফাভোরে",
-    "bnMeaning": "দয়া করে",
-    "en": "Please"
-  },
-  {
-    "it": "Grazie",
-    "bn": "গ্রাৎসিয়ে",
-    "bnMeaning": "ধন্যবাদ",
-    "en": "Thank you"
-  },
-  {
-    "it": "Prego",
-    "bn": "প্রেগো",
-    "bnMeaning": "আপনাকে স্বাগতম",
-    "en": "You're welcome"
-  },
-  {
-    "it": "Scusi",
-    "bn": "স্কুজি",
-    "bnMeaning": "দুঃখিত",
-    "en": "Excuse me"
-  },
-  {
-    "it": "Mi dispiace",
-    "bn": "মি দিস্পিয়াচে",
-    "bnMeaning": "আমি দুঃখিত",
-    "en": "I'm sorry"
-  },
-  {
-    "it": "Sì",
-    "bn": "সি",
-    "bnMeaning": "হ্যাঁ",
-    "en": "Yes"
-  },
-  {
-    "it": "No",
-    "bn": "নো",
-    "bnMeaning": "না",
-    "en": "No"
-  },
-  {
-    "it": "Come sta?",
-    "bn": "কোমে স্তা?",
-    "bnMeaning": "আপনি কেমন আছেন?",
-    "en": "How are you?"
-  },
-  {
-    "it": "Sto bene",
-    "bn": "স্তো বেনে",
-    "bnMeaning": "আমি ভালো আছি",
-    "en": "I'm fine"
-  },
-  {
-    "it": "E lei?",
-    "bn": "এ লেই?",
-    "bnMeaning": "আর আপনি?",
-    "en": "And you?"
+    "it": "Ciao!",
+    "bn": "চাও!",
+    "bnMeaning": "নমস্কার!",
+    "en": "Hello!"
   },
   {
     "it": "Come si chiama?",
@@ -96,28 +36,136 @@
     "en": "What is your name?"
   },
   {
-    "it": "Mi chiamo...",
-    "bn": "মি কিয়ামো...",
-    "bnMeaning": "আমার নাম...",
-    "en": "My name is..."
+    "it": "Come ti chiami?",
+    "bn": "কোমে তি কিয়ামি?",
+    "bnMeaning": "তোমার নাম কী?",
+    "en": "What is your name?"
+  },
+  {
+    "it": "Mi chiamo Ahmed.",
+    "bn": "মি কিয়ামো আহমেদ।",
+    "bnMeaning": "আমার নাম আহমেদ।",
+    "en": "My name is Ahmed."
+  },
+  {
+    "it": "Il mio nome è Maria.",
+    "bn": "ইল মিও নোমে এ মারিয়া।",
+    "bnMeaning": "আমার নাম মারিয়া।",
+    "en": "My name is Maria."
+  },
+  {
+    "it": "Come sta?",
+    "bn": "কোমে স্তা?",
+    "bnMeaning": "আপনি কেমন আছেন?",
+    "en": "How are you?"
+  },
+  {
+    "it": "Come stai?",
+    "bn": "কোমে স্তাই?",
+    "bnMeaning": "তুমি কেমন আছো?",
+    "en": "How are you?"
+  },
+  {
+    "it": "Sto bene.",
+    "bn": "স্তো বেনে।",
+    "bnMeaning": "আমি ভালো আছি।",
+    "en": "I am fine."
+  },
+  {
+    "it": "Grazie!",
+    "bn": "গ্রাৎসিয়ে!",
+    "bnMeaning": "ধন্যবাদ!",
+    "en": "Thank you!"
+  },
+  {
+    "it": "Molte grazie!",
+    "bn": "মোল্তে গ্রাৎসিয়ে!",
+    "bnMeaning": "অনেক ধন্যবাদ!",
+    "en": "Thank you very much!"
+  },
+  {
+    "it": "Prego!",
+    "bn": "প্রেগো!",
+    "bnMeaning": "অনুগ্রহ করে!/কোনো ব্যাপার না!",
+    "en": "Please!/You're welcome!"
+  },
+  {
+    "it": "Scusi!",
+    "bn": "স্কুজি!",
+    "bnMeaning": "মাফ করবেন!",
+    "en": "Excuse me!"
+  },
+  {
+    "it": "Mi dispiace.",
+    "bn": "মি দিস্পিয়াচে।",
+    "bnMeaning": "আমি দুঃখিত।",
+    "en": "I am sorry."
+  },
+  {
+    "it": "Nessun problema.",
+    "bn": "নেসুন প্রোব্লেমা।",
+    "bnMeaning": "কোনো সমস্যা নেই।",
+    "en": "No problem."
+  },
+  {
+    "it": "Arrivederci!",
+    "bn": "আরিভেদেরচি!",
+    "bnMeaning": "বিদায়!",
+    "en": "Goodbye!"
+  },
+  {
+    "it": "Ciao!",
+    "bn": "চাও!",
+    "bnMeaning": "বাই!",
+    "en": "Bye!"
+  },
+  {
+    "it": "A dopo!",
+    "bn": "আ দোপো!",
+    "bnMeaning": "পরে দেখা হবে!",
+    "en": "See you later!"
+  },
+  {
+    "it": "A domani!",
+    "bn": "আ দোমানি!",
+    "bnMeaning": "আগামীকাল দেখা হবে!",
+    "en": "See you tomorrow!"
   },
   {
     "it": "Di dove è?",
     "bn": "দি দোভে এ?",
-    "bnMeaning": "আপনি কোথা থেকে?",
+    "bnMeaning": "আপনি কোথা থেকে এসেছেন?",
     "en": "Where are you from?"
   },
   {
-    "it": "Sono di...",
-    "bn": "সোনো দি...",
-    "bnMeaning": "আমি ... থেকে",
-    "en": "I'm from..."
+    "it": "Vengo dal Bangladesh.",
+    "bn": "ভেনগো দাল বাংলাদেশ।",
+    "bnMeaning": "আমি বাংলাদেশ থেকে এসেছি।",
+    "en": "I come from Bangladesh."
   },
   {
-    "it": "Piacere",
-    "bn": "পিয়াচেরে",
-    "bnMeaning": "আনন্দিত হলাম",
-    "en": "Nice to meet you"
+    "it": "Sono di Dhaka.",
+    "bn": "সোনো দি ঢাকা।",
+    "bnMeaning": "আমি ঢাকা থেকে এসেছি।",
+    "en": "I am from Dhaka."
+  },
+  {
+    "it": "Dove abita?",
+    "bn": "দোভে আবিতা?",
+    "bnMeaning": "আপনি কোথায় থাকেন?",
+    "en": "Where do you live?"
+  },
+  {
+    "it": "Abito a Roma.",
+    "bn": "আবিতো আ রোমা।",
+    "bnMeaning": "আমি রোমায় থাকি।",
+    "en": "I live in Rome."
+  },
+  {
+    "it": "Parla italiano?",
+    "bn": "পার্লা ইতালিয়ানো?",
+    "bnMeaning": "আপনি কি ইতালিয়ান বলেন?",
+    "en": "Do you speak Italian?"
   },
   {
     "it": "Parla inglese?",
@@ -126,40 +174,118 @@
     "en": "Do you speak English?"
   },
   {
-    "it": "Non parlo italiano",
-    "bn": "নন পার্লো ইতালিয়ানো",
-    "bnMeaning": "আমি ইতালিয়ান বলি না",
-    "en": "I don't speak Italian"
+    "it": "Parlo un po' di italiano.",
+    "bn": "পার্লো উন পো দি ইতালিয়ানো।",
+    "bnMeaning": "আমি একটু ইতালিয়ান বলতে পারি।",
+    "en": "I speak a little Italian."
   },
   {
-    "it": "Non capisco",
-    "bn": "নন কাপিস্কো",
-    "bnMeaning": "আমি বুঝি না",
-    "en": "I don't understand"
+    "it": "Non capisco.",
+    "bn": "নন কাপিস্কো।",
+    "bnMeaning": "আমি বুঝতে পারছি না।",
+    "en": "I don't understand."
   },
   {
     "it": "Può ripetere?",
     "bn": "পুও রিপেতেরে?",
-    "bnMeaning": "আপনি কি আবার বলতে পারেন?",
-    "en": "Can you repeat?"
+    "bnMeaning": "আপনি কি এটা আবার বলতে পারেন?",
+    "en": "Can you repeat that?"
   },
   {
-    "it": "Più lentamente",
-    "bn": "পিউ লেন্তামেন্তে",
-    "bnMeaning": "আরো ধীরে",
-    "en": "More slowly"
+    "it": "Parli più lentamente, per favore.",
+    "bn": "পার্লি পিউ লেন্তামেন্তে, পের ফাভোরে।",
+    "bnMeaning": "দয়া করে আস্তে বলুন।",
+    "en": "Please speak slower."
   },
   {
-    "it": "Quanto costa?",
-    "bn": "কুয়ান্তো কোস্তা?",
-    "bnMeaning": "দাম কত?",
-    "en": "How much does it cost?"
+    "it": "Quanti anni ha?",
+    "bn": "কুয়ান্তি আন্নি হা?",
+    "bnMeaning": "আপনার বয়স কত?",
+    "en": "How old are you?"
   },
   {
-    "it": "Dove è...?",
-    "bn": "দোভে এ...?",
-    "bnMeaning": "কোথায় আছে...?",
-    "en": "Where is...?"
+    "it": "Ho 25 anni.",
+    "bn": "হো ভেন্তিচিনকুয়ে আন্নি।",
+    "bnMeaning": "আমার বয়স ২৫ বছর।",
+    "en": "I am 25 years old."
+  },
+  {
+    "it": "Che lavoro fa?",
+    "bn": "কে লাভোরো ফা?",
+    "bnMeaning": "আপনার পেশা কী?",
+    "en": "What do you do for work?"
+  },
+  {
+    "it": "Sono studente.",
+    "bn": "সোনো স্তুদেন্তে।",
+    "bnMeaning": "আমি ছাত্র।",
+    "en": "I am a student."
+  },
+  {
+    "it": "Lavoro come ingegnere.",
+    "bn": "লাভোরো কোমে ইনজেনিয়েরে।",
+    "bnMeaning": "আমি ইঞ্জিনিয়ার হিসেবে কাজ করি।",
+    "en": "I work as an engineer."
+  },
+  {
+    "it": "Sono medico.",
+    "bn": "সোনো মেদিকো।",
+    "bnMeaning": "আমি ডাক্তার।",
+    "en": "I am a doctor."
+  },
+  {
+    "it": "Sono insegnante.",
+    "bn": "সোনো ইনসেনিয়ান্তে।",
+    "bnMeaning": "আমি শিক্ষক।",
+    "en": "I am a teacher."
+  },
+  {
+    "it": "Dov'è la stazione?",
+    "bn": "দোভে এ লা স্তাৎসিওনে?",
+    "bnMeaning": "রেলস্টেশন কোথায়?",
+    "en": "Where is the train station?"
+  },
+  {
+    "it": "Dov'è l'ospedale?",
+    "bn": "দোভে এ লোস্পেদালে?",
+    "bnMeaning": "হাসপাতাল কোথায়?",
+    "en": "Where is the hospital?"
+  },
+  {
+    "it": "Dov'è la farmacia?",
+    "bn": "দোভে এ লা ফারমাচিয়া?",
+    "bnMeaning": "ফার্মেসি কোথায়?",
+    "en": "Where is the pharmacy?"
+  },
+  {
+    "it": "Dov'è il supermercato?",
+    "bn": "দোভে এ ইল সুপেরমেরকাতো?",
+    "bnMeaning": "সুপারমার্কেট কোথায়?",
+    "en": "Where is the supermarket?"
+  },
+  {
+    "it": "Dov'è la banca?",
+    "bn": "দোভে এ লা বাংকা?",
+    "bnMeaning": "ব্যাংক কোথায়?",
+    "en": "Where is the bank?"
+  },
+  {
+    "it": "Dov'è la posta?",
+    "bn": "দোভে এ লা পোস্তা?",
+    "bnMeaning": "পোস্ট অফিস কোথায়?",
+    "en": "Where is the post office?"
+  },
+  {
+    "it": "Dov'è il ristorante?",
+    "bn": "দোভে এ ইল রিস্তোরান্তে?",
+    "bnMeaning": "রেস্টুরেন্ট কোথায়?",
+    "en": "Where is the restaurant?"
+  },
+  {
+    "it": "Dov'è il bagno?",
+    "bn": "দোভে এ ইল বানিও?",
+    "bnMeaning": "টয়লেট কোথায়?",
+    "en": "Where is the toilet?"
   },
   {
     "it": "Può aiutarmi?",
@@ -168,2685 +294,105 @@
     "en": "Can you help me?"
   },
   {
-    "it": "Ho fame",
-    "bn": "হো ফামে",
-    "bnMeaning": "আমার খিদে পেয়েছে",
-    "en": "I'm hungry"
+    "it": "Ho bisogno di aiuto.",
+    "bn": "হো বিসোনিও দি আইউতো।",
+    "bnMeaning": "আমার সাহায্য দরকার।",
+    "en": "I need help."
   },
   {
-    "it": "Ho sete",
-    "bn": "হো সেতে",
-    "bnMeaning": "আমার তৃষ্ণা পেয়েছে",
-    "en": "I'm thirsty"
+    "it": "Quanto costa?",
+    "bn": "কুয়ান্তো কোস্তা?",
+    "bnMeaning": "এটার দাম কত?",
+    "en": "How much does this cost?"
+  },
+  {
+    "it": "È troppo caro.",
+    "bn": "এ ত্রোপো কারো।",
+    "bnMeaning": "এটা খুব দামি।",
+    "en": "That is too expensive."
+  },
+  {
+    "it": "È economico.",
+    "bn": "এ ইকোনোমিকো।",
+    "bnMeaning": "এটা সস্তা।",
+    "en": "That is cheap."
+  },
+  {
+    "it": "Vorrei comprare questo.",
+    "bn": "ভোরেই কোমপ্রারে কুয়েস্তো।",
+    "bnMeaning": "আমি এটা কিনতে চাই।",
+    "en": "I would like to buy this."
+  },
+  {
+    "it": "Prendo questo.",
+    "bn": "প্রেন্দো কুয়েস্তো।",
+    "bnMeaning": "আমি এটা নেব।",
+    "en": "I'll take this."
+  },
+  {
+    "it": "Ha questo in un'altra taglia?",
+    "bn": "হা কুয়েস্তো ইন উনাল্ত্রা তালিয়া?",
+    "bnMeaning": "আপনার কাছে কি এটা অন্য সাইজে আছে?",
+    "en": "Do you have this in another size?"
+  },
+  {
+    "it": "Che colori avete?",
+    "bn": "কে কোলোরি আভেতে?",
+    "bnMeaning": "আপনার কাছে কী রঙ আছে?",
+    "en": "What colors do you have?"
+  },
+  {
+    "it": "Posso pagare con carta?",
+    "bn": "পোসো পাগারে কন কার্তা?",
+    "bnMeaning": "আমি কি কার্ড দিয়ে পেমেন্ট করতে পারি?",
+    "en": "Can I pay with card?"
+  },
+  {
+    "it": "Pago in contanti.",
+    "bn": "পাগো ইন কোন্তান্তি।",
+    "bnMeaning": "আমি নগদ টাকা দেব।",
+    "en": "I pay in cash."
   },
   {
     "it": "Che ore sono?",
     "bn": "কে ওরে সোনো?",
-    "bnMeaning": "সময় কত?",
+    "bnMeaning": "এখন কয়টা বাজে?",
     "en": "What time is it?"
   },
   {
-    "it": "Uno",
-    "bn": "উনো",
-    "bnMeaning": "এক",
-    "en": "One"
+    "it": "Sono le tre.",
+    "bn": "সোনো লে ত্রে।",
+    "bnMeaning": "তিনটা বাজে।",
+    "en": "It is three o'clock."
   },
   {
-    "it": "Due",
-    "bn": "দুয়ে",
-    "bnMeaning": "দুই",
-    "en": "Two"
+    "it": "Sono le tre e mezzo.",
+    "bn": "সোনো লে ত্রে এ মেৎসো।",
+    "bnMeaning": "সাড়ে তিনটা বাজে।",
+    "en": "It is half past three."
   },
   {
-    "it": "Tre",
-    "bn": "ত্রে",
-    "bnMeaning": "তিন",
-    "en": "Three"
+    "it": "A che ora parte il treno?",
+    "bn": "আ কে ওরা পার্তে ইল ত্রেনো?",
+    "bnMeaning": "ট্রেন কখন ছাড়ে?",
+    "en": "When does the train leave?"
   },
   {
-    "it": "Quattro",
-    "bn": "কুয়াত্ত্রো",
-    "bnMeaning": "চার",
-    "en": "Four"
+    "it": "A che ora arriva l'autobus?",
+    "bn": "আ কে ওরা আরিভা লাউতোবুস?",
+    "bnMeaning": "বাস কখন আসে?",
+    "en": "When does the bus come?"
   },
   {
-    "it": "Cinque",
-    "bn": "চিনকুয়ে",
-    "bnMeaning": "পাঁচ",
-    "en": "Five"
+    "it": "Ho fame.",
+    "bn": "হো ফামে।",
+    "bnMeaning": "আমার খিদে পেয়েছে।",
+    "en": "I am hungry."
   },
   {
-    "it": "Sei",
-    "bn": "সেই",
-    "bnMeaning": "ছয়",
-    "en": "Six"
-  },
-  {
-    "it": "Sette",
-    "bn": "সেত্তে",
-    "bnMeaning": "সাত",
-    "en": "Seven"
-  },
-  {
-    "it": "Otto",
-    "bn": "অত্তো",
-    "bnMeaning": "আট",
-    "en": "Eight"
-  },
-  {
-    "it": "Nove",
-    "bn": "নোভে",
-    "bnMeaning": "নয়",
-    "en": "Nine"
-  },
-  {
-    "it": "Dieci",
-    "bn": "দিয়েচি",
-    "bnMeaning": "দশ",
-    "en": "Ten"
-  },
-  {
-    "it": "Famiglia",
-    "bn": "ফামিল্যা",
-    "bnMeaning": "পরিবার",
-    "en": "Family"
-  },
-  {
-    "it": "Padre",
-    "bn": "পাদ্রে",
-    "bnMeaning": "বাবা",
-    "en": "Father"
-  },
-  {
-    "it": "Madre",
-    "bn": "মাদ্রে",
-    "bnMeaning": "মা",
-    "en": "Mother"
-  },
-  {
-    "it": "Figlio",
-    "bn": "ফিল্যো",
-    "bnMeaning": "ছেলে",
-    "en": "Son"
-  },
-  {
-    "it": "Figlia",
-    "bn": "ফিল্যা",
-    "bnMeaning": "মেয়ে",
-    "en": "Daughter"
-  },
-  {
-    "it": "Fratello",
-    "bn": "ফ্রাতেল্লো",
-    "bnMeaning": "ভাই",
-    "en": "Brother"
-  },
-  {
-    "it": "Sorella",
-    "bn": "সোরেল্লা",
-    "bnMeaning": "বোন",
-    "en": "Sister"
-  },
-  {
-    "it": "Nonno",
-    "bn": "নোন্নো",
-    "bnMeaning": "দাদা",
-    "en": "Grandfather"
-  },
-  {
-    "it": "Nonna",
-    "bn": "নোন্না",
-    "bnMeaning": "দাদি",
-    "en": "Grandmother"
-  },
-  {
-    "it": "Marito",
-    "bn": "মারিতো",
-    "bnMeaning": "স্বামী",
-    "en": "Husband"
-  },
-  {
-    "it": "Moglie",
-    "bn": "মোল্যে",
-    "bnMeaning": "স্ত্রী",
-    "en": "Wife"
-  },
-  {
-    "it": "Casa",
-    "bn": "কাসা",
-    "bnMeaning": "বাড়ি",
-    "en": "House"
-  },
-  {
-    "it": "Appartamento",
-    "bn": "আপার্তামেন্তো",
-    "bnMeaning": "অ্যাপার্টমেন্ট",
-    "en": "Apartment"
-  },
-  {
-    "it": "Camera da letto",
-    "bn": "কামেরা দা লেত্তো",
-    "bnMeaning": "শোবার ঘর",
-    "en": "Bedroom"
-  },
-  {
-    "it": "Cucina",
-    "bn": "কুচিনা",
-    "bnMeaning": "রান্নাঘর",
-    "en": "Kitchen"
-  },
-  {
-    "it": "Bagno",
-    "bn": "বাগ্নো",
-    "bnMeaning": "বাথরুম",
-    "en": "Bathroom"
-  },
-  {
-    "it": "Salotto",
-    "bn": "সালোত্তো",
-    "bnMeaning": "বসার ঘর",
-    "en": "Living room"
-  },
-  {
-    "it": "Giardino",
-    "bn": "জার্দিনো",
-    "bnMeaning": "বাগান",
-    "en": "Garden"
-  },
-  {
-    "it": "Mangiare",
-    "bn": "মানজারে",
-    "bnMeaning": "খাওয়া",
-    "en": "To eat"
-  },
-  {
-    "it": "Bere",
-    "bn": "বেরে",
-    "bnMeaning": "পান করা",
-    "en": "To drink"
-  },
-  {
-    "it": "Dormire",
-    "bn": "দোর্মিরে",
-    "bnMeaning": "ঘুমানো",
-    "en": "To sleep"
-  },
-  {
-    "it": "Lavorare",
-    "bn": "লাভোরারে",
-    "bnMeaning": "কাজ করা",
-    "en": "To work"
-  },
-  {
-    "it": "Studiare",
-    "bn": "স্তুদিয়ারে",
-    "bnMeaning": "পড়াশোনা করা",
-    "en": "To study"
-  },
-  {
-    "it": "Andare",
-    "bn": "আন্দারে",
-    "bnMeaning": "যাওয়া",
-    "en": "To go"
-  },
-  {
-    "it": "Venire",
-    "bn": "ভেনিরে",
-    "bnMeaning": "আসা",
-    "en": "To come"
-  },
-  {
-    "it": "Fare",
-    "bn": "ফারে",
-    "bnMeaning": "করা",
-    "en": "To do/make"
-  },
-  {
-    "it": "Dire",
-    "bn": "দিরে",
-    "bnMeaning": "বলা",
-    "en": "To say"
-  },
-  {
-    "it": "Vedere",
-    "bn": "ভেদেরে",
-    "bnMeaning": "দেখা",
-    "en": "To see"
-  },
-  {
-    "it": "Sentire",
-    "bn": "সেন্তিরে",
-    "bnMeaning": "শোনা/অনুভব করা",
-    "en": "To hear/feel"
-  },
-  {
-    "it": "Parlare",
-    "bn": "পার্লারে",
-    "bnMeaning": "কথা বলা",
-    "en": "To speak"
-  },
-  {
-    "it": "Comprare",
-    "bn": "কোমপ্রারে",
-    "bnMeaning": "কেনা",
-    "en": "To buy"
-  },
-  {
-    "it": "Vendere",
-    "bn": "ভেন্দেরে",
-    "bnMeaning": "বিক্রি করা",
-    "en": "To sell"
-  },
-  {
-    "it": "Cibo",
-    "bn": "চিবো",
-    "bnMeaning": "খাবার",
-    "en": "Food"
-  },
-  {
-    "it": "Pane",
-    "bn": "পানে",
-    "bnMeaning": "রুটি",
-    "en": "Bread"
-  },
-  {
-    "it": "Latte",
-    "bn": "লাত্তে",
-    "bnMeaning": "দুধ",
-    "en": "Milk"
-  },
-  {
-    "it": "Formaggio",
-    "bn": "ফোর্মাজো",
-    "bnMeaning": "পনির",
-    "en": "Cheese"
-  },
-  {
-    "it": "Carne",
-    "bn": "কার্নে",
-    "bnMeaning": "মাংস",
-    "en": "Meat"
-  },
-  {
-    "it": "Pesce",
-    "bn": "পেশে",
-    "bnMeaning": "মাছ",
-    "en": "Fish"
-  },
-  {
-    "it": "Pollo",
-    "bn": "পোল্লো",
-    "bnMeaning": "মুরগি",
-    "en": "Chicken"
-  },
-  {
-    "it": "Verdura",
-    "bn": "ভের্দুরা",
-    "bnMeaning": "সবজি",
-    "en": "Vegetable"
-  },
-  {
-    "it": "Frutta",
-    "bn": "ফ্রুত্তা",
-    "bnMeaning": "ফল",
-    "en": "Fruit"
-  },
-  {
-    "it": "Mela",
-    "bn": "মেলা",
-    "bnMeaning": "আপেল",
-    "en": "Apple"
-  },
-  {
-    "it": "Banana",
-    "bn": "বানানা",
-    "bnMeaning": "কলা",
-    "en": "Banana"
-  },
-  {
-    "it": "Arancia",
-    "bn": "আরানচা",
-    "bnMeaning": "কমলা",
-    "en": "Orange"
-  },
-  {
-    "it": "Pomodoro",
-    "bn": "পোমোদোরো",
-    "bnMeaning": "টমেটো",
-    "en": "Tomato"
-  },
-  {
-    "it": "Patata",
-    "bn": "পাতাতা",
-    "bnMeaning": "আলু",
-    "en": "Potato"
-  },
-  {
-    "it": "Cipolla",
-    "bn": "চিপোল্লা",
-    "bnMeaning": "পেঁয়াজ",
-    "en": "Onion"
-  },
-  {
-    "it": "Acqua",
-    "bn": "আক্কুয়া",
-    "bnMeaning": "পানি",
-    "en": "Water"
-  },
-  {
-    "it": "Vino",
-    "bn": "ভিনো",
-    "bnMeaning": "ওয়াইন",
-    "en": "Wine"
-  },
-  {
-    "it": "Birra",
-    "bn": "বিরা",
-    "bnMeaning": "বিয়ার",
-    "en": "Beer"
-  },
-  {
-    "it": "Caffè",
-    "bn": "কাফে",
-    "bnMeaning": "কফি",
-    "en": "Coffee"
-  },
-  {
-    "it": "Tè",
-    "bn": "তে",
-    "bnMeaning": "চা",
-    "en": "Tea"
-  },
-  {
-    "it": "Succo",
-    "bn": "সুক্কো",
-    "bnMeaning": "রস",
-    "en": "Juice"
-  },
-  {
-    "it": "Tempo",
-    "bn": "তেমপো",
-    "bnMeaning": "সময়",
-    "en": "Time"
-  },
-  {
-    "it": "Oggi",
-    "bn": "অজি",
-    "bnMeaning": "আজ",
-    "en": "Today"
-  },
-  {
-    "it": "Ieri",
-    "bn": "ইয়েরি",
-    "bnMeaning": "গতকাল",
-    "en": "Yesterday"
-  },
-  {
-    "it": "Domani",
-    "bn": "দোমানি",
-    "bnMeaning": "আগামীকাল",
-    "en": "Tomorrow"
-  },
-  {
-    "it": "Mattina",
-    "bn": "মাত্তিনা",
-    "bnMeaning": "সকাল",
-    "en": "Morning"
-  },
-  {
-    "it": "Pomeriggio",
-    "bn": "পোমেরিজো",
-    "bnMeaning": "দুপুর",
-    "en": "Afternoon"
-  },
-  {
-    "it": "Sera",
-    "bn": "সেরা",
-    "bnMeaning": "সন্ধ্যা",
-    "en": "Evening"
-  },
-  {
-    "it": "Notte",
-    "bn": "নোত্তে",
-    "bnMeaning": "রাত",
-    "en": "Night"
-  },
-  {
-    "it": "Settimana",
-    "bn": "সেত্তিমানা",
-    "bnMeaning": "সপ্তাহ",
-    "en": "Week"
-  },
-  {
-    "it": "Mese",
-    "bn": "মেসে",
-    "bnMeaning": "মাস",
-    "en": "Month"
-  },
-  {
-    "it": "Anno",
-    "bn": "আন্নো",
-    "bnMeaning": "বছর",
-    "en": "Year"
-  },
-  {
-    "it": "Lunedì",
-    "bn": "লুনেদি",
-    "bnMeaning": "সোমবার",
-    "en": "Monday"
-  },
-  {
-    "it": "Martedì",
-    "bn": "মার্তেদি",
-    "bnMeaning": "মঙ্গলবার",
-    "en": "Tuesday"
-  },
-  {
-    "it": "Mercoledì",
-    "bn": "মেরকোলেদি",
-    "bnMeaning": "বুধবার",
-    "en": "Wednesday"
-  },
-  {
-    "it": "Giovedì",
-    "bn": "জোভেদি",
-    "bnMeaning": "বৃহস্পতিবার",
-    "en": "Thursday"
-  },
-  {
-    "it": "Venerdì",
-    "bn": "ভেনেরদি",
-    "bnMeaning": "শুক্রবার",
-    "en": "Friday"
-  },
-  {
-    "it": "Sabato",
-    "bn": "সাবাতো",
-    "bnMeaning": "শনিবার",
-    "en": "Saturday"
-  },
-  {
-    "it": "Domenica",
-    "bn": "দোমেনিকা",
-    "bnMeaning": "রবিবার",
-    "en": "Sunday"
-  },
-  {
-    "it": "Gennaio",
-    "bn": "জেন্নাইও",
-    "bnMeaning": "জানুয়ারি",
-    "en": "January"
-  },
-  {
-    "it": "Febbraio",
-    "bn": "ফেব্রাইও",
-    "bnMeaning": "ফেব্রুয়ারি",
-    "en": "February"
-  },
-  {
-    "it": "Marzo",
-    "bn": "মার্ৎসো",
-    "bnMeaning": "মার্চ",
-    "en": "March"
-  },
-  {
-    "it": "Aprile",
-    "bn": "আপ্রিলে",
-    "bnMeaning": "এপ্রিল",
-    "en": "April"
-  },
-  {
-    "it": "Maggio",
-    "bn": "মাজো",
-    "bnMeaning": "মে",
-    "en": "May"
-  },
-  {
-    "it": "Giugno",
-    "bn": "জুগ্নো",
-    "bnMeaning": "জুন",
-    "en": "June"
-  },
-  {
-    "it": "Luglio",
-    "bn": "লুল্যো",
-    "bnMeaning": "জুলাই",
-    "en": "July"
-  },
-  {
-    "it": "Agosto",
-    "bn": "আগোস্তো",
-    "bnMeaning": "আগস্ট",
-    "en": "August"
-  },
-  {
-    "it": "Settembre",
-    "bn": "সেত্তেমব্রে",
-    "bnMeaning": "সেপ্টেম্বর",
-    "en": "September"
-  },
-  {
-    "it": "Ottobre",
-    "bn": "অত্তোব্রে",
-    "bnMeaning": "অক্টোবর",
-    "en": "October"
-  },
-  {
-    "it": "Novembre",
-    "bn": "নোভেমব্রে",
-    "bnMeaning": "নভেম্বর",
-    "en": "November"
-  },
-  {
-    "it": "Dicembre",
-    "bn": "দিচেমব্রে",
-    "bnMeaning": "ডিসেম্বর",
-    "en": "December"
-  },
-  {
-    "it": "Bianco",
-    "bn": "বিয়াঙ্কো",
-    "bnMeaning": "সাদা",
-    "en": "White"
-  },
-  {
-    "it": "Nero",
-    "bn": "নেরো",
-    "bnMeaning": "কালো",
-    "en": "Black"
-  },
-  {
-    "it": "Rosso",
-    "bn": "রোসো",
-    "bnMeaning": "লাল",
-    "en": "Red"
-  },
-  {
-    "it": "Verde",
-    "bn": "ভের্দে",
-    "bnMeaning": "সবুজ",
-    "en": "Green"
-  },
-  {
-    "it": "Blu",
-    "bn": "ব্লু",
-    "bnMeaning": "নীল",
-    "en": "Blue"
-  },
-  {
-    "it": "Giallo",
-    "bn": "জাল্লো",
-    "bnMeaning": "হলুদ",
-    "en": "Yellow"
-  },
-  {
-    "it": "Macchina",
-    "bn": "মাক্কিনা",
-    "bnMeaning": "গাড়ি",
-    "en": "Car"
-  },
-  {
-    "it": "Autobus",
-    "bn": "আউতোবুস",
-    "bnMeaning": "বাস",
-    "en": "Bus"
-  },
-  {
-    "it": "Treno",
-    "bn": "ত্রেনো",
-    "bnMeaning": "ট্রেন",
-    "en": "Train"
-  },
-  {
-    "it": "Aereo",
-    "bn": "আয়েরেও",
-    "bnMeaning": "বিমান",
-    "en": "Airplane"
-  },
-  {
-    "it": "Bicicletta",
-    "bn": "বিচিক্লেত্তা",
-    "bnMeaning": "সাইকেল",
-    "en": "Bicycle"
-  },
-  {
-    "it": "A piedi",
-    "bn": "আ পিয়েদি",
-    "bnMeaning": "পায়ে হেঁটে",
-    "en": "On foot"
-  },
-  {
-    "it": "Strada",
-    "bn": "স্ত্রাদা",
-    "bnMeaning": "রাস্তা",
-    "en": "Street"
-  },
-  {
-    "it": "Stazione",
-    "bn": "স্তাৎসিওনে",
-    "bnMeaning": "স্টেশন",
-    "en": "Station"
-  },
-  {
-    "it": "Aeroporto",
-    "bn": "আয়েরোপোর্তো",
-    "bnMeaning": "বিমানবন্দর",
-    "en": "Airport"
-  },
-  {
-    "it": "Ospedale",
-    "bn": "অসপেদালে",
-    "bnMeaning": "হাসপাতাল",
-    "en": "Hospital"
-  },
-  {
-    "it": "Scuola",
-    "bn": "স্কুওলা",
-    "bnMeaning": "স্কুল",
-    "en": "School"
-  },
-  {
-    "it": "Università",
-    "bn": "উনিভের্সিতা",
-    "bnMeaning": "বিশ্ববিদ্যালয়",
-    "en": "University"
-  },
-  {
-    "it": "Lavoro",
-    "bn": "লাভোরো",
-    "bnMeaning": "কাজ",
-    "en": "Work"
-  },
-  {
-    "it": "Ufficio",
-    "bn": "উফিচিও",
-    "bnMeaning": "অফিস",
-    "en": "Office"
-  },
-  {
-    "it": "Negozio",
-    "bn": "নেগোৎসিও",
-    "bnMeaning": "দোকান",
-    "en": "Shop"
-  },
-  {
-    "it": "Supermercato",
-    "bn": "সুপেরমেরকাতো",
-    "bnMeaning": "সুপারমার্কেট",
-    "en": "Supermarket"
-  },
-  {
-    "it": "Ristorante",
-    "bn": "রিস্তোরান্তে",
-    "bnMeaning": "রেস্তোরাঁ",
-    "en": "Restaurant"
-  },
-  {
-    "it": "Bar",
-    "bn": "বার",
-    "bnMeaning": "বার/ক্যাফে",
-    "en": "Bar/Cafe"
-  },
-  {
-    "it": "Hotel",
-    "bn": "হোতেল",
-    "bnMeaning": "হোটেল",
-    "en": "Hotel"
-  },
-  {
-    "it": "Banca",
-    "bn": "বাঙ্কা",
-    "bnMeaning": "ব্যাংক",
-    "en": "Bank"
-  },
-  {
-    "it": "Posta",
-    "bn": "পোস্তা",
-    "bnMeaning": "ডাকঘর",
-    "en": "Post office"
-  },
-  {
-    "it": "Polizia",
-    "bn": "পোলিৎসিয়া",
-    "bnMeaning": "পুলিশ",
-    "en": "Police"
-  },
-  {
-    "it": "Denaro",
-    "bn": "দেনারো",
-    "bnMeaning": "টাকা",
-    "en": "Money"
-  },
-  {
-    "it": "Euro",
-    "bn": "য়ুরো",
-    "bnMeaning": "ইউরো",
-    "en": "Euro"
-  },
-  {
-    "it": "Centesimo",
-    "bn": "চেন্তেজিমো",
-    "bnMeaning": "সেন্ট",
-    "en": "Cent"
-  },
-  {
-    "it": "Caro",
-    "bn": "কারো",
-    "bnMeaning": "দামি",
-    "en": "Expensive"
-  },
-  {
-    "it": "Economico",
-    "bn": "একোনোমিকো",
-    "bnMeaning": "সস্তা",
-    "en": "Cheap"
-  },
-  {
-    "it": "Gratis",
-    "bn": "গ্রাতিস",
-    "bnMeaning": "বিনামূল্যে",
-    "en": "Free"
-  },
-  {
-    "it": "Caldo",
-    "bn": "কাল্দো",
-    "bnMeaning": "গরম",
-    "en": "Hot"
-  },
-  {
-    "it": "Freddo",
-    "bn": "ফ্রেদো",
-    "bnMeaning": "ঠান্ডা",
-    "en": "Cold"
-  },
-  {
-    "it": "Grande",
-    "bn": "গ্রান্দে",
-    "bnMeaning": "বড়",
-    "en": "Big"
-  },
-  {
-    "it": "Piccolo",
-    "bn": "পিক্কোলো",
-    "bnMeaning": "ছোট",
-    "en": "Small"
-  },
-  {
-    "it": "Nuovo",
-    "bn": "নুওভো",
-    "bnMeaning": "নতুন",
-    "en": "New"
-  },
-  {
-    "it": "Vecchio",
-    "bn": "ভেক্কিও",
-    "bnMeaning": "পুরাতন",
-    "en": "Old"
-  },
-  {
-    "it": "Buono",
-    "bn": "বুওনো",
-    "bnMeaning": "ভালো",
-    "en": "Good"
-  },
-  {
-    "it": "Cattivo",
-    "bn": "কাত্তিভো",
-    "bnMeaning": "খারাপ",
-    "en": "Bad"
-  },
-  {
-    "it": "Bello",
-    "bn": "বেল্লো",
-    "bnMeaning": "সুন্দর",
-    "en": "Beautiful"
-  },
-  {
-    "it": "Brutto",
-    "bn": "ব্রুত্তো",
-    "bnMeaning": "কুৎসিত",
-    "en": "Ugly"
-  },
-  {
-    "it": "Felice",
-    "bn": "ফেলিচে",
-    "bnMeaning": "খুশি",
-    "en": "Happy"
-  },
-  {
-    "it": "Triste",
-    "bn": "ত্রিস্তে",
-    "bnMeaning": "দুঃখিত",
-    "en": "Sad"
-  },
-  {
-    "it": "Facile",
-    "bn": "ফাচিলে",
-    "bnMeaning": "সহজ",
-    "en": "Easy"
-  },
-  {
-    "it": "Difficile",
-    "bn": "দিফিচিলে",
-    "bnMeaning": "কঠিন",
-    "en": "Difficult"
-  },
-  {
-    "it": "Sempre",
-    "bn": "সেমপ্রে",
-    "bnMeaning": "সবসময়",
-    "en": "Always"
-  },
-  {
-    "it": "Mai",
-    "bn": "মাই",
-    "bnMeaning": "কখনো না",
-    "en": "Never"
-  },
-  {
-    "it": "Spesso",
-    "bn": "স্পেসো",
-    "bnMeaning": "প্রায়ই",
-    "en": "Often"
-  },
-  {
-    "it": "Qui",
-    "bn": "কুই",
-    "bnMeaning": "এখানে",
-    "en": "Here"
-  },
-  {
-    "it": "Là",
-    "bn": "লা",
-    "bnMeaning": "ওখানে",
-    "en": "There"
-  },
-  {
-    "it": "Sopra",
-    "bn": "সোপ্রা",
-    "bnMeaning": "উপরে",
-    "en": "Above"
-  },
-  {
-    "it": "Sotto",
-    "bn": "সোত্তো",
-    "bnMeaning": "নিচে",
-    "en": "Below"
-  },
-  {
-    "it": "Dentro",
-    "bn": "দেন্ত্রো",
-    "bnMeaning": "ভিতরে",
-    "en": "Inside"
-  },
-  {
-    "it": "Fuori",
-    "bn": "ফুওরি",
-    "bnMeaning": "বাইরে",
-    "en": "Outside"
-  },
-  {
-    "it": "Vicino",
-    "bn": "ভিচিনো",
-    "bnMeaning": "কাছে",
-    "en": "Near"
-  },
-  {
-    "it": "Lontano",
-    "bn": "লোন্তানো",
-    "bnMeaning": "দূরে",
-    "en": "Far"
-  },
-  {
-    "it": "A destra",
-    "bn": "আ দেস্ত্রা",
-    "bnMeaning": "ডানে",
-    "en": "To the right"
-  },
-  {
-    "it": "A sinistra",
-    "bn": "আ সিনিস্ত্রা",
-    "bnMeaning": "বামে",
-    "en": "To the left"
-  },
-  {
-    "it": "Dritto",
-    "bn": "দ্রিত্তো",
-    "bnMeaning": "সোজা",
-    "en": "Straight"
-  },
-  {
-    "it": "Indietro",
-    "bn": "ইন্দিয়েত্রো",
-    "bnMeaning": "পিছনে",
-    "en": "Back"
-  },
-  {
-    "it": "Avanti",
-    "bn": "আভান্তি",
-    "bnMeaning": "সামনে",
-    "en": "Forward"
-  },
-  {
-    "it": "Perdere",
-    "bn": "পের্দেরে",
-    "bnMeaning": "হারানো",
-    "en": "To lose"
-  },
-  {
-    "it": "Trovare",
-    "bn": "ত্রোভারে",
-    "bnMeaning": "খুঁজে পাওয়া",
-    "en": "To find"
-  },
-  {
-    "it": "Cercare",
-    "bn": "চেরকারে",
-    "bnMeaning": "খোঁজা",
-    "en": "To search"
-  },
-  {
-    "it": "Aprire",
-    "bn": "আপ্রিরে",
-    "bnMeaning": "খোলা",
-    "en": "To open"
-  },
-  {
-    "it": "Chiudere",
-    "bn": "কিউদেরে",
-    "bnMeaning": "বন্ধ করা",
-    "en": "To close"
-  },
-  {
-    "it": "Leggere",
-    "bn": "লেজেরে",
-    "bnMeaning": "পড়া",
-    "en": "To read"
-  },
-  {
-    "it": "Scrivere",
-    "bn": "স্ক্রিভেরে",
-    "bnMeaning": "লেখা",
-    "en": "To write"
-  },
-  {
-    "it": "Ascoltare",
-    "bn": "আসকোল্তারে",
-    "bnMeaning": "শোনা",
-    "en": "To listen"
-  },
-  {
-    "it": "Guardare",
-    "bn": "গুয়ার্দারে",
-    "bnMeaning": "দেখা",
-    "en": "To look"
-  },
-  {
-    "it": "Telefonare",
-    "bn": "তেলেফোনারে",
-    "bnMeaning": "ফোন করা",
-    "en": "To call"
-  },
-  {
-    "it": "Telefono",
-    "bn": "তেলেফোনো",
-    "bnMeaning": "ফোন",
-    "en": "Phone"
-  },
-  {
-    "it": "Computer",
-    "bn": "কোমপিউতের",
-    "bnMeaning": "কম্পিউটার",
-    "en": "Computer"
-  },
-  {
-    "it": "Internet",
-    "bn": "ইন্তেরনেত",
-    "bnMeaning": "ইন্টারনেট",
-    "en": "Internet"
-  },
-  {
-    "it": "Email",
-    "bn": "ইমেইল",
-    "bnMeaning": "ইমেইল",
-    "en": "Email"
-  },
-  {
-    "it": "Messaggio",
-    "bn": "মেসাজো",
-    "bnMeaning": "বার্তা",
-    "en": "Message"
-  },
-  {
-    "it": "Libro",
-    "bn": "লিব্রো",
-    "bnMeaning": "বই",
-    "en": "Book"
-  },
-  {
-    "it": "Giornale",
-    "bn": "জোর্নালে",
-    "bnMeaning": "সংবাদপত্র",
-    "en": "Newspaper"
-  },
-  {
-    "it": "Rivista",
-    "bn": "রিভিস্তা",
-    "bnMeaning": "পত্রিকা",
-    "en": "Magazine"
-  },
-  {
-    "it": "Televisione",
-    "bn": "তেলেভিজিওনে",
-    "bnMeaning": "টেলিভিশন",
-    "en": "Television"
-  },
-  {
-    "it": "Radio",
-    "bn": "রাদিও",
-    "bnMeaning": "রেডিও",
-    "en": "Radio"
-  },
-  {
-    "it": "Musica",
-    "bn": "মুজিকা",
-    "bnMeaning": "সঙ্গীত",
-    "en": "Music"
-  },
-  {
-    "it": "Film",
-    "bn": "ফিল্ম",
-    "bnMeaning": "ছবি",
-    "en": "Movie"
-  },
-  {
-    "it": "Teatro",
-    "bn": "তেয়াত্রো",
-    "bnMeaning": "থিয়েটার",
-    "en": "Theater"
-  },
-  {
-    "it": "Cinema",
-    "bn": "চিনেমা",
-    "bnMeaning": "সিনেমা হল",
-    "en": "Cinema"
-  },
-  {
-    "it": "Museo",
-    "bn": "মুজেও",
-    "bnMeaning": "জাদুঘর",
-    "en": "Museum"
-  },
-  {
-    "it": "Chiesa",
-    "bn": "কিয়েসা",
-    "bnMeaning": "গির্জা",
-    "en": "Church"
-  },
-  {
-    "it": "Moschea",
-    "bn": "মোসকেয়া",
-    "bnMeaning": "মসজিদ",
-    "en": "Mosque"
-  },
-  {
-    "it": "Parco",
-    "bn": "পার্কো",
-    "bnMeaning": "পার্ক",
-    "en": "Park"
-  },
-  {
-    "it": "Mare",
-    "bn": "মারে",
-    "bnMeaning": "সমুদ্র",
-    "en": "Sea"
-  },
-  {
-    "it": "Montagna",
-    "bn": "মোন্তাগ্না",
-    "bnMeaning": "পাহাড়",
-    "en": "Mountain"
-  },
-  {
-    "it": "Fiume",
-    "bn": "ফিউমে",
-    "bnMeaning": "নদী",
-    "en": "River"
-  },
-  {
-    "it": "Lago",
-    "bn": "লাগো",
-    "bnMeaning": "হ্রদ",
-    "en": "Lake"
-  },
-  {
-    "it": "Albero",
-    "bn": "আলবেরো",
-    "bnMeaning": "গাছ",
-    "en": "Tree"
-  },
-  {
-    "it": "Fiore",
-    "bn": "ফিওরে",
-    "bnMeaning": "ফুল",
-    "en": "Flower"
-  },
-  {
-    "it": "Sole",
-    "bn": "সোলে",
-    "bnMeaning": "সূর্য",
-    "en": "Sun"
-  },
-  {
-    "it": "Luna",
-    "bn": "লুনা",
-    "bnMeaning": "চাঁদ",
-    "en": "Moon"
-  },
-  {
-    "it": "Stella",
-    "bn": "স্তেল্লা",
-    "bnMeaning": "তারা",
-    "en": "Star"
-  },
-  {
-    "it": "Cielo",
-    "bn": "চিয়েলো",
-    "bnMeaning": "আকাশ",
-    "en": "Sky"
-  },
-  {
-    "it": "Nuvola",
-    "bn": "নুভোলা",
-    "bnMeaning": "মেঘ",
-    "en": "Cloud"
-  },
-  {
-    "it": "Pioggia",
-    "bn": "পিওজা",
-    "bnMeaning": "বৃষ্টি",
-    "en": "Rain"
-  },
-  {
-    "it": "Neve",
-    "bn": "নেভে",
-    "bnMeaning": "তুষার",
-    "en": "Snow"
-  },
-  {
-    "it": "Vento",
-    "bn": "ভেন্তো",
-    "bnMeaning": "বাতাস",
-    "en": "Wind"
-  },
-  {
-    "it": "Vestiti",
-    "bn": "ভেস্তিতি",
-    "bnMeaning": "কাপড়",
-    "en": "Clothes"
-  },
-  {
-    "it": "Camicia",
-    "bn": "কামিচা",
-    "bnMeaning": "শার্ট",
-    "en": "Shirt"
-  },
-  {
-    "it": "Pantaloni",
-    "bn": "পান্তালোনি",
-    "bnMeaning": "প্যান্ট",
-    "en": "Pants"
-  },
-  {
-    "it": "Scarpe",
-    "bn": "স্কার্পে",
-    "bnMeaning": "জুতা",
-    "en": "Shoes"
-  },
-  {
-    "it": "Cappello",
-    "bn": "কাপেল্লো",
-    "bnMeaning": "টুপি",
-    "en": "Hat"
-  },
-  {
-    "it": "Giacca",
-    "bn": "জাক্কা",
-    "bnMeaning": "জ্যাকেট",
-    "en": "Jacket"
-  },
-  {
-    "it": "Borsa",
-    "bn": "বোর্সা",
-    "bnMeaning": "ব্যাগ",
-    "en": "Bag"
-  },
-  {
-    "it": "Orologio",
-    "bn": "ওরোলোজিও",
-    "bnMeaning": "ঘড়ি",
-    "en": "Watch"
-  },
-  {
-    "it": "Occhiali",
-    "bn": "অক্কিয়ালি",
-    "bnMeaning": "চশমা",
-    "en": "Glasses"
-  },
-  {
-    "it": "Amore",
-    "bn": "আমোরে",
-    "bnMeaning": "ভালোবাসা",
-    "en": "Love"
-  },
-  {
-    "it": "Amico",
-    "bn": "আমিকো",
-    "bnMeaning": "বন্ধু (পুরুষ)",
-    "en": "Friend (male)"
-  },
-  {
-    "it": "Amica",
-    "bn": "আমিকা",
-    "bnMeaning": "বন্ধু (মহিলা)",
-    "en": "Friend (female)"
-  },
-  {
-    "it": "Ragazzo",
-    "bn": "রাগাৎসো",
-    "bnMeaning": "ছেলে",
-    "en": "Boy"
-  },
-  {
-    "it": "Ragazza",
-    "bn": "রাগাৎসা",
-    "bnMeaning": "মেয়ে",
-    "en": "Girl"
-  },
-  {
-    "it": "Uomo",
-    "bn": "উওমো",
-    "bnMeaning": "পুরুষ",
-    "en": "Man"
-  },
-  {
-    "it": "Donna",
-    "bn": "দোন্না",
-    "bnMeaning": "মহিলা",
-    "en": "Woman"
-  },
-  {
-    "it": "Bambino",
-    "bn": "বাম্বিনো",
-    "bnMeaning": "শিশু (ছেলে)",
-    "en": "Child (boy)"
-  },
-  {
-    "it": "Bambina",
-    "bn": "বাম্বিনা",
-    "bnMeaning": "শিশু (মেয়ে)",
-    "en": "Child (girl)"
-  },
-  {
-    "it": "Persona",
-    "bn": "পের্সোনা",
-    "bnMeaning": "ব্যক্তি",
-    "en": "Person"
-  },
-  {
-    "it": "Gente",
-    "bn": "জেন্তে",
-    "bnMeaning": "মানুষ",
-    "en": "People"
-  },
-  {
-    "it": "Vita",
-    "bn": "ভিতা",
-    "bnMeaning": "জীবন",
-    "en": "Life"
-  },
-  {
-    "it": "Morte",
-    "bn": "মোর্তে",
-    "bnMeaning": "মৃত্যু",
-    "en": "Death"
-  },
-  {
-    "it": "Nascita",
-    "bn": "নাশিতা",
-    "bnMeaning": "জন্ম",
-    "en": "Birth"
-  },
-  {
-    "it": "Età",
-    "bn": "এতা",
-    "bnMeaning": "বয়স",
-    "en": "Age"
-  },
-  {
-    "it": "Nome",
-    "bn": "নোমে",
-    "bnMeaning": "নাম",
-    "en": "Name"
-  },
-  {
-    "it": "Cognome",
-    "bn": "কোগনোমে",
-    "bnMeaning": "পদবি",
-    "en": "Surname"
-  },
-  {
-    "it": "Indirizzo",
-    "bn": "ইন্দিরিৎসো",
-    "bnMeaning": "ঠিকানা",
-    "en": "Address"
-  },
-  {
-    "it": "Numero",
-    "bn": "নুমেরো",
-    "bnMeaning": "নম্বর",
-    "en": "Number"
-  },
-  {
-    "it": "Lettera",
-    "bn": "লেত্তেরা",
-    "bnMeaning": "চিঠি",
-    "en": "Letter"
-  },
-  {
-    "it": "Parola",
-    "bn": "পারোলা",
-    "bnMeaning": "শব্দ",
-    "en": "Word"
-  },
-  {
-    "it": "Frase",
-    "bn": "ফ্রাসে",
-    "bnMeaning": "বাক্য",
-    "en": "Sentence"
-  },
-  {
-    "it": "Lingua",
-    "bn": "লিনগুয়া",
-    "bnMeaning": "ভাষা",
-    "en": "Language"
-  },
-  {
-    "it": "Paese",
-    "bn": "পায়েসে",
-    "bnMeaning": "দেশ",
-    "en": "Country"
-  },
-  {
-    "it": "Città",
-    "bn": "চিত্তা",
-    "bnMeaning": "শহর",
-    "en": "City"
-  },
-  {
-    "it": "Centro",
-    "bn": "চেন্ত্রো",
-    "bnMeaning": "কেন্দ্র",
-    "en": "Center"
-  },
-  {
-    "it": "Zona",
-    "bn": "ৎসোনা",
-    "bnMeaning": "এলাকা",
-    "en": "Area"
-  },
-  {
-    "it": "Posto",
-    "bn": "পোস্তো",
-    "bnMeaning": "জায়গা",
-    "en": "Place"
-  },
-  {
-    "it": "Mondo",
-    "bn": "মোন্দো",
-    "bnMeaning": "পৃথিবী",
-    "en": "World"
-  },
-  {
-    "it": "Pioggia",
-    "bn": "পিওজা",
-    "bnMeaning": "বৃষ্টি",
-    "en": "Rain"
-  },
-  {
-    "it": "Neve",
-    "bn": "নেভে",
-    "bnMeaning": "বরফ",
-    "en": "Snow"
-  },
-  {
-    "it": "Vento",
-    "bn": "ভেন্তো",
-    "bnMeaning": "বাতাস",
-    "en": "Wind"
-  },
-  {
-    "it": "Vestiti",
-    "bn": "ভেস্তিতি",
-    "bnMeaning": "কাপড়",
-    "en": "Clothes"
-  },
-  {
-    "it": "Camicia",
-    "bn": "কামিচা",
-    "bnMeaning": "শার্ট",
-    "en": "Shirt"
-  },
-  {
-    "it": "Pantaloni",
-    "bn": "পান্তালোনি",
-    "bnMeaning": "প্যান্ট",
-    "en": "Pants"
-  },
-  {
-    "it": "Vestito",
-    "bn": "ভেস্তিতো",
-    "bnMeaning": "পোশাক",
-    "en": "Dress"
-  },
-  {
-    "it": "Scarpe",
-    "bn": "স্কার্পে",
-    "bnMeaning": "জুতা",
-    "en": "Shoes"
-  },
-  {
-    "it": "Calze",
-    "bn": "কাল্ৎসে",
-    "bnMeaning": "মোজা",
-    "en": "Socks"
-  },
-  {
-    "it": "Cappello",
-    "bn": "কাপেল্লো",
-    "bnMeaning": "টুপি",
-    "en": "Hat"
-  },
-  {
-    "it": "Giacca",
-    "bn": "জাক্কা",
-    "bnMeaning": "জ্যাকেট",
-    "en": "Jacket"
-  },
-  {
-    "it": "Gonna",
-    "bn": "গোন্না",
-    "bnMeaning": "স্কার্ট",
-    "en": "Skirt"
-  },
-  {
-    "it": "Borsa",
-    "bn": "বোর্সা",
-    "bnMeaning": "ব্যাগ",
-    "en": "Bag"
-  },
-  {
-    "it": "Orologio",
-    "bn": "ওরোলোজো",
-    "bnMeaning": "ঘড়ি",
-    "en": "Watch"
-  },
-  {
-    "it": "Occhiali",
-    "bn": "অক্কিয়ালি",
-    "bnMeaning": "চশমা",
-    "en": "Glasses"
-  },
-  {
-    "it": "Corpo",
-    "bn": "কোর্পো",
-    "bnMeaning": "শরীর",
-    "en": "Body"
-  },
-  {
-    "it": "Testa",
-    "bn": "তেস্তা",
-    "bnMeaning": "মাথা",
-    "en": "Head"
-  },
-  {
-    "it": "Occhio",
-    "bn": "অক্কিও",
-    "bnMeaning": "চোখ",
-    "en": "Eye"
-  },
-  {
-    "it": "Naso",
-    "bn": "নাসো",
-    "bnMeaning": "নাক",
-    "en": "Nose"
-  },
-  {
-    "it": "Bocca",
-    "bn": "বোক্কা",
-    "bnMeaning": "মুখ",
-    "en": "Mouth"
-  },
-  {
-    "it": "Orecchio",
-    "bn": "ওরেক্কিও",
-    "bnMeaning": "কান",
-    "en": "Ear"
-  },
-  {
-    "it": "Mano",
-    "bn": "মানো",
-    "bnMeaning": "হাত",
-    "en": "Hand"
-  },
-  {
-    "it": "Piede",
-    "bn": "পিয়েদে",
-    "bnMeaning": "পা",
-    "en": "Foot"
-  },
-  {
-    "it": "Braccio",
-    "bn": "ব্রাচো",
-    "bnMeaning": "বাহু",
-    "en": "Arm"
-  },
-  {
-    "it": "Gamba",
-    "bn": "গাম্বা",
-    "bnMeaning": "পা",
-    "en": "Leg"
-  },
-  {
-    "it": "Capelli",
-    "bn": "কাপেল্লি",
-    "bnMeaning": "চুল",
-    "en": "Hair"
-  },
-  {
-    "it": "Dente",
-    "bn": "দেন্তে",
-    "bnMeaning": "দাঁত",
-    "en": "Tooth"
-  },
-  {
-    "it": "Salute",
-    "bn": "সালুতে",
-    "bnMeaning": "স্বাস্থ্য",
-    "en": "Health"
-  },
-  {
-    "it": "Medico",
-    "bn": "মেদিকো",
-    "bnMeaning": "ডাক্তার",
-    "en": "Doctor"
-  },
-  {
-    "it": "Medicina",
-    "bn": "মেদিচিনা",
-    "bnMeaning": "ওষুধ",
-    "en": "Medicine"
-  },
-  {
-    "it": "Malato",
-    "bn": "মালাতো",
-    "bnMeaning": "অসুস্থ",
-    "en": "Sick"
-  },
-  {
-    "it": "Sano",
-    "bn": "সানো",
-    "bnMeaning": "সুস্থ",
-    "en": "Healthy"
-  },
-  {
-    "it": "Dolore",
-    "bn": "দোলোরে",
-    "bnMeaning": "ব্যথা",
-    "en": "Pain"
-  },
-  {
-    "it": "Febbre",
-    "bn": "ফেব্রে",
-    "bnMeaning": "জ্বর",
-    "en": "Fever"
-  },
-  {
-    "it": "Tosse",
-    "bn": "তোসে",
-    "bnMeaning": "কাশি",
-    "en": "Cough"
-  },
-  {
-    "it": "Raffreddore",
-    "bn": "রাফ্রেদোরে",
-    "bnMeaning": "সর্দি",
-    "en": "Cold"
-  },
-  {
-    "it": "Mal di testa",
-    "bn": "মাল দি তেস্তা",
-    "bnMeaning": "মাথাব্যথা",
-    "en": "Headache"
-  },
-  {
-    "it": "Farmacia",
-    "bn": "ফার্মাচিয়া",
-    "bnMeaning": "ফার্মেসি",
-    "en": "Pharmacy"
-  },
-  {
-    "it": "Dentista",
-    "bn": "দেন্তিস্তা",
-    "bnMeaning": "দাঁতের ডাক্তার",
-    "en": "Dentist"
-  },
-  {
-    "it": "Emergenza",
-    "bn": "এমেরজেন্ৎসা",
-    "bnMeaning": "জরুরি অবস্থা",
-    "en": "Emergency"
-  },
-  {
-    "it": "Aiuto",
-    "bn": "আইউতো",
-    "bnMeaning": "সাহায্য",
-    "en": "Help"
-  },
-  {
-    "it": "Sport",
-    "bn": "স্পোর্ত",
-    "bnMeaning": "খেলা",
-    "en": "Sport"
-  },
-  {
-    "it": "Calcio",
-    "bn": "কালচো",
-    "bnMeaning": "ফুটবল",
-    "en": "Football"
-  },
-  {
-    "it": "Tennis",
-    "bn": "তেনিস",
-    "bnMeaning": "টেনিস",
-    "en": "Tennis"
-  },
-  {
-    "it": "Pallavolo",
-    "bn": "পাল্লাভোলো",
-    "bnMeaning": "ভলিবল",
-    "en": "Volleyball"
-  },
-  {
-    "it": "Basket",
-    "bn": "বাস্কেত",
-    "bnMeaning": "বাস্কেটবল",
-    "en": "Basketball"
-  },
-  {
-    "it": "Nuoto",
-    "bn": "নুওতো",
-    "bnMeaning": "সাঁতার",
-    "en": "Swimming"
-  },
-  {
-    "it": "Correre",
-    "bn": "কোরেরে",
-    "bnMeaning": "দৌড়ানো",
-    "en": "To run"
-  },
-  {
-    "it": "Camminare",
-    "bn": "কামিনারে",
-    "bnMeaning": "হাঁটা",
-    "en": "To walk"
-  },
-  {
-    "it": "Giocare",
-    "bn": "জোকারে",
-    "bnMeaning": "খেলা",
-    "en": "To play"
-  },
-  {
-    "it": "Vincere",
-    "bn": "ভিনচেরে",
-    "bnMeaning": "জেতা",
-    "en": "To win"
-  },
-  {
-    "it": "Perdere",
-    "bn": "পের্দেরে",
-    "bnMeaning": "হারা",
-    "en": "To lose"
-  },
-  {
-    "it": "Squadra",
-    "bn": "স্কুয়াদ্রা",
-    "bnMeaning": "দল",
-    "en": "Team"
-  },
-  {
-    "it": "Giocatore",
-    "bn": "জোকাতোরে",
-    "bnMeaning": "খেলোয়াড়",
-    "en": "Player"
-  },
-  {
-    "it": "Partita",
-    "bn": "পার্তিতা",
-    "bnMeaning": "খেলা/ম্যাচ",
-    "en": "Match"
-  },
-  {
-    "it": "Stadio",
-    "bn": "স্তাদিও",
-    "bnMeaning": "স্টেডিয়াম",
-    "en": "Stadium"
-  },
-  {
-    "it": "Palestra",
-    "bn": "পালেস্ত্রা",
-    "bnMeaning": "জিম",
-    "en": "Gym"
-  },
-  {
-    "it": "Hobby",
-    "bn": "হবি",
-    "bnMeaning": "শখ",
-    "en": "Hobby"
-  },
-  {
-    "it": "Leggere",
-    "bn": "লেজেরে",
-    "bnMeaning": "পড়া",
-    "en": "To read"
-  },
-  {
-    "it": "Cucinare",
-    "bn": "কুচিনারে",
-    "bnMeaning": "রান্না করা",
-    "en": "To cook"
-  },
-  {
-    "it": "Cantare",
-    "bn": "কান্তারে",
-    "bnMeaning": "গান গাওয়া",
-    "en": "To sing"
-  },
-  {
-    "it": "Ballare",
-    "bn": "বাল্লারে",
-    "bnMeaning": "নাচ করা",
-    "en": "To dance"
-  },
-  {
-    "it": "Dipingere",
-    "bn": "দিপিনজেরে",
-    "bnMeaning": "আঁকা",
-    "en": "To paint"
-  },
-  {
-    "it": "Disegnare",
-    "bn": "দিসেগ্নারে",
-    "bnMeaning": "আঁকা",
-    "en": "To draw"
-  },
-  {
-    "it": "Fotografare",
-    "bn": "ফোতোগ্রাফারে",
-    "bnMeaning": "ছবি তোলা",
-    "en": "To photograph"
-  },
-  {
-    "it": "Viaggiare",
-    "bn": "ভিয়াজারে",
-    "bnMeaning": "ভ্রমণ করা",
-    "en": "To travel"
-  },
-  {
-    "it": "Viaggio",
-    "bn": "ভিয়াজো",
-    "bnMeaning": "ভ্রমণ",
-    "en": "Trip"
-  },
-  {
-    "it": "Vacanza",
-    "bn": "ভাকান্ৎসা",
-    "bnMeaning": "ছুটি",
-    "en": "Vacation"
-  },
-  {
-    "it": "Turista",
-    "bn": "তুরিস্তা",
-    "bnMeaning": "পর্যটক",
-    "en": "Tourist"
-  },
-  {
-    "it": "Paese",
-    "bn": "পায়েসে",
-    "bnMeaning": "দেশ",
-    "en": "Country"
-  },
-  {
-    "it": "Città",
-    "bn": "চিত্তা",
-    "bnMeaning": "শহর",
-    "en": "City"
-  },
-  {
-    "it": "Villaggio",
-    "bn": "ভিল্লাজো",
-    "bnMeaning": "গ্রাম",
-    "en": "Village"
-  },
-  {
-    "it": "Centro",
-    "bn": "চেন্ত্রো",
-    "bnMeaning": "কেন্দ্র",
-    "en": "Center"
-  },
-  {
-    "it": "Periferia",
-    "bn": "পেরিফেরিয়া",
-    "bnMeaning": "উপশহর",
-    "en": "Suburb"
-  },
-  {
-    "it": "Indirizzo",
-    "bn": "ইন্দিরিৎসো",
-    "bnMeaning": "ঠিকানা",
-    "en": "Address"
-  },
-  {
-    "it": "Numero",
-    "bn": "নুমেরো",
-    "bnMeaning": "নম্বর",
-    "en": "Number"
-  },
-  {
-    "it": "Via",
-    "bn": "ভিয়া",
-    "bnMeaning": "রাস্তা",
-    "en": "Street"
-  },
-  {
-    "it": "Piazza",
-    "bn": "পিয়াৎসা",
-    "bnMeaning": "চত্বর",
-    "en": "Square"
-  },
-  {
-    "it": "Ponte",
-    "bn": "পোন্তে",
-    "bnMeaning": "সেতু",
-    "en": "Bridge"
-  },
-  {
-    "it": "Edificio",
-    "bn": "এদিফিচিও",
-    "bnMeaning": "ভবন",
-    "en": "Building"
-  },
-  {
-    "it": "Piano",
-    "bn": "পিয়ানো",
-    "bnMeaning": "তলা",
-    "en": "Floor"
-  },
-  {
-    "it": "Ascensore",
-    "bn": "আশেনসোরে",
-    "bnMeaning": "লিফট",
-    "en": "Elevator"
-  },
-  {
-    "it": "Scale",
-    "bn": "স্কালে",
-    "bnMeaning": "সিঁড়ি",
-    "en": "Stairs"
-  },
-  {
-    "it": "Porta",
-    "bn": "পোর্তা",
-    "bnMeaning": "দরজা",
-    "en": "Door"
-  },
-  {
-    "it": "Finestra",
-    "bn": "ফিনেস্ত্রা",
-    "bnMeaning": "জানালা",
-    "en": "Window"
-  },
-  {
-    "it": "Chiave",
-    "bn": "কিয়াভে",
-    "bnMeaning": "চাবি",
-    "en": "Key"
-  },
-  {
-    "it": "Tavolo",
-    "bn": "তাভোলো",
-    "bnMeaning": "টেবিল",
-    "en": "Table"
-  },
-  {
-    "it": "Sedia",
-    "bn": "সেদিয়া",
-    "bnMeaning": "চেয়ার",
-    "en": "Chair"
-  },
-  {
-    "it": "Letto",
-    "bn": "লেত্তো",
-    "bnMeaning": "বিছানা",
-    "en": "Bed"
-  },
-  {
-    "it": "Armadio",
-    "bn": "আর্মাদিও",
-    "bnMeaning": "আলমারি",
-    "en": "Wardrobe"
-  },
-  {
-    "it": "Frigorifero",
-    "bn": "ফ্রিগোরিফেরো",
-    "bnMeaning": "ফ্রিজ",
-    "en": "Refrigerator"
-  },
-  {
-    "it": "Forno",
-    "bn": "ফোর্নো",
-    "bnMeaning": "চুলা",
-    "en": "Oven"
-  },
-  {
-    "it": "Lavastoviglie",
-    "bn": "লাভাস্তোভিল্যে",
-    "bnMeaning": "ডিশওয়াশার",
-    "en": "Dishwasher"
-  },
-  {
-    "it": "Lavatrice",
-    "bn": "লাভাত্রিচে",
-    "bnMeaning": "ওয়াশিং মেশিন",
-    "en": "Washing machine"
-  },
-  {
-    "it": "Specchio",
-    "bn": "স্পেক্কিও",
-    "bnMeaning": "আয়না",
-    "en": "Mirror"
-  },
-  {
-    "it": "Lampada",
-    "bn": "লামপাদা",
-    "bnMeaning": "বাতি",
-    "en": "Lamp"
-  },
-  {
-    "it": "Tappeto",
-    "bn": "তাপেতো",
-    "bnMeaning": "কার্পেট",
-    "en": "Carpet"
-  },
-  {
-    "it": "Tenda",
-    "bn": "তেন্দা",
-    "bnMeaning": "পর্দা",
-    "en": "Curtain"
-  },
-  {
-    "it": "Quadro",
-    "bn": "কুয়াদ্রো",
-    "bnMeaning": "ছবি",
-    "en": "Picture"
-  },
-  {
-    "it": "Piatto",
-    "bn": "পিয়াত্তো",
-    "bnMeaning": "প্লেট",
-    "en": "Plate"
-  },
-  {
-    "it": "Bicchiere",
-    "bn": "বিক্কিয়েরে",
-    "bnMeaning": "গ্লাস",
-    "en": "Glass"
-  },
-  {
-    "it": "Tazza",
-    "bn": "তাৎসা",
-    "bnMeaning": "কাপ",
-    "en": "Cup"
-  },
-  {
-    "it": "Forchetta",
-    "bn": "ফোরকেত্তা",
-    "bnMeaning": "কাঁটাচামচ",
-    "en": "Fork"
-  },
-  {
-    "it": "Coltello",
-    "bn": "কোল্তেল্লো",
-    "bnMeaning": "ছুরি",
-    "en": "Knife"
-  },
-  {
-    "it": "Cucchiaio",
-    "bn": "কুক্কিয়াইও",
-    "bnMeaning": "চামচ",
-    "en": "Spoon"
-  },
-  {
-    "it": "Pranzo",
-    "bn": "প্রানৎসো",
-    "bnMeaning": "দুপুরের খাবার",
-    "en": "Lunch"
-  },
-  {
-    "it": "Cena",
-    "bn": "চেনা",
-    "bnMeaning": "রাতের খাবার",
-    "en": "Dinner"
-  },
-  {
-    "it": "Colazione",
-    "bn": "কোলাৎসিওনে",
-    "bnMeaning": "সকালের নাশতা",
-    "en": "Breakfast"
-  },
-  {
-    "it": "Spuntino",
-    "bn": "স্পুন্তিনো",
-    "bnMeaning": "হালকা খাবার",
-    "en": "Snack"
-  },
-  {
-    "it": "Pasta",
-    "bn": "পাস্তা",
-    "bnMeaning": "পাস্তা",
-    "en": "Pasta"
-  },
-  {
-    "it": "Pizza",
-    "bn": "পিৎসা",
-    "bnMeaning": "পিজা",
-    "en": "Pizza"
-  },
-  {
-    "it": "Riso",
-    "bn": "রিসো",
-    "bnMeaning": "চাল",
-    "en": "Rice"
-  },
-  {
-    "it": "Zuppa",
-    "bn": "ৎসুপা",
-    "bnMeaning": "স্যুপ",
-    "en": "Soup"
-  },
-  {
-    "it": "Insalata",
-    "bn": "ইনসালাতা",
-    "bnMeaning": "সালাদ",
-    "en": "Salad"
-  },
-  {
-    "it": "Dolce",
-    "bn": "দোলচে",
-    "bnMeaning": "মিষ্টি",
-    "en": "Dessert"
-  },
-  {
-    "it": "Gelato",
-    "bn": "জেলাতো",
-    "bnMeaning": "আইসক্রিম",
-    "en": "Ice cream"
-  },
-  {
-    "it": "Torta",
-    "bn": "তোর্তা",
-    "bnMeaning": "কেক",
-    "en": "Cake"
-  },
-  {
-    "it": "Biscotto",
-    "bn": "বিসকোত্তো",
-    "bnMeaning": "বিস্কুট",
-    "en": "Cookie"
-  },
-  {
-    "it": "Cioccolato",
-    "bn": "চোক্কোলাতো",
-    "bnMeaning": "চকলেট",
-    "en": "Chocolate"
-  },
-  {
-    "it": "Zucchero",
-    "bn": "ৎসুক্কেরো",
-    "bnMeaning": "চিনি",
-    "en": "Sugar"
-  },
-  {
-    "it": "Sale",
-    "bn": "সালে",
-    "bnMeaning": "লবণ",
-    "en": "Salt"
-  },
-  {
-    "it": "Pepe",
-    "bn": "পেপে",
-    "bnMeaning": "মরিচ",
-    "en": "Pepper"
-  },
-  {
-    "it": "Olio",
-    "bn": "ওলিও",
-    "bnMeaning": "তেল",
-    "en": "Oil"
-  },
-  {
-    "it": "Aceto",
-    "bn": "আচেতো",
-    "bnMeaning": "ভিনেগার",
-    "en": "Vinegar"
-  },
-  {
-    "it": "Burro",
-    "bn": "বুরো",
-    "bnMeaning": "মাখন",
-    "en": "Butter"
-  },
-  {
-    "it": "Uovo",
-    "bn": "উওভো",
-    "bnMeaning": "ডিম",
-    "en": "Egg"
-  },
-  {
-    "it": "Farina",
-    "bn": "ফারিনা",
-    "bnMeaning": "ময়দা",
-    "en": "Flour"
-  },
-  {
-    "it": "Ricetta",
-    "bn": "রিচেত্তা",
-    "bnMeaning": "রেসিপি",
-    "en": "Recipe"
-  },
-  {
-    "it": "Sapore",
-    "bn": "সাপোরে",
-    "bnMeaning": "স্বাদ",
-    "en": "Taste"
-  },
-  {
-    "it": "Delizioso",
-    "bn": "দেলিৎসিওসো",
-    "bnMeaning": "সুস্বাদু",
-    "en": "Delicious"
-  },
-  {
-    "it": "Amaro",
-    "bn": "আমারো",
-    "bnMeaning": "তিক্ত",
-    "en": "Bitter"
-  },
-  {
-    "it": "Dolce",
-    "bn": "দোলচে",
-    "bnMeaning": "মিষ্টি",
-    "en": "Sweet"
-  },
-  {
-    "it": "Aspro",
-    "bn": "আস্প্রো",
-    "bnMeaning": "টক",
-    "en": "Sour"
-  },
-  {
-    "it": "Piccante",
-    "bn": "পিক্কান্তে",
-    "bnMeaning": "ঝাল",
-    "en": "Spicy"
-  },
-  {
-    "it": "Menu",
-    "bn": "মেনু",
-    "bnMeaning": "মেনু",
-    "en": "Menu"
-  },
-  {
-    "it": "Ordinare",
-    "bn": "ওর্দিনারে",
-    "bnMeaning": "অর্ডার করা",
-    "en": "To order"
-  },
-  {
-    "it": "Cameriere",
-    "bn": "কামেরিয়েরে",
-    "bnMeaning": "ওয়েটার",
-    "en": "Waiter"
-  },
-  {
-    "it": "Conto",
-    "bn": "কোন্তো",
-    "bnMeaning": "বিল",
-    "en": "Bill"
-  },
-  {
-    "it": "Mancia",
-    "bn": "মানচা",
-    "bnMeaning": "টিপ",
-    "en": "Tip"
-  },
-  {
-    "it": "Pagare",
-    "bn": "পাগারে",
-    "bnMeaning": "পেমেন্ট করা",
-    "en": "To pay"
-  },
-  {
-    "it": "Contanti",
-    "bn": "কোন্তান্তি",
-    "bnMeaning": "নগদ",
-    "en": "Cash"
-  },
-  {
-    "it": "Carta di credito",
-    "bn": "কার্তা দি ক্রেদিতো",
-    "bnMeaning": "ক্রেডিট কার্ড",
-    "en": "Credit card"
-  },
-  {
-    "it": "Prenotazione",
-    "bn": "প্রেনোতাৎসিওনে",
-    "bnMeaning": "বুকিং",
-    "en": "Reservation"
-  },
-  {
-    "it": "Tavolo",
-    "bn": "তাভোলো",
-    "bnMeaning": "টেবিল",
-    "en": "Table"
-  },
-  {
-    "it": "Posto",
-    "bn": "পোস্তো",
-    "bnMeaning": "আসন",
-    "en": "Seat"
-  },
-  {
-    "it": "Libero",
-    "bn": "লিবেরো",
-    "bnMeaning": "খালি",
-    "en": "Free"
-  },
-  {
-    "it": "Occupato",
-    "bn": "অক্কুপাতো",
-    "bnMeaning": "দখলে",
-    "en": "Occupied"
-  },
-  {
-    "it": "Aspettare",
-    "bn": "আস্পেত্তারে",
-    "bnMeaning": "অপেক্ষা করা",
-    "en": "To wait"
-  },
-  {
-    "it": "Fretta",
-    "bn": "ফ্রেত্তা",
-    "bnMeaning": "তাড়া",
-    "en": "Hurry"
-  },
-  {
-    "it": "Veloce",
-    "bn": "ভেলোচে",
-    "bnMeaning": "দ্রুত",
-    "en": "Fast"
-  },
-  {
-    "it": "Lento",
-    "bn": "লেন্তো",
-    "bnMeaning": "ধীর",
-    "en": "Slow"
-  },
-  {
-    "it": "Presto",
-    "bn": "প্রেস্তো",
-    "bnMeaning": "তাড়াতাড়ি",
-    "en": "Soon"
-  },
-  {
-    "it": "Tardi",
-    "bn": "তার্দি",
-    "bnMeaning": "দেরি",
-    "en": "Late"
-  },
-  {
-    "it": "Ora",
-    "bn": "ওরা",
-    "bnMeaning": "এখন",
-    "en": "Now"
-  },
-  {
-    "it": "Prima",
-    "bn": "প্রিমা",
-    "bnMeaning": "আগে",
-    "en": "Before"
-  },
-  {
-    "it": "Dopo",
-    "bn": "দোপো",
-    "bnMeaning": "পরে",
-    "en": "After"
-  },
-  {
-    "it": "Durante",
-    "bn": "দুরান্তে",
-    "bnMeaning": "সময়কালে",
-    "en": "During"
-  },
-  {
-    "it": "Mentre",
-    "bn": "মেন্ত্রে",
-    "bnMeaning": "যখন",
-    "en": "While"
-  },
-  {
-    "it": "Quando",
-    "bn": "কুয়ান্দো",
-    "bnMeaning": "কখন",
-    "en": "When"
-  },
-  {
-    "it": "Subito",
-    "bn": "সুবিতো",
-    "bnMeaning": "তৎক্ষণাৎ",
-    "en": "Immediately"
-  },
-  {
-    "it": "Già",
-    "bn": "জা",
-    "bnMeaning": "ইতিমধ্যে",
-    "en": "Already"
-  },
-  {
-    "it": "Ancora",
-    "bn": "আনকোরা",
-    "bnMeaning": "এখনো",
-    "en": "Still"
-  },
-  {
-    "it": "Non ancora",
-    "bn": "নন আনকোরা",
-    "bnMeaning": "এখনো না",
-    "en": "Not yet"
-  },
-  {
-    "it": "Finalmente",
-    "bn": "ফিনালমেন্তে",
-    "bnMeaning": "অবশেষে",
-    "en": "Finally"
-  },
-  {
-    "it": "Di nuovo",
-    "bn": "দি নুওভো",
-    "bnMeaning": "আবার",
-    "en": "Again"
-  },
-  {
-    "it": "Una volta",
-    "bn": "উনা ভোল্তা",
-    "bnMeaning": "একবার",
-    "en": "Once"
-  },
-  {
-    "it": "Due volte",
-    "bn": "দুয়ে ভোল্তে",
-    "bnMeaning": "দুইবার",
-    "en": "Twice"
-  },
-  {
-    "it": "Molte volte",
-    "bn": "মোল্তে ভোল্তে",
-    "bnMeaning": "অনেকবার",
-    "en": "Many times"
-  },
-  {
-    "it": "Raramente",
-    "bn": "রারামেন্তে",
-    "bnMeaning": "কদাচিৎ",
-    "en": "Rarely"
-  },
-  {
-    "it": "Qualche volta",
-    "bn": "কুয়ালকে ভোল্তা",
-    "bnMeaning": "মাঝে মাঝে",
-    "en": "Sometimes"
-  },
-  {
-    "it": "Ogni giorno",
-    "bn": "ওগ্নি জোর্নো",
-    "bnMeaning": "প্রতিদিন",
-    "en": "Every day"
-  },
-  {
-    "it": "Tutti i giorni",
-    "bn": "তুত্তি ই জোর্নি",
-    "bnMeaning": "সব দিন",
-    "en": "All days"
-  },
-  {
-    "it": "Una settimana",
-    "bn": "উনা সেত্তিমানা",
-    "bnMeaning": "এক সপ্তাহ",
-    "en": "One week"
-  },
-  {
-    "it": "Un mese",
-    "bn": "উন মেসে",
-    "bnMeaning": "এক মাস",
-    "en": "One month"
-  },
-  {
-    "it": "Un anno",
-    "bn": "উন আন্নো",
-    "bnMeaning": "এক বছর",
-    "en": "One year"
-  },
-  {
-    "it": "Per favore, aiutami",
-    "bn": "পের ফাভোরে, আইউতামি",
-    "bnMeaning": "দয়া করে, আমাকে সাহায্য করুন",
-    "en": "Please, help me"
-  },
-  {
-    "it": "Ho bisogno di aiuto",
-    "bn": "হো বিসোগ্নো দি আইউতো",
-    "bnMeaning": "আমার সাহায্য দরকার",
-    "en": "I need help"
-  },
-  {
-    "it": "Non so",
-    "bn": "নন সো",
-    "bnMeaning": "আমি জানি না",
-    "en": "I don't know"
-  },
-  {
-    "it": "Non è possibile",
-    "bn": "নন এ পোসিবিলে",
-    "bnMeaning": "এটা সম্ভব নয়",
-    "en": "It's not possible"
-  },
-  {
-    "it": "È possibile",
-    "bn": "এ পোসিবিলে",
-    "bnMeaning": "এটা সম্ভব",
-    "en": "It's possible"
-  },
-  {
-    "it": "Certo",
-    "bn": "চের্তো",
-    "bnMeaning": "নিশ্চয়ই",
-    "en": "Certainly"
-  },
-  {
-    "it": "Forse",
-    "bn": "ফোর্সে",
-    "bnMeaning": "হয়তো",
-    "en": "Maybe"
-  },
-  {
-    "it": "Probabilmente",
-    "bn": "প্রোবাবিলমেন্তে",
-    "bnMeaning": "সম্ভবত",
-    "en": "Probably"
-  },
-  {
-    "it": "Sicuramente",
-    "bn": "সিকুরামেন্তে",
-    "bnMeaning": "নিশ্চিতভাবে",
-    "en": "Surely"
-  },
-  {
-    "it": "Davvero",
-    "bn": "দাভেরো",
-    "bnMeaning": "সত্যিই",
-    "en": "Really"
-  },
-  {
-    "it": "Veramente",
-    "bn": "ভেরামেন্তে",
-    "bnMeaning": "সত্যিকারে",
-    "en": "Truly"
-  },
-  {
-    "it": "Naturalmente",
-    "bn": "নাতুরালমেন্তে",
-    "bnMeaning": "স্বাভাবিকভাবে",
-    "en": "Naturally"
-  },
-  {
-    "it": "Ovviamente",
-    "bn": "ওভিয়ামেন্তে",
-    "bnMeaning": "স্পষ্টতই",
-    "en": "Obviously"
-  },
-  {
-    "it": "Chiaramente",
-    "bn": "কিয়ারামেন্তে",
-    "bnMeaning": "পরিষ্কারভাবে",
-    "en": "Clearly"
-  },
-  {
-    "it": "Esattamente",
-    "bn": "এসাত্তামেন্তে",
-    "bnMeaning": "ঠিক",
-    "en": "Exactly"
-  },
-  {
-    "it": "Precisamente",
-    "bn": "প্রেচিসামেন্তে",
-    "bnMeaning": "যথাযথভাবে",
-    "en": "Precisely"
-  },
-  {
-    "it": "Completamente",
-    "bn": "কোমপ্লেতামেন্তে",
-    "bnMeaning": "সম্পূর্ণভাবে",
-    "en": "Completely"
-  },
-  {
-    "it": "Quasi",
-    "bn": "কুয়াসি",
-    "bnMeaning": "প্রায়",
-    "en": "Almost"
-  },
-  {
-    "it": "Abbastanza",
-    "bn": "আবাস্তানৎসা",
-    "bnMeaning": "যথেষ্ট",
-    "en": "Enough"
-  },
-  {
-    "it": "Troppo",
-    "bn": "ত্রোপো",
-    "bnMeaning": "খুব বেশি",
-    "en": "Too much"
-  },
-  {
-    "it": "Poco",
-    "bn": "পোকো",
-    "bnMeaning": "কম",
-    "en": "Little"
-  },
-  {
-    "it": "Molto",
-    "bn": "মোল্তো",
-    "bnMeaning": "অনেক",
-    "en": "Much"
-  },
-  {
-    "it": "Più",
-    "bn": "পিউ",
-    "bnMeaning": "আরো",
-    "en": "More"
-  },
-  {
-    "it": "Meno",
-    "bn": "মেনো",
-    "bnMeaning": "কম",
-    "en": "Less"
-  },
-  {
-    "it": "Meglio",
-    "bn": "মেল্যো",
-    "bnMeaning": "ভালো",
-    "en": "Better"
-  },
-  {
-    "it": "Peggio",
-    "bn": "পেজো",
-    "bnMeaning": "খারাপ",
-    "en": "Worse"
-  },
-  {
-    "it": "Il migliore",
-    "bn": "ইল মিল্যোরে",
-    "bnMeaning": "সবচেয়ে ভালো",
-    "en": "The best"
-  },
-  {
-    "it": "Il peggiore",
-    "bn": "ইল পেজোরে",
-    "bnMeaning": "সবচেয়ে খারাপ",
-    "en": "The worst"
-  },
-  {
-    "it": "Uguale",
-    "bn": "উগুয়ালে",
-    "bnMeaning": "সমান",
-    "en": "Equal"
-  },
-  {
-    "it": "Diverso",
-    "bn": "দিভের্সো",
-    "bnMeaning": "ভিন্ন",
-    "en": "Different"
-  },
-  {
-    "it": "Simile",
-    "bn": "সিমিলে",
-    "bnMeaning": "একই রকম",
-    "en": "Similar"
-  },
-  {
-    "it": "Stesso",
-    "bn": "স্তেসো",
-    "bnMeaning": "একই",
-    "en": "Same"
+    "it": "Ho sete.",
+    "bn": "হো সেতে।",
+    "bnMeaning": "আমার তৃষ্ণা পেয়েছে।",
+    "en": "I am thirsty."
   }
 ]
