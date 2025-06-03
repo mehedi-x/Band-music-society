@@ -7,159 +7,334 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
       <select id="language-select">
-  <option value="">Select Language</option>
+        <option value="">Select Language</option>
 
-  <!-- 🟦 Schengen Countries -->
-  <option value="austria">🇦🇹 Austria</option>
-  <option value="belgium">🇧🇪 Belgium</option>
-  <option value="czech">🇨🇿 Czech Republic</option>
-  <option value="denmark">🇩🇰 Denmark</option>
-  <option value="estonia">🇪🇪 Estonia</option>
-  <option value="finland">🇫🇮 Finland</option>
-  <option value="france">🇫🇷 France</option>
-  <option value="germany">🇩🇪 Germany</option>
-  <option value="greece">🇬🇷 Greece</option>
-  <option value="hungary">🇭🇺 Hungary</option>
-  <option value="iceland">🇮🇸 Iceland</option>
-  <option value="italy">🇮🇹 Italy</option>
-  <option value="latvia">🇱🇻 Latvia</option>
-  <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-  <option value="lithuania">🇱🇹 Lithuania</option>
-  <option value="luxembourg">🇱🇺 Luxembourg</option>
-  <option value="malta">🇲🇹 Malta</option>
-  <option value="netherlands">🇳🇱 Netherlands</option>
-  <option value="norway">🇳🇴 Norway</option>
-  <option value="poland">🇵🇱 Poland</option>
-  <option value="portugal">🇵🇹 Portugal</option>
-  <option value="slovakia">🇸🇰 Slovakia</option>
-  <option value="slovenia">🇸🇮 Slovenia</option>
-  <option value="spain">🇪🇸 Spain</option>
-  <option value="sweden">🇸🇪 Sweden</option>
-  <option value="switzerland">🇨🇭 Switzerland</option>
+        <!-- 🟦 Schengen Countries -->
+        <option value="austria">🇦🇹 Austria</option>
+        <option value="belgium">🇧🇪 Belgium</option>
+        <option value="czech">🇨🇿 Czech Republic</option>
+        <option value="denmark">🇩🇰 Denmark</option>
+        <option value="estonia">🇪🇪 Estonia</option>
+        <option value="finland">🇫🇮 Finland</option>
+        <option value="france">🇫🇷 France</option>
+        <option value="germany">🇩🇪 Germany</option>
+        <option value="greece">🇬🇷 Greece</option>
+        <option value="hungary">🇭🇺 Hungary</option>
+        <option value="iceland">🇮🇸 Iceland</option>
+        <option value="italy">🇮🇹 Italy</option>
+        <option value="latvia">🇱🇻 Latvia</option>
+        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+        <option value="lithuania">🇱🇹 Lithuania</option>
+        <option value="luxembourg">🇱🇺 Luxembourg</option>
+        <option value="malta">🇲🇹 Malta</option>
+        <option value="netherlands">🇳🇱 Netherlands</option>
+        <option value="norway">🇳🇴 Norway</option>
+        <option value="poland">🇵🇱 Poland</option>
+        <option value="portugal">🇵🇹 Portugal</option>
+        <option value="slovakia">🇸🇰 Slovakia</option>
+        <option value="slovenia">🇸🇮 Slovenia</option>
+        <option value="spain">🇪🇸 Spain</option>
+        <option value="sweden">🇸🇪 Sweden</option>
+        <option value="switzerland">🇨🇭 Switzerland</option>
 
-  <!-- 🟥 Non-Schengen EU/Europe Countries -->
-  <option value="russian">🇷🇺 Russian</option>
-  <option value="albania">🇦🇱 Albania</option>
-  <option value="andorra">🇦🇩 Andorra</option>
-  <option value="armenia">🇦🇲 Armenia</option>
-  <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-  <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
-  <option value="bulgaria">🇧🇬 Bulgaria</option>
-  <option value="croatia">🇭🇷 Croatia</option>
-  <option value="cyprus">🇨🇾 Cyprus</option>
-  <option value="georgia">🇬🇪 Georgia</option>
-  <option value="ireland">🇮🇪 Ireland</option>
-  <option value="kosovo">🇽🇰 Kosovo</option>
-  <option value="moldova">🇲🇩 Moldova</option>
-  <option value="monaco">🇲🇨 Monaco</option>
-  <option value="montenegro">🇲🇪 Montenegro</option>
-  <option value="northmacedonia">🇲🇰 North Macedonia</option>
-  <option value="romania">🇷🇴 Romania</option>
-  <option value="sanmarino">🇸🇲 San Marino</option>
-  <option value="serbia">🇷🇸 Serbia</option>
-  <option value="turkey">🇹🇷 Turkey</option>
-  <option value="ukraine">🇺🇦 Ukraine</option>
-  <option value="unitedkingdom">🇬🇧 United Kingdom</option>
-  <option value="vatican">🇻🇦 Vatican City</option>
-</select>
+        <!-- 🟥 Non-Schengen EU/Europe Countries -->
+        <option value="russian">🇷🇺 Russian</option>
+        <option value="albania">🇦🇱 Albania</option>
+        <option value="andorra">🇦🇩 Andorra</option>
+        <option value="armenia">🇦🇲 Armenia</option>
+        <option value="azerbaijan">🇦🇿 Azerbaijan</option>
+        <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
+        <option value="bulgaria">🇧🇬 Bulgaria</option>
+        <option value="croatia">🇭🇷 Croatia</option>
+        <option value="cyprus">🇨🇾 Cyprus</option>
+        <option value="georgia">🇬🇪 Georgia</option>
+        <option value="ireland">🇮🇪 Ireland</option>
+        <option value="kosovo">🇽🇰 Kosovo</option>
+        <option value="moldova">🇲🇩 Moldova</option>
+        <option value="monaco">🇲🇨 Monaco</option>
+        <option value="montenegro">🇲🇪 Montenegro</option>
+        <option value="northmacedonia">🇲🇰 North Macedonia</option>
+        <option value="romania">🇷🇴 Romania</option>
+        <option value="sanmarino">🇸🇲 San Marino</option>
+        <option value="serbia">🇷🇸 Serbia</option>
+        <option value="turkey">🇹🇷 Turkey</option>
+        <option value="ukraine">🇺🇦 Ukraine</option>
+        <option value="unitedkingdom">🇬🇧 United Kingdom</option>
+        <option value="vatican">🇻🇦 Vatican City</option>
+      </select>
       <button id="mode-toggle">☀️</button>
       <button id="menu-toggle">☰</button>
     </div>
   </header>
 
-<main id="conversation-area" class="p-6 text-base transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 max-w-4xl mx-auto">
-  <!-- Enhanced Homepage -->
-  <div id="homepage-content">
-    <!-- Hero Section -->
+  <!-- Main Content Area -->
+  <main id="conversation-area" class="p-6 text-base transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 max-w-4xl mx-auto">
     
+    <!-- Homepage Content -->
+    <div id="homepage-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h2 class="hero-title">🌍 Welcome to Speak EU</h2>
+          <p class="hero-subtitle">ইউরোপের ভাষা শিখুন সহজে এবং দ্রুত - ধাপে ধাপে</p>
+          <div class="hero-features">
+            <div class="feature-card">
+              <span class="feature-icon">📚</span>
+              <h3>৪৫+ ভাষা</h3>
+              <p>ইউরোপের প্রায় সকল দেশের ভাষা</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-icon">🎯</span>
+              <h3>৩টি শিক্ষা পদ্ধতি</h3>
+              <p>শব্দভাণ্ডার, কথোপকথন ও ব্যাকরণ</p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-icon">💾</span>
+              <h3>প্রগ্রেস ট্র্যাকিং</h3>
+              <p>আপনার শেখার অগ্রগতি দেখুন</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Quick Start -->
-    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
-      <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🚀 শুরু করার জন্য করণীয়</h3>
-      <ol class="list-decimal pl-6 space-y-1">
-        <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
-        <li>আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
-        <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
-        <li>গুরুত্বপূর্ণ শব্দগুলো ফেভারিট করুন।</li>
-      </ol>
-    </section>
+      <!-- Learning Approach -->
+      <section class="learning-approach">
+        <h3 class="section-title">📈 আমাদের শিক্ষা পদ্ধতি</h3>
+        <div class="approach-steps">
+          <div class="step-card">
+            <div class="step-number">১</div>
+            <h4>শব্দভাণ্ডার</h4>
+            <p>প্রয়োজনীয় শব্দ ও উচ্চারণ শিখুন</p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-card">
+            <div class="step-number">২</div>
+            <h4>কথোপকথন</h4>
+            <p>বাস্তব পরিস্থিতিতে কথা বলা শিখুন</p>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step-card">
+            <div class="step-number">৩</div>
+            <h4>ব্যাকরণ</h4>
+            <p>সঠিক বাক্য গঠন শিখুন</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Country Flags -->
-    <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm">
-      <h3 class="text-lg font-semibold mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
-      <div class="flex flex-wrap gap-4 text-sm">
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇮🇹 ইতালি (Italian)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇪🇸 স্পেন (Spanish)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇩🇪 জার্মানি (German)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇫🇷 ফ্রান্স (French)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇬🇷 গ্রিস (Greek)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇵🇹 পর্তুগাল (Portuguese)</span>
+      <!-- Quick Start -->
+      <section class="getting-started">
+        <h3 class="section-title">🚀 শুরু করার জন্য করণীয়</h3>
+        <ol class="start-steps">
+          <li>উপরে থেকে একটি ভাষা নির্বাচন করুন</li>
+          <li>শিক্ষা পদ্ধতি (শব্দভাণ্ডার/কথোপকথন/ব্যাকরণ) বেছে নিন</li>
+          <li>ধাপে ধাপে এগিয়ে যান</li>
+          <li>গুরুত্বপূর্ণ শব্দগুলো ফেভারিট করুন</li>
+          <li>নিয়মিত অনুশীলন করুন</li>
+        </ol>
+      </section>
+
+      <!-- Country Flags -->
+      <section class="language-flags">
+        <h3 class="section-title">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
+        <div class="flag-grid">
+          <span class="flag-item" onclick="selectLanguage('italian')">
+            🇮🇹 ইতালি
+          </span>
+          <span class="flag-item" onclick="selectLanguage('spanish')">
+            🇪🇸 স্পেন
+          </span>
+          <span class="flag-item" onclick="selectLanguage('german')">
+            🇩🇪 জার্মানি
+          </span>
+          <span class="flag-item" onclick="selectLanguage('french')">
+            🇫🇷 ফ্রান্স
+          </span>
+          <span class="flag-item" onclick="selectLanguage('greek')">
+            🇬🇷 গ্রিস
+          </span>
+          <span class="flag-item" onclick="selectLanguage('portuguese')">
+            🇵🇹 পর্তুগাল
+          </span>
+        </div>
+      </section>
+
+      <!-- Join Us -->
+      <section class="social-links">
+        <h4 class="section-title">📢 আমাদের সঙ্গে যুক্ত থাকুন</h4>
+        <p>সোশ্যাল মিডিয়ায় আমাদের ফলো করুন এবং নিয়মিত আপডেট পান:</p>
+        <div class="social-buttons">
+          <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="https://t.me" target="_blank" class="social-btn telegram">
+            <i class="fab fa-telegram-plane"></i> Telegram
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Learning Mode Selector -->
+    <div id="learning-mode-selector" style="display: none;">
+      <div class="mode-header">
+        <h3>📚 শেখার পদ্ধতি নির্বাচন করুন</h3>
+        <div class="mode-buttons">
+          <button class="mode-btn active" id="vocab-mode-btn" onclick="setLearningMode('vocabulary')">
+            📖 শব্দভাণ্ডার
+            <small>মৌলিক শব্দ ও উচ্চারণ</small>
+          </button>
+          <button class="mode-btn" id="conversation-mode-btn" onclick="setLearningMode('conversation')">
+            💬 কথোপকথন
+            <small>বাস্তব পরিস্থিতির কথা</small>
+          </button>
+          <button class="mode-btn" id="grammar-mode-btn" onclick="setLearningMode('grammar')">
+            📝 ব্যাকরণ
+            <small>বাক্য গঠন ও নিয়ম</small>
+          </button>
+        </div>
       </div>
-    </section>
-
-    <!-- Join Us -->
-    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
-      <h3 class="text-lg font-semibold mb-3">📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
-      <p class="mb-2">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
-      <div class="flex gap-4 text-blue-600 dark:text-blue-300">
-        <a href="https://facebook.com" target="_blank" class="hover:underline">📘 Facebook</a>
-        <a href="https://t.me" target="_blank" class="hover:underline">📢 Telegram</a>
+      
+      <!-- Progress Tracker -->
+      <div class="progress-container">
+        <div class="progress-info">
+          <span class="progress-label">অগ্রগতি:</span>
+          <span id="progress-text">০/০</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-percentage" id="progress-percentage">০%</div>
       </div>
-    </section>
+
+      <!-- Step Navigation -->
+      <div class="step-navigation">
+        <button id="prev-step-btn" class="nav-btn" onclick="prevStep()" disabled>
+          ← পূর্ববর্তী
+        </button>
+        <span id="step-indicator" class="step-indicator">Step 1</span>
+        <button id="next-step-btn" class="nav-btn" onclick="nextStep()">
+          পরবর্তী →
+        </button>
+      </div>
+    </div>
+
+    <!-- Learning Content Area -->
+    <div id="learning-content-area" style="display: none;">
+      <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <!-- Quiz Mode -->
+    <div id="quiz-mode" style="display: none;">
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3 id="quiz-title">🎯 কুইজ টাইম!</h3>
+          <div class="quiz-progress">
+            <span id="quiz-question-number">প্রশ্ন ১/১০</span>
+            <div class="quiz-score">স্কোর: <span id="quiz-score">০</span></div>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <p id="quiz-question-text">এই শব্দের অর্থ কী?</p>
+          <div class="quiz-target-word" id="quiz-target-word">Ciao</div>
+        </div>
+        
+        <div class="quiz-options" id="quiz-options">
+          <!-- Options will be dynamically loaded -->
+        </div>
+        
+        <div class="quiz-feedback" id="quiz-feedback" style="display: none;">
+          <div class="feedback-content">
+            <span class="feedback-icon" id="feedback-icon">✅</span>
+            <span class="feedback-text" id="feedback-text">সঠিক!</span>
+          </div>
+        </div>
+        
+        <div class="quiz-actions">
+          <button id="quiz-submit-btn" class="quiz-btn primary" onclick="submitQuizAnswer()">
+            উত্তর দিন
+          </button>
+          <button id="quiz-next-btn" class="quiz-btn" onclick="nextQuizQuestion()" style="display: none;">
+            পরবর্তী প্রশ্ন
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Display -->
+    <div id="error-display" class="error-container" style="display: none;">
+      <div class="error-content">
+        <span class="error-icon">⚠️</span>
+        <div class="error-text">
+          <h3>সমস্যা হয়েছে!</h3>
+          <p id="error-message"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorites Controls -->
+    <div id="favorites-controls" style="display: none;">
+      <div class="favorites-header">
+        <h3>📋 ফেভারিট তালিকা</h3>
+        <div class="favorites-buttons">
+          <button id="show-all-btn" class="control-btn">সব দেখুন</button>
+          <button id="show-favorites-btn" class="control-btn active">ফেভারিট দেখুন</button>
+          <button id="start-quiz-btn" class="control-btn quiz-btn">🎯 কুইজ শুরু করুন</button>
+          <button id="export-favorites-btn" class="control-btn">📤 Export</button>
+          <input type="file" id="import-favorites-input" accept=".json" style="display: none;">
+          <button id="import-favorites-btn" class="control-btn">📥 Import</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Enhanced Side Menu -->
+  <div id="side-menu">
+    <button id="close-menu" title="Close menu">✖</button>
+    <h3>🌍 Speak EU</h3>
+    <ul>
+      <li><a href="#" onclick="showHomePage()">🏠 Home</a></li>
+      <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
+      <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
+      <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
+      <li><a href="#" onclick="showFavoritesPage()">❤️ Favorites</a></li>
+      <li><a href="#" onclick="showStatsPage()">📊 Learning Stats</a></li>
+      <li class="menu-divider"></li>
+      <li><a href="#" onclick="exportFavorites()">📤 Export Favorites</a></li>
+      <li><a href="#" onclick="importFavorites()">📥 Import Favorites</a></li>
+      <li><a href="#" onclick="exportProgress()">📈 Export Progress</a></li>
+      <li class="menu-divider"></li>
+      <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
+    </ul>
   </div>
 
-  <!-- Error Display -->
-  <div id="error-display" class="error-container" style="display: none;">
-    <div class="error-content">
-      <span class="error-icon">⚠️</span>
-      <div class="error-text">
-        <h3>সমস্যা হয়েছে!</h3>
-        <p id="error-message"></p>
-      </div>
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" style="display: none;">
+    <div class="loading-container">
+      <div class="loading-spinner">⏳</div>
+      <p>ডেটা লোড হচ্ছে...</p>
     </div>
   </div>
 
-  <!-- Favorites Controls -->
-  <div id="favorites-controls" style="display: none;">
-    <div class="favorites-header">
-      <h3>📋 ফেভারিট তালিকা</h3>
-      <div class="favorites-buttons">
-        <button id="show-all-btn" class="control-btn">সব দেখুন</button>
-        <button id="show-favorites-btn" class="control-btn active">ফেভারিট দেখুন</button>
-        <button id="export-favorites-btn" class="control-btn">📤 Export</button>
-        <input type="file" id="import-favorites-input" accept=".json" style="display: none;">
-        <button id="import-favorites-btn" class="control-btn">📥 Import</button>
+  <!-- Achievement Notification -->
+  <div id="achievement-notification" class="achievement-popup" style="display: none;">
+    <div class="achievement-content">
+      <div class="achievement-icon">🏆</div>
+      <div class="achievement-text">
+        <h4>অভিনন্দন!</h4>
+        <p id="achievement-message">আপনি একটি নতুন লেভেল আনলক করেছেন!</p>
       </div>
     </div>
   </div>
-</main>
-
-    <!-- Enhanced Side Menu -->
-<div id="side-menu">
-  <button id="close-menu" title="Close menu">✖</button>
-  <h3>🌍 Speak EU</h3>
-  <ul>
-    <li><a href="#" onclick="showHomePage()">🏠 Home</a></li>
-    <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
-    <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
-    <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
-    <li><a href="#" onclick="showFavoritesPage()">❤️ Favorites</a></li>
-    <li class="menu-divider"></li>
-    <li><a href="#" onclick="exportFavorites()">📤 Export Favorites</a></li>
-    <li><a href="#" onclick="importFavorites()">📥 Import Favorites</a></li>
-    <li class="menu-divider"></li>
-    <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
-  </ul>
-</div>
 
   <!-- File input for import -->
   <input type="file" id="file-import" accept=".json" style="display: none;">
 
-  <!-- Enhanced Script -->
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
