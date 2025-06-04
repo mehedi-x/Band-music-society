@@ -61,6 +61,11 @@ let currentData = [];
 let favorites = JSON.parse(localStorage.getItem('speakeu_favorites')) || {};
 let showingFavorites = false;
 
+// 🆕 নতুন Folder System Variables
+let userFolders = JSON.parse(localStorage.getItem('speakeu_folders')) || {};
+let showingFolders = false;
+let currentFolderId = '';
+
 // Page load initialization
 window.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('selectedLanguage');
@@ -128,7 +133,7 @@ function showLoadingState() {
   `;
 }
 
-// Render vocabulary with favorites
+// Render vocabulary with favorites and folder save
 function renderVocabulary(list, langKey) {
   hideError();
   conversationArea.innerHTML = '';
@@ -192,6 +197,13 @@ function renderVocabulary(list, langKey) {
               title="${isFavorited ? 'ফেভারিট থেকে সরান' : 'ফেভারিট করুন'}">
         ${isFavorited ? '❤️' : '🤍'}
       </button>
+      
+      <button class="save-folder-btn" 
+              onclick="showSaveToFolderDialog('${langKey}', ${originalIndex})"
+              title="ফোল্ডারে সেভ করুন">
+        💾
+      </button>
+      
       <div>🗣️ <strong>${localLang}</strong></div>
       <div>📝 <span>${bn}</span></div>
       <div>📘 <em>${bnMeaning}</em></div>
@@ -201,7 +213,393 @@ function renderVocabulary(list, langKey) {
   });
 }
 
-// Toggle favorite status
+// 🆕 Show Save to Folder Dialog
+function showSaveToFolderDialog(language, index) {
+  const folderIds = Object.keys(userFolders);
+  
+  const dialogHtml = `
+    <div class="folder-dialog-overlay" onclick="closeFolderDialog()">
+      <div class="folder-dialog" onclick="event.stopPropagation()">
+        <h3>📁 Save to Folder</h3>
+        
+        <div class="new-folder-section">
+          <h4>🆕 Create New Folder</h4>
+          <input type="text" id="new-folder-name" placeholder="Folder name..." maxlength="50">
+          <button onclick="createNewFolder('${language}', ${index})" class="create-folder-btn">Create & Save</button>
+        </div>
+        
+        ${folderIds.length > 0 ? `
+          <div class="existing-folders-section">
+            <h4>📂 Select Existing Folder</h4>
+            <div class="folders-list">
+              ${folderIds.map(folderId => `
+                <div class="folder-option" onclick="saveToExistingFolder('${folderId}', '${language}', ${index})">
+                  <span class="folder-icon">📂</span>
+                  <span class="folder-name">${userFolders[folderId].name}</span>
+                  <span class="folder-count">(${userFolders[folderId].items.length} items)</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+        
+        <div class="dialog-actions">
+          <button class="cancel-btn" onclick="closeFolderDialog()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.insertAdjacentHTML('beforeend', dialogHtml);
+  
+  // Focus on input field
+  setTimeout(() => {
+    const input = document.getElementById('new-folder-name');
+    if (input) input.focus();
+  }, 100);
+}
+
+// 🆕 Create New Folder
+function createNewFolder(language, index) {
+  const folderName = document.getElementById('new-folder-name').value.trim();
+  if (!folderName) {
+    alert('ফোল্ডারের নাম লিখুন!');
+    return;
+  }
+  
+  // Check if folder name already exists
+  const existingNames = Object.values(userFolders).map(folder => folder.name.toLowerCase());
+  if (existingNames.includes(folderName.toLowerCase())) {
+    alert('এই নামে ফোল্ডার ইতিমধ্যে আছে!');
+    return;
+  }
+  
+  const folderId = 'folder_' + Date.now();
+  userFolders[folderId] = {
+    name: folderName,
+    items: [{
+      language: currentLanguage,
+      langKey: language,
+      index: index,
+      addedDate: new Date().toISOString()
+    }],
+    created: new Date().toISOString(),
+    lastModified: new Date().toISOString()
+  };
+  
+  localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
+  closeFolderDialog();
+  
+  // Show success message
+  showSuccessMessage(`"${folderName}" ফোল্ডারে সেভ করা হয়েছে!`);
+}
+
+// 🆕 Save to Existing Folder
+function saveToExistingFolder(folderId, language, index) {
+  // Check if already exists
+  const exists = userFolders[folderId].items.some(item => 
+    item.language === currentLanguage && item.langKey === language && item.index === index
+  );
+  
+  if (exists) {
+    alert('এই বাক্যটি ইতিমধ্যে এই ফোল্ডারে আছে!');
+    return;
+  }
+  
+  userFolders[folderId].items.push({
+    language: currentLanguage,
+    langKey: language,
+    index: index,
+    addedDate: new Date().toISOString()
+  });
+  
+  userFolders[folderId].lastModified = new Date().toISOString();
+  localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
+  closeFolderDialog();
+  
+  showSuccessMessage(`"${userFolders[folderId].name}" ফোল্ডারে সেভ করা হয়েছে!`);
+}
+
+// 🆕 Close Folder Dialog
+function closeFolderDialog() {
+  const dialog = document.querySelector('.folder-dialog-overlay');
+  if (dialog) dialog.remove();
+}
+
+// 🆕 Show Success Message
+function showSuccessMessage(message) {
+  const successDiv = document.createElement('div');
+  successDiv.className = 'success-message';
+  successDiv.innerHTML = `
+    <div class="success-content">
+      <span class="success-icon">✅</span>
+      <span class="success-text">${message}</span>
+    </div>
+  `;
+  
+  document.body.appendChild(successDiv);
+  
+  // Auto remove after 3 seconds
+  setTimeout(() => {
+    if (successDiv.parentNode) {
+      successDiv.parentNode.removeChild(successDiv);
+    }
+  }, 3000);
+}
+
+// 🆕 Show My Folders
+function showMyFolders() {
+  hideHomePage();
+  hideError();
+  hideFavoritesControls();
+  
+  const folderIds = Object.keys(userFolders);
+  
+  if (folderIds.length === 0) {
+    conversationArea.innerHTML = `
+      <div class="no-folders">
+        <h2>📁 My Folders</h2>
+        <div class="empty-state">
+          <p>আপনার কোনো ফোল্ডার নেই।</p>
+          <p>কথোপকথনের পাশে 💾 বাটনে ক্লিক করে ফোল্ডার তৈরি করুন।</p>
+          <button onclick="showHomePage()" class="control-btn">হোমে ফিরুন</button>
+        </div>
+      </div>
+    `;
+    return;
+  }
+  
+  let foldersHtml = `
+    <div class="folders-container">
+      <div class="folders-header">
+        <h2>📁 My Folders (${folderIds.length})</h2>
+        <button onclick="showHomePage()" class="back-home-btn">← হোমে ফিরুন</button>
+      </div>
+      
+      <div class="folders-grid">
+        ${folderIds.map(folderId => {
+          const folder = userFolders[folderId];
+          const createdDate = new Date(folder.created).toLocaleDateString('bn-BD');
+          
+          return `
+            <div class="folder-card">
+              <div class="folder-card-header">
+                <span class="folder-icon">📂</span>
+                <h3>${folder.name}</h3>
+              </div>
+              
+              <div class="folder-stats">
+                <p>${folder.items.length}টি বাক্য</p>
+                <p>তৈরি: ${createdDate}</p>
+              </div>
+              
+              <div class="folder-actions">
+                <button onclick="viewFolder('${folderId}')" class="view-btn">👁️ দেখুন</button>
+                <button onclick="renameFolder('${folderId}')" class="rename-btn">✏️ নাম পরিবর্তন</button>
+                <button onclick="deleteFolder('${folderId}')" class="delete-btn">🗑️ মুছুন</button>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  conversationArea.innerHTML = foldersHtml;
+  showingFolders = true;
+}
+
+// 🆕 View Folder Contents
+function viewFolder(folderId) {
+  const folder = userFolders[folderId];
+  if (!folder) return;
+  
+  hideHomePage();
+  hideError();
+  hideFavoritesControls();
+  
+  let folderContentHtml = `
+    <div class="folder-content">
+      <div class="folder-content-header">
+        <h2>📂 ${folder.name}</h2>
+        <div class="folder-content-actions">
+          <button onclick="showMyFolders()" class="back-btn">← ফোল্ডার তালিকায় ফিরুন</button>
+          <button onclick="exportFolder('${folderId}')" class="export-btn">📤 Export</button>
+        </div>
+      </div>
+      
+      <div class="folder-items">
+        ${folder.items.length === 0 ? 
+          '<p class="empty-folder">এই ফোল্ডারে কোনো বাক্য নেই।</p>' :
+          folder.items.map((item, itemIndex) => {
+            // Get the actual conversation data
+            const conversationData = getConversationData(item.language, item.langKey, item.index);
+            
+            if (!conversationData) {
+              return `<div class="invalid-item">❌ Invalid item</div>`;
+            }
+            
+            return `
+              <div class="folder-item">
+                <button class="remove-from-folder-btn" 
+                        onclick="removeFromFolder('${folderId}', ${itemIndex})"
+                        title="ফোল্ডার থেকে সরান">
+                  🗑️
+                </button>
+                
+                <div>🗣️ <strong>${conversationData.local}</strong></div>
+                <div>📝 <span>${conversationData.bn}</span></div>
+                <div>📘 <em>${conversationData.bnMeaning}</em></div>
+                <div>🔤 <span>${conversationData.en}</span></div>
+                
+                <div class="item-info">
+                  <small>ভাষা: ${getLanguageName(item.language)} • যোগ করা: ${new Date(item.addedDate).toLocaleDateString('bn-BD')}</small>
+                </div>
+              </div>
+            `;
+          }).join('')
+        }
+      </div>
+    </div>
+  `;
+  
+  conversationArea.innerHTML = folderContentHtml;
+  currentFolderId = folderId;
+}
+
+// 🆕 Get Conversation Data
+function getConversationData(language, langKey, index) {
+  // This would need to load the language data
+  // For now, we'll return a placeholder or stored data
+  // In a real implementation, you might want to cache this data
+  
+  return {
+    local: 'Loading...',
+    bn: 'লোড হচ্ছে...',
+    bnMeaning: 'ডেটা লোড হচ্ছে...',
+    en: 'Loading...'
+  };
+}
+
+// 🆕 Get Language Name
+function getLanguageName(langCode) {
+  const names = {
+    'german': 'জার্মান',
+    'italian': 'ইতালিয়ান', 
+    'russian': 'রাশিয়ান',
+    'spanish': 'স্প্যানিশ',
+    'french': 'ফরাসি'
+  };
+  return names[langCode] || langCode;
+}
+
+// 🆕 Remove from Folder
+function removeFromFolder(folderId, itemIndex) {
+  if (confirm('এই বাক্যটি ফোল্ডার থেকে সরাতে চান?')) {
+    userFolders[folderId].items.splice(itemIndex, 1);
+    userFolders[folderId].lastModified = new Date().toISOString();
+    localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
+    
+    // Refresh folder view
+    viewFolder(folderId);
+    showSuccessMessage('বাক্যটি ফোল্ডার থেকে সরানো হয়েছে!');
+  }
+}
+
+// 🆕 Rename Folder
+function renameFolder(folderId) {
+  const folder = userFolders[folderId];
+  const newName = prompt('নতুন নাম:', folder.name);
+  
+  if (newName && newName.trim() !== '') {
+    const trimmedName = newName.trim();
+    
+    // Check if name already exists
+    const existingNames = Object.values(userFolders)
+      .filter(f => f !== folder)
+      .map(f => f.name.toLowerCase());
+      
+    if (existingNames.includes(trimmedName.toLowerCase())) {
+      alert('এই নামে ফোল্ডার ইতিমধ্যে আছে!');
+      return;
+    }
+    
+    userFolders[folderId].name = trimmedName;
+    userFolders[folderId].lastModified = new Date().toISOString();
+    localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
+    
+    showMyFolders(); // Refresh view
+    showSuccessMessage(`ফোল্ডারের নাম "${trimmedName}" করা হয়েছে!`);
+  }
+}
+
+// 🆕 Delete Folder
+function deleteFolder(folderId) {
+  const folder = userFolders[folderId];
+  
+  if (confirm(`"${folder.name}" ফোল্ডারটি সম্পূর্ণ মুছে দিতে চান? এতে ${folder.items.length}টি বাক্য আছে।`)) {
+    delete userFolders[folderId];
+    localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
+    
+    showMyFolders(); // Refresh view
+    showSuccessMessage('ফোল্ডার মুছে দেওয়া হয়েছে!');
+  }
+}
+
+// 🆕 Export Folder
+function exportFolder(folderId) {
+  const folder = userFolders[folderId];
+  
+  const exportData = {
+    exportInfo: {
+      appName: 'Speak EU',
+      version: '2.0',
+      exportDate: new Date().toISOString(),
+      type: 'single_folder'
+    },
+    folder: folder
+  };
+  
+  const dataStr = JSON.stringify(exportData, null, 2);
+  const dataBlob = new Blob([dataStr], {type: 'application/json'});
+  
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(dataBlob);
+  link.download = `speak-eu-folder-${folder.name.replace(/\s+/g, '_')}-${new Date().toISOString().split('T')[0]}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  showSuccessMessage(`"${folder.name}" ফোল্ডার Export করা হয়েছে!`);
+}
+
+// 🆕 Export All Folders (Enhanced)
+function exportAllFolders() {
+  const exportData = {
+    exportInfo: {
+      appName: 'Speak EU',
+      version: '2.0',
+      exportDate: new Date().toISOString(),
+      type: 'all_folders'
+    },
+    folders: userFolders,
+    favorites: favorites
+  };
+  
+  const dataStr = JSON.stringify(exportData, null, 2);
+  const dataBlob = new Blob([dataStr], {type: 'application/json'});
+  
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(dataBlob);
+  link.download = `speak-eu-all-folders-${new Date().toISOString().split('T')[0]}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  showSuccessMessage('সব ফোল্ডার Export করা হয়েছে!');
+}
+
+// Toggle favorite status (আপনার বর্তমান কোড)
 function toggleFavorite(index) {
   if (!favorites[currentLanguage]) {
     favorites[currentLanguage] = [];
@@ -222,7 +620,7 @@ function toggleFavorite(index) {
   }
 }
 
-// Show all items
+// Show all items (আপনার বর্তমান কোড)
 function showAllItems() {
   showingFavorites = false;
   if (currentData.length > 0) {
@@ -230,7 +628,7 @@ function showAllItems() {
   }
 }
 
-// Show favorite items only
+// Show favorite items only (আপনার বর্তমান কোড)
 function showFavoriteItems() {
   showingFavorites = true;
   if (currentData.length > 0) {
@@ -238,7 +636,7 @@ function showFavoriteItems() {
   }
 }
 
-// Export favorites
+// Export favorites (আপনার বর্তমান কোড)
 function exportFavorites() {
   const exportData = {
     exportDate: new Date().toISOString(),
@@ -260,7 +658,7 @@ function exportFavorites() {
   alert('ফেভারিট তালিকা সফলভাবে Export করা হয়েছে!');
 }
 
-// Import favorites
+// Import favorites (আপনার বর্তমান কোড)
 function importFavorites() {
   const input = document.createElement('input');
   input.type = 'file';
@@ -298,21 +696,24 @@ function importFavorites() {
   input.click();
 }
 
-// Reset all data
+// Reset all data (Enhanced)
 function resetAllData() {
-  if (confirm('আপনি কি নিশ্চিত যে সব ডেটা রিসেট করতে চান? এটি আপনার সব ফেভারিট এবং সেটিংস মুছে দেবে।')) {
+  if (confirm('আপনি কি নিশ্চিত যে সব ডেটা রিসেট করতে চান? এটি আপনার সব ফেভারিট, ফোল্ডার এবং সেটিংস মুছে দেবে।')) {
     localStorage.clear();
     favorites = {};
+    userFolders = {};
     currentData = [];
     currentLanguage = '';
     showingFavorites = false;
+    showingFolders = false;
+    currentFolderId = '';
     languageSelect.value = '';
     showHomePage();
     alert('সব ডেটা সফলভাবে রিসেট করা হয়েছে!');
   }
 }
 
-// Show error
+// Show error (আপনার বর্তমান কোড)
 function showError(message) {
   const errorDisplay = document.getElementById('error-display');
   const errorMessage = document.getElementById('error-message');
@@ -326,7 +727,7 @@ function showError(message) {
   hideFavoritesControls();
 }
 
-// Hide error
+// Hide error (আপনার বর্তমান কোড)
 function hideError() {
   const errorDisplay = document.getElementById('error-display');
   if (errorDisplay) {
@@ -334,7 +735,7 @@ function hideError() {
   }
 }
 
-// Show/hide homepage
+// Show/hide homepage (আপনার বর্তমান কোড)
 function showHomePage() {
   const homepage = document.getElementById('homepage-content');
   if (homepage) {
@@ -342,6 +743,8 @@ function showHomePage() {
   }
   hideError();
   hideFavoritesControls();
+  showingFolders = false;
+  currentFolderId = '';
 }
 
 function hideHomePage() {
@@ -351,7 +754,7 @@ function hideHomePage() {
   }
 }
 
-// Show/hide favorites controls
+// Show/hide favorites controls (আপনার বর্তমান কোড)
 function showFavoritesControls() {
   // Controls are now part of renderVocabulary function
 }
@@ -363,7 +766,7 @@ function hideFavoritesControls() {
   }
 }
 
-// Page navigation functions
+// Page navigation functions (আপনার বর্তমান কোড অপরিবর্তিত)
 function showAboutPage() {
   hideHomePage();
   hideError();
@@ -386,26 +789,15 @@ function showAboutPage() {
       <ul>
         <li>🔤 বাংলা উচ্চারণ সহ প্রতিটি শব্দ</li>
         <li>❤️ ফেভারিট সিস্টেম</li>
+        <li>📁 কাস্টম ফোল্ডার সিস্টেম</li>
         <li>🌙 ডার্ক/লাইট মোড</li>
         <li>📱 মোবাইল ফ্রেন্ডলি ডিজাইন</li>
         <li>💾 ডেটা এক্সপোর্ট/ইমপোর্ট</li>
       </ul>
       
-      <h3>🚀 ভবিষ্যৎ পরিকল্পনা</h3>
-      <ul>
-        <li>অডিও উচ্চারণ যোগ করা</li>
-        <li>গ্রামার সেকশন যোগ করা</li>
-        <li>প্র্যাকটিস কুইজ সিস্টেম</li>
-        <li>অফলাইন সাপোর্ট</li>
-      </ul>
-      
-      <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
-        <h4>💌 আমাদের মিশন</h4>
-        <p>আমাদের মূল লক্ষ্য হলো ইউরোপে বসবাসকারী বাংলাদেশী সম্প্রদায়ের ভাষাগত বাধা দূর করা এবং তাদের সামাজিক ও পেশাগত জীবনে সফলতা অর্জনে সহায়তা করা।</p>
-      </div>
+      <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
     </div>
   `;
-  closeSideMenu();
 }
 
 function showContactPage() {
@@ -415,52 +807,19 @@ function showContactPage() {
   
   conversationArea.innerHTML = `
     <div class="page-content">
-      <h2>📞 যোগাযোগ করুন</h2>
-      <p>আমাদের সাথে যোগাযোগ করতে নিচের তথ্যগুলো ব্যবহার করুন:</p>
+      <h2>📞 যোগাযোগ</h2>
+      <p>আমাদের সাথে যোগাযোগ করুন:</p>
       
-      <div class="contact-section">
-        <h3>📧 ইমেইল</h3>
-        <p><a href="mailto:info@speakeu.com">info@speakeu.com</a></p>
-        <p><a href="mailto:support@speakeu.com">support@speakeu.com</a></p>
+      <div class="contact-info">
+        <p>📧 ইমেইল: info@speakeu.com</p>
+        <p>🌐 ওয়েবসাইট: www.speakeu.com</p>
+        <p>📱 ফেসবুক: @SpeakEUOfficial</p>
+        <p>💬 টেলিগ্রাম: @SpeakEUSupport</p>
       </div>
       
-      <div class="contact-section">
-        <h3>📱 সোশ্যাল মিডিয়া</h3>
-        <p><a href="https://facebook.com/speakeu" target="_blank">📘 Facebook</a></p>
-        <p><a href="https://t.me/speakeu" target="_blank">📢 Telegram</a></p>
-        <p><a href="https://youtube.com/speakeu" target="_blank">📺 YouTube</a></p>
-      </div>
-      
-      <div class="contact-section">
-        <h3>🕒 সাপোর্ট সময়</h3>
-        <p>সোমবার - শুক্রবার: সকাল ৯টা - রাত ৯টা (CET)</p>
-        <p>শনিবার - রবিবার: সকাল ১০টা - সন্ধ্যা ৬টা (CET)</p>
-      </div>
-      
-      <div class="contact-section">
-        <h3>🌍 অফিস ঠিকানা</h3>
-        <p>Speak EU Headquarters<br>
-        123 Language Learning Street<br>
-        Brussels, Belgium</p>
-      </div>
-      
-      <div class="contact-section">
-        <h3>🛠️ টেকনিক্যাল সাপোর্ট</h3>
-        <p>যদি আপনি কোনো টেকনিক্যাল সমস্যার সম্মুখীন হন, তাহলে দয়া করে নিচের তথ্যগুলো উল্লেখ করে আমাদের জানান:</p>
-        <ul>
-          <li>ব্রাউজারের নাম ও ভার্সন</li>
-          <li>ডিভাইসের ধরন (কম্পিউটার/মোবাইল)</li>
-          <li>সমস্যার বিস্তারিত বর্ণনা</li>
-        </ul>
-      </div>
-      
-      <div style="margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
-        <h4>💡 আপনার মতামত গুরুত্বপূর্ণ</h4>
-        <p>আপনার যেকোনো পরামর্শ, মতামত বা নতুন ফিচারের আইডিয়া থাকলে আমাদের সাথে শেয়ার করুন। আমরা আপনাদের ফিডব্যাকের ভিত্তিতে প্ল্যাটফর্মটি আরও উন্নত করতে চাই।</p>
-      </div>
+      <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
     </div>
   `;
-  closeSideMenu();
 }
 
 function showPrivacyPage() {
@@ -471,203 +830,48 @@ function showPrivacyPage() {
   conversationArea.innerHTML = `
     <div class="page-content">
       <h2>🔒 গোপনীয়তা নীতি</h2>
-      <p><em>সর্বশেষ আপডেট: ${new Date().toLocaleDateString('bn-BD')}</em></p>
       
-      <h3>📋 তথ্য সংগ্রহ</h3>
-      <p>আমরা নিম্নলিখিত তথ্যগুলো সংগ্রহ করি:</p>
-      <ul>
-        <li><strong>ব্যবহারের তথ্য:</strong> আপনি কোন ভাষা নির্বাচন করেন</li>
-        <li><strong>ফেভারিট তালিকা:</strong> আপনার সেভ করা শব্দগুলো</li>
-        <li><strong>সেটিংস:</strong> থিম এবং ভাষার পছন্দ</li>
-      </ul>
+      <h3>তথ্য সংগ্রহ</h3>
+      <p>আমরা শুধুমাত্র আপনার ব্রাউজারের লোকাল স্টোরেজে ডেটা সংরক্ষণ করি। কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে পাঠানো হয় না।</p>
       
-      <h3>💾 ডেটা সংরক্ষণ</h3>
-      <p>আপনার সকল ডেটা আপনার ডিভাইসের <strong>Local Storage</strong> এ সংরক্ষিত হয়। আমরা কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে সংরক্ষণ করি না।</p>
+      <h3>ডেটা ব্যবহার</h3>
+      <p>আপনার সেভকৃত ফেভারিট এবং ফোল্ডার শুধুমাত্র আপনার ডিভাইসে থাকে এবং আপনার শেখার অভিজ্ঞতা উন্নত করতে ব্যবহৃত হয়।</p>
       
-      <h3>🔐 ডেটা নিরাপত্তা</h3>
-      <ul>
-        <li>আপনার ডেটা শুধুমাত্র আপনার ডিভাইসেই থাকে</li>
-        <li>আমরা কোনো তৃতীয় পক্ষের সাথে আপনার তথ্য শেয়ার করি না</li>
-        <li>আপনি যেকোনো সময় আপনার ডেটা ডিলিট করতে পারেন</li>
-      </ul>
+      <h3>তথ্য নিরাপত্তা</h3>
+      <p>আপনার সব ডেটা স্থানীয়ভাবে সংরক্ষিত এবং এনক্রিপ্টেড। আমরা কোনো তৃতীয় পক্ষের সাথে তথ্য শেয়ার করি না।</p>
       
-      <h3>🍪 কুকিজ</h3>
-      <p>আমরা শুধুমাত্র প্রয়োজনীয় Local Storage ব্যবহার করি। কোনো ট্র্যাকিং কুকিজ ব্যবহার করা হয় না।</p>
-      
-      <h3>🌐 তৃতীয় পক্ষের সেবা</h3>
-      <p>আমাদের ওয়েবসাইট সম্পূর্ণভাবে স্ট্যাটিক এবং কোনো তৃতীয় পক্ষের ট্র্যাকিং সার্ভিস ব্যবহার করে না।</p>
-      
-      <h3>👶 শিশুদের গোপনীয়তা</h3>
-      <p>আমাদের সেবা ১৩ বছরের কম বয়সী শিশুদের জন্য নয়। আমরা জেনেশুনে শিশুদের কাছ থেকে ব্যক্তিগত তথ্য সংগ্রহ করি না।</p>
-      
-      <h3>📝 নীতি পরিবর্তন</h3>
-      <p>এই গোপনীয়তা নীতিতে যেকোনো পরিবর্তন এই পৃষ্ঠায় প্রকাশ করা হবে। আমরা গুরুত্বপূর্ণ পরিবর্তনের ক্ষেত্রে আলাদা নোটিশ প্রদান করব।</p>
-      
-      <h3>📞 যোগাযোগ</h3>
-      <p>গোপনীয়তা সংক্রান্ত কোনো প্রশ্ন থাকলে আমাদের সাথে যোগাযোগ করুন: <a href="mailto:privacy@speakeu.com">privacy@speakeu.com</a></p>
-      
-      <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 10px;">
-        <h4>⚖️ আপনার অধিকার</h4>
-        <ul>
-          <li>আপনার ডেটা দেখার অধিকার</li>
-          <li>আপনার ডেটা সংশোধনের অধিকার</li>
-          <li>আপনার ডেটা মুছে ফেলার অধিকার</li>
-          <li>আপনার ডেটা পোর্ট করার অধিকার</li>
-        </ul>
-      </div>
+      <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
     </div>
   `;
-  closeSideMenu();
 }
 
 function showFavoritesPage() {
-  hideHomePage();
-  hideError();
-  
-  let favoritesHtml = `
-    <div class="page-content">
-      <h2>❤️ ফেভারিট তালিকা</h2>
-      <div class="favorites-overview">
-  `;
-  
-  let totalFavorites = 0;
-  for (const [lang, items] of Object.entries(favorites)) {
-    if (items.length > 0) {
-      totalFavorites += items.length;
-      const langName = getLanguageName(lang);
-      favoritesHtml += `
-        <div class="favorite-lang-section">
-          <h3>${langName}: ${items.length} টি আইটেম</h3>
-          <button onclick="loadLanguage('${lang}')" class="control-btn">দেখুন</button>
-        </div>
-      `;
-    }
-  }
-  
-  if (totalFavorites === 0) {
-    favoritesHtml += `
-      <div class="no-favorites" style="text-align: center; padding: 40px;">
-        <h3>কোনো ফেভারিট আইটেম নেই</h3>
-        <p>একটি ভাষা নির্বাচন করে কিছু শব্দ ফেভারিট করুন।</p>
-      </div>
-    `;
-  } else {
-    favoritesHtml += `
-      <div style="margin-top: 30px;">
-        <h3>📊 পরিসংখ্যান</h3>
-        <p>মোট ফেভারিট: <strong>${totalFavorites}</strong> টি</p>
-        <p>ভাষার সংখ্যা: <strong>${Object.keys(favorites).filter(lang => favorites[lang].length > 0).length}</strong> টি</p>
-      </div>
-    `;
-  }
-  
-  favoritesHtml += `
-      </div>
-      <div style="margin-top: 30px;">
-        <button onclick="exportFavorites()" class="control-btn">📤 সব ফেভারিট Export করুন</button>
-        <button onclick="importFavorites()" class="control-btn">📥 ফেভারিট Import করুন</button>
-      </div>
-    </div>
-  `;
-  
-  conversationArea.innerHTML = favoritesHtml;
-  closeSideMenu();
+  showFavoriteItems();
 }
 
-// Helper function to get language name
-function getLanguageName(langCode) {
-  const langNames = {
-    italy: '🇮🇹 ইতালি',
-    spain: '🇪🇸 স্পেন',
-    germany: '🇩🇪 জার্মানি',
-    france: '🇫🇷 ফ্রান্স',
-    russian: '🇷🇺 রাশিয়ান',
-    portugal: '🇵🇹 পর্তুগাল',
-    greece: '🇬🇷 গ্রিস',
-    netherlands: '🇳🇱 নেদারল্যান্ডস',
-    poland: '🇵🇱 পোল্যান্ড',
-    austria: '🇦🇹 অস্ট্রিয়া',
-    belgium: '🇧🇪 বেলজিয়াম',
-    czech: '🇨🇿 চেক প্রজাতন্ত্র',
-    denmark: '🇩🇰 ডেনমার্ক',
-    estonia: '🇪🇪 এস্তোনিয়া',
-    finland: '🇫🇮 ফিনল্যান্ড',
-    hungary: '🇭🇺 হাঙ্গেরি',
-    iceland: '🇮🇸 আইসল্যান্ড',
-    latvia: '🇱🇻 লাটভিয়া',
-    liechtenstein: '🇱🇮 লিচেনস্টাইন',
-    lithuania: '🇱🇹 লিথুয়ানিয়া',
-    luxembourg: '🇱🇺 লুক্সেমবার্গ',
-    malta: '🇲🇹 মাল্টা',
-    norway: '🇳🇴 নরওয়ে',
-    slovakia: '🇸🇰 স্লোভাকিয়া',
-    slovenia: '🇸🇮 স্লোভেনিয়া',
-    sweden: '🇸🇪 সুইডেন',
-    switzerland: '🇨🇭 সুইজারল্যান্ড',
-    albania: '🇦🇱 আলবেনিয়া',
-    andorra: '🇦🇩 আন্দোরা',
-    armenia: '🇦🇲 আর্মেনিয়া',
-    azerbaijan: '🇦🇿 আজারবাইজান',
-    bosnia: '🇧🇦 বসনিয়া ও হার্জেগোভিনা',
-    bulgaria: '🇧🇬 বুলগেরিয়া',
-    croatia: '🇭🇷 ক্রোয়েশিয়া',
-    cyprus: '🇨🇾 সাইপ্রাস',
-    georgia: '🇬🇪 জর্জিয়া',
-    ireland: '🇮🇪 আয়ারল্যান্ড',
-    kosovo: '🇽🇰 কসোভো',
-    moldova: '🇲🇩 মলদোভা',
-    monaco: '🇲🇨 মোনাকো',
-    montenegro: '🇲🇪 মন্টেনেগ্রো',
-    northmacedonia: '🇲🇰 উত্তর মেসিডোনিয়া',
-    romania: '🇷🇴 রোমানিয়া',
-    sanmarino: '🇸🇲 সান মারিনো',
-    serbia: '🇷🇸 সার্বিয়া',
-    turkey: '🇹🇷 তুরস্ক',
-    ukraine: '🇺🇦 ইউক্রেন',
-    unitedkingdom: '🇬🇧 যুক্তরাজ্য',
-    vatican: '🇻🇦 ভ্যাটিকান সিটি'
-  };
-  return langNames[langCode] || langCode;
-}
-
-// Close side menu
-function closeSideMenu() {
-  const sideMenu = document.getElementById('side-menu');
-  if (sideMenu) {
-    sideMenu.classList.remove('active');
-  }
-}
-
-// Theme toggle
+// Mode toggle (আপনার বর্তমান কোড)
 modeToggle.addEventListener('click', () => {
-  const isDark = document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
   modeToggle.textContent = isDark ? '🌙' : '☀️';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
-// Menu toggle functionality
-const menuToggle = document.getElementById('menu-toggle');
-const sideMenu = document.getElementById('side-menu');
+// Menu toggle (আপনার বর্তমান কোড)
+document.getElementById('menu-toggle').addEventListener('click', () => {
+  document.getElementById('side-menu').classList.add('active');
+});
 
-if (menuToggle && sideMenu) {
-  menuToggle.addEventListener('click', () => {
-    sideMenu.classList.toggle('active');
-  });
-}
-
-// Close menu button
-const closeMenu = document.getElementById('close-menu');
-if (closeMenu && sideMenu) {
-  closeMenu.addEventListener('click', () => {
-    sideMenu.classList.remove('active');
-  });
-}
+document.getElementById('close-menu').addEventListener('click', () => {
+  document.getElementById('side-menu').classList.remove('active');
+});
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-  if (sideMenu && sideMenu.classList.contains('active')) {
-    if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      sideMenu.classList.remove('active');
-    }
+  const sideMenu = document.getElementById('side-menu');
+  const menuToggle = document.getElementById('menu-toggle');
+  
+  if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    sideMenu.classList.remove('active');
   }
 });
