@@ -2,21 +2,67 @@ const languageSelect = document.getElementById('language-select');
 const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
 
-// Language code mapping
+// Language code mapping - আপনার original
 const langCodeMap = {
+  austria: 'de',
+  belgium: 'nl',
+  czech: 'cs',
+  denmark: 'da',
+  estonia: 'et',
+  finland: 'fi',
+  france: 'fr',
   germany: 'de',
+  greece: 'el',
+  hungary: 'hu',
+  iceland: 'is',
   italy: 'it',
-  russian: 'ru'
+  latvia: 'lv',
+  liechtenstein: 'de',
+  lithuania: 'lt',
+  luxembourg: 'lb',
+  malta: 'mt',
+  netherlands: 'nl',
+  norway: 'no',
+  poland: 'pl',
+  portugal: 'pt',
+  slovakia: 'sk',
+  slovenia: 'sl',
+  spain: 'es',
+  sweden: 'sv',
+  switzerland: 'de',
+  russian: 'ru',
+  albania: 'sq',
+  andorra: 'ca',
+  armenia: 'hy',
+  azerbaijan: 'az',
+  bosnia: 'bs',
+  bulgaria: 'bg',
+  croatia: 'hr',
+  cyprus: 'el',
+  georgia: 'ka',
+  ireland: 'en',
+  kosovo: 'sq',
+  moldova: 'ro',
+  monaco: 'fr',
+  montenegro: 'sr',
+  northmacedonia: 'mk',
+  romania: 'ro',
+  sanmarino: 'it',
+  serbia: 'sr',
+  turkey: 'tr',
+  ukraine: 'uk',
+  unitedkingdom: 'en',
+  vatican: 'la'
 };
 
-// Global variables
+// Global variables - Favorite removed, Folder added
 let currentLanguage = '';
 let currentData = [];
 let userFolders = JSON.parse(localStorage.getItem('speakeu_folders')) || {};
-let currentFolderId = '';
 let showingFolderContent = false;
+let currentFolderId = '';
 
-// Page load initialization
+// Page load initialization - Fixed home button issue
 window.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('selectedLanguage');
   if (savedLang) {
@@ -34,11 +80,12 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('dark-mode');
     modeToggle.textContent = '☀️';
   }
-
+  
   setupMenuToggle();
+  setupModeToggle();
 });
 
-// Setup menu toggle functionality
+// Setup menu toggle functionality - Fixed
 function setupMenuToggle() {
   const menuToggle = document.getElementById('menu-toggle');
   const sideMenu = document.getElementById('side-menu');
@@ -60,7 +107,17 @@ function setupMenuToggle() {
   });
 }
 
-// Language selection
+// Setup mode toggle - Fixed
+function setupModeToggle() {
+  modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    modeToggle.textContent = isDark ? '🌙' : '☀️';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+}
+
+// Language selection - আপনার original
 languageSelect.addEventListener('change', () => {
   const lang = languageSelect.value;
   if (!lang) {
@@ -71,7 +128,7 @@ languageSelect.addEventListener('change', () => {
   loadLanguage(lang);
 });
 
-// Load language data
+// Load language data - আপনার original
 function loadLanguage(lang) {
   currentLanguage = lang;
   showLoadingState();
@@ -89,6 +146,7 @@ function loadLanguage(lang) {
       }
       currentData = data;
       hideHomePage();
+      showFolderControls();
       renderVocabulary(data, langCodeMap[lang]);
     })
     .catch(error => {
@@ -96,7 +154,7 @@ function loadLanguage(lang) {
     });
 }
 
-// Show loading state
+// Show loading state - আপনার original
 function showLoadingState() {
   conversationArea.innerHTML = `
     <div class="loading-container" style="text-align: center; padding: 40px;">
@@ -106,7 +164,7 @@ function showLoadingState() {
   `;
 }
 
-// Render vocabulary with folder save option
+// Render vocabulary - Favorite removed, Folder save button added
 function renderVocabulary(list, langKey) {
   hideError();
   conversationArea.innerHTML = '';
@@ -116,22 +174,22 @@ function renderVocabulary(list, langKey) {
     return;
   }
 
-  // Show controls
-  const controlsHtml = `
+  // Add folder controls HTML
+  const folderControlsHtml = `
     <div id="folder-controls">
-      <div class="folder-header">
-        <h3>📋 ${showingFolderContent ? 'ফোল্ডার কন্টেন্ট' : 'সব কথোপকথন'}</h3>
-        <div class="folder-buttons">
+      <div class="favorites-header">
+        <h3>📁 ${showingFolderContent ? 'ফোল্ডার কন্টেন্ট' : 'সব কথোপকথন'}</h3>
+        <div class="favorites-buttons">
           <button id="show-all-btn" class="control-btn ${!showingFolderContent ? 'active' : ''}" onclick="showAllItems()">সব দেখুন</button>
-          <button id="show-folders-btn" class="control-btn ${showingFolderContent ? 'active' : ''}" onclick="showFolderView()">📁 ফোল্ডার দেখুন</button>
-          <button id="export-btn" class="control-btn" onclick="exportAllFolders()">📤 Export</button>
-          <button id="import-btn" class="control-btn" onclick="importFolders()">📥 Import</button>
+          <button id="show-folders-btn" class="control-btn ${showingFolderContent ? 'active' : ''}" onclick="showFolderView()">📁 ফোল্ডার</button>
+          <button id="export-folders-btn" class="control-btn" onclick="exportAllFolders()">📤 Export</button>
+          <button id="import-folders-btn" class="control-btn" onclick="importFolders()">📥 Import</button>
         </div>
       </div>
     </div>
   `;
 
-  conversationArea.innerHTML = controlsHtml;
+  conversationArea.innerHTML = folderControlsHtml;
 
   list.forEach((item, index) => {
     const localLang = item[langKey] || '—';
@@ -157,24 +215,24 @@ function renderVocabulary(list, langKey) {
   });
 }
 
-// Show Save to Folder Dialog
+// 🆕 Show Save to Folder Dialog
 function showSaveToFolderDialog(language, index) {
   const folderIds = Object.keys(userFolders);
   
   const dialogHtml = `
     <div class="folder-dialog-overlay" onclick="closeFolderDialog()">
       <div class="folder-dialog" onclick="event.stopPropagation()">
-        <h3>💾 Save to Folder</h3>
+        <h3>💾 ফোল্ডারে সেভ করুন</h3>
         
         <div class="new-folder-section">
-          <h4>🆕 Create New Folder</h4>
-          <input type="text" id="new-folder-name" placeholder="Folder name..." maxlength="50">
-          <button onclick="createNewFolder('${language}', ${index})" class="create-folder-btn">Create & Save</button>
+          <h4>🆕 নতুন ফোল্ডার তৈরি করুন</h4>
+          <input type="text" id="new-folder-name" placeholder="ফোল্ডারের নাম..." maxlength="50">
+          <button onclick="createNewFolder('${language}', ${index})" class="create-folder-btn">তৈরি করুন ও সেভ করুন</button>
         </div>
         
         ${folderIds.length > 0 ? `
           <div class="existing-folders-section">
-            <h4>📂 Select Existing Folder</h4>
+            <h4>📂 বিদ্যমান ফোল্ডার নির্বাচন করুন</h4>
             <div class="folders-list">
               ${folderIds.map(folderId => `
                 <div class="folder-option" onclick="saveToExistingFolder('${folderId}', '${language}', ${index})">
@@ -188,7 +246,7 @@ function showSaveToFolderDialog(language, index) {
         ` : ''}
         
         <div class="dialog-actions">
-          <button class="cancel-btn" onclick="closeFolderDialog()">Cancel</button>
+          <button class="cancel-btn" onclick="closeFolderDialog()">বাতিল</button>
         </div>
       </div>
     </div>
@@ -202,7 +260,7 @@ function showSaveToFolderDialog(language, index) {
   }, 100);
 }
 
-// Create New Folder
+// 🆕 Create New Folder
 function createNewFolder(language, index) {
   const folderName = document.getElementById('new-folder-name').value.trim();
   if (!folderName) {
@@ -233,7 +291,7 @@ function createNewFolder(language, index) {
   showSuccessMessage(`"${folderName}" ফোল্ডারে সেভ করা হয়েছে!`);
 }
 
-// Save to Existing Folder
+// 🆕 Save to Existing Folder
 function saveToExistingFolder(folderId, language, index) {
   const exists = userFolders[folderId].items.some(item => 
     item.language === currentLanguage && item.langKey === language && item.index === index
@@ -256,25 +314,28 @@ function saveToExistingFolder(folderId, language, index) {
   showSuccessMessage(`"${userFolders[folderId].name}" ফোল্ডারে সেভ করা হয়েছে!`);
 }
 
-// Close Folder Dialog
+// 🆕 Close Folder Dialog
 function closeFolderDialog() {
   const dialog = document.querySelector('.folder-dialog-overlay');
   if (dialog) dialog.remove();
 }
 
-// Show Folder View with Dropdown
+// 🆕 Show Folder View
 function showFolderView() {
   hideHomePage();
   hideError();
+  showingFolderContent = true;
   
   const folderIds = Object.keys(userFolders);
   
   if (folderIds.length === 0) {
     conversationArea.innerHTML = `
-      <div class="no-folders">
-        <h2>📁 কোনো ফোল্ডার নেই</h2>
-        <p>কথোপকথনের পাশে 💾 বাটনে ক্লিক করে ফোল্ডার তৈরি করুন।</p>
-        <button onclick="showAllItems()" class="control-btn">← সব কথোপকথন দেখুন</button>
+      <div class="folders-container">
+        <div class="folders-header">
+          <h2>📁 কোনো ফোল্ডার নেই</h2>
+          <p>কথোপকথনের পাশে 💾 বাটনে ক্লিক করে ফোল্ডার তৈরি করুন।</p>
+          <button onclick="showAllItems()" class="control-btn">← সব কথোপকথন দেখুন</button>
+        </div>
       </div>
     `;
     return;
@@ -303,10 +364,9 @@ function showFolderView() {
   `;
   
   conversationArea.innerHTML = foldersHtml;
-  showingFolderContent = true;
 }
 
-// Show Selected Folder Content
+// 🆕 Show Selected Folder Content
 function showSelectedFolderContent(folderId) {
   if (!folderId) {
     document.getElementById('folder-content-area').innerHTML = '<p class="folder-instruction">উপরের dropdown থেকে একটি ফোল্ডার সিলেক্ট করুন।</p>';
@@ -355,7 +415,7 @@ function showSelectedFolderContent(folderId) {
   document.getElementById('folder-content-area').innerHTML = folderContentHtml;
 }
 
-// Get Current Conversation Data
+// 🆕 Helper Functions
 function getCurrentConversationData(language, langKey, index) {
   if (language === currentLanguage && currentData[index]) {
     const item = currentData[index];
@@ -375,17 +435,39 @@ function getCurrentConversationData(language, langKey, index) {
   };
 }
 
-// Get Language Name
 function getLanguageName(langCode) {
   const names = {
     'germany': 'জার্মান',
     'italy': 'ইতালিয়ান', 
-    'russian': 'রাশিয়ান'
+    'russian': 'রাশিয়ান',
+    'france': 'ফরাসি',
+    'spain': 'স্প্যানিশ',
+    'austria': 'অস্ট্রিয়ান',
+    'belgium': 'বেলজিয়ান',
+    'czech': 'চেক',
+    'denmark': 'ড্যানিশ',
+    'estonia': 'এস্তোনিয়ান',
+    'finland': 'ফিনিশ',
+    'greece': 'গ্রিক',
+    'hungary': 'হাঙ্গেরিয়ান',
+    'iceland': 'আইসল্যান্ডিক',
+    'latvia': 'লাটভিয়ান',
+    'liechtenstein': 'লিচেনস্টাইন',
+    'lithuania': 'লিথুয়ানিয়ান',
+    'luxembourg': 'লুক্সেমবার্গ',
+    'malta': 'মাল্টিজ',
+    'netherlands': 'ডাচ',
+    'norway': 'নরওয়েজিয়ান',
+    'poland': 'পোলিশ',
+    'portugal': 'পর্তুগিজ',
+    'slovakia': 'স্লোভাক',
+    'slovenia': 'স্লোভেনিয়ান',
+    'sweden': 'সুইডিশ',
+    'switzerland': 'সুইস'
   };
   return names[langCode] || langCode;
 }
 
-// Remove from Folder
 function removeFromFolder(folderId, itemIndex) {
   if (confirm('এই বাক্যটি ফোল্ডার থেকে সরাতে চান?')) {
     userFolders[folderId].items.splice(itemIndex, 1);
@@ -396,16 +478,6 @@ function removeFromFolder(folderId, itemIndex) {
   }
 }
 
-// Show All Items
-function showAllItems() {
-  showingFolderContent = false;
-  currentFolderId = '';
-  if (currentData.length > 0) {
-    renderVocabulary(currentData, langCodeMap[currentLanguage]);
-  }
-}
-
-// Show Success Message
 function showSuccessMessage(message) {
   const successDiv = document.createElement('div');
   successDiv.className = 'success-message';
@@ -425,7 +497,7 @@ function showSuccessMessage(message) {
   }, 3000);
 }
 
-// Export All Folders
+// 🆕 Export All Folders
 function exportAllFolders() {
   const exportData = {
     exportInfo: {
@@ -450,7 +522,7 @@ function exportAllFolders() {
   showSuccessMessage('সব ফোল্ডার Export করা হয়েছে!');
 }
 
-// Import Folders
+// 🆕 Import Folders
 function importFolders() {
   const input = document.createElement('input');
   input.type = 'file';
@@ -469,7 +541,7 @@ function importFolders() {
           userFolders = {...userFolders, ...importData.folders};
           localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
           
-          showSuccessMessage('ফোল্ডার তালিকা সফলভাবে Import করা হয়েছে!');
+          showSuccessMessage('ফোল্ডার সফলভাবে Import করা হয়েছে!');
         } else {
           throw new Error('Invalid file format');
         }
@@ -483,7 +555,17 @@ function importFolders() {
   input.click();
 }
 
-// Reset all data
+// Show all items - Modified for folder system
+function showAllItems() {
+  showingFolderContent = false;
+  if (currentData.length > 0) {
+    renderVocabulary(currentData, langCodeMap[currentLanguage]);
+  } else {
+    showHomePage();
+  }
+}
+
+// Reset all data - Updated for folders
 function resetAllData() {
   if (confirm('আপনি কি নিশ্চিত যে সব ডেটা রিসেট করতে চান? এটি আপনার সব ফোল্ডার এবং সেটিংস মুছে দেবে।')) {
     localStorage.clear();
@@ -491,22 +573,13 @@ function resetAllData() {
     currentData = [];
     currentLanguage = '';
     showingFolderContent = false;
-    currentFolderId = '';
     languageSelect.value = '';
     showHomePage();
     showSuccessMessage('সব ডেটা সফলভাবে রিসেট করা হয়েছে!');
   }
 }
 
-// Toggle dark/light mode
-function toggleMode() {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  modeToggle.textContent = isDark ? '🌙' : '☀️';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-}
-
-// Show error
+// Show error - আপনার original
 function showError(message) {
   const errorDisplay = document.getElementById('error-display');
   const errorMessage = document.getElementById('error-message');
@@ -517,9 +590,10 @@ function showError(message) {
   }
   
   hideHomePage();
+  hideFolderControls();
 }
 
-// Hide error
+// Hide error - আপনার original
 function hideError() {
   const errorDisplay = document.getElementById('error-display');
   if (errorDisplay) {
@@ -527,15 +601,23 @@ function hideError() {
   }
 }
 
-// Show/hide homepage
+// Show/hide homepage - Fixed for proper navigation
 function showHomePage() {
   const homepage = document.getElementById('homepage-content');
   if (homepage) {
     homepage.style.display = 'block';
   }
   hideError();
+  hideFolderControls();
   showingFolderContent = false;
-  currentFolderId = '';
+  
+  // Reset language selector
+  languageSelect.value = '';
+  localStorage.removeItem('selectedLanguage');
+  
+  // Clear conversation area except homepage
+  const nonHomepageElements = conversationArea.querySelectorAll(':not(#homepage-content)');
+  nonHomepageElements.forEach(el => el.remove());
 }
 
 function hideHomePage() {
@@ -545,10 +627,24 @@ function hideHomePage() {
   }
 }
 
-// Page navigation functions
+// Show/hide folder controls
+function showFolderControls() {
+  // Controls are now part of renderVocabulary function
+}
+
+function hideFolderControls() {
+  const controls = document.getElementById('folder-controls');
+  if (controls) {
+    controls.style.display = 'none';
+  }
+}
+
+// Page navigation functions - আপনার original pages + fixes
 function showAboutPage() {
   hideHomePage();
   hideError();
+  hideFolderControls();
+  showingFolderContent = false;
   
   conversationArea.innerHTML = `
     <div class="page-content">
@@ -566,13 +662,23 @@ function showAboutPage() {
       <h3>✨ বৈশিষ্ট্যসমূহ</h3>
       <ul>
         <li>🔤 বাংলা উচ্চারণ সহ প্রতিটি শব্দ</li>
-        <li>📁 কাস্টম ফোল্ডার সিস্টেম</li>
+        <li>📁 ফোল্ডার সিস্টেম</li>
         <li>🌙 ডার্ক/লাইট মোড</li>
         <li>📱 মোবাইল ফ্রেন্ডলি ডিজাইন</li>
         <li>💾 ডেটা এক্সপোর্ট/ইমপোর্ট</li>
       </ul>
       
-      <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
+      <h3>🚀 ভবিষ্যৎ পরিকল্পনা</h3>
+      <ul>
+        <li>অডিও উচ্চারণ যোগ করা</li>
+        <li>ব্যাকরণ শিক্ষার সুবিধা</li>
+        <li>প্রগ্রেস ট্র্যাকিং</li>
+        <li>অনলাইন কমিউনিটি</li>
+      </ul>
+      
+      <div style="margin-top: 30px;">
+        <button onclick="showHomePage()" class="control-btn">🏠 হোমে ফিরুন</button>
+      </div>
     </div>
   `;
 }
@@ -580,20 +686,29 @@ function showAboutPage() {
 function showContactPage() {
   hideHomePage();
   hideError();
+  hideFolderControls();
+  showingFolderContent = false;
   
   conversationArea.innerHTML = `
     <div class="page-content">
-      <h2>📞 যোগাযোগ</h2>
-      <p>আমাদের সাথে যোগাযোগ করুন:</p>
+      <h2>📞 যোগাযোগ করুন</h2>
+      <p>আমাদের সাথে যোগাযোগ করার জন্য নিচের তথ্যগুলো ব্যবহার করুন:</p>
       
       <div class="contact-info">
-        <p>📧 ইমেইল: info@speakeu.com</p>
-        <p>🌐 ওয়েবসাইট: www.speakeu.com</p>
-        <p>📱 ফেসবুক: @SpeakEUOfficial</p>
-        <p>💬 টেলিগ্রাম: @SpeakEUSupport</p>
+        <h3>📧 ইমেইল</h3>
+        <p>support@speakeu.com</p>
+        
+        <h3>📱 সোশ্যাল মিডিয়া</h3>
+        <p>Facebook: @SpeakEUOfficial</p>
+        <p>Telegram: @SpeakEUSupport</p>
+        
+        <h3>💬 ফিডব্যাক</h3>
+        <p>আপনার মতামত ও পরামর্শ আমাদের কাছে অত্যন্ত গুরুত্বপূর্ণ। দয়া করে আমাদের জানান কিভাবে আমরা আরও ভালো সেবা দিতে পারি।</p>
       </div>
       
-      <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
+      <div style="margin-top: 30px;">
+        <button onclick="showHomePage()" class="control-btn">🏠 হোমে ফিরুন</button>
+      </div>
     </div>
   `;
 }
@@ -601,21 +716,28 @@ function showContactPage() {
 function showPrivacyPage() {
   hideHomePage();
   hideError();
+  hideFolderControls();
+  showingFolderContent = false;
   
   conversationArea.innerHTML = `
     <div class="page-content">
       <h2>🔒 গোপনীয়তা নীতি</h2>
       
-      <h3>তথ্য সংগ্রহ</h3>
-      <p>আমরা শুধুমাত্র আপনার ব্রাউজারের localStorage এ ডেটা সংরক্ষণ করি। কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে পাঠানো হয় না।</p>
+      <h3>ডেটা সংগ্রহ</h3>
+      <p>আমরা শুধুমাত্র আপনার ব্রাউজারের Local Storage এ ডেটা সংরক্ষণ করি। কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে পাঠানো হয় না।</p>
       
       <h3>ডেটা ব্যবহার</h3>
-      <p>আপনার সংরক্ষিত ফোল্ডার এবং ভাষা পছন্দ শুধুমাত্র আপনার ডিভাইসে থাকে এবং আপনার শিক্ষার অভিজ্ঞতা উন্নত করতে ব্যবহৃত হয়।</p>
+      <p>আপনার সংরক্ষিত ফোল্ডার এবং সেটিংস শুধুমাত্র আপনার ডিভাইসে থাকে এবং আপনার অভিজ্ঞতা উন্নত করতে ব্যবহৃত হয়।</p>
       
-      <h3>তৃতীয় পক্ষের সাথে শেয়ারিং</h3>
-      <p>আমরা আপনার কোনো ডেটা তৃতীয় পক্ষের সাথে শেয়ার করি না।</p>
+      <h3>তৃতীয় পক্ষের সাথে ভাগাভাগি</h3>
+      <p>আমরা কোনো তৃতীয় পক্ষের সাথে আপনার ডেটা ভাগাভাগি করি না।</p>
       
-      <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
+      <h3>কুকিজ</h3>
+      <p>আমরা শুধুমাত্র প্রয়োজনীয় Local Storage ব্যবহার করি, কোনো ট্র্যাকিং কুকি ব্যবহার করি না।</p>
+      
+      <div style="margin-top: 30px;">
+        <button onclick="showHomePage()" class="control-btn">🏠 হোমে ফিরুন</button>
+      </div>
     </div>
   `;
 }
