@@ -184,6 +184,154 @@ main {
   margin: auto;
 }
 
+/* 🏠 Homepage Content Styles - ADDED */
+#homepage-content {
+  display: block;
+  width: 100%;
+}
+
+#homepage-content section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#homepage-content .mt-10 {
+  margin-top: 2.5rem;
+}
+
+#homepage-content .bg-blue-100 {
+  background-color: #dbeafe;
+}
+
+.dark-mode #homepage-content .bg-blue-100 {
+  background-color: #1e3a8a;
+}
+
+#homepage-content .bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.dark-mode #homepage-content .bg-gray-100 {
+  background-color: #374151;
+}
+
+#homepage-content .p-5 {
+  padding: 1.25rem;
+}
+
+#homepage-content .rounded-lg {
+  border-radius: 0.5rem;
+}
+
+#homepage-content .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+#homepage-content .text-lg {
+  font-size: 1.125rem;
+}
+
+#homepage-content .font-semibold {
+  font-weight: 600;
+}
+
+#homepage-content .text-blue-800 {
+  color: #1e40af;
+}
+
+.dark-mode #homepage-content .text-blue-800 {
+  color: #93c5fd;
+}
+
+#homepage-content .text-blue-200 {
+  color: #bfdbfe;
+}
+
+#homepage-content .mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+#homepage-content .list-decimal {
+  list-style-type: decimal;
+}
+
+#homepage-content .pl-6 {
+  padding-left: 1.5rem;
+}
+
+#homepage-content .space-y-1 > * + * {
+  margin-top: 0.25rem;
+}
+
+#homepage-content .flex {
+  display: flex;
+}
+
+#homepage-content .flex-wrap {
+  flex-wrap: wrap;
+}
+
+#homepage-content .gap-4 {
+  gap: 1rem;
+}
+
+#homepage-content .text-sm {
+  font-size: 0.875rem;
+}
+
+#homepage-content .bg-gray-200 {
+  background-color: #e5e7eb;
+}
+
+.dark-mode #homepage-content .bg-gray-200 {
+  background-color: #4b5563;
+}
+
+#homepage-content .px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+#homepage-content .py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#homepage-content .rounded {
+  border-radius: 0.25rem;
+}
+
+#homepage-content .mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+#homepage-content .text-blue-600 {
+  color: #2563eb;
+}
+
+.dark-mode #homepage-content .text-blue-600 {
+  color: #60a5fa;
+}
+
+#homepage-content .text-blue-300 {
+  color: #93c5fd;
+}
+
+#homepage-content .hover\:underline:hover {
+  text-decoration: underline;
+}
+
+#homepage-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#homepage-content a:hover {
+  text-decoration: underline;
+}
+
 /* 💬 কনভারসেশন */
 .conversation-item {
   padding: 14px;
@@ -535,6 +683,59 @@ main {
   gap: 10px;
 }
 
+/* 📄 Page Content Styles - ADDED */
+.page-content {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .page-content {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+.page-content h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.dark-mode .page-content h2 {
+  color: #60a5fa;
+}
+
+.page-content h3 {
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.dark-mode .page-content h3 {
+  color: #ccc;
+}
+
+.page-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.page-content li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.dark-mode .contact-info {
+  background: #2a2a2a;
+}
+
 /* ⚠️ এরর ডিসপ্লে */
 .error-container {
   background: #fff3cd;
@@ -648,5 +849,19 @@ main {
   #folder-selector {
     min-width: auto;
     width: 100%;
+  }
+
+  /* Mobile Homepage Styles */
+  #homepage-content section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  #homepage-content .gap-4 {
+    gap: 0.5rem;
+  }
+
+  #homepage-content .text-sm {
+    font-size: 0.8rem;
   }
 }
