@@ -1,48 +1,16 @@
-/* 🌐 বডি এবং ফন্ট */
+/* 🌐 বডি */
 body {
   margin: 0;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #f0f0f0;
   color: #222;
-  transition: background 0.3s ease, color 0.3s ease;
-  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* 🌑 ডার্ক মোড ভ্যারিয়েশন */
+/* 🌑 ডার্ক মোড */
 .dark-mode {
   background-color: #121212;
   color: #f9f9f9;
-}
-
-.dark-blue {
-  background-color: #0f1419;
-  color: #e6f7ff;
-}
-
-.dark-purple {
-  background-color: #1a0d2e;
-  color: #f0e6ff;
-}
-
-.dark-green {
-  background-color: #0d1b0d;
-  color: #e6ffe6;
-}
-
-/* 🌞 লাইট মোড ভ্যারিয়েশন */
-.light-classic {
-  background-color: #f0f0f0;
-  color: #222;
-}
-
-.light-warm {
-  background-color: #fdf6e3;
-  color: #5c5855;
-}
-
-.light-cool {
-  background-color: #f0f8ff;
-  color: #2c3e50;
 }
 
 /* 🧾 সাইড মেনু */
@@ -52,18 +20,17 @@ body {
   right: 0;
   width: 280px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   color: #222;
   padding: 20px;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
   transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 999;
   opacity: 0;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  backdrop-filter: blur(15px);
 }
 
 #side-menu.active {
@@ -71,11 +38,8 @@ body {
   opacity: 1;
 }
 
-.dark-mode #side-menu,
-.dark-blue #side-menu,
-.dark-purple #side-menu,
-.dark-green #side-menu {
-  background: rgba(30, 30, 30, 0.95);
+.dark-mode #side-menu {
+  background: #1e1e1e;
   color: #eee;
 }
 
@@ -87,14 +51,6 @@ body {
   cursor: pointer;
   color: inherit;
   margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-#close-menu:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: rotate(90deg);
 }
 
 #side-menu h3 {
@@ -106,13 +62,9 @@ body {
   border-bottom: 2px solid #eee;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  font-weight: 600;
 }
 
-.dark-mode #side-menu h3,
-.dark-blue #side-menu h3,
-.dark-purple #side-menu h3,
-.dark-green #side-menu h3 {
+.dark-mode #side-menu h3 {
   border-bottom-color: #444;
 }
 
@@ -131,45 +83,21 @@ body {
   text-decoration: none;
   font-weight: 500;
   display: block;
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
 }
 
-.dark-mode #side-menu a,
-.dark-blue #side-menu a,
-.dark-purple #side-menu a,
-.dark-green #side-menu a {
+.dark-mode #side-menu a {
   color: #64b5f6;
-}
-
-#side-menu a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.5s;
-}
-
-#side-menu a:hover::before {
-  left: 100%;
 }
 
 #side-menu a:hover {
   background-color: #f0f7ff;
   text-decoration: none;
-  transform: translateX(5px);
 }
 
-.dark-mode #side-menu a:hover,
-.dark-blue #side-menu a:hover,
-.dark-purple #side-menu a:hover,
-.dark-green #side-menu a:hover {
+.dark-mode #side-menu a:hover {
   background-color: #2a2a2a;
 }
 
@@ -177,10 +105,7 @@ body {
   color: #dc3545 !important;
 }
 
-.dark-mode .reset-link,
-.dark-blue .reset-link,
-.dark-purple .reset-link,
-.dark-green .reset-link {
+.dark-mode .reset-link {
   color: #ff6b6b !important;
 }
 
@@ -190,426 +115,156 @@ body {
   margin: 15px 0;
 }
 
-.dark-mode .menu-divider,
-.dark-blue .menu-divider,
-.dark-purple .menu-divider,
-.dark-green .menu-divider {
+.dark-mode .menu-divider {
   background-color: #444;
 }
 
-/* 🧱 হেডার - স্ক্রোল হাইড ফিচার সহ */
+/* 🧱 হেডার */
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #0059b3 0%, #004080 100%);
+  padding: 6px 14px;
+  background-color: #0059b3;
   color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-  will-change: transform;
-}
-
-.app-header.header-hidden {
-  transform: translateY(-100%);
-}
-
-.app-header.header-compact {
-  padding: 4px 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .app-title {
   margin: 0;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.header-compact .app-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-top: 6px;
-  transition: all 0.3s ease;
-}
-
-.header-compact .header-right {
-  margin-top: 0;
-  gap: 8px;
-}
-
-/* ভাষা সার্চ কন্টেইনার */
-.language-search-container {
-  position: relative;
 }
 
 #language-select {
-  padding: 8px 12px;
+  padding: 5px 10px;
   font-size: 0.95rem;
   border-radius: 8px;
   border: none;
-  min-width: 140px;
+  min-width: 130px;
   cursor: pointer;
-  background: white;
-  color: #333;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header-compact #language-select {
-  padding: 6px 10px;
-  font-size: 0.9rem;
-  min-width: 120px;
-}
-
-#language-select:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
-}
-
-#language-search {
-  padding: 8px 12px;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  min-width: 140px;
-  background: white;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.header-compact #language-search {
-  padding: 6px 10px;
-  font-size: 0.9rem;
-  min-width: 120px;
-}
-
-/* থিম সিলেক্টর */
-.theme-selector {
-  position: relative;
-}
-
-.theme-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 8px;
-  display: none;
-  min-width: 150px;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.theme-dropdown.active {
-  display: block;
-  animation: fadeInDown 0.3s ease;
-}
-
-.dark-mode .theme-dropdown,
-.dark-blue .theme-dropdown,
-.dark-purple .theme-dropdown,
-.dark-green .theme-dropdown {
-  background: rgba(30, 30, 30, 0.98);
-  color: #eee;
-}
-
-.theme-option {
-  display: block;
-  width: 100%;
-  padding: 8px 12px;
-  border: none;
-  background: none;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  color: inherit;
-}
-
-.theme-option:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: translateX(5px);
-}
-
-.dark-mode .theme-option:hover,
-.dark-blue .theme-option:hover,
-.dark-purple .theme-option:hover,
-.dark-green .theme-option:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #mode-toggle,
 #menu-toggle {
   font-size: 1.2rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: #003c82;
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-}
-
-.header-compact #mode-toggle,
-.header-compact #menu-toggle {
-  width: 32px;
-  height: 32px;
-  font-size: 1.1rem;
-}
-
-#mode-toggle::before,
-#menu-toggle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  transform: translate(-50%, -50%);
-}
-
-#mode-toggle:hover::before,
-#menu-toggle:hover::before {
-  width: 100%;
-  height: 100%;
+  transition: background-color 0.3s;
 }
 
 #mode-toggle:hover,
 #menu-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1) rotate(10deg);
+  background-color: #002a58;
 }
 
-/* 📄 মেইন কনটেন্ট - হেডার স্পেস অ্যাডজাস্টমেন্ট */
+/* 📄 মেইন কনটেন্ট */
 main {
   padding: 20px;
   max-width: 800px;
   margin: auto;
-  padding-top: 100px; /* হেডারের জন্য স্পেস */
-  transition: padding-top 0.3s ease;
 }
 
-.header-compact ~ main {
-  padding-top: 80px;
-}
-
-/* 📋 কুইক স্টার্ট সেকশন */
-.quick-start-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.quick-start-section::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(0, 89, 179, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float 3s ease-in-out infinite;
-}
-
-.progressive-list {
-  counter-reset: step-counter;
-}
-
-.step-item {
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: slideInLeft 0.5s ease-out forwards;
-  position: relative;
-  padding-left: 15px;
-  transition: all 0.3s ease;
-}
-
-.step-item:hover {
-  transform: translateX(5px);
-  color: #0059b3;
-}
-
-.step-item[data-step="1"] { animation-delay: 0.1s; }
-.step-item[data-step="2"] { animation-delay: 0.2s; }
-.step-item[data-step="3"] { animation-delay: 0.3s; }
-.step-item[data-step="4"] { animation-delay: 0.4s; }
-
-.step-item::before {
-  content: counter(step-counter);
-  counter-increment: step-counter;
-  position: absolute;
-  left: -25px;
-  top: 0;
-  background: #0059b3;
+/* 🎭 Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.dark-mode .hero-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
-/* 🌍 কান্ট্রি ফ্ল্যাগ সেকশন */
-.country-flags-section {
-  position: relative;
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
 
-.country-flags-section .flag-item {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.clickable-flag {
-  cursor: pointer;
-}
-
-.clickable-flag:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.flag-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.flag-item:hover::before {
-  left: 100%;
-}
-
-.flag-item:active {
-  transform: scale(0.95);
-}
-
-/* 📢 সোশ্যাল সেকশন */
-.social-section {
-  position: relative;
-}
-
-.social-section .social-link {
-  transition: all 0.3s ease;
-  position: relative;
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.animated-social {
-  position: relative;
-  overflow: hidden;
-}
-
-.animated-social::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.3s;
-}
-
-.animated-social:hover::before {
-  left: 100%;
-}
-
-.animated-social:hover {
-  transform: translateY(-2px);
+.feature-card {
   background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
-/* 💬 কনভারসেশন আইটেম এনহান্সমেন্ট */
+.feature-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* 💬 কনভারসেশন */
 .conversation-item {
-  padding: 18px;
-  margin-bottom: 18px;
+  padding: 14px;
+  margin-bottom: 16px;
   background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   color: #222;
   font-size: 1rem;
   position: relative;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.conversation-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px 0 0 2px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.conversation-item:hover::before {
-  opacity: 1;
-}
-
-.conversation-item:hover {
-  transform: translateY(-3px) translateX(5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.dark-mode .conversation-item,
-.dark-blue .conversation-item,
-.dark-purple .conversation-item,
-.dark-green .conversation-item {
-  background-color: rgba(30, 30, 30, 0.8);
+.dark-mode .conversation-item {
+  background-color: #1e1e1e;
   color: #eee;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #444;
 }
 
 .conversation-item div {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  line-height: 1.6;
+  gap: 6px;
+  margin-bottom: 6px;
+  line-height: 1.5;
   word-break: break-word;
 }
 
@@ -631,456 +286,149 @@ main {
   color: #555;
 }
 
-.dark-mode .conversation-item span,
-.dark-blue .conversation-item span,
-.dark-purple .conversation-item span,
-.dark-green .conversation-item span {
+.dark-mode .conversation-item span {
   color: #ccc;
 }
 
-.dark-mode .conversation-item em,
-.dark-blue .conversation-item em,
-.dark-purple .conversation-item em,
-.dark-green .conversation-item em {
+.dark-mode .conversation-item em {
   color: #aaa;
 }
 
-/* ❤️ ফেভারিট বাটন এনহান্সমেন্ট */
+/* ❤️ ফেভারিট বাটন */
 .favorite-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #ccc;
-  transition: all 0.3s ease;
-  padding: 4px;
-  border-radius: 50%;
-  z-index: 10;
-}
-
-.favorite-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 71, 87, 0.2);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  transform: translate(-50%, -50%);
-}
-
-.favorite-btn:hover::before {
-  width: 40px;
-  height: 40px;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .favorite-btn:hover {
-  transform: scale(1.2);
-  color: #ff4757;
+  transform: scale(1.1);
 }
 
 .favorite-btn.favorited {
   color: #ff4757;
-  animation: heartBeat 0.6s ease-in-out;
 }
 
-.favorite-btn.favorited::after {
-  content: '✨';
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 0.8rem;
-  animation: sparkle 1s ease-in-out;
-}
-
-/* 📋 ফেভারিট কন্ট্রোলস এনহান্সমেন্ট */
+/* 📋 ফেভারিট কন্ট্রোলস */
 .favorites-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
-  padding: 20px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
 }
 
-.favorites-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-}
-
-.dark-mode .favorites-header,
-.dark-blue .favorites-header,
-.dark-purple .favorites-header,
-.dark-green .favorites-header {
-  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+.dark-mode .favorites-header {
+  background: #2a2a2a;
 }
 
 .favorites-buttons {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .control-btn {
-  padding: 10px 16px;
+  padding: 8px 15px;
   border: 1px solid #ddd;
   background: white;
   color: #333;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.control-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.1), transparent);
-  transition: left 0.3s;
-}
-
-.control-btn:hover::before {
-  left: 100%;
+  transition: all 0.3s;
 }
 
 .control-btn:hover {
-  background: #f8f9fa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f0f0f0;
 }
 
 .control-btn.active {
   background: #007bff;
   color: white;
   border-color: #007bff;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
 }
 
-.control-btn.active::before {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-}
-
-.dark-mode .control-btn,
-.dark-blue .control-btn,
-.dark-purple .control-btn,
-.dark-green .control-btn {
+.dark-mode .control-btn {
   background: #333;
   color: #eee;
   border-color: #555;
 }
 
-.dark-mode .control-btn:hover,
-.dark-blue .control-btn:hover,
-.dark-purple .control-btn:hover,
-.dark-green .control-btn:hover {
+.dark-mode .control-btn:hover {
   background: #444;
 }
 
-/* ক্যাটাগরি সিলেক্ট */
-.category-select {
-  min-width: 140px;
-}
-
-/* এক্সপোর্ট ড্রপডাউন */
-.export-dropdown {
-  position: relative;
-}
-
-.export-options {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 8px;
-  display: none;
-  min-width: 120px;
-  z-index: 100;
-  backdrop-filter: blur(10px);
-}
-
-.export-options.active {
-  display: block;
-  animation: fadeInDown 0.3s ease;
-}
-
-.dark-mode .export-options,
-.dark-blue .export-options,
-.dark-purple .export-options,
-.dark-green .export-options {
-  background: rgba(30, 30, 30, 0.98);
-  color: #eee;
-}
-
-.export-options button {
-  display: block;
-  width: 100%;
-  padding: 8px 12px;
-  border: none;
-  background: none;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  color: inherit;
-}
-
-.export-options button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  transform: translateX(5px);
-}
-
-.dark-mode .export-options button:hover,
-.dark-blue .export-options button:hover,
-.dark-purple .export-options button:hover,
-.dark-green .export-options button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ⚠️ এরর ডিসপ্লে এনহান্সমেন্ট */
+/* ⚠️ এরর ডিসপ্লে */
 .error-container {
-  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  background: #fff3cd;
   border: 1px solid #ffeaa7;
-  border-radius: 12px;
-  padding: 25px;
-  margin: 25px 0;
-  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
-  position: relative;
-  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
 }
 
-.error-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #ffc107, #ff9800);
-}
-
-.dark-mode .error-container,
-.dark-blue .error-container,
-.dark-purple .error-container,
-.dark-green .error-container {
-  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%);
+.dark-mode .error-container {
+  background: #3a3a3a;
   border-color: #666;
 }
 
 .error-content {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
 }
 
 .error-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #856404;
-  animation: shake 0.5s ease-in-out;
 }
 
-.dark-mode .error-icon,
-.dark-blue .error-icon,
-.dark-purple .error-icon,
-.dark-green .error-icon {
+.dark-mode .error-icon {
   color: #ffc107;
 }
 
 .error-text h3 {
-  margin: 0 0 8px 0;
+  margin: 0 0 5px 0;
   color: #856404;
-  font-weight: 600;
 }
 
-.dark-mode .error-text h3,
-.dark-blue .error-text h3,
-.dark-purple .error-text h3,
-.dark-green .error-text h3 {
+.dark-mode .error-text h3 {
   color: #ffc107;
 }
 
 .error-text p {
   margin: 0;
   color: #6c5500;
-  line-height: 1.5;
 }
 
-.dark-mode .error-text p,
-.dark-blue .error-text p,
-.dark-purple .error-text p,
-.dark-green .error-text p {
+.dark-mode .error-text p {
   color: #ccc;
 }
 
-/* 🏷️ ট্যাগ মডাল */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
-}
-
-.modal-content {
-  background: rgba(255, 255, 255, 0.98);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
-  width: 90%;
-  animation: modalSlideIn 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark-mode .modal-content,
-.dark-blue .modal-content,
-.dark-purple .modal-content,
-.dark-green .modal-content {
-  background: rgba(30, 30, 30, 0.98);
-  color: #eee;
-}
-
-.modal-content h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-#tag-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-#tag-input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-}
-
-.dark-mode #tag-input,
-.dark-blue #tag-input,
-.dark-purple #tag-input,
-.dark-green #tag-input {
-  background: #333;
-  color: #eee;
-  border-color: #555;
-}
-
-.modal-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-}
-
-.modal-buttons button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.modal-buttons button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  transform: translate(-50%, -50%);
-}
-
-.modal-buttons button:hover::before {
-  width: 100%;
-  height: 100%;
-}
-
-.modal-buttons button:first-child {
-  background: #007bff;
-  color: white;
-}
-
-.modal-buttons button:last-child {
-  background: #6c757d;
-  color: white;
-}
-
-.modal-buttons button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* 📱 মোবাইল রেসপন্সিভ এনহান্সমেন্ট */
+/* 📱 মোবাইল রেসপন্সিভ */
 @media (max-width: 600px) {
   .app-header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 16px;
-  }
-
-  .header-compact {
-    padding: 8px 16px;
   }
 
   .header-right {
     width: 100%;
     justify-content: space-between;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
-  .header-compact .header-right {
-    margin-top: 8px;
-  }
-
-  .language-search-container {
+  #language-select {
     flex: 1;
-  }
-
-  #language-select,
-  #language-search {
     width: 100%;
-    min-width: auto;
   }
 
   #mode-toggle,
@@ -1088,21 +436,24 @@ main {
     margin-left: auto;
   }
 
-  main {
-    padding-top: 120px;
-  }
-
-  .header-compact ~ main {
-    padding-top: 100px;
-  }
-
   .conversation-item {
     font-size: 0.95rem;
-    padding: 16px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
   }
 
   #side-menu {
-    width: 280px;
+    width: 250px;
   }
 
   .favorites-header {
@@ -1114,726 +465,4 @@ main {
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  .modal-content {
-    margin: 20px;
-    width: calc(100% - 40px);
-  }
 }
-
-/* 🎨 অ্যানিমেশন কীফ্রেম */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-@keyframes heartBeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  25%, 75% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes titleGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
-}
-
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8) translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* 🎯 স্পেশাল ইফেক্ট */
-.ripple-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple-effect::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
-}
-
-.ripple-effect:active::after {
-  width: 200px;
-  height: 200px;
-}
-
-/* 🌟 স্ক্রোল এনহান্সমেন্ট */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-}
-
-.dark-mode ::-webkit-scrollbar-track,
-.dark-blue ::-webkit-scrollbar-track,
-.dark-purple ::-webkit-scrollbar-track,
-.dark-green ::-webkit-scrollbar-track {
-  background: #2a2a2a;
-}
-
-/* 🔄 লোডিং অ্যানিমেশন */
-.loading-spinner {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #007bff;
-  animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* 🎪 প্যারালাক্স ইফেক্ট */
-.parallax-element {
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-}
-
-/* 🌈 গ্রাডিয়েন্ট টেক্সট */
-.gradient-text {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 🔘 নিউমরফিজম ইফেক্ট */
-.neumorphism {
-  background: #f0f0f0;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-}
-
-.dark-mode .neumorphism,
-.dark-blue .neumorphism,
-.dark-purple .neumorphism,
-.dark-green .neumorphism {
-  background: #2a2a2a;
-  box-shadow: 20px 20px 60px #1a1a1a, -20px -20px 60px #3a3a3a;
-}
-
-/* 🌟 ফোকাস স্টেট এনহান্সমেন্ট */
-*:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
-  border-radius: 4px;
-}
-
-/* 🎭 টেক্সট সিলেকশন */
-::selection {
-  background-color: rgba(102, 126, 234, 0.3);
-  color: #333;
-}
-
-.dark-mode ::selection,
-.dark-blue ::selection,
-.dark-purple ::selection,
-.dark-green ::selection {
-  background-color: rgba(102, 126, 234, 0.5);
-  color: #fff;
-}
-
-/* 🚀 পারফরম্যান্স অপটিমাইজেশন */
-.gpu-accelerated {
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* 🌊 ওয়েভ ইফেক্ট */
-.wave-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.wave-effect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.wave-effect:hover::before {
-  left: 100%;
-}
-
-/* 🔥 হট স্পট ইন্ডিকেটর */
-.hot-spot {
-  position: relative;
-}
-
-.hot-spot::after {
-  content: '🔥';
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  font-size: 0.8rem;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* 💫 স্টার ইফেক্ট */
-.star-effect {
-  position: relative;
-}
-
-.star-effect::before {
-  content: '✨';
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 1rem;
-  opacity: 0;
-  animation: starTwinkle 2s infinite;
-}
-
-@keyframes starTwinkle {
-  0%, 100% {
-    opacity: 0;
-    transform: scale(0.5) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) rotate(180deg);
-  }
-}
-
-/* 🔔 নোটিফিকেশন ব্যাজ */
-.notification-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #ff4757;
-  color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 0.7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 2s infinite;
-}
-
-/* 🎨 কাস্টম চেকবক্স */
-.custom-checkbox {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-}
-
-.custom-checkbox input {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.custom-checkbox .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.custom-checkbox input:checked ~ .checkmark {
-  background-color: #007bff;
-}
-
-.custom-checkbox .checkmark::after {
-  content: '';
-  position: absolute;
-  display: none;
-  left: 7px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-.custom-checkbox input:checked ~ .checkmark::after {
-  display: block;
-}
-
-/* 🎪 3D ইফেক্ট */
-.effect-3d {
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease;
-}
-
-.effect-3d:hover {
-  transform: rotateX(5deg) rotateY(5deg);
-}
-
-/* 🌀 স্পিন ইফেক্ট */
-.spin-on-hover {
-  transition: transform 0.3s ease;
-}
-
-.spin-on-hover:hover {
-  transform: rotate(360deg);
-}
-
-/* 💎 গ্লাস ইফেক্ট */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .glass-effect,
-.dark-blue .glass-effect,
-.dark-purple .glass-effect,
-.dark-green .glass-effect {
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* 🔥 ফায়ার ইফেক্ট */
-.fire-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.fire-effect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, 
-    transparent 30%, 
-    rgba(255, 69, 0, 0.3) 50%, 
-    transparent 70%);
-  animation: fireFlicker 1s infinite alternate;
-}
-
-@keyframes fireFlicker {
-  0% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-/* ⚡ বিজলি ইফেক্ট */
-.lightning-effect {
-  position: relative;
-}
-
-.lightning-effect::after {
-  content: '⚡';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  opacity: 0;
-  animation: lightning 3s infinite;
-}
-
-@keyframes lightning {
-  0%, 90%, 100% {
-    opacity: 0;
-  }
-  5%, 85% {
-    opacity: 1;
-  }
-}
-
-/* 🌈 রেইনবো ইফেক্ট */
-.rainbow-effect {
-  background: linear-gradient(45deg, 
-    #ff0000, #ff7f00, #ffff00, 
-    #00ff00, #0000ff, #4b0082, #9400d3);
-  background-size: 300% 300%;
-  animation: rainbow 3s ease infinite;
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* 🎯 টার্গেট ইন্ডিকেটর */
-.target-indicator {
-  position: relative;
-}
-
-.target-indicator::before {
-  content: '🎯';
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  font-size: 1.2rem;
-  animation: targetPulse 2s infinite;
-}
-
-@keyframes targetPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-}
-
-/* 🎨 পেইন্ট ড্রিপ ইফেক্ট */
-.paint-drip {
-  position: relative;
-  overflow: hidden;
-}
-
-.paint-drip::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  animation: drip 2s ease-in-out infinite;
-}
-
-@keyframes drip {
-  0% {
-    height: 5px;
-  }
-  50% {
-    height: 20px;
-  }
-  100% {
-    height: 5px;
-  }
-}
-
-/* 🌙 মুন ফেজ ইফেক্ট */
-.moon-phase {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #ffd700;
-  position: relative;
-  overflow: hidden;
-}
-
-.moon-phase::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: #333;
-  border-radius: 50%;
-  animation: moonPhase 8s linear infinite;
-}
-
-@keyframes moonPhase {
-  0% {
-    transform: translateX(100%);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* 🌊 ওয়াটার ইফেক্ট */
-.water-effect {
-  background: linear-gradient(45deg, #74b9ff, #0984e3);
-  position: relative;
-  overflow: hidden;
-}
-
-.water-effect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.4), 
-    transparent);
-  animation: waterFlow 2s linear infinite;
-}
-
-@keyframes waterFlow {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-/* 🎪 সার্কাস ইফেক্ট */
-.circus-effect {
-  background: repeating-linear-gradient(
-    45deg,
-    #ff6b6b,
-    #ff6b6b 10px,
-    #feca57 10px,
-    #feca57 20px
-  );
-  animation: circusMove 3s linear infinite;
-}
-
-@keyframes circusMove {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 28px 28px;
-  }
-}
-
-/* 🔮 ক্রিস্টাল ইফেক্ট */
-.crystal-effect {
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.8), 
-    rgba(255, 255, 255, 0.3));
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  position: relative;
-}
-
-.crystal-effect::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 30%;
-  height: 30%;
-  background: linear-gradient(45deg, 
-    rgba(255, 255, 255, 0.8), 
-    transparent);
-  border-radius: 50%;
-  animation: crystalShine 3s ease-in-out infinite;
-}
-
-@keyframes crystalShine {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.2);
-  }
-}
-
-/* 🎨 ফিনিশিং টাচ */
-.smooth-scroll {
-  scroll-behavior: smooth;
-}
-
-.no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.hidden {
-  display: none !important;
-}
-
-.visible {
-  visibility: visible;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-/* 🔚 End of CSS */

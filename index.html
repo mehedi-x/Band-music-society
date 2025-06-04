@@ -5,86 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speak EU - Language Learning</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="app-header">
     <h1 class="app-title">Speak EU</h1>
     <div class="header-right">
-      <div class="language-search-container">
-        <select id="language-select">
-          <option value="">Select Language</option>
+      <select id="language-select">
+  <option value="">Select Language</option>
 
-          <!-- 🟦 Schengen Countries -->
-          <option value="austria">🇦🇹 Austria</option>
-          <option value="belgium">🇧🇪 Belgium</option>
-          <option value="czech">🇨🇿 Czech Republic</option>
-          <option value="denmark">🇩🇰 Denmark</option>
-          <option value="estonia">🇪🇪 Estonia</option>
-          <option value="finland">🇫🇮 Finland</option>
-          <option value="france">🇫🇷 France</option>
-          <option value="germany">🇩🇪 Germany</option>
-          <option value="greece">🇬🇷 Greece</option>
-          <option value="hungary">🇭🇺 Hungary</option>
-          <option value="iceland">🇮🇸 Iceland</option>
-          <option value="italy">🇮🇹 Italy</option>
-          <option value="latvia">🇱🇻 Latvia</option>
-          <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-          <option value="lithuania">🇱🇹 Lithuania</option>
-          <option value="luxembourg">🇱🇺 Luxembourg</option>
-          <option value="malta">🇲🇹 Malta</option>
-          <option value="netherlands">🇳🇱 Netherlands</option>
-          <option value="norway">🇳🇴 Norway</option>
-          <option value="poland">🇵🇱 Poland</option>
-          <option value="portugal">🇵🇹 Portugal</option>
-          <option value="slovakia">🇸🇰 Slovakia</option>
-          <option value="slovenia">🇸🇮 Slovenia</option>
-          <option value="spain">🇪🇸 Spain</option>
-          <option value="sweden">🇸🇪 Sweden</option>
-          <option value="switzerland">🇨🇭 Switzerland</option>
+  <!-- 🟦 Schengen Countries -->
+  <option value="austria">🇦🇹 Austria</option>
+  <option value="belgium">🇧🇪 Belgium</option>
+  <option value="czech">🇨🇿 Czech Republic</option>
+  <option value="denmark">🇩🇰 Denmark</option>
+  <option value="estonia">🇪🇪 Estonia</option>
+  <option value="finland">🇫🇮 Finland</option>
+  <option value="france">🇫🇷 France</option>
+  <option value="germany">🇩🇪 Germany</option>
+  <option value="greece">🇬🇷 Greece</option>
+  <option value="hungary">🇭🇺 Hungary</option>
+  <option value="iceland">🇮🇸 Iceland</option>
+  <option value="italy">🇮🇹 Italy</option>
+  <option value="latvia">🇱🇻 Latvia</option>
+  <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+  <option value="lithuania">🇱🇹 Lithuania</option>
+  <option value="luxembourg">🇱🇺 Luxembourg</option>
+  <option value="malta">🇲🇹 Malta</option>
+  <option value="netherlands">🇳🇱 Netherlands</option>
+  <option value="norway">🇳🇴 Norway</option>
+  <option value="poland">🇵🇱 Poland</option>
+  <option value="portugal">🇵🇹 Portugal</option>
+  <option value="slovakia">🇸🇰 Slovakia</option>
+  <option value="slovenia">🇸🇮 Slovenia</option>
+  <option value="spain">🇪🇸 Spain</option>
+  <option value="sweden">🇸🇪 Sweden</option>
+  <option value="switzerland">🇨🇭 Switzerland</option>
 
-          <!-- 🟥 Non-Schengen EU/Europe Countries -->
-          <option value="russian">🇷🇺 Russian</option>
-          <option value="albania">🇦🇱 Albania</option>
-          <option value="andorra">🇦🇩 Andorra</option>
-          <option value="armenia">🇦🇲 Armenia</option>
-          <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-          <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
-          <option value="bulgaria">🇧🇬 Bulgaria</option>
-          <option value="croatia">🇭🇷 Croatia</option>
-          <option value="cyprus">🇨🇾 Cyprus</option>
-          <option value="georgia">🇬🇪 Georgia</option>
-          <option value="ireland">🇮🇪 Ireland</option>
-          <option value="kosovo">🇽🇰 Kosovo</option>
-          <option value="moldova">🇲🇩 Moldova</option>
-          <option value="monaco">🇲🇨 Monaco</option>
-          <option value="montenegro">🇲🇪 Montenegro</option>
-          <option value="northmacedonia">🇲🇰 North Macedonia</option>
-          <option value="romania">🇷🇴 Romania</option>
-          <option value="sanmarino">🇸🇲 San Marino</option>
-          <option value="serbia">🇷🇸 Serbia</option>
-          <option value="turkey">🇹🇷 Turkey</option>
-          <option value="ukraine">🇺🇦 Ukraine</option>
-          <option value="unitedkingdom">🇬🇧 United Kingdom</option>
-          <option value="vatican">🇻🇦 Vatican City</option>
-        </select>
-        <input type="text" id="language-search" placeholder="ভাষা খুঁজুন..." style="display: none;">
-      </div>
-      
-      <div class="theme-selector">
-        <button id="mode-toggle">☀️</button>
-        <div class="theme-dropdown" id="theme-dropdown">
-          <button class="theme-option" data-theme="light-classic">Classic Light</button>
-          <button class="theme-option" data-theme="light-warm">Warm Light</button>
-          <button class="theme-option" data-theme="light-cool">Cool Light</button>
-          <button class="theme-option" data-theme="dark-blue">Blue Dark</button>
-          <button class="theme-option" data-theme="dark-purple">Purple Dark</button>
-          <button class="theme-option" data-theme="dark-green">Green Dark</button>
-        </div>
-      </div>
-      
+  <!-- 🟥 Non-Schengen EU/Europe Countries -->
+  <option value="russian">🇷🇺 Russian</option>
+  <option value="albania">🇦🇱 Albania</option>
+  <option value="andorra">🇦🇩 Andorra</option>
+  <option value="armenia">🇦🇲 Armenia</option>
+  <option value="azerbaijan">🇦🇿 Azerbaijan</option>
+  <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
+  <option value="bulgaria">🇧🇬 Bulgaria</option>
+  <option value="croatia">🇭🇷 Croatia</option>
+  <option value="cyprus">🇨🇾 Cyprus</option>
+  <option value="georgia">🇬🇪 Georgia</option>
+  <option value="ireland">🇮🇪 Ireland</option>
+  <option value="kosovo">🇽🇰 Kosovo</option>
+  <option value="moldova">🇲🇩 Moldova</option>
+  <option value="monaco">🇲🇨 Monaco</option>
+  <option value="montenegro">🇲🇪 Montenegro</option>
+  <option value="northmacedonia">🇲🇰 North Macedonia</option>
+  <option value="romania">🇷🇴 Romania</option>
+  <option value="sanmarino">🇸🇲 San Marino</option>
+  <option value="serbia">🇷🇸 Serbia</option>
+  <option value="turkey">🇹🇷 Turkey</option>
+  <option value="ukraine">🇺🇦 Ukraine</option>
+  <option value="unitedkingdom">🇬🇧 United Kingdom</option>
+  <option value="vatican">🇻🇦 Vatican City</option>
+</select>
+      <button id="mode-toggle">☀️</button>
       <button id="menu-toggle">☰</button>
     </div>
   </header>
@@ -93,62 +75,61 @@
   <!-- Enhanced Homepage -->
   <div id="homepage-content">
     <!-- Hero Section -->
-    <!-- Enhanced Hero Section -->
-<section class="hero-section">
-  <div class="hero-content">
-    <h2 class="hero-title">🌍 Speak EU এ স্বাগতম</h2>
-    <p class="hero-subtitle">ইউরোপের ভাষা শিখুন সহজে, দ্রুত এবং কার্যকরভাবে</p>
-    <div class="hero-features">
-      <div class="feature-card">
-        <span class="feature-icon">📚</span>
-        <h3>৪৫+ ভাষা</h3>
-        <p>ইউরোপের প্রায় সকল দেশের ভাষা একসাথে</p>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h2 class="hero-title">🌍 Welcome to Speak EU</h2>
+        <p class="hero-subtitle">ইউরোপের ভাষা শিখুন সহজে এবং দ্রুত</p>
+        <div class="hero-features">
+          <div class="feature-card">
+            <span class="feature-icon">📚</span>
+            <h3>৪৫+ ভাষা</h3>
+            <p>ইউরোপের প্রায় সকল দেশের ভাষা</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">💾</span>
+            <h3>ফেভারিট সিস্টেম</h3>
+            <p>প্রিয় শব্দগুলো সেভ করুন</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🌙</span>
+            <h3>ডার্ক/লাইট মোড</h3>
+            <p>আপনার পছন্দমতো থিম</p>
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <span class="feature-icon">💾</span>
-        <h3>স্মার্ট ফেভারিট</h3>
-        <p>প্রিয় শব্দগুলো সংরক্ষণ ও ব্যবস্থাপনা</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">🌙</span>
-        <h3>অভিযোজিত ইন্টারফেস</h3>
-        <p>ডার্ক/লাইট মোড সহ আধুনিক ডিজাইন</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Quick Start -->
-    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm quick-start-section">
+    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
       <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🚀 শুরু করার জন্য করণীয়</h3>
-      <ol class="list-decimal pl-6 space-y-1 progressive-list">
-        <li class="step-item" data-step="1">উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
-        <li class="step-item" data-step="2">আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
-        <li class="step-item" data-step="3">প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
-        <li class="step-item" data-step="4">গুরুত্বপূর্ণ শব্দগুলো ফেভারিট করুন।</li>
+      <ol class="list-decimal pl-6 space-y-1">
+        <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
+        <li>আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
+        <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
+        <li>গুরুত্বপূর্ণ শব্দগুলো ফেভারিট করুন।</li>
       </ol>
     </section>
 
     <!-- Country Flags -->
-    <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm country-flags-section">
+    <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm">
       <h3 class="text-lg font-semibold mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
       <div class="flex flex-wrap gap-4 text-sm">
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded flag-item clickable-flag" data-country="italy">🇮🇹 ইতালি (Italian)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded flag-item clickable-flag" data-country="spain">🇪🇸 স্পেন (Spanish)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded flag-item clickable-flag" data-country="germany">🇩🇪 জার্মানি (German)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded flag-item clickable-flag" data-country="france">🇫🇷 ফ্রান্স (French)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded flag-item clickable-flag" data-country="greece">🇬🇷 গ্রিস (Greek)</span>
-        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded flag-item clickable-flag" data-country="portugal">🇵🇹 পর্তুগাল (Portuguese)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇮🇹 ইতালি (Italian)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇪🇸 স্পেন (Spanish)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇩🇪 জার্মানি (German)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇫🇷 ফ্রান্স (French)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇬🇷 গ্রিস (Greek)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇵🇹 পর্তুগাল (Portuguese)</span>
       </div>
     </section>
 
     <!-- Join Us -->
-    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm social-section">
+    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
       <h3 class="text-lg font-semibold mb-3">📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
       <p class="mb-2">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
       <div class="flex gap-4 text-blue-600 dark:text-blue-300">
-        <a href="https://facebook.com" target="_blank" class="hover:underline social-link animated-social">📘 Facebook</a>
-        <a href="https://t.me" target="_blank" class="hover:underline social-link animated-social">📢 Telegram</a>
+        <a href="https://facebook.com" target="_blank" class="hover:underline">📘 Facebook</a>
+        <a href="https://t.me" target="_blank" class="hover:underline">📢 Telegram</a>
       </div>
     </section>
   </div>
@@ -171,29 +152,8 @@
       <div class="favorites-buttons">
         <button id="show-all-btn" class="control-btn">সব দেখুন</button>
         <button id="show-favorites-btn" class="control-btn active">ফেভারিট দেখুন</button>
-        
-        <!-- Category Filter -->
-        <select id="category-filter" class="control-btn category-select">
-          <option value="all">সব ক্যাটাগরি</option>
-          <option value="greetings">শুভেচ্ছা</option>
-          <option value="shopping">কেনাকাটা</option>
-          <option value="travel">ভ্রমণ</option>
-          <option value="food">খাবার</option>
-          <option value="health">স্বাস্থ্য</option>
-          <option value="work">কাজ</option>
-        </select>
-        
-        <!-- Export Options -->
-        <div class="export-dropdown">
-          <button id="export-favorites-btn" class="control-btn">📤 Export</button>
-          <div class="export-options">
-            <button onclick="exportFavorites('json')">JSON</button>
-            <button onclick="exportFavorites('pdf')">PDF</button>
-            <button onclick="exportFavorites('csv')">CSV</button>
-            <button onclick="exportFavorites('excel')">Excel</button>
-          </div>
-        </div>
-        
+        <button id="export-favorites-btn" class="control-btn">📤 Export</button>
+        <input type="file" id="import-favorites-input" accept=".json" style="display: none;">
         <button id="import-favorites-btn" class="control-btn">📥 Import</button>
       </div>
     </div>
@@ -211,7 +171,7 @@
     <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
     <li><a href="#" onclick="showFavoritesPage()">❤️ Favorites</a></li>
     <li class="menu-divider"></li>
-    <li><a href="#" onclick="exportFavorites('json')">📤 Export Favorites</a></li>
+    <li><a href="#" onclick="exportFavorites()">📤 Export Favorites</a></li>
     <li><a href="#" onclick="importFavorites()">📥 Import Favorites</a></li>
     <li class="menu-divider"></li>
     <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
@@ -219,19 +179,7 @@
 </div>
 
   <!-- File input for import -->
-  <input type="file" id="file-import" accept=".json,.csv,.xlsx" style="display: none;">
-
-  <!-- Tag Modal -->
-  <div id="tag-modal" class="modal" style="display: none;">
-    <div class="modal-content">
-      <h3>ট্যাগ যোগ করুন</h3>
-      <input type="text" id="tag-input" placeholder="ট্যাগ লিখুন...">
-      <div class="modal-buttons">
-        <button onclick="addTag()">যোগ করুন</button>
-        <button onclick="closeTagModal()">বাতিল</button>
-      </div>
-    </div>
-  </div>
+  <input type="file" id="file-import" accept=".json" style="display: none;">
 
   <!-- Enhanced Script -->
   <script src="script.js"></script>
