@@ -5,73 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speak EU - Language Learning</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts for better typography -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <meta name="description" content="Speak Euro | Learn EU & Global languages in Bangla and English. Free, mobile-friendly app for students, workers & dreamers.">
+  <meta property="og:title" content="Speak EU - Language for Life">
+  <meta property="og:description" content="Practice EU & Global languages easily. A Bangladeshi-built global app. Learn • Speak • Belong">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <!-- Header & Navigation -->
   <header class="app-header">
     <div class="header-left">
       <button id="menu-toggle" class="icon-btn" aria-label="Open menu" tabindex="0">☰</button>
       <h1 class="app-title">Speak <span class="eu-accent">EU</span></h1>
     </div>
     <div class="header-center">
+      <label for="language-select" class="sr-only">Select Language</label>
       <select id="language-select" aria-label="Select language">
         <option value="">Select Language</option>
-        <!-- Schengen Countries -->
+        <!-- Country options (for brevity, only a few shown) -->
         <optgroup label="Schengen Countries">
-          <option value="austria">🇦🇹 Austria</option>
-          <option value="belgium">🇧🇪 Belgium</option>
-          <option value="czech">🇨🇿 Czech Republic</option>
-          <option value="denmark">🇩🇰 Denmark</option>
-          <option value="estonia">🇪🇪 Estonia</option>
-          <option value="finland">🇫🇮 Finland</option>
-          <option value="france">🇫🇷 France</option>
           <option value="germany">🇩🇪 Germany</option>
-          <option value="greece">🇬🇷 Greece</option>
-          <option value="hungary">🇭🇺 Hungary</option>
-          <option value="iceland">🇮🇸 Iceland</option>
           <option value="italy">🇮🇹 Italy</option>
-          <option value="latvia">🇱🇻 Latvia</option>
-          <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-          <option value="lithuania">🇱🇹 Lithuania</option>
-          <option value="luxembourg">🇱🇺 Luxembourg</option>
-          <option value="malta">🇲🇹 Malta</option>
-          <option value="netherlands">🇳🇱 Netherlands</option>
-          <option value="norway">🇳🇴 Norway</option>
-          <option value="poland">🇵🇱 Poland</option>
-          <option value="portugal">🇵🇹 Portugal</option>
-          <option value="slovakia">🇸🇰 Slovakia</option>
-          <option value="slovenia">🇸🇮 Slovenia</option>
-          <option value="spain">🇪🇸 Spain</option>
-          <option value="sweden">🇸🇪 Sweden</option>
-          <option value="switzerland">🇨🇭 Switzerland</option>
+          <option value="france">🇫🇷 France</option>
         </optgroup>
-        <!-- Non-Schengen -->
         <optgroup label="Other European Countries">
           <option value="russian">🇷🇺 Russian</option>
-          <option value="albania">🇦🇱 Albania</option>
-          <option value="andorra">🇦🇩 Andorra</option>
-          <option value="armenia">🇦🇲 Armenia</option>
-          <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-          <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
-          <option value="bulgaria">🇧🇬 Bulgaria</option>
-          <option value="croatia">🇭🇷 Croatia</option>
-          <option value="cyprus">🇨🇾 Cyprus</option>
-          <option value="georgia">🇬🇪 Georgia</option>
-          <option value="ireland">🇮🇪 Ireland</option>
-          <option value="kosovo">🇽🇰 Kosovo</option>
-          <option value="moldova">🇲🇩 Moldova</option>
-          <option value="monaco">🇲🇨 Monaco</option>
-          <option value="montenegro">🇲🇪 Montenegro</option>
-          <option value="northmacedonia">🇲🇰 North Macedonia</option>
-          <option value="romania">🇷🇴 Romania</option>
-          <option value="sanmarino">🇸🇲 San Marino</option>
-          <option value="serbia">🇷🇸 Serbia</option>
-          <option value="turkey">🇹🇷 Turkey</option>
-          <option value="ukraine">🇺🇦 Ukraine</option>
           <option value="unitedkingdom">🇬🇧 United Kingdom</option>
-          <option value="vatican">🇻🇦 Vatican City</option>
         </optgroup>
       </select>
     </div>
@@ -80,33 +39,30 @@
     </div>
   </header>
 
-  <!-- Side Menu (drawer) -->
+  <!-- Side Menu -->
   <nav id="side-menu" class="side-menu" aria-label="Main menu" hidden>
     <div class="side-menu-header">
       <button id="close-menu" class="icon-btn" aria-label="Close menu" tabindex="0">✖</button>
       <span class="side-menu-title">🌍 Speak EU</span>
     </div>
     <ul class="side-menu-list">
-      <li><a href="#" onclick="showHomePage()">🏠 Home</a></li>
-      <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
-      <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
-      <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
-      <li><a href="#" onclick="showFoldersPage()">📁 Folders</a></li>
+      <li><a href="#" data-page="home">🏠 Home</a></li>
+      <li><a href="#" data-page="about">ℹ️ About</a></li>
+      <li><a href="#" data-page="contact">📞 Contact Us</a></li>
+      <li><a href="#" data-page="privacy">🔒 Privacy Policy</a></li>
+      <li><a href="#" data-page="folders">📁 Folders</a></li>
       <li class="menu-divider"></li>
-      <li><a href="#" onclick="exportFolders()">📤 Export Folders</a></li>
-      <li><a href="#" onclick="importFolders()">📥 Import Folders</a></li>
+      <li><a href="#" id="export-folders-link">📤 Export Folders</a></li>
+      <li><a href="#" id="import-folders-link">📥 Import Folders</a></li>
       <li class="menu-divider"></li>
-      <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
+      <li><a href="#" id="reset-link" class="reset-link">🔄 Reset All Data</a></li>
     </ul>
   </nav>
-
-  <!-- Overlay for side menu on mobile -->
   <div id="menu-overlay" class="menu-overlay" hidden></div>
 
   <main id="main-content" class="main-content">
-    <!-- Enhanced Homepage -->
-    <section id="homepage-content">
-      <!-- Quick Start -->
+    <!-- Home Content -->
+    <section id="homepage-content" class="page-section">
       <section class="card card-accent">
         <h3>🚀 শুরু করার জন্য করণীয়</h3>
         <ol>
@@ -116,21 +72,15 @@
           <li>গুরুত্বপূর্ণ শব্দগুলো ফোল্ডারে সেভ করুন।</li>
         </ol>
       </section>
-
-      <!-- Country Flags -->
       <section class="card">
         <h3>🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
         <div class="country-lang-list">
-          <span class="lang-flag">🇮🇹 ইতালি (Italian)</span>
-          <span class="lang-flag">🇪🇸 স্পেন (Spanish)</span>
-          <span class="lang-flag">🇩🇪 জার্মানি (German)</span>
-          <span class="lang-flag">🇫🇷 ফ্রান্স (French)</span>
-          <span class="lang-flag">🇬🇷 গ্রিস (Greek)</span>
-          <span class="lang-flag">🇵🇹 পর্তুগাল (Portuguese)</span>
+          <span class="lang-flag">🇮🇹 Italian</span>
+          <span class="lang-flag">🇪🇸 Spanish</span>
+          <span class="lang-flag">🇩🇪 German</span>
+          <span class="lang-flag">🇫🇷 French</span>
         </div>
       </section>
-
-      <!-- Join Us -->
       <section class="card card-accent">
         <h3>📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
         <p>সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
@@ -140,7 +90,27 @@
         </div>
       </section>
     </section>
-
+    <!-- Folder Section -->
+    <section id="folder-section" class="page-section" hidden>
+      <div class="folder-controls card">
+        <div class="folder-header">
+          <h3>📁 ফোল্ডার তালিকা</h3>
+          <div class="folder-buttons">
+            <button id="add-folder-btn" class="control-btn">নতুন ফোল্ডার</button>
+            <button id="show-all-btn" class="control-btn">সব দেখুন</button>
+            <button id="export-folders-btn" class="control-btn">📤 Export</button>
+            <input type="file" id="import-folders-input" accept=".json" hidden>
+            <button id="import-folders-btn" class="control-btn">📥 Import</button>
+          </div>
+        </div>
+        <ul id="folder-list" class="folder-list"></ul>
+      </div>
+      <div id="folder-phrases" class="card" hidden>
+        <h4 id="current-folder-title"></h4>
+        <ul id="phrase-list"></ul>
+        <button id="back-to-folders" class="control-btn">ফোল্ডার তালিকায় ফিরে যান</button>
+      </div>
+    </section>
     <!-- Error Display -->
     <section id="error-display" class="error-container" hidden>
       <div class="error-content">
@@ -151,26 +121,21 @@
         </div>
       </div>
     </section>
-
-    <!-- Folder Controls -->
-    <section id="folder-controls" class="folder-controls" hidden>
-      <div class="folder-header">
-        <h3>📁 ফোল্ডার তালিকা</h3>
-        <div class="folder-buttons">
-          <button id="show-all-btn" class="control-btn">সব দেখুন</button>
-          <button id="show-folders-btn" class="control-btn active">ফোল্ডার দেখুন</button>
-          <button id="export-folders-btn" class="control-btn">📤 Export</button>
-          <input type="file" id="import-folders-input" accept=".json" hidden>
-          <button id="import-folders-btn" class="control-btn">📥 Import</button>
-        </div>
-      </div>
+    <!-- About, Contact, Privacy (Page sections, hidden by default) -->
+    <section id="about-section" class="page-section card" hidden>
+      <h3>About Speak EU</h3>
+      <p>Speak EU হলো একটি বাংলা ভাষাভিত্তিক ইউরোপীয় ভাষা শেখার ওয়েব অ্যাপ। এখানে সহজে প্রয়োজনীয় উপযোগী বাক্য ও শব্দ শিখতে পারবেন।</p>
+    </section>
+    <section id="contact-section" class="page-section card" hidden>
+      <h3>Contact Us</h3>
+      <p>যোগাযোগ: <a href="mailto:hello@speakeu.top">hello@speakeu.top</a></p>
+    </section>
+    <section id="privacy-section" class="page-section card" hidden>
+      <h3>Privacy Policy</h3>
+      <p>আপনার ডেটা শুধুমাত্র আপনার ডিভাইসে সংরক্ষিত থাকবে, কোনো সার্ভারে পাঠানো হয় না।</p>
     </section>
   </main>
-
-  <!-- File input for import -->
   <input type="file" id="file-import" accept=".json" hidden>
-
-  <!-- Enhanced Script -->
   <script src="script.js"></script>
 </body>
 </html>
