@@ -1,9 +1,14 @@
-// =========== Speak EU Main Script ===========
+// ====== Speak EU Main Script ======
 
-// --- Language Selectors & Global Variables ---
+// ---- Language Selectors & Variables ----
 const languageSelect = document.getElementById('language-select');
 const conversationArea = document.getElementById('conversation-area');
 const modeToggle = document.getElementById('mode-toggle');
+let currentLanguage = '';
+let currentData = [];
+let userFolders = JSON.parse(localStorage.getItem('speakeu_folders')) || {};
+let showingFolderContent = false;
+let currentFolderId = '';
 
 // Language code mapping (country value => lang code)
 const langCodeMap = {
@@ -19,13 +24,9 @@ const langCodeMap = {
   serbia: 'sr', turkey: 'tr', ukraine: 'uk', unitedkingdom: 'en', vatican: 'la'
 };
 
-let currentLanguage = '';
-let currentData = [];
-let userFolders = JSON.parse(localStorage.getItem('speakeu_folders')) || {};
-let showingFolderContent = false;
-let currentFolderId = '';
-
+// ---- On Load: Set Theme, Language, Menu ----
 window.addEventListener('DOMContentLoaded', () => {
+  // Saved Language
   const savedLang = localStorage.getItem('selectedLanguage');
   if (savedLang) {
     languageSelect.value = savedLang;
@@ -34,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showHomePage();
   }
 
+  // Saved Theme
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
@@ -47,12 +49,11 @@ window.addEventListener('DOMContentLoaded', () => {
   setupModeToggle();
 });
 
-// --- Menu Toggle ---
+// ---- Menu Toggle ----
 function setupMenuToggle() {
   const menuToggle = document.getElementById('menu-toggle');
   const sideMenu = document.getElementById('side-menu');
   const closeMenu = document.getElementById('close-menu');
-
   menuToggle.addEventListener('click', () => sideMenu.classList.add('active'));
   closeMenu.addEventListener('click', () => sideMenu.classList.remove('active'));
   document.addEventListener('click', (e) => {
@@ -62,7 +63,7 @@ function setupMenuToggle() {
   });
 }
 
-// --- Dark/Light Mode Toggle ---
+// ---- Dark/Light Mode Toggle ----
 function setupModeToggle() {
   modeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
@@ -72,7 +73,7 @@ function setupModeToggle() {
   });
 }
 
-// --- Language Selection ---
+// ---- Language Selection ----
 languageSelect.addEventListener('change', () => {
   const lang = languageSelect.value;
   if (!lang) {
@@ -83,11 +84,10 @@ languageSelect.addEventListener('change', () => {
   loadLanguage(lang);
 });
 
-// --- Load Language Data ---
+// ---- Load Language Data ----
 function loadLanguage(lang) {
   currentLanguage = lang;
   showLoadingState();
-
   fetch(`languages/${lang}.json`)
     .then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
@@ -105,27 +105,26 @@ function loadLanguage(lang) {
     });
 }
 
-// --- Loading State ---
+// ---- Loading State ----
 function showLoadingState() {
   conversationArea.innerHTML = `
-    <div class="loading-container" style="text-align: center; padding: 40px;">
-      <div class="loading-spinner" style="font-size: 2rem;">⏳</div>
+    <div class="loading-container">
+      <div class="loading-spinner">⏳</div>
       <p>ডেটা লোড হচ্ছে...</p>
     </div>
   `;
 }
 
-// --- Vocabulary List Render ---
+// ---- Vocabulary List Render ----
 function renderVocabulary(list, langKey) {
   hideError();
   conversationArea.innerHTML = '';
-
   if (!Array.isArray(list) || list.length === 0) {
     showError('এই ভাষার জন্য কোনো ডেটা পাওয়া যায়নি।');
     return;
   }
 
-  // Folder Controls HTML
+  // Folder Controls
   const folderControlsHtml = `
     <div id="folder-controls">
       <div class="favorites-header">
@@ -160,10 +159,9 @@ function renderVocabulary(list, langKey) {
   });
 }
 
-// --- Save to Folder Dialog ---
-function showSaveToFolderDialog(language, index) {
+// ---- Save to Folder Dialog ----
+window.showSaveToFolderDialog = function(language, index) {
   const folderIds = Object.keys(userFolders);
-
   const dialogHtml = `
     <div class="folder-dialog-overlay" onclick="closeFolderDialog()">
       <div class="folder-dialog" onclick="event.stopPropagation()">
@@ -194,15 +192,14 @@ function showSaveToFolderDialog(language, index) {
     </div>
   `;
   document.body.insertAdjacentHTML('beforeend', dialogHtml);
-
   setTimeout(() => {
     const input = document.getElementById('new-folder-name');
     if (input) input.focus();
   }, 100);
-}
+};
 
-// --- Create New Folder ---
-function createNewFolder(language, index) {
+// ---- Create New Folder ----
+window.createNewFolder = function(language, index) {
   const folderName = document.getElementById('new-folder-name').value.trim();
   if (!folderName) {
     alert('ফোল্ডারের নাম লিখুন!');
@@ -227,10 +224,10 @@ function createNewFolder(language, index) {
   localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
   closeFolderDialog();
   showSuccessMessage(`"${folderName}" ফোল্ডারে সেভ করা হয়েছে!`);
-}
+};
 
-// --- Save to Existing Folder ---
-function saveToExistingFolder(folderId, language, index) {
+// ---- Save to Existing Folder ----
+window.saveToExistingFolder = function(folderId, language, index) {
   const exists = userFolders[folderId].items.some(item =>
     item.language === currentLanguage && item.langKey === language && item.index === index
   );
@@ -247,20 +244,19 @@ function saveToExistingFolder(folderId, language, index) {
   localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
   closeFolderDialog();
   showSuccessMessage(`"${userFolders[folderId].name}" ফোল্ডারে সেভ করা হয়েছে!`);
-}
+};
 
-// --- Close Folder Dialog ---
-function closeFolderDialog() {
+// ---- Close Folder Dialog ----
+window.closeFolderDialog = function() {
   const dialog = document.querySelector('.folder-dialog-overlay');
   if (dialog) dialog.remove();
-}
+};
 
-// --- Show Folder View ---
-function showFolderView() {
+// ---- Show Folder View ----
+window.showFolderView = function() {
   hideHomePage();
   hideError();
   showingFolderContent = true;
-
   const folderIds = Object.keys(userFolders);
   if (folderIds.length === 0) {
     conversationArea.innerHTML = `
@@ -274,7 +270,6 @@ function showFolderView() {
     `;
     return;
   }
-
   let foldersHtml = `
     <div class="folders-container">
       <div class="folders-header">
@@ -296,10 +291,10 @@ function showFolderView() {
     </div>
   `;
   conversationArea.innerHTML = foldersHtml;
-}
+};
 
-// --- Show Selected Folder Content ---
-function showSelectedFolderContent(folderId) {
+// ---- Show Selected Folder Content ----
+window.showSelectedFolderContent = function(folderId) {
   if (!folderId) {
     document.getElementById('folder-content-area').innerHTML = '<p class="folder-instruction">উপরের dropdown থেকে একটি ফোল্ডার সিলেক্ট করুন।</p>';
     return;
@@ -345,28 +340,28 @@ function showSelectedFolderContent(folderId) {
     </div>
   `;
   document.getElementById('folder-content-area').innerHTML = folderContentHtml;
-}
+};
 
-// --- Remove From Folder ---
-function removeFromFolder(folderId, itemIndex) {
+// ---- Remove From Folder ----
+window.removeFromFolder = function(folderId, itemIndex) {
   if (confirm('এই বাক্যটি ফোল্ডার থেকে মুছে ফেলবেন?')) {
     userFolders[folderId].items.splice(itemIndex, 1);
     localStorage.setItem('speakeu_folders', JSON.stringify(userFolders));
     showSelectedFolderContent(folderId);
     showSuccessMessage('ফোল্ডার থেকে মুছে ফেলা হয়েছে!');
   }
-}
+};
 
-// --- Show All Items (Not Folder Content) ---
-function showAllItems() {
+// ---- Show All Items ----
+window.showAllItems = function() {
   showingFolderContent = false;
   if (currentData.length > 0) {
     renderVocabulary(currentData, langCodeMap[currentLanguage]);
   }
-}
+};
 
-// --- Export Folders ---
-function exportFolders() {
+// ---- Export Folders ----
+window.exportFolders = function() {
   if (Object.keys(userFolders).length === 0) {
     alert('কোনো ফোল্ডার নেই!');
     return;
@@ -386,10 +381,10 @@ function exportFolders() {
   link.click();
   document.body.removeChild(link);
   showSuccessMessage('ফোল্ডার তালিকা সফলভাবে Export করা হয়েছে!');
-}
+};
 
-// --- Import Folders ---
-function importFolders() {
+// ---- Import Folders ----
+window.importFolders = function() {
   const input = document.createElement('input');
   input.type = 'file';
   input.accept = '.json';
@@ -415,10 +410,10 @@ function importFolders() {
     reader.readAsText(file);
   };
   input.click();
-}
+};
 
-// --- Reset All Data ---
-function resetAllData() {
+// ---- Reset All Data ----
+window.resetAllData = function() {
   if (confirm('আপনি কি নিশ্চিত যে সব ডেটা রিসেট করতে চান? এটি আপনার সব ফোল্ডার এবং সেটিংস মুছে দেবে।')) {
     localStorage.clear();
     userFolders = {};
@@ -429,9 +424,9 @@ function resetAllData() {
     showHomePage();
     showSuccessMessage('সব ডেটা সফলভাবে রিসেট করা হয়েছে!');
   }
-}
+};
 
-// --- Show Error UI ---
+// ---- Error UI ----
 function showError(message) {
   const errorDisplay = document.getElementById('error-display');
   const errorMessage = document.getElementById('error-message');
@@ -442,36 +437,32 @@ function showError(message) {
   hideHomePage();
   hideFolderControls();
 }
-
-// --- Hide Error UI ---
 function hideError() {
   const errorDisplay = document.getElementById('error-display');
   if (errorDisplay) errorDisplay.style.display = 'none';
 }
 
-// --- Show/Hide Homepage ---
-function showHomePage() {
+// ---- Homepage ----
+window.showHomePage = function() {
   const homepage = document.getElementById('homepage-content');
   if (homepage) homepage.style.display = 'block';
   hideError();
   hideFolderControls();
   showingFolderContent = false;
-}
+};
 function hideHomePage() {
   const homepage = document.getElementById('homepage-content');
   if (homepage) homepage.style.display = 'none';
 }
 
-// --- Folder Controls ---
-function showFolderControls() {
-  // Controls are now part of renderVocabulary function
-}
+// ---- Folder Controls Show/Hide (for compatibility) ----
+function showFolderControls() { /* Now dynamic, no-op */ }
 function hideFolderControls() {
   const controls = document.getElementById('folder-controls');
   if (controls) controls.style.display = 'none';
 }
 
-// --- Success Toast ---
+// ---- Success Toast ----
 function showSuccessMessage(message) {
   const existingToast = document.querySelector('.success-toast');
   if (existingToast) existingToast.remove();
@@ -479,94 +470,64 @@ function showSuccessMessage(message) {
   toast.className = 'success-toast';
   toast.innerHTML = `✅ ${message}`;
   document.body.appendChild(toast);
-  setTimeout(() => { if (toast.parentNode) toast.remove(); }, 3000);
+  setTimeout(() => { if (toast.parentNode) toast.remove(); }, 2800);
 }
 
-// --- Static Pages Navigation ---
-function showAboutPage() {
+// ---- Static Page Navigation ----
+window.showAboutPage = function() {
   hideHomePage(); hideError(); hideFolderControls();
   conversationArea.innerHTML = `
     <div class="page-content">
       <h2>📖 আমাদের সম্পর্কে</h2>
-      <p><strong>Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের কথা মাথায় রেখে তৈরি করা হয়েছে।</p>
-      <h3>🎯 আমাদের লক্ষ্য</h3>
+      <p><strong>Speak EU</strong> একটি আধুনিক ডিজিটাল ভাষা শিক্ষার প্ল্যাটফর্ম, যা ইউরোপের বিভিন্ন দেশে বসবাসরত অভিবাসী, কর্মজীবী এবং পর্যটকদের জন্য।</p>
       <ul>
-        <li>ইউরোপের ৪৫+ ভাষায় দৈনন্দিন কথোপকথন শেখানো</li>
-        <li>প্রবাসী জীবনে প্রয়োজনীয় ভাষাগত দক্ষতা অর্জনে সহায়তা</li>
-        <li>সহজ ও কার্যকর ভাষা শিক্ষার পদ্ধতি প্রদান</li>
-        <li>বাংলাদেশী সম্প্রদায়ের ভাষা শিক্ষায় অবদান রাখা</li>
+        <li>ইউরোপের ৪৫+ ভাষায় দৈনন্দিন কথোপকথন</li>
+        <li>সহজ ভাষা শেখার পদ্ধতি</li>
+        <li>বাংলা অর্থ ও উচ্চারণ</li>
+        <li>ফোল্ডার এবং ডার্ক মোড</li>
       </ul>
-      <h3>✨ বৈশিষ্ট্যসমূহ</h3>
-      <ul>
-        <li>🔤 বাংলা উচ্চারণ সহ প্রতিটি শব্দ</li>
-        <li>📁 ফোল্ডার সিস্টেম</li>
-        <li>🌙 ডার্ক/লাইট মোড</li>
-        <li>📱 মোবাইল ফ্রেন্ডলি ডিজাইন</li>
-        <li>💾 ডেটা এক্সপোর্ট/ইমপোর্ট</li>
-      </ul>
-      <h3>🚀 ভবিষ্যৎ পরিকল্পনা</h3>
-      <ul>
-        <li>অডিও উচ্চারণ যোগ করা</li>
-        <li>আরো ভাষা যোগ করা</li>
-        <li>অনুশীলনের জন্য কুইজ সিস্টেম</li>
-        <li>প্রগ্রেস ট্র্যাকিং</li>
-      </ul>
-      <div style="margin-top: 30px;">
+      <div style="margin-top: 22px;">
         <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
       </div>
     </div>
   `;
   const sideMenu = document.getElementById('side-menu');
   if (sideMenu) sideMenu.classList.remove('active');
-}
-function showContactPage() {
+};
+window.showContactPage = function() {
   hideHomePage(); hideError(); hideFolderControls();
   conversationArea.innerHTML = `
     <div class="page-content">
       <h2>📞 যোগাযোগ</h2>
       <p>আমাদের সাথে যোগাযোগ করুন:</p>
-      <div style="margin: 20px 0;">
-        <h3>📧 ইমেইল</h3>
-        <p>support@speakeu.com</p>
-        <h3>🌐 সোশ্যাল মিডিয়া</h3>
-        <p>Facebook: @SpeakEU</p>
-        <p>Telegram: @SpeakEUSupport</p>
-        <h3>📝 ফিডব্যাক</h3>
-        <p>আপনার মতামত আমাদের কাছে গুরুত্বপূর্ণ। নতুন ভাষা বা বৈশিষ্ট্যের জন্য অনুরোধ জানান।</p>
-      </div>
-      <div style="margin-top: 30px;">
+      <p>ইমেইল: support@speakeu.com</p>
+      <p>Facebook: @SpeakEU | Telegram: @SpeakEUSupport</p>
+      <div style="margin-top: 22px;">
         <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
       </div>
     </div>
   `;
   const sideMenu = document.getElementById('side-menu');
   if (sideMenu) sideMenu.classList.remove('active');
-}
-function showPrivacyPage() {
+};
+window.showPrivacyPage = function() {
   hideHomePage(); hideError(); hideFolderControls();
   conversationArea.innerHTML = `
     <div class="page-content">
       <h2>🔒 প্রাইভেসি পলিসি</h2>
-      <h3>তথ্য সংগ্রহ</h3>
       <p>আমরা শুধুমাত্র আপনার ব্রাউজারে স্থানীয়ভাবে ডেটা সংরক্ষণ করি। কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে পাঠানো হয় না।</p>
-      <h3>ডেটা ব্যবহার</h3>
-      <p>আপনার ফোল্ডার এবং সেটিংস শুধুমাত্র আপনার ডিভাইসে সংরক্ষিত থাকে।</p>
-      <h3>তৃতীয় পক্ষ</h3>
-      <p>আমরা কোনো তৃতীয় পক্ষের সাথে আপনার তথ্য শেয়ার করি না।</p>
-      <h3>কুকিজ</h3>
-      <p>আমরা কেবল প্রয়োজনীয় স্থানীয় স্টোরেজ ব্যবহার করি।</p>
-      <div style="margin-top: 30px;">
+      <div style="margin-top: 22px;">
         <button onclick="showHomePage()" class="control-btn">← হোমে ফিরুন</button>
       </div>
     </div>
   `;
   const sideMenu = document.getElementById('side-menu');
   if (sideMenu) sideMenu.classList.remove('active');
-}
-function showFoldersPage() {
+};
+window.showFoldersPage = function() {
   showFolderView();
   const sideMenu = document.getElementById('side-menu');
   if (sideMenu) sideMenu.classList.remove('active');
-}
+};
 
-// ========== END ==========
+// ====== END ======
