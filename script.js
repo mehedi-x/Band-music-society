@@ -41,6 +41,19 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   setupMenuToggle();
   setupModeToggle();
+
+  // Home links navigation (supports all .home-link)
+  document.querySelectorAll('.home-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      showHomePage();
+      // Optionally close side menu if open
+      const sideMenu = document.getElementById('side-menu');
+      if (sideMenu) sideMenu.classList.remove('active');
+      // Optional: Scroll to top
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
 });
 
 // ---- Menu Toggle ----
