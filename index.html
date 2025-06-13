@@ -1,138 +1,60 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Speak EU - Language Learning</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speak EU - Language Server</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
   <header class="app-header">
-    <h1 class="app-title">Speak EU</h1>
+    <span class="app-title">🌍 Speak EU</span>
     <div class="header-right">
-      <select id="language-select" aria-label="ভাষা নির্বাচন">
-        <option value="">Select Language</option>
-        <!-- Schengen Countries -->
-        <option value="austria">🇦🇹 Austria</option>
-        <option value="belgium">🇧🇪 Belgium</option>
-        <option value="czech">🇨🇿 Czech Republic</option>
-        <option value="denmark">🇩🇰 Denmark</option>
-        <option value="estonia">🇪🇪 Estonia</option>
-        <option value="finland">🇫🇮 Finland</option>
-        <option value="france">🇫🇷 France</option>
-        <option value="germany">🇩🇪 Germany</option>
-        <option value="greece">🇬🇷 Greece</option>
-        <option value="hungary">🇭🇺 Hungary</option>
-        <option value="iceland">🇮🇸 Iceland</option>
-        <option value="italy">🇮🇹 Italy</option>
-        <option value="latvia">🇱🇻 Latvia</option>
-        <option value="liechtenstein">🇱🇮 Liechtenstein</option>
-        <option value="lithuania">🇱🇹 Lithuania</option>
-        <option value="luxembourg">🇱🇺 Luxembourg</option>
-        <option value="malta">🇲🇹 Malta</option>
-        <option value="netherlands">🇳🇱 Netherlands</option>
-        <option value="norway">🇳🇴 Norway</option>
-        <option value="poland">🇵🇱 Poland</option>
-        <option value="portugal">🇵🇹 Portugal</option>
-        <option value="slovakia">🇸🇰 Slovakia</option>
-        <option value="slovenia">🇸🇮 Slovenia</option>
-        <option value="spain">🇪🇸 Spain</option>
-        <option value="sweden">🇸🇪 Sweden</option>
-        <option value="switzerland">🇨🇭 Switzerland</option>
-        <!-- Other European Countries -->
-        <option value="russian">🇷🇺 Russian</option>
-        <option value="albania">🇦🇱 Albania</option>
-        <option value="andorra">🇦🇩 Andorra</option>
-        <option value="armenia">🇦🇲 Armenia</option>
-        <option value="azerbaijan">🇦🇿 Azerbaijan</option>
-        <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
-        <option value="bulgaria">🇧🇬 Bulgaria</option>
-        <option value="croatia">🇭🇷 Croatia</option>
-        <option value="cyprus">🇨🇾 Cyprus</option>
-        <option value="georgia">🇬🇪 Georgia</option>
-        <option value="ireland">🇮🇪 Ireland</option>
-        <option value="kosovo">🇽🇰 Kosovo</option>
-        <option value="moldova">🇲🇩 Moldova</option>
-        <option value="monaco">🇲🇨 Monaco</option>
-        <option value="montenegro">🇲🇪 Montenegro</option>
-        <option value="northmacedonia">🇲🇰 North Macedonia</option>
-        <option value="romania">🇷🇴 Romania</option>
-        <option value="sanmarino">🇸🇲 San Marino</option>
-        <option value="serbia">🇷🇸 Serbia</option>
-        <option value="turkey">🇹🇷 Turkey</option>
-        <option value="ukraine">🇺🇦 Ukraine</option>
-        <option value="unitedkingdom">🇬🇧 United Kingdom</option>
-        <option value="vatican">🇻🇦 Vatican City</option>
+      <select id="language-select">
+        <option value="">দেশ সিলেক্ট করুন</option>
+        <option value="italy">ইতালি</option>
+        <option value="germany">জার্মানি</option>
+        <option value="france">ফ্রান্স</option>
+        <option value="spain">স্পেন</option>
+        <!-- আরও দেশের ভাষা যোগ করুন -->
       </select>
-      <button id="mode-toggle" title="ডার্ক/লাইট মোড" aria-label="ডার্ক/লাইট মোড">☀️</button>
-      <button id="menu-toggle" title="মেনু খুলুন" aria-label="মেনু খুলুন">☰</button>
+      <button id="mode-toggle" title="ডার্ক/লাইট মোড">☀️</button>
+      <button id="menu-toggle" title="মেনু">☰</button>
     </div>
   </header>
 
-  <!-- Main Content Area -->
-  <main id="conversation-area" class="main-content">
+  <main>
     <div id="homepage-content">
-      <section class="start-section">
-        <h3>🚀 শুরু করার জন্য করণীয়</h3>
-        <ol>
-          <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
-          <li>প্রয়োজনীয় কথোপকথন বিভাগ বেছে নিন।</li>
-          <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
-          <li>গুরুত্বপূর্ণ বাক্যগুলো ফোল্ডারে সেভ করুন।</li>
-        </ol>
-      </section>
-      <section class="popular-langs">
-        <h3>🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
-        <div class="popular-flags">
-          <span>🇮🇹 ইতালি (Italian)</span>
-          <span>🇪🇸 স্পেন (Spanish)</span>
-          <span>🇩🇪 জার্মানি (German)</span>
-          <span>🇫🇷 ফ্রান্স (French)</span>
-          <span>🇬🇷 গ্রিস (Greek)</span>
-          <span>🇵🇹 পর্তুগাল (Portuguese)</span>
-        </div>
-      </section>
-      <section class="join-section">
-        <h3>📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
-        <p>সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
-        <div class="social-links">
-          <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-          <a href="https://t.me" target="_blank">📢 Telegram</a>
-        </div>
+      <section class="section-card">
+        <h2>👋 স্বাগতম Speak EU-তে!</h2>
+        <p>ইউরোপের সব দেশে সহজে কথা বলুন, বাংলা অনুবাদসহ। ভাষা বেছে নিন এবং শিখতে শুরু করুন!</p>
       </section>
     </div>
-    <!-- Error Display -->
-    <div id="error-display" class="error-container" style="display: none;">
-      <div class="error-content">
+    <div id="error-display" style="display:none;">
+      <div class="error-container">
         <span class="error-icon">⚠️</span>
         <div class="error-text">
-          <h3>সমস্যা হয়েছে!</h3>
+          <h3>সমস্যা!</h3>
           <p id="error-message"></p>
         </div>
       </div>
     </div>
-    <div id="folder-controls" style="display: none;"></div>
+    <div id="conversation-area"></div>
   </main>
 
-  <!-- Side Menu -->
   <nav id="side-menu">
-    <button id="close-menu" title="Close menu" aria-label="Close menu">✖</button>
-    <h3>🌍 Speak EU</h3>
+    <button id="close-menu" title="বন্ধ করুন">✖</button>
+    <div class="side-title"><span class="side-emoji">🌍</span> Speak EU</div>
     <ul>
-      <li><a href="#" onclick="showHomePage()">🏠 Home</a></li>
+      <li><a href="#" class="home-link">🏠 Home</a></li>
       <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
       <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
       <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
       <li><a href="#" onclick="showFoldersPage()">📁 Folders</a></li>
-      <li class="menu-divider"></li>
-      <li><a href="#" onclick="exportFolders()">📤 Export Folders</a></li>
-      <li><a href="#" onclick="importFolders()">📥 Import Folders</a></li>
-      <li class="menu-divider"></li>
       <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
     </ul>
   </nav>
-  <input type="file" id="file-import" accept=".json" style="display: none;">
-  <script src="script.js"></script>
+
+  <script src="main.js"></script>
 </body>
 </html>
