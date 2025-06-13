@@ -12,11 +12,55 @@
     <div class="header-right">
       <select id="language-select">
         <option value="">দেশ সিলেক্ট করুন</option>
-        <option value="italy">ইতালি</option>
-        <option value="germany">জার্মানি</option>
+        <option value="albania">আলবেনিয়া</option>
+        <option value="andorra">আন্ডোরা</option>
+        <option value="armenia">আর্মেনিয়া</option>
+        <option value="austria">অস্ট্রিয়া</option>
+        <option value="azerbaijan">আজারবাইজান</option>
+        <option value="belgium">বেলজিয়াম</option>
+        <option value="bosnia">বসনিয়া</option>
+        <option value="bulgaria">বুলগেরিয়া</option>
+        <option value="croatia">ক্রোয়েশিয়া</option>
+        <option value="cyprus">সাইপ্রাস</option>
+        <option value="czech">চেক রিপাবলিক</option>
+        <option value="denmark">ডেনমার্ক</option>
+        <option value="estonia">এস্তোনিয়া</option>
+        <option value="finland">ফিনল্যান্ড</option>
         <option value="france">ফ্রান্স</option>
+        <option value="georgia">জর্জিয়া</option>
+        <option value="germany">জার্মানি</option>
+        <option value="greece">গ্রিস</option>
+        <option value="hungary">হাঙ্গেরি</option>
+        <option value="iceland">আইসল্যান্ড</option>
+        <option value="ireland">আয়ারল্যান্ড</option>
+        <option value="italy">ইতালি</option>
+        <option value="kosovo">কসোভো</option>
+        <option value="latvia">লাটভিয়া</option>
+        <option value="liechtenstein">লিচেনস্টেইন</option>
+        <option value="lithuania">লিথুয়ানিয়া</option>
+        <option value="luxembourg">লুক্সেমবার্গ</option>
+        <option value="malta">মাল্টা</option>
+        <option value="moldova">মলডোভা</option>
+        <option value="monaco">মোনাকো</option>
+        <option value="montenegro">মন্টিনিগ্রো</option>
+        <option value="netherlands">নেদারল্যান্ডস</option>
+        <option value="northmacedonia">উত্তর মেসিডোনিয়া</option>
+        <option value="norway">নরওয়ে</option>
+        <option value="poland">পোল্যান্ড</option>
+        <option value="portugal">পর্তুগাল</option>
+        <option value="romania">রোমানিয়া</option>
+        <option value="russian">রাশিয়া</option>
+        <option value="sanmarino">সান মারিনো</option>
+        <option value="serbia">সার্বিয়া</option>
+        <option value="slovakia">স্লোভাকিয়া</option>
+        <option value="slovenia">স্লোভেনিয়া</option>
         <option value="spain">স্পেন</option>
-        <!-- আরও দেশের ভাষা যোগ করুন -->
+        <option value="sweden">সুইডেন</option>
+        <option value="switzerland">সুইজারল্যান্ড</option>
+        <option value="turkey">তুরস্ক</option>
+        <option value="ukraine">ইউক্রেন</option>
+        <option value="unitedkingdom">যুক্তরাজ্য</option>
+        <option value="vatican">ভ্যাটিকান</option>
       </select>
       <button id="mode-toggle" title="ডার্ক/লাইট মোড">☀️</button>
       <button id="menu-toggle" title="মেনু">☰</button>
@@ -25,10 +69,23 @@
 
   <main>
     <div id="homepage-content">
-      <section class="section-card">
-        <h2>👋 স্বাগতম Speak EU-তে!</h2>
-        <p>ইউরোপের সব দেশে সহজে কথা বলুন, বাংলা অনুবাদসহ। ভাষা বেছে নিন এবং শিখতে শুরু করুন!</p>
+      <section class="section-card homepage-card">
+        <h1>🌍 Speak EU</h1>
+        <p>প্রবাসী, পর্যটক ও শিক্ষার্থীদের জন্য ইউরোপের ৪৫+ দেশের ভাষায় বাংলা অনুবাদসহ সার্ভার-স্টাইল ফ্রি ভাষা শেখার টুল।</p>
+        <ul class="feature-list">
+          <li>🇪🇺 ইউরোপের সর্বাধিক দেশের ডেইলি কথোপকথন</li>
+          <li>বাংলা অর্থ ও উচ্চারণ</li>
+          <li>স্মার্ট ফোল্ডার ও বুকমার্ক</li>
+          <li>ডার্ক/লাইট মোড, রেসপনসিভ ডিজাইন</li>
+          <li>কোনো ডেটা অনলাইনে সংরক্ষণ হয় না, সম্পূর্ণ প্রাইভেট</li>
+        </ul>
+        <div class="get-started-box">
+          <span>দেশ সিলেক্ট করুন এবং শিখতে শুরু করুন!</span>
+        </div>
       </section>
+      <div id="homepage-return" style="display:none;">
+        <button id="return-progress-btn" class="control-btn return-btn">← আগের অবস্থায় ফিরে যান</button>
+      </div>
     </div>
     <div id="error-display" style="display:none;">
       <div class="error-container">
@@ -54,7 +111,6 @@
       <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
     </ul>
   </nav>
-
   <script src="main.js"></script>
 </body>
 </html>
