@@ -1,4 +1,4 @@
-// ====== Speak EU Main Script (Optimized & Bug Fixed) ======
+// ===== Speak EU Main Script (Optimized & Clean) =====
 
 // ---- Variables ----
 const languageSelect = document.getElementById('language-select');
@@ -24,13 +24,7 @@ const langCodeMap = {
 
 // ---- On Load ----
 window.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('selectedLanguage');
-  if (savedLang) {
-    languageSelect.value = savedLang;
-    loadLanguage(savedLang);
-  } else {
-    showHomePage();
-  }
+  // Theme: default light if unset
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
@@ -38,6 +32,14 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     document.body.classList.remove('dark-mode');
     modeToggle.textContent = '☀️';
+  }
+
+  const savedLang = localStorage.getItem('selectedLanguage');
+  if (savedLang) {
+    languageSelect.value = savedLang;
+    loadLanguage(savedLang);
+  } else {
+    showHomePage();
   }
   setupMenuToggle();
   setupModeToggle();
@@ -50,7 +52,6 @@ window.addEventListener('DOMContentLoaded', () => {
       // Optionally close side menu if open
       const sideMenu = document.getElementById('side-menu');
       if (sideMenu) sideMenu.classList.remove('active');
-      // Optional: Scroll to top
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
   });
@@ -161,7 +162,6 @@ function renderVocabulary(list, langKey) {
 
 // ---- Save to Folder Dialog ----
 window.showSaveToFolderDialog = function(language, index) {
-  // Prevent multiple dialogs
   if (document.querySelector('.folder-dialog-overlay')) return;
   const folderIds = Object.keys(userFolders);
   const dialogHtml = `
@@ -200,7 +200,6 @@ window.showSaveToFolderDialog = function(language, index) {
   }, 100);
 };
 
-// ---- Create New Folder ----
 window.createNewFolder = function(language, index) {
   const folderName = document.getElementById('new-folder-name').value.trim();
   if (!folderName) {
@@ -228,7 +227,6 @@ window.createNewFolder = function(language, index) {
   showSuccessMessage(`"${folderName}" ফোল্ডারে সেভ করা হয়েছে!`);
 };
 
-// ---- Save to Existing Folder ----
 window.saveToExistingFolder = function(folderId, language, index) {
   const exists = userFolders[folderId].items.some(item =>
     item.language === currentLanguage && item.langKey === language && item.index === index
@@ -248,13 +246,11 @@ window.saveToExistingFolder = function(folderId, language, index) {
   showSuccessMessage(`"${userFolders[folderId].name}" ফোল্ডারে সেভ করা হয়েছে!`);
 };
 
-// ---- Close Folder Dialog ----
 window.closeFolderDialog = function() {
   const dialog = document.querySelector('.folder-dialog-overlay');
   if (dialog) dialog.remove();
 };
 
-// ---- Show Folder View ----
 window.showFolderView = function() {
   hideHomePage();
   hideError();
@@ -295,7 +291,6 @@ window.showFolderView = function() {
   conversationArea.innerHTML = foldersHtml;
 };
 
-// ---- Show Selected Folder Content ----
 window.showSelectedFolderContent = function(folderId) {
   if (!folderId) {
     document.getElementById('folder-content-area').innerHTML = '<p class="folder-instruction">উপরের dropdown থেকে একটি ফোল্ডার সিলেক্ট করুন।</p>';
@@ -344,7 +339,6 @@ window.showSelectedFolderContent = function(folderId) {
   document.getElementById('folder-content-area').innerHTML = folderContentHtml;
 };
 
-// ---- Remove From Folder ----
 window.removeFromFolder = function(folderId, itemIndex) {
   if (confirm('এই বাক্যটি ফোল্ডার থেকে মুছে ফেলবেন?')) {
     userFolders[folderId].items.splice(itemIndex, 1);
@@ -354,7 +348,6 @@ window.removeFromFolder = function(folderId, itemIndex) {
   }
 };
 
-// ---- Show All Items ----
 window.showAllItems = function() {
   showingFolderContent = false;
   if (currentData.length > 0) {
@@ -362,7 +355,6 @@ window.showAllItems = function() {
   }
 };
 
-// ---- Export Folders ----
 window.exportFolders = function() {
   if (Object.keys(userFolders).length === 0) {
     alert('কোনো ফোল্ডার নেই!');
@@ -385,7 +377,6 @@ window.exportFolders = function() {
   showSuccessMessage('ফোল্ডার তালিকা সফলভাবে Export করা হয়েছে!');
 };
 
-// ---- Import Folders ----
 window.importFolders = function() {
   const input = document.createElement('input');
   input.type = 'file';
@@ -414,7 +405,6 @@ window.importFolders = function() {
   input.click();
 };
 
-// ---- Reset All Data ----
 window.resetAllData = function() {
   if (confirm('আপনি কি নিশ্চিত যে সব ডেটা রিসেট করতে চান? এটি আপনার সব ফোল্ডার এবং সেটিংস মুছে দেবে।')) {
     localStorage.clear();
@@ -428,7 +418,6 @@ window.resetAllData = function() {
   }
 };
 
-// ---- Error UI ----
 function showError(message) {
   const errorDisplay = document.getElementById('error-display');
   const errorMessage = document.getElementById('error-message');
@@ -444,7 +433,6 @@ function hideError() {
   if (errorDisplay) errorDisplay.style.display = 'none';
 }
 
-// ---- Homepage ----
 window.showHomePage = function() {
   const homepage = document.getElementById('homepage-content');
   if (homepage) homepage.style.display = 'block';
@@ -457,14 +445,12 @@ function hideHomePage() {
   if (homepage) homepage.style.display = 'none';
 }
 
-// ---- Folder Controls Show/Hide ----
 function showFolderControls() { }
 function hideFolderControls() {
   const controls = document.getElementById('folder-controls');
   if (controls) controls.style.display = 'none';
 }
 
-// ---- Success Toast ----
 function showSuccessMessage(message) {
   const existingToast = document.querySelector('.success-toast');
   if (existingToast) existingToast.remove();
@@ -475,7 +461,6 @@ function showSuccessMessage(message) {
   setTimeout(() => { if (toast.parentNode) toast.remove(); }, 2800);
 }
 
-// ---- Static Page Navigation ----
 window.showAboutPage = function() {
   hideHomePage(); hideError(); hideFolderControls();
   conversationArea.innerHTML = `
@@ -527,5 +512,4 @@ window.showFoldersPage = function() {
   showFolderView();
   document.getElementById('side-menu').classList.remove('active');
 };
-
-// ====== END ======
+// ===== END =====
