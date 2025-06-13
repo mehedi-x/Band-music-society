@@ -1,12 +1,15 @@
-/* ======== Server-style Global Reset ======== */
+/* ======== Global/Body ======== */
 body {
   background: #181c22;
   color: #e3e7ef;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
+* { box-sizing: border-box; }
 
-/* ===== Header ===== */
+/* ===== Header & Language Select ===== */
 .app-header {
   display: flex;
   align-items: center;
@@ -241,7 +244,6 @@ body {
   margin-right: 2px;
   flex-shrink: 0;
 }
-/* Make list bullets invisible for UX */
 #side-menu ul, #side-menu li {
   list-style-type: none;
 }
@@ -348,8 +350,6 @@ body {
   .folder-content { padding: 5px 2vw 5px 2vw;}
   #side-menu { width: 95vw; min-width: 120px; max-width: 99vw; padding-left: 3vw; padding-right: 3vw;}
 }
-
-/* Hide scroll on side menu for clean look */
 #side-menu::-webkit-scrollbar {
   width: 0px;
   background: transparent;
