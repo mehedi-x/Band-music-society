@@ -1,33 +1,138 @@
-/* হোমপেজ/ফিচার আরও প্রফেশনাল */
+body {
+  background: #f7fafd;
+  color: #222c33;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background: #181c22;
+  color: #e3e7ef;
+}
+* { box-sizing: border-box; }
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  background: #1976d2;
+  color: #fff;
+  padding: 0 14px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.09);
+}
+.app-title {
+  font-size: 1.09rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  margin: 0;
+  line-height: 1.1;
+  user-select: none;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#language-select {
+  padding: 3px 9px;
+  font-size: 0.97rem;
+  height: 32px;
+  min-width: 100px;
+  max-width: 160px;
+  border-radius: 7px;
+  border: none;
+  background: #fff;
+  color: #222;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(25,118,210,.07);
+  outline: none;
+  transition: box-shadow .13s, background .13s, color .13s;
+  display: inline-block;
+  vertical-align: middle;
+}
+#language-select:focus {
+  box-shadow: 0 0 0 1.5px #90caf9;
+  background: #f0f5ff;
+}
+body.dark-mode #language-select {
+  background: #23272f;
+  color: #e3f2fd;
+}
+#mode-toggle, #menu-toggle {
+  font-size: 1.2rem;
+  background: #003c82;
+  border: none;
+  border-radius: 5px;
+  width: 38px;
+  height: 32px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .13s, transform .10s;
+}
+#mode-toggle:hover, #menu-toggle:hover, #mode-toggle:focus, #menu-toggle:focus {
+  background: #09407c;
+  color: #21c87a;
+  transform: scale(1.07);
+}
+
+/* হোমপেজ */
 .homepage-card {
-  max-width: 480px;
-  margin: 40px auto 0 auto;
-  box-shadow: 0 4px 24px rgba(30,80,180,.13);
+  max-width: 540px;
+  margin: 36px auto 0 auto;
+  box-shadow: 0 4px 24px rgba(30,80,180,.10);
   text-align: center;
   background: #fff;
+  border-radius: 16px;
+  padding: 28px 18px 26px 18px;
 }
 body.dark-mode .homepage-card {
   background: #181c22;
   color: #e3e7ef;
 }
-.homepage-card h1 {
-  margin-top: 0;
-  font-size: 2rem;
-  letter-spacing: .01em;
-  color: #1976d2;
-  font-weight: 800;
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 8px;
 }
-body.dark-mode .homepage-card h1 {
+.emoji-logo {
+  font-size: 2.5em;
+}
+.brand-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1976d2;
+  letter-spacing: .01em;
+}
+body.dark-mode .brand-title {
   color: #4cb5ff;
+}
+.home-desc {
+  font-size: 1.1rem;
+  margin: 18px 0 22px 0;
+  color: #333;
+}
+body.dark-mode .home-desc {
+  color: #c6d7ee;
 }
 .feature-list {
   text-align: left;
-  margin: 28px auto 16px auto;
+  margin: 18px auto 18px auto;
   display: inline-block;
-  font-size: 1.09rem;
+  font-size: 1.08rem;
   padding-left: 18px;
   color: #3670b7;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 body.dark-mode .feature-list {
   color: #a9d1fa;
@@ -37,10 +142,10 @@ body.dark-mode .feature-list {
   background: #e5f2ff;
   color: #1976d2;
   font-weight: 600;
-  padding: 12px 18px;
+  padding: 13px 15px;
   border-radius: 12px;
   display: inline-block;
-  font-size: 1.08rem;
+  font-size: 1.07rem;
 }
 body.dark-mode .get-started-box {
   background: #22324c;
@@ -74,8 +179,11 @@ body.dark-mode .return-btn:hover {
   color: #21c87a;
 }
 
-/* বাকি সব আগের মতোই থাক */
+/* Side menu, conversation-area, error, toast, responsive বাকি সব আগের মতোই */
+
 @media (max-width:600px) {
-  .homepage-card { max-width: 97vw; padding: 6vw 2vw;}
-  .feature-list { font-size: 1rem;}
+  .homepage-card { max-width: 98vw; padding: 6vw 2vw;}
+  .feature-list { font-size: .99rem;}
+  .brand-title { font-size: 1.5rem;}
+  .logo-row { gap: 5px;}
 }
