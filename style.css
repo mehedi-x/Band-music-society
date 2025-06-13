@@ -1,70 +1,65 @@
-/* ====== Global Reset & Base ====== */
+/* ======== Server-style Global Reset ======== */
 body {
-  margin: 0;
+  background: #181c22;
+  color: #e3e7ef;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  background: #f8fafc;
-  color: #1a2233;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
-* {
-  box-sizing: border-box;
-}
-/* ===== Header & Language Select ===== */
+
+/* ===== Header ===== */
 .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 46px;
+  height: 48px;
   background: #1976d2;
   color: #fff;
-  padding: 0 18px;
+  padding: 0 14px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  box-shadow: 0 2px 8px rgba(25,118,210,0.10);
-  gap: 6px;
+  box-shadow: 0 2px 8px rgba(25,118,210,0.09);
 }
 .app-title {
   font-size: 1.13rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
+  letter-spacing: .01em;
   margin: 0;
+  line-height: 1.1;
   user-select: none;
 }
 .header-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 #language-select {
-  padding: 4px 11px;
-  font-size: 0.98rem;
+  padding: 3px 9px;
+  font-size: 0.97rem;
   height: 28px;
-  min-width: 78px;
-  max-width: 140px;
+  min-width: 82px;
+  max-width: 136px;
   border-radius: 7px;
   border: none;
   background: #fff;
   color: #222;
   font-weight: 500;
-  box-shadow: 0 1px 4px rgba(25,118,210,.08);
+  box-shadow: 0 1px 4px rgba(25,118,210,.07);
   outline: none;
-  transition: box-shadow .14s, background .14s, color .14s;
+  transition: box-shadow .13s, background .13s, color .13s;
   display: inline-block;
   vertical-align: middle;
 }
 #language-select:focus {
   box-shadow: 0 0 0 1.5px #90caf9;
-  background: #f3f9ff;
+  background: #f0f5ff;
 }
 #mode-toggle, #menu-toggle {
-  font-size: 1.17rem;
+  font-size: 1.1rem;
   background: #003c82;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -75,66 +70,237 @@ body {
 #mode-toggle:hover, #menu-toggle:hover, #mode-toggle:focus, #menu-toggle:focus {
   background: #09407c;
   color: #21c87a;
-  transform: scale(1.08);
+  transform: scale(1.07);
+}
+
+/* ====== Conversation Card/Item ====== */
+.conversation-item {
+  background: #191e25;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(25, 120, 210, 0.07);
+  border: 1.2px solid #232732;
+  margin-bottom: 18px;
+  padding: 14px 10px 10px 18px;
+  transition: box-shadow 0.14s, border 0.15s, background 0.14s;
+  min-height: 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.conversation-item strong,
+.conversation-item a {
+  color: #4cb5ff;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+.conversation-item em {
+  color: #bbb;
+  font-style: normal;
+  font-size: 0.97rem;
+}
+.conversation-item div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.5;
+  word-break: break-word;
+  flex-wrap: wrap;
+}
+.conversation-item .save-folder-btn, .conversation-item .remove-from-folder-btn {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}
+.conversation-item .save-folder-btn {
+  color: #21c87a;
+}
+.conversation-item .save-folder-btn:hover {
+  color: #178659;
+  background: #232732;
+}
+.conversation-item .remove-from-folder-btn:hover {
+  color: #a81a1a;
+  background: #232732;
+}
+
+/* ====== Avatar/Badge (fix overlap) ====== */
+.avatar-badge {
+  position: absolute;
+  left: -10px;
+  top: -18px;
+  border-radius: 50%;
+  border: 2.5px solid #191e25;
+  box-shadow: 0 2px 8px rgba(25, 120, 210, 0.08);
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  z-index: 2;
+}
+@media (max-width: 700px) {
+  .avatar-badge {
+    width: 32px;
+    height: 32px;
+    left: -7px;
+    top: -15px;
+  }
+}
+
+/* ===== Side Menu (Drawer) ===== */
+#side-menu {
+  position: fixed;
+  top: 0; right: 0;
+  width: 250px;
+  height: 100%;
+  background: #191e25;
+  color: #e3e7ef;
+  padding: 18px 13px 12px 18px;
+  box-shadow: -4px 0 14px rgba(25,120,210,0.12);
+  transform: translateX(110%);
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), opacity 0.19s;
+  z-index: 900;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+#side-menu.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+#close-menu {
+  background: none;
+  border: none;
+  font-size: 1.22rem;
+  align-self: flex-end;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 3px;
+  transition: color 0.13s;
+}
+#close-menu:hover { color: #dc3545;}
+/* ===== Side Menu Content ===== */
+#side-menu h3,
+#side-menu .side-title {
+  font-size: 1.08rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  padding-bottom: 7px;
+  border-bottom: 1.1px solid #232732;
+  letter-spacing: .02em;
+}
+#side-menu .side-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#side-menu ul {
+  padding: 0;
+  margin: 0 0 12px 0;
+  list-style: none;
+}
+#side-menu li {
+  margin-bottom: 7px;
+}
+#side-menu a {
+  color: #4cb5ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  gap: 7px;
+  border-radius: 6px;
+  padding: 7px 7px 7px 10px;
+  align-items: center;
+  transition: background 0.14s, color 0.14s;
+}
+#side-menu a:hover {
+  background: #232732;
+  color: #21c87a;
+}
+#side-menu .reset-link {
+  color: #ef5350 !important;
+}
+#side-menu .menu-divider {
+  height: 1px;
+  background: #232732;
+  margin: 7px 0;
+}
+#side-menu .side-emoji {
+  font-size: 1.13em;
+  margin-right: 2px;
+  flex-shrink: 0;
+}
+/* Make list bullets invisible for UX */
+#side-menu ul, #side-menu li {
+  list-style-type: none;
 }
 
 /* ===== Folder Section ===== */
 .folders-container {
-  padding: 14px 0 0 0;
+  padding: 10px 0 0 0;
   margin: 0 auto;
   max-width: 520px;
 }
 .folders-header {
-  background: #f8faff;
-  padding: 10px 14px;
-  border-radius: 9px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 5px rgba(25,118,210,.05);
+  background: #191e25;
+  padding: 9px 10px;
+  border-radius: 8px;
+  margin-bottom: 9px;
+  box-shadow: 0 1px 5px rgba(25,118,210,.04);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .folders-header h2 {
   margin: 0;
-  font-size: 1.05rem;
-  color: #1976d2;
+  font-size: 1rem;
+  color: #4cb5ff;
   font-weight: 700;
-  letter-spacing: .01em;
 }
 .folder-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 #folder-selector {
-  padding: 6px 12px;
-  border: 1px solid #dde2ed;
-  border-radius: 7px;
-  font-size: .98rem;
-  min-width: 100px;
+  padding: 4px 10px;
+  border: 1px solid #232732;
+  border-radius: 6px;
+  font-size: .96rem;
+  min-width: 95px;
   max-width: 170px;
-  background: #fff;
-  color: #222;
+  background: #191e25;
+  color: #e3e7ef;
   font-weight: 500;
   outline: none;
   transition: border-color .13s;
 }
 #folder-selector:focus {
-  border-color: #1976d2;
+  border-color: #4cb5ff;
 }
 .folder-content {
-  background: #fff;
-  border-radius: 9px;
+  background: #191e25;
+  border-radius: 8px;
   box-shadow: 0 1px 6px rgba(25,118,210,0.07);
-  padding: 13px 11px 10px 13px;
-  margin-top: 10px;
+  padding: 11px 8px 9px 10px;
+  margin-top: 7px;
 }
 .folder-content h3 {
-  margin: 0 0 13px 0;
-  font-size: 1.01rem;
-  color: #1976d2;
-  font-weight: 600;
+  margin: 0 0 11px 0;
+  font-size: .99rem;
+  color: #4cb5ff;
 }
 .folder-items {
   display: flex;
@@ -144,145 +310,47 @@ body {
 .empty-folder,
 .folder-instruction {
   text-align: center;
-  color: #9ca2ad;
+  color: #888ea8;
   font-style: italic;
   padding: 13px 0 7px 0;
-  font-size: .97rem;
+  font-size: .96rem;
 }
 .folder-option {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 11px;
-  border: 1px solid #dde2ed;
-  border-radius: 7px;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid #232732;
+  border-radius: 6px;
   cursor: pointer;
-  background: #f8fafc;
-  font-size: .97rem;
-  transition: border-color .11s, background .12s;
-  margin-bottom: 4px;
+  background: #181c22;
+  font-size: .95rem;
+  transition: border-color .12s, background .12s;
+  margin-bottom: 3px;
 }
 .folder-option:hover {
-  border-color: #1976d2;
-  background: #eaf2ff;
+  border-color: #21c87a;
+  background: #232732;
 }
 .folder-name { font-weight: 600;}
-.folder-count { color: #8ca0b8; font-size: .92em;}
-.folder-icon { font-size: 1.11rem; }
+.folder-count { color: #b7c7e0; font-size: .92em;}
+.folder-icon { font-size: 1.1rem; }
 
-/* Folder remove/save btn */
-.remove-from-folder-btn, .save-folder-btn {
-  top: 8px;
-  right: 8px;
-  font-size: 1.02rem;
-  width: 21px;
-  height: 21px;
-  background: none;
-  border: none;
-  border-radius: 50%;
-  color: #dc3545;
-  transition: background .09s, color .10s, transform .09s;
-}
-.save-folder-btn { color: #21c87a;}
-.save-folder-btn:hover { color: #178659; transform: scale(1.09);}
-.remove-from-folder-btn:hover { background: #faeaea; color: #a81a1a;}
+/* ===== Home Click (JS) ===== */
+/* Add a class .home-link to all Home links! */
+/* Example: <a class="home-link" href="/">🏠 Home</a> */
 
-/* ===== Conversation Item (Assuming this class exists) ===== */
-.conversation-item {
-  padding: 13px 10px 11px 12px;
-  margin-bottom: 10px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(25,118,210,0.07);
-  color: #1a2233;
-  font-size: 0.98rem;
-  position: relative;
-  border: 1px solid #f5f7fa;
-  transition: background 0.10s, box-shadow 0.10s, border 0.10s;
-}
-.conversation-item div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 3px;
-  line-height: 1.5;
-  word-break: break-word;
-}
-.conversation-item strong {
-  color: #1976d2;
-  font-size: 1.02rem;
-  font-weight: 700;
-}
-.conversation-item em {
-  font-style: normal;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* ===== Button & Controls ===== */
-button, .control-btn, .back-btn {
-  font-family: inherit;
-}
-.control-btn {
-  padding: 6px 13px;
-  border: 1px solid #dde2ed;
-  background: #fff;
-  color: #333;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 0.97rem;
-  font-weight: 600;
-  transition: background 0.11s, color 0.11s, border-color 0.11s;
-}
-.control-btn.active,
-.control-btn:active {
-  background: #1976d2;
-  color: #fff;
-  border-color: #1976d2;
-}
-.control-btn:hover {
-  background: #e6f0ff;
-  color: #1976d2;
-}
-.back-btn {
-  background: #626b76;
-  color: #fff;
-  border: none;
-  padding: 6px 13px;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  margin-left: 7px;
-}
-.back-btn:hover {
-  background: #384049;
-}
-
-/* ===== Error/Info ===== */
-.error-container {
-  background: #fff3cd;
-  border: 1.2px solid #ffeaa7;
-  border-radius: 10px;
-  padding: 11px 10px;
-  margin: 14px 0;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  box-shadow: 0 1px 6px 0 rgba(180,140,50,0.07);
-}
-.error-icon { font-size: 1.2rem; }
-.error-text h3 {
-  margin: 0 0 4px 0;
-  color: #856404;
-  font-size: 1.01rem;
-}
-.error-text p { margin: 0; color: #6c5500; font-size: 0.97rem;}
-
-/* ===== Responsive ===== */
+/* Responsive for server/mobile */
 @media (max-width:600px) {
-  .folders-container { padding: 3px 0 0 0; max-width: 98vw;}
-  .folders-header { padding: 7px 3vw;}
-  .folder-controls { gap: 6px;}
-  .folder-content { padding: 7px 3vw 7px 3vw;}
-  .app-header { padding: 0 4vw;}
+  .folders-container { padding: 3px 0 0 0; max-width: 99vw;}
+  .folders-header { padding: 5px 3vw;}
+  .folder-controls { gap: 4px;}
+  .folder-content { padding: 5px 2vw 5px 2vw;}
+  #side-menu { width: 95vw; min-width: 120px; max-width: 99vw; padding-left: 3vw; padding-right: 3vw;}
+}
+
+/* Hide scroll on side menu for clean look */
+#side-menu::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
