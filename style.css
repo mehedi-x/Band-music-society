@@ -1,4 +1,5 @@
-/* ====== Global Styles ====== */
+/* ====== Speak EU Global Styles ====== */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -6,12 +7,13 @@ body {
   color: #222;
   transition: background 0.3s, color 0.3s;
 }
+
 .dark-mode {
   background-color: #181a1b;
   color: #f5f5f5;
 }
 
-/* ====== Header Styles ====== */
+/* ====== Header ====== */
 .app-header {
   display: flex;
   justify-content: space-between;
