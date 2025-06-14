@@ -1,122 +1,316 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Speak EU - Language Server</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak EU - European Language Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="app-header">
-    <span class="app-title">🌍 Speak EU - Language Server</span>
-    <div class="header-right">
-      <select id="language-select">
-        <option value="">দেশ সিলেক্ট করুন</option>
-        <option value="albania">আলবেনিয়া</option>
-        <option value="andorra">আন্ডোরা</option>
-        <option value="armenia">আর্মেনিয়া</option>
-        <option value="austria">অস্ট্রিয়া</option>
-        <option value="azerbaijan">আজারবাইজান</option>
-        <option value="belgium">বেলজিয়াম</option>
-        <option value="bosnia">বসনিয়া</option>
-        <option value="bulgaria">বুলগেরিয়া</option>
-        <option value="croatia">ক্রোয়েশিয়া</option>
-        <option value="cyprus">সাইপ্রাস</option>
-        <option value="czech">চেক রিপাবলিক</option>
-        <option value="denmark">ডেনমার্ক</option>
-        <option value="estonia">এস্তোনিয়া</option>
-        <option value="finland">ফিনল্যান্ড</option>
-        <option value="france">ফ্রান্স</option>
-        <option value="georgia">জর্জিয়া</option>
-        <option value="germany">জার্মানি</option>
-        <option value="greece">গ্রিস</option>
-        <option value="hungary">হাঙ্গেরি</option>
-        <option value="iceland">আইসল্যান্ড</option>
-        <option value="ireland">আয়ারল্যান্ড</option>
-        <option value="italy">ইতালি</option>
-        <option value="kosovo">কসোভো</option>
-        <option value="latvia">লাটভিয়া</option>
-        <option value="liechtenstein">লিচেনস্টেইন</option>
-        <option value="lithuania">লিথুয়ানিয়া</option>
-        <option value="luxembourg">লুক্সেমবার্গ</option>
-        <option value="malta">মাল্টা</option>
-        <option value="moldova">মলডোভা</option>
-        <option value="monaco">মোনাকো</option>
-        <option value="montenegro">মন্টিনিগ্রো</option>
-        <option value="netherlands">নেদারল্যান্ডস</option>
-        <option value="northmacedonia">উত্তর মেসিডোনিয়া</option>
-        <option value="norway">নরওয়ে</option>
-        <option value="poland">পোল্যান্ড</option>
-        <option value="portugal">পর্তুগাল</option>
-        <option value="romania">রোমানিয়া</option>
-        <option value="russian">রাশিয়া</option>
-        <option value="sanmarino">সান মারিনো</option>
-        <option value="serbia">সার্বিয়া</option>
-        <option value="slovakia">স্লোভাকিয়া</option>
-        <option value="slovenia">স্লোভেনিয়া</option>
-        <option value="spain">স্পেন</option>
-        <option value="sweden">সুইডেন</option>
-        <option value="switzerland">সুইজারল্যান্ড</option>
-        <option value="turkey">তুরস্ক</option>
-        <option value="ukraine">ইউক্রেন</option>
-        <option value="unitedkingdom">যুক্তরাজ্য</option>
-        <option value="vatican">ভ্যাটিকান</option>
-      </select>
-      <button id="mode-toggle" title="ডার্ক/লাইট মোড">☀️</button>
-      <button id="menu-toggle" title="মেনু">☰</button>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="server-logo">
+            <i class="fas fa-server"></i>
+            <h2>Speak EU Server</h2>
+        </div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <p>সার্ভার লোড হচ্ছে...</p>
     </div>
-  </header>
 
-  <main>
-    <div id="homepage-content">
-      <section class="section-card homepage-card">
-        <div class="logo-row">
-          <span class="emoji-logo">🌍</span>
-          <span class="brand-title">Speak EU</span>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-server"></i>
+                <span>Speak EU Server</span>
+                <span class="server-status online">
+                    <i class="fas fa-circle"></i> Online
+                </span>
+            </div>
+            <div class="nav-controls">
+                <button class="nav-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-btn" id="folderBtn">
+                    <i class="fas fa-folder"></i>
+                    <span>ফোল্ডার</span>
+                </button>
+                <button class="nav-btn" id="settingsBtn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
         </div>
-        <p class="home-desc">
-          প্রবাসী, পর্যটক ও শিক্ষার্থীদের জন্য ইউরোপের ৪৫+ দেশের ভাষায় বাংলা অনুবাদসহ সার্ভার-স্টাইল ফ্রি ভাষা শেখার টুল।
-        </p>
-        <ul class="feature-list">
-          <li>🇪🇺 ইউরোপের সর্বাধিক দেশের ডেইলি কথোপকথন</li>
-          <li>বাংলা অর্থ ও উচ্চারণ</li>
-          <li>স্মার্ট ফোল্ডার ও বুকমার্ক</li>
-          <li>ডার্ক/লাইট মোড, রেসপনসিভ ডিজাইন</li>
-          <li>কোনো ডেটা অনলাইনে সংরক্ষণ হয় না, সম্পূর্ণ প্রাইভেট</li>
-        </ul>
-        <div class="get-started-box">
-          <span>দেশ সিলেক্ট করুন এবং শিখতে শুরু করুন!</span>
-        </div>
-      </section>
-      <div id="homepage-return" style="display:none;">
-        <button id="return-progress-btn" class="control-btn return-btn">← আগের অবস্থায় ফিরে যান</button>
-      </div>
-    </div>
-    <div id="error-display" style="display:none;">
-      <div class="error-container">
-        <span class="error-icon">⚠️</span>
-        <div class="error-text">
-          <h3>সমস্যা!</h3>
-          <p id="error-message"></p>
-        </div>
-      </div>
-    </div>
-    <div id="conversation-area"></div>
-  </main>
+    </nav>
 
-  <!-- সাইড মেনু ডিফল্টে হাইড থাকবে, active হলে show -->
-  <nav id="side-menu">
-    <button id="close-menu" title="বন্ধ করুন">✖</button>
-    <div class="side-title"><span class="side-emoji">🌍</span> Speak EU</div>
-    <ul>
-      <li><a href="#" class="home-link">🏠 Home</a></li>
-      <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
-      <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
-      <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
-      <li><a href="#" onclick="showFoldersPage()">📁 Folders</a></li>
-      <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
-    </ul>
-  </nav>
-  <script src="main.js"></script>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-language"></i> ভাষা সমূহ</h3>
+                <div class="server-info">
+                    <div class="info-item">
+                        <span>Uptime:</span>
+                        <span id="uptime">24:15:32</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Load:</span>
+                        <span class="load-indicator">●●●○○</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="language-list">
+                <div class="language-item active" data-lang="russian">
+                    <div class="lang-icon">🇷🇺</div>
+                    <div class="lang-info">
+                        <span class="lang-name">রাশিয়ান</span>
+                        <span class="lang-count">1000 কথোপকথন</span>
+                    </div>
+                    <div class="lang-status online"></div>
+                </div>
+                
+                <div class="language-item" data-lang="german">
+                    <div class="lang-icon">🇩🇪</div>
+                    <div class="lang-info">
+                        <span class="lang-name">জার্মান</span>
+                        <span class="lang-count">500 কথোপকথন</span>
+                    </div>
+                    <div class="lang-status offline"></div>
+                </div>
+                
+                <div class="language-item" data-lang="french">
+                    <div class="lang-icon">🇫🇷</div>
+                    <div class="lang-info">
+                        <span class="lang-name">ফরাসি</span>
+                        <span class="lang-count">500 কথোপকথন</span>
+                    </div>
+                    <div class="lang-status offline"></div>
+                </div>
+                
+                <div class="language-item" data-lang="spanish">
+                    <div class="lang-icon">🇪🇸</div>
+                    <div class="lang-info">
+                        <span class="lang-name">স্প্যানিশ</span>
+                        <span class="lang-count">500 কথোপকথন</span>
+                    </div>
+                    <div class="lang-status offline"></div>
+                </div>
+            </div>
+
+            <!-- Prayer Times Widget -->
+            <div class="prayer-times">
+                <h4><i class="fas fa-mosque"></i> নামাজের সময়</h4>
+                <div class="prayer-item">
+                    <span>ফজর</span>
+                    <span>৫:৩০</span>
+                </div>
+                <div class="prayer-item">
+                    <span>জুহর</span>
+                    <span>১২:১৫</span>
+                </div>
+                <div class="prayer-item active">
+                    <span>আসর</span>
+                    <span>১৫:৪৫</span>
+                </div>
+                <div class="prayer-item">
+                    <span>মাগরিব</span>
+                    <span>১৮:২০</span>
+                </div>
+                <div class="prayer-item">
+                    <span>এশা</span>
+                    <span>১৯:৪৫</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="panel-left">
+                    <h2>কথোপকথন ডাটাবেস</h2>
+                    <div class="breadcrumb">
+                        <span><i class="fas fa-home"></i> হোম</span>
+                        <span><i class="fas fa-chevron-right"></i></span>
+                        <span id="currentLang">রাশিয়ান</span>
+                    </div>
+                </div>
+                <div class="panel-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="কথোপকথন খুঁজুন...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="btn-primary" id="saveToFolderBtn">
+                        <i class="fas fa-save"></i> ফোল্ডারে সেভ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalConversations">1,000</h3>
+                        <p>মোট কথোপকথন</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalFolders">12</h3>
+                        <p>সংরক্ষিত ফোল্ডার</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="downloadCount">2.5K</h3>
+                        <p>ডাউনলোড সম্পন্ন</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>156</h3>
+                        <p>সক্রিয় ব্যবহারকারী</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversation Display -->
+            <div class="conversation-container">
+                <div class="container-header">
+                    <h3>কথোপকথন তালিকা</h3>
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="conversationGrid" class="conversation-grid">
+                    <!-- Conversations will be loaded here -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="page-btn" id="prevBtn" disabled>
+                        <i class="fas fa-chevron-left"></i> পূর্ববর্তী
+                    </button>
+                    <div class="page-info">
+                        <span id="pageInfo">পৃষ্ঠা ১ এর ১০</span>
+                    </div>
+                    <button class="page-btn" id="nextBtn">
+                        পরবর্তী <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Folder Management Modal -->
+    <div id="folderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-folder-open"></i> ফোল্ডার ম্যানেজমেন্ট</h3>
+                <button class="close-btn" id="closeFolderModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="folder-actions">
+                    <button class="action-btn" id="createFolderBtn">
+                        <i class="fas fa-plus"></i> নতুন ফোল্ডার
+                    </button>
+                    <button class="action-btn" id="importFolderBtn">
+                        <i class="fas fa-upload"></i> ইমপোর্ট
+                    </button>
+                    <button class="action-btn" id="exportFolderBtn">
+                        <i class="fas fa-download"></i> এক্সপোর্ট
+                    </button>
+                </div>
+                
+                <div id="folderList" class="folder-list">
+                    <!-- Folders will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save to Folder Modal -->
+    <div id="saveModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-save"></i> ফোল্ডারে সংরক্ষণ</h3>
+                <button class="close-btn" id="closeSaveModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="save-form">
+                    <label for="folderSelect">ফোল্ডার নির্বাচন করুন:</label>
+                    <select id="folderSelect">
+                        <option value="">ফোল্ডার নির্বাচন করুন</option>
+                    </select>
+                    
+                    <label for="newFolderName">অথবা নতুন ফোল্ডার তৈরি করুন:</label>
+                    <input type="text" id="newFolderName" placeholder="ফোল্ডারের নাম লিখুন">
+                    
+                    <div class="selected-conversations">
+                        <h4>নির্বাচিত কথোপকথন: <span id="selectedCount">0</span></h4>
+                        <div id="selectedList"></div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="btn-secondary" id="cancelSave">বাতিল</button>
+                        <button class="btn-primary" id="confirmSave">সংরক্ষণ করুন</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">সফলভাবে সম্পন্ন!</span>
+        </div>
+    </div>
+
+    <!-- System Status Bar -->
+    <div class="status-bar">
+        <div class="status-left">
+            <span><i class="fas fa-database"></i> সংযুক্ত</span>
+            <span><i class="fas fa-wifi"></i> অনলাইন</span>
+        </div>
+        <div class="status-right">
+            <span id="currentTime">১৫:৩০:২৫</span>
+            <span><i class="fas fa-memory"></i> RAM: ৭৮%</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
