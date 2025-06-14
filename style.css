@@ -14,13 +14,18 @@ body.dark-mode {
 * { box-sizing: border-box; }
 
 .app-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 48px;
+  height: 56px;
   background: #1976d2;
   color: #fff;
-  padding: 0 14px;
+  padding: 0 12px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   box-shadow: 0 2px 8px rgba(25,118,210,0.09);
@@ -82,6 +87,97 @@ body.dark-mode #language-select {
   background: #09407c;
   color: #21c87a;
   transform: scale(1.07);
+}
+
+/* সাইড মেনু ডিফল্টে হাইড, active হলে দেখান */
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  color: #1a2233;
+  padding: 18px 13px 12px 18px;
+  box-shadow: -4px 0 14px rgba(25,120,210,0.12);
+  transform: translateX(110%);
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), opacity 0.19s;
+  z-index: 900;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  visibility: hidden;
+}
+#side-menu.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+body.dark-mode #side-menu {
+  background: #191e25;
+  color: #e3e7ef;
+}
+#close-menu {
+  background: none;
+  border: none;
+  font-size: 1.22rem;
+  align-self: flex-end;
+  cursor: pointer;
+  color: inherit;
+  margin-bottom: 3px;
+  transition: color 0.13s;
+}
+#close-menu:hover { color: #dc3545;}
+.side-title {
+  font-size: 1.08rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  padding-bottom: 7px;
+  border-bottom: 1.1px solid #e3e3e3;
+  letter-spacing: .02em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body.dark-mode .side-title {
+  border-bottom: 1.1px solid #232732;
+}
+#side-menu ul {
+  padding: 0;
+  margin: 0 0 12px 0;
+  list-style: none;
+}
+#side-menu li {
+  margin-bottom: 7px;
+}
+#side-menu a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  gap: 7px;
+  border-radius: 6px;
+  padding: 7px 7px 7px 10px;
+  align-items: center;
+  transition: background 0.14s, color 0.14s;
+}
+body.dark-mode #side-menu a {
+  color: #4cb5ff;
+}
+#side-menu a:hover {
+  background: #e3f2fd;
+  color: #21c87a;
+}
+body.dark-mode #side-menu a:hover {
+  background: #232732;
+  color: #21c87a;
+}
+#side-menu .reset-link {
+  color: #ef5350 !important;
 }
 
 /* হোমপেজ */
@@ -179,11 +275,11 @@ body.dark-mode .return-btn:hover {
   color: #21c87a;
 }
 
-/* Side menu, conversation-area, error, toast, responsive বাকি সব আগের মতোই */
-
+/* Responsive */
 @media (max-width:600px) {
   .homepage-card { max-width: 98vw; padding: 6vw 2vw;}
   .feature-list { font-size: .99rem;}
   .brand-title { font-size: 1.5rem;}
   .logo-row { gap: 5px;}
+  .app-header { height: 52px; padding: 0 3vw;}
 }
