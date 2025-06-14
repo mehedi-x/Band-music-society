@@ -3,312 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speak EU - European Language Learning Platform</title>
+    <title>Speak EU - ইউরোপীয় ভাষা শেখার অ্যাপ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loadingScreen" class="loading-screen">
-        <div class="server-logo">
-            <i class="fas fa-server"></i>
-            <h2>Speak EU Server</h2>
+    <!-- Header -->
+    <header class="header">
+        <h1><i class="fas fa-language"></i> Speak EU</h1>
+        <div class="header-buttons">
+            <button id="folderBtn" class="btn">
+                <i class="fas fa-folder"></i> ফোল্ডার
+            </button>
+            <button id="themeBtn" class="btn">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
-        <div class="loading-bar">
-            <div class="loading-progress"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>ডেটা লোড হচ্ছে...</p>
         </div>
-        <p>সার্ভার লোড হচ্ছে...</p>
-    </div>
 
-    <!-- Navigation Header -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <i class="fas fa-server"></i>
-                <span>Speak EU Server</span>
-                <span class="server-status online">
-                    <i class="fas fa-circle"></i> Online
-                </span>
-            </div>
-            <div class="nav-controls">
-                <button class="nav-btn" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="nav-btn" id="folderBtn">
-                    <i class="fas fa-folder"></i>
-                    <span>ফোল্ডার</span>
-                </button>
-                <button class="nav-btn" id="settingsBtn">
-                    <i class="fas fa-cog"></i>
-                </button>
-            </div>
+        <!-- Search Section -->
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="কথোপকথন খুঁজুন..." class="search-input">
+            <button id="saveSelectedBtn" class="btn btn-primary" style="display: none;">
+                <i class="fas fa-save"></i> সংরক্ষণ করুন (<span id="selectedCount">0</span>)
+            </button>
         </div>
-    </nav>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h3><i class="fas fa-language"></i> ভাষা সমূহ</h3>
-                <div class="server-info">
-                    <div class="info-item">
-                        <span>Uptime:</span>
-                        <span id="uptime">24:15:32</span>
-                    </div>
-                    <div class="info-item">
-                        <span>Load:</span>
-                        <span class="load-indicator">●●●○○</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="language-list">
-                <div class="language-item active" data-lang="russian">
-                    <div class="lang-icon">🇷🇺</div>
-                    <div class="lang-info">
-                        <span class="lang-name">রাশিয়ান</span>
-                        <span class="lang-count">1000 কথোপকথন</span>
-                    </div>
-                    <div class="lang-status online"></div>
-                </div>
-                
-                <div class="language-item" data-lang="german">
-                    <div class="lang-icon">🇩🇪</div>
-                    <div class="lang-info">
-                        <span class="lang-name">জার্মান</span>
-                        <span class="lang-count">500 কথোপকথন</span>
-                    </div>
-                    <div class="lang-status offline"></div>
-                </div>
-                
-                <div class="language-item" data-lang="french">
-                    <div class="lang-icon">🇫🇷</div>
-                    <div class="lang-info">
-                        <span class="lang-name">ফরাসি</span>
-                        <span class="lang-count">500 কথোপকথন</span>
-                    </div>
-                    <div class="lang-status offline"></div>
-                </div>
-                
-                <div class="language-item" data-lang="spanish">
-                    <div class="lang-icon">🇪🇸</div>
-                    <div class="lang-info">
-                        <span class="lang-name">স্প্যানিশ</span>
-                        <span class="lang-count">500 কথোপকথন</span>
-                    </div>
-                    <div class="lang-status offline"></div>
-                </div>
-            </div>
+        <!-- Language Tabs -->
+        <div class="language-tabs">
+            <button class="tab-btn active" data-lang="russian" data-file="russian.json">
+                🇷🇺 রাশিয়ান
+                <span class="lang-count" id="count-russian">0</span>
+            </button>
+            <button class="tab-btn" data-lang="german" data-file="german.json">
+                🇩🇪 জার্মান
+                <span class="lang-count" id="count-german">0</span>
+            </button>
+            <button class="tab-btn" data-lang="french" data-file="french.json">
+                🇫🇷 ফরাসি
+                <span class="lang-count" id="count-french">0</span>
+            </button>
+            <button class="tab-btn" data-lang="spanish" data-file="spanish.json">
+                🇪🇸 স্প্যানিশ
+                <span class="lang-count" id="count-spanish">0</span>
+            </button>
+            <button class="tab-btn" data-lang="italian" data-file="italian.json">
+                🇮🇹 ইতালিয়ান
+                <span class="lang-count" id="count-italian">0</span>
+            </button>
+            <button class="tab-btn" data-lang="portuguese" data-file="portuguese.json">
+                🇵🇹 পর্তুগিজ
+                <span class="lang-count" id="count-portuguese">0</span>
+            </button>
+        </div>
 
-            <!-- Prayer Times Widget -->
-            <div class="prayer-times">
-                <h4><i class="fas fa-mosque"></i> নামাজের সময়</h4>
-                <div class="prayer-item">
-                    <span>ফজর</span>
-                    <span>৫:৩০</span>
-                </div>
-                <div class="prayer-item">
-                    <span>জুহর</span>
-                    <span>১২:১৫</span>
-                </div>
-                <div class="prayer-item active">
-                    <span>আসর</span>
-                    <span>১৫:৪৫</span>
-                </div>
-                <div class="prayer-item">
-                    <span>মাগরিব</span>
-                    <span>১৮:২০</span>
-                </div>
-                <div class="prayer-item">
-                    <span>এশা</span>
-                    <span>১৯:৪৫</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="content">
-            <!-- Control Panel -->
-            <div class="control-panel">
-                <div class="panel-left">
-                    <h2>কথোপকথন ডাটাবেস</h2>
-                    <div class="breadcrumb">
-                        <span><i class="fas fa-home"></i> হোম</span>
-                        <span><i class="fas fa-chevron-right"></i></span>
-                        <span id="currentLang">রাশিয়ান</span>
-                    </div>
-                </div>
-                <div class="panel-right">
-                    <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="কথোপকথন খুঁজুন...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <button class="btn-primary" id="saveToFolderBtn">
-                        <i class="fas fa-save"></i> ফোল্ডারে সেভ
-                    </button>
-                </div>
-            </div>
-
-            <!-- Statistics Cards -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">
+        <!-- Language Info -->
+        <div class="language-info">
+            <div class="current-language">
+                <h2 id="currentLanguageName">রাশিয়ান ভাষা</h2>
+                <p id="languageDescription">ইউরোপের পূর্বাঞ্চলীয় ভাষা - রাশিয়া, বেলারুশ, কাজাখস্তানে ব্যবহৃত</p>
+                <div class="language-stats">
+                    <span class="stat">
                         <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="totalConversations">1,000</h3>
-                        <p>মোট কথোপকথন</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-folder"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="totalFolders">12</h3>
-                        <p>সংরক্ষিত ফোল্ডার</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3 id="downloadCount">2.5K</h3>
-                        <p>ডাউনলোড সম্পন্ন</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
+                        <span id="currentLanguageCount">0</span> কথোপকথন
+                    </span>
+                    <span class="stat">
                         <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>156</h3>
-                        <p>সক্রিয় ব্যবহারকারী</p>
-                    </div>
+                        ২৮০ মিলিয়ন ভাষাভাষী
+                    </span>
                 </div>
             </div>
+        </div>
 
-            <!-- Conversation Display -->
-            <div class="conversation-container">
-                <div class="container-header">
-                    <h3>কথোপকথন তালিকা</h3>
-                    <div class="view-controls">
-                        <button class="view-btn active" data-view="grid">
-                            <i class="fas fa-th"></i>
-                        </button>
-                        <button class="view-btn" data-view="list">
-                            <i class="fas fa-list"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="conversationGrid" class="conversation-grid">
-                    <!-- Conversations will be loaded here -->
-                </div>
-                
-                <div class="pagination">
-                    <button class="page-btn" id="prevBtn" disabled>
-                        <i class="fas fa-chevron-left"></i> পূর্ববর্তী
-                    </button>
-                    <div class="page-info">
-                        <span id="pageInfo">পৃষ্ঠা ১ এর ১০</span>
-                    </div>
-                    <button class="page-btn" id="nextBtn">
-                        পরবর্তী <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
+        <!-- Prayer Times Widget -->
+        <div class="prayer-widget">
+            <div class="prayer-time">
+                <span>🕌 আজকের নামাজের সময়:</span>
+                <span>ফজর ৫:৩০ | জুহর ১২:১৫ | আসর ১৫:৪৫ | মাগরিব ১৮:২০ | এশা ১৯:৪৫</span>
             </div>
-        </main>
-    </div>
+        </div>
 
-    <!-- Folder Management Modal -->
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>ডেটা লোড করতে সমস্যা হয়েছে। অনুগ্রহ করে পুনরায় চেষ্টা করুন।</p>
+            <button id="retryBtn" class="btn">আবার চেষ্টা করুন</button>
+        </div>
+
+        <!-- Conversation List -->
+        <div class="conversation-list" id="conversationList">
+            <!-- Conversations will be loaded here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevBtn" class="btn" disabled>⬅️ আগের</button>
+            <span id="pageInfo">পৃষ্ঠা ১</span>
+            <button id="nextBtn" class="btn">পরের ➡️</button>
+        </div>
+    </main>
+
+    <!-- Folder Modal -->
     <div id="folderModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-folder-open"></i> ফোল্ডার ম্যানেজমেন্ট</h3>
-                <button class="close-btn" id="closeFolderModal">
-                    <i class="fas fa-times"></i>
-                </button>
+                <h2>ফোল্ডার ব্যবস্থাপনা</h2>
+                <button id="closeModal" class="close-btn">✕</button>
             </div>
-            
             <div class="modal-body">
                 <div class="folder-actions">
-                    <button class="action-btn" id="createFolderBtn">
+                    <button id="createFolderBtn" class="btn">
                         <i class="fas fa-plus"></i> নতুন ফোল্ডার
                     </button>
-                    <button class="action-btn" id="importFolderBtn">
-                        <i class="fas fa-upload"></i> ইমপোর্ট
-                    </button>
-                    <button class="action-btn" id="exportFolderBtn">
+                    <button id="exportBtn" class="btn">
                         <i class="fas fa-download"></i> এক্সপোর্ট
                     </button>
+                    <button id="importBtn" class="btn">
+                        <i class="fas fa-upload"></i> ইমপোর্ট
+                    </button>
                 </div>
-                
-                <div id="folderList" class="folder-list">
-                    <!-- Folders will be displayed here -->
-                </div>
+                <div id="folderList" class="folder-list"></div>
             </div>
         </div>
     </div>
 
-    <!-- Save to Folder Modal -->
+    <!-- Save Modal -->
     <div id="saveModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-save"></i> ফোল্ডারে সংরক্ষণ</h3>
-                <button class="close-btn" id="closeSaveModal">
-                    <i class="fas fa-times"></i>
-                </button>
+                <h2>ফোল্ডারে সংরক্ষণ</h2>
+                <button id="closeSaveModal" class="close-btn">✕</button>
             </div>
-            
             <div class="modal-body">
-                <div class="save-form">
-                    <label for="folderSelect">ফোল্ডার নির্বাচন করুন:</label>
-                    <select id="folderSelect">
-                        <option value="">ফোল্ডার নির্বাচন করুন</option>
-                    </select>
-                    
-                    <label for="newFolderName">অথবা নতুন ফোল্ডার তৈরি করুন:</label>
-                    <input type="text" id="newFolderName" placeholder="ফোল্ডারের নাম লিখুন">
-                    
-                    <div class="selected-conversations">
-                        <h4>নির্বাচিত কথোপকথন: <span id="selectedCount">0</span></h4>
-                        <div id="selectedList"></div>
-                    </div>
-                    
-                    <div class="modal-actions">
-                        <button class="btn-secondary" id="cancelSave">বাতিল</button>
-                        <button class="btn-primary" id="confirmSave">সংরক্ষণ করুন</button>
-                    </div>
+                <label>ফোল্ডার নির্বাচন করুন:</label>
+                <select id="folderSelect" class="form-input">
+                    <option value="">ফোল্ডার নির্বাচন করুন</option>
+                </select>
+                
+                <label>অথবা নতুন ফোল্ডার:</label>
+                <input type="text" id="newFolderName" placeholder="ফোল্ডারের নাম" class="form-input">
+                
+                <div class="selected-preview">
+                    <h3>নির্বাচিত কথোপকথন (<span id="selectedCountModal">0</span>টি):</h3>
+                    <div id="selectedPreview" class="preview-list"></div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button id="cancelSave" class="btn">বাতিল</button>
+                    <button id="confirmSave" class="btn btn-primary">সংরক্ষণ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Success Toast -->
-    <div id="toast" class="toast">
-        <div class="toast-content">
-            <i class="fas fa-check-circle"></i>
-            <span id="toastMessage">সফলভাবে সম্পন্ন!</span>
-        </div>
-    </div>
+    <!-- Import File Input -->
+    <input type="file" id="importFileInput" accept=".json" style="display: none;">
 
-    <!-- System Status Bar -->
-    <div class="status-bar">
-        <div class="status-left">
-            <span><i class="fas fa-database"></i> সংযুক্ত</span>
-            <span><i class="fas fa-wifi"></i> অনলাইন</span>
-        </div>
-        <div class="status-right">
-            <span id="currentTime">১৫:৩০:২৫</span>
-            <span><i class="fas fa-memory"></i> RAM: ৭৮%</span>
-        </div>
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
     </div>
 
     <script src="script.js"></script>
