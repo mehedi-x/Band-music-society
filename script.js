@@ -1,5 +1,5 @@
 // Global Variables
-let currentLanguage = 'russian';
+let currentLanguage = null;
 let currentPage = 1;
 const itemsPerPage = 12;
 let allConversations = [];
@@ -8,73 +8,91 @@ let selectedConversations = new Set();
 let folders = JSON.parse(localStorage.getItem('speakEuFolders')) || [];
 let languageCache = {};
 
-// Language Configuration
-const languageConfig = {
-    russian: {
-        name: 'রাশিয়ান ভাষা',
-        description: 'ইউরোপের পূর্বাঞ্চলীয় ভাষা - রাশিয়া, বেলারুশ, কাজাখস্তানে ব্যবহৃত',
-        speakers: '২৮০ মিলিয়ন ভাষাভাষী',
-        file: 'russian.json',
-        key: 'ru'
-    },
-    german: {
-        name: 'জার্মান ভাষা',
-        description: 'পশ্চিম ইউরোপের প্রধান ভাষা - জার্মানি, অস্ট্রিয়া, সুইজারল্যান্ডে ব্যবহৃত',
-        speakers: '১০০ মিলিয়ন ভাষাভাষী',
-        file: 'german.json',
-        key: 'de'
-    },
-    french: {
-        name: 'ফরাসি ভাষা',
-        description: 'রোমান্স ভাষা - ফ্রান্স, বেলজিয়াম, সুইজারল্যান্ড, কানাডায় ব্যবহৃত',
-        speakers: '২৮০ মিলিয়ন ভাষাভাষী',
-        file: 'french.json',
-        key: 'fr'
-    },
-    spanish: {
-        name: 'স্প্যানিশ ভাষা',
-        description: 'রোমান্স ভাষা - স্পেন এবং ল্যাটিন আমেরিকায় ব্যবহৃত',
-        speakers: '৫০০ মিলিয়ন ভাষাভাষী',
-        file: 'spanish.json',
-        key: 'es'
-    },
-    italian: {
-        name: 'ইতালিয়ান ভাষা',
-        description: 'রোমান্স ভাষা - ইতালি, সান মারিনো, ভ্যাটিকানে ব্যবহৃত',
-        speakers: '৬৫ মিলিয়ন ভাষাভাষী',
-        file: 'italian.json',
-        key: 'it'
-    },
-    portuguese: {
-        name: 'পর্তুগিজ ভাষা',
-        description: 'রোমান্স ভাষা - পর্তুগাল, ব্রাজিল, আঙ্গোলায় ব্যবহৃত',
-        speakers: '২৬০ মিলিয়ন ভাষাভাষী',
-        file: 'portuguese.json',
-        key: 'pt'
-    }
-};
+// European Countries Configuration
+const europeanCountries = [
+    { code: 'albania', name: 'আলবেনিয়া', flag: '🇦🇱', langKey: 'sq', speakers: '৬ মিলিয়ন' },
+    { code: 'andorra', name: 'আন্দোরা', flag: '🇦🇩', langKey: 'ca', speakers: '৮০ হাজার' },
+    { code: 'austria', name: 'অস্ট্রিয়া', flag: '🇦🇹', langKey: 'de', speakers: '৯ মিলিয়ন' },
+    { code: 'belarus', name: 'বেলারুশ', flag: '🇧🇾', langKey: 'be', speakers: '৮ মিলিয়ন' },
+    { code: 'belgium', name: 'বেলজিয়াম', flag: '🇧🇪', langKey: 'nl', speakers: '১১ মিলিয়ন' },
+    { code: 'bosnia', name: 'বসনিয়া', flag: '🇧🇦', langKey: 'bs', speakers: '৩ মিলিয়ন' },
+    { code: 'bulgaria', name: 'বুলগেরিয়া', flag: '🇧🇬', langKey: 'bg', speakers: '৭ মিলিয়ন' },
+    { code: 'croatia', name: 'ক্রোয়েশিয়া', flag: '🇭🇷', langKey: 'hr', speakers: '৪ মিলিয়ন' },
+    { code: 'cyprus', name: 'সাইপ্রাস', flag: '🇨🇾', langKey: 'el', speakers: '১ মিলিয়ন' },
+    { code: 'czech', name: 'চেক প্রজাতন্ত্র', flag: '🇨🇿', langKey: 'cs', speakers: '১০ মিলিয়ন' },
+    { code: 'denmark', name: 'ডেনমার্ক', flag: '🇩🇰', langKey: 'da', speakers: '৬ মিলিয়ন' },
+    { code: 'estonia', name: 'এস্তোনিয়া', flag: '🇪🇪', langKey: 'et', speakers: '১ মিলিয়ন' },
+    { code: 'finland', name: 'ফিনল্যান্ড', flag: '🇫🇮', langKey: 'fi', speakers: '৫ মিলিয়ন' },
+    { code: 'france', name: 'ফ্রান্স', flag: '🇫🇷', langKey: 'fr', speakers: '৬৭ মিলিয়ন' },
+    { code: 'germany', name: 'জার্মানি', flag: '🇩🇪', langKey: 'de', speakers: '৮৩ মিলিয়ন' },
+    { code: 'greece', name: 'গ্রিস', flag: '🇬🇷', langKey: 'el', speakers: '১১ মিলিয়ন' },
+    { code: 'hungary', name: 'হাঙ্গেরি', flag: '🇭🇺', langKey: 'hu', speakers: '১০ মিলিয়ন' },
+    { code: 'iceland', name: 'আইসল্যান্ড', flag: '🇮🇸', langKey: 'is', speakers: '৩৮০ হাজার' },
+    { code: 'ireland', name: 'আয়ারল্যান্ড', flag: '🇮🇪', langKey: 'ga', speakers: '৫ মিলিয়ন' },
+    { code: 'italy', name: 'ইতালি', flag: '🇮🇹', langKey: 'it', speakers: '৬০ মিলিয়ন' },
+    { code: 'latvia', name: 'লাতভিয়া', flag: '🇱🇻', langKey: 'lv', speakers: '২ মিলিয়ন' },
+    { code: 'liechtenstein', name: 'লিখটেনস্টাইন', flag: '🇱🇮', langKey: 'de', speakers: '৩৮ হাজার' },
+    { code: 'lithuania', name: 'লিথুয়ানিয়া', flag: '🇱🇹', langKey: 'lt', speakers: '৩ মিলিয়ন' },
+    { code: 'luxembourg', name: 'লুক্সেমবার্গ', flag: '🇱🇺', langKey: 'lb', speakers: '৬৩০ হাজার' },
+    { code: 'malta', name: 'মাল্টা', flag: '🇲🇹', langKey: 'mt', speakers: '৫০০ হাজার' },
+    { code: 'moldova', name: 'মলদোভা', flag: '🇲🇩', langKey: 'ro', speakers: '৩ মিলিয়ন' },
+    { code: 'monaco', name: 'মোনাকো', flag: '🇲🇨', langKey: 'fr', speakers: '৩৯ হাজার' },
+    { code: 'montenegro', name: 'মন্টিনিগ্রো', flag: '🇲🇪', langKey: 'cnr', speakers: '৬৩০ হাজার' },
+    { code: 'netherlands', name: 'নেদারল্যান্ডস', flag: '🇳🇱', langKey: 'nl', speakers: '১৭ মিলিয়ন' },
+    { code: 'north_macedonia', name: 'উত্তর ম্যাসিডোনিয়া', flag: '🇲🇰', langKey: 'mk', speakers: '২ মিলিয়ন' },
+    { code: 'norway', name: 'নরওয়ে', flag: '🇳🇴', langKey: 'no', speakers: '৫ মিলিয়ন' },
+    { code: 'poland', name: 'পোল্যান্ড', flag: '🇵🇱', langKey: 'pl', speakers: '৩৮ মিলিয়ন' },
+    { code: 'portugal', name: 'পর্তুগাল', flag: '🇵🇹', langKey: 'pt', speakers: '১০ মিলিয়ন' },
+    { code: 'romania', name: 'রোমানিয়া', flag: '🇷🇴', langKey: 'ro', speakers: '১৯ মিলিয়ন' },
+    { code: 'russia', name: 'রাশিয়া', flag: '🇷🇺', langKey: 'ru', speakers: '১৪৪ মিলিয়ন' },
+    { code: 'san_marino', name: 'সান মারিনো', flag: '🇸🇲', langKey: 'it', speakers: '৩৪ হাজার' },
+    { code: 'serbia', name: 'সার্বিয়া', flag: '🇷🇸', langKey: 'sr', speakers: '৭ মিলিয়ন' },
+    { code: 'slovakia', name: 'স্লোভাকিয়া', flag: '🇸🇰', langKey: 'sk', speakers: '৫ মিলিয়ন' },
+    { code: 'slovenia', name: 'স্লোভেনিয়া', flag: '🇸🇮', langKey: 'sl', speakers: '২ মিলিয়ন' },
+    { code: 'spain', name: 'স্পেন', flag: '🇪🇸', langKey: 'es', speakers: '৪৭ মিলিয়ন' },
+    { code: 'sweden', name: 'সুইডেন', flag: '🇸🇪', langKey: 'sv', speakers: '১০ মিলিয়ন' },
+    { code: 'switzerland', name: 'সুইজারল্যান্ড', flag: '🇨🇭', langKey: 'de', speakers: '৯ মিলিয়ন' },
+    { code: 'ukraine', name: 'ইউক্রেন', flag: '🇺🇦', langKey: 'uk', speakers: '৪১ মিলিয়ন' },
+    { code: 'united_kingdom', name: 'যুক্তরাজ্য', flag: '🇬🇧', langKey: 'en', speakers: '৬৭ মিলিয়ন' },
+    { code: 'vatican', name: 'ভ্যাটিকান', flag: '🇻🇦', langKey: 'la', speakers: '৮০০' }
+];
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
-    loadLanguage('russian'); // Load default language
+    generateLanguageTabs();
     loadSavedTheme();
 });
+
+// Generate Language Tabs
+function generateLanguageTabs() {
+    const tabsContainer = document.getElementById('languageTabs');
+    tabsContainer.innerHTML = '';
+    
+    europeanCountries.forEach(country => {
+        const tabBtn = document.createElement('button');
+        tabBtn.className = 'tab-btn';
+        tabBtn.dataset.lang = country.code;
+        tabBtn.innerHTML = `
+            ${country.flag} ${country.name}
+            <span class="lang-count" id="count-${country.code}">0</span>
+        `;
+        
+        tabBtn.addEventListener('click', function() {
+            if (!this.classList.contains('loading')) {
+                selectLanguage(country.code);
+            }
+        });
+        
+        tabsContainer.appendChild(tabBtn);
+    });
+}
 
 // Setup Event Listeners
 function setupEventListeners() {
     // Search
     document.getElementById('searchInput').addEventListener('input', function(e) {
         searchConversations(e.target.value);
-    });
-    
-    // Language tabs
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            if (!this.classList.contains('loading')) {
-                selectLanguage(this.dataset.lang);
-            }
-        });
     });
     
     // Theme toggle
@@ -93,10 +111,6 @@ function setupEventListeners() {
     // Folder actions
     document.getElementById('createFolderBtn').addEventListener('click', createFolder);
     document.getElementById('exportBtn').addEventListener('click', exportData);
-    document.getElementById('importBtn').addEventListener('click', () => {
-        document.getElementById('importFileInput').click();
-    });
-    document.getElementById('importFileInput').addEventListener('change', importData);
     
     // Pagination
     document.getElementById('prevBtn').addEventListener('click', () => changePage(-1));
@@ -104,7 +118,9 @@ function setupEventListeners() {
     
     // Retry button
     document.getElementById('retryBtn').addEventListener('click', () => {
-        loadLanguage(currentLanguage);
+        if (currentLanguage) {
+            loadLanguage(currentLanguage);
+        }
     });
 }
 
@@ -130,7 +146,7 @@ async function loadLanguage(langCode) {
         }
         
         // Load from JSON file
-        const response = await fetch(`languages/${languageConfig[langCode].file}`);
+        const response = await fetch(`languages/${langCode}.json`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -147,7 +163,8 @@ async function loadLanguage(langCode) {
         updateUI();
         updateLanguageCount(langCode, data.length);
         
-        showToast(`${languageConfig[langCode].name} সফলভাবে লোড হয়েছে!`);
+        const country = europeanCountries.find(c => c.code === langCode);
+        showToast(`${country.name} সফলভাবে লোড হয়েছে!`);
         
     } catch (error) {
         console.error('Error loading language:', error);
@@ -166,69 +183,27 @@ async function loadLanguage(langCode) {
 
 // Select Language
 function selectLanguage(langCode) {
-    if (langCode === currentLanguage) return;
-    
     // Update active tab
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[data-lang="${langCode}"]`).classList.add('active');
+    const selectedTab = document.querySelector(`[data-lang="${langCode}"]`);
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
     
     currentLanguage = langCode;
-    currentPage = 1;
-    selectedConversations.clear();
     
     // Update language info
-    updateLanguageInfo(langCode);
+    const country = europeanCountries.find(c => c.code === langCode);
+    document.getElementById('currentLanguageName').textContent = `${country.name} ভাষা`;
+    document.getElementById('languageDescription').textContent = `${country.name} এর জাতীয় ভাষা`;
+    document.getElementById('speakersCount').textContent = country.speakers;
     
     // Load language data
     loadLanguage(langCode);
     
+    currentPage = 1;
+    selectedConversations.clear();
     updateSelectedCount();
-}
-
-// Update Language Info
-function updateLanguageInfo(langCode) {
-    const config = languageConfig[langCode];
-    document.getElementById('currentLanguageName').textContent = config.name;
-    document.getElementById('languageDescription').textContent = config.description;
-    
-    const speakersElement = document.querySelector('.language-stats .stat:last-child span');
-    if (speakersElement) {
-        speakersElement.textContent = config.speakers;
-    }
-}
-
-// Update Language Count
-function updateLanguageCount(langCode, count) {
-    const countElement = document.getElementById(`count-${langCode}`);
-    if (countElement) {
-        countElement.textContent = count;
-    }
-    
-    if (langCode === currentLanguage) {
-        document.getElementById('currentLanguageCount').textContent = count;
-    }
-}
-
-// Update UI
-function updateUI() {
-    displayConversations();
-    updatePagination();
-    updateLanguageCount(currentLanguage, allConversations.length);
-}
-
-// Show/Hide Loading
-function showLoading(show) {
-    const loadingElement = document.getElementById('loadingIndicator');
-    loadingElement.style.display = show ? 'block' : 'none';
-}
-
-// Show/Hide Error
-function showError() {
-    document.getElementById('errorMessage').style.display = 'block';
-}
-
-function hideError() {
-    document.getElementById('errorMessage').style.display = 'none';
 }
 
 // Search Function
@@ -238,11 +213,13 @@ function searchConversations(query) {
     } else {
         const searchTerm = query.toLowerCase();
         filteredConversations = allConversations.filter(conv => {
-            const langKey = languageConfig[currentLanguage].key;
-            return conv[langKey]?.toLowerCase().includes(searchTerm) ||
-                   conv.bn?.toLowerCase().includes(searchTerm) ||
-                   conv.bnMeaning?.toLowerCase().includes(searchTerm) ||
-                   conv.en?.toLowerCase().includes(searchTerm);
+            const langKey = europeanCountries.find(c => c.code === currentLanguage)?.langKey || 'text';
+            return (
+                (conv[langKey] && conv[langKey].toLowerCase().includes(searchTerm)) ||
+                (conv.bn && conv.bn.toLowerCase().includes(searchTerm)) ||
+                (conv.bnMeaning && conv.bnMeaning.toLowerCase().includes(searchTerm)) ||
+                (conv.en && conv.en.toLowerCase().includes(searchTerm))
+            );
         });
     }
     
@@ -282,15 +259,16 @@ function createConversationCard(conv, number) {
         card.classList.add('selected');
     }
     
-    const langKey = languageConfig[currentLanguage].key;
+    const country = europeanCountries.find(c => c.code === currentLanguage);
+    const langKey = country?.langKey || 'text';
     
     card.innerHTML = `
         <div class="conversation-number">${number}</div>
         <div class="conversation-text">
-            <div class="original-text">${conv[langKey] || ''}</div>
-            <div class="pronunciation">${conv.bn || ''}</div>
-            <div class="meaning">${conv.bnMeaning || ''}</div>
-            <div class="english-text">${conv.en || ''}</div>
+            <div class="original-text">${conv[langKey] || 'N/A'}</div>
+            <div class="pronunciation">${conv.bn || 'উচ্চারণ পাওয়া যায়নি'}</div>
+            <div class="meaning">${conv.bnMeaning || 'অর্থ পাওয়া যায়নি'}</div>
+            <div class="english-text">${conv.en || 'English not available'}</div>
         </div>
         <div class="conversation-actions">
             <button class="action-btn copy-btn" title="কপি">
@@ -318,7 +296,7 @@ function createConversationCard(conv, number) {
     // Play button
     card.querySelector('.play-btn').addEventListener('click', (e) => {
         e.stopPropagation();
-        playAudio(conv[langKey]);
+        playAudio(conv[langKey] || '');
     });
     
     return card;
@@ -344,52 +322,16 @@ function updateSelectedCount() {
     const count = selectedConversations.size;
     const saveBtn = document.getElementById('saveSelectedBtn');
     const countEl = document.getElementById('selectedCount');
-    const modalCountEl = document.getElementById('selectedCountModal');
     
     countEl.textContent = count;
-    if (modalCountEl) modalCountEl.textContent = count;
     saveBtn.style.display = count > 0 ? 'flex' : 'none';
-    
-    updateSelectedPreview();
-}
-
-// Update Selected Preview
-function updateSelectedPreview() {
-    const previewContainer = document.getElementById('selectedPreview');
-    if (!previewContainer) return;
-    
-    previewContainer.innerHTML = '';
-    
-    if (selectedConversations.size === 0) {
-        previewContainer.innerHTML = '<p>কোনো কথোপকথন নির্বাচিত নেই</p>';
-        return;
-    }
-    
-    const langKey = languageConfig[currentLanguage].key;
-    
-    Array.from(selectedConversations).slice(0, 5).forEach(index => {
-        if (filteredConversations[index]) {
-            const conv = filteredConversations[index];
-            const previewItem = document.createElement('div');
-            previewItem.className = 'preview-item';
-            previewItem.textContent = `${index + 1}. ${conv[langKey]} - ${conv.bnMeaning}`;
-            previewContainer.appendChild(previewItem);
-        }
-    });
-    
-    if (selectedConversations.size > 5) {
-        const moreItem = document.createElement('div');
-        moreItem.className = 'preview-item';
-        moreItem.style.fontStyle = 'italic';
-        moreItem.textContent = `এবং আরও ${selectedConversations.size - 5}টি...`;
-        previewContainer.appendChild(moreItem);
-    }
 }
 
 // Copy to Clipboard
 function copyToClipboard(conv) {
-    const langKey = languageConfig[currentLanguage].key;
-    const text = `${conv[langKey]}\n${conv.bn}\n${conv.bnMeaning}\n${conv.en}`;
+    const country = europeanCountries.find(c => c.code === currentLanguage);
+    const langKey = country?.langKey || 'text';
+    const text = `${conv[langKey] || 'N/A'}\n${conv.bn || ''}\n${conv.bnMeaning || ''}\n${conv.en || ''}`;
     
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text);
@@ -410,23 +352,14 @@ function copyToClipboard(conv) {
 function playAudio(text) {
     if ('speechSynthesis' in window && text) {
         const utterance = new SpeechSynthesisUtterance(text);
-        
-        // Set language based on current selection
-        const langCodes = {
-            'russian': 'ru-RU',
-            'german': 'de-DE',
-            'french': 'fr-FR',
-            'spanish': 'es-ES',
-            'italian': 'it-IT',
-            'portuguese': 'pt-PT'
-        };
-        
-        utterance.lang = langCodes[currentLanguage] || 'en-US';
-        utterance.rate = 0.8;
+        const country = europeanCountries.find(c => c.code === currentLanguage);
+        if (country && country.langKey) {
+            utterance.lang = country.langKey === 'en' ? 'en-US' : `${country.langKey}-${country.langKey.toUpperCase()}`;
+        }
         speechSynthesis.speak(utterance);
         showToast('উচ্চারণ চালু...');
     } else {
-        showToast('আপনার ব্রাউজার উচ্চারণ সমর্থন করে না', 'warning');
+        showToast('আপনার ব্রাউজার উচ্চারণ সমর্থন করে না');
     }
 }
 
@@ -439,9 +372,6 @@ function changePage(direction) {
         currentPage = newPage;
         displayConversations();
         updatePagination();
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
@@ -454,10 +384,47 @@ function updatePagination() {
     prevBtn.disabled = currentPage === 1;
     nextBtn.disabled = currentPage === totalPages || totalPages === 0;
     
-    pageInfo.textContent = totalPages > 0 ? `পৃষ্ঠা ${currentPage} / ${totalPages}` : 'পৃষ্ঠা ০';
+    pageInfo.textContent = `পৃষ্ঠা ${currentPage} / ${totalPages}`;
 }
 
-// Theme Management
+// Update Language Count
+function updateLanguageCount(langCode, count) {
+    const countEl = document.getElementById(`count-${langCode}`);
+    if (countEl) {
+        countEl.textContent = count;
+    }
+    
+    const currentCountEl = document.getElementById('currentLanguageCount');
+    if (currentCountEl && langCode === currentLanguage) {
+        currentCountEl.textContent = count;
+    }
+}
+
+// Update UI
+function updateUI() {
+    displayConversations();
+    updatePagination();
+    if (currentLanguage) {
+        updateLanguageCount(currentLanguage, allConversations.length);
+    }
+}
+
+// Show Loading
+function showLoading(show) {
+    const loading = document.getElementById('loadingIndicator');
+    loading.style.display = show ? 'block' : 'none';
+}
+
+// Show Error
+function showError() {
+    document.getElementById('errorMessage').style.display = 'block';
+}
+
+function hideError() {
+    document.getElementById('errorMessage').style.display = 'none';
+}
+
+// Theme Toggle
 function toggleTheme() {
     document.body.classList.toggle('dark');
     const isDark = document.body.classList.contains('dark');
@@ -488,20 +455,12 @@ function closeFolderModal() {
 }
 
 function openSaveModal() {
-    if (selectedConversations.size === 0) {
-        showToast('কোনো কথোপকথন নির্বাচিত নেই', 'warning');
-        return;
-    }
-    
     document.getElementById('saveModal').classList.add('active');
     updateFolderSelect();
-    updateSelectedPreview();
 }
 
 function closeSaveModal() {
     document.getElementById('saveModal').classList.remove('active');
-    document.getElementById('newFolderName').value = '';
-    document.getElementById('folderSelect').value = '';
 }
 
 // Folder Management
@@ -509,7 +468,7 @@ function displayFolders() {
     const folderList = document.getElementById('folderList');
     
     if (folders.length === 0) {
-        folderList.innerHTML = '<div class="no-results"><i class="fas fa-folder-open"></i><p>কোনো ফোল্ডার নেই</p></div>';
+        folderList.innerHTML = '<div class="no-results">কোনো ফোল্ডার নেই</div>';
         return;
     }
     
@@ -521,15 +480,9 @@ function displayFolders() {
         folderItem.innerHTML = `
             <div class="folder-info">
                 <i class="fas fa-folder"></i>
-                <div>
-                    <div class="folder-name">${folder.name}</div>
-                    <div class="folder-meta">${folder.conversations.length} কথোপকথন</div>
-                </div>
+                <span>${folder.name} (${folder.conversations.length})</span>
             </div>
             <div class="folder-actions-small">
-                <button class="action-btn" onclick="viewFolder(${index})" title="দেখুন">
-                    <i class="fas fa-eye"></i>
-                </button>
                 <button class="action-btn" onclick="deleteFolder(${index})" title="মুছুন">
                     <i class="fas fa-trash"></i>
                 </button>
@@ -542,15 +495,11 @@ function displayFolders() {
 function createFolder() {
     const name = prompt('ফোল্ডারের নাম লিখুন:');
     if (name && name.trim()) {
-        const folder = {
-            id: Date.now(),
+        folders.push({
             name: name.trim(),
             conversations: [],
-            language: currentLanguage,
             createdAt: new Date().toISOString()
-        };
-        
-        folders.push(folder);
+        });
         saveFolders();
         displayFolders();
         showToast('ফোল্ডার তৈরি হয়েছে!');
@@ -558,19 +507,12 @@ function createFolder() {
 }
 
 function deleteFolder(index) {
-    if (confirm(`"${folders[index].name}" ফোল্ডার মুছে ফেলবেন?`)) {
+    if (confirm('ফোল্ডার মুছে ফেলবেন?')) {
         folders.splice(index, 1);
         saveFolders();
         displayFolders();
         showToast('ফোল্ডার মুছে ফেলা হয়েছে');
     }
-}
-
-function viewFolder(index) {
-    const folder = folders[index];
-    // This would open a new view showing folder contents
-    // For now, just show an alert
-    alert(`ফোল্ডার: ${folder.name}\nকথোপকথন: ${folder.conversations.length}টি\nভাষা: ${languageConfig[folder.language]?.name || folder.language}`);
 }
 
 function updateFolderSelect() {
@@ -580,7 +522,7 @@ function updateFolderSelect() {
     folders.forEach((folder, index) => {
         const option = document.createElement('option');
         option.value = index;
-        option.textContent = `${folder.name} (${folder.conversations.length})`;
+        option.textContent = folder.name;
         select.appendChild(option);
     });
 }
@@ -594,10 +536,8 @@ function saveToFolder() {
     if (newFolderName) {
         // Create new folder
         targetFolder = {
-            id: Date.now(),
             name: newFolderName,
             conversations: [],
-            language: currentLanguage,
             createdAt: new Date().toISOString()
         };
         folders.push(targetFolder);
@@ -605,19 +545,12 @@ function saveToFolder() {
         // Use existing folder
         targetFolder = folders[parseInt(folderIndex)];
     } else {
-        showToast('ফোল্ডার নির্বাচন করুন বা নতুন ফোল্ডার তৈরি করুন', 'warning');
+        showToast('ফোল্ডার নির্বাচন করুন বা নতুন ফোল্ডার তৈরি করুন');
         return;
     }
     
     // Add selected conversations
-    const selectedConvs = Array.from(selectedConversations).map(index => {
-        return {
-            ...filteredConversations[index],
-            savedAt: new Date().toISOString(),
-            language: currentLanguage
-        };
-    });
-    
+    const selectedConvs = Array.from(selectedConversations).map(index => filteredConversations[index]);
     targetFolder.conversations.push(...selectedConvs);
     
     saveFolders();
@@ -626,20 +559,22 @@ function saveToFolder() {
     displayConversations();
     closeSaveModal();
     
-    showToast(`${selectedConvs.length}টি কথোপকথন "${targetFolder.name}" ফোল্ডারে সংরক্ষিত হয়েছে!`);
+    document.getElementById('newFolderName').value = '';
+    document.getElementById('folderSelect').value = '';
+    
+    showToast(`${selectedConvs.length}টি কথোপকথন সংরক্ষিত হয়েছে!`);
 }
 
 function saveFolders() {
     localStorage.setItem('speakEuFolders', JSON.stringify(folders));
 }
 
-// Import/Export Functions
+// Export Data
 function exportData() {
     const data = {
         folders: folders,
         exportDate: new Date().toISOString(),
-        appVersion: '1.0.0',
-        totalConversations: folders.reduce((total, folder) => total + folder.conversations.length, 0)
+        language: currentLanguage
     };
     
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -647,74 +582,28 @@ function exportData() {
     
     const a = document.createElement('a');
     a.href = url;
-    a.download = `speak-eu-backup-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `speak-eu-folders-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
-    showToast('ডেটা এক্সপোর্ট সম্পন্ন!');
+    showToast('ডেটা এক্সপোর্ট হয়েছে!');
 }
 
-function importData() {
-    const fileInput = document.getElementById('importFileInput');
-    const file = fileInput.files[0];
-    
-    if (!file) return;
-    
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        try {
-            const data = JSON.parse(e.target.result);
-            
-            if (data.folders && Array.isArray(data.folders)) {
-                const importCount = data.folders.length;
-                folders.push(...data.folders);
-                saveFolders();
-                displayFolders();
-                showToast(`${importCount}টি ফোল্ডার ইমপোর্ট হয়েছে!`);
-            } else {
-                showToast('অবৈধ ফাইল ফরম্যাট', 'error');
-            }
-        } catch (error) {
-            console.error('Import error:', error);
-            showToast('ফাইল পড়তে সমস্যা হয়েছে', 'error');
-        }
-    };
-    
-    reader.readAsText(file);
-    fileInput.value = ''; // Reset input
-}
-
-// Toast Function
+// Toast Notification
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toastMessage');
     
-    // Remove existing classes
-    toast.classList.remove('show', 'error', 'warning');
-    
-    // Set message and type
     toastMessage.textContent = message;
-    if (type !== 'success') {
-        toast.classList.add(type);
-    }
-    
-    // Show toast
+    toast.className = `toast ${type}`;
     toast.classList.add('show');
     
-    // Hide after 3 seconds
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
 }
 
-// Utility Functions
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('bn-BD');
-}
-
-// Global functions for onclick handlers
-window.viewFolder = viewFolder;
+// Global function for delete folder (needed for onclick)
 window.deleteFolder = deleteFolder;
