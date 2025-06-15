@@ -1,137 +1,162 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>রাশিয়ান ভাষা শেখার বই</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
-      line-height: 1.8;
-    }
-    h1, h2 {
-      color: #00ffcc;
-    }
-    .section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background-color: #222;
-      border-left: 5px solid #00ffcc;
-      border-radius: 5px;
-    }
-    .word {
-      background-color: #000;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    .russian {
-      color: #00ffff;
-      font-weight: bold;
-    }
-    .bangla, .english {
-      margin-left: 10px;
-      display: block;
-    }
-    .pronounce {
-      color: #ccc;
-      font-style: italic;
-    }
-    @media screen and (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speak EU - Language Learning</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="app-header">
+    <h1 class="app-title">Speak EU</h1>
+    <div class="header-right">
+      <select id="language-select">
+  <option value="">Select Language</option>
 
-  <h1>📘 রাশিয়ান ভাষা শেখার বই (Learn Russian in Bengali)</h1>
+  <!-- 🟦 Schengen Countries -->
+  <option value="austria">🇦🇹 Austria</option>
+  <option value="belgium">🇧🇪 Belgium</option>
+  <option value="czech">🇨🇿 Czech Republic</option>
+  <option value="denmark">🇩🇰 Denmark</option>
+  <option value="estonia">🇪🇪 Estonia</option>
+  <option value="finland">🇫🇮 Finland</option>
+  <option value="france">🇫🇷 France</option>
+  <option value="germany">🇩🇪 Germany</option>
+  <option value="greece">🇬🇷 Greece</option>
+  <option value="hungary">🇭🇺 Hungary</option>
+  <option value="iceland">🇮🇸 Iceland</option>
+  <option value="italy">🇮🇹 Italy</option>
+  <option value="latvia">🇱🇻 Latvia</option>
+  <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+  <option value="lithuania">🇱🇹 Lithuania</option>
+  <option value="luxembourg">🇱🇺 Luxembourg</option>
+  <option value="malta">🇲🇹 Malta</option>
+  <option value="netherlands">🇳🇱 Netherlands</option>
+  <option value="norway">🇳🇴 Norway</option>
+  <option value="poland">🇵🇱 Poland</option>
+  <option value="portugal">🇵🇹 Portugal</option>
+  <option value="slovakia">🇸🇰 Slovakia</option>
+  <option value="slovenia">🇸🇮 Slovenia</option>
+  <option value="spain">🇪🇸 Spain</option>
+  <option value="sweden">🇸🇪 Sweden</option>
+  <option value="switzerland">🇨🇭 Switzerland</option>
 
-  <div class="section">
-    <h2>1. রুশ বর্ণমালা (Cyrillic Alphabet)</h2>
-    <div class="word">
-      <span class="russian">А а</span>
-      <span class="pronounce">উচ্চারণ: আ</span>
-      <span class="bangla">বাংলা: আ</span>
-      <span class="english">English: A</span>
+  <!-- 🟥 Non-Schengen EU/Europe Countries -->
+  <option value="russian">🇷🇺 Russian</option>
+  <option value="albania">🇦🇱 Albania</option>
+  <option value="andorra">🇦🇩 Andorra</option>
+  <option value="armenia">🇦🇲 Armenia</option>
+  <option value="azerbaijan">🇦🇿 Azerbaijan</option>
+  <option value="bosnia">🇧🇦 Bosnia & Herzegovina</option>
+  <option value="bulgaria">🇧🇬 Bulgaria</option>
+  <option value="croatia">🇭🇷 Croatia</option>
+  <option value="cyprus">🇨🇾 Cyprus</option>
+  <option value="georgia">🇬🇪 Georgia</option>
+  <option value="ireland">🇮🇪 Ireland</option>
+  <option value="kosovo">🇽🇰 Kosovo</option>
+  <option value="moldova">🇲🇩 Moldova</option>
+  <option value="monaco">🇲🇨 Monaco</option>
+  <option value="montenegro">🇲🇪 Montenegro</option>
+  <option value="northmacedonia">🇲🇰 North Macedonia</option>
+  <option value="romania">🇷🇴 Romania</option>
+  <option value="sanmarino">🇸🇲 San Marino</option>
+  <option value="serbia">🇷🇸 Serbia</option>
+  <option value="turkey">🇹🇷 Turkey</option>
+  <option value="ukraine">🇺🇦 Ukraine</option>
+  <option value="unitedkingdom">🇬🇧 United Kingdom</option>
+  <option value="vatican">🇻🇦 Vatican City</option>
+</select>
+      <button id="mode-toggle">☀️</button>
+      <button id="menu-toggle">☰</button>
     </div>
-    <div class="word">
-      <span class="russian">Б б</span>
-      <span class="pronounce">উচ্চারণ: বে</span>
-      <span class="bangla">বাংলা: ব</span>
-      <span class="english">English: B</span>
-    </div>
-    <!-- আরো বর্ণমালা যোগ করতে এখানে কপি করে পেস্ট করুন -->
+  </header>
+
+<main id="conversation-area" class="p-6 text-base transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 max-w-4xl mx-auto">
+  <!-- Enhanced Homepage -->
+  <div id="homepage-content">
+    <!-- Quick Start -->
+    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+      <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-3">🚀 শুরু করার জন্য করণীয়</h3>
+      <ol class="list-decimal pl-6 space-y-1">
+        <li>উপরে থেকে একটি ভাষা নির্বাচন করুন।</li>
+        <li>আপনার প্রয়োজন অনুযায়ী কথোপকথন বিভাগ বেছে নিন।</li>
+        <li>প্রতিদিন ৫টি বাক্য চর্চা করুন।</li>
+        <li>গুরুত্বপূর্ণ শব্দগুলো ফোল্ডারে সেভ করুন।</li>
+      </ol>
+    </section>
+
+    <!-- Country Flags -->
+    <section class="mt-10 bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-sm">
+      <h3 class="text-lg font-semibold mb-3">🌍 জনপ্রিয় দেশভিত্তিক ভাষা</h3>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇮🇹 ইতালি (Italian)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇪🇸 স্পেন (Spanish)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇩🇪 জার্মানি (German)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇫🇷 ফ্রান্স (French)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇬🇷 গ্রিস (Greek)</span>
+        <span class="bg-gray-200 dark:bg-gray-600 px-3 py-1 rounded">🇵🇹 পর্তুগাল (Portuguese)</span>
+      </div>
+    </section>
+
+    <!-- Join Us -->
+    <section class="mt-10 bg-blue-100 dark:bg-blue-900 p-5 rounded-lg shadow-sm">
+      <h3 class="text-lg font-semibold mb-3">📢 আমাদের সঙ্গে যুক্ত থাকুন</h3>
+      <p class="mb-2">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন:</p>
+      <div class="flex gap-4 text-blue-600 dark:text-blue-300">
+        <a href="https://facebook.com" target="_blank" class="hover:underline">📘 Facebook</a>
+        <a href="https://t.me" target="_blank" class="hover:underline">📢 Telegram</a>
+      </div>
+    </section>
   </div>
 
-  <div class="section">
-    <h2>2. গুরুত্বপূর্ণ শব্দভাণ্ডার</h2>
-    <div class="word">
-      <span class="russian">Здравствуйте</span>
-      <span class="pronounce">উচ্চারণ: জদ্-রাস-ত্-ভুই-চে</span>
-      <span class="bangla">বাংলা: নমস্কার / হ্যালো</span>
-      <span class="english">English: Hello</span>
+  <!-- Error Display -->
+  <div id="error-display" class="error-container" style="display: none;">
+    <div class="error-content">
+      <span class="error-icon">⚠️</span>
+      <div class="error-text">
+        <h3>সমস্যা হয়েছে!</h3>
+        <p id="error-message"></p>
+      </div>
     </div>
-    <div class="word">
-      <span class="russian">Спасибо</span>
-      <span class="pronounce">উচ্চারণ: স্-পা-সি-বা</span>
-      <span class="bangla">বাংলা: ধন্যবাদ</span>
-      <span class="english">English: Thank you</span>
-    </div>
-    <!-- আরো শব্দ যোগ করতে এখানে কপি করে পেস্ট করুন -->
   </div>
 
-  <div class="section">
-    <h2>3. দৈনন্দিন কথোপকথন</h2>
-    <div class="word">
-      <span class="russian">Как дела?</span>
-      <span class="pronounce">উচ্চারণ: কাক দিলা?</span>
-      <span class="bangla">বাংলা: কেমন আছো?</span>
-      <span class="english">English: How are you?</span>
+  <!-- Folder Controls (Replacing Favorites Controls) -->
+  <div id="folder-controls" style="display: none;">
+    <div class="favorites-header">
+      <h3>📁 ফোল্ডার তালিকা</h3>
+      <div class="favorites-buttons">
+        <button id="show-all-btn" class="control-btn">সব দেখুন</button>
+        <button id="show-folders-btn" class="control-btn active">ফোল্ডার দেখুন</button>
+        <button id="export-folders-btn" class="control-btn">📤 Export</button>
+        <input type="file" id="import-folders-input" accept=".json" style="display: none;">
+        <button id="import-folders-btn" class="control-btn">📥 Import</button>
+      </div>
     </div>
-    <div class="word">
-      <span class="russian">Очень хорошо</span>
-      <span class="pronounce">উচ্চারণ: ওচেন খারোশো</span>
-      <span class="bangla">বাংলা: খুব ভালো</span>
-      <span class="english">English: Very good</span>
-    </div>
-    <!-- আরো ডায়ালগ এখানে যোগ করুন -->
   </div>
+</main>
 
-  <div class="section">
-    <h2>4. সংখ্যা ও সময়</h2>
-    <div class="word">
-      <span class="russian">Один</span>
-      <span class="pronounce">উচ্চারণ: আদিন</span>
-      <span class="bangla">বাংলা: এক</span>
-      <span class="english">English: One</span>
-    </div>
-    <div class="word">
-      <span class="russian">Два</span>
-      <span class="pronounce">উচ্চারণ: দ্বা</span>
-      <span class="bangla">বাংলা: দুই</span>
-      <span class="english">English: Two</span>
-    </div>
-    <!-- সংখ্যা ১–১০০ পর্যন্ত যোগ করা সম্ভব -->
-  </div>
+    <!-- Enhanced Side Menu -->
+<div id="side-menu">
+  <button id="close-menu" title="Close menu">✖</button>
+  <h3>🌍 Speak EU</h3>
+  <ul>
+    <li><a href="#" onclick="showHomePage()">🏠 Home</a></li>
+    <li><a href="#" onclick="showAboutPage()">ℹ️ About</a></li>
+    <li><a href="#" onclick="showContactPage()">📞 Contact Us</a></li>
+    <li><a href="#" onclick="showPrivacyPage()">🔒 Privacy Policy</a></li>
+    <li><a href="#" onclick="showFoldersPage()">📁 Folders</a></li>
+    <li class="menu-divider"></li>
+    <li><a href="#" onclick="exportFolders()">📤 Export Folders</a></li>
+    <li><a href="#" onclick="importFolders()">📥 Import Folders</a></li>
+    <li class="menu-divider"></li>
+    <li><a href="#" onclick="resetAllData()" class="reset-link">🔄 Reset All Data</a></li>
+  </ul>
+</div>
 
-  <div class="section">
-    <h2>5. শেখার পরামর্শ</h2>
-    <ul>
-      <li>প্রতিদিন ৩০ মিনিট অনুশীলন করুন।</li>
-      <li>অডিও শুনে উচ্চারণ প্র্যাকটিস করুন।</li>
-      <li>ফ্রি অ্যাপ ব্যবহার করুন: Duolingo, Tandem, YouTube</li>
-      <li>বন্ধুদের সাথে কথোপকথন চর্চা করুন।</li>
-    </ul>
-  </div>
+  <!-- File input for import -->
+  <input type="file" id="file-import" accept=".json" style="display: none;">
 
-  <footer style="text-align:center; margin-top: 50px; color: #777;">
-    তৈরি করেছেন: আপনার নাম | প্রজেক্ট: Speak Russian 🇷🇺
-  </footer>
-
+  <!-- Enhanced Script -->
+  <script src="script.js"></script>
 </body>
 </html>
